@@ -49,7 +49,7 @@ npm run merge                                        # merge by-day/ files into 
 - This is unofficial and based on publicly available event pages.
 - The scraper is intentionally conservative: caching, retries, backoff, and one-at-a-time requests.
 - Some session types expose less metadata than others.
-- I crafted this while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
+- Made by [Felipe Hoffa](https://www.linkedin.com/in/hoffa/) while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
 
 ## Prior art & legal context
 
