@@ -2,7 +2,7 @@ const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
-const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'words']);
+const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
   const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
@@ -178,6 +178,23 @@ function avatarColor(name) {
   return colors[Math.abs(hash) % colors.length];
 }
 
+function companyStats(sessions) {
+  const byCompany = new Map();
+  for (const session of sessions) {
+    const seen = new Set();
+    for (const speaker of (session.speakers || [])) {
+      const company = String(speaker.company || '').trim();
+      if (!company || seen.has(company)) continue;
+      seen.add(company);
+      if (!byCompany.has(company)) byCompany.set(company, { company, count: 0, sessions: [] });
+      const entry = byCompany.get(company);
+      entry.count += 1;
+      entry.sessions.push({ title: session.title, url: session.url || '', id: sessionKey(session) });
+    }
+  }
+  return [...byCompany.values()].filter((item) => item.count > 1).sort((a, b) => b.count - a.count || a.company.localeCompare(b.company));
+}
+
 function speakerStats(sessions) {
   const bySpeaker = new Map();
   for (const session of sessions) {
@@ -210,6 +227,7 @@ function renderTabs(activeView) {
   const tabs = [
     { id: 'sessions', label: 'Sessions' },
     { id: 'speakers', label: 'Top speakers' },
+    { id: 'companies', label: 'Top companies' },
     { id: 'words', label: 'Top words' },
   ];
   return `<div class="tabs" role="tablist" aria-label="Views">${tabs.map((tab) => `<button class="tab-btn${tab.id === activeView ? ' active' : ''}" type="button" data-view="${tab.id}" role="tab" aria-selected="${tab.id === activeView ? 'true' : 'false'}">${tab.label}</button>`).join('')}</div>`;
@@ -247,6 +265,11 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
 function renderSpeakersView(sessions) {
   const speakers = speakerStats(sessions);
   return `<div class="grid">${speakers.map((speaker) => `<div class="card speaker-summary-card"><div class="card-title"><button class="speaker-summary-link" type="button" data-speaker-name="${escHtml(speaker.name)}">${escHtml(speaker.name)}</button></div><div class="card-meta">${speaker.company ? `<span class="meta-icon">${escHtml(speaker.company)}</span>` : ''}<span class="dot meta-icon">${speaker.count} sessions</span></div><div class="card-desc expanded">${speaker.sessions.slice(0, 6).map((session) => `• ${session.url ? `<a class="speaker-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title)}`).join('<br>')}</div></div>`).join('')}</div>`;
+}
+
+function renderCompaniesView(sessions) {
+  const companies = companyStats(sessions);
+  return `<div class="grid">${companies.map((item) => `<div class="card company-summary-card"><div class="card-title"><button class="company-summary-link" type="button" data-company-name="${escHtml(item.company)}">${escHtml(item.company)}</button></div><div class="card-meta"><span class="meta-icon">${item.count} sessions</span></div><div class="card-desc expanded">${item.sessions.slice(0, 6).map((session) => `• ${session.url ? `<a class="company-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title)}`).join('<br>')}</div></div>`).join('')}</div>`;
 }
 
 function renderWordsView(sessions) {
@@ -374,6 +397,10 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
       app.innerHTML = `${renderTabs(activeView)}${renderSpeakersView(filtered)}`;
+    } else if (activeView === 'companies') {
+      const stats = companyStats(filtered);
+      resultCount.textContent = `${stats.length.toLocaleString()} companies with multiple sessions`;
+      app.innerHTML = `${renderTabs(activeView)}${renderCompaniesView(filtered)}`;
     } else {
       const stats = wordStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} top words`;
@@ -431,6 +458,21 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       });
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.company-link') : []) {
+      button.addEventListener('click', () => {
+        qInput.value = '';
+        speakerInput.value = '';
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        activeView = DEFAULT_VIEW;
+        applyDaySelection(dayPills, '');
+        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.company-summary-link') : []) {
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = '';

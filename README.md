@@ -16,6 +16,11 @@ This repo now has **two useful layers**:
 
 ## Website features
 
+## Preview
+
+![Google Cloud Next 2026 Session Search preview](./media/reddit-preview.jpg)
+
+
 Current site features include:
 
 - full-text session search
@@ -106,6 +111,12 @@ Then open:
 http://localhost:8000/
 ```
 
+## Prior art & legal context
+
+Community session trackers for cloud events have a complicated history. In October 2023, AWS sent cease & desist notices to third-party re:Invent session tracker developers — a situation that permanently destroyed one developer's work before AWS reversed course the same day.
+
+See [PRIOR-ART.md](./PRIOR-ART.md) for the full story.
+
 ## Notes
 
 - This is unofficial and based on publicly available event pages.
@@ -113,8 +124,3 @@ http://localhost:8000/
 - Some session types expose less metadata than others.
 - Made by [Felipe Hoffa](https://www.linkedin.com/in/hoffa/) while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
 
-## Prior art & legal context
-
-Community session trackers for cloud events have a complicated history. In October 2023, AWS sent cease & desist notices to third-party re:Invent session tracker developers — a situation that permanently destroyed one developer's work before AWS reversed course the same day.
-
-See [PRIOR-ART.md](./PRIOR-ART.md) for the full story.
