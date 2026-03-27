@@ -389,3 +389,8 @@ test('copy favorites link button is present', async () => {
 
   assert.equal(env.document.getElementById('copy-favorites-link').id, 'copy-favorites-link');
 });
+
+
+test('index.html exposes a visible version marker', () => {
+  assert.match(html, /Version:\s*[0-9a-f]{7,}/i);
+});
