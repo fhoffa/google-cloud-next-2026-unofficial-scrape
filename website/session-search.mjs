@@ -3,6 +3,61 @@ const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'words']);
+function sessionKey(session) {
+  const explicitId = String(session?.id || '').trim();
+  const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
+  if (explicitMatch) return explicitMatch[1];
+  const url = String(session?.url || '').trim();
+  const match = url.match(/\/session\/(\d+)(?:\/|$)/);
+  if (match) return match[1];
+  return explicitId || url;
+}
+
+const TIME_STEP_MINUTES = 15;
+const MAX_TIME_INDEX = 95;
+
+function timeIndexToLabel(index) {
+  const totalMinutes = Number(index) * TIME_STEP_MINUTES;
+  const hours24 = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  const suffix = hours24 >= 12 ? 'PM' : 'AM';
+  const hours12 = ((hours24 + 11) % 12) + 1;
+  return `${hours12}:${String(minutes).padStart(2, '0')} ${suffix}`;
+}
+
+function timeIndexToValue(index) {
+  const totalMinutes = Number(index) * TIME_STEP_MINUTES;
+  const hours = String(Math.floor(totalMinutes / 60)).padStart(2, '0');
+  const minutes = String(totalMinutes % 60).padStart(2, '0');
+  return `${hours}:${minutes}`;
+}
+
+function timeTextToIndex(value, fallback) {
+  const text = String(value || '').trim();
+  if (!text) return fallback;
+  const match = text.match(/^(\d{1,2}):(\d{2})(?:\s*([AP]M))?$/i);
+  if (!match) return fallback;
+  let hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  const suffix = (match[3] || '').toUpperCase();
+  if (suffix) {
+    if (hours === 12) hours = 0;
+    if (suffix === 'PM') hours += 12;
+  }
+  return Math.max(0, Math.min(MAX_TIME_INDEX, Math.round(((hours * 60) + minutes) / TIME_STEP_MINUTES)));
+}
+
+function renderFilterPills(filters) {
+  const pills = [];
+  if (filters.q) pills.push({ key: 'q', label: `search: ${filters.q}` });
+  if (filters.speaker) pills.push({ key: 'speaker', label: `speaker: ${filters.speaker}` });
+  if (filters.topic) pills.push({ key: 'topic', label: `topic: ${filters.topic}` });
+  if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
+  if (filters.start_after || filters.start_before) pills.push({ key: 'time', label: `time: ${filters.start_after || 'start'} – ${filters.start_before || 'end'}` });
+  if (filters.view === 'favorites') pills.push({ key: 'favorites', label: 'favorites' });
+  return pills.map((pill) => `<button class="filter-pill" type="button" data-clear-filter="${pill.key}">${escHtml(pill.label)} ×</button>`).join('');
+}
+
 const STOP_WORDS = new Set([
   'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'ai', 'cloud', 'google', 'next', 'session', 'sessions'
 ]);
@@ -58,7 +113,7 @@ export function filterSessions(sessions, filters) {
   const startBefore = filters.start_before || '';
 
   return sessions.filter((session) => {
-    if (filters.view === 'favorites' && !favoriteIds.has(String(session.id || session.url || ''))) return false;
+    if (filters.view === 'favorites' && !favoriteIds.has(sessionKey(session))) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
     const startTime = session.start_time_text || '';
@@ -132,7 +187,7 @@ function speakerStats(sessions) {
       if (!bySpeaker.has(name)) bySpeaker.set(name, { name, company: speaker.company || '', count: 0, sessions: [] });
       const entry = bySpeaker.get(name);
       entry.count += 1;
-      entry.sessions.push({ title: session.title, url: session.url || '', id: String(session.id || session.url || '') });
+      entry.sessions.push({ title: session.title, url: session.url || '', id: sessionKey(session) });
       if (!entry.company && speaker.company) entry.company = speaker.company;
     }
   }
@@ -162,7 +217,7 @@ function renderTabs(activeView) {
 
 function renderCards(sessions, q, favoriteIds, expandedIds) {
   return sessions.map((session) => {
-    const sessionId = String(session.id || session.url || '');
+    const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
     const speakers = (session.speakers || []).map((speaker) => `
@@ -171,7 +226,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
         <button class="speaker-link" type="button" data-speaker-name="${escHtml(speaker.name || '')}">${escHtml(speaker.name || '')}</button>${speaker.company ? ` <span style="opacity:.65;font-size:.72rem">· </span><button class="company-link" type="button" data-company-name="${escHtml(speaker.company)}">${escHtml(speaker.company)}</button>` : ''}
       </span>
     `).join('');
-    const topics = (session.topics || []).slice(0, 5).map((topic) => `<span class="topic-tag">${escHtml(topic)}</span>`).join('');
+    const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
     return `<div class="card" data-session-id="${escHtml(sessionId)}">
@@ -238,6 +293,10 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
   const topicSelect = document.getElementById('topic-filter');
+  const activeFilters = document.getElementById('active-filters');
+  const timeRangeStart = document.getElementById('time-range-start');
+  const timeRangeEnd = document.getElementById('time-range-end');
+  const timeRangeLabel = document.getElementById('time-range-label');
   const qClearBtn = document.getElementById('q-clear');
   const speakerClearBtn = document.getElementById('speaker-clear');
   const sortSelect = document.getElementById('sort-filter');
@@ -251,14 +310,17 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
-  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map(String));
-  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean);
+  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
+  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
+  try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...storedFavorites])); } catch {}
   qInput.value = state.q;
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
   if (startAfterInput) startAfterInput.value = state.start_after;
   if (startBeforeInput) startBeforeInput.value = state.start_before;
+  if (timeRangeStart) timeRangeStart.value = String(timeTextToIndex(state.start_after, 0));
+  if (timeRangeEnd) timeRangeEnd.value = String(timeTextToIndex(state.start_before, MAX_TIME_INDEX));
   if (favoriteToggle) favoriteToggle.checked = state.view === 'favorites';
   applyDaySelection(dayPills, state.day);
 
@@ -277,7 +339,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_after: startAfterInput?.value || '',
       start_before: startBeforeInput?.value || '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
-      sessionids: [...favoriteIds].join(','),
+      sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
       company: '',
     };
   }
@@ -292,12 +354,18 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   function syncInputClearButtons() {
     if (qClearBtn) qClearBtn.classList[qInput.value ? 'add' : 'remove']('visible');
     if (speakerClearBtn) speakerClearBtn.classList[speakerInput.value ? 'add' : 'remove']('visible');
+    if (timeRangeLabel) {
+      const start = Number(timeRangeStart?.value || 0);
+      const end = Number(timeRangeEnd?.value || MAX_TIME_INDEX);
+      timeRangeLabel.textContent = (start === 0 && end === MAX_TIME_INDEX) ? 'All times' : `${timeIndexToLabel(start)} – ${timeIndexToLabel(end)}`;
+    }
   }
 
   function render() {
     const filters = currentFilters();
     const filtered = sortSessions(filterSessions(sessions, filters), filters.sort);
     syncInputClearButtons();
+    if (activeFilters) activeFilters.innerHTML = renderFilterPills(filters);
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
@@ -355,6 +423,13 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         render();
       });
     }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.topic-link') : []) {
+      button.addEventListener('click', () => {
+        topicSelect.value = button.dataset.topicName || '';
+        activeView = DEFAULT_VIEW;
+        render();
+      });
+    }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.company-link') : []) {
       button.addEventListener('click', () => {
         qInput.value = '';
@@ -366,7 +441,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: [...favoriteIds].join(','), company: button.dataset.companyName || '' }));
+        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
         render();
       });
     }
@@ -410,6 +485,30 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
   [qInput, speakerInput].forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
   [topicSelect, sortSelect, startAfterInput, startBeforeInput, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
+  [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
+    let start = Number(timeRangeStart.value);
+    let end = Number(timeRangeEnd.value);
+    if (start > end) {
+      if (input === timeRangeStart) end = start; else start = end;
+      timeRangeStart.value = String(start);
+      timeRangeEnd.value = String(end);
+    }
+    if (startAfterInput) startAfterInput.value = start === 0 ? '' : timeIndexToLabel(start);
+    if (startBeforeInput) startBeforeInput.value = end === MAX_TIME_INDEX ? '' : timeIndexToLabel(end);
+    render();
+  }));
+  activeFilters?.addEventListener('click', (event) => {
+    const key = event?.target?.dataset?.clearFilter;
+    if (!key) return;
+    if (key === 'q') qInput.value = '';
+    if (key === 'speaker') speakerInput.value = '';
+    if (key === 'topic') topicSelect.value = '';
+    if (key === 'day') applyDaySelection(dayPills, '');
+    if (key === 'time') { if (timeRangeStart) timeRangeStart.value = '0'; if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
+    if (key === 'favorites' && favoriteToggle) favoriteToggle.checked = false;
+    render();
+  });
+
   qClearBtn?.addEventListener('click', () => {
     qInput.value = '';
     render();
@@ -434,7 +533,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   });
   copyFavoritesBtn?.addEventListener('click', async () => {
     const url = new URL(location.href);
-    url.search = buildSearchFromFilters({ ...currentFilters(), view: 'favorites', sessionids: [...favoriteIds].join(',') });
+    url.search = buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', company: '', view: 'favorites', sessionids: [...favoriteIds].map((id) => sessionKey({ id, url: id })).join(',') });
     const text = url.toString();
     try { if (globalThis.navigator?.clipboard?.writeText) await globalThis.navigator.clipboard.writeText(text); } catch {}
   });

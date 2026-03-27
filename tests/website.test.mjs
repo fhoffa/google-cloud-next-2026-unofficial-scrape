@@ -139,6 +139,10 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'q-clear' }));
   document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
+  document.register(new FakeElement({ id: 'active-filters' }));
+  document.register(new FakeElement({ id: 'time-range-start', value: '0' }));
+  document.register(new FakeElement({ id: 'time-range-end', value: '95' }));
+  document.register(new FakeElement({ id: 'time-range-label' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'start-after' }));
   document.register(new FakeElement({ id: 'start-before' }));
@@ -279,7 +283,7 @@ test('changing filters updates the URL and clear resets filters and query params
 
 
 test('favorites can be shared and filtered', async () => {
-  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&favorites=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -359,7 +363,7 @@ test('speaker and company controls are rendered', async () => {
 });
 
 test('compact sessionids favorites URL hydrates', async () => {
-  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&sessionids=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -460,4 +464,66 @@ test('session and speaker filters expose quick clear controls', async () => {
   await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
   assert.equal(env.document.getElementById('q-clear').classList.contains('visible'), true);
   assert.equal(env.document.getElementById('speaker-clear').classList.contains('visible'), true);
+});
+
+
+test('stored favorites stay local and do not rewrite homepage URL', async () => {
+  const env = createEnvironment('');
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: {
+      getItem: () => JSON.stringify(['https://www.googlecloudevents.com/next-vegas/session/3920404/adk-a2a-in-action']),
+      setItem: () => {},
+    },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+  assert.equal(env.location.search, '');
+});
+
+
+test('topic tags are clickable buttons and active filters render pills', async () => {
+  const env = createEnvironment('?topic=Security');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /topic-link/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /filter-pill/);
+});
+
+test('time range sliders update the visible label', async () => {
+  const env = createEnvironment();
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  env.document.getElementById('time-range-start').value = '36';
+  env.document.getElementById('time-range-end').value = '44';
+  env.document.getElementById('time-range-start').dispatchEvent({ type: 'input' });
+  assert.match(env.document.getElementById('time-range-label').textContent, /9:00 AM|9:00 PM|All times|6:00 AM/);
+});
+
+
+test('copy favorites link uses compact numeric session ids only', async () => {
+  const env = createEnvironment('?day=Friday,%20April%2024,%202026');
+  let copied = '';
+  Object.defineProperty(globalThis, 'navigator', { value: { clipboard: { writeText: async (text) => { copied = text; } } }, configurable: true });
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: {
+      getItem: () => JSON.stringify([
+        'https://www.googlecloudevents.com/next-vegas/session/3913070/govern-your-agents-architecting-a-secure-agentic-ecosystem-with-vertex-ai',
+        '3920154'
+      ]),
+      setItem: () => {},
+    },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+  await env.document.getElementById('copy-favorites-link').click();
+  assert.match(copied, /sessionids=3913070%2C3920154|sessionids=3913070,3920154/);
+  assert.doesNotMatch(copied, /sessionids=.*https%3A/i);
+  assert.doesNotMatch(copied, /[?&]day=/);
 });
