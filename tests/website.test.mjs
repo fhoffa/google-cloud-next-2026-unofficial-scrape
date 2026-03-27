@@ -136,6 +136,8 @@ function createEnvironment(search = '') {
 
   document.register(new FakeElement({ id: 'q' }));
   document.register(new FakeElement({ id: 'speaker' }));
+  document.register(new FakeElement({ id: 'exclude' }));
+  document.register(new FakeElement({ id: 'exclude-clear' }));
   document.register(new FakeElement({ id: 'q-clear' }));
   document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
@@ -618,4 +620,45 @@ test('top words merges an obvious plural cleanup batch', async () => {
   assert.doesNotMatch(appHtml, /data-word="databases"/i);
   assert.doesNotMatch(appHtml, /data-word="developers"/i);
   assert.doesNotMatch(appHtml, /data-word="leaders"/i);
+});
+
+test('exclude filter hides matching sessions and is reflected in URL and active pills', async () => {
+  const env = createEnvironment('?exclude=AI');
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const resultCount = env.document.getElementById('result-count').textContent;
+  const [shown, total] = resultCount.match(/\d[\d,]*/g).map((n) => Number(n.replace(/,/g, '')));
+
+  assert.equal(env.document.getElementById('exclude').value, 'AI');
+  assert.ok(shown < total, `exclude=AI should hide some sessions (got ${shown} of ${total})`);
+  assert.match(env.location.search, /exclude=AI/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /exclude: AI/);
+
+  // clear-btn resets the exclude input
+  env.document.getElementById('clear-btn').click();
+  assert.equal(env.document.getElementById('exclude').value, '');
+  assert.doesNotMatch(env.location.search, /exclude/);
+});
+
+test('exclude filter uses whole-word matching so "ai" does not exclude sessions with words like "aim"', async () => {
+  const { filterSessions } = await import('../website/session-search.mjs');
+  const sessions = [
+    { title: 'Mainframe migration guide', description: 'Contains aim andrain', topics: [], speakers: [] },
+    { title: 'AI for everyone', description: 'This is about AI', topics: [], speakers: [] },
+    { title: 'Training on data', description: 'Contains aim but not the keyword', topics: [], speakers: [] },
+  ];
+  const filters = { q: '', exclude: 'ai', speaker: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', company: '', view: 'sessions' };
+  const result = filterSessions(sessions, filters);
+  assert.equal(result.length, 2, 'only the session with standalone "AI" should be excluded');
+  assert.ok(result.some((s) => s.title === 'Mainframe migration guide'), 'mainframe session should remain');
+  assert.ok(result.some((s) => s.title === 'Training on data'), 'training session should remain');
+  assert.ok(!result.some((s) => s.title === 'AI for everyone'), 'AI session should be excluded');
 });
