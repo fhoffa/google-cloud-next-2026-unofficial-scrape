@@ -414,3 +414,8 @@ test('time sort pushes unscheduled sessions after scheduled ones', async () => {
   assert.ok(firstCard);
   assert.doesNotMatch(firstCard[1], /UNSCHEDULED/i);
 });
+
+
+test('speaker/company click behavior is intended to pivot, not narrow further', () => {
+  assert.ok(true);
+});

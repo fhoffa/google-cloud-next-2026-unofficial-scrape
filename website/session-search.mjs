@@ -312,7 +312,14 @@ export async function initSessionSearch({
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-link') : []) {
       button.addEventListener('click', () => {
+        qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        applyDaySelection(dayPills, '');
         render();
       });
     }
@@ -320,8 +327,24 @@ export async function initSessionSearch({
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = '';
-        const next = currentFilters();
-        history.replaceState(null, '', buildSearchFromFilters({ ...next, company: button.dataset.companyName || '' }));
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        applyDaySelection(dayPills, '');
+        history.replaceState(null, '', buildSearchFromFilters({
+          q: '',
+          speaker: '',
+          topic: '',
+          day: '',
+          sort: DEFAULT_SORT,
+          start_after: '',
+          start_before: '',
+          view: '',
+          sessionids: [...favoriteIds].join(','),
+          company: button.dataset.companyName || '',
+        }));
         render();
       });
     }
