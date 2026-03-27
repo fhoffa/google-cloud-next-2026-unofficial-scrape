@@ -501,3 +501,29 @@ test('time range sliders update the visible label', async () => {
   env.document.getElementById('time-range-start').dispatchEvent({ type: 'input' });
   assert.match(env.document.getElementById('time-range-label').textContent, /9:00 AM|9:00 PM|All times|6:00 AM/);
 });
+
+
+test('copy favorites link uses compact numeric session ids only', async () => {
+  const env = createEnvironment('?day=Friday,%20April%2024,%202026');
+  let copied = '';
+  Object.defineProperty(globalThis, 'navigator', { value: { clipboard: { writeText: async (text) => { copied = text; } } }, configurable: true });
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: {
+      getItem: () => JSON.stringify([
+        'https://www.googlecloudevents.com/next-vegas/session/3913070/govern-your-agents-architecting-a-secure-agentic-ecosystem-with-vertex-ai',
+        '3920154'
+      ]),
+      setItem: () => {},
+    },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+  await env.document.getElementById('copy-favorites-link').click();
+  assert.match(copied, /sessionids=3913070%2C3920154|sessionids=3913070,3920154/);
+  assert.doesNotMatch(copied, /sessionids=.*https%3A/i);
+  assert.doesNotMatch(copied, /[?&]day=/);
+});

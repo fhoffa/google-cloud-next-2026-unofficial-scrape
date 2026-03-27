@@ -5,11 +5,12 @@ const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'words']);
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
-  if (explicitId) return explicitId;
+  const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
+  if (explicitMatch) return explicitMatch[1];
   const url = String(session?.url || '').trim();
   const match = url.match(/\/session\/(\d+)(?:\/|$)/);
   if (match) return match[1];
-  return url;
+  return explicitId || url;
 }
 
 const TIME_STEP_MINUTES = 15;
@@ -310,8 +311,9 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   const state = readFiltersFromSearch(location.search);
   const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
-  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean);
+  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
+  try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...storedFavorites])); } catch {}
   qInput.value = state.q;
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
@@ -531,7 +533,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   });
   copyFavoritesBtn?.addEventListener('click', async () => {
     const url = new URL(location.href);
-    url.search = buildSearchFromFilters({ ...currentFilters(), view: 'favorites', sessionids: [...favoriteIds].join(',') });
+    url.search = buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', company: '', view: 'favorites', sessionids: [...favoriteIds].map((id) => sessionKey({ id, url: id })).join(',') });
     const text = url.toString();
     try { if (globalThis.navigator?.clipboard?.writeText) await globalThis.navigator.clipboard.writeText(text); } catch {}
   });
