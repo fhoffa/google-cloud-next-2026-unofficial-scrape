@@ -569,3 +569,12 @@ test('top words drops common boilerplate words and trailing punctuation noise', 
   assert.doesNotMatch(appHtml, /data-word="only\."/);
   assert.match(appHtml, /data-word="ai"/);
 });
+
+
+test('top words merges obvious variants like llm and llms', async () => {
+  const env = createEnvironment('?q=llm&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.match(appHtml, /data-word="llm"/);
+  assert.doesNotMatch(appHtml, /data-word="llms"/);
+});
