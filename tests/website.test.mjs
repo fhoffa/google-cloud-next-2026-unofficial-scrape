@@ -527,3 +527,13 @@ test('copy favorites link uses compact numeric session ids only', async () => {
   assert.doesNotMatch(copied, /sessionids=.*https%3A/i);
   assert.doesNotMatch(copied, /[?&]day=/);
 });
+
+
+test('top companies tab renders clickable companies and session links', async () => {
+  const env = createEnvironment('?view=companies');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Top companies/);
+  assert.match(appHtml, /company-summary-link/);
+  assert.match(appHtml, /company-session-link/);
+});
