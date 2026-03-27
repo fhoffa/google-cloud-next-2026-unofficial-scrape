@@ -6,8 +6,9 @@ import path from 'node:path';
 const BASE = 'https://www.googlecloudevents.com';
 const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
 const OUT_DIR = path.resolve('sessions');
-const OUT_YAML = path.join(OUT_DIR, 'sessions.yaml');
-const OUT_JSON = path.join(OUT_DIR, 'sessions.json');
+const LATEST_YAML = path.join(OUT_DIR, 'latest.yaml');
+const LATEST_JSON = path.join(OUT_DIR, 'latest.json');
+const SNAPSHOTS_DIR = path.join(OUT_DIR, 'snapshots');
 const CACHE_DIR = path.join(OUT_DIR, 'cache');
 
 const CONFIG = {
@@ -36,6 +37,10 @@ async function politeDelay() {
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
+}
+
+function snapshotStamp(isoString) {
+  return isoString.replace(/[:]/g, '-').replace(/\.\d{3}Z$/, 'Z');
 }
 
 async function fetchText(url, { cacheKey = null } = {}) {
@@ -387,6 +392,7 @@ export {
 
 async function main() {
   await ensureDir(OUT_DIR);
+  await ensureDir(SNAPSHOTS_DIR);
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
   const { pages, sessionUrls } = await collectLibraryPages();
   const selectedUrls = CONFIG.maxSessions ? sessionUrls.slice(0, CONFIG.maxSessions) : sessionUrls;
@@ -406,15 +412,28 @@ async function main() {
 
   sessions.sort((a, b) => a.title.localeCompare(b.title));
 
-  await fs.writeFile(
-    OUT_JSON,
-    JSON.stringify({ scraped_at: new Date().toISOString(), count: sessions.length, library_pages: pages.length, sessions }, null, 2),
-  );
-  await fs.writeFile(OUT_YAML, toYaml(sessions), 'utf8');
+  const scrapedAt = new Date().toISOString();
+  const payload = {
+    scraped_at: scrapedAt,
+    source_url: LIBRARY_URL,
+    count: sessions.length,
+    library_pages: pages.length,
+    sessions,
+  };
+  const stamp = snapshotStamp(scrapedAt);
+  const snapshotJson = path.join(SNAPSHOTS_DIR, `${stamp}.json`);
+  const snapshotYaml = path.join(SNAPSHOTS_DIR, `${stamp}.yaml`);
+
+  await fs.writeFile(LATEST_JSON, JSON.stringify(payload, null, 2));
+  await fs.writeFile(LATEST_YAML, toYaml(sessions), 'utf8');
+  await fs.writeFile(snapshotJson, JSON.stringify(payload, null, 2));
+  await fs.writeFile(snapshotYaml, toYaml(sessions), 'utf8');
 
   console.log('Wrote:');
-  console.log(`- ${OUT_JSON}`);
-  console.log(`- ${OUT_YAML}`);
+  console.log(`- ${LATEST_JSON}`);
+  console.log(`- ${LATEST_YAML}`);
+  console.log(`- ${snapshotJson}`);
+  console.log(`- ${snapshotYaml}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
