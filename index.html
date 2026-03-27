@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Cloud Next 2026 — Session Search</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a73e8;
+      --blue-dark: #1557b0;
+      --blue-light: #e8f0fe;
+      --green: #34a853;
+      --yellow: #fbbc04;
+      --red: #ea4335;
+      --gray-100: #f8f9fa;
+      --gray-200: #e8eaed;
+      --gray-400: #9aa0a6;
+      --gray-600: #5f6368;
+      --gray-800: #3c4043;
+      --gray-900: #202124;
+    }
+
+    body {
+      font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--gray-100);
+      color: var(--gray-900);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--blue);
+      color: white;
+      padding: 24px 20px 28px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .rainbow-bar {
+      height: 4px;
+      background: linear-gradient(to right, var(--blue) 0%, var(--red) 25%, var(--yellow) 50%, var(--green) 75%, var(--blue) 100%);
+    }
+
+    .controls {
+      max-width: 1100px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      position: relative;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      pointer-events: none;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px 10px 40px;
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      font-size: 0.95rem;
+      background: white;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .filter-row label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      white-space: nowrap;
+    }
+
+    select {
+      padding: 8px 32px 8px 12px;
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      font-size: 0.88rem;
+      background: white;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239aa0a6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      transition: border-color 0.15s;
+    }
+
+    select:focus { border-color: var(--blue); }
+
+    .day-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      color: var(--gray-800);
+    }
+
+    .pill:hover { border-color: var(--blue); color: var(--blue); }
+    .pill.active { background: var(--blue); border-color: var(--blue); color: white; }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+    }
+
+    .result-count {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+    }
+
+    .clear-btn {
+      font-size: 0.82rem;
+      color: var(--blue);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .clear-btn:hover { background: var(--blue-light); }
+
+    .grid {
+      max-width: 1100px;
+      margin: 16px auto 40px;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-1px);
+    }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      line-height: 1.35;
+    }
+
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card-title a:hover { color: var(--blue); }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    .card-meta .dot::before { content: '·'; margin: 0 2px; }
+
+    .meta-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-speakers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .speaker-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--gray-100);
+      border-radius: 20px;
+      padding: 3px 10px 3px 4px;
+      font-size: 0.78rem;
+      color: var(--gray-800);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.1s;
+    }
+
+    .speaker-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+    .speaker-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .topic-tag {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .topic-tag:hover { background: #c5d8fc; }
+
+    .no-results {
+      max-width: 1100px;
+      margin: 60px auto;
+      text-align: center;
+      color: var(--gray-400);
+      padding: 0 16px;
+    }
+
+    .no-results svg { display: block; margin: 0 auto 16px; }
+
+    .loading {
+      max-width: 1100px;
+      margin: 80px auto;
+      text-align: center;
+      color: var(--gray-400);
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--gray-200);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    footer a { color: var(--blue); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Google Cloud Next 2026 — Session Search</h1>
+  <p>Las Vegas · April 21–24, 2026 &nbsp;·&nbsp; <span id="header-count">…</span> sessions</p>
+</header>
+<div class="rainbow-bar"></div>
+
+<div class="controls">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="q" placeholder="Search sessions…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+      </svg>
+      <input type="text" id="speaker" placeholder="Search by speaker…" autocomplete="off" spellcheck="false">
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <label>Day:</label>
+    <div class="day-pills">
+      <button class="pill active" data-day="">All days</button>
+      <button class="pill" data-day="Tuesday, April 21, 2026">Tue Apr 21</button>
+      <button class="pill" data-day="Wednesday, April 22, 2026">Wed Apr 22</button>
+      <button class="pill" data-day="Thursday, April 23, 2026">Thu Apr 23</button>
+      <button class="pill" data-day="Friday, April 24, 2026">Fri Apr 24</button>
+    </div>
+
+    <select id="topic-filter">
+      <option value="">All topics</option>
+    </select>
+
+    <select id="sort-filter">
+      <option value="time">Sort: Date & time</option>
+      <option value="title">Sort: Title A–Z</option>
+    </select>
+  </div>
+</div>
+
+<div class="stats-row">
+  <span class="result-count" id="result-count"></span>
+  <button class="clear-btn" id="clear-btn">Clear filters</button>
+</div>
+
+<div id="app">
+  <div class="loading"><div class="spinner"></div>Loading sessions…</div>
+</div>
+
+<footer>
+  Unofficial scrape &mdash; data from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
+</footer>
+
+<script>
+(async () => {
+  const app = document.getElementById('app');
+  const qInput = document.getElementById('q');
+  const speakerInput = document.getElementById('speaker');
+  const topicSelect = document.getElementById('topic-filter');
+  const sortSelect = document.getElementById('sort-filter');
+  const resultCount = document.getElementById('result-count');
+  const headerCount = document.getElementById('header-count');
+  const clearBtn = document.getElementById('clear-btn');
+  const dayPills = document.querySelectorAll('.pill[data-day]');
+
+  let sessions = [];
+  let activePill = '';
+
+  // Load data
+  try {
+    const res = await fetch('sessions/latest.json');
+    const data = await res.json();
+    sessions = data.sessions || [];
+    headerCount.textContent = sessions.length.toLocaleString();
+  } catch(e) {
+    app.innerHTML = `<div class="no-results"><p>Failed to load sessions. Run a local server to preview.</p></div>`;
+    return;
+  }
+
+  // Populate topic filter
+  const allTopics = [...new Set(sessions.flatMap(s => s.topics || []))].sort();
+  // Group topics roughly
+  const typeTopics = ['Keynotes','Breakouts','Workshops','Lightning Talks','Birds of a Feather','Demos','Spotlights','Solution Talks','Discussion Groups','Lounge Sessions','Capture the Flag','Developer Meetups','Expo Experiences','Partner Summit Breakouts','Partner Summit Lightning Talks'];
+  const techTopics = ['Agents','Applied AI','Gemini','Vertex AI','Open Models','App Dev','APIs','Firebase','Mobile and Web','Data Analytics','Databases','Compute','Serverless','Cloud Runtimes','Kubernetes','Networking','Storage','Security','DevOps','CI/CD','Observability','Multicloud','Migration','Cost Optimization','Architecture'];
+  const audienceTopics = ['Application Developers','Data Analysts','Data Engineers','Data Scientists','Database Professionals','Platform Engineers','SREs','IT Ops','Infrastructure Architects & Admins','IT Managers & Business Leaders','Security Professionals','Executive','Small IT Teams'];
+  const industryTopics = ['Financial Services','Healthcare & Life Sciences','Retail','Manufacturing','Media & Entertainment','Government','Telecommunications','Education','Energy','Consumer & Packaged Goods','Supply Chain & Logistics','Games','Public Sector','Startup','Sustainability'];
+  const levelTopics = ['Introductory','Technical','Advanced Technical','General'];
+
+  const groups = [
+    { label: 'Session type', items: typeTopics },
+    { label: 'Technology', items: techTopics },
+    { label: 'Audience', items: audienceTopics },
+    { label: 'Industry', items: industryTopics },
+    { label: 'Level', items: levelTopics },
+  ];
+
+  for (const group of groups) {
+    const available = group.items.filter(t => allTopics.includes(t));
+    if (!available.length) continue;
+    const og = document.createElement('optgroup');
+    og.label = group.label;
+    for (const t of available) {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = t;
+      og.appendChild(o);
+    }
+    topicSelect.appendChild(og);
+  }
+  // Add remaining uncategorized
+  const categorized = new Set(groups.flatMap(g => g.items));
+  const others = allTopics.filter(t => !categorized.has(t));
+  if (others.length) {
+    const og = document.createElement('optgroup');
+    og.label = 'Other';
+    for (const t of others) {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = t;
+      og.appendChild(o);
+    }
+    topicSelect.appendChild(og);
+  }
+
+  // Day pills
+  dayPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      dayPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activePill = pill.dataset.day;
+      render();
+    });
+  });
+
+  // Inputs
+  let debounce;
+  [qInput, speakerInput].forEach(el => {
+    el.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(render, 120); });
+  });
+  topicSelect.addEventListener('change', render);
+  sortSelect.addEventListener('change', render);
+  clearBtn.addEventListener('click', () => {
+    qInput.value = '';
+    speakerInput.value = '';
+    topicSelect.value = '';
+    sortSelect.value = 'time';
+    activePill = '';
+    dayPills.forEach(p => p.classList.remove('active'));
+    dayPills[0].classList.add('active');
+    render();
+  });
+
+  function highlight(text, term) {
+    if (!term) return escHtml(text);
+    const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+    return escHtml(text).replace(re, '<mark style="background:#fff3cd;border-radius:2px">$1</mark>');
+  }
+
+  function escHtml(s) {
+    return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function initials(name) {
+    return (name||'').split(' ').map(w=>w[0]||'').join('').slice(0,2).toUpperCase();
+  }
+
+  function avatarColor(name) {
+    const colors = ['#1a73e8','#34a853','#ea4335','#fbbc04','#9c27b0','#ff5722','#00bcd4','#607d8b'];
+    let h = 0;
+    for (let i=0; i<name.length; i++) h = (h*31 + name.charCodeAt(i)) & 0xffffffff;
+    return colors[Math.abs(h) % colors.length];
+  }
+
+  function render() {
+    const q = qInput.value.trim().toLowerCase();
+    const spQ = speakerInput.value.trim().toLowerCase();
+    const topic = topicSelect.value;
+    const day = activePill;
+    const sort = sortSelect.value;
+
+    let filtered = sessions.filter(s => {
+      if (day && s.date_text !== day) return false;
+      if (topic && !(s.topics||[]).includes(topic)) return false;
+      if (spQ) {
+        const found = (s.speakers||[]).some(sp => sp.name.toLowerCase().includes(spQ) || (sp.company||'').toLowerCase().includes(spQ));
+        if (!found) return false;
+      }
+      if (q) {
+        const haystack = `${s.title} ${s.description} ${(s.speakers||[]).map(sp=>sp.name).join(' ')} ${(s.topics||[]).join(' ')} ${s.room||''}`.toLowerCase();
+        if (!q.split(/\s+/).every(word => haystack.includes(word))) return false;
+      }
+      return true;
+    });
+
+    if (sort === 'title') {
+      filtered.sort((a,b) => a.title.localeCompare(b.title));
+    } else {
+      filtered.sort((a,b) => {
+        const da = a.start_at || a.date_text || '';
+        const db = b.start_at || b.date_text || '';
+        return da.localeCompare(db);
+      });
+    }
+
+    resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
+
+    if (!filtered.length) {
+      app.innerHTML = `<div class="no-results">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No sessions match your filters.</p>
+      </div>`;
+      return;
+    }
+
+    const cards = filtered.map(s => {
+      const speakers = (s.speakers||[]).map(sp => `
+        <span class="speaker-chip" onclick="document.getElementById('speaker').value=${JSON.stringify(sp.name)};document.getElementById('speaker').dispatchEvent(new Event('input'))">
+          <span class="speaker-avatar" style="background:${avatarColor(sp.name)}">${escHtml(initials(sp.name))}</span>
+          <span>${escHtml(sp.name)}${sp.company ? ` <span style="opacity:.65;font-size:.72rem">· ${escHtml(sp.company)}</span>` : ''}</span>
+        </span>
+      `).join('');
+
+      const topics = (s.topics||[]).slice(0,5).map(t => `
+        <span class="topic-tag" onclick="document.getElementById('topic-filter').value=${JSON.stringify(t)};document.getElementById('topic-filter').dispatchEvent(new Event('change'))">${escHtml(t)}</span>
+      `).join('');
+
+      const timeStr = s.start_time_text && s.end_time_text
+        ? `${s.start_time_text}–${s.end_time_text}`
+        : (s.start_time_text || '');
+
+      const dateShort = s.date_text ? s.date_text.replace(', 2026','').replace('day,','') : '';
+
+      return `<div class="card">
+        <div class="card-title">${s.url
+          ? `<a href="${escHtml(s.url)}" target="_blank" rel="noopener">${highlight(s.title, q)}</a>`
+          : highlight(s.title, q)
+        }</div>
+        <div class="card-meta">
+          ${dateShort ? `<span class="meta-icon">${escHtml(dateShort)}</span>` : ''}
+          ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
+          ${s.room ? `<span class="dot meta-icon">${escHtml(s.room)}</span>` : ''}
+        </div>
+        ${s.description ? `<div class="card-desc">${highlight(s.description, q)}</div>` : ''}
+        ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
+        ${topics ? `<div class="card-topics">${topics}</div>` : ''}
+      </div>`;
+    }).join('');
+
+    app.innerHTML = `<div class="grid">${cards}</div>`;
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>
