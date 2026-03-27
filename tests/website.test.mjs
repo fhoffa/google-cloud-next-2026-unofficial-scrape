@@ -139,6 +139,10 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'q-clear' }));
   document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
+  document.register(new FakeElement({ id: 'active-filters' }));
+  document.register(new FakeElement({ id: 'time-range-start', value: '0' }));
+  document.register(new FakeElement({ id: 'time-range-end', value: '95' }));
+  document.register(new FakeElement({ id: 'time-range-label' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'start-after' }));
   document.register(new FakeElement({ id: 'start-before' }));
@@ -478,4 +482,22 @@ test('stored favorites stay local and do not rewrite homepage URL', async () => 
     clearTimeoutImpl: () => {},
   });
   assert.equal(env.location.search, '');
+});
+
+
+test('topic tags are clickable buttons and active filters render pills', async () => {
+  const env = createEnvironment('?topic=Security');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /topic-link/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /filter-pill/);
+});
+
+test('time range sliders update the visible label', async () => {
+  const env = createEnvironment();
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  env.document.getElementById('time-range-start').value = '36';
+  env.document.getElementById('time-range-end').value = '44';
+  env.document.getElementById('time-range-start').dispatchEvent({ type: 'input' });
+  assert.match(env.document.getElementById('time-range-label').textContent, /9:00 AM|9:00 PM|All times|6:00 AM/);
 });
