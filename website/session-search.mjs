@@ -63,6 +63,7 @@ const STOP_WORDS = new Set([
 ]);
 const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
 const WORD_NORMALIZATION = new Map([['llms', 'llm'], ['models', 'model']]);
+const WORD_DISPLAY = new Map([['llm', 'LLM/LLMs'], ['model', 'model/models']]);
 
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
@@ -215,7 +216,9 @@ function speakerStats(sessions) {
 
 function wordStats(sessions) {
   const counts = new Map();
+  const sessionSets = new Map();
   for (const session of sessions) {
+    const sessionId = sessionKey(session) || session.url || session.title;
     const text = [session.title, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].join(' ').toLowerCase();
     for (const rawWord of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
       const cleanedWord = rawWord.replace(/^[^a-z0-9+#+]+|[^a-z0-9+#+]+$/g, '');
@@ -223,9 +226,11 @@ function wordStats(sessions) {
       if (!word) continue;
       if ((word.length < 3 && !SHORT_WORD_ALLOWLIST.has(word)) || STOP_WORDS.has(word)) continue;
       counts.set(word, (counts.get(word) || 0) + 1);
+      if (!sessionSets.has(word)) sessionSets.set(word, new Set());
+      sessionSets.get(word).add(sessionId);
     }
   }
-  return [...counts.entries()].map(([word, count]) => ({ word, count })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 96);
+  return [...counts.entries()].map(([word, count]) => ({ word, count, sessionCount: sessionSets.get(word)?.size || 0, label: WORD_DISPLAY.get(word) || word })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 96);
 }
 
 function renderTabs(activeView) {
@@ -279,7 +284,7 @@ function renderCompaniesView(sessions) {
 
 function renderWordsView(sessions) {
   const words = wordStats(sessions);
-  return `<div class="word-cloud">${words.map((item) => `<button class="word-chip word-link word-size-${Math.min(5, Math.max(1, Math.ceil(item.count / 3)))}" type="button" data-word="${escHtml(item.word)}">${escHtml(item.word)} <small>${item.count}</small></button>`).join('')}</div>`;
+  return `<div class="word-cloud">${words.map((item) => `<button class="word-chip word-link word-size-${Math.min(5, Math.max(1, Math.ceil(item.count / 3)))}" type="button" data-word="${escHtml(item.word)}" title="${escHtml(`${item.count} mentions across ${item.sessionCount} sessions`)}">${escHtml(item.label)} <small>${item.count} / ${item.sessionCount}</small></button>`).join('')}</div>`;
 }
 
 function applyDaySelection(dayPills, day) {
