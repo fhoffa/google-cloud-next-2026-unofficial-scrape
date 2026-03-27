@@ -8,6 +8,7 @@ const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
 const OUT_DIR = path.resolve('sessions');
 const LATEST_YAML = path.join(OUT_DIR, 'latest.yaml');
 const LATEST_JSON = path.join(OUT_DIR, 'latest.json');
+const BY_DAY_DIR = path.join(OUT_DIR, 'by-day');
 const SNAPSHOTS_DIR = path.join(OUT_DIR, 'snapshots');
 const CACHE_DIR = path.join(OUT_DIR, 'cache');
 
@@ -440,6 +441,7 @@ export {
 
 async function main() {
   await ensureDir(OUT_DIR);
+  await ensureDir(BY_DAY_DIR);
   await ensureDir(SNAPSHOTS_DIR);
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
   const { pages, sessionUrls, buckets } = await collectLibraryPages();
@@ -474,22 +476,33 @@ async function main() {
     source_url: LIBRARY_URL,
     count: sessions.length,
     library_pages: pages.length,
+    bucket: CONFIG.bucket || '',
     sessions,
   };
   const stamp = snapshotStamp(scrapedAt);
-  const snapshotJson = path.join(SNAPSHOTS_DIR, `${stamp}.json`);
-  const snapshotYaml = path.join(SNAPSHOTS_DIR, `${stamp}.yaml`);
 
-  await fs.writeFile(LATEST_JSON, JSON.stringify(payload, null, 2));
-  await fs.writeFile(LATEST_YAML, toYaml(sessions), 'utf8');
-  await fs.writeFile(snapshotJson, JSON.stringify(payload, null, 2));
-  await fs.writeFile(snapshotYaml, toYaml(sessions), 'utf8');
-
-  console.log('Wrote:');
-  console.log(`- ${LATEST_JSON}`);
-  console.log(`- ${LATEST_YAML}`);
-  console.log(`- ${snapshotJson}`);
-  console.log(`- ${snapshotYaml}`);
+  if (CONFIG.bucket) {
+    const slug = bucketFileSlug(CONFIG.bucket);
+    const bucketJson = path.join(BY_DAY_DIR, `${slug}.json`);
+    const bucketYaml = path.join(BY_DAY_DIR, `${slug}.yaml`);
+    await fs.writeFile(bucketJson, JSON.stringify(payload, null, 2));
+    await fs.writeFile(bucketYaml, toYaml(sessions), 'utf8');
+    console.log('Wrote:');
+    console.log(`- ${bucketJson}`);
+    console.log(`- ${bucketYaml}`);
+  } else {
+    const snapshotJson = path.join(SNAPSHOTS_DIR, `${stamp}.json`);
+    const snapshotYaml = path.join(SNAPSHOTS_DIR, `${stamp}.yaml`);
+    await fs.writeFile(LATEST_JSON, JSON.stringify(payload, null, 2));
+    await fs.writeFile(LATEST_YAML, toYaml(sessions), 'utf8');
+    await fs.writeFile(snapshotJson, JSON.stringify(payload, null, 2));
+    await fs.writeFile(snapshotYaml, toYaml(sessions), 'utf8');
+    console.log('Wrote:');
+    console.log(`- ${LATEST_JSON}`);
+    console.log(`- ${LATEST_YAML}`);
+    console.log(`- ${snapshotJson}`);
+    console.log(`- ${snapshotYaml}`);
+  }
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
