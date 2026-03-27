@@ -49,3 +49,9 @@ npm run merge                                        # merge by-day/ files into 
 - This is unofficial and based on publicly available event pages.
 - The scraper is intentionally conservative: caching, retries, backoff, and one-at-a-time requests.
 - Some session types expose less metadata than others.
+
+## Prior art & legal context
+
+Community session trackers for cloud events have a complicated history. In October 2023, AWS sent cease & desist notices to third-party re:Invent session tracker developers — a situation that permanently destroyed one developer's work before AWS reversed course the same day.
+
+See [PRIOR-ART.md](./PRIOR-ART.md) for the full story.
