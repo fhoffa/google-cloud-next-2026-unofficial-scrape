@@ -433,3 +433,13 @@ test('sessions view renders top tabs', async () => {
   assert.match(appHtml, /Top speakers/);
   assert.match(appHtml, /Top words/);
 });
+
+
+test('top speakers view includes clickable speaker and session links', async () => {
+  const env = createEnvironment('?view=speakers');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /speaker-summary-link/);
+  assert.match(appHtml, /speaker-session-link/);
+  assert.match(appHtml, /target="_blank"/);
+});

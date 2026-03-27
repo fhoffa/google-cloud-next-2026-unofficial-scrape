@@ -132,7 +132,7 @@ function speakerStats(sessions) {
       if (!bySpeaker.has(name)) bySpeaker.set(name, { name, company: speaker.company || '', count: 0, sessions: [] });
       const entry = bySpeaker.get(name);
       entry.count += 1;
-      entry.sessions.push(session.title);
+      entry.sessions.push({ title: session.title, url: session.url || '', id: String(session.id || session.url || '') });
       if (!entry.company && speaker.company) entry.company = speaker.company;
     }
   }
@@ -191,7 +191,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
 
 function renderSpeakersView(sessions) {
   const speakers = speakerStats(sessions);
-  return `<div class="grid">${speakers.map((speaker) => `<div class="card speaker-summary-card"><div class="card-title">${escHtml(speaker.name)}</div><div class="card-meta">${speaker.company ? `<span class="meta-icon">${escHtml(speaker.company)}</span>` : ''}<span class="dot meta-icon">${speaker.count} sessions</span></div><div class="card-desc expanded">${speaker.sessions.slice(0, 6).map((title) => `• ${escHtml(title)}`).join('<br>')}</div></div>`).join('')}</div>`;
+  return `<div class="grid">${speakers.map((speaker) => `<div class="card speaker-summary-card"><div class="card-title"><button class="speaker-summary-link" type="button" data-speaker-name="${escHtml(speaker.name)}">${escHtml(speaker.name)}</button></div><div class="card-meta">${speaker.company ? `<span class="meta-icon">${escHtml(speaker.company)}</span>` : ''}<span class="dot meta-icon">${speaker.count} sessions</span></div><div class="card-desc expanded">${speaker.sessions.slice(0, 6).map((session) => `• ${session.url ? `<a class="speaker-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title)}`).join('<br>')}</div></div>`).join('')}</div>`;
 }
 
 function renderWordsView(sessions) {
@@ -320,6 +320,20 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       });
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-link') : []) {
+      button.addEventListener('click', () => {
+        qInput.value = '';
+        speakerInput.value = button.dataset.speakerName || '';
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        activeView = DEFAULT_VIEW;
+        applyDaySelection(dayPills, '');
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-summary-link') : []) {
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
