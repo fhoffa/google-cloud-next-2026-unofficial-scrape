@@ -6,8 +6,8 @@ Unofficial scraper/exporter for the Google Cloud Next 2026 session library.
 
 It crawls the paginated session library, fetches individual session pages, and exports:
 
-- `out/sessions.json`
-- `out/sessions.yaml`
+- `sessions/sessions.json`
+- `sessions/sessions.yaml`
 
 ## Fields
 

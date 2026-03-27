@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const BASE = 'https://www.googlecloudevents.com';
 const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
-const OUT_DIR = path.resolve('google-next-scraper/out');
+const OUT_DIR = path.resolve('google-cloud-next-2026-unofficial-scrape/sessions');
 const OUT_YAML = path.join(OUT_DIR, 'sessions.yaml');
 const OUT_JSON = path.join(OUT_DIR, 'sessions.json');
 const CACHE_DIR = path.join(OUT_DIR, 'cache');
