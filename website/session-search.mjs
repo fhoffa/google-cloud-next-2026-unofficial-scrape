@@ -50,6 +50,7 @@ function timeTextToIndex(value, fallback) {
 function renderFilterPills(filters) {
   const pills = [];
   if (filters.q) pills.push({ key: 'q', label: `search: ${filters.q}` });
+  if (filters.exclude) pills.push({ key: 'exclude', label: `exclude: ${filters.exclude}` });
   if (filters.speaker) pills.push({ key: 'speaker', label: `speaker: ${filters.speaker}` });
   if (filters.topic) pills.push({ key: 'topic', label: `topic: ${filters.topic}` });
   if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
@@ -77,6 +78,7 @@ export function readFiltersFromSearch(search) {
   const params = new URLSearchParams(String(search || '').replace(/^\?/, ''));
   return {
     q: params.get('q') || '',
+    exclude: params.get('exclude') || '',
     speaker: params.get('speaker') || '',
     topic: params.get('topic') || '',
     day: params.get('day') || '',
@@ -92,6 +94,7 @@ export function readFiltersFromSearch(search) {
 export function buildSearchFromFilters(filters) {
   const params = new URLSearchParams();
   if (filters.q) params.set('q', filters.q);
+  if (filters.exclude) params.set('exclude', filters.exclude);
   if (filters.speaker) params.set('speaker', filters.speaker);
   if (filters.topic) params.set('topic', filters.topic);
   if (filters.day) params.set('day', filters.day);
@@ -108,6 +111,7 @@ export function buildSearchFromFilters(filters) {
 export function filterSessions(sessions, filters) {
   const favoriteIds = new Set(String(filters.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean));
   const q = filters.q.trim().toLowerCase();
+  const exclude = filters.exclude.trim().toLowerCase();
   const speaker = filters.speaker.trim().toLowerCase();
   const company = (filters.company || '').trim().toLowerCase();
   const topic = filters.topic;
@@ -137,6 +141,10 @@ export function filterSessions(sessions, filters) {
     if (q) {
       const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
       if (!q.split(/\s+/).every((word) => haystack.includes(word))) return false;
+    }
+    if (exclude) {
+      const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
+      if (exclude.split(/\s+/).some((word) => haystack.includes(word))) return false;
     }
     return true;
   });
@@ -330,6 +338,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const timeRangeStart = document.getElementById('time-range-start');
   const timeRangeEnd = document.getElementById('time-range-end');
   const timeRangeLabel = document.getElementById('time-range-label');
+  const excludeInput = document.getElementById('exclude');
+  const excludeClearBtn = document.getElementById('exclude-clear');
   const qClearBtn = document.getElementById('q-clear');
   const speakerClearBtn = document.getElementById('speaker-clear');
   const sortSelect = document.getElementById('sort-filter');
@@ -348,6 +358,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...storedFavorites])); } catch {}
   qInput.value = state.q;
+  if (excludeInput) excludeInput.value = state.exclude;
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
   if (startAfterInput) startAfterInput.value = state.start_after;
@@ -365,6 +376,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   function currentFilters() {
     return {
       q: qInput.value.trim(),
+      exclude: excludeInput ? excludeInput.value.trim() : '',
       speaker: speakerInput.value.trim(),
       topic: topicSelect.value,
       day: dayPills.find((pill) => pill.classList.contains('active'))?.dataset.day || '',
@@ -386,6 +398,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   function syncInputClearButtons() {
     if (qClearBtn) qClearBtn.classList[qInput.value ? 'add' : 'remove']('visible');
+    if (excludeInput && excludeClearBtn) excludeClearBtn.classList[excludeInput.value ? 'add' : 'remove']('visible');
     if (speakerClearBtn) speakerClearBtn.classList[speakerInput.value ? 'add' : 'remove']('visible');
     if (timeRangeLabel) {
       const start = Number(timeRangeStart?.value || 0);
@@ -535,7 +548,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
-  [qInput, speakerInput].forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
+  [qInput, speakerInput, excludeInput].filter(Boolean).forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
   [topicSelect, sortSelect, startAfterInput, startBeforeInput, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
   [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
     let start = Number(timeRangeStart.value);
@@ -553,6 +566,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     const key = event?.target?.dataset?.clearFilter;
     if (!key) return;
     if (key === 'q') qInput.value = '';
+    if (key === 'exclude' && excludeInput) excludeInput.value = '';
     if (key === 'speaker') speakerInput.value = '';
     if (key === 'topic') topicSelect.value = '';
     if (key === 'day') applyDaySelection(dayPills, '');
@@ -565,6 +579,10 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     qInput.value = '';
     render();
   });
+  excludeClearBtn?.addEventListener('click', () => {
+    if (excludeInput) excludeInput.value = '';
+    render();
+  });
   speakerClearBtn?.addEventListener('click', () => {
     speakerInput.value = '';
     render();
@@ -572,6 +590,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   clearBtn?.addEventListener('click', () => {
     qInput.value = '';
+    if (excludeInput) excludeInput.value = '';
     speakerInput.value = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;

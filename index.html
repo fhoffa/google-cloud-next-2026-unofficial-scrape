@@ -572,6 +572,12 @@
       </svg>
       <input type="text" id="speaker" placeholder="Search by speaker…" autocomplete="off" spellcheck="false"><button class="input-clear-btn" id="speaker-clear" type="button" aria-label="Clear speaker search">×</button>
     </div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+      <input type="text" id="exclude" placeholder="Exclude keywords… (e.g. AI)" autocomplete="off" spellcheck="false"><button class="input-clear-btn" id="exclude-clear" type="button" aria-label="Clear exclude filter">×</button>
+    </div>
   </div>
 
   <div class="filter-row">
@@ -617,7 +623,7 @@
 <div id="app">
   <div class="loading"><div class="spinner"></div>Loading sessions…</div>
 </div>
-<div style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: 2026-03-27 19:06 UTC</div>
+<div style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: 2026-03-27 19:07 UTC</div>
 
 <script type="module">
   import { initSessionSearch } from './website/session-search.mjs';
