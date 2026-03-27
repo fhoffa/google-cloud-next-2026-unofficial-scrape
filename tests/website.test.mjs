@@ -443,3 +443,11 @@ test('top speakers view includes clickable speaker and session links', async () 
   assert.match(appHtml, /speaker-session-link/);
   assert.match(appHtml, /target="_blank"/);
 });
+
+
+test('top words view includes clickable words', async () => {
+  const env = createEnvironment('?view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /class="word-chip word-link/);
+});

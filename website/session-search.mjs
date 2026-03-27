@@ -148,7 +148,7 @@ function wordStats(sessions) {
       counts.set(word, (counts.get(word) || 0) + 1);
     }
   }
-  return [...counts.entries()].map(([word, count]) => ({ word, count })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 48);
+  return [...counts.entries()].map(([word, count]) => ({ word, count })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 96);
 }
 
 function renderTabs(activeView) {
@@ -196,7 +196,7 @@ function renderSpeakersView(sessions) {
 
 function renderWordsView(sessions) {
   const words = wordStats(sessions);
-  return `<div class="word-cloud">${words.map((item) => `<span class="word-chip word-size-${Math.min(5, Math.max(1, Math.ceil(item.count / 3)))}">${escHtml(item.word)} <small>${item.count}</small></span>`).join('')}</div>`;
+  return `<div class="word-cloud">${words.map((item) => `<button class="word-chip word-link word-size-${Math.min(5, Math.max(1, Math.ceil(item.count / 3)))}" type="button" data-word="${escHtml(item.word)}">${escHtml(item.word)} <small>${item.count}</small></button>`).join('')}</div>`;
 }
 
 function applyDaySelection(dayPills, day) {
@@ -362,6 +362,20 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         render();
       });
     }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.word-link') : []) {
+      button.addEventListener('click', () => {
+        qInput.value = button.dataset.word || '';
+        speakerInput.value = '';
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        activeView = DEFAULT_VIEW;
+        applyDaySelection(dayPills, '');
+        render();
+      });
+    }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.see-more-btn') : []) {
       button.addEventListener('click', () => {
         const id = button.dataset.sessionId;
@@ -386,7 +400,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
-  [qInput, speakerInput].forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { activeView = DEFAULT_VIEW; render(); }, 120); }));
+  [qInput, speakerInput].forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
   [topicSelect, sortSelect, startAfterInput, startBeforeInput, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
   clearBtn?.addEventListener('click', () => {
     qInput.value = '';
