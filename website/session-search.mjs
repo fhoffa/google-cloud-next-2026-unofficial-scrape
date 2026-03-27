@@ -135,7 +135,7 @@ function renderCards(sessions, q) {
 
     return `<div class="card">
       <div class="card-title">${session.url
-        ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)}</a>`
+        ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>`
         : highlight(session.title, q)
       }</div>
       <div class="card-meta">
