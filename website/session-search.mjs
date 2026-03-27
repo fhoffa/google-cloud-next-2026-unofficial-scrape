@@ -238,6 +238,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
   const topicSelect = document.getElementById('topic-filter');
+  const qClearBtn = document.getElementById('q-clear');
+  const speakerClearBtn = document.getElementById('speaker-clear');
   const sortSelect = document.getElementById('sort-filter');
   const startAfterInput = document.getElementById('start-after');
   const startBeforeInput = document.getElementById('start-before');
@@ -287,9 +289,15 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     history.replaceState(null, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
   }
 
+  function syncInputClearButtons() {
+    if (qClearBtn) qClearBtn.classList[qInput.value ? 'add' : 'remove']('visible');
+    if (speakerClearBtn) speakerClearBtn.classList[speakerInput.value ? 'add' : 'remove']('visible');
+  }
+
   function render() {
     const filters = currentFilters();
     const filtered = sortSessions(filterSessions(sessions, filters), filters.sort);
+    syncInputClearButtons();
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
@@ -402,6 +410,15 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
   [qInput, speakerInput].forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
   [topicSelect, sortSelect, startAfterInput, startBeforeInput, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
+  qClearBtn?.addEventListener('click', () => {
+    qInput.value = '';
+    render();
+  });
+  speakerClearBtn?.addEventListener('click', () => {
+    speakerInput.value = '';
+    render();
+  });
+
   clearBtn?.addEventListener('click', () => {
     qInput.value = '';
     speakerInput.value = '';

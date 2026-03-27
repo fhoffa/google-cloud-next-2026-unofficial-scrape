@@ -136,6 +136,8 @@ function createEnvironment(search = '') {
 
   document.register(new FakeElement({ id: 'q' }));
   document.register(new FakeElement({ id: 'speaker' }));
+  document.register(new FakeElement({ id: 'q-clear' }));
+  document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'start-after' }));
@@ -450,4 +452,12 @@ test('top words view includes clickable words', async () => {
   await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
   const appHtml = env.document.getElementById('app').innerHTML;
   assert.match(appHtml, /class="word-chip word-link/);
+});
+
+
+test('session and speaker filters expose quick clear controls', async () => {
+  const env = createEnvironment('?q=agent&speaker=felipe');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  assert.equal(env.document.getElementById('q-clear').classList.contains('visible'), true);
+  assert.equal(env.document.getElementById('speaker-clear').classList.contains('visible'), true);
 });
