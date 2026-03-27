@@ -597,3 +597,13 @@ test('top words counts description text too', async () => {
   const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
   assert.match(appHtml, /data-word="ml"/);
 });
+
+
+test('top words merges agent and agents with a combined label', async () => {
+  const env = createEnvironment('?q=agent&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="agent"/i);
+  assert.match(appHtml, /agent\/agents/i);
+  assert.doesNotMatch(appHtml, /data-word="agents"/i);
+});
