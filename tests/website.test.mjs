@@ -424,3 +424,12 @@ test('speaker/company click behavior is intended to pivot, not narrow further', 
 test('index.html links a favicon', () => {
   assert.match(html, /rel="icon"[^>]*href="\.\/favicon\.svg"/);
 });
+
+
+test('sessions view renders top tabs', async () => {
+  const env = createEnvironment();
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Top speakers/);
+  assert.match(appHtml, /Top words/);
+});
