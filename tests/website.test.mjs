@@ -579,3 +579,13 @@ test('top words merges obvious variants like llm and llms', async () => {
   assert.match(appHtml, /LLM\/LLMs/);
   assert.doesNotMatch(appHtml, /data-word="llms"/i);
 });
+
+
+test('top words merges meetup and meetups', async () => {
+  const env = createEnvironment('?q=meetup&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="meetup"/i);
+  assert.match(appHtml, /meetup\/meetups/i);
+  assert.doesNotMatch(appHtml, /data-word="meetups"/i);
+});

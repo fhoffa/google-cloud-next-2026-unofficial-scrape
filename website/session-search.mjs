@@ -62,8 +62,8 @@ const STOP_WORDS = new Set([
   'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'cloud', 'google', 'next', 'session', 'sessions', 'learn', 'join', 'explore', 'discover', 'talks', 'relevant', 'attending', 'shared', 'contact', 'may', 'they'
 ]);
 const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
-const WORD_NORMALIZATION = new Map([['llms', 'llm'], ['models', 'model']]);
-const WORD_DISPLAY = new Map([['llm', 'LLM/LLMs'], ['model', 'model/models']]);
+const WORD_NORMALIZATION = new Map([['llms', 'llm'], ['models', 'model'], ['meetups', 'meetup']]);
+const WORD_DISPLAY = new Map([['llm', 'LLM/LLMs'], ['model', 'model/models'], ['meetup', 'meetup/meetups']]);
 
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
