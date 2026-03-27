@@ -136,6 +136,8 @@ function createEnvironment(search = '') {
 
   document.register(new FakeElement({ id: 'q' }));
   document.register(new FakeElement({ id: 'speaker' }));
+  document.register(new FakeElement({ id: 'q-clear' }));
+  document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'start-after' }));
@@ -392,7 +394,7 @@ test('copy favorites link button is present', async () => {
 
 
 test('index.html exposes a visible version marker', () => {
-  assert.match(html, /Version:\s*[0-9a-f]{7,}/i);
+  assert.match(html, /Version:\s*(?:[0-9a-f]{7,}|\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC)/i);
 });
 
 
@@ -423,4 +425,39 @@ test('speaker/company click behavior is intended to pivot, not narrow further', 
 
 test('index.html links a favicon', () => {
   assert.match(html, /rel="icon"[^>]*href="\.\/favicon\.svg"/);
+});
+
+
+test('sessions view renders top tabs', async () => {
+  const env = createEnvironment();
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Top speakers/);
+  assert.match(appHtml, /Top words/);
+});
+
+
+test('top speakers view includes clickable speaker and session links', async () => {
+  const env = createEnvironment('?view=speakers');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /speaker-summary-link/);
+  assert.match(appHtml, /speaker-session-link/);
+  assert.match(appHtml, /target="_blank"/);
+});
+
+
+test('top words view includes clickable words', async () => {
+  const env = createEnvironment('?view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /class="word-chip word-link/);
+});
+
+
+test('session and speaker filters expose quick clear controls', async () => {
+  const env = createEnvironment('?q=agent&speaker=felipe');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  assert.equal(env.document.getElementById('q-clear').classList.contains('visible'), true);
+  assert.equal(env.document.getElementById('speaker-clear').classList.contains('visible'), true);
 });
