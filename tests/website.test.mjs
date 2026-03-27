@@ -537,3 +537,85 @@ test('top companies tab renders clickable companies and session links', async ()
   assert.match(appHtml, /company-summary-link/);
   assert.match(appHtml, /company-session-link/);
 });
+
+
+test('top words keeps meaningful short technical words like AI', async () => {
+  const env = createEnvironment('?view=words');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'AI for developers', description: 'AI agents and AI workflows', url: 'https://example.com/1', topics: [], speakers: [] },
+      { title: 'Enterprise AI', description: 'AI platforms at scale', url: 'https://example.com/2', topics: [], speakers: [] },
+      { title: 'Practical ML', description: 'ML and AI together', url: 'https://example.com/3', topics: [], speakers: [] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.match(appHtml, /data-word="ai"/);
+});
+
+
+test('top words drops common boilerplate words and trailing punctuation noise', async () => {
+  const env = createEnvironment('?view=words');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'Join the AI talks', description: 'Explore relevant AI only. Contact shared teams.', url: 'https://example.com/1', topics: [], speakers: [] },
+      { title: 'AI for developers', description: 'AI workflows for teams', url: 'https://example.com/2', topics: [], speakers: [] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.doesNotMatch(appHtml, /data-word="join"/);
+  assert.doesNotMatch(appHtml, /data-word="explore"/);
+  assert.doesNotMatch(appHtml, /data-word="only\."/);
+  assert.match(appHtml, /data-word="ai"/);
+});
+
+
+test('top words merges obvious variants like llm and llms', async () => {
+  const env = createEnvironment('?q=llm&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="llm"/i);
+  assert.match(appHtml, /LLM\/LLMs/);
+  assert.doesNotMatch(appHtml, /data-word="llms"/i);
+});
+
+
+test('top words merges meetup and meetups', async () => {
+  const env = createEnvironment('?q=meetup&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="meetup"/i);
+  assert.match(appHtml, /meetup\/meetups/i);
+  assert.doesNotMatch(appHtml, /data-word="meetups"/i);
+});
+
+
+test('top words counts description text too', async () => {
+  const env = createEnvironment('?q=ml&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.match(appHtml, /data-word="ml"/);
+});
+
+
+test('top words merges agent and agents with a combined label', async () => {
+  const env = createEnvironment('?q=agent&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="agent"/i);
+  assert.match(appHtml, /agent\/agents/i);
+  assert.doesNotMatch(appHtml, /data-word="agents"/i);
+});
+
+
+test('top words merges an obvious plural cleanup batch', async () => {
+  const env = createEnvironment('?q=database&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="database"/i);
+  assert.match(appHtml, /database\/databases/i);
+  assert.doesNotMatch(appHtml, /data-word="databases"/i);
+  assert.doesNotMatch(appHtml, /data-word="developers"/i);
+  assert.doesNotMatch(appHtml, /data-word="leaders"/i);
+});
