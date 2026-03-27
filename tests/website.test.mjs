@@ -589,3 +589,11 @@ test('top words merges meetup and meetups', async () => {
   assert.match(appHtml, /meetup\/meetups/i);
   assert.doesNotMatch(appHtml, /data-word="meetups"/i);
 });
+
+
+test('top words counts description text too', async () => {
+  const env = createEnvironment('?q=ml&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.match(appHtml, /data-word="ml"/);
+});

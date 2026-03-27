@@ -219,7 +219,7 @@ function wordStats(sessions) {
   const sessionSets = new Map();
   for (const session of sessions) {
     const sessionId = sessionKey(session) || session.url || session.title;
-    const text = [session.title, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].join(' ').toLowerCase();
+    const text = [session.title, session.description, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].filter(Boolean).join(' ').toLowerCase();
     for (const rawWord of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
       const cleanedWord = rawWord.replace(/^[^a-z0-9+#+]+|[^a-z0-9+#+]+$/g, '');
       const word = WORD_NORMALIZATION.get(cleanedWord) || cleanedWord;
