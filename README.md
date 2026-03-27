@@ -45,5 +45,4 @@ MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
 - This is unofficial and based on publicly available event pages.
 - The scraper is intentionally conservative: caching, retries, backoff, and one-at-a-time requests.
 - Some session types expose less metadata than others.
-- I crafted this while walking, using OpenClaw, Claude Code, and Codex.
-- LinkedIn post: <https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA>
+- I crafted this while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
