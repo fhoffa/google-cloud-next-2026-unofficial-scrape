@@ -236,8 +236,6 @@ export async function initSessionSearch({
     const nextUrl = new URL(location.href);
     nextUrl.search = nextSearch;
     history.replaceState(null, '', `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
-    if (typeof location.search === 'string') location.search = nextUrl.search;
-    if (typeof location.href === 'string') location.href = nextUrl.toString();
   }
 
   function render() {
