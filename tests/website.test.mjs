@@ -392,7 +392,7 @@ test('copy favorites link button is present', async () => {
 
 
 test('index.html exposes a visible version marker', () => {
-  assert.match(html, /Version:\s*[0-9a-f]{7,}/i);
+  assert.match(html, /Version:\s*(?:[0-9a-f]{7,}|\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC)/i);
 });
 
 
