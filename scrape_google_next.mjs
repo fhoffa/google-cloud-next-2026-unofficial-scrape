@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const BASE = 'https://www.googlecloudevents.com';
 const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
-const OUT_DIR = path.resolve('google-cloud-next-2026-unofficial-scrape/sessions');
+const OUT_DIR = path.resolve('sessions');
 const OUT_YAML = path.join(OUT_DIR, 'sessions.yaml');
 const OUT_JSON = path.join(OUT_DIR, 'sessions.json');
 const CACHE_DIR = path.join(OUT_DIR, 'cache');
@@ -97,15 +97,37 @@ function extractSessionIds(libraryHtml) {
   return unique([...libraryHtml.matchAll(/"session_(\d+)"\s*:\s*\{/g)].map((m) => m[1])).sort();
 }
 
-function extractSessionUrls(libraryHtml) {
-  const rx = new RegExp('https:\\\\/\\\\/www\.googlecloudevents\.com\\\\/next-vegas\\\\/session\\\\/\d+\\\\/[^"\\\\]+', 'g');
-  const raw = [...libraryHtml.matchAll(rx)].map((m) => decodeJsonEscapedUrl(m[0]));
-  return unique(raw).sort();
+function extractSessionRecordsFromLibrary(libraryHtml) {
+  const records = [];
+  const marker = 'GoogleAgendaBuilder.show_sessions(';
+  const start = libraryHtml.indexOf(marker);
+  if (start === -1) return records;
+  const jsonStart = start + marker.length;
+  const end = libraryHtml.indexOf('}, 19,1106,', jsonStart);
+  if (end === -1) return records;
+
+  const jsonText = libraryHtml.slice(jsonStart, end + 1);
+  try {
+    const parsed = JSON.parse(jsonText);
+    for (const [key, value] of Object.entries(parsed)) {
+      if (!key.startsWith('session_')) continue;
+      if (!value?.moreInfoUrl) continue;
+      records.push({
+        id: String(value.id || key.replace(/^session_/, '')),
+        url: decodeJsonEscapedUrl(value.moreInfoUrl),
+        title: value.name || '',
+      });
+    }
+  } catch {
+    return records;
+  }
+
+  return records;
 }
 
 async function collectLibraryPages() {
   const pages = [];
-  const allUrls = new Set();
+  const byUrl = new Map();
   const seenIdSets = new Set();
 
   for (let page = 1; page <= 50; page++) {
@@ -114,7 +136,7 @@ async function collectLibraryPages() {
     console.log(`Fetching library page ${page}: ${url}`);
     const html = await fetchText(url, { cacheKey });
     const ids = extractSessionIds(html);
-    const urls = extractSessionUrls(html);
+    const records = extractSessionRecordsFromLibrary(html);
     const signature = ids.join(',');
 
     if (ids.length === 0) {
@@ -127,16 +149,16 @@ async function collectLibraryPages() {
     }
 
     seenIdSets.add(signature);
-    pages.push({ page, ids, urls });
-    for (const sessionUrl of urls) allUrls.add(sessionUrl);
+    pages.push({ page, ids, recordsCount: records.length });
+    for (const record of records) byUrl.set(record.url, record);
 
-    console.log(`- page ${page}: ${ids.length} embedded sessions, ${urls.length} URLs, cumulative unique URLs: ${allUrls.size}`);
+    console.log(`- page ${page}: ${ids.length} embedded sessions, ${records.length} records with URLs, cumulative unique URLs: ${byUrl.size}`);
     await politeDelay();
   }
 
   return {
     pages,
-    sessionUrls: [...allUrls].sort(),
+    sessionUrls: [...byUrl.keys()].sort(),
   };
 }
 
@@ -350,6 +372,19 @@ function toYaml(sessions) {
   return lines.join('\n') + '\n';
 }
 
+export {
+  buildIsoDateTime,
+  buildDateTime,
+  collectLibraryPages,
+  extractDescription,
+  extractJsonObject,
+  extractSessionIds,
+  extractSessionRecordsFromLibrary,
+  normalizeTopics,
+  stripTags,
+  toSessionRecord,
+};
+
 async function main() {
   await ensureDir(OUT_DIR);
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
@@ -382,7 +417,9 @@ async function main() {
   console.log(`- ${OUT_YAML}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}
