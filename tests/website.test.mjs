@@ -419,3 +419,8 @@ test('time sort pushes unscheduled sessions after scheduled ones', async () => {
 test('speaker/company click behavior is intended to pivot, not narrow further', () => {
   assert.ok(true);
 });
+
+
+test('index.html links a favicon', () => {
+  assert.match(html, /rel="icon"[^>]*href="\.\/favicon\.svg"/);
+});
