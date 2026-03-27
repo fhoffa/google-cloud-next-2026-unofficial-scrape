@@ -6,8 +6,10 @@ Unofficial scraper/exporter for the Google Cloud Next 2026 session library.
 
 It crawls the paginated session library, fetches individual session pages, and exports:
 
-- `sessions/sessions.json`
-- `sessions/sessions.yaml`
+- `sessions/latest.json` / `sessions/latest.yaml` — full dataset, latest run
+- `sessions/by-day/YYYY-MM-DD.json` / `.yaml` — sessions partitioned by date
+- `sessions/by-day/unscheduled.json` / `.yaml` — sessions with no date yet
+- `sessions/snapshots/` — timestamped archive of every run
 
 ## Fields
 
@@ -38,6 +40,8 @@ Useful options:
 MAX_SESSIONS=10 npm run scrape
 FORCE_REFRESH=1 npm run scrape
 MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
+BUCKET=2026-04-22 npm run scrape                     # scrape one day only
+npm run merge                                        # merge by-day/ files into latest.*
 ```
 
 ## Notes
@@ -46,3 +50,9 @@ MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
 - The scraper is intentionally conservative: caching, retries, backoff, and one-at-a-time requests.
 - Some session types expose less metadata than others.
 - I crafted this while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
+
+## Prior art & legal context
+
+Community session trackers for cloud events have a complicated history. In October 2023, AWS sent cease & desist notices to third-party re:Invent session tracker developers — a situation that permanently destroyed one developer's work before AWS reversed course the same day.
+
+See [PRIOR-ART.md](./PRIOR-ART.md) for the full story.

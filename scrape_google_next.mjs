@@ -210,7 +210,7 @@ async function collectLibraryPages() {
     pages,
     records: dedupedRecords,
     sessionUrls: dedupedRecords.map((r) => r.url),
-    buckets: Object.fromEntries([...bucketMap.entries()].map(([key, value]) => [key, value.map((r) => r.url)])),
+    buckets: Object.fromEntries([...bucketMap.entries()].map(([key, value]) => [bucketFileSlug(key), value.map((r) => r.url)])),
   };
 }
 
