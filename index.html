@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Cloud Next 2026 — Session Search</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -296,6 +297,36 @@
 
     .speaker-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
 
+    .speaker-link, .company-link {
+      border: none;
+      background: none;
+      color: inherit;
+      font: inherit;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .speaker-link:hover, .company-link:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .speaker-link, .company-link {
+      border: none;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .company-link {
+      opacity: .72;
+      font-size: .72rem;
+      margin-left: 4px;
+    }
+
     .speaker-avatar {
       width: 20px;
       height: 20px;
@@ -435,12 +466,11 @@
       <option value="title">Sort: Title A-Z</option>
     </select>
 
-    <label>Starts after <input type="time" id="start-after" style="margin-left:6px;padding:6px 10px;border:1px solid var(--gray-200);border-radius:18px;"></label>
-    <label>Starts before <input type="time" id="start-before" style="margin-left:6px;padding:6px 10px;border:1px solid var(--gray-200);border-radius:18px;"></label>
+    <label>Starts after <input type="text" inputmode="numeric" placeholder="3:00 PM" id="start-after" style="margin-left:6px;padding:6px 10px;border:1px solid var(--gray-200);border-radius:18px;"></label>
+    <label>Starts before <input type="text" inputmode="numeric" placeholder="4:00 PM" id="start-before" style="margin-left:6px;padding:6px 10px;border:1px solid var(--gray-200);border-radius:18px;"></label>
 
     <label style="display:inline-flex;align-items:center;gap:6px;"><input type="checkbox" id="favorites-only"> Favorites only</label>
-      <option value="title">Sort: Title A–Z</option>
-    </select>
+    <button class="clear-btn" id="copy-favorites-link" type="button">Copy link to my favorites</button>
   </div>
 </div>
 
@@ -452,217 +482,12 @@
 <div id="app">
   <div class="loading"><div class="spinner"></div>Loading sessions…</div>
 </div>
+<div style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: a46e054</div>
 
 <script type="module">
   import { initSessionSearch } from './website/session-search.mjs';
 
   initSessionSearch();
-<footer>
-  Made by <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a>
-  &nbsp;·&nbsp;
-  Unofficial scrape &mdash; data from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
-</footer>
-
-<script>
-(async () => {
-  const app = document.getElementById('app');
-  const qInput = document.getElementById('q');
-  const speakerInput = document.getElementById('speaker');
-  const topicSelect = document.getElementById('topic-filter');
-  const sortSelect = document.getElementById('sort-filter');
-  const resultCount = document.getElementById('result-count');
-  const headerCount = document.getElementById('header-count');
-  const clearBtn = document.getElementById('clear-btn');
-  const dayPills = document.querySelectorAll('.pill[data-day]');
-
-  let sessions = [];
-  let activePill = '';
-
-  // Load data
-  try {
-    const res = await fetch('sessions/latest.json');
-    const data = await res.json();
-    sessions = data.sessions || [];
-    headerCount.textContent = sessions.length.toLocaleString();
-  } catch(e) {
-    app.innerHTML = `<div class="no-results"><p>Failed to load sessions. Run a local server to preview.</p></div>`;
-    return;
-  }
-
-  // Populate topic filter
-  const allTopics = [...new Set(sessions.flatMap(s => s.topics || []))].sort();
-  // Group topics roughly
-  const typeTopics = ['Keynotes','Breakouts','Workshops','Lightning Talks','Birds of a Feather','Demos','Spotlights','Solution Talks','Discussion Groups','Lounge Sessions','Capture the Flag','Developer Meetups','Expo Experiences','Partner Summit Breakouts','Partner Summit Lightning Talks'];
-  const techTopics = ['Agents','Applied AI','Gemini','Vertex AI','Open Models','App Dev','APIs','Firebase','Mobile and Web','Data Analytics','Databases','Compute','Serverless','Cloud Runtimes','Kubernetes','Networking','Storage','Security','DevOps','CI/CD','Observability','Multicloud','Migration','Cost Optimization','Architecture'];
-  const audienceTopics = ['Application Developers','Data Analysts','Data Engineers','Data Scientists','Database Professionals','Platform Engineers','SREs','IT Ops','Infrastructure Architects & Admins','IT Managers & Business Leaders','Security Professionals','Executive','Small IT Teams'];
-  const industryTopics = ['Financial Services','Healthcare & Life Sciences','Retail','Manufacturing','Media & Entertainment','Government','Telecommunications','Education','Energy','Consumer & Packaged Goods','Supply Chain & Logistics','Games','Public Sector','Startup','Sustainability'];
-  const levelTopics = ['Introductory','Technical','Advanced Technical','General'];
-
-  const groups = [
-    { label: 'Session type', items: typeTopics },
-    { label: 'Technology', items: techTopics },
-    { label: 'Audience', items: audienceTopics },
-    { label: 'Industry', items: industryTopics },
-    { label: 'Level', items: levelTopics },
-  ];
-
-  for (const group of groups) {
-    const available = group.items.filter(t => allTopics.includes(t));
-    if (!available.length) continue;
-    const og = document.createElement('optgroup');
-    og.label = group.label;
-    for (const t of available) {
-      const o = document.createElement('option');
-      o.value = t; o.textContent = t;
-      og.appendChild(o);
-    }
-    topicSelect.appendChild(og);
-  }
-  // Add remaining uncategorized
-  const categorized = new Set(groups.flatMap(g => g.items));
-  const others = allTopics.filter(t => !categorized.has(t));
-  if (others.length) {
-    const og = document.createElement('optgroup');
-    og.label = 'Other';
-    for (const t of others) {
-      const o = document.createElement('option');
-      o.value = t; o.textContent = t;
-      og.appendChild(o);
-    }
-    topicSelect.appendChild(og);
-  }
-
-  // Day pills
-  dayPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      dayPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      activePill = pill.dataset.day;
-      render();
-    });
-  });
-
-  // Inputs
-  let debounce;
-  [qInput, speakerInput].forEach(el => {
-    el.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(render, 120); });
-  });
-  topicSelect.addEventListener('change', render);
-  sortSelect.addEventListener('change', render);
-  clearBtn.addEventListener('click', () => {
-    qInput.value = '';
-    speakerInput.value = '';
-    topicSelect.value = '';
-    sortSelect.value = 'time';
-    activePill = '';
-    dayPills.forEach(p => p.classList.remove('active'));
-    dayPills[0].classList.add('active');
-    render();
-  });
-
-  function highlight(text, term) {
-    if (!term) return escHtml(text);
-    const re = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
-    return escHtml(text).replace(re, '<mark style="background:#fff3cd;border-radius:2px">$1</mark>');
-  }
-
-  function escHtml(s) {
-    return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  function initials(name) {
-    return (name||'').split(' ').map(w=>w[0]||'').join('').slice(0,2).toUpperCase();
-  }
-
-  function avatarColor(name) {
-    const colors = ['#1a73e8','#34a853','#ea4335','#fbbc04','#9c27b0','#ff5722','#00bcd4','#607d8b'];
-    let h = 0;
-    for (let i=0; i<name.length; i++) h = (h*31 + name.charCodeAt(i)) & 0xffffffff;
-    return colors[Math.abs(h) % colors.length];
-  }
-
-  function render() {
-    const q = qInput.value.trim().toLowerCase();
-    const spQ = speakerInput.value.trim().toLowerCase();
-    const topic = topicSelect.value;
-    const day = activePill;
-    const sort = sortSelect.value;
-
-    let filtered = sessions.filter(s => {
-      if (day && s.date_text !== day) return false;
-      if (topic && !(s.topics||[]).includes(topic)) return false;
-      if (spQ) {
-        const found = (s.speakers||[]).some(sp => sp.name.toLowerCase().includes(spQ) || (sp.company||'').toLowerCase().includes(spQ));
-        if (!found) return false;
-      }
-      if (q) {
-        const haystack = `${s.title} ${s.description} ${(s.speakers||[]).map(sp=>sp.name).join(' ')} ${(s.topics||[]).join(' ')} ${s.room||''}`.toLowerCase();
-        if (!q.split(/\s+/).every(word => haystack.includes(word))) return false;
-      }
-      return true;
-    });
-
-    if (sort === 'title') {
-      filtered.sort((a,b) => a.title.localeCompare(b.title));
-    } else {
-      filtered.sort((a,b) => {
-        const da = a.start_at || a.date_text || '';
-        const db = b.start_at || b.date_text || '';
-        return da.localeCompare(db);
-      });
-    }
-
-    resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-
-    if (!filtered.length) {
-      app.innerHTML = `<div class="no-results">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <p>No sessions match your filters.</p>
-      </div>`;
-      return;
-    }
-
-    const cards = filtered.map(s => {
-      const speakers = (s.speakers||[]).map(sp => `
-        <span class="speaker-chip" onclick="document.getElementById('speaker').value=${JSON.stringify(sp.name)};document.getElementById('speaker').dispatchEvent(new Event('input'))">
-          <span class="speaker-avatar" style="background:${avatarColor(sp.name)}">${escHtml(initials(sp.name))}</span>
-          <span>${escHtml(sp.name)}${sp.company ? ` <span style="opacity:.65;font-size:.72rem">· ${escHtml(sp.company)}</span>` : ''}</span>
-        </span>
-      `).join('');
-
-      const topics = (s.topics||[]).slice(0,5).map(t => `
-        <span class="topic-tag" onclick="document.getElementById('topic-filter').value=${JSON.stringify(t)};document.getElementById('topic-filter').dispatchEvent(new Event('change'))">${escHtml(t)}</span>
-      `).join('');
-
-      const timeStr = s.start_time_text && s.end_time_text
-        ? `${s.start_time_text}–${s.end_time_text}`
-        : (s.start_time_text || '');
-
-      const dateShort = s.date_text ? s.date_text.replace(', 2026','').replace('day,','') : '';
-
-      return `<div class="card">
-        <div class="card-title">${s.url
-          ? `<a href="${escHtml(s.url)}" target="_blank" rel="noopener">${highlight(s.title, q)}</a>`
-          : highlight(s.title, q)
-        }</div>
-        <div class="card-meta">
-          ${dateShort ? `<span class="meta-icon">${escHtml(dateShort)}</span>` : ''}
-          ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
-          ${s.room ? `<span class="dot meta-icon">${escHtml(s.room)}</span>` : ''}
-        </div>
-        ${s.description ? `<div class="card-desc">${highlight(s.description, q)}</div>` : ''}
-        ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
-        ${topics ? `<div class="card-topics">${topics}</div>` : ''}
-      </div>`;
-    }).join('');
-
-    app.innerHTML = `<div class="grid">${cards}</div>`;
-  }
-
-  render();
-})();
 </script>
 </body>
 </html>
