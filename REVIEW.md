@@ -13,36 +13,36 @@ Reviewed the scraper, merge flow, static website search UI, and automated tests.
 
 ## Main risks and recommendations
 
-### 1) Brittle parser sentinel in library-page extraction
+### 1) Parser sentinel fragility in library-page extraction ✅ Mitigated
 
-`extractSessionRecordsFromLibrary` depends on the hardcoded substring `'}, 19,1106,'` to find the JSON boundary.
+This was addressed: extraction now uses brace-balanced parsing of the first JSON object after `GoogleAgendaBuilder.show_sessions(`, so it no longer depends on a fixed trailer token.
 
-**Risk:** a minor upstream template change can silently produce empty/incomplete records.
+**Remaining risk:** if upstream stops embedding valid JSON entirely, extraction can still fail (as expected).
 
-**Recommendation:** parse the function call more defensively by balancing braces from `GoogleAgendaBuilder.show_sessions(` until the first complete JSON object closes, rather than relying on one fixed trailer token.
+**Recommendation:** keep fixture-based parser tests for changed payload wrappers and malformed blocks.
 
-### 2) Date parsing depends on platform string parsing behavior
+### 2) Date parsing determinism ✅ Mitigated
 
-`parseDateText` uses `new Date(`${value} UTC`)` with natural-language dates like `Wednesday, April 22, 2026`.
+This was addressed: date parsing now uses explicit regex + month mapping with `Date.UTC(...)`, and invalid calendar dates are rejected (instead of silently rolling over).
 
-**Risk:** this can be implementation-dependent across runtimes/locales.
+**Remaining risk:** parser currently accepts English month names only.
 
-**Recommendation:** parse month/day/year explicitly (e.g., regex + month map) and construct UTC date via `Date.UTC(...)` for deterministic results.
+**Recommendation:** keep this strict unless source localization changes; add locale-aware handling only if needed.
 
-### 3) No explicit schema validation before publishing output
+### 3) Schema validation before publishing output ✅ Partially mitigated
 
-The scraper writes JSON/YAML directly from parsed fields with minimal structural checks.
+This was addressed in part: scraped records are now validated for core structural correctness, invalid records are skipped, and warnings/counts are emitted.
 
-**Risk:** upstream HTML changes can degrade data quality without failing fast.
+**Remaining risk:** validation currently checks format/types but does not enforce richer domain constraints (for example, ensuring `end_at >= start_at` when both exist).
 
-**Recommendation:** add a lightweight validation step (required fields, type checks, date/time format checks), then fail the run or emit warnings with counts.
+**Recommendation:** add optional strict mode checks for temporal consistency and mandatory fields by session type.
 
 ## Nice-to-have improvements
 
 - Add CI workflow that runs `npm test` on PRs.
-- Add a small fixture-driven regression test for malformed/changed `show_sessions(...)` payloads.
+- Expand fixture-driven regression coverage for malformed/changed `show_sessions(...)` payloads beyond trailer token mutations.
 - Consider precomputing exclude regex tokens once per filter change in the UI for larger datasets.
 
 ## Overall assessment
 
-The repo is in good shape and already has unusually strong tests for a personal scraper + static UI project. The top priority is hardening the library JSON extraction logic to reduce fragility to source-site markup changes.
+The earlier top-priority hardening items (JSON extraction, deterministic date parsing, and baseline schema validation) are now implemented. The repo is in good shape; the next wave should focus on deeper data-quality constraints and CI automation.
