@@ -277,7 +277,7 @@ test('changing filters updates the URL and clear resets filters and query params
 
 
 test('favorites can be shared and filtered', async () => {
-  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&favorites=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -357,7 +357,7 @@ test('speaker and company controls are rendered', async () => {
 });
 
 test('compact sessionids favorites URL hydrates', async () => {
-  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&sessionids=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -423,26 +423,4 @@ test('speaker/company click behavior is intended to pivot, not narrow further', 
 
 test('index.html links a favicon', () => {
   assert.match(html, /rel="icon"[^>]*href="\.\/favicon\.svg"/);
-});
-
-
-test('stored favorites do not rewrite homepage URL to full session URLs', async () => {
-  const env = createEnvironment('');
-
-  await initSessionSearch({
-    document: env.document,
-    fetchImpl: createFetch(),
-    location: env.location,
-    history: env.history,
-    storage: {
-      getItem: () => JSON.stringify([
-        'https://www.googlecloudevents.com/next-vegas/session/3913070/govern-your-agents-architecting-a-secure-agentic-ecosystem-with-vertex-ai'
-      ]),
-      setItem: () => {},
-    },
-    setTimeoutImpl: (fn) => { fn(); return 1; },
-    clearTimeoutImpl: () => {},
-  });
-
-  assert.doesNotMatch(env.location.search, /sessionids=https%3A/i);
 });

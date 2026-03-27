@@ -2,15 +2,6 @@ const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 
-function sessionKey(session) {
-  const explicitId = String(session?.id || '').trim();
-  if (explicitId) return explicitId;
-  const url = String(session?.url || '');
-  const match = url.match(/\/session\/(\d+)(?:\/|$)/);
-  if (match) return match[1];
-  return url;
-}
-
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
   { label: 'Technology', items: ['Agents', 'Applied AI', 'Gemini', 'Vertex AI', 'Open Models', 'App Dev', 'APIs', 'Firebase', 'Mobile and Web', 'Data Analytics', 'Databases', 'Compute', 'Serverless', 'Cloud Runtimes', 'Kubernetes', 'Networking', 'Storage', 'Security', 'DevOps', 'CI/CD', 'Observability', 'Multicloud', 'Migration', 'Cost Optimization', 'Architecture'] },
@@ -64,7 +55,7 @@ export function filterSessions(sessions, filters) {
   const startBefore = filters.start_before || '';
 
   return sessions.filter((session) => {
-    if (filters.view === 'favorites' && !favoriteIds.has(sessionKey(session))) return false;
+    if (filters.view === 'favorites' && !favoriteIds.has(String(session.id || session.url || ''))) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
     const startTime = session.start_time_text || '';
@@ -150,7 +141,7 @@ function avatarColor(name) {
 
 function renderCards(sessions, q, favoriteIds, expandedIds) {
   return sessions.map((session) => {
-    const sessionId = sessionKey(session);
+    const sessionId = String(session.id || session.url || '');
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
     const speakers = (session.speakers || []).map((speaker) => `
@@ -258,7 +249,7 @@ export async function initSessionSearch({
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
-  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
+  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map(String));
   const sharedFavorites = String(state.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   qInput.value = state.q;
@@ -283,7 +274,7 @@ export async function initSessionSearch({
       start_after: startAfterInput?.value || '',
       start_before: startBeforeInput?.value || '',
       view: favoriteToggle?.checked ? 'favorites' : '',
-      sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
+      sessionids: [...favoriteIds].join(','),
       company: '',
     };
   }
