@@ -40,7 +40,7 @@ Useful options:
 MAX_SESSIONS=10 npm run scrape
 FORCE_REFRESH=1 npm run scrape
 MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
-BUCKET="Wednesday, April 22, 2026" npm run scrape   # scrape one day only
+BUCKET=2026-04-22 npm run scrape                     # scrape one day only
 npm run merge                                        # merge by-day/ files into latest.*
 ```
 
