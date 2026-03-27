@@ -662,3 +662,16 @@ test('exclude filter uses whole-word matching so "ai" does not exclude sessions 
   assert.ok(result.some((s) => s.title === 'Training on data'), 'training session should remain');
   assert.ok(!result.some((s) => s.title === 'AI for everyone'), 'AI session should be excluded');
 });
+
+test('exclude filter keeps quoted phrases together', async () => {
+  const { filterSessions } = await import('../website/session-search.mjs');
+  const sessions = [
+    { title: 'Classic ML intro', description: 'A machine learning overview', topics: [], speakers: [] },
+    { title: 'Learning paths for admins', description: 'Machine setup and learning culture', topics: [], speakers: [] },
+  ];
+  const filters = { q: '', exclude: '"machine learning"', speaker: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', company: '', view: 'sessions' };
+  const result = filterSessions(sessions, filters);
+  assert.equal(result.length, 1, 'only the session with the quoted phrase should be excluded');
+  assert.ok(result.some((s) => s.title === 'Learning paths for admins'), 'split words without the phrase should remain');
+  assert.ok(!result.some((s) => s.title === 'Classic ML intro'), 'quoted phrase match should be excluded');
+});
