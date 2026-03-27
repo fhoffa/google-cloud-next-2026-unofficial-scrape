@@ -312,6 +312,17 @@
 
     .topic-tag:hover { background: #c5d8fc; }
 
+    .favorite-btn {
+      border: none;
+      background: transparent;
+      color: var(--yellow);
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 2px 4px;
+      flex-shrink: 0;
+    }
+
     .no-results {
       max-width: 1100px;
       margin: 60px auto;
@@ -357,6 +368,8 @@
     <span>Unofficial scrape from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a></span>
     <span>·</span>
     <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
+    <span>·</span>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape/blob/main/PRIOR-ART.md" target="_blank" rel="noopener">Prior art</a>
   </div>
 </header>
 <div class="rainbow-bar"></div>
@@ -395,6 +408,8 @@
       <option value="time">Sort: Date & time</option>
       <option value="title">Sort: Title A-Z</option>
     </select>
+
+    <label style="display:inline-flex;align-items:center;gap:6px;"><input type="checkbox" id="favorites-only"> Favorites only</label>
   </div>
 </div>
 
