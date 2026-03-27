@@ -6,8 +6,10 @@ Unofficial scraper/exporter for the Google Cloud Next 2026 session library.
 
 It crawls the paginated session library, fetches individual session pages, and exports:
 
-- `sessions/sessions.json`
-- `sessions/sessions.yaml`
+- `sessions/latest.json` / `sessions/latest.yaml` — full dataset, latest run
+- `sessions/by-day/YYYY-MM-DD.json` / `.yaml` — sessions partitioned by date
+- `sessions/by-day/unscheduled.json` / `.yaml` — sessions with no date yet
+- `sessions/snapshots/` — timestamped archive of every run
 
 ## Fields
 
@@ -38,6 +40,8 @@ Useful options:
 MAX_SESSIONS=10 npm run scrape
 FORCE_REFRESH=1 npm run scrape
 MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
+BUCKET="Wednesday, April 22, 2026" npm run scrape   # scrape one day only
+npm run merge                                        # merge by-day/ files into latest.*
 ```
 
 ## Notes
