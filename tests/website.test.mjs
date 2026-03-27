@@ -136,6 +136,8 @@ function createEnvironment(search = '') {
 
   document.register(new FakeElement({ id: 'q' }));
   document.register(new FakeElement({ id: 'speaker' }));
+  document.register(new FakeElement({ id: 'exclude' }));
+  document.register(new FakeElement({ id: 'exclude-clear' }));
   document.register(new FakeElement({ id: 'q-clear' }));
   document.register(new FakeElement({ id: 'speaker-clear' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
@@ -618,4 +620,30 @@ test('top words merges an obvious plural cleanup batch', async () => {
   assert.doesNotMatch(appHtml, /data-word="databases"/i);
   assert.doesNotMatch(appHtml, /data-word="developers"/i);
   assert.doesNotMatch(appHtml, /data-word="leaders"/i);
+});
+
+test('exclude filter hides matching sessions and is reflected in URL and active pills', async () => {
+  const env = createEnvironment('?exclude=AI');
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const resultCount = env.document.getElementById('result-count').textContent;
+  const [shown, total] = resultCount.match(/\d[\d,]*/g).map((n) => Number(n.replace(/,/g, '')));
+
+  assert.equal(env.document.getElementById('exclude').value, 'AI');
+  assert.ok(shown < total, `exclude=AI should hide some sessions (got ${shown} of ${total})`);
+  assert.match(env.location.search, /exclude=AI/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /exclude: AI/);
+
+  // clear-btn resets the exclude input
+  env.document.getElementById('clear-btn').click();
+  assert.equal(env.document.getElementById('exclude').value, '');
+  assert.doesNotMatch(env.location.search, /exclude/);
 });
