@@ -16,6 +16,11 @@ This repo now has **two useful layers**:
 
 ## Website features
 
+## Preview
+
+![Google Cloud Next 2026 Session Search preview](./media/reddit-preview.jpg)
+
+
 Current site features include:
 
 - full-text session search
