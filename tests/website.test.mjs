@@ -75,6 +75,20 @@ class FakeElement {
         },
       }));
     }
+    if (selector === '.see-more-btn') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
+      return matches.map((match) => ({
+        dataset: { sessionId: match[1] },
+        listeners: new Map(),
+        addEventListener(type, listener) {
+          if (!this.listeners.has(type)) this.listeners.set(type, []);
+          this.listeners.get(type).push(listener);
+        },
+        click() {
+          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+        },
+      }));
+    }
     return [];
   }
 }
@@ -292,4 +306,22 @@ test('time filters update URL and narrow results', async () => {
   assert.match(env.location.search, /start_before=4%3A00\+PM|start_before=4%3A00%20PM/);
   const appHtml = env.document.getElementById('app').innerHTML;
   assert.ok((appHtml.match(/class="card"/g) || []).length > 0);
+});
+
+
+test('long descriptions expose a see more control', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /See more/);
 });

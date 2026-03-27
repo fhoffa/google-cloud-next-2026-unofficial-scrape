@@ -128,10 +128,11 @@ function avatarColor(name) {
   return colors[Math.abs(hash) % colors.length];
 }
 
-function renderCards(sessions, q, favoriteIds) {
+function renderCards(sessions, q, favoriteIds, expandedIds) {
   return sessions.map((session) => {
     const sessionId = String(session.id || session.url || '');
     const isFavorite = favoriteIds.has(sessionId);
+    const isExpanded = expandedIds.has(sessionId);
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
@@ -162,7 +163,7 @@ function renderCards(sessions, q, favoriteIds) {
         ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
         ${session.room ? `<span class="dot meta-icon">${escHtml(session.room)}</span>` : ''}
       </div>
-      ${session.description ? `<div class="card-desc">${highlight(session.description, q)}</div>` : ''}
+      ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
     </div>`;
@@ -249,6 +250,7 @@ export async function initSessionSearch({
 
   let sessions = [];
   let debounceId;
+  const expandedIds = new Set();
 
   function currentFilters() {
     return {
@@ -286,12 +288,19 @@ export async function initSessionSearch({
       return filtered;
     }
 
-    app.innerHTML = `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds)}</div>`;
+    app.innerHTML = `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds)}</div>`;
     for (const button of app.querySelectorAll ? app.querySelectorAll('.favorite-btn') : []) {
       button.addEventListener('click', () => {
         const id = button.dataset.sessionId;
         if (favoriteIds.has(id)) favoriteIds.delete(id); else favoriteIds.add(id);
         try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoriteIds])); } catch {}
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.see-more-btn') : []) {
+      button.addEventListener('click', () => {
+        const id = button.dataset.sessionId;
+        if (expandedIds.has(id)) expandedIds.delete(id); else expandedIds.add(id);
         render();
       });
     }
