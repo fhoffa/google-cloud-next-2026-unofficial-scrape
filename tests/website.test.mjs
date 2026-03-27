@@ -75,6 +75,14 @@ class FakeElement {
         },
       }));
     }
+    if (selector === '.speaker-link') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"speaker-link\"[^>]*data-speaker-name=\"([^\"]+)\"[^>]*>/g)];
+      return matches.map((match) => ({ dataset: { speakerName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
+    }
+    if (selector === '.company-link') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"company-link\"[^>]*data-company-name=\"([^\"]+)\"[^>]*>/g)];
+      return matches.map((match) => ({ dataset: { companyName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
+    }
     if (selector === '.see-more-btn') {
       const matches = [...String(this.innerHTML || '').matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
       return matches.map((match) => ({
@@ -136,6 +144,8 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'header-count' }));
   document.register(new FakeElement({ id: 'clear-btn' }));
   document.register(new FakeElement({ id: 'favorites-only' }));
+  document.register(new FakeElement({ id: 'copy-favorites-link' }));
+  document.register(new FakeElement({ id: 'copy-favorites-link' }));
 
   document.dayPills = [
     new FakeElement({ dataset: { day: '' }, classes: ['pill', 'active'] }),
@@ -281,7 +291,7 @@ test('favorites can be shared and filtered', async () => {
   });
 
   assert.equal(env.document.getElementById('favorites-only').checked, true);
-  assert.match(env.location.search, /favorites=/);
+  assert.match(env.location.search, /sessionids=/);
   assert.match(env.location.search, /view=favorites/);
   assert.equal((env.document.getElementById('app').innerHTML.match(/class="card"/g) || []).length, 1);
 });
@@ -324,4 +334,58 @@ test('long descriptions expose a see more control', async () => {
 
   const appHtml = env.document.getElementById('app').innerHTML;
   assert.match(appHtml, /See more/);
+});
+
+
+
+test('speaker and company controls are rendered', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /class="speaker-link"/);
+  assert.match(appHtml, /class="company-link"/);
+});
+
+test('compact sessionids favorites URL hydrates', async () => {
+  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const env = createEnvironment(`?view=favorites&sessionids=${encodeURIComponent(favoriteId)}`);
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.match(env.location.search, /sessionids=/);
+  assert.equal((env.document.getElementById('app').innerHTML.match(/class="card"/g) || []).length, 1);
+});
+
+test('copy favorites link button is present', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.equal(env.document.getElementById('copy-favorites-link').id, 'copy-favorites-link');
 });

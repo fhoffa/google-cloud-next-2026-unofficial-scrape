@@ -20,7 +20,8 @@ export function readFiltersFromSearch(search) {
     sort: VALID_SORTS.has(params.get('sort')) ? params.get('sort') : DEFAULT_SORT,
     start_after: params.get('start_after') || '',
     start_before: params.get('start_before') || '',
-    favorites: params.get('favorites') || '',
+    sessionids: params.get('sessionids') || params.get('favorites') || '',
+    company: params.get('company') || '',
     view: params.get('view') || '',
   };
 }
@@ -35,17 +36,19 @@ export function buildSearchFromFilters(filters) {
   if (filters.sort && filters.sort !== DEFAULT_SORT) params.set('sort', filters.sort);
   if (filters.start_after) params.set('start_after', filters.start_after);
   if (filters.start_before) params.set('start_before', filters.start_before);
+  if (filters.company) params.set('company', filters.company);
   if (filters.view === 'favorites') params.set('view', 'favorites');
-  if (filters.favorites) params.set('favorites', filters.favorites);
+  if (filters.sessionids) params.set('sessionids', filters.sessionids);
 
   const query = params.toString();
   return query ? `?${query}` : '';
 }
 
 export function filterSessions(sessions, filters) {
-  const favoriteIds = new Set(String(filters.favorites || '').split(',').map((v) => v.trim()).filter(Boolean));
+  const favoriteIds = new Set(String(filters.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean));
   const q = filters.q.trim().toLowerCase();
   const speaker = filters.speaker.trim().toLowerCase();
+  const company = (filters.company || '').trim().toLowerCase();
   const topic = filters.topic;
   const day = filters.day;
   const startAfter = filters.start_after || '';
@@ -58,6 +61,10 @@ export function filterSessions(sessions, filters) {
     const startTime = session.start_time_text || '';
     if (startAfter && (!startTime || startTime < startAfter)) return false;
     if (startBefore && (!startTime || startTime > startBefore)) return false;
+    if (company) {
+      const foundCompany = (session.speakers || []).some((item) => ((item.company || '').toLowerCase().includes(company)));
+      if (!foundCompany) return false;
+    }
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -136,7 +143,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
-        <span>${escHtml(speaker.name || '')}${speaker.company ? ` <span style="opacity:.65;font-size:.72rem">· ${escHtml(speaker.company)}</span>` : ''}</span>
+        <button class="speaker-link" type="button" data-speaker-name="${escHtml(speaker.name || '')}">${escHtml(speaker.name || '')}</button>${speaker.company ? ` <span style="opacity:.65;font-size:.72rem">· </span><button class="company-link" type="button" data-company-name="${escHtml(speaker.company)}">${escHtml(speaker.company)}</button>` : ''}
       </span>
     `).join('');
 
@@ -234,11 +241,12 @@ export async function initSessionSearch({
   const headerCount = document.getElementById('header-count');
   const clearBtn = document.getElementById('clear-btn');
   const favoriteToggle = document.getElementById('favorites-only');
+  const copyFavoritesBtn = document.getElementById('copy-favorites-link');
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
   const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map(String));
-  const sharedFavorites = String(state.favorites || '').split(',').map((v) => v.trim()).filter(Boolean);
+  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   qInput.value = state.q;
   speakerInput.value = state.speaker;
@@ -262,7 +270,8 @@ export async function initSessionSearch({
       start_after: startAfterInput?.value || '',
       start_before: startBeforeInput?.value || '',
       view: favoriteToggle?.checked ? 'favorites' : '',
-      favorites: [...favoriteIds].join(','),
+      sessionids: [...favoriteIds].join(','),
+      company: '',
     };
   }
 
@@ -294,6 +303,21 @@ export async function initSessionSearch({
         const id = button.dataset.sessionId;
         if (favoriteIds.has(id)) favoriteIds.delete(id); else favoriteIds.add(id);
         try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoriteIds])); } catch {}
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-link') : []) {
+      button.addEventListener('click', () => {
+        speakerInput.value = button.dataset.speakerName || '';
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.company-link') : []) {
+      button.addEventListener('click', () => {
+        qInput.value = '';
+        speakerInput.value = '';
+        const next = currentFilters();
+        history.replaceState(null, '', buildSearchFromFilters({ ...next, company: button.dataset.companyName || '' }));
         render();
       });
     }
@@ -352,6 +376,15 @@ export async function initSessionSearch({
 
   favoriteToggle?.addEventListener('change', () => {
     render();
+  });
+
+  copyFavoritesBtn?.addEventListener('click', async () => {
+    const url = new URL(location.href);
+    url.search = buildSearchFromFilters({ ...currentFilters(), view: 'favorites', sessionids: [...favoriteIds].join(',') });
+    try {
+      await globalThis.navigator?.clipboard?.writeText(url.toString());
+      copyFavoritesBtn.textContent = 'Copied';
+    } catch {}
   });
 
   clearBtn.addEventListener('click', () => {
