@@ -3,6 +3,15 @@ const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'words']);
+function sessionKey(session) {
+  const explicitId = String(session?.id || '').trim();
+  if (explicitId) return explicitId;
+  const url = String(session?.url || '').trim();
+  const match = url.match(/\/session\/(\d+)(?:\/|$)/);
+  if (match) return match[1];
+  return url;
+}
+
 const STOP_WORDS = new Set([
   'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'ai', 'cloud', 'google', 'next', 'session', 'sessions'
 ]);
@@ -58,7 +67,7 @@ export function filterSessions(sessions, filters) {
   const startBefore = filters.start_before || '';
 
   return sessions.filter((session) => {
-    if (filters.view === 'favorites' && !favoriteIds.has(String(session.id || session.url || ''))) return false;
+    if (filters.view === 'favorites' && !favoriteIds.has(sessionKey(session))) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
     const startTime = session.start_time_text || '';
@@ -132,7 +141,7 @@ function speakerStats(sessions) {
       if (!bySpeaker.has(name)) bySpeaker.set(name, { name, company: speaker.company || '', count: 0, sessions: [] });
       const entry = bySpeaker.get(name);
       entry.count += 1;
-      entry.sessions.push({ title: session.title, url: session.url || '', id: String(session.id || session.url || '') });
+      entry.sessions.push({ title: session.title, url: session.url || '', id: sessionKey(session) });
       if (!entry.company && speaker.company) entry.company = speaker.company;
     }
   }
@@ -162,7 +171,7 @@ function renderTabs(activeView) {
 
 function renderCards(sessions, q, favoriteIds, expandedIds) {
   return sessions.map((session) => {
-    const sessionId = String(session.id || session.url || '');
+    const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
     const speakers = (session.speakers || []).map((speaker) => `
@@ -251,7 +260,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
-  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map(String));
+  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
   const sharedFavorites = String(state.sessionids || '').split(',').map((v) => v.trim()).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   qInput.value = state.q;
@@ -277,7 +286,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_after: startAfterInput?.value || '',
       start_before: startBeforeInput?.value || '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
-      sessionids: [...favoriteIds].join(','),
+      sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
       company: '',
     };
   }
@@ -366,7 +375,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: [...favoriteIds].join(','), company: button.dataset.companyName || '' }));
+        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
         render();
       });
     }

@@ -279,7 +279,7 @@ test('changing filters updates the URL and clear resets filters and query params
 
 
 test('favorites can be shared and filtered', async () => {
-  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&favorites=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -359,7 +359,7 @@ test('speaker and company controls are rendered', async () => {
 });
 
 test('compact sessionids favorites URL hydrates', async () => {
-  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const favoriteId = /\/session\/(\d+)/.exec(dataset.sessions[0].url)?.[1] || String(dataset.sessions[0].id || dataset.sessions[0].url);
   const env = createEnvironment(`?view=favorites&sessionids=${encodeURIComponent(favoriteId)}`);
 
   await initSessionSearch({
@@ -460,4 +460,22 @@ test('session and speaker filters expose quick clear controls', async () => {
   await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
   assert.equal(env.document.getElementById('q-clear').classList.contains('visible'), true);
   assert.equal(env.document.getElementById('speaker-clear').classList.contains('visible'), true);
+});
+
+
+test('stored favorites stay local and do not rewrite homepage URL', async () => {
+  const env = createEnvironment('');
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: {
+      getItem: () => JSON.stringify(['https://www.googlecloudevents.com/next-vegas/session/3920404/adk-a2a-in-action']),
+      setItem: () => {},
+    },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+  assert.equal(env.location.search, '');
 });
