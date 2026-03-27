@@ -48,6 +48,22 @@
       opacity: 0.85;
     }
 
+    .header-links {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      opacity: 0.95;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .rainbow-bar {
       height: 4px;
       background: linear-gradient(to right, var(--blue) 0%, var(--red) 25%, var(--yellow) 50%, var(--green) 75%, var(--blue) 100%);
@@ -325,16 +341,6 @@
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.78rem;
-      color: var(--gray-400);
-      border-top: 1px solid var(--gray-200);
-    }
-
-    footer a { color: var(--blue); text-decoration: none; }
-
     @media (max-width: 600px) {
       .grid { grid-template-columns: 1fr; }
     }
@@ -345,6 +351,13 @@
 <header>
   <h1>Google Cloud Next 2026 — Session Search</h1>
   <p>Las Vegas · April 21–24, 2026 &nbsp;·&nbsp; <span id="header-count">…</span> sessions</p>
+  <div class="header-links">
+    <span>Made by <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a></span>
+    <span>·</span>
+    <span>Unofficial scrape from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a></span>
+    <span>·</span>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
+  </div>
 </header>
 <div class="rainbow-bar"></div>
 
@@ -393,14 +406,6 @@
 <div id="app">
   <div class="loading"><div class="spinner"></div>Loading sessions…</div>
 </div>
-
-<footer>
-  Made by <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a>
-  &nbsp;·&nbsp;
-  Unofficial scrape &mdash; data from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
-</footer>
 
 <script type="module">
   import { initSessionSearch } from './website/session-search.mjs';
