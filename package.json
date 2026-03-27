@@ -1,0 +1,10 @@
+{
+  "name": "google-next-scraper",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Polite scraper for Google Cloud Next session library",
+  "scripts": {
+    "scrape": "node scrape_google_next.mjs"
+  }
+}
