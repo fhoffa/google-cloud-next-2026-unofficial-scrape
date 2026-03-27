@@ -59,7 +59,7 @@ function renderFilterPills(filters) {
 }
 
 const STOP_WORDS = new Set([
-  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'cloud', 'google', 'next', 'session', 'sessions'
+  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'cloud', 'google', 'next', 'session', 'sessions', 'learn', 'join', 'explore', 'discover', 'talks', 'relevant', 'attending', 'shared', 'contact', 'may', 'they'
 ]);
 const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
 
@@ -216,7 +216,9 @@ function wordStats(sessions) {
   const counts = new Map();
   for (const session of sessions) {
     const text = [session.title, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].join(' ').toLowerCase();
-    for (const word of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
+    for (const rawWord of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
+      const word = rawWord.replace(/^[^a-z0-9+#+]+|[^a-z0-9+#+]+$/g, '');
+      if (!word) continue;
       if ((word.length < 3 && !SHORT_WORD_ALLOWLIST.has(word)) || STOP_WORDS.has(word)) continue;
       counts.set(word, (counts.get(word) || 0) + 1);
     }

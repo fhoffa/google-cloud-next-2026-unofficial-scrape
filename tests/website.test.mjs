@@ -552,3 +552,20 @@ test('top words keeps meaningful short technical words like AI', async () => {
   const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
   assert.match(appHtml, /data-word="ai"/);
 });
+
+
+test('top words drops common boilerplate words and trailing punctuation noise', async () => {
+  const env = createEnvironment('?view=words');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'Join the AI talks', description: 'Explore relevant AI only. Contact shared teams.', url: 'https://example.com/1', topics: [], speakers: [] },
+      { title: 'AI for developers', description: 'AI workflows for teams', url: 'https://example.com/2', topics: [], speakers: [] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.doesNotMatch(appHtml, /data-word="join"/);
+  assert.doesNotMatch(appHtml, /data-word="explore"/);
+  assert.doesNotMatch(appHtml, /data-word="only\."/);
+  assert.match(appHtml, /data-word="ai"/);
+});
