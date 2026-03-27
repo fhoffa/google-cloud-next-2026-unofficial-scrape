@@ -607,3 +607,15 @@ test('top words merges agent and agents with a combined label', async () => {
   assert.match(appHtml, /agent\/agents/i);
   assert.doesNotMatch(appHtml, /data-word="agents"/i);
 });
+
+
+test('top words merges an obvious plural cleanup batch', async () => {
+  const env = createEnvironment('?q=database&view=words');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /data-word="database"/i);
+  assert.match(appHtml, /database\/databases/i);
+  assert.doesNotMatch(appHtml, /data-word="databases"/i);
+  assert.doesNotMatch(appHtml, /data-word="developers"/i);
+  assert.doesNotMatch(appHtml, /data-word="leaders"/i);
+});
