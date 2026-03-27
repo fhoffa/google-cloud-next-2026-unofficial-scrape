@@ -4,9 +4,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   buildIsoDateTime,
+  dedupeSessionRecords,
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  partitionSessionRecords,
   toSessionRecord,
 } from '../scrape_google_next.mjs';
 
@@ -28,6 +30,15 @@ test('extracts session records with moreInfoUrl from paginated library pages', (
   assert.ok(records.some((r) => r.title === 'Learn the basics of Gemini CLI'));
 });
 
+
+
+test('extracts scheduled and unscheduled dates from library records', () => {
+  const records = extractSessionRecordsFromLibrary(page1);
+  assert.ok(records.some((r) => r.date_text === 'Wednesday, April 22, 2026'));
+  assert.ok(records.some((r) => r.date_text === 'Thursday, April 23, 2026'));
+  assert.ok(records.some((r) => r.date_text === ''));
+});
+
 test('extracts full description from Gemini CLI session page', () => {
   const desc = extractDescription(geminiCli);
   assert.match(desc, /what's new and what's next for Gemini CLI/i);
@@ -44,4 +55,18 @@ test('parses keynote session with URL, room, datetime, and speakers', () => {
   assert.equal(rec.end_at, '2026-04-22T10:30:00');
   assert.ok(rec.speakers.length > 0);
   assert.match(rec.description, /The Next '26 Opening Keynote/i);
+});
+
+
+test('dedupes and partitions library records into date buckets', () => {
+  const records = [
+    ...extractSessionRecordsFromLibrary(page1),
+    ...extractSessionRecordsFromLibrary(page2),
+  ];
+  const deduped = dedupeSessionRecords(records);
+  assert.ok(deduped.length < records.length);
+  const buckets = partitionSessionRecords(deduped);
+  assert.ok(buckets.has('Wednesday, April 22, 2026'));
+  assert.ok(buckets.has('Thursday, April 23, 2026'));
+  assert.ok(buckets.has('UNSCHEDULED'));
 });

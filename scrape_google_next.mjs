@@ -18,6 +18,7 @@ const CONFIG = {
   timeoutMs: Number(process.env.TIMEOUT_MS || 30000),
   forceRefresh: process.env.FORCE_REFRESH === '1',
   maxSessions: process.env.MAX_SESSIONS ? Number(process.env.MAX_SESSIONS) : null,
+  bucket: process.env.BUCKET || '',
   userAgent:
     process.env.USER_AGENT ||
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 polite-research-scraper/0.1',
@@ -98,6 +99,40 @@ function unique(arr) {
   return [...new Set(arr)];
 }
 
+
+function dedupeSessionRecords(records) {
+  const byUrl = new Map();
+  for (const record of records) {
+    if (!record?.url) continue;
+    byUrl.set(record.url, record);
+  }
+  return [...byUrl.values()].sort((a, b) => a.url.localeCompare(b.url));
+}
+
+function bucketKeyForRecord(record) {
+  return record.date_text || 'UNSCHEDULED';
+}
+
+function bucketFileSlug(bucket) {
+  if (bucket === 'UNSCHEDULED') return 'unscheduled';
+  const parsed = parseDateText(bucket);
+  if (!parsed) return bucket.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const y = parsed.getUTCFullYear();
+  const m = String(parsed.getUTCMonth() + 1).padStart(2, '0');
+  const d = String(parsed.getUTCDate()).padStart(2, '0');
+  return `${y}-${m}-${d}`;
+}
+
+function partitionSessionRecords(records) {
+  const buckets = new Map();
+  for (const record of dedupeSessionRecords(records)) {
+    const key = bucketKeyForRecord(record);
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(record);
+  }
+  return buckets;
+}
+
 function extractSessionIds(libraryHtml) {
   return unique([...libraryHtml.matchAll(/"session_(\d+)"\s*:\s*\{/g)].map((m) => m[1])).sort();
 }
@@ -121,6 +156,11 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
         id: String(value.id || key.replace(/^session_/, '')),
         url: decodeJsonEscapedUrl(value.moreInfoUrl),
         title: value.name || '',
+        date_text: value.date || '',
+        start_time_text: value.start_time || '',
+        end_time_text: value.end_time || '',
+        room: value.location_id || '',
+        session_category: value.custom_fields?.c_92132 || '',
       });
     }
   } catch {
@@ -132,7 +172,7 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
 
 async function collectLibraryPages() {
   const pages = [];
-  const byUrl = new Map();
+  const records = [];
   const seenIdSets = new Set();
 
   for (let page = 1; page <= 50; page++) {
@@ -141,7 +181,7 @@ async function collectLibraryPages() {
     console.log(`Fetching library page ${page}: ${url}`);
     const html = await fetchText(url, { cacheKey });
     const ids = extractSessionIds(html);
-    const records = extractSessionRecordsFromLibrary(html);
+    const pageRecords = extractSessionRecordsFromLibrary(html);
     const signature = ids.join(',');
 
     if (ids.length === 0) {
@@ -154,16 +194,22 @@ async function collectLibraryPages() {
     }
 
     seenIdSets.add(signature);
-    pages.push({ page, ids, recordsCount: records.length });
-    for (const record of records) byUrl.set(record.url, record);
+    pages.push({ page, idsCount: ids.length, recordsCount: pageRecords.length });
+    records.push(...pageRecords);
 
-    console.log(`- page ${page}: ${ids.length} embedded sessions, ${records.length} records with URLs, cumulative unique URLs: ${byUrl.size}`);
+    const uniqueCount = dedupeSessionRecords(records).length;
+    console.log(`- page ${page}: ${ids.length} embedded sessions, ${pageRecords.length} records with URLs, cumulative unique URLs: ${uniqueCount}`);
     await politeDelay();
   }
 
+  const dedupedRecords = dedupeSessionRecords(records);
+  const bucketMap = partitionSessionRecords(dedupedRecords);
+
   return {
     pages,
-    sessionUrls: [...byUrl.keys()].sort(),
+    records: dedupedRecords,
+    sessionUrls: dedupedRecords.map((r) => r.url),
+    buckets: Object.fromEntries([...bucketMap.entries()].map(([key, value]) => [key, value.map((r) => r.url)])),
   };
 }
 
@@ -383,9 +429,11 @@ export {
   collectLibraryPages,
   extractDescription,
   extractJsonObject,
+  dedupeSessionRecords,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
   normalizeTopics,
+  partitionSessionRecords,
   stripTags,
   toSessionRecord,
 };
@@ -394,9 +442,17 @@ async function main() {
   await ensureDir(OUT_DIR);
   await ensureDir(SNAPSHOTS_DIR);
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
-  const { pages, sessionUrls } = await collectLibraryPages();
-  const selectedUrls = CONFIG.maxSessions ? sessionUrls.slice(0, CONFIG.maxSessions) : sessionUrls;
-  console.log(`Collected ${sessionUrls.length} unique session URLs across ${pages.length} library pages; scraping ${selectedUrls.length}.`);
+  const { pages, sessionUrls, buckets } = await collectLibraryPages();
+  let selectedUrls = sessionUrls;
+  if (CONFIG.bucket) {
+    const bucketUrls = buckets[CONFIG.bucket];
+    if (!bucketUrls) throw new Error(`Unknown bucket: ${CONFIG.bucket}`);
+    selectedUrls = bucketUrls;
+  }
+  selectedUrls = CONFIG.maxSessions ? selectedUrls.slice(0, CONFIG.maxSessions) : selectedUrls;
+  console.log(`Collected ${sessionUrls.length} unique session URLs across ${pages.length} library pages.`);
+  if (CONFIG.bucket) console.log(`Bucket ${CONFIG.bucket}: ${selectedUrls.length} URLs selected.`);
+  else console.log(`Scraping ${selectedUrls.length} URLs.`);
 
   const sessions = [];
   for (let i = 0; i < selectedUrls.length; i++) {
