@@ -59,6 +59,24 @@ class FakeElement {
   click() {
     this.dispatchEvent({ type: 'click' });
   }
+
+  querySelectorAll(selector) {
+    if (selector === '.favorite-btn') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"favorite-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
+      return matches.map((match) => ({
+        dataset: { sessionId: match[1] },
+        listeners: new Map(),
+        addEventListener(type, listener) {
+          if (!this.listeners.has(type)) this.listeners.set(type, []);
+          this.listeners.get(type).push(listener);
+        },
+        click() {
+          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+        },
+      }));
+    }
+    return [];
+  }
 }
 
 class FakeDocument {
@@ -98,9 +116,12 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'speaker' }));
   document.register(new FakeElement({ id: 'topic-filter' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
+  document.register(new FakeElement({ id: 'start-after' }));
+  document.register(new FakeElement({ id: 'start-before' }));
   document.register(new FakeElement({ id: 'result-count' }));
   document.register(new FakeElement({ id: 'header-count' }));
   document.register(new FakeElement({ id: 'clear-btn' }));
+  document.register(new FakeElement({ id: 'favorites-only' }));
 
   document.dayPills = [
     new FakeElement({ dataset: { day: '' }, classes: ['pill', 'active'] }),
@@ -228,4 +249,47 @@ test('changing filters updates the URL and clear resets filters and query params
   assert.equal(env.document.getElementById('result-count').textContent, `${dataset.sessions.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.ok(env.document.dayPills[0].classList.contains('active'));
   assert.ok(!env.document.dayPills[3].classList.contains('active'));
+});
+
+
+test('favorites can be shared and filtered', async () => {
+  const favoriteId = String(dataset.sessions[0].id || dataset.sessions[0].url);
+  const env = createEnvironment(`?view=favorites&favorites=${encodeURIComponent(favoriteId)}`);
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.equal(env.document.getElementById('favorites-only').checked, true);
+  assert.match(env.location.search, /favorites=/);
+  assert.match(env.location.search, /view=favorites/);
+  assert.equal((env.document.getElementById('app').innerHTML.match(/class="card"/g) || []).length, 1);
+});
+
+
+test('time filters update URL and narrow results', async () => {
+  const env = createEnvironment('?day=Thursday,%20April%2023,%202026&start_after=3%3A00%20PM&start_before=4%3A00%20PM');
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.equal(env.document.getElementById('start-after').value, '3:00 PM');
+  assert.equal(env.document.getElementById('start-before').value, '4:00 PM');
+  assert.match(env.location.search, /start_after=3%3A00\+PM|start_after=3%3A00%20PM/);
+  assert.match(env.location.search, /start_before=4%3A00\+PM|start_before=4%3A00%20PM/);
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.ok((appHtml.match(/class="card"/g) || []).length > 0);
 });

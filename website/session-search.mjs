@@ -1,5 +1,6 @@
 const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
+const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
@@ -17,6 +18,10 @@ export function readFiltersFromSearch(search) {
     topic: params.get('topic') || '',
     day: params.get('day') || '',
     sort: VALID_SORTS.has(params.get('sort')) ? params.get('sort') : DEFAULT_SORT,
+    start_after: params.get('start_after') || '',
+    start_before: params.get('start_before') || '',
+    favorites: params.get('favorites') || '',
+    view: params.get('view') || '',
   };
 }
 
@@ -28,20 +33,31 @@ export function buildSearchFromFilters(filters) {
   if (filters.topic) params.set('topic', filters.topic);
   if (filters.day) params.set('day', filters.day);
   if (filters.sort && filters.sort !== DEFAULT_SORT) params.set('sort', filters.sort);
+  if (filters.start_after) params.set('start_after', filters.start_after);
+  if (filters.start_before) params.set('start_before', filters.start_before);
+  if (filters.view === 'favorites') params.set('view', 'favorites');
+  if (filters.favorites) params.set('favorites', filters.favorites);
 
   const query = params.toString();
   return query ? `?${query}` : '';
 }
 
 export function filterSessions(sessions, filters) {
+  const favoriteIds = new Set(String(filters.favorites || '').split(',').map((v) => v.trim()).filter(Boolean));
   const q = filters.q.trim().toLowerCase();
   const speaker = filters.speaker.trim().toLowerCase();
   const topic = filters.topic;
   const day = filters.day;
+  const startAfter = filters.start_after || '';
+  const startBefore = filters.start_before || '';
 
   return sessions.filter((session) => {
+    if (filters.view === 'favorites' && !favoriteIds.has(String(session.id || session.url || ''))) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
+    const startTime = session.start_time_text || '';
+    if (startAfter && (!startTime || startTime < startAfter)) return false;
+    if (startBefore && (!startTime || startTime > startBefore)) return false;
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -112,8 +128,10 @@ function avatarColor(name) {
   return colors[Math.abs(hash) % colors.length];
 }
 
-function renderCards(sessions, q) {
+function renderCards(sessions, q, favoriteIds) {
   return sessions.map((session) => {
+    const sessionId = String(session.id || session.url || '');
+    const isFavorite = favoriteIds.has(sessionId);
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
@@ -133,11 +151,12 @@ function renderCards(sessions, q) {
       ? session.date_text.replace(', 2026', '').replace('day,', '')
       : '';
 
-    return `<div class="card">
-      <div class="card-title">${session.url
+    return `<div class="card" data-session-id="${escHtml(sessionId)}">
+      <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+        <span>${session.url
         ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>`
         : highlight(session.title, q)
-      }</div>
+      }</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
       <div class="card-meta">
         ${dateShort ? `<span class="meta-icon">${escHtml(dateShort)}</span>` : ''}
         ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
@@ -201,21 +220,31 @@ export async function initSessionSearch({
   setTimeoutImpl = globalThis.setTimeout,
   clearTimeoutImpl = globalThis.clearTimeout,
   dataUrl = 'sessions/latest.json',
+  storage = globalThis.localStorage,
 } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
   const topicSelect = document.getElementById('topic-filter');
   const sortSelect = document.getElementById('sort-filter');
+  const startAfterInput = document.getElementById('start-after');
+  const startBeforeInput = document.getElementById('start-before');
   const resultCount = document.getElementById('result-count');
   const headerCount = document.getElementById('header-count');
   const clearBtn = document.getElementById('clear-btn');
+  const favoriteToggle = document.getElementById('favorites-only');
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
+  const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map(String));
+  const sharedFavorites = String(state.favorites || '').split(',').map((v) => v.trim()).filter(Boolean);
+  const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   qInput.value = state.q;
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
+  if (startAfterInput) startAfterInput.value = state.start_after;
+  if (startBeforeInput) startBeforeInput.value = state.start_before;
+  if (favoriteToggle) favoriteToggle.checked = state.view === 'favorites';
   applyDaySelection(dayPills, state.day);
 
   let sessions = [];
@@ -228,6 +257,10 @@ export async function initSessionSearch({
       topic: topicSelect.value,
       day: dayPills.find((pill) => pill.classList.contains('active'))?.dataset.day || '',
       sort: VALID_SORTS.has(sortSelect.value) ? sortSelect.value : DEFAULT_SORT,
+      start_after: startAfterInput?.value || '',
+      start_before: startBeforeInput?.value || '',
+      view: favoriteToggle?.checked ? 'favorites' : '',
+      favorites: [...favoriteIds].join(','),
     };
   }
 
@@ -253,7 +286,15 @@ export async function initSessionSearch({
       return filtered;
     }
 
-    app.innerHTML = `<div class="grid">${renderCards(filtered, filters.q.toLowerCase())}</div>`;
+    app.innerHTML = `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds)}</div>`;
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.favorite-btn') : []) {
+      button.addEventListener('click', () => {
+        const id = button.dataset.sessionId;
+        if (favoriteIds.has(id)) favoriteIds.delete(id); else favoriteIds.add(id);
+        try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...favoriteIds])); } catch {}
+        render();
+      });
+    }
     return filtered;
   }
 
@@ -294,12 +335,25 @@ export async function initSessionSearch({
     render();
   });
 
+  [startAfterInput, startBeforeInput].filter(Boolean).forEach((input) => {
+    input.addEventListener('input', () => {
+      render();
+    });
+  });
+
+  favoriteToggle?.addEventListener('change', () => {
+    render();
+  });
+
   clearBtn.addEventListener('click', () => {
     qInput.value = '';
     speakerInput.value = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
     applyDaySelection(dayPills, '');
+    if (favoriteToggle) favoriteToggle.checked = false;
+    if (startAfterInput) startAfterInput.value = '';
+    if (startBeforeInput) startBeforeInput.value = '';
     render();
   });
 
