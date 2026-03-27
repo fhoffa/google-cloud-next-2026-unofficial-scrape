@@ -59,8 +59,9 @@ function renderFilterPills(filters) {
 }
 
 const STOP_WORDS = new Set([
-  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'ai', 'cloud', 'google', 'next', 'session', 'sessions'
+  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'cloud', 'google', 'next', 'session', 'sessions'
 ]);
+const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
 
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
@@ -215,8 +216,8 @@ function wordStats(sessions) {
   const counts = new Map();
   for (const session of sessions) {
     const text = [session.title, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].join(' ').toLowerCase();
-    for (const word of text.match(/[a-z][a-z0-9+.-]{2,}/g) || []) {
-      if (STOP_WORDS.has(word)) continue;
+    for (const word of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
+      if ((word.length < 3 && !SHORT_WORD_ALLOWLIST.has(word)) || STOP_WORDS.has(word)) continue;
       counts.set(word, (counts.get(word) || 0) + 1);
     }
   }

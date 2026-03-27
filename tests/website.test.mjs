@@ -537,3 +537,18 @@ test('top companies tab renders clickable companies and session links', async ()
   assert.match(appHtml, /company-summary-link/);
   assert.match(appHtml, /company-session-link/);
 });
+
+
+test('top words keeps meaningful short technical words like AI', async () => {
+  const env = createEnvironment('?view=words');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'AI for developers', description: 'AI agents and AI workflows', url: 'https://example.com/1', topics: [], speakers: [] },
+      { title: 'Enterprise AI', description: 'AI platforms at scale', url: 'https://example.com/2', topics: [], speakers: [] },
+      { title: 'Practical ML', description: 'ML and AI together', url: 'https://example.com/3', topics: [], speakers: [] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML.toLowerCase();
+  assert.match(appHtml, /data-word="ai"/);
+});
