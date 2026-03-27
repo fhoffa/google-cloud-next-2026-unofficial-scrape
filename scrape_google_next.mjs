@@ -143,11 +143,8 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
   const marker = 'GoogleAgendaBuilder.show_sessions(';
   const start = libraryHtml.indexOf(marker);
   if (start === -1) return records;
-  const jsonStart = start + marker.length;
-  const end = libraryHtml.indexOf('}, 19,1106,', jsonStart);
-  if (end === -1) return records;
-
-  const jsonText = libraryHtml.slice(jsonStart, end + 1);
+  const jsonText = extractFirstJsonObjectAfterMarker(libraryHtml, marker);
+  if (!jsonText) return records;
   try {
     const parsed = JSON.parse(jsonText);
     for (const [key, value] of Object.entries(parsed)) {
@@ -169,6 +166,43 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
   }
 
   return records;
+}
+
+function extractFirstJsonObjectAfterMarker(text, marker) {
+  const start = text.indexOf(marker);
+  if (start === -1) return null;
+  const from = start + marker.length;
+  const objectStart = text.indexOf('{', from);
+  if (objectStart === -1) return null;
+
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let index = objectStart; index < text.length; index += 1) {
+    const char = text[index];
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+      } else if (char === '\\') {
+        escaped = true;
+      } else if (char === '"') {
+        inString = false;
+      }
+      continue;
+    }
+    if (char === '"') {
+      inString = true;
+      continue;
+    }
+    if (char === '{') depth += 1;
+    if (char === '}') {
+      depth -= 1;
+      if (depth === 0) {
+        return text.slice(objectStart, index + 1);
+      }
+    }
+  }
+  return null;
 }
 
 async function collectLibraryPages() {
@@ -309,8 +343,33 @@ function extractVisibleDateTime(html) {
 function parseDateText(dateText) {
   const value = (dateText || '').trim();
   if (!value) return null;
-  const parsed = new Date(`${value} UTC`);
+  const monthMap = {
+    january: 0,
+    february: 1,
+    march: 2,
+    april: 3,
+    may: 4,
+    june: 5,
+    july: 6,
+    august: 7,
+    september: 8,
+    october: 9,
+    november: 10,
+    december: 11,
+  };
+  const match = value.match(/^(?:(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\s*)?([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/i);
+  if (!match) return null;
+  const month = monthMap[(match[1] || '').toLowerCase()];
+  const day = Number(match[2]);
+  const year = Number(match[3]);
+  if (month == null || !Number.isInteger(day) || !Number.isInteger(year)) return null;
+  const parsed = new Date(Date.UTC(year, month, day));
   if (Number.isNaN(parsed.getTime())) return null;
+  if (
+    parsed.getUTCFullYear() !== year ||
+    parsed.getUTCMonth() !== month ||
+    parsed.getUTCDate() !== day
+  ) return null;
   return parsed;
 }
 
@@ -378,6 +437,36 @@ function toSessionRecord(url, html) {
   };
 }
 
+function isIsoDateTime(value) {
+  if (!value) return true;
+  return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:00$/.test(value);
+}
+
+function validateSessionRecord(record) {
+  const issues = [];
+  if (!record.title || !String(record.title).trim()) issues.push('missing title');
+  if (!record.url || !String(record.url).trim()) issues.push('missing url');
+  if (!Array.isArray(record.topics)) issues.push('topics must be an array');
+  if (!Array.isArray(record.speakers)) issues.push('speakers must be an array');
+  if (Array.isArray(record.topics) && record.topics.some((topic) => typeof topic !== 'string')) {
+    issues.push('topics must contain only strings');
+  }
+  if (Array.isArray(record.speakers)) {
+    const badSpeaker = record.speakers.some((speaker) => {
+      if (!speaker || typeof speaker !== 'object') return true;
+      if (typeof speaker.name !== 'string' || !speaker.name.trim()) return true;
+      return speaker.company != null && typeof speaker.company !== 'string';
+    });
+    if (badSpeaker) issues.push('speakers must include valid name/company values');
+  }
+  if (!isIsoDateTime(record.start_at)) issues.push('invalid start_at');
+  if (!isIsoDateTime(record.end_at)) issues.push('invalid end_at');
+  if (issues.length > 0) {
+    return { valid: false, issues };
+  }
+  return { valid: true, issues: [] };
+}
+
 function yamlScalar(value) {
   if (value == null) return '""';
   const str = String(value);
@@ -428,6 +517,7 @@ export {
   buildIsoDateTime,
   buildDateTime,
   collectLibraryPages,
+  extractFirstJsonObjectAfterMarker,
   extractDescription,
   extractJsonObject,
   dedupeSessionRecords,
@@ -435,8 +525,10 @@ export {
   extractSessionRecordsFromLibrary,
   normalizeTopics,
   partitionSessionRecords,
+  parseDateText,
   stripTags,
   toSessionRecord,
+  validateSessionRecord,
 };
 
 async function main() {
@@ -457,6 +549,7 @@ async function main() {
   else console.log(`Scraping ${selectedUrls.length} URLs.`);
 
   const sessions = [];
+  let invalidCount = 0;
   for (let i = 0; i < selectedUrls.length; i++) {
     const url = selectedUrls[i];
     const idMatch = url.match(/\/session\/(\d+)\//);
@@ -464,6 +557,12 @@ async function main() {
     console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
     const html = await fetchText(url, { cacheKey: `session-${sessionId}.html` });
     const record = toSessionRecord(url, html);
+    const validation = validateSessionRecord(record);
+    if (!validation.valid) {
+      invalidCount += 1;
+      console.warn(`Skipping invalid session record for ${url}: ${validation.issues.join(', ')}`);
+      continue;
+    }
     sessions.push(record);
     await politeDelay();
   }
@@ -503,6 +602,7 @@ async function main() {
     console.log(`- ${snapshotJson}`);
     console.log(`- ${snapshotYaml}`);
   }
+  if (invalidCount > 0) console.warn(`Skipped ${invalidCount} invalid session record(s).`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

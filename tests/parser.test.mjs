@@ -5,11 +5,14 @@ import path from 'node:path';
 import {
   buildIsoDateTime,
   dedupeSessionRecords,
+  extractFirstJsonObjectAfterMarker,
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  parseDateText,
   partitionSessionRecords,
   toSessionRecord,
+  validateSessionRecord,
 } from '../scrape_google_next.mjs';
 
 const root = path.resolve('sessions/cache');
@@ -30,6 +33,14 @@ test('extracts session records with moreInfoUrl from paginated library pages', (
   assert.ok(records.some((r) => r.title === 'Learn the basics of Gemini CLI'));
 });
 
+test('extracts show_sessions payload without relying on fixed trailer tokens', () => {
+  const mutated = page2.replace('}, 19,1106,', '}, 99,2000,');
+  const jsonObject = extractFirstJsonObjectAfterMarker(mutated, 'GoogleAgendaBuilder.show_sessions(');
+  assert.ok(jsonObject);
+  const records = extractSessionRecordsFromLibrary(mutated);
+  assert.ok(records.length > 0);
+});
+
 
 
 test('extracts scheduled and unscheduled dates from library records', () => {
@@ -48,6 +59,15 @@ test('builds machine-friendly ISO datetime', () => {
   assert.equal(buildIsoDateTime('Wednesday, April 22, 2026', '1:30 PM'), '2026-04-22T13:30:00');
 });
 
+test('parses date strings with and without weekday prefixes deterministically', () => {
+  assert.equal(parseDateText('Wednesday, April 22, 2026')?.toISOString(), '2026-04-22T00:00:00.000Z');
+  assert.equal(parseDateText('April 22, 2026')?.toISOString(), '2026-04-22T00:00:00.000Z');
+});
+
+test('rejects impossible calendar dates', () => {
+  assert.equal(parseDateText('February 31, 2026'), null);
+});
+
 test('parses keynote session with URL, room, datetime, and speakers', () => {
   const rec = toSessionRecord('https://www.googlecloudevents.com/next-vegas/session/3922022/opening-keynote-the-agentic-cloud', keynote);
   assert.equal(rec.room, 'Michelob ULTRA Arena');
@@ -55,6 +75,22 @@ test('parses keynote session with URL, room, datetime, and speakers', () => {
   assert.equal(rec.end_at, '2026-04-22T10:30:00');
   assert.ok(rec.speakers.length > 0);
   assert.match(rec.description, /The Next '26 Opening Keynote/i);
+});
+
+test('validates malformed session records', () => {
+  const malformed = {
+    title: 'Example',
+    url: 'https://example.test/session/1',
+    topics: ['ok', 42],
+    speakers: [{ name: '', company: 'ExampleCo' }],
+    start_at: '2026-04-22',
+    end_at: '2026-04-22T10:00:00',
+  };
+  const result = validateSessionRecord(malformed);
+  assert.equal(result.valid, false);
+  assert.ok(result.issues.includes('topics must contain only strings'));
+  assert.ok(result.issues.includes('speakers must include valid name/company values'));
+  assert.ok(result.issues.includes('invalid start_at'));
 });
 
 
