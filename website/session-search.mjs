@@ -144,7 +144,7 @@ export function filterSessions(sessions, filters) {
     }
     if (exclude) {
       const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
-      if (exclude.split(/\s+/).some((word) => haystack.includes(word))) return false;
+      if (exclude.split(/\s+/).some((word) => new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(haystack))) return false;
     }
     return true;
   });

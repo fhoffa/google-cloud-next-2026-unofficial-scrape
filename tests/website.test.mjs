@@ -647,3 +647,18 @@ test('exclude filter hides matching sessions and is reflected in URL and active 
   assert.equal(env.document.getElementById('exclude').value, '');
   assert.doesNotMatch(env.location.search, /exclude/);
 });
+
+test('exclude filter uses whole-word matching so "ai" does not exclude sessions with words like "aim"', async () => {
+  const { filterSessions } = await import('../website/session-search.mjs');
+  const sessions = [
+    { title: 'Mainframe migration guide', description: 'Contains aim andrain', topics: [], speakers: [] },
+    { title: 'AI for everyone', description: 'This is about AI', topics: [], speakers: [] },
+    { title: 'Training on data', description: 'Contains aim but not the keyword', topics: [], speakers: [] },
+  ];
+  const filters = { q: '', exclude: 'ai', speaker: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', company: '', view: 'sessions' };
+  const result = filterSessions(sessions, filters);
+  assert.equal(result.length, 2, 'only the session with standalone "AI" should be excluded');
+  assert.ok(result.some((s) => s.title === 'Mainframe migration guide'), 'mainframe session should remain');
+  assert.ok(result.some((s) => s.title === 'Training on data'), 'training session should remain');
+  assert.ok(!result.some((s) => s.title === 'AI for everyone'), 'AI session should be excluded');
+});
