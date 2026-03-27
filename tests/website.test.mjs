@@ -394,3 +394,23 @@ test('copy favorites link button is present', async () => {
 test('index.html exposes a visible version marker', () => {
   assert.match(html, /Version:\s*[0-9a-f]{7,}/i);
 });
+
+
+test('time sort pushes unscheduled sessions after scheduled ones', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  const firstCard = appHtml.match(/class="card"[\s\S]*?<div class="card-meta">([\s\S]*?)<\/div>/);
+  assert.ok(firstCard);
+  assert.doesNotMatch(firstCard[1], /UNSCHEDULED/i);
+});

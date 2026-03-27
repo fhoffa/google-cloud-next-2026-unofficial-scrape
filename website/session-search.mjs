@@ -98,6 +98,10 @@ export function sortSessions(sessions, sort) {
   items.sort((a, b) => {
     const left = a.start_at || a.date_text || '';
     const right = b.start_at || b.date_text || '';
+    const leftMissing = left === '';
+    const rightMissing = right === '';
+    if (leftMissing && !rightMissing) return 1;
+    if (!leftMissing && rightMissing) return -1;
     return left.localeCompare(right);
   });
   return items;
