@@ -539,6 +539,153 @@
     @media (max-width: 600px) {
       .grid { grid-template-columns: 1fr; }
     }
+
+    /* Changelog tab */
+    .tab-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 1px 6px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .changelog {
+      max-width: 900px;
+      margin: 16px auto 40px;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cl-entry {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .cl-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 18px;
+      background: var(--gray-100);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .cl-dates {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gray-800);
+    }
+
+    .cl-summary {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    .cl-session {
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.85rem;
+    }
+
+    .cl-session:last-child { border-bottom: none; }
+
+    .cl-session-title {
+      font-weight: 500;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+    }
+
+    .cl-session-link {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .cl-session-link:hover { text-decoration: underline; }
+
+    .cl-badge {
+      display: inline-block;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .cl-badge-added { background: #e6f4ea; color: var(--green); }
+    .cl-badge-removed { background: #fce8e6; color: var(--red); }
+
+    .cl-diffs {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cl-field {
+      display: grid;
+      grid-template-columns: 90px 1fr auto 1fr;
+      gap: 8px;
+      align-items: start;
+      font-size: 0.8rem;
+    }
+
+    .cl-field-name {
+      font-weight: 600;
+      color: var(--gray-600);
+      padding-top: 2px;
+    }
+
+    .cl-old {
+      color: var(--red);
+      background: #fce8e6;
+      border-radius: 4px;
+      padding: 2px 6px;
+      word-break: break-word;
+    }
+
+    .cl-new {
+      color: var(--green);
+      background: #e6f4ea;
+      border-radius: 4px;
+      padding: 2px 6px;
+      word-break: break-word;
+    }
+
+    .cl-arrow {
+      color: var(--gray-400);
+      padding-top: 2px;
+      text-align: center;
+    }
+
+    .cl-added-details {
+      padding: 12px 18px;
+      font-size: 0.82rem;
+      color: var(--gray-600);
+    }
+
+    .cl-added-details summary {
+      cursor: pointer;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .cl-added { padding: 6px 0; }
+
+    @media (max-width: 600px) {
+      .cl-field { grid-template-columns: 1fr; }
+      .cl-arrow { display: none; }
+    }
   </style>
 </head>
 <body>

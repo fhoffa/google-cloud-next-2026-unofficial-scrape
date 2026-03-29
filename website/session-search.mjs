@@ -2,7 +2,7 @@ const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
-const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
+const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words', 'changelog']);
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
   const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
@@ -241,14 +241,82 @@ function wordStats(sessions) {
   return [...counts.entries()].map(([word, count]) => ({ word, count, sessionCount: sessionSets.get(word)?.size || 0, label: WORD_DISPLAY.get(word) || word })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 96);
 }
 
-function renderTabs(activeView) {
+function renderTabs(activeView, changelogEntryCount) {
+  const changelogLabel = changelogEntryCount > 0 ? `Changelog <span class="tab-badge">${changelogEntryCount}</span>` : 'Changelog';
   const tabs = [
     { id: 'sessions', label: 'Sessions' },
     { id: 'speakers', label: 'Top speakers' },
     { id: 'companies', label: 'Top companies' },
     { id: 'words', label: 'Top words' },
+    { id: 'changelog', label: changelogLabel },
   ];
   return `<div class="tabs" role="tablist" aria-label="Views">${tabs.map((tab) => `<button class="tab-btn${tab.id === activeView ? ' active' : ''}" type="button" data-view="${tab.id}" role="tab" aria-selected="${tab.id === activeView ? 'true' : 'false'}">${tab.label}</button>`).join('')}</div>`;
+}
+
+function formatSnapshotLabel(name) {
+  const match = name.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})-(\d{2})/);
+  if (!match) return name;
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const [, year, month, day, hour, min] = match;
+  return `${months[Number(month) - 1]} ${Number(day)}, ${year} ${hour}:${min} UTC`;
+}
+
+function renderFieldDiff(field, change) {
+  const fieldLabels = { title: 'Title', description: 'Description', room: 'Room', start_at: 'Start time', end_at: 'End time', date_text: 'Date', start_time_text: 'Start', end_time_text: 'End', speakers: 'Speakers', topics: 'Topics' };
+  const label = fieldLabels[field] || field;
+  let oldVal = change.old;
+  let newVal = change.new;
+  if (field === 'speakers') {
+    oldVal = (change.old || []).map((s) => `${s.name}${s.company ? ` (${s.company})` : ''}`).join(', ') || '(none)';
+    newVal = (change.new || []).map((s) => `${s.name}${s.company ? ` (${s.company})` : ''}`).join(', ') || '(none)';
+  } else if (field === 'topics') {
+    oldVal = (change.old || []).join(', ') || '(none)';
+    newVal = (change.new || []).join(', ') || '(none)';
+  } else {
+    oldVal = String(change.old ?? '(empty)');
+    newVal = String(change.new ?? '(empty)');
+    if (field === 'description' && oldVal.length > 200) oldVal = oldVal.slice(0, 200) + '…';
+    if (field === 'description' && newVal.length > 200) newVal = newVal.slice(0, 200) + '…';
+  }
+  return `<div class="cl-field"><span class="cl-field-name">${escHtml(label)}</span><span class="cl-old">${escHtml(oldVal)}</span><span class="cl-arrow">→</span><span class="cl-new">${escHtml(newVal)}</span></div>`;
+}
+
+function renderChangelogView(changelog) {
+  if (!changelog) {
+    return `<div class="no-results"><p>Changelog data not available.</p></div>`;
+  }
+  const entries = [...(changelog.entries || [])].reverse();
+  if (!entries.length) {
+    return `<div class="no-results"><p>No session changes detected yet — the site was only scraped once so far.<br>Check back after the next scrape run to see additions, removals, and edits.</p></div>`;
+  }
+  const html = entries.map((entry) => {
+    const fromLabel = entry.from_label || formatSnapshotLabel(entry.from);
+    const toLabel = entry.to_label || formatSnapshotLabel(entry.to);
+    const modifiedHtml = entry.modified.map((session) => {
+      const fieldDiffs = Object.entries(session.changes).map(([field, change]) => renderFieldDiff(field, change)).join('');
+      const link = session.url ? `<a class="cl-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title);
+      return `<div class="cl-session cl-modified"><div class="cl-session-title">${link}</div><div class="cl-diffs">${fieldDiffs}</div></div>`;
+    }).join('');
+    const removedHtml = entry.removed.map((session) => {
+      const link = session.url ? `<a class="cl-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title);
+      return `<div class="cl-session cl-removed"><span class="cl-badge cl-badge-removed">removed</span> ${link}</div>`;
+    }).join('');
+    const addedHtml = entry.added.map((session) => {
+      const link = session.url ? `<a class="cl-session-link" href="${escHtml(session.url)}" target="_blank" rel="noopener">${escHtml(session.title)} ↗</a>` : escHtml(session.title);
+      return `<div class="cl-session cl-added"><span class="cl-badge cl-badge-added">new</span> ${link}</div>`;
+    }).join('');
+    const summary = [entry.modified_count ? `${entry.modified_count} modified` : '', entry.removed_count ? `${entry.removed_count} removed` : '', entry.added_count ? `${entry.added_count} added` : ''].filter(Boolean).join(' · ');
+    return `<div class="cl-entry">
+      <div class="cl-entry-header">
+        <span class="cl-dates">${escHtml(fromLabel)} → ${escHtml(toLabel)}</span>
+        <span class="cl-summary">${escHtml(summary)}</span>
+      </div>
+      ${modifiedHtml}
+      ${removedHtml}
+      ${addedHtml ? `<details class="cl-added-details"><summary>${entry.added_count} newly added sessions</summary>${addedHtml}</details>` : ''}
+    </div>`;
+  }).join('');
+  return `<div class="changelog">${html}</div>`;
 }
 
 function renderCards(sessions, q, favoriteIds, expandedIds) {
@@ -329,7 +397,7 @@ function populateTopicFilter(topicSelect, sessions) {
   topicSelect.appendChild(optgroup);
 }
 
-export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', storage = globalThis.localStorage } = {}) {
+export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', changelogUrl = 'sessions/changelog.json', storage = globalThis.localStorage } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
@@ -369,6 +437,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   applyDaySelection(dayPills, state.day);
 
   let sessions = [];
+  let changelog = null;
   let debounceId;
   let activeView = VALID_VIEWS.has(state.view) ? state.view : DEFAULT_VIEW;
   const expandedIds = new Set();
@@ -413,21 +482,26 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     syncInputClearButtons();
     if (activeFilters) activeFilters.innerHTML = renderFilterPills(filters);
     syncUrl();
+    const changelogEntryCount = changelog ? (changelog.entries || []).reduce((n, e) => n + e.modified_count + e.removed_count, 0) : 0;
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView, changelogEntryCount)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${renderSpeakersView(filtered)}`;
+      app.innerHTML = `${renderTabs(activeView, changelogEntryCount)}${renderSpeakersView(filtered)}`;
     } else if (activeView === 'companies') {
       const stats = companyStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} companies with multiple sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${renderCompaniesView(filtered)}`;
+      app.innerHTML = `${renderTabs(activeView, changelogEntryCount)}${renderCompaniesView(filtered)}`;
+    } else if (activeView === 'changelog') {
+      const totalChanges = (changelog?.entries || []).reduce((n, e) => n + e.modified_count + e.removed_count + e.added_count, 0);
+      resultCount.textContent = changelog ? `${totalChanges.toLocaleString()} total changes across ${(changelog.entries || []).length} scrape comparisons` : '';
+      app.innerHTML = `${renderTabs(activeView, changelogEntryCount)}${renderChangelogView(changelog)}`;
     } else {
       const stats = wordStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} top words`;
-      app.innerHTML = `${renderTabs(activeView)}${renderWordsView(filtered)}`;
+      app.innerHTML = `${renderTabs(activeView, changelogEntryCount)}${renderWordsView(filtered)}`;
     }
 
     for (const tab of app.querySelectorAll ? app.querySelectorAll('.tab-btn') : []) {
@@ -535,12 +609,19 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   try {
-    const response = await fetchImpl(dataUrl);
-    const data = await response.json();
+    const [sessionsResponse, changelogResponse] = await Promise.allSettled([
+      fetchImpl(dataUrl),
+      fetchImpl(changelogUrl),
+    ]);
+    if (sessionsResponse.status === 'rejected') throw sessionsResponse.reason;
+    const data = await sessionsResponse.value.json();
     sessions = data.sessions || [];
     headerCount.textContent = sessions.length.toLocaleString();
     populateTopicFilter(topicSelect, sessions);
     if (state.topic) topicSelect.value = state.topic;
+    if (changelogResponse.status === 'fulfilled' && changelogResponse.value.ok) {
+      try { changelog = await changelogResponse.value.json(); } catch { /* ignore */ }
+    }
     render();
   } catch (error) {
     app.innerHTML = '<div class="no-results"><p>Failed to load sessions. Run a local server to preview.</p></div>';
