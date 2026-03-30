@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 """
-Classify Google Cloud Next sessions using Claude via the Batches API.
+Classify Google Cloud Next sessions using Claude, session by session.
 
 Usage:
-    python3 scripts/classify_sessions_llm.py --submit
-    python3 scripts/classify_sessions_llm.py --poll <batch_id>
-    python3 scripts/classify_sessions_llm.py --fetch <batch_id>
+    python3 scripts/classify_sessions_llm.py
+    python3 scripts/classify_sessions_llm.py --concurrency 5
+    python3 scripts/classify_sessions_llm.py --input sessions/latest.json
+    python3 scripts/classify_sessions_llm.py --output sessions/classified_sessions.json
 
-Or run all steps in one go:
-    python3 scripts/classify_sessions_llm.py --run
-
-State files are written to tmp/ so interrupted runs can be resumed.
-Outputs sessions/classified_sessions.json.
+Re-running resumes from where it left off (already-classified sessions are skipped).
 
 Requires:
     pip install anthropic
@@ -19,9 +16,9 @@ Requires:
 """
 
 import argparse
+import asyncio
 import json
 import sys
-import time
 from pathlib import Path
 
 import anthropic
@@ -91,137 +88,107 @@ def session_prompt(session: dict) -> str:
     }, ensure_ascii=False)
 
 
-def build_batch_requests(sessions: list[dict]) -> list[dict]:
-    requests = []
-    for i, session in enumerate(sessions):
-        requests.append({
-            "custom_id": str(i),
-            "params": {
-                "model": MODEL,
-                "max_tokens": 256,
-                "system": SYSTEM_PROMPT,
-                "messages": [
-                    {"role": "user", "content": session_prompt(session)}
-                ],
-            },
-        })
-    return requests
+async def classify_one(
+    session: dict,
+    client: anthropic.AsyncAnthropic,
+    semaphore: asyncio.Semaphore,
+    index: int,
+    total: int,
+) -> dict | None:
+    async with semaphore:
+        try:
+            response = await client.messages.create(
+                model=MODEL,
+                max_tokens=256,
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": session_prompt(session)}],
+            )
+            text = next((b.text for b in response.content if b.type == "text"), None)
+            if not text:
+                print(f"  [{index+1}/{total}] WARN: empty response for '{session.get('title', '')[:50]}'", file=sys.stderr)
+                return None
+            result = json.loads(text)
+            print(f"  [{index+1}/{total}] {result['ai_focus']:6s} | {result['theme']:8s} | {result['audience']:10s} | {session.get('title', '')[:55]}")
+            return result
+        except json.JSONDecodeError as exc:
+            print(f"  [{index+1}/{total}] WARN: JSON parse error: {exc}", file=sys.stderr)
+            return None
+        except Exception as exc:
+            print(f"  [{index+1}/{total}] ERROR: {exc}", file=sys.stderr)
+            return None
 
 
-def submit(sessions: list[dict], client: anthropic.Anthropic) -> str:
-    requests = build_batch_requests(sessions)
-    print(f"Submitting batch of {len(requests)} requests …", flush=True)
-    batch = client.messages.batches.create(requests=requests)
-    print(f"Batch ID: {batch.id}  status: {batch.processing_status}")
-    return batch.id
-
-
-def poll(batch_id: str, client: anthropic.Anthropic, interval: int = 30) -> None:
-    print(f"Polling batch {batch_id} …", flush=True)
-    while True:
-        batch = client.messages.batches.retrieve(batch_id)
-        counts = batch.request_counts
-        print(
-            f"  status={batch.processing_status}  "
-            f"processing={counts.processing}  "
-            f"succeeded={counts.succeeded}  "
-            f"errored={counts.errored}",
-            flush=True,
-        )
-        if batch.processing_status == "ended":
-            break
-        time.sleep(interval)
-    print("Batch complete.")
-
-
-def fetch_and_write(
-    batch_id: str,
+async def run(
     sessions: list[dict],
     output_path: Path,
-    client: anthropic.Anthropic,
+    concurrency: int,
 ) -> None:
-    print(f"Fetching results for batch {batch_id} …", flush=True)
-    results_by_id: dict[str, dict] = {}
-    errors = 0
-    for result in client.messages.batches.results(batch_id):
-        if result.result.type == "succeeded":
-            raw = result.result.message.content
-            text = next((b.text for b in raw if b.type == "text"), None)
-            if text:
-                try:
-                    parsed = json.loads(text)
-                    results_by_id[result.custom_id] = parsed
-                except json.JSONDecodeError as exc:
-                    print(f"  [WARN] JSON parse error for id {result.custom_id}: {exc}", file=sys.stderr)
-                    errors += 1
-        else:
-            print(
-                f"  [WARN] id {result.custom_id} failed: {result.result.type}",
-                file=sys.stderr,
-            )
-            errors += 1
+    # Load existing results to support resume
+    existing: dict[str, dict] = {}
+    if output_path.exists():
+        try:
+            data = json.loads(output_path.read_text())
+            for s in data.get("sessions", []):
+                if s.get("llm") and s.get("url"):
+                    existing[s["url"]] = s["llm"]
+            print(f"Resuming: {len(existing)} sessions already classified, skipping them.")
+        except Exception:
+            pass
 
+    pending_indices = [i for i, s in enumerate(sessions) if s.get("url") not in existing]
+    print(f"Sessions to classify: {len(pending_indices)} / {len(sessions)}")
+
+    client = anthropic.AsyncAnthropic()
+    semaphore = asyncio.Semaphore(concurrency)
+
+    results: dict[int, dict | None] = {}
+
+    async def task(i: int) -> None:
+        results[i] = await classify_one(sessions[i], client, semaphore, i, len(sessions))
+
+    await asyncio.gather(*[task(i) for i in pending_indices])
+
+    # Merge new results with existing
     classified = []
+    errors = 0
     for i, session in enumerate(sessions):
-        classification = results_by_id.get(str(i))
-        if classification:
-            classified.append({**session, "llm": classification})
+        url = session.get("url", "")
+        llm = results.get(i) if i in results else existing.get(url)
+        if llm:
+            classified.append({**session, "llm": llm})
         else:
             classified.append({**session, "llm": None})
+            if i in pending_indices:
+                errors += 1
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
-        json.dumps({"batch_id": batch_id, "model": MODEL, "sessions": classified}, indent=2),
+        json.dumps({"model": MODEL, "sessions": classified}, indent=2),
         encoding="utf-8",
     )
-    print(f"Wrote {len(classified)} sessions → {output_path}  ({errors} errors)")
-
-
-def load_sessions(input_path: Path) -> list[dict]:
-    data = json.loads(input_path.read_text())
-    return data["sessions"] if isinstance(data, dict) and "sessions" in data else data
+    done = sum(1 for s in classified if s.get("llm"))
+    print(f"\nDone. {done}/{len(classified)} classified ({errors} errors) → {output_path}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="LLM-classify Google Cloud Next sessions")
-    parser.add_argument("--input", default="sessions/latest.json", help="Sessions JSON")
-    parser.add_argument("--output", default="sessions/classified_sessions.json", help="Output JSON")
-    parser.add_argument("--state", default="tmp/batch_id.txt", help="File to persist batch ID")
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--submit", action="store_true", help="Submit the batch and write batch ID to --state")
-    group.add_argument("--poll", metavar="BATCH_ID", help="Poll until batch is done")
-    group.add_argument("--fetch", metavar="BATCH_ID", help="Fetch results and write output")
-    group.add_argument("--run", action="store_true", help="Submit, poll, and fetch in one step")
+    parser.add_argument("--input", default="sessions/latest.json")
+    parser.add_argument("--output", default="sessions/classified_sessions.json")
+    parser.add_argument("--concurrency", type=int, default=8, help="Parallel API calls (default: 8)")
     args = parser.parse_args()
 
-    client = anthropic.Anthropic()
     input_path = Path(args.input)
+    if not input_path.is_absolute():
+        input_path = Path.cwd() / input_path
     output_path = Path(args.output)
-    state_path = Path(args.state)
+    if not output_path.is_absolute():
+        output_path = Path.cwd() / output_path
 
-    sessions = load_sessions(input_path)
+    data = json.loads(input_path.read_text())
+    sessions = data["sessions"] if isinstance(data, dict) and "sessions" in data else data
     print(f"Loaded {len(sessions)} sessions from {input_path}")
 
-    if args.submit:
-        batch_id = submit(sessions, client)
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(batch_id)
-        print(f"Batch ID saved to {state_path}")
-        print(f"\nNext step:\n  python3 scripts/classify_sessions_llm.py --poll {batch_id}")
-
-    elif args.poll:
-        poll(args.poll, client)
-        print(f"\nNext step:\n  python3 scripts/classify_sessions_llm.py --fetch {args.poll}")
-
-    elif args.fetch:
-        fetch_and_write(args.fetch, sessions, output_path, client)
-
-    elif args.run:
-        batch_id = submit(sessions, client)
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        state_path.write_text(batch_id)
-        poll(batch_id, client)
-        fetch_and_write(batch_id, sessions, output_path, client)
+    asyncio.run(run(sessions, output_path, args.concurrency))
 
 
 if __name__ == "__main__":
