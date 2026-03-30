@@ -66,6 +66,20 @@ const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
 const WORD_NORMALIZATION = new Map([['llms', 'llm'], ['models', 'model'], ['meetups', 'meetup'], ['agents', 'agent'], ['databases', 'database'], ['developers', 'developer'], ['leaders', 'leader'], ['scientists', 'scientist'], ['analysts', 'analyst'], ['managers', 'manager'], ['architects', 'architect'], ['teams', 'team'], ['services', 'service'], ['workshops', 'workshop'], ['breakouts', 'breakout'], ['groups', 'group'], ['applications', 'application']]);
 const WORD_DISPLAY = new Map([['llm', 'LLM/LLMs'], ['model', 'model/models'], ['meetup', 'meetup/meetups'], ['agent', 'agent/agents'], ['database', 'database/databases'], ['developer', 'developer/developers'], ['leader', 'leader/leaders'], ['scientist', 'scientist/scientists'], ['analyst', 'analyst/analysts'], ['manager', 'manager/managers'], ['architect', 'architect/architects'], ['team', 'team/teams'], ['service', 'service/services'], ['workshop', 'workshop/workshops'], ['breakout', 'breakout/breakouts'], ['group', 'group/groups'], ['application', 'application/applications']]);
 
+function splitFilterTerms(value) {
+  return String(value || '').match(/"[^"]+"|'[^']+'|\S+/g)?.map((part) => part.replace(/^['"]|['"]$/g, '').trim().toLowerCase()).filter(Boolean) || [];
+}
+
+function escapeRegExp(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function matchesFilterTerm(haystack, term) {
+  if (!term) return false;
+  if (/\s/.test(term)) return haystack.includes(term);
+  return new RegExp(`\\b${escapeRegExp(term)}\\b`).test(haystack);
+}
+
 const TOPIC_GROUPS = [
   { label: 'Session type', items: ['Keynotes', 'Breakouts', 'Workshops', 'Lightning Talks', 'Birds of a Feather', 'Demos', 'Spotlights', 'Solution Talks', 'Discussion Groups', 'Lounge Sessions', 'Capture the Flag', 'Developer Meetups', 'Expo Experiences', 'Partner Summit Breakouts', 'Partner Summit Lightning Talks'] },
   { label: 'Technology', items: ['Agents', 'Applied AI', 'Gemini', 'Vertex AI', 'Open Models', 'App Dev', 'APIs', 'Firebase', 'Mobile and Web', 'Data Analytics', 'Databases', 'Compute', 'Serverless', 'Cloud Runtimes', 'Kubernetes', 'Networking', 'Storage', 'Security', 'DevOps', 'CI/CD', 'Observability', 'Multicloud', 'Migration', 'Cost Optimization', 'Architecture'] },
@@ -138,13 +152,12 @@ export function filterSessions(sessions, filters) {
       });
       if (!foundSpeaker) return false;
     }
+    const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
     if (q) {
-      const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
-      if (!q.split(/\s+/).every((word) => haystack.includes(word))) return false;
+      if (!splitFilterTerms(q).every((term) => matchesFilterTerm(haystack, term))) return false;
     }
     if (exclude) {
-      const haystack = [session.title, session.description, session.room || '', ...(session.topics || []), ...(session.speakers || []).flatMap((item) => [item.name || '', item.company || ''])].join(' ').toLowerCase();
-      if (exclude.split(/\s+/).some((word) => new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(haystack))) return false;
+      if (splitFilterTerms(exclude).some((term) => matchesFilterTerm(haystack, term))) return false;
     }
     return true;
   });
