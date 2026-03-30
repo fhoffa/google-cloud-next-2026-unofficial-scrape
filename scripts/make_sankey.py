@@ -29,9 +29,9 @@ THEME_RULES = [
 
 OFFICIAL_AUDIENCE_TAGS = {
     'Developers': {'Application Developers'},
-    'Data': {'Data Engineers', 'Data Analysts', 'Data Scientists', 'Database Professionals'},
+    'Data pros': {'Data Engineers', 'Data Analysts', 'Data Scientists', 'Database Professionals'},
     'Infra/Ops': {'Platform Engineers', 'SREs', 'IT Ops', 'Infrastructure Architects & Admins'},
-    'Security': {'Security Professionals'},
+    'Sec pros': {'Security Professionals'},
     'Leaders': {'IT Managers & Business Leaders', 'Executive', 'Small IT Teams'},
 }
 
@@ -39,7 +39,8 @@ COLORS = {
     'root': '#202124', 'AI': '#4285F4', 'Not AI': '#34A853',
     'Data': '#00ACC1', 'Security': '#43A047', 'Infra': '#FB8C00',
     'Business': '#F9AB00', 'App dev': '#F28B82', 'Other': '#DADCE0',
-    'Leaders': '#C62828', 'Infra/Ops': '#EF6C00', 'Developers': '#6A1B9A'
+    'Leaders': '#C62828', 'Infra/Ops': '#EF6C00', 'Developers': '#6A1B9A',
+    'Data pros': '#00ACC1', 'Sec pros': '#43A047',
 }
 
 THIRD_ORDER = {
@@ -89,9 +90,9 @@ def inferred_with_confidence(session: dict):
     hay = session_haystack(session)
     scores = defaultdict(int)
     if re.search(r'\b(executive|executives|leader|leaders|manager|managers|business leaders?|decision makers?|cio|cto|ceo|vp|director|leadership)\b', hay): scores['Leaders'] += 3
-    if re.search(r'\b(security|iam|identity|threat|cyber|compliance|sovereignty|guardrail|guardrails|trust)\b', hay): scores['Security'] += 3
+    if re.search(r'\b(security|iam|identity|threat|cyber|compliance|sovereignty|guardrail|guardrails|trust)\b', hay): scores['Sec pros'] += 3
     if re.search(r'\b(platform|platform engineers?|sre|sres|it ops|infra|infrastructure|architect|architects|admins?|kubernetes|serverless|networking|migration|multicloud|compute|storage|devops)\b', hay): scores['Infra/Ops'] += 3
-    if re.search(r'\b(data engineers?|data analysts?|data scientists?|database professionals?|bigquery|analytics|looker|warehouse|database|databases)\b', hay): scores['Data'] += 3
+    if re.search(r'\b(data engineers?|data analysts?|data scientists?|database professionals?|bigquery|analytics|looker|warehouse|database|databases)\b', hay): scores['Data pros'] += 3
     if re.search(r'\b(application developers?|developer meetup|developers?\b|app development|api\b|apis\b|firebase|mobile|web|code|coding|builder-to-builder)\b', hay): scores['Developers'] += 3
     if re.search(r'\bfor developers\b', hay): scores['Developers'] += 2
     if re.search(r'\bfor leaders\b', hay): scores['Leaders'] += 2
@@ -106,7 +107,7 @@ def inferred_with_confidence(session: dict):
 
 def audience(session: dict) -> str:
     llm = session.get('llm')
-    if llm and llm.get('audience') in ('Developers', 'Data', 'Infra/Ops', 'Security', 'Leaders'):
+    if llm and llm.get('audience') in ('Developers', 'Data pros', 'Infra/Ops', 'Sec pros', 'Leaders'):
         return llm['audience']
     topics = set(session.get('topics') or [])
     for label, topicset in OFFICIAL_AUDIENCE_TAGS.items():
@@ -139,7 +140,7 @@ def build_chart_data(sessions):
         'Not AI': [(label, third_counts.get(('Not AI', label), 0)) for label, _ in THIRD_ORDER['Not AI'] if third_counts.get(('Not AI', label), 0) > 0],
     }
     fourth = {}
-    audience_order = ['Leaders', 'Security', 'Infra/Ops', 'Data', 'Developers']
+    audience_order = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
     for key, counts in fourth_counts.items():
         ordered = [(label, counts[label]) for label in audience_order if counts.get(label, 0) > 0]
         if ordered:

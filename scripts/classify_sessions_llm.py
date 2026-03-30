@@ -57,9 +57,9 @@ prefer that over broad business language in the description.
 ### audience
 The primary intended audience. Choose the single BEST fit:
 - "Developers"  — application developers, builders, coders, API users
-- "Data"        — data engineers, data analysts, data scientists, database professionals
+- "Data pros"   — data engineers, data analysts, data scientists, database professionals
 - "Infra/Ops"   — platform engineers, SREs, IT ops, infrastructure architects, admins
-- "Security"    — security professionals, security operations
+- "Sec pros"    — security professionals, security operations
 - "Leaders"     — IT managers, business leaders, executives, decision makers, C-suite
 - "General"     — mixed / unclear audience
 
@@ -73,7 +73,7 @@ Respond with ONLY valid JSON matching this schema:
 {
   "ai_focus": "AI" | "Not AI",
   "theme": "Security" | "Data" | "Infra" | "App dev" | "Business",
-  "audience": "Developers" | "Data" | "Infra/Ops" | "Security" | "Leaders" | "General",
+  "audience": "Developers" | "Data pros" | "Infra/Ops" | "Sec pros" | "Leaders" | "General",
   "reasoning": "<string>"
 }"""
 
