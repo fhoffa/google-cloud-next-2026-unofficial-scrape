@@ -67,11 +67,17 @@ def session_haystack(session: dict) -> str:
 
 
 def ai_class(session: dict, keywords):
+    llm = session.get('llm')
+    if llm and llm.get('ai_focus') in ('AI', 'Not AI'):
+        return llm['ai_focus']
     hay = session_haystack(session)
     return 'AI' if any(matches_term(hay, term) for term in keywords) else 'Not AI'
 
 
 def theme(session: dict) -> str:
+    llm = session.get('llm')
+    if llm and llm.get('theme') in ('Security', 'Data', 'Infra', 'App dev', 'Business'):
+        return llm['theme']
     hay = session_haystack(session)
     for label, pattern in THEME_RULES:
         if re.search(pattern, hay):
@@ -99,6 +105,9 @@ def inferred_with_confidence(session: dict):
 
 
 def audience(session: dict) -> str:
+    llm = session.get('llm')
+    if llm and llm.get('audience') in ('Developers', 'Data', 'Infra/Ops', 'Security', 'Leaders'):
+        return llm['audience']
     topics = set(session.get('topics') or [])
     for label, topicset in OFFICIAL_AUDIENCE_TAGS.items():
         if topics & topicset:
@@ -169,7 +178,7 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
     ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
 
 
-def render_sankey(sessions, output_path: Path):
+def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
     mid, third, fourth = build_chart_data(sessions)
     fig, ax = plt.subplots(figsize=(18, 24), dpi=220)
     fig.patch.set_facecolor('white')
@@ -216,9 +225,10 @@ def render_sankey(sessions, output_path: Path):
             ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
             cursor -= h
 
+    classifier_note = f'LLM-classified ({llm_classified}/{len(sessions)} sessions)' if llm_classified else 'Rule-based classification'
     ax.text(0.06, 0.986, 'Google Cloud Next 2026 sessions', fontsize=24, fontweight='bold', color='#202124', ha='left')
     ax.text(0.06, 0.965, 'GCP Next → AI vs Not AI → theme → audience', fontsize=12.6, color='#5f6368', ha='left')
-    ax.text(0.06, 0.948, 'Audience uses official tags first; confident guesses fill gaps. Branches end early instead of showing General.', fontsize=10.1, color='#5f6368', ha='left')
+    ax.text(0.06, 0.948, classifier_note, fontsize=10.1, color='#5f6368', ha='left')
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
@@ -226,20 +236,31 @@ def render_sankey(sessions, output_path: Path):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate the Google Cloud Next AI Sankey chart.')
-    parser.add_argument('--input', default='sessions/latest.json', help='Path to sessions JSON file')
+    parser.add_argument('--input', default=None, help='Path to sessions JSON file (default: classified_sessions.json if present, else latest.json)')
     parser.add_argument('--output', default='tmp/gcp-next-sankey-not-ai-maxi.png', help='Path to output PNG')
     args = parser.parse_args()
 
-    input_path = Path(args.input)
-    if not input_path.is_absolute():
-        input_path = Path.cwd() / input_path
+    cwd = Path.cwd()
+    if args.input:
+        input_path = Path(args.input)
+        if not input_path.is_absolute():
+            input_path = cwd / input_path
+    else:
+        classified = cwd / 'sessions/classified_sessions.json'
+        input_path = classified if classified.exists() else cwd / 'sessions/latest.json'
+
     output_path = Path(args.output)
     if not output_path.is_absolute():
-        output_path = Path.cwd() / output_path
+        output_path = cwd / output_path
 
     data = json.loads(input_path.read_text())
     sessions = data['sessions'] if isinstance(data, dict) and 'sessions' in data else data
-    render_sankey(sessions, output_path)
+
+    llm_classified = sum(1 for s in sessions if s.get('llm'))
+    source_label = 'LLM' if llm_classified else 'rule-based'
+    print(f"Input: {input_path}  ({llm_classified}/{len(sessions)} sessions with LLM classification — {source_label})")
+
+    render_sankey(sessions, output_path, llm_classified=llm_classified)
     print(output_path)
 
 
