@@ -1,143 +1,91 @@
 # Google Cloud Next AI Sankey
 
-This documents the exact code path and chart policy used to generate the Sankey for the Google Cloud Next 2026 session explorer.
+Documents the classification approach and chart policy for the Sankey visualization of Google Cloud Next 2026 sessions.
 
-## Input
+## How classification works
 
-- Data source: `sessions/latest.json`
-- Count used in the chart: 1,037 sessions
+Sessions are classified by an LLM (Claude) reading each session's title, description, topic tags, room, and speakers. No keyword lists or regex rules — the model uses its own judgment with topic tags weighted most heavily.
 
-## Top-level split
+Classification is pre-computed and stored in `sessions/classified_sessions.json` (an `llm` field on each session). `scripts/make_sankey.py` falls back to rule-based logic for any session without an `llm` field.
 
-Sessions are split into:
+To re-classify:
 
-- `AI`
-- `Not AI`
+```bash
+python3 scripts/classify_sessions_llm.py
+```
 
-using this keyword list:
+## Layers
 
-- `ai`
-- `gemini`
-- `agent`
-- `agents`
-- `llm`
-- `ml`
-- `machine learning`
-- `genai`
-- `generative`
-- `vertex`
-- `prompt`
-- `rag`
-- `inference`
-- `model`
-- `models`
-- `foundation`
-- `agentic`
-- `agentspace`
-- `notebooklm`
-- `deepmind`
-- `tensorflow`
-- `gemma`
-- `mcp`
+### Layer 1 — AI focus
 
-Quoted phrases are preserved as single filter terms.
-Single words use whole-word matching.
+- `AI` — substantially about AI, ML, LLMs, agents, GenAI, Vertex AI, Gemini, ML ops, or AI-powered products
+- `Not AI` — AI is incidental or absent
 
-## Theme layer
+### Layer 2 — Theme (what the session covers)
 
-Themes are assigned with regex buckets in this order:
+- `Security` — IAM, threat detection, compliance, zero trust, cyber, guardrails
+- `Data` — databases, analytics, BigQuery, data engineering, warehousing, Looker, BI
+- `Infra` — infrastructure, networking, Kubernetes, serverless, compute, storage, SRE, DevOps, migration, multicloud
+- `App dev` — application development, APIs, SDKs, Firebase, mobile, web, developer tools, builder sessions
+- `Business` — strategy, leadership, customer stories, partner ecosystem, executive sessions
 
-1. `Security`
-2. `Data`
-3. `Infra`
-4. `App dev`
-5. `Business`
-6. `Other`
+### Layer 3 — Audience (who it's for)
 
-## Audience layer
+Audience labels are deliberately different from theme labels to avoid visual confusion in the Sankey.
 
-Audience assignment rule:
+- `Developers` — application developers, builders, coders, API users
+- `Data pros` — data engineers, data analysts, data scientists, database professionals
+- `Infra/Ops` — platform engineers, SREs, IT ops, infrastructure architects, admins
+- `Sec pros` — security professionals, security operations
+- `Leaders` — IT managers, business leaders, executives, decision makers, C-suite
+- `General` — mixed or unclear (not shown in chart)
 
-1. Use official audience tags first
-2. If no official audience tag exists, use a high-confidence inferred guess
-3. If inference confidence is too low, do not render a last-layer audience node for that branch
+Official audience topic tags take priority. Hard overrides: title contains "for developers" → Developers; "for leaders" → Leaders.
 
-Rendered audience buckets:
+## Review standards
 
-- `Leaders`
-- `Security`
-- `Infra/Ops`
-- `Data`
-- `Developers`
+Before accepting a classifier change, check:
+
+1. **Example review** — spot-check representative sessions in key buckets:
+   - `AI > App dev > Developers`
+   - `AI > Business > Leaders`
+   - `AI > Infra > Infra/Ops`
+   - `Not AI > Security > Sec pros`
+   - `Not AI > Data > Data pros`
+
+2. **Site-tag alignment** — prefer the conference's own tags over inferred classification when available
+
+3. **Conservative inference** — use inference only when official tags are missing or ambiguous
+
+4. **Room as weak prior only** — room can be a tie-break, not a primary signal:
+   - `Security Hub`, `Mandalay Bay D/L` → security-skewed
+   - `Customer Theater`, `Expo Theater 1/2` → business / leaders skew
+   - `Developer Theater`, `Mandalay Bay E` → developer / app dev skew
+
+5. **Visual review** — check the chart for label redundancy, whether the audience layer adds a new dimension, and whether it communicates something interesting
 
 ## Rendering choices
 
-- Tall canvas
-- Left-side labels
+- Tall canvas, left-side labels
 - Large `AI` / `Not AI` labels
-- No `General` node shown
-- Branches can end early instead of forcing a final `Other` audience node
+- `General` audience not shown — branches end early rather than forcing a generic bucket
 
-## Exact script
-
-- `scripts/make_sankey.py`
-
-## Example usage
-
-From the repo root:
+## Usage
 
 ```bash
-python3 scripts/make_sankey.py \
-  --input sessions/latest.json \
-  --output tmp/gcp-next-sankey-not-ai-maxi.png
+python3 scripts/make_sankey.py --output tmp/gcp-next-sankey.png
 ```
 
-If you need matplotlib in an isolated env:
+Auto-selects `sessions/classified_sessions.json` when present, otherwise falls back to `sessions/latest.json` with rule-based classification.
 
 ```bash
 python3 -m venv tmp/sankey-venv
 ./tmp/sankey-venv/bin/pip install matplotlib
-./tmp/sankey-venv/bin/python scripts/make_sankey.py \
-  --input sessions/latest.json \
-  --output tmp/gcp-next-sankey-not-ai-maxi.png
+./tmp/sankey-venv/bin/python scripts/make_sankey.py --output tmp/gcp-next-sankey.png
 ```
 
+## Product direction
 
-## Latest classifier refinements (2026-03-30)
-
-These refinements were validated interactively and should be treated as the latest intent for future implementation work.
-
-### Theme classification
-
-- Theme should use weighted scoring, not first-match regex.
-- Official site topic tags should have strong weight.
-- `Business` should not easily steal sessions from `App dev`, `Infra`, or `Security` just because of broad tags like `Technology & Leadership`, `Startup`, or `Customer Story`.
-- Examples like Gemini CLI / builder / ADK / app-builder talks should usually land in `App dev` when the site tags support that.
-
-### Audience classification
-
-- Use official audience tags first when present.
-- Hard title overrides:
-  - `for developers` → `Developers`
-  - `developer meetup` / `developers meetup` → `Developers`
-  - `for leaders` → `Leaders`
-- If official tags include both leadership and developer-ish signals, title framing should be allowed to beat the more generic executive/leadership tags for obviously builder-focused sessions.
-- If confidence is low, prefer ending the branch instead of inventing a misleading audience bucket.
-
-### Room as signal
-
-Room should be treated as a weak secondary/tie-break signal only, not a primary classifier.
-
-Observed room clustering examples:
-- `Security Hub`, `Mandalay Bay D`, `Mandalay Bay L` → strongly security-skewed
-- `Customer Theater`, `Expo Theater 1`, `Expo Theater 2` → business / leaders skew
-- `Developer Theater`, `Mandalay Bay E` → more developer / app-dev skew
-- `Mandalay Bay F`, `Jasmine A`, `South Seas H` → infra-skewed
-
-Use room only when title/topics/description are close between categories.
-
-### Current persisted outputs
-
-- Exact generated chart code: `scripts/make_sankey.py`
-- Methodology note: `docs/google-next-ai-sankey.md`
-- Classified dataset for review: `sessions/classified_sessions.json`
+- Main page: session explorer
+- Separate `/insights` page for the Sankey (shareable, social preview)
+- Sankey segments should link back to filtered session views
