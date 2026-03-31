@@ -15,6 +15,7 @@ function sessionKey(session) {
 
 const TIME_STEP_MINUTES = 15;
 const MAX_TIME_INDEX = 95;
+const MIN_TIME_INDEX = 0;
 
 function timeIndexToLabel(index) {
   const totalMinutes = Number(index) * TIME_STEP_MINUTES;
@@ -44,7 +45,43 @@ function timeTextToIndex(value, fallback) {
     if (hours === 12) hours = 0;
     if (suffix === 'PM') hours += 12;
   }
-  return Math.max(0, Math.min(MAX_TIME_INDEX, Math.round(((hours * 60) + minutes) / TIME_STEP_MINUTES)));
+  return Math.max(MIN_TIME_INDEX, Math.min(MAX_TIME_INDEX, Math.round(((hours * 60) + minutes) / TIME_STEP_MINUTES)));
+}
+
+function parseTimeToIndex(value, { rounding = 'nearest' } = {}) {
+  const text = String(value || '').trim();
+  const match = text.match(/^(\d{1,2}):(\d{2})$/);
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  const rawIndex = ((hours * 60) + minutes) / TIME_STEP_MINUTES;
+  if (rounding === 'floor') return Math.floor(rawIndex);
+  if (rounding === 'ceil') return Math.ceil(rawIndex);
+  return Math.round(rawIndex);
+}
+
+function deriveTimeBounds(sessions) {
+  let minIndex = MAX_TIME_INDEX;
+  let maxIndex = MIN_TIME_INDEX;
+  let foundAny = false;
+  for (const session of sessions) {
+    const startIndex = parseTimeToIndex(session.start_at?.slice(11, 16) || '', { rounding: 'floor' });
+    if (startIndex !== null) {
+      foundAny = true;
+      minIndex = Math.min(minIndex, startIndex);
+      maxIndex = Math.max(maxIndex, startIndex);
+    }
+    const endIndex = parseTimeToIndex(session.end_at?.slice(11, 16) || '', { rounding: 'ceil' });
+    if (endIndex !== null) {
+      foundAny = true;
+      maxIndex = Math.max(maxIndex, endIndex);
+    }
+  }
+  if (!foundAny) return { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
+  return {
+    min: Math.max(MIN_TIME_INDEX, Math.min(MAX_TIME_INDEX, minIndex)),
+    max: Math.max(MIN_TIME_INDEX, Math.min(MAX_TIME_INDEX, maxIndex)),
+  };
 }
 
 function renderFilterPills(filters) {
@@ -387,6 +424,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let debounceId;
   let activeView = VALID_VIEWS.has(state.view) ? state.view : DEFAULT_VIEW;
   const expandedIds = new Set();
+  let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
 
   function currentFilters() {
     return {
@@ -396,8 +434,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       topic: topicSelect.value,
       day: dayPills.find((pill) => pill.classList.contains('active'))?.dataset.day || '',
       sort: VALID_SORTS.has(sortSelect.value) ? sortSelect.value : DEFAULT_SORT,
-      start_after: timeRangeStart && Number(timeRangeStart.value) > 0 ? timeIndexToValue(timeRangeStart.value) : '',
-      start_before: timeRangeEnd && Number(timeRangeEnd.value) < MAX_TIME_INDEX ? timeIndexToValue(timeRangeEnd.value) : '',
+      start_after: timeRangeStart && Number(timeRangeStart.value) > timeBounds.min ? timeIndexToValue(timeRangeStart.value) : '',
+      start_before: timeRangeEnd && Number(timeRangeEnd.value) < timeBounds.max ? timeIndexToValue(timeRangeEnd.value) : '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
       company: '',
@@ -416,12 +454,13 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (excludeInput && excludeClearBtn) excludeClearBtn.classList[excludeInput.value ? 'add' : 'remove']('visible');
     if (speakerClearBtn) speakerClearBtn.classList[speakerInput.value ? 'add' : 'remove']('visible');
     if (timeRangeLabel) {
-      const start = Number(timeRangeStart?.value || 0);
-      const end = Number(timeRangeEnd?.value || MAX_TIME_INDEX);
-      timeRangeLabel.textContent = (start === 0 && end === MAX_TIME_INDEX) ? 'All times' : `${timeIndexToLabel(start)} – ${timeIndexToLabel(end)}`;
+      const start = Number(timeRangeStart?.value || timeBounds.min);
+      const end = Number(timeRangeEnd?.value || timeBounds.max);
+      timeRangeLabel.textContent = (start === timeBounds.min && end === timeBounds.max) ? 'All times' : `${timeIndexToLabel(start)} – ${timeIndexToLabel(end)}`;
       if (timeRangeFill) {
-        timeRangeFill.style.left = `${(start / MAX_TIME_INDEX) * 100}%`;
-        timeRangeFill.style.width = `${((end - start) / MAX_TIME_INDEX) * 100}%`;
+        const span = Math.max(1, timeBounds.max - timeBounds.min);
+        timeRangeFill.style.left = `${((start - timeBounds.min) / span) * 100}%`;
+        timeRangeFill.style.width = `${((end - start) / span) * 100}%`;
       }
     }
   }
@@ -470,8 +509,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (timeRangeStart) timeRangeStart.value = '0';
-        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -484,8 +523,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (timeRangeStart) timeRangeStart.value = '0';
-        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -505,8 +544,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (timeRangeStart) timeRangeStart.value = '0';
-        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -520,8 +559,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (timeRangeStart) timeRangeStart.value = '0';
-        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -535,8 +574,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (timeRangeStart) timeRangeStart.value = '0';
-        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -557,6 +596,24 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     const response = await fetchImpl(dataUrl);
     const data = await response.json();
     sessions = data.sessions || [];
+    timeBounds = deriveTimeBounds(sessions);
+    if (timeRangeStart) {
+      timeRangeStart.min = String(timeBounds.min);
+      timeRangeStart.max = String(timeBounds.max);
+      const nextStart = Math.max(timeBounds.min, Math.min(timeBounds.max, timeTextToIndex(state.start_after, timeBounds.min)));
+      timeRangeStart.value = String(nextStart);
+    }
+    if (timeRangeEnd) {
+      timeRangeEnd.min = String(timeBounds.min);
+      timeRangeEnd.max = String(timeBounds.max);
+      const nextEnd = Math.max(timeBounds.min, Math.min(timeBounds.max, timeTextToIndex(state.start_before, timeBounds.max)));
+      timeRangeEnd.value = String(nextEnd);
+    }
+    if (timeRangeStart && timeRangeEnd && Number(timeRangeStart.value) > Number(timeRangeEnd.value)) {
+      timeRangeStart.value = timeRangeEnd.value;
+    }
+    if (startAfterInput && Number(timeRangeStart?.value || timeBounds.min) > timeBounds.min) startAfterInput.value = timeIndexToLabel(timeRangeStart.value);
+    if (startBeforeInput && Number(timeRangeEnd?.value || timeBounds.max) < timeBounds.max) startBeforeInput.value = timeIndexToLabel(timeRangeEnd.value);
     headerCount.textContent = sessions.length.toLocaleString();
     populateTopicFilter(topicSelect, sessions);
     if (state.topic) topicSelect.value = state.topic;
@@ -572,13 +629,15 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
     let start = Number(timeRangeStart.value);
     let end = Number(timeRangeEnd.value);
+    start = Math.max(timeBounds.min, Math.min(timeBounds.max, start));
+    end = Math.max(timeBounds.min, Math.min(timeBounds.max, end));
     if (start > end) {
       if (input === timeRangeStart) end = start; else start = end;
-      timeRangeStart.value = String(start);
-      timeRangeEnd.value = String(end);
     }
-    if (startAfterInput) startAfterInput.value = start === 0 ? '' : timeIndexToLabel(start);
-    if (startBeforeInput) startBeforeInput.value = end === MAX_TIME_INDEX ? '' : timeIndexToLabel(end);
+    timeRangeStart.value = String(start);
+    timeRangeEnd.value = String(end);
+    if (startAfterInput) startAfterInput.value = start === timeBounds.min ? '' : timeIndexToLabel(start);
+    if (startBeforeInput) startBeforeInput.value = end === timeBounds.max ? '' : timeIndexToLabel(end);
     render();
   }));
   activeFilters?.addEventListener('click', (event) => {
@@ -589,7 +648,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'speaker') speakerInput.value = '';
     if (key === 'topic') topicSelect.value = '';
     if (key === 'day') applyDaySelection(dayPills, '');
-    if (key === 'time') { if (timeRangeStart) timeRangeStart.value = '0'; if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
+    if (key === 'time') { if (timeRangeStart) timeRangeStart.value = String(timeBounds.min); if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
     if (key === 'favorites' && favoriteToggle) favoriteToggle.checked = false;
     render();
   });
@@ -613,8 +672,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     speakerInput.value = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
-    if (timeRangeStart) timeRangeStart.value = '0';
-    if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
+    if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+    if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
     if (favoriteToggle) favoriteToggle.checked = false;
     activeView = DEFAULT_VIEW;
     applyDaySelection(dayPills, '');
