@@ -44,6 +44,7 @@ COLORS = {
 }
 
 THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other']
+AUDIENCE_ORDER = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
 
 
 def split_filter_terms(value: str):
@@ -118,28 +119,32 @@ def audience(session: dict) -> str:
 
 def build_chart_data(sessions):
     keywords = AI_KEYWORDS
-    mid = [('AI', 0), ('Not AI', 0)]
+    top_counts = defaultdict(int)
     third_counts = defaultdict(int)
     fourth_counts = defaultdict(lambda: defaultdict(int))
     for session in sessions:
         top = ai_class(session, keywords)
         th = theme(session)
         aud = audience(session)
-        if top == 'AI':
-            mid[0] = ('AI', mid[0][1] + 1)
-        else:
-            mid[1] = ('Not AI', mid[1][1] + 1)
+        top_counts[top] += 1
         third_counts[(top, th)] += 1
         if aud != 'General':
             fourth_counts[(top, th)][aud] += 1
-    third = {
-        'AI': [(label, third_counts.get(('AI', label), 0)) for label in THEME_ORDER if third_counts.get(('AI', label), 0) > 0],
-        'Not AI': [(label, third_counts.get(('Not AI', label), 0)) for label in THEME_ORDER if third_counts.get(('Not AI', label), 0) > 0],
-    }
+
+    mid = sorted(
+        [(label, top_counts[label]) for label in ('AI', 'Not AI') if top_counts[label] > 0],
+        key=lambda item: (-item[1], item[0]),
+    )
+
+    third = {}
+    for top, _ in mid:
+        items = [(label, third_counts[(top, label)]) for label in THEME_ORDER if third_counts.get((top, label), 0) > 0]
+        third[top] = sorted(items, key=lambda item: (-item[1], THEME_ORDER.index(item[0])))
+
     fourth = {}
-    audience_order = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
     for key, counts in fourth_counts.items():
-        ordered = [(label, counts[label]) for label in audience_order if counts.get(label, 0) > 0]
+        items = [(label, counts[label]) for label in AUDIENCE_ORDER if counts.get(label, 0) > 0]
+        ordered = sorted(items, key=lambda item: (-item[1], AUDIENCE_ORDER.index(item[0])))
         if ordered:
             fourth[key] = ordered
     return mid, third, fourth
@@ -178,7 +183,7 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
 
 def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
     mid, third, fourth = build_chart_data(sessions)
-    fig, ax = plt.subplots(figsize=(18, 24), dpi=220)
+    fig, ax = plt.subplots(figsize=(18, 30), dpi=220)
     fig.patch.set_facecolor('white')
     ax.set_facecolor('white')
     ax.set_xlim(0, 1)
