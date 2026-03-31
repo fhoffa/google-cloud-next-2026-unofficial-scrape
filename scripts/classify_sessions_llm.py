@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
-Classify Google Cloud Next sessions using Claude, session by session.
+Classify Google Cloud Next sessions using the Claude API, session by session.
+
+The current sessions/classified_sessions.json was produced by a Claude agent
+reading each session directly (model: "claude-agent"). Run this script to
+regenerate classifications via the API (e.g. after new sessions are scraped,
+or to switch models).
 
 Usage:
     python3 scripts/classify_sessions_llm.py

@@ -43,10 +43,7 @@ COLORS = {
     'Data pros': '#00ACC1', 'Sec pros': '#43A047',
 }
 
-THIRD_ORDER = {
-    'AI': [('Data', 298), ('Security', 272), ('Infra', 193), ('Business', 80), ('App dev', 78), ('Other', 7)],
-    'Not AI': [('Security', 43), ('Data', 23), ('Infra', 19), ('App dev', 13), ('Business', 11)],
-}
+THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other']
 
 
 def split_filter_terms(value: str):
@@ -136,8 +133,8 @@ def build_chart_data(sessions):
         if aud != 'General':
             fourth_counts[(top, th)][aud] += 1
     third = {
-        'AI': [(label, third_counts.get(('AI', label), 0)) for label, _ in THIRD_ORDER['AI'] if third_counts.get(('AI', label), 0) > 0],
-        'Not AI': [(label, third_counts.get(('Not AI', label), 0)) for label, _ in THIRD_ORDER['Not AI'] if third_counts.get(('Not AI', label), 0) > 0],
+        'AI': [(label, third_counts.get(('AI', label), 0)) for label in THEME_ORDER if third_counts.get(('AI', label), 0) > 0],
+        'Not AI': [(label, third_counts.get(('Not AI', label), 0)) for label in THEME_ORDER if third_counts.get(('Not AI', label), 0) > 0],
     }
     fourth = {}
     audience_order = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
