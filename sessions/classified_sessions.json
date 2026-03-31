@@ -3312,8 +3312,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -4819,8 +4819,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
       }
     },
     {
@@ -12098,8 +12098,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -16407,8 +16407,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -17405,8 +17405,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -21414,8 +21414,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -24142,8 +24142,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
       }
     },
     {
@@ -26885,8 +26885,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Business theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
       }
     },
     {
@@ -32820,8 +32820,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
       }
     },
     {
