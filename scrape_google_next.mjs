@@ -555,16 +555,19 @@ async function main() {
     const idMatch = url.match(/\/session\/(\d+)\//);
     const sessionId = idMatch?.[1] || `idx-${i + 1}`;
     console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
-    const html = await fetchText(url, { cacheKey: `session-${sessionId}.html` });
-    const record = toSessionRecord(url, html);
-    const validation = validateSessionRecord(record);
-    if (!validation.valid) {
-      invalidCount += 1;
-      console.warn(`Skipping invalid session record for ${url}: ${validation.issues.join(', ')}`);
-      continue;
+    try {
+      const html = await fetchText(url, { cacheKey: `session-${sessionId}.html` });
+      const record = toSessionRecord(url, html);
+      const validation = validateSessionRecord(record);
+      if (!validation.valid) {
+        invalidCount += 1;
+        console.warn(`Skipping invalid session record for ${url}: ${validation.issues.join(', ')}`);
+      } else {
+        sessions.push(record);
+      }
+    } finally {
+      await politeDelay();
     }
-    sessions.push(record);
-    await politeDelay();
   }
 
   sessions.sort((a, b) => a.title.localeCompare(b.title));
