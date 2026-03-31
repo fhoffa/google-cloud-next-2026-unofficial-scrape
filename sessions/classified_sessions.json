@@ -7103,8 +7103,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -16901,8 +16901,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -18092,8 +18092,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -18116,8 +18116,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -18140,8 +18140,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -20822,8 +20822,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -23238,8 +23238,8 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -28186,8 +28186,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -28217,8 +28217,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -29598,8 +29598,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -30269,8 +30269,8 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -31031,8 +31031,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -31894,8 +31894,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
       }
     },
     {
@@ -35049,8 +35049,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
       }
     },
     {
