@@ -209,9 +209,9 @@ def render_sankey(
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
 
-    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=16.5)
+    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=21)
     for label, value in mid:
-        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=36)
+        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=50)
     for parent, items in third.items():
         for label, value in items:
             draw_bar(
@@ -221,7 +221,7 @@ def render_sankey(
                 COLORS.get(label, '#ccc'),
                 label,
                 value,
-                fontsize=16.5 if value >= 80 else 14,
+                fontsize=23 if value >= 80 else 19,
                 show_label=value >= min_theme_label,
             )
     for key, items in fourth.items():
@@ -233,7 +233,7 @@ def render_sankey(
                 COLORS.get(label, '#bbb'),
                 label,
                 value,
-                fontsize=13 if value >= 40 else 11,
+                fontsize=17 if value >= 40 else 14,
                 show_label=value >= min_audience_label,
             )
 
@@ -256,9 +256,9 @@ def render_sankey(
             cursor -= h
 
     classifier_note = f'LLM-classified ({llm_classified}/{len(sessions)} sessions)' if llm_classified else 'Rule-based classification'
-    ax.text(0.06, 0.986, 'Google Cloud Next 2026 sessions', fontsize=24, fontweight='bold', color='#202124', ha='left')
-    ax.text(0.06, 0.965, 'GCP Next → AI vs Not AI → theme → audience', fontsize=12.6, color='#5f6368', ha='left')
-    ax.text(0.06, 0.948, classifier_note, fontsize=10.1, color='#5f6368', ha='left')
+    ax.text(0.06, 0.986, 'Google Cloud Next 2026 sessions', fontsize=34, fontweight='bold', color='#202124', ha='left')
+    ax.text(0.06, 0.965, 'GCP Next → AI vs Not AI → theme → audience', fontsize=17, color='#5f6368', ha='left')
+    ax.text(0.06, 0.948, classifier_note, fontsize=14, color='#5f6368', ha='left')
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
