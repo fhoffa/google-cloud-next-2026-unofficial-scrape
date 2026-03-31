@@ -351,6 +351,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const timeRangeStart = document.getElementById('time-range-start');
   const timeRangeEnd = document.getElementById('time-range-end');
   const timeRangeLabel = document.getElementById('time-range-label');
+  const timeRangeFill = document.getElementById('time-range-fill');
   const excludeInput = document.getElementById('exclude');
   const excludeClearBtn = document.getElementById('exclude-clear');
   const qClearBtn = document.getElementById('q-clear');
@@ -417,6 +418,10 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       const start = Number(timeRangeStart?.value || 0);
       const end = Number(timeRangeEnd?.value || MAX_TIME_INDEX);
       timeRangeLabel.textContent = (start === 0 && end === MAX_TIME_INDEX) ? 'All times' : `${timeIndexToLabel(start)} – ${timeIndexToLabel(end)}`;
+      if (timeRangeFill) {
+        timeRangeFill.style.left = `${(start / MAX_TIME_INDEX) * 100}%`;
+        timeRangeFill.style.width = `${((end - start) / MAX_TIME_INDEX) * 100}%`;
+      }
     }
   }
 

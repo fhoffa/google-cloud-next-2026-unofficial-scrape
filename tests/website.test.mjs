@@ -35,6 +35,7 @@ class FakeElement {
     this.children = [];
     this.listeners = new Map();
     this.classList = new FakeClassList(classes);
+    this.style = {};
     this.ownerDocument = null;
   }
 
@@ -145,6 +146,7 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'time-range-start', value: '0' }));
   document.register(new FakeElement({ id: 'time-range-end', value: '95' }));
   document.register(new FakeElement({ id: 'time-range-label' }));
+  document.register(new FakeElement({ id: 'time-range-fill' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'start-after' }));
   document.register(new FakeElement({ id: 'start-before' }));
