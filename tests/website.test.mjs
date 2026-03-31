@@ -83,6 +83,13 @@ class FakeElement {
       const matches = [...String(this.innerHTML || '').matchAll(/class=\"company-link\"[^>]*data-company-name=\"([^\"]+)\"[^>]*>/g)];
       return matches.map((match) => ({ dataset: { companyName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
     }
+    if (selector === '.company-summary-link') {
+      if (this._companySummaryLinkCache?.html === this.innerHTML) return this._companySummaryLinkCache.items;
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"company-summary-link\"[^>]*data-company-name=\"([^\"]+)\"[^>]*>/g)];
+      const items = matches.map((match) => ({ dataset: { companyName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
+      this._companySummaryLinkCache = { html: this.innerHTML, items };
+      return items;
+    }
     if (selector === '.see-more-btn') {
       const matches = [...String(this.innerHTML || '').matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
       return matches.map((match) => ({
@@ -538,6 +545,25 @@ test('top companies tab renders clickable companies and session links', async ()
   assert.match(appHtml, /Top companies/);
   assert.match(appHtml, /company-summary-link/);
   assert.match(appHtml, /company-session-link/);
+});
+
+test('clicking a company in top companies view pivots to sessions filtered by that company', async () => {
+  const env = createEnvironment('?view=companies');
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+
+  const companyButtons = env.document.getElementById('app').querySelectorAll('.company-summary-link');
+  assert.ok(companyButtons.length > 0);
+  const selectedCompany = companyButtons[0].dataset.companyName;
+  companyButtons[0].click();
+
+  const encodedCompany = encodeURIComponent(selectedCompany);
+  assert.ok(
+    env.location.search.includes(`company=${encodedCompany}`)
+      || env.location.search.includes(`company=${encodedCompany.replace(/%20/g, '+')}`)
+  );
+  assert.doesNotMatch(env.location.search, /view=companies/);
+  assert.equal(env.document.getElementById('result-count').textContent.includes('sessions'), true);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /company:/i);
 });
 
 

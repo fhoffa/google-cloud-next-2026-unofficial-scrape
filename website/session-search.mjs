@@ -52,6 +52,7 @@ function renderFilterPills(filters) {
   if (filters.q) pills.push({ key: 'q', label: `search: ${filters.q}` });
   if (filters.exclude) pills.push({ key: 'exclude', label: `exclude: ${filters.exclude}` });
   if (filters.speaker) pills.push({ key: 'speaker', label: `speaker: ${filters.speaker}` });
+  if (filters.company) pills.push({ key: 'company', label: `company: ${filters.company}` });
   if (filters.topic) pills.push({ key: 'topic', label: `topic: ${filters.topic}` });
   if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
   if (filters.start_after || filters.start_before) pills.push({ key: 'time', label: `time: ${filters.start_after || 'start'} – ${filters.start_before || 'end'}` });
@@ -371,6 +372,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let sessions = [];
   let debounceId;
   let activeView = VALID_VIEWS.has(state.view) ? state.view : DEFAULT_VIEW;
+  let activeCompany = state.company || '';
   const expandedIds = new Set();
 
   function currentFilters() {
@@ -385,7 +387,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_before: startBeforeInput?.value || '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
-      company: '',
+      company: activeCompany,
     };
   }
 
@@ -449,6 +451,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
+        activeCompany = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (startAfterInput) startAfterInput.value = '';
@@ -463,6 +466,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
+        activeCompany = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (startAfterInput) startAfterInput.value = '';
@@ -475,6 +479,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.topic-link') : []) {
       button.addEventListener('click', () => {
+        activeCompany = '';
         topicSelect.value = button.dataset.topicName || '';
         activeView = DEFAULT_VIEW;
         render();
@@ -484,6 +489,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = '';
+        activeCompany = button.dataset.companyName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (startAfterInput) startAfterInput.value = '';
@@ -491,7 +497,6 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
         render();
       });
     }
@@ -499,6 +504,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         qInput.value = '';
         speakerInput.value = '';
+        activeCompany = button.dataset.companyName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (startAfterInput) startAfterInput.value = '';
@@ -506,7 +512,6 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
         render();
       });
     }
@@ -514,6 +519,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         qInput.value = button.dataset.word || '';
         speakerInput.value = '';
+        activeCompany = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (startAfterInput) startAfterInput.value = '';
@@ -568,6 +574,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'q') qInput.value = '';
     if (key === 'exclude' && excludeInput) excludeInput.value = '';
     if (key === 'speaker') speakerInput.value = '';
+    if (key === 'company') activeCompany = '';
     if (key === 'topic') topicSelect.value = '';
     if (key === 'day') applyDaySelection(dayPills, '');
     if (key === 'time') { if (timeRangeStart) timeRangeStart.value = '0'; if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
@@ -585,6 +592,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   });
   speakerClearBtn?.addEventListener('click', () => {
     speakerInput.value = '';
+    activeCompany = '';
     render();
   });
 
@@ -592,6 +600,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     qInput.value = '';
     if (excludeInput) excludeInput.value = '';
     speakerInput.value = '';
+    activeCompany = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
     if (startAfterInput) startAfterInput.value = '';
