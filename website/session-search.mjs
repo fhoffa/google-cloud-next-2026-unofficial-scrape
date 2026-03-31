@@ -289,6 +289,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
       ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
+      ${session.url ? `<div class="reserve-seat-note">Note: the \u201cReserve a Seat\u201d button is broken on individual session pages. To reserve, search for this session by name in the <a href="https://www.googlecloudevents.com/next-vegas/session-library" target="_blank" rel="noopener">Session Library</a> instead.</div>` : ''}
     </div>`;
   }).join('');
 }
