@@ -1587,8 +1587,8 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -3134,7 +3134,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -4246,7 +4246,7 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -5612,7 +5612,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -7771,7 +7771,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -7943,7 +7943,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -8322,7 +8322,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -8351,7 +8351,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -9339,7 +9339,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -9369,7 +9369,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -9832,7 +9832,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -9861,7 +9861,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -11188,7 +11188,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -11332,7 +11332,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -11371,7 +11371,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -11706,7 +11706,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -13821,7 +13821,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -15363,7 +15363,7 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -16052,7 +16052,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -17532,7 +17532,7 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Infra/Ops",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -18829,7 +18829,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -19249,7 +19249,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -19900,8 +19900,8 @@
       ],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Data",
+        "audience": "Data pros",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -22494,7 +22494,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -23861,8 +23861,8 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -25052,7 +25052,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -25494,7 +25494,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -25820,7 +25820,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Developers",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -26849,7 +26849,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -26917,7 +26917,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -27223,8 +27223,8 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -27342,7 +27342,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -27752,7 +27752,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -30860,7 +30860,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -32649,7 +32649,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Leaders",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -33361,8 +33361,8 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -36228,7 +36228,7 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
+        "audience": "Infra/Ops",
         "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
       }
     },
@@ -38284,8 +38284,8 @@
       ],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "Business",
-        "audience": "General",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
     }
