@@ -306,7 +306,8 @@ test('favorites can be shared and filtered', async () => {
 
 
 test('time filters update URL and narrow results', async () => {
-  const env = createEnvironment('?day=Thursday,%20April%2023,%202026&start_after=3%3A00%20PM&start_before=4%3A00%20PM');
+  // Use 24h format — sliders emit timeIndexToValue() output which is zero-padded HH:MM
+  const env = createEnvironment('?day=Thursday,%20April%2023,%202026&start_after=15%3A00&start_before=16%3A00');
 
   await initSessionSearch({
     document: env.document,
@@ -318,10 +319,8 @@ test('time filters update URL and narrow results', async () => {
     clearTimeoutImpl: () => {},
   });
 
-  assert.equal(env.document.getElementById('start-after').value, '3:00 PM');
-  assert.equal(env.document.getElementById('start-before').value, '4:00 PM');
-  assert.match(env.location.search, /start_after=3%3A00\+PM|start_after=3%3A00%20PM/);
-  assert.match(env.location.search, /start_before=4%3A00\+PM|start_before=4%3A00%20PM/);
+  assert.match(env.location.search, /start_after=15%3A00/);
+  assert.match(env.location.search, /start_before=16%3A00/);
   const appHtml = env.document.getElementById('app').innerHTML;
   assert.ok((appHtml.match(/class="card"/g) || []).length > 0);
 });
