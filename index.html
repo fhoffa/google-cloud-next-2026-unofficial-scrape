@@ -212,8 +212,80 @@
       padding:8px 12px;
     }
 
-    .time-range-filter input[type="range"] {
-      width:120px;
+    .dual-range {
+      position:relative;
+      width:160px;
+      height:20px;
+    }
+
+    .dual-range-track {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      left:8px;
+      right:8px;
+      height:4px;
+      background:var(--gray-200);
+      border-radius:2px;
+      pointer-events:none;
+    }
+
+    .dual-range-fill {
+      position:absolute;
+      height:100%;
+      background:var(--blue);
+      border-radius:2px;
+      left:0%;
+      width:100%;
+    }
+
+    .dual-range input[type="range"] {
+      position:absolute;
+      width:100%;
+      top:50%;
+      transform:translateY(-50%);
+      margin:0;
+      padding:0;
+      height:100%;
+      background:transparent;
+      -webkit-appearance:none;
+      appearance:none;
+      pointer-events:none;
+    }
+
+    .dual-range input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance:none;
+      appearance:none;
+      pointer-events:all;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--blue);
+      cursor:pointer;
+      border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .dual-range input[type="range"]::-moz-range-thumb {
+      pointer-events:all;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--blue);
+      cursor:pointer;
+      border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.25);
+      box-sizing:border-box;
+    }
+
+    .dual-range input[type="range"]::-webkit-slider-runnable-track {
+      background:transparent;
+      height:4px;
+    }
+
+    .dual-range input[type="range"]::-moz-range-track {
+      background:transparent;
+      height:4px;
     }
 
     #active-filters {
@@ -600,9 +672,12 @@
     </select>
 
     <div class="time-range-filter">
-      <label for="time-range">Time range</label>
-      <input type="range" id="time-range-start" min="0" max="95" step="1" value="0">
-      <input type="range" id="time-range-end" min="0" max="95" step="1" value="95">
+      <label for="time-range-start">Time range</label>
+      <div class="dual-range">
+        <div class="dual-range-track"><div class="dual-range-fill" id="time-range-fill"></div></div>
+        <input type="range" id="time-range-start" min="0" max="95" step="1" value="0">
+        <input type="range" id="time-range-end" min="0" max="95" step="1" value="95">
+      </div>
       <span id="time-range-label">All times</span>
     </div>
 
