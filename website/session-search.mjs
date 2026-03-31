@@ -137,7 +137,7 @@ export function filterSessions(sessions, filters) {
     if (filters.view === 'favorites' && !favoriteIds.has(sessionKey(session))) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
-    const startTime = session.start_time_text || '';
+    const startTime = session.start_at ? session.start_at.slice(11, 16) : '';
     if (startAfter && (!startTime || startTime < startAfter)) return false;
     if (startBefore && (!startTime || startTime > startBefore)) return false;
     if (company) {
@@ -394,8 +394,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       topic: topicSelect.value,
       day: dayPills.find((pill) => pill.classList.contains('active'))?.dataset.day || '',
       sort: VALID_SORTS.has(sortSelect.value) ? sortSelect.value : DEFAULT_SORT,
-      start_after: startAfterInput?.value || '',
-      start_before: startBeforeInput?.value || '',
+      start_after: timeRangeStart && Number(timeRangeStart.value) > 0 ? timeIndexToValue(timeRangeStart.value) : '',
+      start_before: timeRangeEnd && Number(timeRangeEnd.value) < MAX_TIME_INDEX ? timeIndexToValue(timeRangeEnd.value) : '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
       company: '',
@@ -464,8 +464,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (startAfterInput) startAfterInput.value = '';
-        if (startBeforeInput) startBeforeInput.value = '';
+        if (timeRangeStart) timeRangeStart.value = '0';
+        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -478,8 +478,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (startAfterInput) startAfterInput.value = '';
-        if (startBeforeInput) startBeforeInput.value = '';
+        if (timeRangeStart) timeRangeStart.value = '0';
+        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -499,8 +499,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (startAfterInput) startAfterInput.value = '';
-        if (startBeforeInput) startBeforeInput.value = '';
+        if (timeRangeStart) timeRangeStart.value = '0';
+        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -514,8 +514,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (startAfterInput) startAfterInput.value = '';
-        if (startBeforeInput) startBeforeInput.value = '';
+        if (timeRangeStart) timeRangeStart.value = '0';
+        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -529,8 +529,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         speakerInput.value = '';
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
-        if (startAfterInput) startAfterInput.value = '';
-        if (startBeforeInput) startBeforeInput.value = '';
+        if (timeRangeStart) timeRangeStart.value = '0';
+        if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
@@ -607,8 +607,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     speakerInput.value = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
-    if (startAfterInput) startAfterInput.value = '';
-    if (startBeforeInput) startBeforeInput.value = '';
+    if (timeRangeStart) timeRangeStart.value = '0';
+    if (timeRangeEnd) timeRangeEnd.value = String(MAX_TIME_INDEX);
     if (favoriteToggle) favoriteToggle.checked = false;
     activeView = DEFAULT_VIEW;
     applyDaySelection(dayPills, '');
