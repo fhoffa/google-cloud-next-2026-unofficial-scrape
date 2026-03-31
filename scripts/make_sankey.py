@@ -45,6 +45,7 @@ COLORS = {
 
 THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other']
 AUDIENCE_ORDER = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
+BAR_WIDTH = 0.022
 
 
 def split_filter_terms(value: str):
@@ -164,18 +165,17 @@ def stack_within(y0, y1, items, scale, gap=0.005):
     return out
 
 
-def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9):
-    bar_w = 0.028
-    ax.add_patch(Rectangle((x, y0), bar_w, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
-    ax.text(x - 0.008, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
+def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True):
+    ax.add_patch(Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
+    if show_label:
+        ax.text(x - 0.008, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
 
 
 def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
-    bar_w = 0.028
     c = (xb - xa) * 0.40
     verts = [
-        (xa + bar_w, ya1), (xa + bar_w + c, ya1), (xb - c, yb1), (xb, yb1),
-        (xb, yb0), (xb - c, yb0), (xa + bar_w + c, ya0), (xa + bar_w, ya0), (xa + bar_w, ya1),
+        (xa + BAR_WIDTH, ya1), (xa + BAR_WIDTH + c, ya1), (xb - c, yb1), (xb, yb1),
+        (xb, yb0), (xb - c, yb0), (xa + BAR_WIDTH + c, ya0), (xa + BAR_WIDTH, ya0), (xa + BAR_WIDTH, ya1),
     ]
     codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.LINETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.CLOSEPOLY]
     ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
@@ -183,14 +183,14 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
 
 def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
     mid, third, fourth = build_chart_data(sessions)
-    fig, ax = plt.subplots(figsize=(18, 30), dpi=220)
+    fig, ax = plt.subplots(figsize=(24, 30), dpi=220)
     fig.patch.set_facecolor('white')
     ax.set_facecolor('white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis('off')
 
-    x0, x1, x2, x3 = 0.14, 0.40, 0.63, 0.88
+    x0, x1, x2, x3 = 0.08, 0.34, 0.64, 0.93
     top_margin, bottom_margin = 0.038, 0.038
     usable_h = 1 - top_margin - bottom_margin
     scale = usable_h / len(sessions)
@@ -200,15 +200,33 @@ def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
 
-    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=13.2)
+    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=16.5)
     for label, value in mid:
-        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=28.5)
+        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=36)
     for parent, items in third.items():
         for label, value in items:
-            draw_bar(ax, x2, *third_pos[parent][label], COLORS.get(label, '#ccc'), label, value, fontsize=11.2)
+            draw_bar(
+                ax,
+                x2,
+                *third_pos[parent][label],
+                COLORS.get(label, '#ccc'),
+                label,
+                value,
+                fontsize=16.5 if value >= 80 else 14,
+                show_label=value >= 12,
+            )
     for key, items in fourth.items():
         for label, value in items:
-            draw_bar(ax, x3, *fourth_pos[key][label], COLORS.get(label, '#bbb'), label, value, fontsize=8.8)
+            draw_bar(
+                ax,
+                x3,
+                *fourth_pos[key][label],
+                COLORS.get(label, '#bbb'),
+                label,
+                value,
+                fontsize=13 if value >= 40 else 11,
+                show_label=value >= 10,
+            )
 
     cursor = root[1]
     for label, value in mid:
