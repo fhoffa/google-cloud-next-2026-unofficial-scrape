@@ -111,6 +111,14 @@ Then open:
 http://localhost:8000/
 ```
 
+## Known issues with the Google site
+
+### "Reserve a Seat" button is broken on individual session pages
+
+If you click a session link (↗) to open the Google Cloud Next session page directly, the **"Reserve a Seat" button does not work** — it appears but clicking it has no effect.
+
+**Workaround:** Go to the [Session Library](https://www.googlecloudevents.com/next-vegas/session-library), search for the session by name, and reserve your seat from there.
+
 ## Prior art & legal context
 
 Community session trackers for cloud events have a complicated history. In October 2023, AWS sent cease & desist notices to third-party re:Invent session tracker developers — a situation that permanently destroyed one developer's work before AWS reversed course the same day.
