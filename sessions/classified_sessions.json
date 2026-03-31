@@ -419,7 +419,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -568,7 +568,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -932,7 +932,7 @@
         "ai_focus": "Not AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "Non-AI; Security theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1005,7 +1005,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1126,7 +1126,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1175,7 +1175,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1634,7 +1634,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1763,7 +1763,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -1836,7 +1836,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -2198,7 +2198,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -2572,7 +2572,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -2691,7 +2691,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -3313,7 +3313,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -3553,8 +3553,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -3692,7 +3692,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -3995,8 +3995,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -4102,7 +4102,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -4142,7 +4142,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -4820,7 +4820,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
+        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -5193,7 +5193,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -5384,7 +5384,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -5650,7 +5650,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -5735,7 +5735,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -5925,7 +5925,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -6355,7 +6355,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -6456,7 +6456,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -6499,7 +6499,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -6823,7 +6823,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -7031,7 +7031,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -7104,7 +7104,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -7185,7 +7185,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -7307,7 +7307,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -7672,7 +7672,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -7744,7 +7744,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Business theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -7853,7 +7853,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -8567,7 +8567,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -8902,7 +8902,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -9612,7 +9612,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -9904,7 +9904,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -10147,7 +10147,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -10218,7 +10218,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -10282,7 +10282,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -10435,7 +10435,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -11226,7 +11226,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -11429,7 +11429,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -11534,7 +11534,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -11905,7 +11905,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -11953,7 +11953,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -12027,7 +12027,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -12099,7 +12099,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -12997,7 +12997,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -13499,7 +13499,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -13540,7 +13540,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -13606,7 +13606,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -13749,7 +13749,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -13942,7 +13942,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -14198,7 +14198,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -14384,7 +14384,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -14489,7 +14489,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -14527,7 +14527,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -14661,7 +14661,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -15065,7 +15065,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -15174,7 +15174,7 @@
         "ai_focus": "Not AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -15236,7 +15236,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -15740,7 +15740,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -15896,7 +15896,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -16222,7 +16222,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -16408,7 +16408,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -16661,7 +16661,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -16902,7 +16902,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17158,7 +17158,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17323,7 +17323,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17406,7 +17406,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17633,7 +17633,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17670,7 +17670,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17705,7 +17705,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -17778,7 +17778,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -18093,7 +18093,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -18117,7 +18117,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -18141,7 +18141,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags. [patched: Developers\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -18641,7 +18641,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -19151,7 +19151,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -19293,7 +19293,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -19494,7 +19494,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -19744,7 +19744,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -19777,7 +19777,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -19988,7 +19988,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -20026,7 +20026,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -20071,7 +20071,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -20606,7 +20606,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -20713,7 +20713,7 @@
         "ai_focus": "Not AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -20823,7 +20823,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21040,7 +21040,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21335,7 +21335,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -21415,7 +21415,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21453,7 +21453,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21645,7 +21645,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21721,7 +21721,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -21867,7 +21867,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -22161,7 +22161,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -22208,7 +22208,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -22420,7 +22420,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -22463,7 +22463,7 @@
         "ai_focus": "Not AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -22860,7 +22860,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -23239,7 +23239,7 @@
         "ai_focus": "Not AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
+        "reasoning": "Non-AI; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -23714,7 +23714,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -23900,7 +23900,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -23938,7 +23938,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -23977,7 +23977,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -24021,8 +24021,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -24143,7 +24143,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -24201,7 +24201,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Business theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -24439,7 +24439,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -24617,8 +24617,8 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Non-AI; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -24815,7 +24815,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -25114,7 +25114,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -25252,7 +25252,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -25405,7 +25405,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -25860,7 +25860,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -26110,7 +26110,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26237,8 +26237,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -26285,7 +26285,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26438,7 +26438,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26485,7 +26485,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26522,7 +26522,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26596,7 +26596,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26886,7 +26886,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Leaders, executive/transformation framing]"
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -26962,7 +26962,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -27150,7 +27150,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -27183,7 +27183,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -27265,7 +27265,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -28187,7 +28187,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -28218,7 +28218,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -28257,8 +28257,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -29599,7 +29599,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -29783,7 +29783,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -30045,7 +30045,7 @@
         "ai_focus": "Not AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "Non-AI; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -30162,7 +30162,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -30270,7 +30270,7 @@
         "ai_focus": "Not AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags. [patched: Sec pros\u2192Leaders, executive/strategic framing]"
+        "reasoning": "Non-AI; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -31032,7 +31032,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -31262,7 +31262,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -31452,8 +31452,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -31489,9 +31489,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Infra",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -31895,7 +31895,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags. [patched: Infra/Ops\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Infra theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -32176,7 +32176,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -32211,7 +32211,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -32821,7 +32821,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags. [patched: Data pros\u2192Developers, developer/architect content]"
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -33224,7 +33224,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -33405,7 +33405,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -33910,7 +33910,7 @@
         "ai_focus": "AI",
         "theme": "Security",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -34573,7 +34573,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -34774,7 +34774,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -35050,7 +35050,7 @@
         "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags. [patched: General\u2192Leaders, executive/strategic framing]"
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -35671,7 +35671,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -35759,7 +35759,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -35836,7 +35836,7 @@
         "ai_focus": "AI",
         "theme": "Infra",
         "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -35968,7 +35968,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -36321,7 +36321,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -36395,7 +36395,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -36700,7 +36700,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -37082,7 +37082,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -37176,7 +37176,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -37224,7 +37224,7 @@
         "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -38245,7 +38245,7 @@
         "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
