@@ -4216,10 +4216,10 @@
         }
       ],
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI (Antigravity is Google AI coding tool); App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -4244,10 +4244,10 @@
         }
       ],
       "llm": {
-        "ai_focus": "Not AI",
-        "theme": "Business",
+        "ai_focus": "AI",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
+        "reasoning": "AI (Antigravity is Google AI coding tool); Business theme and General audience based on title, description, and topic tags."
       }
     },
     {
@@ -5309,9 +5309,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "AI focus; App dev theme (agent dev tool); Developers audience (Application Developers hard override)."
       }
     },
     {
@@ -11814,10 +11814,10 @@
       ],
       "speakers": [],
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI (Antigravity is Google AI coding tool); App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
@@ -12545,10 +12545,10 @@
         }
       ],
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus (Open Models topic, running ML models on serverless GPUs); App dev theme and Developers audience."
       }
     },
     {
@@ -23348,10 +23348,10 @@
       ],
       "speakers": [],
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI (Antigravity is Google AI coding tool); App dev theme and Developers audience based on title, description, and topic tags."
       }
     },
     {
