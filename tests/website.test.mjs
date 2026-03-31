@@ -505,6 +505,29 @@ test('time range sliders update the visible label', async () => {
   assert.match(env.document.getElementById('time-range-label').textContent, /9:00 AM|9:00 PM|All times|6:00 AM/);
 });
 
+test('time range sliders are bounded to the scheduled session window', async () => {
+  const env = createEnvironment();
+  await initSessionSearch({ document: env.document, fetchImpl: createFetch(), location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+
+  const minutesToIndex = (timeValue) => {
+    const [hours, minutes] = timeValue.slice(11, 16).split(':').map(Number);
+    return Math.floor(((hours * 60) + minutes) / 15);
+  };
+  const endMinutesToIndex = (timeValue) => {
+    const [hours, minutes] = timeValue.slice(11, 16).split(':').map(Number);
+    return Math.ceil(((hours * 60) + minutes) / 15);
+  };
+  const starts = dataset.sessions.filter((session) => session.start_at).map((session) => minutesToIndex(session.start_at));
+  const ends = dataset.sessions.filter((session) => session.end_at).map((session) => endMinutesToIndex(session.end_at));
+  const expectedMin = Math.min(...starts);
+  const expectedMax = Math.max(...starts, ...ends);
+
+  assert.equal(env.document.getElementById('time-range-start').min, String(expectedMin));
+  assert.equal(env.document.getElementById('time-range-start').max, String(expectedMax));
+  assert.equal(env.document.getElementById('time-range-end').min, String(expectedMin));
+  assert.equal(env.document.getElementById('time-range-end').max, String(expectedMax));
+});
+
 
 test('copy favorites link uses compact numeric session ids only', async () => {
   const env = createEnvironment('?day=Friday,%20April%2024,%202026');
