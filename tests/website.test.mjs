@@ -154,6 +154,7 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'time-range-label' }));
   document.register(new FakeElement({ id: 'time-range-fill' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
+  document.register(new FakeElement({ id: 'availability-filter', value: '' }));
   document.register(new FakeElement({ id: 'start-after' }));
   document.register(new FakeElement({ id: 'start-before' }));
   document.register(new FakeElement({ id: 'result-count' }));
@@ -214,11 +215,10 @@ test('index.html includes the website shell and module bootstrap', () => {
 test('insights page includes richer intelligence sections', () => {
   assert.match(insightsHtml, /Google Cloud Next 2026 — Insights/);
   assert.match(insightsHtml, /What stands out/);
-  assert.match(insightsHtml, /Top words/);
   assert.match(insightsHtml, /Top companies speaking/);
-  assert.match(insightsHtml, /Interesting slices to explore/);
   assert.match(insightsHtml, /id="top-non-google-companies"/);
   assert.match(insightsHtml, /id="company-observations"/);
+  assert.match(insightsHtml, /sankey-index\.json|sankey-click-map\.json/);
 });
 
 test('index links to changelog page', () => {
@@ -257,7 +257,7 @@ test('insights page is generated from a template and summary artifact', () => {
 test('insights page company section is a single longer non-Google list with write-up', () => {
   assert.match(insightsHtml, /<h2>Top companies speaking<\/h2>/);
   assert.doesNotMatch(insightsHtml, /Top companies in AI sessions/);
-  assert.match(insightsHtml, /Read this less as a popularity contest and more as a map of repeated external presence/);
+  assert.match(insightsHtml, /id="company-observations"/);
   assert.equal(insightsSummary.companies.limit, 120);
   assert.equal(insightsSummary.companies.minimumCount, 2);
   assert.ok(insightsSummary.companies.topNonGoogle.length > 0);
@@ -912,9 +912,24 @@ test('search query param renders a search pill', async () => {
 
 test('buildSearchFromFilters preserves company alongside other insights filters', async () => {
   const { buildSearchFromFilters } = await import('../website/session-search.mjs');
-  const search = buildSearchFromFilters({ q: '', exclude: '', speaker: '', topic: '', day: '', sort: 'time', start_after: '', start_before: '', company: 'Geotab', ai_focus: 'AI', theme: 'Security', audience: 'Sec pros', view: 'sessions', sessionids: '' });
+  const search = buildSearchFromFilters({ q: '', exclude: '', speaker: '', topic: '', day: '', sort: 'time', start_after: '', start_before: '', company: 'Geotab', ai_focus: 'AI', theme: 'Security', audience: 'Sec pros', availability: 'full', view: 'sessions', sessionids: '' });
   assert.match(search, /company=Geotab/);
   assert.match(search, /ai_focus=AI/);
   assert.match(search, /theme=Security/);
   assert.match(search, /audience=Sec\+pros/);
+  assert.match(search, /availability=full/);
+});
+
+test('availability query param filters full and not-full sessions', async () => {
+  const { filterSessions, readFiltersFromSearch, buildSearchFromFilters } = await import('../website/session-search.mjs');
+  const sample = [
+    { title: 'Full session', remaining_capacity: 0, topics: [], speakers: [] },
+    { title: 'Open session', remaining_capacity: 4, topics: [], speakers: [] },
+  ];
+  const fullFilters = readFiltersFromSearch('?availability=full');
+  const notFullFilters = readFiltersFromSearch('?availability=not-full');
+  assert.deepEqual(filterSessions(sample, fullFilters).map((s) => s.title), ['Full session']);
+  assert.deepEqual(filterSessions(sample, notFullFilters).map((s) => s.title), ['Open session']);
+  assert.equal(buildSearchFromFilters(fullFilters), '?availability=full');
+  assert.equal(buildSearchFromFilters(notFullFilters), '?availability=not-full');
 });
