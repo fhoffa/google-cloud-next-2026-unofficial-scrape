@@ -72,7 +72,8 @@ function chipItemsHtml(items, key) {
 function statsCardsHtml(cards) {
   return cards.map((card) => {
     const sub = card.sub ? `<div class="stat-sub">${esc(card.sub)}</div>` : '';
-    return `<div class="card"><div class="stat-value">${esc(card.value)}</div><div class="stat-label">${esc(card.label)}</div>${sub}</div>`;
+    const note = card.note ? `<div class="stat-note">${card.note}</div>` : '';
+    return `<div class="card"><div class="stat-value">${esc(card.value)}</div><div class="stat-label">${esc(card.label)}</div>${sub}${note}</div>`;
   }).join('');
 }
 
@@ -103,31 +104,55 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
 
   const topNonGoogle = companyCounts(withLlm, { excludeGoogle: true });
   const topCompany = topNonGoogle[0] || null;
-  const secondCompany = topNonGoogle[1] || null;
-  const geotab = topNonGoogle.find(([name]) => name === 'Geotab') || null;
+
+  const CONSULTING_FIRMS = ['Accenture', 'McKinsey & Company', 'Deloitte', 'PwC', 'Cognizant', 'HCLTech'];
+  const consultingTotal = CONSULTING_FIRMS.reduce((sum, name) => {
+    return sum + (topNonGoogle.find(([n]) => n === name)?.[1] || 0);
+  }, 0);
+  const anthropicCount = topNonGoogle.find(([n]) => n === 'Anthropic')?.[1] || 0;
+  const wizCount = topNonGoogle.find(([n]) => n === 'Wiz')?.[1] || 0;
+  const nvidiaCount = topNonGoogle.find(([n]) => n === 'NVIDIA')?.[1] || 0;
+  const shopifyCount = topNonGoogle.find(([n]) => n === 'Shopify')?.[1] || 0;
+  const snapCount = topNonGoogle.find(([n]) => n === 'Snap')?.[1] || 0;
+  const geotabEntry = topNonGoogle.find(([n]) => n === 'Geotab');
+  const geotabCount = geotabEntry?.[1] || 0;
+  const geotabRank = geotabEntry ? topNonGoogle.indexOf(geotabEntry) + 1 : null;
 
   const companyObservationParts = [];
   if (topCompany) {
-    companyObservationParts.push(`The strongest outside voice in this catalog is <strong>${esc(topCompany[0])}</strong>, with <strong>${topCompany[1]}</strong> sessions — a signal that this company is showing up repeatedly, not just making a single cameo.`);
+    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — a persistent presence throughout the program.`);
   }
-  if (topCompany && secondCompany) {
-    companyObservationParts.push(`${esc(topCompany[0])} and ${esc(secondCompany[0])} set the pace near the top, which makes this section useful as a quick read on which partners, customers, and ecosystem names Google is putting on stage over and over.`);
+  if (consultingTotal > 0) {
+    const firmList = CONSULTING_FIRMS.filter((name) => topNonGoogle.find(([n]) => n === name)).join(', ');
+    companyObservationParts.push(`The major consulting firms (${firmList}) add up to <strong>${consultingTotal} sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.`);
   }
-  if (geotab) {
-    companyObservationParts.push(`<strong>Geotab</strong> makes the recurring-speaker list too, with <strong>${geotab[1]}</strong> sessions, so it should be visible here rather than disappearing into the long tail.`);
+  if (nvidiaCount > 0) {
+    companyObservationParts.push(`<strong>NVIDIA</strong> at #2 (${nvidiaCount} sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.`);
   }
-  companyObservationParts.push('Read this less as a popularity contest and more as a map of repeated external presence: who appears once can be incidental; who appears again and again is part of the conference narrative.');
+  if (anthropicCount > 0) {
+    companyObservationParts.push(`<strong>Anthropic</strong> appears ${anthropicCount} times — Google's AI model investment earns a recurring stage presence.`);
+  }
+  if (wizCount > 0) {
+    companyObservationParts.push(`<strong>Wiz</strong> shows up ${wizCount} times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.`);
+  }
+  if (shopifyCount > 0 && snapCount > 0) {
+    companyObservationParts.push(`<strong>Shopify</strong> (${shopifyCount}) and <strong>Snap</strong> (${snapCount}) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.`);
+  }
+  if (geotabCount > 0) {
+    companyObservationParts.push(`Disclosure: <a href="${esc(makeHref({ company: 'Geotab' }))}"><strong>Geotab</strong></a> (employer of <a href="https://www.linkedin.com/in/hoffa">Felipe Hoffa</a>, this site's author) appears ${geotabCount} times.`);
+  }
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
   const topAiTheme = aiThemes[0] || ['n/a', 0];
   const topNotAiTheme = notAiThemes[0] || ['n/a', 0];
   const observationsHtml = [
-    `AI now represents <strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the full conference catalog (${aiCount}/${total}).`,
-    `The largest overall theme is <strong>${esc(themes[0]?.[0] || 'n/a')}</strong> with <strong>${themes[0]?.[1] || 0}</strong> sessions.`,
-    `Inside AI, the biggest theme is <strong>${esc(topAiTheme[0])}</strong> (${topAiTheme[1]} sessions).`,
-    `Outside AI, the biggest theme is <strong>${esc(topNotAiTheme[0])}</strong> (${topNotAiTheme[1]} sessions).`,
-    `The audience split suggests more content for <strong>${leaderShare >= devShare ? 'leaders' : 'developers'}</strong> than for the other group (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)} sessions).`,
+    `<strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the entire catalog is AI — ${aiCount} of ${total} sessions.`,
+    `<strong>${esc(themes[0]?.[0] || 'n/a')}</strong> is the most common theme at <strong>${themes[0]?.[1] || 0}</strong> sessions, spanning both AI and non-AI content.`,
+    `Inside AI, <strong>${esc(topAiTheme[0])}</strong> leads at ${topAiTheme[1]} sessions — builders are clearly the primary target.`,
+    `Outside AI, <strong>${esc(topNotAiTheme[0])}</strong> takes the top spot with ${topNotAiTheme[1]} sessions.`,
+    `<strong>${leaderShare >= devShare ? 'Leaders' : 'Developers'}</strong> get slightly more sessions than ${leaderShare >= devShare ? 'developers' : 'leaders'} (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)}).`,
+    ...(consultingTotal > 0 ? [`The major consulting firms together account for <strong>${consultingTotal} sessions</strong> — more than any single non-Google company on the list.`] : []),
   ];
 
   return {
@@ -140,13 +165,13 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       generator: 'scripts/generate_insights.mjs',
       wordRules: 'config/word-rules.json',
     },
-    lede: 'What is Google Cloud Next 2026 actually about? This page surfaces the shape of the conference — AI vs not AI, dominant themes, intended audiences, standout companies, and the most interesting paths through the catalog.',
+    lede: 'Nine out of ten sessions at Google Cloud Next 2026 are about AI. This page breaks down what that actually means — and what\'s waiting in the other 10%.',
     stats: [
-      { value: total.toLocaleString(), label: 'Total sessions' },
-      { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}%`, label: 'AI share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI` },
-      { value: themes[0]?.[0] || 'n/a', label: 'Largest theme', sub: `${themes[0]?.[1] || 0} sessions` },
-      { value: audiences[0]?.[0] || 'n/a', label: 'Largest audience', sub: `${audiences[0]?.[1] || 0} sessions` },
-      { value: nonGoogleCompanyCount.toLocaleString(), label: 'Non-Google companies represented' },
+      { value: total.toLocaleString(), label: 'Total sessions', note: `Across all formats — keynotes, breakouts, workshops, and labs.` },
+      { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}%`, label: 'AI share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI`, note: `For every non-AI session, there are roughly ${Math.round(aiCount / Math.max(1, notAiCount))} AI ones.` },
+      { value: themes[0]?.[0] || 'n/a', label: 'Largest theme', sub: `${themes[0]?.[1] || 0} sessions`, note: `Spans both AI and non-AI content — building things is the dominant conference mode.` },
+      { value: audiences[0]?.[0] || 'n/a', label: 'Largest audience', sub: `${audiences[0]?.[1] || 0} sessions`, note: `Slightly ahead of Developers (${Math.min(leaderShare, devShare)} sessions) — the conference leans executive.` },
+      { value: nonGoogleCompanyCount.toLocaleString(), label: 'Non-Google companies represented', note: `Most appear once. A handful show up 10+ times and are part of the conference narrative.` },
     ],
     quickPivots: {
       aiFocus: ai.map(([name, count]) => ({ name, count, href: makeHref({ ai_focus: name }) })),
@@ -166,18 +191,18 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       notAi: wordStats(notAiSessions).map((item) => ({ ...item, href: makeHref({ q: item.word, ai_focus: 'Not AI' }) })),
     },
     companies: {
-      observationHtml: companyObservationParts.join(' '),
+      observationHtml: companyObservationParts.map((p) => `<li>${p}</li>`).join(''),
       topNonGoogle: topNonGoogle.map(([name, count]) => ({ name, count, href: makeHref({ company: name }) })),
       minimumCount: 2,
       limit: 120,
     },
     interestingSlices: [
-      { title: 'AI for Leaders', desc: 'Strategic and executive-facing AI sessions', params: { ai_focus: 'AI', audience: 'Leaders' } },
-      { title: 'AI for Developers', desc: 'Builder-focused AI sessions', params: { ai_focus: 'AI', audience: 'Developers' } },
-      { title: 'AI Infrastructure', desc: 'Where AI meets platforms and ops', params: { ai_focus: 'AI', theme: 'Infra' } },
-      { title: 'Not AI Security', desc: 'Security sessions outside the AI bucket', params: { ai_focus: 'Not AI', theme: 'Security' } },
-      { title: 'Data pros', desc: 'Sessions explicitly aimed at data practitioners', params: { audience: 'Data pros' } },
-      { title: 'Business for Leaders', desc: 'Executive/business-oriented conference framing', params: { theme: 'Business', audience: 'Leaders' } },
+      { title: 'AI for Leaders', desc: 'AI through a strategy lens, not a coding one', params: { ai_focus: 'AI', audience: 'Leaders' } },
+      { title: 'AI for Developers', desc: 'Hands-on AI: building, shipping, and deploying', params: { ai_focus: 'AI', audience: 'Developers' } },
+      { title: 'AI Infrastructure', desc: 'The infrastructure powering all that AI', params: { ai_focus: 'AI', theme: 'Infra' } },
+      { title: 'Security without the AI angle', desc: 'Classic security work — no AI required', params: { ai_focus: 'Not AI', theme: 'Security' } },
+      { title: 'Data pros', desc: 'For the people who live in the data layer', params: { audience: 'Data pros' } },
+      { title: 'Business for Leaders', desc: 'Strategy sessions for business decision-makers', params: { theme: 'Business', audience: 'Leaders' } },
     ],
   };
 }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T04:53:48.915Z",
+    "generatedAt": "2026-04-01T06:48:33.212Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -8,30 +8,35 @@
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
-  "lede": "What is Google Cloud Next 2026 actually about? This page surfaces the shape of the conference — AI vs not AI, dominant themes, intended audiences, standout companies, and the most interesting paths through the catalog.",
+  "lede": "Nine out of ten sessions at Google Cloud Next 2026 are about AI. This page breaks down what that actually means — and what's waiting in the other 10%.",
   "stats": [
     {
       "value": "1,037",
-      "label": "Total sessions"
+      "label": "Total sessions",
+      "note": "Across all formats — keynotes, breakouts, workshops, and labs."
     },
     {
       "value": "89%",
       "label": "AI share of the conference",
-      "sub": "924 AI · 113 not AI"
+      "sub": "924 AI · 113 not AI",
+      "note": "For every non-AI session, there are roughly 8 AI ones."
     },
     {
       "value": "App dev",
       "label": "Largest theme",
-      "sub": "268 sessions"
+      "sub": "268 sessions",
+      "note": "Spans both AI and non-AI content — building things is the dominant conference mode."
     },
     {
       "value": "Leaders",
       "label": "Largest audience",
-      "sub": "308 sessions"
+      "sub": "308 sessions",
+      "note": "Slightly ahead of Developers (266 sessions) — the conference leans executive."
     },
     {
       "value": "358",
-      "label": "Non-Google companies represented"
+      "label": "Non-Google companies represented",
+      "note": "Most appear once. A handful show up 10+ times and are part of the conference narrative."
     }
   ],
   "quickPivots": {
@@ -103,11 +108,12 @@
     ]
   },
   "observations": [
-    "AI now represents <strong>89.1%</strong> of the full conference catalog (924/1037).",
-    "The largest overall theme is <strong>App dev</strong> with <strong>268</strong> sessions.",
-    "Inside AI, the biggest theme is <strong>App dev</strong> (248 sessions).",
-    "Outside AI, the biggest theme is <strong>Security</strong> (41 sessions).",
-    "The audience split suggests more content for <strong>leaders</strong> than for the other group (308 vs 266 sessions)."
+    "<strong>89.1%</strong> of the entire catalog is AI — 924 of 1037 sessions.",
+    "<strong>App dev</strong> is the most common theme at <strong>268</strong> sessions, spanning both AI and non-AI content.",
+    "Inside AI, <strong>App dev</strong> leads at 248 sessions — builders are clearly the primary target.",
+    "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
+    "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266).",
+    "The major consulting firms together account for <strong>38 sessions</strong> — more than any single non-Google company on the list."
   ],
   "rankings": {
     "topThemes": [
@@ -306,13 +312,6 @@
         "href": "./index.html?q=developer"
       },
       {
-        "word": "breakout",
-        "count": 455,
-        "sessionCount": 454,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout"
-      },
-      {
         "word": "manager",
         "count": 455,
         "sessionCount": 452,
@@ -346,6 +345,13 @@
         "sessionCount": 328,
         "label": "customer",
         "href": "./index.html?q=customer"
+      },
+      {
+        "word": "platform",
+        "count": 394,
+        "sessionCount": 328,
+        "label": "platform",
+        "href": "./index.html?q=platform"
       }
     ],
     "ai": [
@@ -434,13 +440,6 @@
         "href": "./index.html?q=developer&ai_focus=AI"
       },
       {
-        "word": "breakout",
-        "count": 418,
-        "sessionCount": 418,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout&ai_focus=AI"
-      },
-      {
         "word": "agentic",
         "count": 413,
         "sessionCount": 260,
@@ -474,6 +473,13 @@
         "sessionCount": 300,
         "label": "customer",
         "href": "./index.html?q=customer&ai_focus=AI"
+      },
+      {
+        "word": "platform",
+        "count": 361,
+        "sessionCount": 302,
+        "label": "platform",
+        "href": "./index.html?q=platform&ai_focus=AI"
       }
     ],
     "notAi": [
@@ -569,13 +575,6 @@
         "href": "./index.html?q=lightning&ai_focus=Not+AI"
       },
       {
-        "word": "breakout",
-        "count": 37,
-        "sessionCount": 36,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout&ai_focus=Not+AI"
-      },
-      {
         "word": "professionals",
         "count": 37,
         "sessionCount": 36,
@@ -602,11 +601,18 @@
         "sessionCount": 33,
         "label": "introductory",
         "href": "./index.html?q=introductory&ai_focus=Not+AI"
+      },
+      {
+        "word": "platform",
+        "count": 33,
+        "sessionCount": 26,
+        "label": "platform",
+        "href": "./index.html?q=platform&ai_focus=Not+AI"
       }
     ]
   },
   "companies": {
-    "observationHtml": "The strongest outside voice in this catalog is <strong>Palo Alto Networks</strong>, with <strong>16</strong> sessions — a signal that this company is showing up repeatedly, not just making a single cameo. Palo Alto Networks and NVIDIA set the pace near the top, which makes this section useful as a quick read on which partners, customers, and ecosystem names Google is putting on stage over and over. <strong>Geotab</strong> makes the recurring-speaker list too, with <strong>2</strong> sessions, so it should be visible here rather than disappearing into the long tail. Read this less as a popularity contest and more as a map of repeated external presence: who appears once can be incidental; who appears again and again is part of the conference narrative.",
+    "observationHtml": "<li><strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — a persistent presence throughout the program.</li><li>The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>38 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.</li><li><strong>NVIDIA</strong> at #2 (14 sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.</li><li><strong>Anthropic</strong> appears 9 times — Google's AI model investment earns a recurring stage presence.</li><li><strong>Wiz</strong> shows up 6 times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.</li><li><strong>Shopify</strong> (8) and <strong>Snap</strong> (6) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.</li><li>Disclosure: <a href=\"./index.html?company=Geotab\"><strong>Geotab</strong></a> (employer of <a href=\"https://www.linkedin.com/in/hoffa\">Felipe Hoffa</a>, this site's author) appears 2 times.</li>",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",
@@ -1115,7 +1121,7 @@
   "interestingSlices": [
     {
       "title": "AI for Leaders",
-      "desc": "Strategic and executive-facing AI sessions",
+      "desc": "AI through a strategy lens, not a coding one",
       "params": {
         "ai_focus": "AI",
         "audience": "Leaders"
@@ -1123,7 +1129,7 @@
     },
     {
       "title": "AI for Developers",
-      "desc": "Builder-focused AI sessions",
+      "desc": "Hands-on AI: building, shipping, and deploying",
       "params": {
         "ai_focus": "AI",
         "audience": "Developers"
@@ -1131,15 +1137,15 @@
     },
     {
       "title": "AI Infrastructure",
-      "desc": "Where AI meets platforms and ops",
+      "desc": "The infrastructure powering all that AI",
       "params": {
         "ai_focus": "AI",
         "theme": "Infra"
       }
     },
     {
-      "title": "Not AI Security",
-      "desc": "Security sessions outside the AI bucket",
+      "title": "Security without the AI angle",
+      "desc": "Classic security work — no AI required",
       "params": {
         "ai_focus": "Not AI",
         "theme": "Security"
@@ -1147,14 +1153,14 @@
     },
     {
       "title": "Data pros",
-      "desc": "Sessions explicitly aimed at data practitioners",
+      "desc": "For the people who live in the data layer",
       "params": {
         "audience": "Data pros"
       }
     },
     {
       "title": "Business for Leaders",
-      "desc": "Executive/business-oriented conference framing",
+      "desc": "Strategy sessions for business decision-makers",
       "params": {
         "theme": "Business",
         "audience": "Leaders"
