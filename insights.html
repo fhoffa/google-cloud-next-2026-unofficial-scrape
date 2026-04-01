@@ -157,10 +157,6 @@
           <div class="kicker">Non-Google companies</div>
           <div class="rank-list" id="top-non-google-companies"></div>
         </div>
-        <div class="card">
-          <div class="kicker">Top companies in AI sessions</div>
-          <div class="rank-list" id="top-ai-companies"></div>
-        </div>
       </div>
     </section>
 
@@ -299,14 +295,12 @@
         map.set(company, (map.get(company) || 0) + 1);
       }
     }
-    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).slice(0, 12);
+    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).filter(([, count]) => count >= 2).slice(0, 24);
   }
 
   function renderCompanies() {
     const topNonGoogle = companyCounts(withLlm, { excludeGoogle: true });
-    const topAiCompanies = companyCounts(aiSessions, { excludeGoogle: true });
     document.getElementById('top-non-google-companies').innerHTML = rankHtml(topNonGoogle, topNonGoogle[0]?.[1] || 1, '#6a1b9a', (name) => ({ company: name }));
-    document.getElementById('top-ai-companies').innerHTML = rankHtml(topAiCompanies, topAiCompanies[0]?.[1] || 1, '#00acc1', (name) => ({ ai_focus: 'AI', company: name }));
   }
 
   function renderObservations() {
