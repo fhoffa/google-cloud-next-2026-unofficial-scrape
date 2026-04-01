@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T18:26:36.766Z",
+    "generatedAt": "2026-04-01T18:33:07.141Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -52,17 +52,20 @@
         {
           "name": "Workshops",
           "count": 15,
-          "share": "60%"
+          "totalKnown": 38,
+          "share": "39%"
         },
         {
           "name": "Discussion Groups",
           "count": 9,
-          "share": "36%"
+          "totalKnown": 84,
+          "share": "11%"
         },
         {
           "name": "Lounge Sessions",
           "count": 1,
-          "share": "4%"
+          "totalKnown": 19,
+          "share": "5%"
         }
       ]
     }

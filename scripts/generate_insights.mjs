@@ -55,14 +55,19 @@ function availabilityBreakdown(subset) {
 }
 
 function categoryCounts(subset, allowedBand) {
-  const mapped = new Map();
+  const totals = new Map();
+  const matches = new Map();
   for (const session of subset) {
-    if (availabilityBand(session) !== allowedBand) continue;
+    const band = availabilityBand(session);
+    if (band === 'unknown') continue;
     const value = String(session?.session_category || '').trim();
     if (!value) continue;
-    mapped.set(value, (mapped.get(value) || 0) + 1);
+    totals.set(value, (totals.get(value) || 0) + 1);
+    if (band === allowedBand) matches.set(value, (matches.get(value) || 0) + 1);
   }
-  return [...mapped.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  return [...matches.entries()]
+    .map(([name, count]) => [name, count, totals.get(name) || count])
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
 function wordStats(subset, limit = 18) {
@@ -233,7 +238,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
       stats: [],
       observations: fullnessObservations,
       rankings: {
-        fullByCategory: fullByCategory.slice(0, 6).map(([name, count]) => ({ name, count, share: percentage(count, availability.full) })),
+        fullByCategory: fullByCategory.slice(0, 6).map(([name, count, totalKnown]) => ({ name, count, totalKnown, share: percentage(count, totalKnown) })),
       },
     },
     quickPivots: {
