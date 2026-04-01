@@ -14,6 +14,7 @@ function esc(value) {
 const IMPORTANT_FIELDS = ['title', 'date_time', 'date_text', 'start_time_text', 'end_time_text', 'room'];
 const MINOR_FIELDS = ['speakers', 'topics', 'description'];
 const DESCRIPTION_CHANGE_RATIO_THRESHOLD = 0.18;
+const CHANGELOG_WINDOW_HOURS = 12;
 
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
@@ -234,6 +235,26 @@ function loadSnapshots(snapshotsDir) {
     .filter((entry) => entry.sessions.length > 0);
 }
 
+function groupSnapshotsByWindow(snapshots, windowHours = CHANGELOG_WINDOW_HOURS) {
+  const windows = [];
+  const windowMs = windowHours * 60 * 60 * 1000;
+  for (const snapshot of snapshots) {
+    const at = new Date(snapshot.scrapedAt);
+    if (Number.isNaN(at.getTime())) {
+      windows.push([snapshot]);
+      continue;
+    }
+    const bucketStart = Math.floor(at.getTime() / windowMs) * windowMs;
+    const lastWindow = windows[windows.length - 1];
+    if (lastWindow && lastWindow.bucketStart === bucketStart) {
+      lastWindow.items.push(snapshot);
+    } else {
+      windows.push({ bucketStart, items: [snapshot] });
+    }
+  }
+  return windows.map((window) => window.items);
+}
+
 function compareSnapshots(previous, current) {
   const prevMap = new Map(previous.sessions.map((session) => [sessionKey(session), session]));
   const curMap = new Map(current.sessions.map((session) => [sessionKey(session), session]));
@@ -431,9 +452,15 @@ function main() {
 
   const generatedAt = args.generatedAt || new Date().toISOString();
   const snapshots = loadSnapshots(snapshotsDir);
+  const groupedWindows = groupSnapshotsByWindow(snapshots, CHANGELOG_WINDOW_HOURS);
+  const windowSnapshots = groupedWindows.map((items) => ({
+    first: items[0],
+    last: items[items.length - 1],
+    items,
+  }));
   const updates = [];
-  for (let index = 1; index < snapshots.length; index += 1) {
-    updates.push(compareSnapshots(snapshots[index - 1], snapshots[index]));
+  for (let index = 1; index < windowSnapshots.length; index += 1) {
+    updates.push(compareSnapshots(windowSnapshots[index - 1].last, windowSnapshots[index].last));
   }
   updates.reverse();
 
@@ -444,8 +471,9 @@ function main() {
       template: args.template,
       outputHtml: args.outputHtml,
       generator: 'scripts/generate_changelog.mjs',
+      windowHours: CHANGELOG_WINDOW_HOURS,
     },
-    lede: 'A snapshot-by-snapshot view of what changed in the session catalog: new sessions, removals, notable edits, and high-level availability movement like fully booked vs reopened.',
+    lede: 'A changelog grouped into meaningful republish windows instead of minute-by-minute scrape intervals: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.',
     updates,
   };
 

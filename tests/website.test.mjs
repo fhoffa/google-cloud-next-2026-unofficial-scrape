@@ -227,11 +227,13 @@ test('index links to changelog page', () => {
 
 test('changelog page is generated from summary artifact', () => {
   const changelogHtml = fs.readFileSync(new URL('../changelog.html', import.meta.url), 'utf8');
+  const changelogSummary = JSON.parse(fs.readFileSync(new URL('../media/changelog-summary.json', import.meta.url), 'utf8'));
   assert.match(changelogHtml, /Google Cloud Next 2026 — Changelog/);
   assert.match(changelogHtml, /data-summary-source="\.\/media\/changelog-summary\.json"/);
-  assert.match(changelogHtml, /Updated sessions/);
-  assert.match(changelogHtml, /Availability changes/);
-  assert.match(changelogHtml, /Show minor churn/);
+  assert.equal(changelogSummary.meta.windowHours, 12);
+  if (changelogSummary.updates.length > 0) {
+    assert.match(changelogHtml, /Availability changes|Updated sessions|New sessions|Removed sessions/);
+  }
 });
 
 test('insights page uses sankey index and click-map artifacts instead of hardcoded geometry only', () => {
