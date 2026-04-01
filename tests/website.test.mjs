@@ -206,6 +206,30 @@ test('index.html includes the website shell and module bootstrap', () => {
   assert.match(html, /import \{ initSessionSearch \} from '\.\/website\/session-search\.mjs';/);
 });
 
+test('insights page includes richer intelligence sections', () => {
+  assert.match(insightsHtml, /Google Cloud Next 2026 — Insights/);
+  assert.match(insightsHtml, /What stands out/);
+  assert.match(insightsHtml, /Top words/);
+  assert.match(insightsHtml, /Top companies speaking/);
+  assert.match(insightsHtml, /Interesting slices to explore/);
+  assert.match(insightsHtml, /id="top-non-google-companies"/);
+  assert.match(insightsHtml, /id="company-observations"/);
+});
+
+test('insights page uses sankey index and click-map artifacts instead of hardcoded geometry only', () => {
+  assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
+  assert.match(insightsHtml, /fetch\('\.\/media\/sankey-click-map\.json'\)/);
+  assert.match(insightsHtml, /for \(const segment of clickMap\.segments \|\| \[\]\)/);
+});
+
+test('insights page company section is a single longer non-Google list with write-up', () => {
+  assert.match(insightsHtml, /<h2>Top companies speaking<\/h2>/);
+  assert.doesNotMatch(insightsHtml, /Top companies in AI sessions/);
+  assert.match(insightsHtml, /This list is a useful proxy for which non-Google companies Google is repeatedly amplifying across the event\./);
+  assert.match(insightsHtml, /slice\(0, 40\)/);
+  assert.match(insightsHtml, /count >= 2/);
+});
+
 test('website loads the dataset and renders results', async () => {
   const env = createEnvironment();
 
