@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T06:48:33.212Z",
+    "generatedAt": "2026-04-01T14:43:44.376Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -24,7 +24,7 @@
     {
       "value": "App dev",
       "label": "Largest theme",
-      "sub": "268 sessions",
+      "sub": "241 sessions",
       "note": "Spans both AI and non-AI content — building things is the dominant conference mode."
     },
     {
@@ -55,7 +55,7 @@
     "themes": [
       {
         "name": "App dev",
-        "count": 268,
+        "count": 241,
         "href": "./index.html?theme=App+dev"
       },
       {
@@ -75,8 +75,13 @@
       },
       {
         "name": "Infra",
-        "count": 125,
+        "count": 135,
         "href": "./index.html?theme=Infra"
+      },
+      {
+        "name": "Applied AI",
+        "count": 17,
+        "href": "./index.html?theme=Applied+AI"
       }
     ],
     "audiences": [
@@ -109,8 +114,8 @@
   },
   "observations": [
     "<strong>89.1%</strong> of the entire catalog is AI — 924 of 1037 sessions.",
-    "<strong>App dev</strong> is the most common theme at <strong>268</strong> sessions, spanning both AI and non-AI content.",
-    "Inside AI, <strong>App dev</strong> leads at 248 sessions — builders are clearly the primary target.",
+    "<strong>App dev</strong> is the most common theme at <strong>241</strong> sessions, spanning both AI and non-AI content.",
+    "Inside AI, <strong>App dev</strong> leads at 222 sessions — builders are clearly the primary target.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
     "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266).",
     "The major consulting firms together account for <strong>38 sessions</strong> — more than any single non-Google company on the list."
@@ -119,7 +124,7 @@
     "topThemes": [
       {
         "name": "App dev",
-        "count": 268,
+        "count": 241,
         "href": "./index.html?theme=App+dev"
       },
       {
@@ -139,8 +144,13 @@
       },
       {
         "name": "Infra",
-        "count": 125,
+        "count": 135,
         "href": "./index.html?theme=Infra"
+      },
+      {
+        "name": "Applied AI",
+        "count": 17,
+        "href": "./index.html?theme=Applied+AI"
       }
     ],
     "topAudiences": [
@@ -173,7 +183,7 @@
     "topAiThemes": [
       {
         "name": "App dev",
-        "count": 248,
+        "count": 222,
         "href": "./index.html?ai_focus=AI&theme=App+dev"
       },
       {
@@ -193,8 +203,13 @@
       },
       {
         "name": "Infra",
-        "count": 107,
+        "count": 116,
         "href": "./index.html?ai_focus=AI&theme=Infra"
+      },
+      {
+        "name": "Applied AI",
+        "count": 17,
+        "href": "./index.html?ai_focus=AI&theme=Applied+AI"
       }
     ],
     "topNotAiThemes": [
@@ -205,7 +220,7 @@
       },
       {
         "name": "App dev",
-        "count": 20,
+        "count": 19,
         "href": "./index.html?ai_focus=Not+AI&theme=App+dev"
       },
       {
@@ -215,7 +230,7 @@
       },
       {
         "name": "Infra",
-        "count": 18,
+        "count": 19,
         "href": "./index.html?ai_focus=Not+AI&theme=Infra"
       },
       {
@@ -1133,6 +1148,13 @@
       "params": {
         "ai_focus": "AI",
         "audience": "Developers"
+      }
+    },
+    {
+      "title": "Agents & Applied AI",
+      "desc": "Deploying agents, voice bots, and agentic workflows",
+      "params": {
+        "theme": "Applied AI"
       }
     },
     {

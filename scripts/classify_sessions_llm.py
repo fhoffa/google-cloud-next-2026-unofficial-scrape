@@ -44,21 +44,35 @@ Return "Not AI" if AI is incidental or absent.
 
 ### theme
 The primary technical/business theme. Choose the single BEST fit:
-- "Security"   — identity, IAM, threat detection, compliance, zero trust, cyber, guardrails
-- "Data"       — databases, analytics, BigQuery, data engineering, warehousing, Looker, BI
-- "Infra"      — infrastructure, networking, Kubernetes, serverless, compute, storage, SRE,
-                 DevOps, migration, multicloud, architecture
-- "App dev"    — application development, APIs, SDKs, Firebase, mobile, web, developer tools,
-                 builder sessions, coding workshops, open source
-- "Business"   — strategy, leadership, customer stories, partner ecosystem, industry
-                 transformation, executive sessions
+- "Security"    — identity, IAM, threat detection, compliance, zero trust, cyber, guardrails
+- "Data"        — databases, analytics, BigQuery, data engineering, warehousing, Looker, BI
+- "Infra"       — infrastructure, networking, Kubernetes, serverless, compute, storage, SRE,
+                  DevOps, migration, multicloud, architecture; LLM inference/serving infrastructure
+- "App dev"     — application development, APIs, SDKs, Firebase, mobile, web, developer tools,
+                  builder sessions, coding workshops, open source; explicitly tagged `App Dev`
+- "Applied AI"  — agents, agentic workflows, chatbots, voice agents, applied AI use cases,
+                  GenAI product deployments, enterprise AI adoption without infra focus
+- "Business"    — strategy, leadership, customer stories, partner ecosystem, industry
+                  transformation, executive sessions
 
 **Theme hard overrides (apply first, before anything else):**
 - Topic tag `Developer Meetups` OR room contains "Developer Meetup" → MUST be "App dev"
-- Topic tag `Application Developers` without other conflicting technical tags → strong "App dev"
-- Topic tag `Architecture` OR `Infrastructure Architects & Admins` → strong "Infra"
+- Topic tag `App Dev` → strong "App dev" (explicit content tag, not audience tag)
+- Topic tag `Applied AI` AND (title/description is about agents, agentic, voice agents,
+  chatbots, or applied AI use cases) AND no `App Dev` topic tag → strong "Applied AI"
+- Topic tag `Application Developers` alone (without `App Dev` or `Applied AI`) → mild "App dev"
+  EXCEPTION: if audience is Infra/Ops and Kubernetes/infra tags dominate, prefer "Infra"
+- Topic tag `Architecture` OR `Infrastructure Architects & Admins` WITH Kubernetes/compute/
+  serving context → strong "Infra"
 - Topic tags `Security` OR `Security Professionals` → strong "Security"
 - Topic tag `Databases` → strong "Data"
+
+**App dev vs Applied AI vs Infra disambiguation:**
+- Session explicitly tagged `App Dev` → "App dev" (regardless of other signals)
+- Session about building/coding apps, SDKs, APIs, Firebase, mobile → "App dev"
+- Session about deploying/running agents, chatbots, voice products, agentic systems → "Applied AI"
+- Session about LLM inference at scale, Kubernetes-based AI serving, GPU orchestration,
+  cluster operations for AI → "Infra" (even if `Application Developers` tag is present)
 
 **Startup Hub / Lounge tag inflation warning:**
 Many hub/lounge sessions carry the same boilerplate tag list regardless of actual content:
@@ -66,7 +80,7 @@ Many hub/lounge sessions carry the same boilerplate tag list regardless of actua
 IT Managers & Business Leaders, Startup, Technology & Leadership]
 When you see 6+ of these tags together, DO NOT use the infra tags for theme scoring.
 Instead classify theme primarily from the title, description, and any specific tags
-(e.g. Applied AI, Gemini, Application Developers).
+(e.g. Applied AI, Agents, App Dev, Gemini, Application Developers).
 
 **Scoring order:** hard overrides → specific topic tags (6pts each) → title keywords (3pts) → description (1pt).
 
@@ -107,7 +121,7 @@ One sentence (max 25 words) explaining the classification choices.
 Respond with ONLY valid JSON matching this schema:
 {
   "ai_focus": "AI" | "Not AI",
-  "theme": "Security" | "Data" | "Infra" | "App dev" | "Business",
+  "theme": "Security" | "Data" | "Infra" | "App dev" | "Applied AI" | "Business",
   "audience": "Developers" | "Data pros" | "Infra/Ops" | "Sec pros" | "Leaders" | "General",
   "reasoning": "<string>"
 }"""

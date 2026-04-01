@@ -1003,9 +1003,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -2196,9 +2196,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -2653,9 +2653,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -3062,9 +3062,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -3690,9 +3690,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -5106,9 +5106,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -5923,9 +5923,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -6618,9 +6618,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -8809,9 +8809,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -12323,9 +12323,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -12715,9 +12715,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -13211,9 +13211,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -13497,9 +13497,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -14487,9 +14487,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -16659,9 +16659,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -16944,9 +16944,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -18683,9 +18683,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -19986,9 +19986,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -20742,9 +20742,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -21333,9 +21333,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -22159,9 +22159,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -22461,9 +22461,9 @@
       ],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "Non-AI; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -25858,9 +25858,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -30711,9 +30711,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -36393,9 +36393,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
@@ -36620,9 +36620,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
       }
     },
     {
@@ -36698,9 +36698,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Infra theme \u2014 Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
       }
     },
     {
