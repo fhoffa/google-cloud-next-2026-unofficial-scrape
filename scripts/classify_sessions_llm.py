@@ -73,6 +73,16 @@ The primary technical/business theme. Choose the single BEST fit:
 - Session about deploying/running agents, chatbots, voice products, agentic systems → "Applied AI"
 - Session about LLM inference at scale, Kubernetes-based AI serving, GPU orchestration,
   cluster operations for AI → "Infra" (even if `Application Developers` tag is present)
+- Session about TPUs, GPUs, AI Hypercomputer, Slurm on GKE, Ray on GKE, HPC, model
+  serving infrastructure → "Infra" regardless of co-occurring data-role audience tags
+- AI training infrastructure (pretraining, fine-tuning at scale, accelerator orchestration)
+  → "Infra"; these are compute topics, not data topics
+
+**Business Intelligence tag warning:**
+The `Business Intelligence` topic tag appears on many sessions that are NOT about BI tools.
+Do NOT use it alone to force "Data" theme or "Data pros" audience. When the session title
+and description are clearly about leadership, career development, soft skills, or executive
+topics, classify as "Business" + "Leaders" regardless of the BI tag.
 
 **Startup Hub / Lounge tag inflation warning:**
 Many hub/lounge sessions carry the same boilerplate tag list regardless of actual content:
@@ -105,9 +115,11 @@ The primary intended audience. Choose the single BEST fit:
 - `Security Professionals` tag → Sec pros (not Infra/Ops, even if infra tags are also present)
 - `Application Developers` tag → Developers (not Infra/Ops)
 - `Data Engineers` / `Data Analysts` / `Data Scientists` → Data pros
+  EXCEPTION: if theme resolves to "Infra" (e.g. compute, Kubernetes, AI serving), data-role
+  tags reflect who USES the infrastructure, not the primary audience — prefer "Infra/Ops"
 - Infra tags (Platform Engineers, SREs, IT Ops, Infrastructure Architects & Admins) → Infra/Ops
   UNLESS a more specific tag also applies (Security Professionals, Application Developers, etc.)
-- `IT Managers & Business Leaders` / `Executive` → Leaders
+- `Technology & Leadership` / `IT Managers & Business Leaders` / `Executive` → Leaders
 - When 5+ audience tags are present and they span multiple categories, prefer "General"
   UNLESS a hard override applies or one category is clearly dominant (4+ tags from same bucket)
 
