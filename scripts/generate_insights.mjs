@@ -122,7 +122,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   if (anthropicCount > 0) {
     companyObservationParts.push(`<strong>Anthropic</strong> appears ${anthropicCount} times — Google's AI model investment shows up on stage as a first-class partner, not a footnote.`);
   }
-  companyObservationParts.push('One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.');
+  companyObservationParts.push('Frequency is the signal — five, ten, twenty sessions means Google put this company on stage repeatedly for a reason.');
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
