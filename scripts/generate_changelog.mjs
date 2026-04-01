@@ -351,6 +351,18 @@ function compareSnapshots(previous, current) {
   };
 }
 
+function hasMeaningfulDiff(diff) {
+  return Boolean(
+    diff.summary.hasReplacements ||
+    diff.summary.hasAdditions ||
+    diff.summary.hasRemovals ||
+    diff.summary.hasMaterialChanges ||
+    diff.summary.hasReopened ||
+    (diff.summary.currentFull > 0) ||
+    (diff.summary.currentLimited > 0)
+  );
+}
+
 function summarySentence(diff) {
   const parts = [];
   if (diff.summary.hasReplacements) parts.push('some sessions look like one-to-one substitutions');
@@ -465,7 +477,8 @@ function main() {
   }));
   const updates = [];
   for (let index = 1; index < groupedSnapshots.length; index += 1) {
-    updates.push(compareSnapshots(groupedSnapshots[index - 1].last, groupedSnapshots[index].last));
+    const diff = compareSnapshots(groupedSnapshots[index - 1].last, groupedSnapshots[index].last);
+    if (hasMeaningfulDiff(diff)) updates.push(diff);
   }
   updates.reverse();
 

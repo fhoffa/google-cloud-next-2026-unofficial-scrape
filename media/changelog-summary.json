@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T06:31:12.671Z",
+    "generatedAt": "2026-04-01T06:48:14.617Z",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
     "outputHtml": "changelog.html",
@@ -446,99 +446,6 @@
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912339/free-up-your-lean-team's-time-with-the-help-of-multi-agent-systems"
         }
       ]
-    },
-    {
-      "previous": {
-        "file": "2026-03-30T20-50-43Z.json",
-        "scrapedAt": "2026-03-30T20:50:43.238Z",
-        "count": 1037
-      },
-      "current": {
-        "file": "2026-03-31T19-54-45Z.json",
-        "scrapedAt": "2026-03-31T19:54:45.166Z",
-        "count": 1037
-      },
-      "summary": {
-        "currentAvailabilityKnown": 0,
-        "currentFull": 0,
-        "currentLimited": 0,
-        "fullSharePhrase": "No usable data yet",
-        "hasReopened": false,
-        "hasMaterialChanges": false,
-        "hasAdditions": false,
-        "hasRemovals": false,
-        "hasReplacements": false
-      },
-      "replacements": [],
-      "added": [],
-      "removed": [],
-      "nowFull": [],
-      "reopened": [],
-      "nowLimited": [],
-      "materialChanges": [],
-      "minorChanges": []
-    },
-    {
-      "previous": {
-        "file": "2026-03-29T19-17-57Z.json",
-        "scrapedAt": "2026-03-29T19:17:57.200Z",
-        "count": 1037
-      },
-      "current": {
-        "file": "2026-03-30T20-50-43Z.json",
-        "scrapedAt": "2026-03-30T20:50:43.238Z",
-        "count": 1037
-      },
-      "summary": {
-        "currentAvailabilityKnown": 0,
-        "currentFull": 0,
-        "currentLimited": 0,
-        "fullSharePhrase": "No usable data yet",
-        "hasReopened": false,
-        "hasMaterialChanges": false,
-        "hasAdditions": false,
-        "hasRemovals": false,
-        "hasReplacements": false
-      },
-      "replacements": [],
-      "added": [],
-      "removed": [],
-      "nowFull": [],
-      "reopened": [],
-      "nowLimited": [],
-      "materialChanges": [],
-      "minorChanges": []
-    },
-    {
-      "previous": {
-        "file": "2026-03-27T16-43-18Z.json",
-        "scrapedAt": "2026-03-27T16:43:18.891Z",
-        "count": 1037
-      },
-      "current": {
-        "file": "2026-03-29T19-17-57Z.json",
-        "scrapedAt": "2026-03-29T19:17:57.200Z",
-        "count": 1037
-      },
-      "summary": {
-        "currentAvailabilityKnown": 0,
-        "currentFull": 0,
-        "currentLimited": 0,
-        "fullSharePhrase": "No usable data yet",
-        "hasReopened": false,
-        "hasMaterialChanges": false,
-        "hasAdditions": false,
-        "hasRemovals": false,
-        "hasReplacements": false
-      },
-      "replacements": [],
-      "added": [],
-      "removed": [],
-      "nowFull": [],
-      "reopened": [],
-      "nowLimited": [],
-      "materialChanges": [],
-      "minorChanges": []
     }
   ]
 }
