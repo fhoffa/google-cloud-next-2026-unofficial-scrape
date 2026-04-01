@@ -100,6 +100,7 @@ function renderFilterPills(filters) {
   if (filters.ai_focus) pills.push({ key: 'ai_focus', label: `AI focus: ${filters.ai_focus}` });
   if (filters.theme) pills.push({ key: 'theme', label: `theme: ${filters.theme}` });
   if (filters.audience) pills.push({ key: 'audience', label: `audience: ${filters.audience}` });
+  if (filters.availability) pills.push({ key: 'availability', label: `availability: ${filters.availability}` });
   return pills.map((pill) => `<button class="filter-pill" type="button" data-clear-filter="${pill.key}">${escHtml(pill.label)} ×</button>`).join('');
 }
 
@@ -141,6 +142,7 @@ export function readFiltersFromSearch(search) {
     ai_focus: params.get('ai_focus') || '',
     theme: params.get('theme') || '',
     audience: params.get('audience') || '',
+    availability: params.get('availability') || '',
     view: VALID_VIEWS.has(params.get('view')) ? params.get('view') : (params.get('view') === 'favorites' ? 'favorites' : DEFAULT_VIEW),
   };
 }
@@ -159,6 +161,7 @@ export function buildSearchFromFilters(filters) {
   if (filters.ai_focus) params.set('ai_focus', filters.ai_focus);
   if (filters.theme) params.set('theme', filters.theme);
   if (filters.audience) params.set('audience', filters.audience);
+  if (filters.availability) params.set('availability', filters.availability);
   if (filters.view && filters.view !== DEFAULT_VIEW) params.set('view', filters.view);
   if (filters.view === 'favorites' && filters.sessionids) params.set('sessionids', filters.sessionids);
   const query = params.toString();
@@ -174,6 +177,7 @@ export function filterSessions(sessions, filters) {
   const aiFocus = String(filters.ai_focus || '').trim();
   const theme = String(filters.theme || '').trim();
   const audience = String(filters.audience || '').trim();
+  const availability = String(filters.availability || '').trim();
   const topic = filters.topic;
   const day = filters.day;
   const startAfter = filters.start_after || '';
@@ -194,6 +198,8 @@ export function filterSessions(sessions, filters) {
     if (aiFocus && llm.ai_focus !== aiFocus) return false;
     if (theme && llm.theme !== theme) return false;
     if (audience && llm.audience !== audience) return false;
+    if (availability === 'full' && Number(session.remaining_capacity) !== 0) return false;
+    if (availability === 'not-full' && Number(session.remaining_capacity) === 0) return false;
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -313,10 +319,12 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
     const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
+    const statusBadge = Number(session.remaining_capacity) === 0 ? '<span class="status-badge full">Full</span>' : '';
     return `<div class="card" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
       <div class="card-meta">
+        ${statusBadge}
         ${dateShort ? `<span class="meta-icon">${escHtml(dateShort)}</span>` : ''}
         ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
         ${session.room ? `<span class="dot meta-icon">${escHtml(session.room)}</span>` : ''}
@@ -383,6 +391,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
   const topicSelect = document.getElementById('topic-filter');
+  const availabilitySelect = document.getElementById('availability-filter');
   const activeFilters = document.getElementById('active-filters');
   const timeRangeStart = document.getElementById('time-range-start');
   const timeRangeEnd = document.getElementById('time-range-end');
@@ -413,6 +422,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   if (excludeInput) excludeInput.value = state.exclude;
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
+  if (availabilitySelect) availabilitySelect.value = state.availability || '';
   if (startAfterInput) startAfterInput.value = state.start_after;
   if (startBeforeInput) startBeforeInput.value = state.start_before;
   if (timeRangeStart) timeRangeStart.value = String(timeTextToIndex(state.start_after, 0));
@@ -442,6 +452,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       ai_focus: classificationFilters.ai_focus,
       theme: classificationFilters.theme,
       audience: classificationFilters.audience,
+      availability: availabilitySelect?.value || '',
     };
   }
 

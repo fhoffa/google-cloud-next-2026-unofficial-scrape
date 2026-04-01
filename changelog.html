@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Cloud Next 2026 — Changelog</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:title" content="Google Cloud Next 2026 — Changelog">
+  <meta property="og:description" content="Snapshot-by-snapshot changelog for the unofficial Google Cloud Next 2026 session tracker.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Cloud Next 2026 — Changelog">
+  <meta name="twitter:description" content="Snapshot-by-snapshot changelog for the unofficial Google Cloud Next 2026 session tracker.">
+  <meta name="changelog-summary" content="./media/changelog-summary.json">
+  <style>
+    :root {
+      --bg:#f8f9fa; --card:#fff; --text:#202124; --muted:#5f6368; --border:#e8eaed; --link:#1a73e8;
+      --green:#34a853; --red:#c62828; --orange:#ef6c00; --purple:#6a1b9a; --blue:#4285f4;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+    main{max-width:1100px;margin:0 auto;padding:24px 20px 48px}
+    a{color:var(--link)}
+    .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-bottom:8px}
+    .eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 6px}
+    h1{margin:0;font-size:2.1rem;line-height:1.08}
+    .lede{max-width:900px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 22px}
+    .grid{display:grid;gap:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .snapshot-header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+    .snapshot-title{margin:0;font-size:1.15rem}
+    .muted{color:var(--muted)}
+    .summary{margin-top:10px;line-height:1.5}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:.84rem;font-weight:600}
+    .badge.added{background:#e6f4ea;color:#137333}
+    .badge.removed{background:#fce8e6;color:#a50e0e}
+    .badge.changed{background:#e8f0fe;color:#174ea6}
+    .badge.full{background:#f3e8fd;color:#6a1b9a}
+    .badge.reopened{background:#fff4e5;color:#b06000}
+    details{margin-top:14px}
+    summary{cursor:pointer;font-weight:600}
+    .section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+    .mini-card{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+    .mini-card h3{margin:0 0 8px;font-size:1rem}
+    ul{margin:0;padding-left:18px}
+    li{margin:4px 0}
+    code{background:#f1f3f4;padding:2px 5px;border-radius:6px}
+    .empty{color:var(--muted);font-style:italic}
+  </style>
+</head>
+<body>
+  <!-- Generated from templates/changelog.template.html using scripts/generate_changelog.mjs. -->
+  <main data-generated-on="2026-04-01T14:13:55.897Z" data-summary-source="./media/changelog-summary.json">
+    <div class="top">
+      <div>
+        <p class="eyebrow">Snapshot history</p>
+        <h1>Google Cloud Next 2026 — Changelog</h1>
+      </div>
+      <div><a href="./index.html">← Back to session explorer</a></div>
+    </div>
+    <p class="lede">A changelog that collapses near-duplicate scrape bursts while preserving meaningful gaps between publishes: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.</p>
+
+    <div id="app" class="grid">
+    <article class="card">
+      <div class="snapshot-header">
+        <div>
+          <h2 class="snapshot-title">Mar 27, 2026, 4:43 PM → Apr 1, 2026, 4:47 AM</h2>
+          <div class="muted">Snapshots: <code>2026-03-27T16-43-18Z.json</code> → <code>2026-04-01T04-47-15Z.json</code></div>
+        </div>
+      </div>
+      <p class="summary">Some sessions look like one-to-one substitutions; new sessions showed up; some sessions disappeared; a handful of listings changed in meaningful ways.</p>
+      <div class="badges">
+        <span class="badge changed">Updated sessions</span>
+        <span class="badge added">New sessions</span>
+        <span class="badge removed">Removed sessions</span>
+        <span class="badge full">Availability changes</span>
+      </div>
+      <details>
+        <summary>Show details</summary>
+        <div class="section-grid">
+          <section class="mini-card">
+            <h3>Updated sessions</h3>
+            <ul><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913054/maximize-your-cloud-roi-a-developer's-approach-to-cost-optimization" target="_blank" rel="noopener">Architecting high-performance SaaS: Lessons from top ISVs → Maximize your cloud ROI: A developer's approach to cost optimization</a> <span class="muted">(same day, same start time, same end time, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3881979/from-experimentation-to-enterprise-value-how-cox-scaled-ai-for-impact" target="_blank" rel="noopener">Ask more from your agents with Google Antigravity → From experimentation to enterprise value: How Cox scaled AI for impact</a> <span class="muted">(same day, same start time, same end time, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3879138/the-intelligence-layer-building-ai-first-customer-experience" target="_blank" rel="noopener">Redefining data science with Antigravity: Google's AI-native IDE → The intelligence layer: Building AI-first customer experience</a> <span class="muted">(same day, same start time, same end time, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912240/the-new-way-to-use-spark-intelligent-automated-and-lightning-fast" target="_blank" rel="noopener">The agentic shift in the software development life cycle → The new way to use Spark: Intelligent, automated, and lightning fast</a> <span class="muted">(same day, same start time, same end time, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913105/aiops-at-scale-production-ready-infrastructure-with-cluster-director" target="_blank" rel="noopener">Building multi-agent orchestration: Key challenges and solution approaches → AIOps at scale: Production-ready infrastructure with Cluster Director</a> <span class="muted">(same day, same start time, same end time, shared topic)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/4036717/reinventing-grocery-retail-how-albertsons-uses-databricks-on-google-cloud-to-unlock-data-and-ai" target="_blank" rel="noopener">From vision to value: Scaling Gemini Enterprise at The Venetian → Reinventing Grocery Retail: How Albertsons Uses Databricks on Google Cloud to Unlock Data and AI</a> <span class="muted">(same day, same room, shared topic)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920548/drive-clinical-action-with-ai-agents" target="_blank" rel="noopener">Agentic forecasting and planning → Drive clinical action with AI agents</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920497/neurocontext-the-next-modality-is-your-brain" target="_blank" rel="noopener">AI Photo Booth → NeuroContext: The next modality is your brain</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920442/cloud-tpus-and-gpus" target="_blank" rel="noopener">AI-ready compute → Cloud TPUs and GPUs</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920474/customize-gemini-cli-with-extensions-and-mcp-servers" target="_blank" rel="noopener">Automate your workflow with Gemini CLI → Customize Gemini CLI with extensions and MCP servers</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920532/defending-against-owasp-top-10-for-agentic-apps" target="_blank" rel="noopener">Building secure agents: protecting access and data → Defending against OWASP top 10 for agentic apps</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920461/build-conversational-agents-on-postgresql-and-mysql" target="_blank" rel="noopener">Chat with your data using Gemini → Build conversational agents on PostgreSQL and MySQL</a> <span class="muted">(same room, shared topics)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912911/accelerate-ai-adoption-strategies-for-upskilling-and-managing-change" target="_blank" rel="noopener">Accelerate AI adoption: Strategies for upskilling and managing change</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920154/accelerate-rd-with-gemini-based-agents-co-scientist-and-alphaevolve" target="_blank" rel="noopener">Accelerate R&amp;D with Gemini-based agents Co-Scientist and AlphaEvolve</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912966/accelerate-your-most-demanding-ai-workloads-with-managed-lustre" target="_blank" rel="noopener">Accelerate your most demanding AI workloads with Managed Lustre</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913010/accelerating-alpha-citadel's-hybrid-hpc-and-ai-strategy" target="_blank" rel="noopener">Accelerating alpha: Citadel's hybrid HPC and AI strategy</a> <span class="muted">(speakers)</span></li></ul>
+          </section>
+          <section class="mini-card">
+            <h3>New sessions</h3>
+            <ul><li><a href="https://www.googlecloudevents.com/next-vegas/session/3915273/ai-with-a-mission-from-strategy-to-high-stakes-impact" target="_blank" rel="noopener">AI with a mission: From strategy to high-stakes impact</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920447/align-stakeholders-on-a-path-forward" target="_blank" rel="noopener">Align stakeholders on a path forward</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912332/an-inside-look-at-the-evolution-of-agent-development" target="_blank" rel="noopener">An inside look at the evolution of agent development</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920554/boost-ai-inference-speed-and-efficiency" target="_blank" rel="noopener">Boost AI inference speed and efficiency</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920481/building-ai-agents-at-scale-with-cvs" target="_blank" rel="noopener">Building AI agents at scale with CVS</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3952516/ciso-connect-reception" target="_blank" rel="noopener">CISO Connect Reception</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3947405/ciso-connect-security-in-the-next-era" target="_blank" rel="noopener">CISO Connect: Security in the Next Era</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920477/deliver-price-performance-with-workload-optimized-vms" target="_blank" rel="noopener">Deliver price-performance with workload-optimized VMs</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920543/empower-ai-agents-with-google-mcp-servers" target="_blank" rel="noopener">Empower AI agents with Google MCP servers</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920462/google-cloud-x-team-usa" target="_blank" rel="noopener">Google Cloud x Team USA</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920431/how-google-cloud-and-cyderes-deliver-ai-powered-context-driven-security-operations" target="_blank" rel="noopener">How Google Cloud and Cyderes Deliver AI-Powered &amp; Context-Driven Security Operations</a></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/4045148/influential-communication-the-power-of-speaking-with-precision-presence-and-purpose" target="_blank" rel="noopener">Influential Communication: The Power of Speaking with Precision, Presence, and Purpose</a></li></ul>
+          </section>
+          <section class="mini-card">
+            <h3>Removed sessions</h3>
+            <ul><li>Adapt across devices with Flutter</li><li>ADK &amp; A2A in Action</li><li>Beyond the basics in Gemini CLI</li><li>Build a cloud-native game with Antigravity</li><li>Build agents with Vertex AI</li><li>Build and govern your Autonomous Workforce on ServiceNow powered by Gemini</li><li>Execute a project and drive an outcome</li><li>Explore the Gemini CLI extensions ecosystem</li><li>Extend Gemini CLI's power with Google-built extensions</li><li>Find and synthesize information</li><li>Gemini Enterprise for Customer Experience: Redefining CSP cost structures</li><li>Gemini Enterprise: The agentic core for supply chain orchestration</li></ul>
+          </section>
+          <section class="mini-card">
+            <h3>Availability changes</h3>
+            <p class="empty">No notable availability movement in this update</p>
+          </section>
+        </div>
+        <details>
+          <summary>Show minor churn</summary>
+          <div class="section-grid">
+            <section class="mini-card">
+              <h3>Minor metadata churn</h3>
+              <ul><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913121/achieve-multicloud-security-at-scale-with-google-unified-security" target="_blank" rel="noopener">Achieve multicloud security at scale with Google Unified Security</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912300/agents-in-action-startup-breakthroughs-across-industries" target="_blank" rel="noopener">Agents in action: Startup breakthroughs across industries</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/4008108/assembling-digital-twins-for-physical-ai-accelerate-sim-to-real-using-nvidia-isaac-sim-with-cosmos-on-google-cloud" target="_blank" rel="noopener">Assembling Digital Twins for Physical AI: Accelerate Sim-to-Real using NVIDIA Isaac Sim with Cosmos on Google Cloud</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912233/bigquery-graph-uncover-complex-hidden-relationships-in-your-data" target="_blank" rel="noopener">BigQuery Graph: Uncover complex, hidden relationships in your data</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913026/build-enterprise-ready-security-agents-with-mcp-servers" target="_blank" rel="noopener">Build enterprise-ready security agents with MCP servers</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912971/built-in-defense-the-next-evolution-of-security-command-center-for-ai-era" target="_blank" rel="noopener">Built-in defense: The next evolution of Security Command Center for AI-era</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/4008109/deploy-agentic-workflows-using-open-models-on-google-cloud-vertex-ai" target="_blank" rel="noopener">Deploy agentic workflows using open models on Google Cloud Vertex AI</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913080/event-driven-ai-agents-a-pattern-for-secure-agentic-workflows" target="_blank" rel="noopener">Event-driven AI agents: A pattern for secure agentic workflows</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/4008112/explore-ai-for-leaders-gemini-enterprise-immersive" target="_blank" rel="noopener">Explore AI for Leaders: Gemini Enterprise Immersive</a> <span class="muted">(description)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3913122/explore-google's-agent-development-kit-capabilities-and-roadmap" target="_blank" rel="noopener">Explore Google's Agent Development Kit capabilities and roadmap</a> <span class="muted">(speakers)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3920165/fireside-chat-building-the-safety-first-ai-startup-fortress" target="_blank" rel="noopener">Fireside chat: Building the safety-first AI startup fortress</a> <span class="muted">(speakers, description)</span></li><li><a href="https://www.googlecloudevents.com/next-vegas/session/3912339/free-up-your-lean-team's-time-with-the-help-of-multi-agent-systems" target="_blank" rel="noopener">Free up your lean team's time with the help of multi-agent systems</a> <span class="muted">(speakers)</span></li></ul>
+            </section>
+          </div>
+        </details>
+      </details>
+    </article>
+  </div>
+  </main>
+</body>
+</html>

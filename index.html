@@ -442,6 +442,20 @@
 
     .card-meta .dot::before { content: '·'; margin: 0 2px; }
 
+    .status-badge {
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:0.72rem;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+
+    .status-badge.full {
+      background:#fce8e6;
+      color:#a50e0e;
+    }
+
     .meta-icon {
       display: inline-flex;
       align-items: center;
@@ -640,6 +654,8 @@
     <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape/blob/main/PRIOR-ART.md" target="_blank" rel="noopener">Prior art</a>
     <span>·</span>
     <a href="./insights.html">Insights</a>
+    <span>·</span>
+    <a href="./changelog.html">Changelog</a>
   </div>
 </header>
 <div class="rainbow-bar"></div>
@@ -683,6 +699,12 @@
     <select id="sort-filter">
       <option value="time">Sort: Date & time</option>
       <option value="title">Sort: Title A-Z</option>
+    </select>
+
+    <select id="availability-filter">
+      <option value="">Availability: All</option>
+      <option value="full">Full</option>
+      <option value="not-full">Not full</option>
     </select>
 
     <div class="time-range-filter">
