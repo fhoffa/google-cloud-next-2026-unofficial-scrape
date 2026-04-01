@@ -93,6 +93,9 @@ function renderFilterPills(filters) {
   if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
   if (filters.start_after || filters.start_before) pills.push({ key: 'time', label: `time: ${filters.start_after || 'start'} – ${filters.start_before || 'end'}` });
   if (filters.view === 'favorites') pills.push({ key: 'favorites', label: 'favorites' });
+  if (filters.ai_focus) pills.push({ key: 'ai_focus', label: `AI focus: ${filters.ai_focus}` });
+  if (filters.theme) pills.push({ key: 'theme', label: `theme: ${filters.theme}` });
+  if (filters.audience) pills.push({ key: 'audience', label: `audience: ${filters.audience}` });
   return pills.map((pill) => `<button class="filter-pill" type="button" data-clear-filter="${pill.key}">${escHtml(pill.label)} ×</button>`).join('');
 }
 
@@ -138,6 +141,9 @@ export function readFiltersFromSearch(search) {
     start_before: params.get('start_before') || '',
     sessionids: params.get('sessionids') || params.get('favorites') || '',
     company: params.get('company') || '',
+    ai_focus: params.get('ai_focus') || '',
+    theme: params.get('theme') || '',
+    audience: params.get('audience') || '',
     view: VALID_VIEWS.has(params.get('view')) ? params.get('view') : (params.get('view') === 'favorites' ? 'favorites' : DEFAULT_VIEW),
   };
 }
@@ -153,6 +159,9 @@ export function buildSearchFromFilters(filters) {
   if (filters.start_after) params.set('start_after', filters.start_after);
   if (filters.start_before) params.set('start_before', filters.start_before);
   if (filters.company) params.set('company', filters.company);
+  if (filters.ai_focus) params.set('ai_focus', filters.ai_focus);
+  if (filters.theme) params.set('theme', filters.theme);
+  if (filters.audience) params.set('audience', filters.audience);
   if (filters.view && filters.view !== DEFAULT_VIEW) params.set('view', filters.view);
   if (filters.view === 'favorites' && filters.sessionids) params.set('sessionids', filters.sessionids);
   const query = params.toString();
@@ -165,6 +174,9 @@ export function filterSessions(sessions, filters) {
   const exclude = filters.exclude.trim().toLowerCase();
   const speaker = filters.speaker.trim().toLowerCase();
   const company = (filters.company || '').trim().toLowerCase();
+  const aiFocus = String(filters.ai_focus || '').trim();
+  const theme = String(filters.theme || '').trim();
+  const audience = String(filters.audience || '').trim();
   const topic = filters.topic;
   const day = filters.day;
   const startAfter = filters.start_after || '';
@@ -181,6 +193,10 @@ export function filterSessions(sessions, filters) {
       const foundCompany = (session.speakers || []).some((item) => ((item.company || '').toLowerCase().includes(company)));
       if (!foundCompany) return false;
     }
+    const llm = session.llm || {};
+    if (aiFocus && llm.ai_focus !== aiFocus) return false;
+    if (theme && llm.theme !== theme) return false;
+    if (audience && llm.audience !== audience) return false;
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -405,6 +421,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
+  const classificationFilters = { ai_focus: state.ai_focus || '', theme: state.theme || '', audience: state.audience || '' };
   const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
   const sharedFavorites = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
@@ -439,6 +456,9 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
       company: '',
+      ai_focus: classificationFilters.ai_focus,
+      theme: classificationFilters.theme,
+      audience: classificationFilters.audience,
     };
   }
 
@@ -650,6 +670,9 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'day') applyDaySelection(dayPills, '');
     if (key === 'time') { if (timeRangeStart) timeRangeStart.value = String(timeBounds.min); if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
     if (key === 'favorites' && favoriteToggle) favoriteToggle.checked = false;
+    if (key === 'ai_focus') classificationFilters.ai_focus = '';
+    if (key === 'theme') classificationFilters.theme = '';
+    if (key === 'audience') classificationFilters.audience = '';
     render();
   });
 
@@ -675,6 +698,9 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
     if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
     if (favoriteToggle) favoriteToggle.checked = false;
+    classificationFilters.ai_focus = '';
+    classificationFilters.theme = '';
+    classificationFilters.audience = '';
     activeView = DEFAULT_VIEW;
     applyDaySelection(dayPills, '');
     history.replaceState(null, '', location.pathname);
