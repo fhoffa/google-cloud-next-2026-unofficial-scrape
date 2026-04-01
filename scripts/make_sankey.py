@@ -203,6 +203,64 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
     ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
 
 
+def build_click_map(mid, third, fourth, root, mid_pos, third_pos, fourth_pos, x_positions, scale):
+    x0, x1, x2, x3 = x_positions
+    segments = []
+
+    def add_segment(kind, title, params, shape):
+        segments.append({
+            'kind': kind,
+            'title': title,
+            'params': params,
+            'shape': shape,
+        })
+
+    add_segment(
+        'root',
+        f'Total ({root[1] - root[0]:.6f})',
+        {},
+        {'type': 'rect', 'x': x0, 'y0': root[0], 'y1': root[1], 'w': BAR_WIDTH},
+    )
+
+    for label, value in mid:
+        y0, y1 = mid_pos[label]
+        add_segment('ai_focus', f'{label} ({value})', {'ai_focus': label}, {'type': 'rect', 'x': x1, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
+
+    for parent, items in third.items():
+        cursor = mid_pos[parent][1]
+        for label, value in items:
+            y0, y1 = third_pos[parent][label]
+            add_segment('theme', f'{parent} → {label} ({value})', {'ai_focus': parent, 'theme': label}, {'type': 'rect', 'x': x2, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
+            h = value * scale
+            add_segment(
+                'theme-flow',
+                f'{parent} → {label} ({value})',
+                {'ai_focus': parent, 'theme': label},
+                {'type': 'poly', 'points': [[x1 + BAR_WIDTH, cursor], [x2, y1], [x2, y0], [x1 + BAR_WIDTH, cursor - h]]},
+            )
+            cursor -= h
+
+    for key, items in fourth.items():
+        parent, theme_label = key
+        cursor = third_pos[parent][theme_label][1]
+        for label, value in items:
+            y0, y1 = fourth_pos[key][label]
+            add_segment('audience', f'{parent} → {theme_label} → {label} ({value})', {'ai_focus': parent, 'theme': theme_label, 'audience': label}, {'type': 'rect', 'x': x3, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
+            h = value * scale
+            add_segment(
+                'audience-flow',
+                f'{parent} → {theme_label} → {label} ({value})',
+                {'ai_focus': parent, 'theme': theme_label, 'audience': label},
+                {'type': 'poly', 'points': [[x2 + BAR_WIDTH, cursor], [x3, y1], [x3, y0], [x2 + BAR_WIDTH, cursor - h]]},
+            )
+            cursor -= h
+
+    return {
+        'viewBox': {'width': 1000, 'height': 1250},
+        'segments': segments,
+    }
+
+
 def render_sankey(
     sessions,
     output_path: Path,
@@ -212,6 +270,7 @@ def render_sankey(
     x_positions=(0.08, 0.34, 0.64, 0.93),
     min_theme_label: int = 12,
     min_audience_label: int = 10,
+    click_map_path: Path | None = None,
 ):
     mid, third, fourth = build_chart_data(sessions)
     fig, ax = plt.subplots(figsize=(fig_width, 30), dpi=220)
@@ -312,6 +371,11 @@ def render_sankey(
     ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
     ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
 
+    if click_map_path:
+        click_map = build_click_map(mid, third, fourth, root, mid_pos, third_pos, fourth_pos, x_positions, scale)
+        click_map_path.parent.mkdir(parents=True, exist_ok=True)
+        click_map_path.write_text(json.dumps(click_map, indent=2))
+
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
 
@@ -343,6 +407,7 @@ def main():
     parser.add_argument('--output', default='tmp/gcp-next-sankey-not-ai-maxi.png', help='Path to output PNG')
     parser.add_argument('--publish', action='store_true', help='Write to repo media/ using the dated published filename convention.')
     parser.add_argument('--publish-date', default=None, help='Override publish date suffix YYYYMMDD for --publish output.')
+    parser.add_argument('--click-map-output', default=None, help='Optional path to write click-map JSON for insights overlays.')
     parser.add_argument('--fig-width', default=24, type=float, help='Figure width in inches (height remains 30).')
     parser.add_argument('--x-positions', default='0.08,0.34,0.64,0.93', help='Comma-separated x positions for columns: root,ai/theme,audience.')
     parser.add_argument('--min-theme-label', default=12, type=int, help='Hide theme labels below this session count.')
@@ -369,6 +434,14 @@ def main():
         stamp = args.publish_date or infer_publish_stamp(input_path, sessions)
         output_path = cwd / 'media' / f'fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_{stamp}.png'
 
+    click_map_path = None
+    if args.click_map_output:
+        click_map_path = Path(args.click_map_output)
+        if not click_map_path.is_absolute():
+            click_map_path = cwd / click_map_path
+    elif args.publish:
+        click_map_path = cwd / 'media' / 'sankey-click-map.json'
+
     llm_classified = sum(1 for s in sessions if s.get('llm'))
     source_label = 'LLM' if llm_classified else 'rule-based'
     print(f"Input: {input_path}  ({llm_classified}/{len(sessions)} sessions with LLM classification — {source_label})")
@@ -385,6 +458,7 @@ def main():
         x_positions=x_positions,
         min_theme_label=args.min_theme_label,
         min_audience_label=args.min_audience_label,
+        click_map_path=click_map_path,
     )
     print(output_path)
 

@@ -19,8 +19,8 @@
     .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
     a{color:#1a73e8}
     .sankey-wrap{position:relative;aspect-ratio:4/5;min-height:420px;border-radius:12px;border:1px solid #e8eaed;background:#fff;overflow:hidden}
-    .hero img{position:absolute;display:block;object-fit:contain}
-    .sankey-map{position:absolute;display:block}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+    .sankey-map{position:absolute;inset:0;width:100%;height:100%;display:block}
     .sankey-map a rect,.sankey-map a polygon{fill:transparent;stroke:transparent}
     .sankey-map a:hover rect,.sankey-map a:focus rect,.sankey-map a:hover polygon,.sankey-map a:focus polygon{fill:rgba(26,115,232,.18);stroke:#1a73e8;stroke-width:1}
     .sankey-wrap.image-missing::after{content:'Sankey image unavailable';position:absolute;inset:0;display:grid;place-items:center;color:#5f6368;background:rgba(255,255,255,.65);pointer-events:none}
@@ -77,33 +77,8 @@
   sankeyImage.addEventListener('error', () => {
     sankeyWrap?.classList.add('image-missing');
   });
-  const layoutOverlay = () => {
-    if (!sankeyWrap || !sankeyImage || !svg) return;
-    const wrapRect = sankeyWrap.getBoundingClientRect();
-    const naturalWidth = sankeyImage.naturalWidth || 1000;
-    const naturalHeight = sankeyImage.naturalHeight || 1250;
-    if (!wrapRect.width || !wrapRect.height || !naturalWidth || !naturalHeight) return;
-    const scale = Math.min(wrapRect.width / naturalWidth, wrapRect.height / naturalHeight);
-    const displayWidth = naturalWidth * scale;
-    const displayHeight = naturalHeight * scale;
-    const left = (wrapRect.width - displayWidth) / 2;
-    const top = (wrapRect.height - displayHeight) / 2;
-    Object.assign(sankeyImage.style, {
-      left: `${left}px`,
-      top: `${top}px`,
-      width: `${displayWidth}px`,
-      height: `${displayHeight}px`,
-    });
-    Object.assign(svg.style, {
-      left: `${left}px`,
-      top: `${top}px`,
-      width: `${displayWidth}px`,
-      height: `${displayHeight}px`,
-    });
-  };
   sankeyImage.addEventListener('load', () => {
     sankeyWrap?.classList.remove('image-missing');
-    layoutOverlay();
   });
 
   const res = await fetch('./sessions/classified_sessions.json');
@@ -201,18 +176,9 @@
   document.getElementById('observations').innerHTML = observations.map((line) => `<li>${line}</li>`).join('');
 
   const svg = document.getElementById('sankey-map');
-  const W = 1000;
-  const H = 1250;
-  const BAR_W = 22;
-  const xs = { root: 80, top: 340, theme: 640, aud: 930 };
-  const toBox = (x, y0, y1, opts = {}) => {
-    const minPx = opts.minPx || 14;
-    const rawH = (y1 - y0) * H;
-    const h = Math.max(rawH, minPx);
-    const center = ((y0 + y1) / 2) * H;
-    const topY = Math.max(0, center - (h / 2));
-    return { x, y: Math.min(H - h, topY), w: BAR_W, h };
-  };
+  const clickMapRes = await fetch('./media/sankey-click-map.json');
+  const clickMap = await clickMapRes.json();
+  svg.setAttribute('viewBox', `0 0 ${clickMap.viewBox.width} ${clickMap.viewBox.height}`);
   const addArea = ({ box, title, params }) => {
     const a = document.createElementNS('http://www.w3.org/2000/svg', 'a');
     a.setAttribute('href', `./index.html?${new URLSearchParams(params).toString()}`);
@@ -241,68 +207,26 @@
     svg.appendChild(a);
   };
 
-  const xLeftTheme = xs.top + BAR_W;
-  const xRightTheme = xs.theme;
-  const xLeftAudience = xs.theme + BAR_W;
-  const xRightAudience = xs.aud;
-  const yBandsByTopTheme = new Map();
-  for (const [top] of mid) {
-    let yCursor = midPos.get(top)[1];
-    const pairs = [];
-    for (const [th, count] of (thirdByTop.get(top) || [])) {
-      const h = count * scale;
-      const y0 = yCursor - h;
-      const y1 = yCursor;
-      pairs.push([th, y0, y1, count]);
-      yCursor = y0 - 0.0075;
-    }
-    yBandsByTopTheme.set(top, pairs);
-  }
-  for (const [top, rows] of yBandsByTopTheme.entries()) {
-    for (const [th, y0, y1, count] of rows) {
+  for (const segment of clickMap.segments || []) {
+    if (segment.shape?.type === 'rect') {
+      addArea({
+        box: {
+          x: segment.shape.x * clickMap.viewBox.width,
+          y: segment.shape.y0 * clickMap.viewBox.height,
+          w: segment.shape.w * clickMap.viewBox.width,
+          h: (segment.shape.y1 - segment.shape.y0) * clickMap.viewBox.height,
+        },
+        title: segment.title,
+        params: segment.params || {},
+      });
+    } else if (segment.shape?.type === 'poly') {
       addPolyArea({
-        points: [[xLeftTheme, y1 * H], [xRightTheme, y1 * H], [xRightTheme, y0 * H], [xLeftTheme, y0 * H]],
-        title: `${top} → ${th} (${count})`,
-        params: { ai_focus: top, theme: th },
+        points: (segment.shape.points || []).map(([x, y]) => [x * clickMap.viewBox.width, y * clickMap.viewBox.height]),
+        title: segment.title,
+        params: segment.params || {},
       });
     }
   }
-
-  for (const [top, rows] of yBandsByTopTheme.entries()) {
-    for (const [th, y0, y1] of rows) {
-      const items = fourthByKey.get(`${top}||${th}`) || [];
-      let yCursor = y1;
-      for (const [aud, count] of items) {
-        const h = count * scale;
-        const left0 = yCursor - h;
-        const left1 = yCursor;
-        yCursor = left0 - 0.0038;
-        const [right0, right1] = fourthPos.get(`${top}||${th}`).get(aud);
-        addPolyArea({
-          points: [[xLeftAudience, left1 * H], [xRightAudience, right1 * H], [xRightAudience, right0 * H], [xLeftAudience, left0 * H]],
-          title: `${top} → ${th} → ${aud} (${count})`,
-          params: { ai_focus: top, theme: th, audience: aud },
-        });
-      }
-    }
-  }
-
-  for (const [top, value] of mid) {
-    const [y0, y1] = midPos.get(top);
-    addArea({ box: toBox(xs.top, y0, y1), title: `${top} (${value})`, params: { ai_focus: top } });
-    for (const [th, count] of (thirdByTop.get(top) || [])) {
-      const [t0, t1] = thirdPos.get(top).get(th);
-      addArea({ box: toBox(xs.theme, t0, t1), title: `${top} → ${th} (${count})`, params: { ai_focus: top, theme: th } });
-      const f = fourthPos.get(`${top}||${th}`);
-      for (const [aud, c] of (f || [])) {
-        const [a0, a1] = f.get(aud);
-        addArea({ box: toBox(xs.aud, a0, a1, { minPx: 12 }), title: `${top} → ${th} → ${aud} (${c})`, params: { ai_focus: top, theme: th, audience: aud } });
-      }
-    }
-  }
-
-  window.addEventListener('resize', layoutOverlay);
-  layoutOverlay();
 </script>
 </body>
 </html>
