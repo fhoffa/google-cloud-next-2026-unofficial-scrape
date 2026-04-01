@@ -4,6 +4,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { canonicalCompanyName, isGoogleInternalCompany } from '../lib/company-identity.mjs';
+import {
+  availabilityBand,
+  availabilityCounts,
+  loadLibraryAvailabilityRecords,
+  mergeAvailabilityIntoSessions,
+} from '../lib/session-availability.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 function esc(value) {
@@ -23,6 +29,36 @@ function counts(key, subset) {
   for (const session of subset) {
     const value = session?.llm?.[key];
     if (!value || (key === 'audience' && value === 'General')) continue;
+    mapped.set(value, (mapped.get(value) || 0) + 1);
+  }
+  return [...mapped.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+function percentage(part, total, digits = 0) {
+  if (!total) return `${(0).toFixed(digits)}%`;
+  return `${((part / total) * 100).toFixed(digits)}%`;
+}
+
+function formatAvailabilityShare(part, total) {
+  if (!total) return 'No current availability signals';
+  return `${part.toLocaleString()} of ${total.toLocaleString()} (${percentage(part, total)})`;
+}
+
+function availabilityBreakdown(subset) {
+  const counts = availabilityCounts(subset);
+  return {
+    ...counts,
+    fullShare: percentage(counts.full, counts.known),
+    notFullShare: percentage(counts['not-full'], counts.known),
+  };
+}
+
+function categoryCounts(subset, allowedBand) {
+  const mapped = new Map();
+  for (const session of subset) {
+    if (availabilityBand(session) !== allowedBand) continue;
+    const value = String(session?.session_category || '').trim();
+    if (!value) continue;
     mapped.set(value, (mapped.get(value) || 0) + 1);
   }
   return [...mapped.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
@@ -85,7 +121,7 @@ function slicesHtml(items) {
   return items.map((item) => `<a class="slice-link" href="${esc(makeHref(item.params))}"><strong>${esc(item.title)}</strong><span>${esc(item.desc)}</span></a>`).join('');
 }
 
-function buildSummary(sessions, sankeyLatest, generatedAt) {
+function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   const withLlm = sessions.filter((session) => session.llm);
   const ai = counts('ai_focus', withLlm);
   const themes = counts('theme', withLlm);
@@ -146,6 +182,15 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
   const topAiTheme = aiThemes[0] || ['n/a', 0];
   const topNotAiTheme = notAiThemes[0] || ['n/a', 0];
+  const knownAvailabilitySessions = withLlm.filter((session) => availabilityBand(session) !== 'unknown');
+  const missingAvailabilityCount = total - knownAvailabilitySessions.length;
+  const availability = availabilityBreakdown(withLlm);
+  const aiAvailability = availabilityBreakdown(aiSessions);
+  const notAiAvailability = availabilityBreakdown(notAiSessions);
+  const workshopSessions = withLlm.filter((session) => session.session_category === 'Workshops');
+  const workshopAvailability = availabilityBreakdown(workshopSessions);
+  const fullByCategory = categoryCounts(withLlm, 'full');
+  const notFullByCategory = categoryCounts(withLlm, 'not-full');
   const observationsHtml = [
     `<strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the entire catalog is AI — ${aiCount} of ${total} sessions.`,
     `<strong>${esc(themes[0]?.[0] || 'n/a')}</strong> is the most common theme at <strong>${themes[0]?.[1] || 0}</strong> sessions, spanning both AI and non-AI content.`,
@@ -154,11 +199,18 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
     `<strong>${leaderShare >= devShare ? 'Leaders' : 'Developers'}</strong> get slightly more sessions than ${leaderShare >= devShare ? 'developers' : 'leaders'} (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)}).`,
     ...(consultingTotal > 0 ? [`The major consulting firms together account for <strong>${consultingTotal} sessions</strong> — more than any single non-Google company on the list.`] : []),
   ];
+  const fullnessObservations = [
+    `<strong>${availability.known.toLocaleString()}</strong> sessions still have a live availability signal, covering <strong>${percentage(availability.known, total)}</strong> of the catalog${missingAvailabilityCount ? `; ${missingAvailabilityCount} sessions have no current seat signal in the cached library pages.` : '.'}`,
+    `<a href="${esc(makeHref({ availability: 'full' }))}"><strong>${availability.full}</strong> sessions are full right now</a>, while <a href="${esc(makeHref({ availability: 'not-full' }))}"><strong>${availability['not-full']}</strong> are not full</a>. That means <strong>${availability.fullShare}</strong> of sessions with a known signal are already sold out.`,
+    workshopAvailability.known ? `<strong>Workshops are where sellouts concentrate</strong>: ${formatAvailabilityShare(workshopAvailability.full, workshopAvailability.known)} are already full, while ${formatAvailabilityShare(workshopAvailability['not-full'], workshopAvailability.known)} are not full.` : `Workshop availability is not currently exposed in the cached library pages.`,
+    aiAvailability.known && notAiAvailability.known ? `<strong>AI sessions are filling faster</strong>: ${formatAvailabilityShare(aiAvailability.full, aiAvailability.known)} are full, versus ${formatAvailabilityShare(notAiAvailability.full, notAiAvailability.known)} for Not AI.` : `AI-vs-not-AI fullness is too sparse to call confidently.`,
+  ];
 
   return {
     meta: {
       generatedAt,
       source: 'sessions/classified_sessions.json',
+      availabilitySource,
       template: 'templates/insights.template.html',
       outputHtml: 'insights.html',
       sankeyLatest,
@@ -173,6 +225,19 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       { value: audiences[0]?.[0] || 'n/a', label: 'Largest audience', sub: `${audiences[0]?.[1] || 0} sessions`, note: `Slightly ahead of Developers (${Math.min(leaderShare, devShare)} sessions) — the conference leans executive.` },
       { value: nonGoogleCompanyCount.toLocaleString(), label: 'Non-Google companies represented', note: `Most appear once. A handful show up 10+ times and are part of the conference narrative.` },
     ],
+    fullness: {
+      stats: [
+        { value: availability.known.toLocaleString(), label: 'Sessions with live availability', sub: `${percentage(availability.known, total)} of catalog`, note: missingAvailabilityCount ? `${missingAvailabilityCount} sessions are missing from the cached library availability feed.` : 'Coverage is complete for the current catalog.' },
+        { value: availability.full.toLocaleString(), label: 'Full now', sub: availability.fullShare, note: 'A full session has 0 seats remaining in the cached library feed.' },
+        { value: availability['not-full'].toLocaleString(), label: 'Not full now', sub: availability.notFullShare, note: 'Everything with a positive remaining-capacity signal collapses into not full.' },
+        { value: workshopAvailability.full.toLocaleString(), label: 'Workshops already full', sub: workshopAvailability.known ? `${workshopAvailability['not-full']} not full` : 'No workshop signal', note: workshopAvailability.known ? `${workshopAvailability.known} workshops currently expose seat counts.` : 'Workshop pages are missing from the current availability feed.' },
+      ],
+      observations: fullnessObservations,
+      rankings: {
+        fullByCategory: fullByCategory.slice(0, 6).map(([name, count]) => ({ name, count })),
+        notFullByCategory: notFullByCategory.slice(0, 6).map(([name, count]) => ({ name, count })),
+      },
+    },
     quickPivots: {
       aiFocus: ai.map(([name, count]) => ({ name, count, href: makeHref({ ai_focus: name }) })),
       themes: themes.slice(0, 8).map(([name, count]) => ({ name, count, href: makeHref({ theme: name }) })),
@@ -217,6 +282,8 @@ function renderHtml(summary, templateText) {
   const topAiThemes = summary.rankings.topAiThemes.map((item) => [item.name, item.count]);
   const topNotAiThemes = summary.rankings.topNotAiThemes.map((item) => [item.name, item.count]);
   const topNonGoogle = summary.companies.topNonGoogle.map((item) => [item.name, item.count]);
+  const fullByCategory = summary.fullness.rankings.fullByCategory.map((item) => [item.name, item.count]);
+  const notFullByCategory = summary.fullness.rankings.notFullByCategory.map((item) => [item.name, item.count]);
 
   const replacements = {
     '__OG_IMAGE__': esc(summary.meta.sankeyLatest),
@@ -224,7 +291,9 @@ function renderHtml(summary, templateText) {
     '__LEDE__': esc(summary.lede),
     '__DEFAULT_SANKEY__': esc(summary.meta.sankeyLatest),
     '__STATS_HTML__': statsCardsHtml(summary.stats),
+    '__FULLNESS_STATS_HTML__': statsCardsHtml(summary.fullness.stats),
     '__OBSERVATIONS_HTML__': observationListHtml(summary.observations),
+    '__FULLNESS_OBSERVATIONS_HTML__': observationListHtml(summary.fullness.observations),
     '__AI_FOCUS_LINKS_HTML__': chipItemsHtml(aiFocusCounts, 'ai_focus'),
     '__THEME_LINKS_HTML__': chipItemsHtml(themeCounts, 'theme'),
     '__AUDIENCE_LINKS_HTML__': chipItemsHtml(audienceCounts, 'audience'),
@@ -235,6 +304,8 @@ function renderHtml(summary, templateText) {
     '__TOP_WORDS_ALL_HTML__': wordItemsHtml(summary.topWords.all),
     '__TOP_WORDS_AI_HTML__': wordItemsHtml(summary.topWords.ai, { ai_focus: 'AI' }),
     '__TOP_WORDS_NOT_AI_HTML__': wordItemsHtml(summary.topWords.notAi, { ai_focus: 'Not AI' }),
+    '__FULL_NOW_CATEGORIES_HTML__': rankItemsHtml(fullByCategory, '#c62828', () => ({ availability: 'full' })),
+    '__NOT_FULL_NOW_CATEGORIES_HTML__': rankItemsHtml(notFullByCategory, '#34a853', () => ({ availability: 'not-full' })),
     '__COMPANY_OBSERVATIONS_HTML__': summary.companies.observationHtml,
     '__TOP_NON_GOOGLE_COMPANIES_HTML__': rankItemsHtml(topNonGoogle, '#6a1b9a', (name) => ({ company: name })),
     '__INTERESTING_SLICES_HTML__': slicesHtml(summary.interestingSlices),
@@ -250,6 +321,7 @@ function renderHtml(summary, templateText) {
 function parseArgs(argv) {
   const options = {
     input: 'sessions/classified_sessions.json',
+    libraryCacheDir: 'sessions/cache',
     template: 'templates/insights.template.html',
     outputHtml: 'insights.html',
     outputSummary: 'media/insights-summary.json',
@@ -260,6 +332,7 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === '--input') options.input = argv[++index];
+    else if (arg === '--library-cache-dir') options.libraryCacheDir = argv[++index];
     else if (arg === '--template') options.template = argv[++index];
     else if (arg === '--output-html') options.outputHtml = argv[++index];
     else if (arg === '--output-summary') options.outputSummary = argv[++index];
@@ -275,13 +348,16 @@ function main() {
   const args = parseArgs(process.argv.slice(2));
   const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const inputPath = path.resolve(repoRoot, args.input);
+  const libraryCacheDir = path.resolve(repoRoot, args.libraryCacheDir);
   const templatePath = path.resolve(repoRoot, args.template);
   const outputHtmlPath = path.resolve(repoRoot, args.outputHtml);
   const outputSummaryPath = path.resolve(repoRoot, args.outputSummary);
   const sankeyIndexPath = path.resolve(repoRoot, args.sankeyIndex);
 
   const sessionsPayload = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-  const sessions = Array.isArray(sessionsPayload) ? sessionsPayload : sessionsPayload.sessions;
+  const baseSessions = Array.isArray(sessionsPayload) ? sessionsPayload : sessionsPayload.sessions;
+  const availabilityRecords = loadLibraryAvailabilityRecords(libraryCacheDir);
+  const sessions = mergeAvailabilityIntoSessions(baseSessions, availabilityRecords);
   let sankeyLatest = '';
   if (fs.existsSync(sankeyIndexPath)) {
     sankeyLatest = JSON.parse(fs.readFileSync(sankeyIndexPath, 'utf8')).latest || '';
@@ -291,7 +367,7 @@ function main() {
   }
 
   const generatedAt = args.generatedAt || new Date().toISOString();
-  const summary = buildSummary(sessions, sankeyLatest, generatedAt);
+  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir);
   const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'));
 
   fs.mkdirSync(path.dirname(outputSummaryPath), { recursive: true });

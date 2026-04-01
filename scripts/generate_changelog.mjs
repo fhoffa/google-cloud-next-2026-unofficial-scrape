@@ -3,6 +3,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { availabilityBand } from '../lib/session-availability.mjs';
+
 function esc(value) {
   return String(value ?? '')
     .replace(/&/g, '&amp;')
@@ -24,20 +26,6 @@ function sessionKey(session) {
   const match = url.match(/\/session\/(\d+)(?:\/|$)/);
   if (match) return match[1];
   return explicitId || url || String(session?.title || '').trim();
-}
-
-function normalizeNumber(value) {
-  if (value === '' || value == null) return null;
-  const n = Number(value);
-  return Number.isFinite(n) ? n : null;
-}
-
-function availabilityBand(session) {
-  const remaining = normalizeNumber(session?.remaining_capacity);
-  if (remaining == null) return 'unknown';
-  if (remaining === 0) return 'full';
-  if (remaining <= 5) return 'limited';
-  return 'available';
 }
 
 function percentagePhrase(part, total) {
