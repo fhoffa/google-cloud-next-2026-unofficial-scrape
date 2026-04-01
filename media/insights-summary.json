@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T05:27:00.801Z",
+    "generatedAt": "2026-04-01T05:30:19.193Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -103,7 +103,7 @@
     ]
   },
   "observations": [
-    "AI isn't a track here — it's <strong>89.1%</strong> of the entire catalog (924 of 1037 sessions).",
+    "<strong>89.1%</strong> of the entire catalog is AI — 924 of 1037 sessions.",
     "<strong>App dev</strong> is the most common theme at <strong>268</strong> sessions, spanning both AI and non-AI content.",
     "Inside AI, <strong>App dev</strong> leads at 248 sessions — builders are clearly the primary target.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
@@ -606,7 +606,7 @@
     ]
   },
   "companies": {
-    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — this isn't a cameo, it's a recurring presence throughout the program. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
+    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — showing up throughout the program, not just once. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",

@@ -108,7 +108,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
 
   const companyObservationParts = [];
   if (topCompany) {
-    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — this isn't a cameo, it's a recurring presence throughout the program.`);
+    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — showing up throughout the program, not just once.`);
   }
   companyObservationParts.push('One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.');
 
@@ -117,7 +117,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   const topAiTheme = aiThemes[0] || ['n/a', 0];
   const topNotAiTheme = notAiThemes[0] || ['n/a', 0];
   const observationsHtml = [
-    `AI isn't a track here — it's <strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the entire catalog (${aiCount} of ${total} sessions).`,
+    `<strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the entire catalog is AI — ${aiCount} of ${total} sessions.`,
     `<strong>${esc(themes[0]?.[0] || 'n/a')}</strong> is the most common theme at <strong>${themes[0]?.[1] || 0}</strong> sessions, spanning both AI and non-AI content.`,
     `Inside AI, <strong>${esc(topAiTheme[0])}</strong> leads at ${topAiTheme[1]} sessions — builders are clearly the primary target.`,
     `Outside AI, <strong>${esc(topNotAiTheme[0])}</strong> takes the top spot with ${topNotAiTheme[1]} sessions.`,
