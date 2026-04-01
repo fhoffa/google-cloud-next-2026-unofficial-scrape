@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T17:13:09.744Z",
+    "generatedAt": "2026-04-01T17:36:10.143Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -69,9 +69,8 @@
     ],
     "observations": [
       "<strong>989</strong> sessions still have a live availability signal, covering <strong>94%</strong> of the catalog; 59 sessions have no current seat signal in the cached library pages.",
-      "<a href=\"./index.html?availability=full\"><strong>25</strong> sessions are full right now</a>, while <a href=\"./index.html?availability=not-full\"><strong>964</strong> are not full</a>. That means <strong>3%</strong> of sessions with a known signal are already sold out.",
-      "<strong>Workshops are where sellouts concentrate</strong>: 15 of 38 (39%) are already full, while 23 of 38 (61%) are not full.",
-      "<strong>AI sessions are filling faster</strong>: 25 of 878 (3%) are full, versus 0 of 111 (0%) for Not AI."
+      "<a href=\"./index.html?availability=full\"><strong>Open the full-now list</strong></a> for the 25 sessions that are already sold out, or jump to <a href=\"./index.html?availability=not-full\">sessions that still have seats</a> (964).",
+      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 15 of 38 (39%) are already full."
     ],
     "rankings": {
       "fullByCategory": [

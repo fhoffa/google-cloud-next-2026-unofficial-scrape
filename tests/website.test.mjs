@@ -11,6 +11,7 @@ import { initSessionSearch } from '../website/session-search.mjs';
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
+const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -196,10 +197,10 @@ function createEnvironment(search = '') {
   return { document, location: locationLike, history };
 }
 
-function createFetch(sourceDataset = dataset) {
-  return async () => ({
+function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact) {
+  return async (url = '') => ({
     async json() {
-      return sourceDataset;
+      return String(url).includes('session-availability') ? availabilityDataset : sourceDataset;
     },
   });
 }
@@ -270,9 +271,17 @@ test('insights summary includes fullness metrics sourced from library availabili
   assert.ok(Number(insightsSummary.fullness.stats[1].value) > 0);
   assert.ok(Number(insightsSummary.fullness.stats[2].value) > 0);
   assert.ok(insightsSummary.fullness.observations.some((item) => /cached library pages|availability signal/.test(item)));
-  assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are where sellouts concentrate/.test(item)));
+  assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
+  assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
   assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');
   assert.ok(insightsSummary.fullness.rankings.notFullByCategory.length > 0);
+});
+
+test('insights build emits a separate session availability artifact', () => {
+  assert.equal(typeof availabilityArtifact.generatedAt, 'string');
+  assert.ok(Array.isArray(availabilityArtifact.records));
+  assert.ok(availabilityArtifact.records.length > 0);
+  assert.ok(availabilityArtifact.records.some((record) => Number(record.remaining_capacity) === 0));
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {
@@ -295,6 +304,7 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'insights-gen-'));
   const generatedHtmlPath = path.join(tmpDir, 'insights.html');
   const generatedSummaryPath = path.join(tmpDir, 'insights-summary.json');
+  const generatedAvailabilityPath = path.join(tmpDir, 'session-availability.json');
   const repoRoot = fileURLToPath(new URL('..', import.meta.url));
   const run = spawnSync(
     'node',
@@ -317,6 +327,10 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
   assert.deepEqual(
     JSON.parse(fs.readFileSync(generatedSummaryPath, 'utf8')),
     insightsSummary,
+  );
+  assert.deepEqual(
+    JSON.parse(fs.readFileSync(generatedAvailabilityPath, 'utf8')),
+    availabilityArtifact,
   );
   assert.equal(
     fs.readFileSync(generatedHtmlPath, 'utf8'),
@@ -953,4 +967,36 @@ test('availability query param filters full and not-full sessions', async () => 
   assert.deepEqual(filterSessions(sample, notFullFilters).map((s) => s.title), ['Open session']);
   assert.equal(buildSearchFromFilters(fullFilters), '?availability=full');
   assert.equal(buildSearchFromFilters(notFullFilters), '?availability=not-full');
+});
+
+test('session explorer joins availability artifact before applying availability filters', async () => {
+  const env = createEnvironment('?availability=full');
+  const source = {
+    sessions: [
+      { title: 'Full session', url: 'https://example.com/session/1/full', topics: [], speakers: [] },
+      { title: 'Open session', url: 'https://example.com/session/2/open', topics: [], speakers: [] },
+      { title: 'Unknown session', url: 'https://example.com/session/3/unknown', topics: [], speakers: [] },
+    ],
+  };
+  const availability = {
+    generatedAt: '2026-04-01T00:00:00.000Z',
+    records: [
+      { url: 'https://example.com/session/1/full', remaining_capacity: 0 },
+      { url: 'https://example.com/session/2/open', remaining_capacity: 5 },
+    ],
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source, availability),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.match(env.document.getElementById('app').innerHTML, /Full session/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Open session/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Unknown session/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /availability: full/);
 });

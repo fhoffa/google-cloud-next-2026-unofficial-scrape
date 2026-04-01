@@ -7,6 +7,7 @@ import { canonicalCompanyName, isGoogleInternalCompany } from '../lib/company-id
 import {
   availabilityBand,
   availabilityCounts,
+  createAvailabilityArtifact,
   loadLibraryAvailabilityRecords,
   mergeAvailabilityIntoSessions,
 } from '../lib/session-availability.mjs';
@@ -185,8 +186,6 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   const knownAvailabilitySessions = withLlm.filter((session) => availabilityBand(session) !== 'unknown');
   const missingAvailabilityCount = total - knownAvailabilitySessions.length;
   const availability = availabilityBreakdown(withLlm);
-  const aiAvailability = availabilityBreakdown(aiSessions);
-  const notAiAvailability = availabilityBreakdown(notAiSessions);
   const workshopSessions = withLlm.filter((session) => session.session_category === 'Workshops');
   const workshopAvailability = availabilityBreakdown(workshopSessions);
   const fullByCategory = categoryCounts(withLlm, 'full');
@@ -201,9 +200,8 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   ];
   const fullnessObservations = [
     `<strong>${availability.known.toLocaleString()}</strong> sessions still have a live availability signal, covering <strong>${percentage(availability.known, total)}</strong> of the catalog${missingAvailabilityCount ? `; ${missingAvailabilityCount} sessions have no current seat signal in the cached library pages.` : '.'}`,
-    `<a href="${esc(makeHref({ availability: 'full' }))}"><strong>${availability.full}</strong> sessions are full right now</a>, while <a href="${esc(makeHref({ availability: 'not-full' }))}"><strong>${availability['not-full']}</strong> are not full</a>. That means <strong>${availability.fullShare}</strong> of sessions with a known signal are already sold out.`,
-    workshopAvailability.known ? `<strong>Workshops are where sellouts concentrate</strong>: ${formatAvailabilityShare(workshopAvailability.full, workshopAvailability.known)} are already full, while ${formatAvailabilityShare(workshopAvailability['not-full'], workshopAvailability.known)} are not full.` : `Workshop availability is not currently exposed in the cached library pages.`,
-    aiAvailability.known && notAiAvailability.known ? `<strong>AI sessions are filling faster</strong>: ${formatAvailabilityShare(aiAvailability.full, aiAvailability.known)} are full, versus ${formatAvailabilityShare(notAiAvailability.full, notAiAvailability.known)} for Not AI.` : `AI-vs-not-AI fullness is too sparse to call confidently.`,
+    `<a href="${esc(makeHref({ availability: 'full' }))}"><strong>Open the full-now list</strong></a> for the ${availability.full} sessions that are already sold out, or jump to <a href="${esc(makeHref({ availability: 'not-full' }))}">sessions that still have seats</a> (${availability['not-full']}).`,
+    workshopAvailability.known ? `<a href="${esc(makeHref({ availability: 'full', topic: 'Workshops' }))}"><strong>Workshops are the main sellout zone</strong></a>: ${formatAvailabilityShare(workshopAvailability.full, workshopAvailability.known)} are already full.` : `Workshop availability is not currently exposed in the cached library pages.`,
   ];
 
   return {
@@ -325,6 +323,7 @@ function parseArgs(argv) {
     template: 'templates/insights.template.html',
     outputHtml: 'insights.html',
     outputSummary: 'media/insights-summary.json',
+    outputAvailability: null,
     sankeyIndex: 'media/sankey-index.json',
     generatedAt: null,
   };
@@ -336,6 +335,7 @@ function parseArgs(argv) {
     else if (arg === '--template') options.template = argv[++index];
     else if (arg === '--output-html') options.outputHtml = argv[++index];
     else if (arg === '--output-summary') options.outputSummary = argv[++index];
+    else if (arg === '--output-availability') options.outputAvailability = argv[++index];
     else if (arg === '--sankey-index') options.sankeyIndex = argv[++index];
     else if (arg === '--generated-at') options.generatedAt = argv[++index];
     else throw new Error(`Unknown argument: ${arg}`);
@@ -352,6 +352,10 @@ function main() {
   const templatePath = path.resolve(repoRoot, args.template);
   const outputHtmlPath = path.resolve(repoRoot, args.outputHtml);
   const outputSummaryPath = path.resolve(repoRoot, args.outputSummary);
+  const outputAvailabilityPath = path.resolve(
+    repoRoot,
+    args.outputAvailability || path.join(path.dirname(args.outputSummary), 'session-availability.json'),
+  );
   const sankeyIndexPath = path.resolve(repoRoot, args.sankeyIndex);
 
   const sessionsPayload = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
@@ -369,12 +373,15 @@ function main() {
   const generatedAt = args.generatedAt || new Date().toISOString();
   const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir);
   const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'));
+  const availabilityArtifact = createAvailabilityArtifact(availabilityRecords, { generatedAt });
 
   fs.mkdirSync(path.dirname(outputSummaryPath), { recursive: true });
+  fs.mkdirSync(path.dirname(outputAvailabilityPath), { recursive: true });
   fs.writeFileSync(outputSummaryPath, `${JSON.stringify(summary, null, 2)}\n`);
+  fs.writeFileSync(outputAvailabilityPath, `${JSON.stringify(availabilityArtifact, null, 2)}\n`);
   fs.writeFileSync(outputHtmlPath, html);
 
-  process.stdout.write(`${outputSummaryPath}\n${outputHtmlPath}\n`);
+  process.stdout.write(`${outputSummaryPath}\n${outputAvailabilityPath}\n${outputHtmlPath}\n`);
 }
 
 main();
