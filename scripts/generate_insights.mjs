@@ -113,7 +113,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
 
   const companyObservationParts = [];
   if (topCompany) {
-    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — showing up throughout the program, not just once.`);
+    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — a persistent presence throughout the program.`);
   }
   if (consultingTotal > 0) {
     const firmList = CONSULTING_FIRMS.filter((name) => topNonGoogle.find(([n]) => n === name)).join(', ');

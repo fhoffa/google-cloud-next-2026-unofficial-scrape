@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T05:44:03.292Z",
+    "generatedAt": "2026-04-01T06:03:06.470Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -612,7 +612,7 @@
     ]
   },
   "companies": {
-    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — showing up throughout the program, not just once. The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>38 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle. <strong>Anthropic</strong> appears 9 times — Google's AI model investment shows up on stage as a first-class partner, not a footnote. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
+    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — a persistent presence throughout the program. The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>38 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle. <strong>Anthropic</strong> appears 9 times — Google's AI model investment shows up on stage as a first-class partner, not a footnote. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",
