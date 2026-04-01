@@ -5104,8 +5104,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "General",
+        "reasoning": "BigQuery pricing and SQL optimization; Data theme correct; 5+ audience tags spanning data, ops, and executive categories → General."
       }
     },
     {
@@ -5866,9 +5866,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Self-evolving AI agent fleets using DeepMind Nested Learning; Applied AI theme from agentic content; boilerplate Solution Talks tags ignored."
       }
     },
     {
@@ -7106,9 +7106,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI readiness certifications for higher education workforce; Business theme; Leaders audience from academic and IT Managers signals."
       }
     },
     {
@@ -10279,8 +10279,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Cloud Composer/Airflow 3 for data orchestration and MLOps; Data theme correct; Architecture + DevOps + Platform Engineers + SRE signals drive Infra/Ops audience."
       }
     },
     {
@@ -15935,9 +15935,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "Applied AI",
         "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "reasoning": "MLOps bridging data science to production with Colab Enterprise and Vertex AI; Applied AI theme from operational ML focus."
       }
     },
     {
@@ -19288,9 +19288,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Block storage performance optimization; Compute + Storage + Platform Engineers + SRE + Infrastructure Architects signals dominate over Database Professionals."
       }
     },
     {
@@ -19928,9 +19928,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "AI agents replacing BI tools for retail waste management; Applied AI theme; Technology & Leadership drives Leaders audience."
       }
     },
     {
@@ -20260,9 +20260,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Gemini conversational AI on Domo BI platform; Applied AI tag explicitly present; mixed audience spans data, ops, and leadership tags."
       }
     },
     {
@@ -21381,9 +21381,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "Leadership soft-skill session on adaptive intelligence; Business theme and Leaders audience; Business Intelligence tag does not override clear leadership content."
       }
     },
     {
@@ -21461,9 +21461,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML accelerator capacity planning and commitment strategies; Compute + Platform Engineers + SRE + Infrastructure Architects signals dominate."
       }
     },
     {
@@ -22254,8 +22254,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Lakehouse modernization to serverless infrastructure; Data theme correct; Architecture + Migration + DevOps + Platform Engineers + SRE signals drive Infra/Ops audience."
       }
     },
     {
@@ -24980,8 +24980,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "SAP migration customer stories with generative AI; Data theme correct for SAP/enterprise data; Customer Story + IT Managers & Business Leaders signals drive Leaders audience."
       }
     },
     {
@@ -26154,9 +26154,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Reusable Agentic AI framework for financial decisions; Applied AI theme; Technology & Leadership drives Leaders audience."
       }
     },
     {
@@ -26435,9 +26435,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI workforce adoption strategy for enterprise; Business theme and Leaders audience from IT Managers & Business Leaders + Technology & Leadership signals."
       }
     },
     {
@@ -29901,9 +29901,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "Non-AI; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Google Cloud NetApp Volumes storage infrastructure; Storage + Migration + Infrastructure Architects signals dominate."
       }
     },
     {
@@ -30215,9 +30215,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Agentic interface for managing cloud infrastructure with Gemini MCP; Compute + Agents + DevOps + Platform Engineers + SRE signals."
       }
     },
     {
@@ -30286,9 +30286,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Agent governance blueprint for enterprise scale; Applied AI theme; Technology & Leadership drives Leaders audience."
       }
     },
     {
@@ -31084,9 +31084,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "OpenShift migration to GKE for infrastructure efficiency; Kubernetes + Migration + DevOps + Platform Engineers + SRE signals dominate."
       }
     },
     {
@@ -31959,8 +31959,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Open lakehouse governance and interoperability with BigLake; Data theme correct; Architecture + DevOps + Platform Engineers + SRE signals drive Infra/Ops audience."
       }
     },
     {
@@ -33725,8 +33725,8 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "Non-AI; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Apache Iceberg management in BigQuery; Data theme correct; Architecture + DevOps + Platform Engineers + SRE signals drive Infra/Ops audience."
       }
     },
     {
@@ -35726,9 +35726,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Compute Engine product announcements; Compute + Migration + Platform Engineers + SRE signals dominate over Database Professionals tag."
       }
     },
     {
@@ -38378,8 +38378,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "Apache Spark for open lakehouse architectures; Data theme correct; Architecture + DevOps + Platform Engineers + SRE + Infrastructure Architects signals drive Infra/Ops audience."
       }
     },
     {
