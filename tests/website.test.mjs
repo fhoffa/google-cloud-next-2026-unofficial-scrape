@@ -727,3 +727,21 @@ test('classification query params filter sessions via llm keys', async () => {
   assert.match(env.document.getElementById('active-filters').innerHTML, /AI focus: AI/);
   assert.match(env.location.search, /theme=Security/);
 });
+
+test('company query param filters results and renders an active pill', async () => {
+  const env = createEnvironment('?company=geotab');
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.equal(env.document.getElementById('result-count').textContent, `2 of ${dataset.sessions.length.toLocaleString()} sessions`);
+  assert.match(appHtml, /Geotab/i);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /company: geotab/i);
+});

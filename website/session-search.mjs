@@ -89,6 +89,7 @@ function renderFilterPills(filters) {
   if (filters.q) pills.push({ key: 'q', label: `search: ${filters.q}` });
   if (filters.exclude) pills.push({ key: 'exclude', label: `exclude: ${filters.exclude}` });
   if (filters.speaker) pills.push({ key: 'speaker', label: `speaker: ${filters.speaker}` });
+  if (filters.company) pills.push({ key: 'company', label: `company: ${filters.company}` });
   if (filters.topic) pills.push({ key: 'topic', label: `topic: ${filters.topic}` });
   if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
   if (filters.start_after || filters.start_before) pills.push({ key: 'time', label: `time: ${filters.start_after || 'start'} – ${filters.start_before || 'end'}` });
@@ -455,7 +456,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_before: timeRangeEnd && Number(timeRangeEnd.value) < timeBounds.max ? timeIndexToValue(timeRangeEnd.value) : '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
-      company: '',
+      company: state.company || '',
       ai_focus: classificationFilters.ai_focus,
       theme: classificationFilters.theme,
       audience: classificationFilters.audience,
@@ -666,6 +667,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'q') qInput.value = '';
     if (key === 'exclude' && excludeInput) excludeInput.value = '';
     if (key === 'speaker') speakerInput.value = '';
+    if (key === 'company') state.company = '';
     if (key === 'topic') topicSelect.value = '';
     if (key === 'day') applyDaySelection(dayPills, '');
     if (key === 'time') { if (timeRangeStart) timeRangeStart.value = String(timeBounds.min); if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
@@ -693,6 +695,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     qInput.value = '';
     if (excludeInput) excludeInput.value = '';
     speakerInput.value = '';
+    state.company = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
