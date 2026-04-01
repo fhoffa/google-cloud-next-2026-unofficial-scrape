@@ -185,12 +185,14 @@ def draw_multiline_label(ax, x, y_center, lines, *, x_offset=0.008, linespacing=
 
 
 def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True, label_lines=None, x_offset=0.008, linespacing=1.0):
-    ax.add_patch(Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
+    rect = Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0)
+    ax.add_patch(rect)
     if show_label:
         if label_lines:
             draw_multiline_label(ax, x, (y0 + y1) / 2, label_lines, x_offset=x_offset, linespacing=linespacing)
         else:
             ax.text(x - x_offset, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
+    return rect
 
 
 def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
@@ -200,60 +202,45 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
         (xb, yb0), (xb - c, yb0), (xa + BAR_WIDTH + c, ya0), (xa + BAR_WIDTH, ya0), (xa + BAR_WIDTH, ya1),
     ]
     codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.LINETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.CLOSEPOLY]
-    ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
+    patch = PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha)
+    ax.add_patch(patch)
+    return patch
 
 
-def build_click_map(mid, third, fourth, root, mid_pos, third_pos, fourth_pos, x_positions, scale):
-    x0, x1, x2, x3 = x_positions
+def build_click_map(fig, renderer, artists):
+    bbox = fig.get_tightbbox(renderer)
+    x0 = bbox.x0 * fig.dpi
+    y0 = bbox.y0 * fig.dpi
+    width = bbox.width * fig.dpi
+    height = bbox.height * fig.dpi
     segments = []
 
-    def add_segment(kind, title, params, shape):
+    def norm_point(xp, yp):
+        return [max(0.0, min(1.0, (xp - x0) / width)), max(0.0, min(1.0, 1.0 - ((yp - y0) / height)))]
+
+    for item in artists:
+        artist = item['artist']
+        if item['shape_type'] == 'rect':
+            bb = artist.get_window_extent(renderer=renderer)
+            x_left, y_bottom = norm_point(bb.x0, bb.y0)
+            x_right, y_top = norm_point(bb.x1, bb.y1)
+            shape = {
+                'type': 'rect',
+                'x': x_left,
+                'y0': y_bottom,
+                'y1': y_top,
+                'w': max(0.0, x_right - x_left),
+            }
+        else:
+            transformed = artist.get_path().transformed(artist.get_transform())
+            points = [norm_point(xp, yp) for xp, yp in transformed.vertices.tolist()]
+            shape = {'type': 'poly', 'points': points}
         segments.append({
-            'kind': kind,
-            'title': title,
-            'params': params,
+            'kind': item['kind'],
+            'title': item['title'],
+            'params': item['params'],
             'shape': shape,
         })
-
-    add_segment(
-        'root',
-        f'Total ({root[1] - root[0]:.6f})',
-        {},
-        {'type': 'rect', 'x': x0, 'y0': root[0], 'y1': root[1], 'w': BAR_WIDTH},
-    )
-
-    for label, value in mid:
-        y0, y1 = mid_pos[label]
-        add_segment('ai_focus', f'{label} ({value})', {'ai_focus': label}, {'type': 'rect', 'x': x1, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
-
-    for parent, items in third.items():
-        cursor = mid_pos[parent][1]
-        for label, value in items:
-            y0, y1 = third_pos[parent][label]
-            add_segment('theme', f'{parent} → {label} ({value})', {'ai_focus': parent, 'theme': label}, {'type': 'rect', 'x': x2, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
-            h = value * scale
-            add_segment(
-                'theme-flow',
-                f'{parent} → {label} ({value})',
-                {'ai_focus': parent, 'theme': label},
-                {'type': 'poly', 'points': [[x1 + BAR_WIDTH, cursor], [x2, y1], [x2, y0], [x1 + BAR_WIDTH, cursor - h]]},
-            )
-            cursor -= h
-
-    for key, items in fourth.items():
-        parent, theme_label = key
-        cursor = third_pos[parent][theme_label][1]
-        for label, value in items:
-            y0, y1 = fourth_pos[key][label]
-            add_segment('audience', f'{parent} → {theme_label} → {label} ({value})', {'ai_focus': parent, 'theme': theme_label, 'audience': label}, {'type': 'rect', 'x': x3, 'y0': y0, 'y1': y1, 'w': BAR_WIDTH})
-            h = value * scale
-            add_segment(
-                'audience-flow',
-                f'{parent} → {theme_label} → {label} ({value})',
-                {'ai_focus': parent, 'theme': theme_label, 'audience': label},
-                {'type': 'poly', 'points': [[x2 + BAR_WIDTH, cursor], [x3, y1], [x3, y0], [x2 + BAR_WIDTH, cursor - h]]},
-            )
-            cursor -= h
 
     return {
         'viewBox': {'width': 1000, 'height': 1250},
@@ -289,8 +276,9 @@ def render_sankey(
     mid_pos = stack_within(*root, mid, scale=scale, gap=0.038)
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
+    click_map_artists = []
 
-    draw_bar(
+    root_rect = draw_bar(
         ax,
         x0,
         *root,
@@ -306,10 +294,11 @@ def render_sankey(
         x_offset=0.014,
         linespacing=0.62,
     )
+    click_map_artists.append({'artist': root_rect, 'kind': 'root', 'title': f'Total ({len(sessions)})', 'params': {}, 'shape_type': 'rect'})
     for label, value in mid:
         label_size = 54 if value >= 500 else 46 if value >= 250 else 38
         count_size = max(28, label_size - 10)
-        draw_bar(
+        rect = draw_bar(
             ax,
             x1,
             *mid_pos[label],
@@ -324,9 +313,10 @@ def render_sankey(
             x_offset=0.012,
             linespacing=0.68,
         )
+        click_map_artists.append({'artist': rect, 'kind': 'ai_focus', 'title': f'{label} ({value})', 'params': {'ai_focus': label}, 'shape_type': 'rect'})
     for parent, items in third.items():
         for label, value in items:
-            draw_bar(
+            rect = draw_bar(
                 ax,
                 x2,
                 *third_pos[parent][label],
@@ -336,9 +326,10 @@ def render_sankey(
                 fontsize=34 if value >= 220 else 28 if value >= 160 else 23 if value >= 110 else 17 if value >= 70 else 14,
                 show_label=value >= min_theme_label,
             )
+            click_map_artists.append({'artist': rect, 'kind': 'theme', 'title': f'{parent} → {label} ({value})', 'params': {'ai_focus': parent, 'theme': label}, 'shape_type': 'rect'})
     for key, items in fourth.items():
         for label, value in items:
-            draw_bar(
+            rect = draw_bar(
                 ax,
                 x3,
                 *fourth_pos[key][label],
@@ -348,31 +339,38 @@ def render_sankey(
                 fontsize=26 if value >= 150 else 21 if value >= 110 else 17 if value >= 70 else 13 if value >= 45 else 11,
                 show_label=value >= min_audience_label,
             )
+            click_map_artists.append({'artist': rect, 'kind': 'audience', 'title': f'{key[0]} → {key[1]} → {label} ({value})', 'params': {'ai_focus': key[0], 'theme': key[1], 'audience': label}, 'shape_type': 'rect'})
 
     cursor = root[1]
     for label, value in mid:
         h = value * scale
-        ribbon(ax, x0, x1, cursor - h, cursor, *mid_pos[label], COLORS[label], alpha=0.26)
+        patch = ribbon(ax, x0, x1, cursor - h, cursor, *mid_pos[label], COLORS[label], alpha=0.26)
+        click_map_artists.append({'artist': patch, 'kind': 'ai-flow', 'title': f'{label} ({value})', 'params': {'ai_focus': label}, 'shape_type': 'poly'})
         cursor -= h
     for parent, items in third.items():
         cursor = mid_pos[parent][1]
         for label, value in items:
             h = value * scale
-            ribbon(ax, x1, x2, cursor - h, cursor, *third_pos[parent][label], COLORS.get(label, COLORS[parent]), alpha=0.36)
+            patch = ribbon(ax, x1, x2, cursor - h, cursor, *third_pos[parent][label], COLORS.get(label, COLORS[parent]), alpha=0.36)
+            click_map_artists.append({'artist': patch, 'kind': 'theme-flow', 'title': f'{parent} → {label} ({value})', 'params': {'ai_focus': parent, 'theme': label}, 'shape_type': 'poly'})
             cursor -= h
     for key, items in fourth.items():
         cursor = third_pos[key[0]][key[1]][1]
         for label, value in items:
             h = value * scale
-            ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
+            patch = ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
+            click_map_artists.append({'artist': patch, 'kind': 'audience-flow', 'title': f'{key[0]} → {key[1]} → {label} ({value})', 'params': {'ai_focus': key[0], 'theme': key[1], 'audience': label}, 'shape_type': 'poly'})
             cursor -= h
 
     ax.text(0.03, 0.988, 'Google Cloud Next 2026 sessions', fontsize=52, fontweight='bold', color='#202124', ha='left')
     ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
     ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
 
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+
     if click_map_path:
-        click_map = build_click_map(mid, third, fourth, root, mid_pos, third_pos, fourth_pos, x_positions, scale)
+        click_map = build_click_map(fig, renderer, click_map_artists)
         click_map_path.parent.mkdir(parents=True, exist_ok=True)
         click_map_path.write_text(json.dumps(click_map, indent=2))
 
