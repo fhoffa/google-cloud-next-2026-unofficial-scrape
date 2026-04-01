@@ -246,6 +246,13 @@ test('insights page company section is a single longer non-Google list with writ
   assert.equal(insightsSummary.companies.limit, 120);
   assert.equal(insightsSummary.companies.minimumCount, 2);
   assert.ok(insightsSummary.companies.topNonGoogle.length > 0);
+  const topCompanyNames = insightsSummary.companies.topNonGoogle.map((item) => item.name);
+  assert.ok(!topCompanyNames.includes('Google'));
+  assert.ok(!topCompanyNames.includes('Google Cloud'));
+  assert.ok(!topCompanyNames.includes('Google Public Sector'));
+  assert.ok(!topCompanyNames.includes('Google DeepMind'));
+  assert.ok(!topCompanyNames.includes('Google DeepMind and Google Research'));
+  assert.ok(!topCompanyNames.includes('YouTube'));
 });
 
 test('insights generator reproduces the checked-in summary and HTML', () => {
@@ -648,6 +655,37 @@ test('top companies tab renders clickable companies and session links', async ()
   assert.match(appHtml, /Top companies/);
   assert.match(appHtml, /company-summary-link/);
   assert.match(appHtml, /company-session-link/);
+});
+
+test('top companies view merges canonical company aliases', async () => {
+  const env = createEnvironment('?view=companies');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'A', description: '', url: 'https://example.com/1', topics: [], speakers: [{ name: 'One', company: 'Google Deepmind' }] },
+      { title: 'B', description: '', url: 'https://example.com/2', topics: [], speakers: [{ name: 'Two', company: 'DeepMind' }] },
+      { title: 'C', description: '', url: 'https://example.com/3', topics: [], speakers: [{ name: 'Three', company: 'Anthropic' }] },
+      { title: 'D', description: '', url: 'https://example.com/4', topics: [], speakers: [{ name: 'Four', company: 'Anthropic' }] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Google DeepMind/);
+  assert.doesNotMatch(appHtml, /Google Deepmind/);
+  assert.match(appHtml, /Anthropic/);
+});
+
+test('company query param matches canonicalized aliases', async () => {
+  const env = createEnvironment('?company=Google%20DeepMind');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'Canonical mismatch still matches', description: '', url: 'https://example.com/1', topics: [], speakers: [{ name: 'One', company: 'Google Deepmind' }] },
+      { title: 'External session', description: '', url: 'https://example.com/2', topics: [], speakers: [{ name: 'Two', company: 'Anthropic' }] },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Canonical mismatch still matches/);
+  assert.doesNotMatch(appHtml, /External session/);
 });
 
 

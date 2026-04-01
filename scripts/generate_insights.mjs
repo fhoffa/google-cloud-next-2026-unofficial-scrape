@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { canonicalCompanyName, isGoogleInternalCompany } from '../lib/company-identity.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 function esc(value) {
@@ -39,10 +40,10 @@ function companyCounts(subset, { excludeGoogle = false } = {}) {
   for (const session of subset) {
     const seen = new Set();
     for (const speaker of session.speakers || []) {
-      const company = String(speaker.company || '').trim();
+      const company = canonicalCompanyName(speaker.company);
       if (!company || seen.has(company)) continue;
       seen.add(company);
-      if (excludeGoogle && /^google( cloud)?$/i.test(company)) continue;
+      if (excludeGoogle && isGoogleInternalCompany(company)) continue;
       mapped.set(company, (mapped.get(company) || 0) + 1);
     }
   }
@@ -96,8 +97,8 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   const aiCount = ai.find(([name]) => name === 'AI')?.[1] || 0;
   const notAiCount = ai.find(([name]) => name === 'Not AI')?.[1] || 0;
   const nonGoogleCompanyCount = new Set(
-    withLlm.flatMap((session) => (session.speakers || []).map((speaker) => String(speaker.company || '').trim()))
-      .filter((company) => company && !/^google( cloud)?$/i.test(company))
+    withLlm.flatMap((session) => (session.speakers || []).map((speaker) => canonicalCompanyName(speaker.company)))
+      .filter((company) => company && !isGoogleInternalCompany(company))
   ).size;
 
   const topNonGoogle = companyCounts(withLlm, { excludeGoogle: true });

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T04:34:32.571Z",
+    "generatedAt": "2026-04-01T04:53:48.915Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -30,7 +30,7 @@
       "sub": "308 sessions"
     },
     {
-      "value": "368",
+      "value": "358",
       "label": "Non-Google companies represented"
     }
   ],
@@ -619,16 +619,6 @@
         "href": "./index.html?company=NVIDIA"
       },
       {
-        "name": "Google Public Sector",
-        "count": 12,
-        "href": "./index.html?company=Google+Public+Sector"
-      },
-      {
-        "name": "Google DeepMind",
-        "count": 11,
-        "href": "./index.html?company=Google+DeepMind"
-      },
-      {
         "name": "Accenture",
         "count": 10,
         "href": "./index.html?company=Accenture"
@@ -744,11 +734,6 @@
         "href": "./index.html?company=Capgemini"
       },
       {
-        "name": "DeepMind",
-        "count": 3,
-        "href": "./index.html?company=DeepMind"
-      },
-      {
         "name": "Dialpad",
         "count": 3,
         "href": "./index.html?company=Dialpad"
@@ -767,11 +752,6 @@
         "name": "Foresite Cybersecurity",
         "count": 3,
         "href": "./index.html?company=Foresite+Cybersecurity"
-      },
-      {
-        "name": "Google DeepMind and Google Research",
-        "count": 3,
-        "href": "./index.html?company=Google+DeepMind+and+Google+Research"
       },
       {
         "name": "HCA Healthcare",

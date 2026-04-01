@@ -1,3 +1,4 @@
+import { canonicalCompanyName, companyMatchesFilter } from '../lib/company-identity.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 const DEFAULT_SORT = 'time';
@@ -186,7 +187,7 @@ export function filterSessions(sessions, filters) {
     if (startAfter && (!startTime || startTime < startAfter)) return false;
     if (startBefore && (!startTime || startTime > startBefore)) return false;
     if (company) {
-      const foundCompany = (session.speakers || []).some((item) => ((item.company || '').toLowerCase().includes(company)));
+      const foundCompany = (session.speakers || []).some((item) => companyMatchesFilter(item.company || '', company));
       if (!foundCompany) return false;
     }
     const llm = session.llm || {};
@@ -256,7 +257,7 @@ function companyStats(sessions) {
   for (const session of sessions) {
     const seen = new Set();
     for (const speaker of (session.speakers || [])) {
-      const company = String(speaker.company || '').trim();
+      const company = canonicalCompanyName(speaker.company);
       if (!company || seen.has(company)) continue;
       seen.add(company);
       if (!byCompany.has(company)) byCompany.set(company, { company, count: 0, sessions: [] });
@@ -278,7 +279,7 @@ function speakerStats(sessions) {
       const entry = bySpeaker.get(name);
       entry.count += 1;
       entry.sessions.push({ title: session.title, url: session.url || '', id: sessionKey(session) });
-      if (!entry.company && speaker.company) entry.company = speaker.company;
+      if (!entry.company && speaker.company) entry.company = canonicalCompanyName(speaker.company);
     }
   }
   return [...bySpeaker.values()].filter((item) => item.count > 1).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));

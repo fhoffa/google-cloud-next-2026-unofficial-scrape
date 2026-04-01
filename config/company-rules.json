@@ -1,0 +1,35 @@
+{
+  "aliases": {
+    "deepmind": "Google DeepMind",
+    "google": "Google",
+    "google cloud": "Google Cloud",
+    "google deepmind": "Google DeepMind",
+    "google deepmind and google research": "Google DeepMind and Google Research",
+    "google llc": "Google",
+    "google public sector": "Google Public Sector",
+    "google ventures": "Google Ventures",
+    "mandiant google": "Mandiant/Google",
+    "youtube": "YouTube"
+  },
+  "googleInternalCanonical": [
+    "Google",
+    "Google Cloud",
+    "Google DeepMind",
+    "Google DeepMind and Google Research",
+    "Google Public Sector",
+    "Google Ventures",
+    "Mandiant/Google",
+    "YouTube"
+  ],
+  "googleFamilyTokens": [
+    "android",
+    "deepmind",
+    "fitbit",
+    "gemini",
+    "google",
+    "mandiant",
+    "nest",
+    "waymo",
+    "youtube"
+  ]
+}
