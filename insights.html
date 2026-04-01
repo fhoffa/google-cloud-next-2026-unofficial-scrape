@@ -155,6 +155,7 @@
       <div class="mini-grid">
         <div class="card">
           <div class="kicker">Non-Google companies</div>
+          <p id="company-observations" style="margin:0 0 12px;color:#5f6368;line-height:1.45"></p>
           <div class="rank-list" id="top-non-google-companies"></div>
         </div>
       </div>
@@ -295,12 +296,22 @@
         map.set(company, (map.get(company) || 0) + 1);
       }
     }
-    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).filter(([, count]) => count >= 2).slice(0, 24);
+    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).filter(([, count]) => count >= 2).slice(0, 40);
   }
 
   function renderCompanies() {
     const topNonGoogle = companyCounts(withLlm, { excludeGoogle: true });
     document.getElementById('top-non-google-companies').innerHTML = rankHtml(topNonGoogle, topNonGoogle[0]?.[1] || 1, '#6a1b9a', (name) => ({ company: name }));
+    const top = topNonGoogle[0];
+    const second = topNonGoogle[1];
+    const geotab = topNonGoogle.find(([name]) => name === 'Geotab');
+    const writeup = [
+      top ? `<strong>${esc(top[0])}</strong> appears most often, with <strong>${top[1]}</strong> sessions in the catalog.` : '',
+      second ? `The drop from #1 to #2 is ${Math.max(0, (top?.[1] || 0) - second[1])}, so the outside-voice leaderboard is ${((top?.[1] || 0) - second[1]) <= 2 ? 'fairly tight' : 'top-heavy'}.` : '',
+      geotab ? `<strong>Geotab</strong> is in the recurring-speaker set too, with <strong>${geotab[1]}</strong> sessions.` : '',
+      'This list is a useful proxy for which non-Google companies Google is repeatedly amplifying across the event.'
+    ].filter(Boolean).join(' ');
+    document.getElementById('company-observations').innerHTML = writeup;
   }
 
   function renderObservations() {
