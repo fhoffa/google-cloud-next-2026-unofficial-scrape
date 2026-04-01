@@ -6,60 +6,177 @@
   <title>Google Cloud Next 2026 — Insights</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <meta property="og:title" content="Google Cloud Next 2026 — Insights">
-  <meta property="og:description" content="AI vs Not AI session flow, themes, audiences, and quick links into filtered sessions.">
+  <meta property="og:description" content="AI vs Not AI, themes, audiences, top words, top companies, and conference insights.">
   <meta property="og:image" content="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Google Cloud Next 2026 — Insights">
-  <meta name="twitter:description" content="AI vs Not AI session flow, themes, audiences, and quick links into filtered sessions.">
+  <meta name="twitter:description" content="AI vs Not AI, themes, audiences, top words, top companies, and conference insights.">
   <meta name="twitter:image" content="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png">
   <style>
-    body{font-family:Arial,sans-serif;background:#f8f9fa;color:#202124;margin:0}
-    main{max-width:1100px;margin:0 auto;padding:20px}
-    .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
-    a{color:#1a73e8}
-    .sankey-wrap{position:relative;aspect-ratio:4/5;min-height:420px;border-radius:12px;border:1px solid #e8eaed;background:#fff;overflow:hidden}
+    :root{
+      --bg:#f8f9fa; --card:#fff; --text:#202124; --muted:#5f6368; --border:#e8eaed; --link:#1a73e8;
+      --blue:#4285f4; --green:#34a853; --red:#c62828; --orange:#ef6c00; --purple:#6a1b9a;
+      --chip:#e8f0fe; --chipText:#1557b0;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+    main{max-width:1180px;margin:0 auto;padding:24px 20px 40px}
+    a{color:var(--link)}
+    .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-bottom:8px}
+    .eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 6px}
+    h1{margin:0;font-size:2.2rem;line-height:1.05}
+    .lede{max-width:920px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 18px}
+    .section{margin-top:28px}
+    .section h2{margin:0 0 10px;font-size:1.45rem}
+    .section p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px}
+    .stat-value{font-size:2rem;font-weight:700;line-height:1}
+    .stat-label{margin-top:6px;color:var(--muted);font-size:.92rem}
+    .stat-sub{margin-top:4px;color:var(--muted);font-size:.82rem}
+    .hero-layout{display:grid;grid-template-columns:1.4fr .9fr;gap:16px;align-items:start}
+    .sankey-wrap{position:relative;aspect-ratio:4/5;min-height:420px;border-radius:14px;border:1px solid var(--border);background:#fff;overflow:hidden}
     .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
     .sankey-map{position:absolute;inset:0;width:100%;height:100%;display:block}
     .sankey-map a rect,.sankey-map a polygon{fill:transparent;stroke:transparent}
-    .sankey-map a:hover rect,.sankey-map a:focus rect,.sankey-map a:hover polygon,.sankey-map a:focus polygon{fill:rgba(26,115,232,.18);stroke:#1a73e8;stroke-width:1}
-    .sankey-wrap.image-missing::after{content:'Sankey image unavailable';position:absolute;inset:0;display:grid;place-items:center;color:#5f6368;background:rgba(255,255,255,.65);pointer-events:none}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
-    .card{background:#fff;border:1px solid #e8eaed;border-radius:10px;padding:12px}
+    .sankey-map a:hover rect,.sankey-map a:focus rect,.sankey-map a:hover polygon,.sankey-map a:focus polygon{fill:rgba(26,115,232,.15);stroke:#1a73e8;stroke-width:1}
+    .sankey-wrap.image-missing::after{content:'Sankey image unavailable';position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);background:rgba(255,255,255,.65);pointer-events:none}
+    .side-stack{display:grid;gap:12px}
+    .kicker{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+    .bullets{margin:0;padding-left:18px;display:grid;gap:8px}
     .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{display:inline-block;padding:6px 10px;border-radius:16px;background:#e8f0fe;color:#1557b0;text-decoration:none;font-size:.88rem}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--chipText);text-decoration:none;font-size:.88rem}
     .chip:hover{background:#d2e3fc}
+    .rank-list{display:grid;gap:10px}
+    .rank-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+    .rank-main{display:flex;flex-direction:column;gap:4px;min-width:0}
+    .rank-name{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .rank-bar{height:8px;background:#eef2f7;border-radius:999px;overflow:hidden}
+    .rank-fill{height:100%;border-radius:999px}
+    .rank-count{font-weight:700;font-size:.92rem}
+    .mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .word-cloud{display:flex;flex-wrap:wrap;gap:8px}
+    .word-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;text-decoration:none;background:#fff;border:1px solid var(--border);color:var(--text);font-size:.9rem}
+    .word-chip small{color:var(--muted)}
+    .word-chip:hover{border-color:#c6dafc;background:#f8fbff}
+    .slice-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+    .slice-link{display:block;padding:12px 13px;border-radius:12px;background:#fff;border:1px solid var(--border);text-decoration:none;color:inherit}
+    .slice-link:hover{border-color:#c6dafc;background:#f8fbff}
+    .slice-link strong{display:block;margin-bottom:4px}
+    .slice-link span{color:var(--muted);font-size:.9rem}
+    code{background:#f1f3f4;padding:2px 5px;border-radius:6px}
+    @media (max-width: 900px){.hero-layout{grid-template-columns:1fr}.side-stack{grid-template-columns:1fr 1fr}}
+    @media (max-width: 640px){h1{font-size:1.8rem}.side-stack{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <main>
     <div class="top">
-      <h1>Google Cloud Next 2026 — Insights</h1>
+      <div>
+        <p class="eyebrow">Conference intelligence</p>
+        <h1>Google Cloud Next 2026 — Insights</h1>
+      </div>
       <div><a href="./index.html">← Back to session explorer</a></div>
     </div>
-    <p>This page hosts the Sankey and links every segment to filtered sessions on the main explorer.</p>
-    <div class="hero sankey-wrap" id="sankey-wrap">
-      <img id="sankey-image" src="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png" alt="Google Cloud Next 2026 Sankey diagram">
-      <svg id="sankey-map" class="sankey-map" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid meet" aria-label="Clickable Sankey segments"></svg>
-    </div>
-    <p style="font-size:.85rem;color:#5f6368;margin-top:8px">Image file: <code id="sankey-file-name">fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png</code></p>
+    <p class="lede">This page turns the session catalog into a quick conference intelligence view: what the event is mostly about, who it seems built for, which themes dominate, which non-Google companies show up most often, what words define the program, and how to jump directly into the most interesting slices.</p>
 
-    <div class="grid" id="stats"></div>
+    <section class="section">
+      <div class="grid" id="stats"></div>
+    </section>
 
-    <h2>Click any Sankey segment</h2>
-    <p>The chart has an invisible click map over every segment (including tiny ones). Links use URL params <code>ai_focus</code>, <code>theme</code>, and <code>audience</code>.</p>
-    <h3>AI focus</h3>
-    <div class="chips" id="ai-focus-links"></div>
-    <h3>Themes</h3>
-    <div class="chips" id="theme-links"></div>
-    <h3>Audience</h3>
-    <div class="chips" id="audience-links"></div>
+    <section class="section hero-layout">
+      <div>
+        <h2>Interactive Sankey</h2>
+        <p>Read it left to right: total sessions → AI vs Not AI → theme → audience. Tap a segment or flow to jump into filtered sessions.</p>
+        <div class="hero sankey-wrap" id="sankey-wrap">
+          <img id="sankey-image" src="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png" alt="Google Cloud Next 2026 Sankey diagram">
+          <svg id="sankey-map" class="sankey-map" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid meet" aria-label="Clickable Sankey segments"></svg>
+        </div>
+        <p style="font-size:.85rem;color:#5f6368;margin-top:8px">Image file: <code id="sankey-file-name">fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png</code></p>
+      </div>
+      <div class="side-stack">
+        <div class="card">
+          <div class="kicker">What stands out</div>
+          <ul class="bullets" id="observations"></ul>
+        </div>
+        <div class="card">
+          <div class="kicker">Quick pivots</div>
+          <div class="chips" id="ai-focus-links"></div>
+          <div style="height:10px"></div>
+          <div class="chips" id="theme-links"></div>
+          <div style="height:10px"></div>
+          <div class="chips" id="audience-links"></div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Observations</h2>
-    <ul id="observations"></ul>
+    <section class="section">
+      <h2>Theme and audience leaders</h2>
+      <div class="mini-grid">
+        <div class="card">
+          <div class="kicker">Top themes</div>
+          <div class="rank-list" id="top-themes"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Top audiences</div>
+          <div class="rank-list" id="top-audiences"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Top AI themes</div>
+          <div class="rank-list" id="top-ai-themes"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Top Not AI themes</div>
+          <div class="rank-list" id="top-not-ai-themes"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Top words</h2>
+      <div class="mini-grid">
+        <div class="card">
+          <div class="kicker">Across all sessions</div>
+          <div class="word-cloud" id="top-words-all"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">AI sessions only</div>
+          <div class="word-cloud" id="top-words-ai"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Not AI sessions only</div>
+          <div class="word-cloud" id="top-words-not-ai"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Top companies speaking</h2>
+      <div class="mini-grid">
+        <div class="card">
+          <div class="kicker">Non-Google companies</div>
+          <div class="rank-list" id="top-non-google-companies"></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Top companies in AI sessions</div>
+          <div class="rank-list" id="top-ai-companies"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Interesting slices to explore</h2>
+      <div class="slice-links" id="interesting-slices"></div>
+    </section>
   </main>
 <script type="module">
   const DEFAULT_SANKEY = './media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png';
+  const STOP_WORDS = new Set(['the','a','an','and','or','of','to','for','in','on','at','by','with','from','into','your','you','our','their','this','that','these','those','is','are','be','as','it','its','how','why','what','when','where','who','will','can','all','more','new','using','use','build','building','through','across','after','before','about','cloud','google','next','session','sessions','learn','join','explore','discover','talks','relevant','attending','shared','contact','may','they']);
+  const SHORT_WORD_ALLOWLIST = new Set(['ai','ml','go']);
+  const WORD_NORMALIZATION = new Map([['llms','llm'],['models','model'],['meetups','meetup'],['agents','agent'],['databases','database'],['developers','developer'],['leaders','leader'],['scientists','scientist'],['analysts','analyst'],['managers','manager'],['architects','architect'],['teams','team'],['services','service'],['workshops','workshop'],['breakouts','breakout'],['groups','group'],['applications','application']]);
+  const WORD_DISPLAY = new Map([['llm','LLM/LLMs'],['model','model/models'],['meetup','meetup/meetups'],['agent','agent/agents'],['database','database/databases'],['developer','developer/developers'],['leader','leader/leaders'],['scientist','scientist/scientists'],['analyst','analyst/analysts'],['manager','manager/managers'],['architect','architect/architects'],['team','team/teams'],['service','service/services'],['workshop','workshop/workshops'],['breakout','breakout/breakouts'],['group','group/groups'],['application','application/applications']]);
+
   const sankeyWrap = document.getElementById('sankey-wrap');
   const sankeyImage = document.getElementById('sankey-image');
   const sankeyFileName = document.getElementById('sankey-file-name');
@@ -74,111 +191,174 @@
   const resolvedSankeySrc = /^https?:\/\//.test(currentSankeyFile) ? currentSankeyFile : `./media/${currentSankeyFile}`;
   sankeyImage.src = resolvedSankeySrc;
   sankeyFileName.textContent = currentSankeyFile.split('/').pop() || currentSankeyFile;
-  sankeyImage.addEventListener('error', () => {
-    sankeyWrap?.classList.add('image-missing');
-  });
-  sankeyImage.addEventListener('load', () => {
-    sankeyWrap?.classList.remove('image-missing');
-  });
+  sankeyImage.addEventListener('error', () => sankeyWrap?.classList.add('image-missing'));
+  sankeyImage.addEventListener('load', () => sankeyWrap?.classList.remove('image-missing'));
 
   const res = await fetch('./sessions/classified_sessions.json');
   const data = await res.json();
   const sessions = data.sessions || [];
   const withLlm = sessions.filter((s) => s.llm);
-  const counts = (key) => {
+
+  const counts = (key, subset = withLlm) => {
     const map = new Map();
-    for (const s of withLlm) {
+    for (const s of subset) {
       const v = s.llm?.[key];
       if (!v || (key === 'audience' && v === 'General')) continue;
       map.set(v, (map.get(v) || 0) + 1);
     }
     return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0]));
   };
+
   const ai = counts('ai_focus');
   const themes = counts('theme');
   const audiences = counts('audience');
-  const THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other'];
-  const AUDIENCE_ORDER = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers'];
-
-  const stackWithin = (y0, y1, items, scale, gap) => {
-    const available = y1 - y0;
-    const totalH = items.reduce((sum, [,v]) => sum + (v * scale), 0);
-    const totalGap = gap * Math.max(0, items.length - 1);
-    let y = y1 - (available - totalH - totalGap) / 2;
-    const out = new Map();
-    for (const [label, value] of items) {
-      const h = value * scale;
-      out.set(label, [y - h, y]);
-      y -= h + gap;
-    }
-    return out;
-  };
-
-  const totalSessions = sessions.length;
-  const thirdCounts = new Map();
-  const fourthCounts = new Map();
-  for (const s of withLlm) {
-    const top = s.llm?.ai_focus;
-    const th = s.llm?.theme;
-    const aud = s.llm?.audience;
-    if (!top || !th) continue;
-    const thirdKey = `${top}||${th}`;
-    thirdCounts.set(thirdKey, (thirdCounts.get(thirdKey) || 0) + 1);
-    if (aud && aud !== 'General') {
-      const fourthKey = `${top}||${th}||${aud}`;
-      fourthCounts.set(fourthKey, (fourthCounts.get(fourthKey) || 0) + 1);
-    }
-  }
-  const mid = ai;
-  const thirdByTop = new Map(mid.map(([top]) => [top, THEME_ORDER.map((t) => [t, thirdCounts.get(`${top}||${t}`) || 0]).filter(([,v]) => v > 0)]));
-  const fourthByKey = new Map();
-  for (const [top] of mid) {
-    for (const [th] of (thirdByTop.get(top) || [])) {
-      const items = AUDIENCE_ORDER.map((a) => [a, fourthCounts.get(`${top}||${th}||${a}`) || 0]).filter(([,v]) => v > 0);
-      if (items.length) fourthByKey.set(`${top}||${th}`, items);
-    }
-  }
-
-  const topMargin = 0.038;
-  const bottomMargin = 0.038;
-  const usableH = 1 - topMargin - bottomMargin;
-  const scale = usableH / Math.max(1, totalSessions);
-  const root = [bottomMargin, bottomMargin + totalSessions * scale];
-  const midPos = stackWithin(root[0], root[1], mid, scale, 0.038);
-  const thirdPos = new Map();
-  for (const [top, items] of thirdByTop.entries()) thirdPos.set(top, stackWithin(...midPos.get(top), items, scale, 0.0075));
-  const fourthPos = new Map();
-  for (const [key, items] of fourthByKey.entries()) {
-    const [top, th] = key.split('||');
-    fourthPos.set(key, stackWithin(...thirdPos.get(top).get(th), items, scale, 0.0038));
-  }
-
+  const aiSessions = withLlm.filter((s) => s.llm?.ai_focus === 'AI');
+  const notAiSessions = withLlm.filter((s) => s.llm?.ai_focus === 'Not AI');
+  const aiThemes = counts('theme', aiSessions);
+  const notAiThemes = counts('theme', notAiSessions);
   const total = sessions.length;
   const aiCount = ai.find(([k]) => k === 'AI')?.[1] || 0;
   const notAiCount = ai.find(([k]) => k === 'Not AI')?.[1] || 0;
-  document.getElementById('stats').innerHTML = `
-    <div class="card"><strong>${total.toLocaleString()}</strong><div>Total sessions</div></div>
-    <div class="card"><strong>${aiCount.toLocaleString()}</strong><div>AI sessions</div></div>
-    <div class="card"><strong>${notAiCount.toLocaleString()}</strong><div>Not AI sessions</div></div>
-    <div class="card"><strong>${themes[0]?.[0] || 'n/a'}</strong><div>Largest theme (${themes[0]?.[1] || 0})</div></div>
-  `;
 
-  const makeLink = (key, value, count) => `<a class="chip" href="./index.html?${new URLSearchParams({ [key]: value })}">${value} (${count})</a>`;
-  document.getElementById('ai-focus-links').innerHTML = ai.map(([v,c]) => makeLink('ai_focus', v, c)).join('');
-  document.getElementById('theme-links').innerHTML = themes.map(([v,c]) => makeLink('theme', v, c)).join('');
-  document.getElementById('audience-links').innerHTML = audiences.map(([v,c]) => makeLink('audience', v, c)).join('');
+  function esc(text) {
+    return String(text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
 
-  const observations = [
-    `AI content is ${((aiCount / Math.max(1,total)) * 100).toFixed(1)}% of all sessions (${aiCount}/${total}).`,
-    `${themes[0]?.[0] || 'Unknown'} is the largest theme bucket with ${themes[0]?.[1] || 0} sessions.`,
-    `${audiences[0]?.[0] || 'Unknown'} is the most targeted audience with ${audiences[0]?.[1] || 0} sessions.`,
-  ];
-  document.getElementById('observations').innerHTML = observations.map((line) => `<li>${line}</li>`).join('');
+  function makeLink(params, label) {
+    return `./index.html?${new URLSearchParams(params).toString()}`;
+  }
+
+  function renderStats() {
+    const nonGoogleCompanyCount = new Set((withLlm.flatMap((s) => s.speakers || []).map((sp) => String(sp.company || '').trim()).filter(Boolean)).filter((name) => !/^google( cloud)?$/i.test(name))).size;
+    document.getElementById('stats').innerHTML = `
+      <div class="card"><div class="stat-value">${total.toLocaleString()}</div><div class="stat-label">Total sessions</div></div>
+      <div class="card"><div class="stat-value">${((aiCount / Math.max(1,total)) * 100).toFixed(0)}%</div><div class="stat-label">AI share of the conference</div><div class="stat-sub">${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI</div></div>
+      <div class="card"><div class="stat-value">${themes[0]?.[0] || 'n/a'}</div><div class="stat-label">Largest theme</div><div class="stat-sub">${themes[0]?.[1] || 0} sessions</div></div>
+      <div class="card"><div class="stat-value">${audiences[0]?.[0] || 'n/a'}</div><div class="stat-label">Largest audience</div><div class="stat-sub">${audiences[0]?.[1] || 0} sessions</div></div>
+      <div class="card"><div class="stat-value">${nonGoogleCompanyCount.toLocaleString()}</div><div class="stat-label">Non-Google companies represented</div></div>
+    `;
+  }
+
+  function renderQuickPivots() {
+    const makeChip = (key, value, count) => `<a class="chip" href="${makeLink({ [key]: value }, value)}">${esc(value)} (${count})</a>`;
+    document.getElementById('ai-focus-links').innerHTML = ai.map(([v,c]) => makeChip('ai_focus', v, c)).join('');
+    document.getElementById('theme-links').innerHTML = themes.slice(0, 8).map(([v,c]) => makeChip('theme', v, c)).join('');
+    document.getElementById('audience-links').innerHTML = audiences.slice(0, 8).map(([v,c]) => makeChip('audience', v, c)).join('');
+  }
+
+  function rankHtml(items, maxCount, color, paramsFor) {
+    return items.map(([name, count]) => `
+      <a class="rank-row" href="${makeLink(paramsFor(name), name)}" style="text-decoration:none;color:inherit">
+        <div class="rank-main">
+          <div class="rank-name">${esc(name)}</div>
+          <div class="rank-bar"><div class="rank-fill" style="width:${(count / Math.max(1,maxCount)) * 100}%;background:${color}"></div></div>
+        </div>
+        <div class="rank-count">${count}</div>
+      </a>
+    `).join('');
+  }
+
+  function renderRanks() {
+    document.getElementById('top-themes').innerHTML = rankHtml(themes.slice(0, 8), themes[0]?.[1] || 1, '#4285f4', (name) => ({ theme: name }));
+    document.getElementById('top-audiences').innerHTML = rankHtml(audiences.slice(0, 8), audiences[0]?.[1] || 1, '#34a853', (name) => ({ audience: name }));
+    document.getElementById('top-ai-themes').innerHTML = rankHtml(aiThemes.slice(0, 8), aiThemes[0]?.[1] || 1, '#c62828', (name) => ({ ai_focus: 'AI', theme: name }));
+    document.getElementById('top-not-ai-themes').innerHTML = rankHtml(notAiThemes.slice(0, 8), notAiThemes[0]?.[1] || 1, '#ef6c00', (name) => ({ ai_focus: 'Not AI', theme: name }));
+  }
+
+  function wordStats(subset) {
+    const countsMap = new Map();
+    const sessionSets = new Map();
+    for (const session of subset) {
+      const sessionId = session.url || session.title;
+      const text = [session.title, session.description, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].filter(Boolean).join(' ').toLowerCase();
+      for (const rawWord of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
+        const cleanedWord = rawWord.replace(/^[^a-z0-9+#+]+|[^a-z0-9+#+]+$/g, '');
+        const word = WORD_NORMALIZATION.get(cleanedWord) || cleanedWord;
+        if (!word) continue;
+        if ((word.length < 3 && !SHORT_WORD_ALLOWLIST.has(word)) || STOP_WORDS.has(word)) continue;
+        countsMap.set(word, (countsMap.get(word) || 0) + 1);
+        if (!sessionSets.has(word)) sessionSets.set(word, new Set());
+        sessionSets.get(word).add(sessionId);
+      }
+    }
+    return [...countsMap.entries()].map(([word, count]) => ({ word, count, sessionCount: sessionSets.get(word)?.size || 0, label: WORD_DISPLAY.get(word) || word })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 18);
+  }
+
+  function renderWordCloud(targetId, subset, extraParams = {}) {
+    document.getElementById(targetId).innerHTML = wordStats(subset).map((item) => `
+      <a class="word-chip" href="${makeLink({ q: item.word, ...extraParams }, item.word)}">${esc(item.label)} <small>${item.count}</small></a>
+    `).join('');
+  }
+
+  function companyCounts(subset, { excludeGoogle = false } = {}) {
+    const map = new Map();
+    for (const session of subset) {
+      const seen = new Set();
+      for (const speaker of (session.speakers || [])) {
+        const company = String(speaker.company || '').trim();
+        if (!company || seen.has(company)) continue;
+        seen.add(company);
+        if (excludeGoogle && /^google( cloud)?$/i.test(company)) continue;
+        map.set(company, (map.get(company) || 0) + 1);
+      }
+    }
+    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).slice(0, 12);
+  }
+
+  function renderCompanies() {
+    const topNonGoogle = companyCounts(withLlm, { excludeGoogle: true });
+    const topAiCompanies = companyCounts(aiSessions, { excludeGoogle: true });
+    document.getElementById('top-non-google-companies').innerHTML = rankHtml(topNonGoogle, topNonGoogle[0]?.[1] || 1, '#6a1b9a', (name) => ({ company: name }));
+    document.getElementById('top-ai-companies').innerHTML = rankHtml(topAiCompanies, topAiCompanies[0]?.[1] || 1, '#00acc1', (name) => ({ ai_focus: 'AI', company: name }));
+  }
+
+  function renderObservations() {
+    const leaderShare = audiences.find(([k]) => k === 'Leaders')?.[1] || 0;
+    const devShare = audiences.find(([k]) => k === 'Developers')?.[1] || 0;
+    const topAiTheme = aiThemes[0];
+    const topNotAiTheme = notAiThemes[0];
+    const items = [
+      `AI now represents <strong>${((aiCount / Math.max(1,total)) * 100).toFixed(1)}%</strong> of the full conference catalog (${aiCount}/${total}).`,
+      `The largest overall theme is <strong>${esc(themes[0]?.[0] || 'n/a')}</strong> with <strong>${themes[0]?.[1] || 0}</strong> sessions.`,
+      `Inside AI, the biggest theme is <strong>${esc(topAiTheme?.[0] || 'n/a')}</strong> (${topAiTheme?.[1] || 0} sessions).`,
+      `Outside AI, the biggest theme is <strong>${esc(topNotAiTheme?.[0] || 'n/a')}</strong> (${topNotAiTheme?.[1] || 0} sessions).`,
+      `The audience split suggests more content for <strong>${leaderShare >= devShare ? 'leaders' : 'developers'}</strong> than for the other group (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)} sessions).`,
+    ];
+    document.getElementById('observations').innerHTML = items.map((line) => `<li>${line}</li>`).join('');
+  }
+
+  function renderInterestingSlices() {
+    const slices = [
+      { title: 'AI for Leaders', desc: 'Strategic and executive-facing AI sessions', params: { ai_focus: 'AI', audience: 'Leaders' } },
+      { title: 'AI for Developers', desc: 'Builder-focused AI sessions', params: { ai_focus: 'AI', audience: 'Developers' } },
+      { title: 'AI Infrastructure', desc: 'Where AI meets platforms and ops', params: { ai_focus: 'AI', theme: 'Infra' } },
+      { title: 'Not AI Security', desc: 'Security sessions outside the AI bucket', params: { ai_focus: 'Not AI', theme: 'Security' } },
+      { title: 'Data pros', desc: 'Sessions explicitly aimed at data practitioners', params: { audience: 'Data pros' } },
+      { title: 'Business for Leaders', desc: 'Executive/business-oriented conference framing', params: { theme: 'Business', audience: 'Leaders' } },
+    ];
+    document.getElementById('interesting-slices').innerHTML = slices.map((slice) => `
+      <a class="slice-link" href="${makeLink(slice.params, slice.title)}">
+        <strong>${esc(slice.title)}</strong>
+        <span>${esc(slice.desc)}</span>
+      </a>
+    `).join('');
+  }
+
+  renderStats();
+  renderQuickPivots();
+  renderRanks();
+  renderWordCloud('top-words-all', withLlm);
+  renderWordCloud('top-words-ai', aiSessions, { ai_focus: 'AI' });
+  renderWordCloud('top-words-not-ai', notAiSessions, { ai_focus: 'Not AI' });
+  renderCompanies();
+  renderObservations();
+  renderInterestingSlices();
 
   const svg = document.getElementById('sankey-map');
   const clickMapRes = await fetch('./media/sankey-click-map.json');
   const clickMap = await clickMapRes.json();
   svg.setAttribute('viewBox', `0 0 ${clickMap.viewBox.width} ${clickMap.viewBox.height}`);
+
   const addArea = ({ box, title, params }) => {
     const a = document.createElementNS('http://www.w3.org/2000/svg', 'a');
     a.setAttribute('href', `./index.html?${new URLSearchParams(params).toString()}`);
