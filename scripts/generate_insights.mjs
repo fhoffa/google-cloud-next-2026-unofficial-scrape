@@ -120,7 +120,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
     companyObservationParts.push(`The major consulting firms (${firmList}) add up to <strong>${consultingTotal} sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.`);
   }
   if (anthropicCount > 0) {
-    companyObservationParts.push(`<strong>Anthropic</strong> appears ${anthropicCount} times — Google's AI model investment shows up on stage as a first-class partner, not a footnote.`);
+    companyObservationParts.push(`<strong>Anthropic</strong> appears ${anthropicCount} times — Google's AI model investment earns a recurring stage presence.`);
   }
   companyObservationParts.push('Frequency is the signal — five, ten, twenty sessions means Google put this company on stage repeatedly for a reason.');
 
@@ -173,7 +173,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       notAi: wordStats(notAiSessions).map((item) => ({ ...item, href: makeHref({ q: item.word, ai_focus: 'Not AI' }) })),
     },
     companies: {
-      observationHtml: companyObservationParts.join(' '),
+      observationHtml: companyObservationParts.map((p) => `<li>${p}</li>`).join(''),
       topNonGoogle: topNonGoogle.map(([name, count]) => ({ name, count, href: makeHref({ company: name }) })),
       minimumCount: 2,
       limit: 120,
