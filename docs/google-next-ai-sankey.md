@@ -78,6 +78,16 @@ python3 scripts/make_sankey.py --output tmp/gcp-next-sankey.png
 
 Auto-selects `sessions/classified_sessions.json` when present, otherwise falls back to `sessions/latest.json` with rule-based classification.
 
+### Publishing convention
+
+When publishing to `media/`, use a dated filename:
+
+- `fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_YYYYMMDD.png`
+
+Then update:
+
+- `media/sankey-index.json` (`latest`, `generated_on`, and `history`)
+
 ```bash
 python3 -m venv tmp/sankey-venv
 ./tmp/sankey-venv/bin/pip install matplotlib

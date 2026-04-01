@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import { initSessionSearch } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -189,10 +190,10 @@ function createEnvironment(search = '') {
   return { document, location: locationLike, history };
 }
 
-function createFetch() {
+function createFetch(sourceDataset = dataset) {
   return async () => ({
     async json() {
-      return dataset;
+      return sourceDataset;
     },
   });
 }
@@ -432,6 +433,16 @@ test('speaker/company click behavior is intended to pivot, not narrow further', 
 
 test('index.html links a favicon', () => {
   assert.match(html, /rel="icon"[^>]*href="\.\/favicon\.svg"/);
+});
+
+test('insights page uses contextual sankey filename and index manifest', () => {
+  assert.match(insightsHtml, /fhoffa\.github\.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331\.png/);
+  assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
+  assert.doesNotMatch(insightsHtml, /download-sankey/);
+  assert.match(insightsHtml, /aspect-ratio:4\/5/);
+  assert.match(insightsHtml, /image-missing/);
+  assert.doesNotMatch(insightsHtml, /image-missing \.sankey-map\{display:none\}/);
+  assert.match(insightsHtml, /createElementNS\('http:\/\/www\.w3\.org\/2000\/svg', 'polygon'\)/);
 });
 
 
@@ -698,4 +709,21 @@ test('exclude filter keeps quoted phrases together', async () => {
   assert.equal(result.length, 1, 'only the session with the quoted phrase should be excluded');
   assert.ok(result.some((s) => s.title === 'Learning paths for admins'), 'split words without the phrase should remain');
   assert.ok(!result.some((s) => s.title === 'Classic ML intro'), 'quoted phrase match should be excluded');
+});
+
+test('classification query params filter sessions via llm keys', async () => {
+  const env = createEnvironment('?ai_focus=AI&theme=Security');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'AI security deep dive', url: 'https://example.com/1', topics: [], speakers: [], llm: { ai_focus: 'AI', theme: 'Security', audience: 'Sec pros' } },
+      { title: 'AI data pipelines', url: 'https://example.com/2', topics: [], speakers: [], llm: { ai_focus: 'AI', theme: 'Data', audience: 'Data pros' } },
+      { title: 'Infra migration', url: 'https://example.com/3', topics: [], speakers: [], llm: { ai_focus: 'Not AI', theme: 'Infra', audience: 'Infra/Ops' } },
+    ],
+  });
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /AI security deep dive/);
+  assert.doesNotMatch(appHtml, /AI data pipelines/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /AI focus: AI/);
+  assert.match(env.location.search, /theme=Security/);
 });
