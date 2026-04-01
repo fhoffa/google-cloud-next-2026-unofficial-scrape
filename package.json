@@ -6,6 +6,7 @@
   "description": "Polite scraper for Google Cloud Next session library",
   "scripts": {
     "scrape": "node scrape_google_next.mjs",
+    "build:insights": "node scripts/generate_insights.mjs",
     "test": "node --test tests/*.test.mjs",
     "merge": "node merge_buckets.mjs"
   }

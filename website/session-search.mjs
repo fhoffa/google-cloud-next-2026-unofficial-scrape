@@ -1,3 +1,6 @@
+import { canonicalCompanyName, companyMatchesFilter } from '../lib/company-identity.mjs';
+import { collectWordStatItems } from '../lib/word-stats.mjs';
+
 const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
@@ -100,13 +103,6 @@ function renderFilterPills(filters) {
   return pills.map((pill) => `<button class="filter-pill" type="button" data-clear-filter="${pill.key}">${escHtml(pill.label)} ×</button>`).join('');
 }
 
-const STOP_WORDS = new Set([
-  'the', 'a', 'an', 'and', 'or', 'of', 'to', 'for', 'in', 'on', 'at', 'by', 'with', 'from', 'into', 'your', 'you', 'our', 'their', 'this', 'that', 'these', 'those', 'is', 'are', 'be', 'as', 'it', 'its', 'how', 'why', 'what', 'when', 'where', 'who', 'will', 'can', 'all', 'more', 'new', 'using', 'use', 'build', 'building', 'through', 'across', 'after', 'before', 'about', 'cloud', 'google', 'next', 'session', 'sessions', 'learn', 'join', 'explore', 'discover', 'talks', 'relevant', 'attending', 'shared', 'contact', 'may', 'they'
-]);
-const SHORT_WORD_ALLOWLIST = new Set(['ai', 'ml', 'go']);
-const WORD_NORMALIZATION = new Map([['llms', 'llm'], ['models', 'model'], ['meetups', 'meetup'], ['agents', 'agent'], ['databases', 'database'], ['developers', 'developer'], ['leaders', 'leader'], ['scientists', 'scientist'], ['analysts', 'analyst'], ['managers', 'manager'], ['architects', 'architect'], ['teams', 'team'], ['services', 'service'], ['workshops', 'workshop'], ['breakouts', 'breakout'], ['groups', 'group'], ['applications', 'application']]);
-const WORD_DISPLAY = new Map([['llm', 'LLM/LLMs'], ['model', 'model/models'], ['meetup', 'meetup/meetups'], ['agent', 'agent/agents'], ['database', 'database/databases'], ['developer', 'developer/developers'], ['leader', 'leader/leaders'], ['scientist', 'scientist/scientists'], ['analyst', 'analyst/analysts'], ['manager', 'manager/managers'], ['architect', 'architect/architects'], ['team', 'team/teams'], ['service', 'service/services'], ['workshop', 'workshop/workshops'], ['breakout', 'breakout/breakouts'], ['group', 'group/groups'], ['application', 'application/applications']]);
-
 function splitFilterTerms(value) {
   return String(value || '').match(/"[^"]+"|'[^']+'|\S+/g)?.map((part) => part.replace(/^['"]|['"]$/g, '').trim().toLowerCase()).filter(Boolean) || [];
 }
@@ -191,7 +187,7 @@ export function filterSessions(sessions, filters) {
     if (startAfter && (!startTime || startTime < startAfter)) return false;
     if (startBefore && (!startTime || startTime > startBefore)) return false;
     if (company) {
-      const foundCompany = (session.speakers || []).some((item) => ((item.company || '').toLowerCase().includes(company)));
+      const foundCompany = (session.speakers || []).some((item) => companyMatchesFilter(item.company || '', company));
       if (!foundCompany) return false;
     }
     const llm = session.llm || {};
@@ -261,7 +257,7 @@ function companyStats(sessions) {
   for (const session of sessions) {
     const seen = new Set();
     for (const speaker of (session.speakers || [])) {
-      const company = String(speaker.company || '').trim();
+      const company = canonicalCompanyName(speaker.company);
       if (!company || seen.has(company)) continue;
       seen.add(company);
       if (!byCompany.has(company)) byCompany.set(company, { company, count: 0, sessions: [] });
@@ -283,29 +279,14 @@ function speakerStats(sessions) {
       const entry = bySpeaker.get(name);
       entry.count += 1;
       entry.sessions.push({ title: session.title, url: session.url || '', id: sessionKey(session) });
-      if (!entry.company && speaker.company) entry.company = speaker.company;
+      if (!entry.company && speaker.company) entry.company = canonicalCompanyName(speaker.company);
     }
   }
   return [...bySpeaker.values()].filter((item) => item.count > 1).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
 function wordStats(sessions) {
-  const counts = new Map();
-  const sessionSets = new Map();
-  for (const session of sessions) {
-    const sessionId = sessionKey(session) || session.url || session.title;
-    const text = [session.title, session.description, ...(session.topics || []), ...(session.speakers || []).map((speaker) => speaker.company || '')].filter(Boolean).join(' ').toLowerCase();
-    for (const rawWord of text.match(/[a-z][a-z0-9+.-]*/g) || []) {
-      const cleanedWord = rawWord.replace(/^[^a-z0-9+#+]+|[^a-z0-9+#+]+$/g, '');
-      const word = WORD_NORMALIZATION.get(cleanedWord) || cleanedWord;
-      if (!word) continue;
-      if ((word.length < 3 && !SHORT_WORD_ALLOWLIST.has(word)) || STOP_WORDS.has(word)) continue;
-      counts.set(word, (counts.get(word) || 0) + 1);
-      if (!sessionSets.has(word)) sessionSets.set(word, new Set());
-      sessionSets.get(word).add(sessionId);
-    }
-  }
-  return [...counts.entries()].map(([word, count]) => ({ word, count, sessionCount: sessionSets.get(word)?.size || 0, label: WORD_DISPLAY.get(word) || word })).sort((a, b) => b.count - a.count || a.word.localeCompare(b.word)).slice(0, 96);
+  return collectWordStatItems(sessions, { limit: 96, getSessionId: (session) => sessionKey(session) || session.url || session.title });
 }
 
 function renderTabs(activeView) {
