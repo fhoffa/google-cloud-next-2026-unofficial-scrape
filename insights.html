@@ -93,7 +93,6 @@
           <img id="sankey-image" src="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png" alt="Google Cloud Next 2026 Sankey diagram">
           <svg id="sankey-map" class="sankey-map" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid meet" aria-label="Clickable Sankey segments"></svg>
         </div>
-        <p style="font-size:.85rem;color:#5f6368;margin-top:8px">Image file: <code id="sankey-file-name">fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png</code></p>
       </div>
       <div class="side-stack">
         <div class="card">
@@ -179,7 +178,6 @@
 
   const sankeyWrap = document.getElementById('sankey-wrap');
   const sankeyImage = document.getElementById('sankey-image');
-  const sankeyFileName = document.getElementById('sankey-file-name');
   let currentSankeyFile = DEFAULT_SANKEY;
   try {
     const idxRes = await fetch('./media/sankey-index.json');
@@ -190,7 +188,6 @@
   } catch {}
   const resolvedSankeySrc = /^https?:\/\//.test(currentSankeyFile) ? currentSankeyFile : `./media/${currentSankeyFile}`;
   sankeyImage.src = resolvedSankeySrc;
-  sankeyFileName.textContent = currentSankeyFile.split('/').pop() || currentSankeyFile;
   sankeyImage.addEventListener('error', () => sankeyWrap?.classList.add('image-missing'));
   sankeyImage.addEventListener('load', () => sankeyWrap?.classList.remove('image-missing'));
 
