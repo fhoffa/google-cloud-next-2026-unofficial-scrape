@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Cloud Next 2026 — Changelog</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:title" content="Google Cloud Next 2026 — Changelog">
+  <meta property="og:description" content="Snapshot-by-snapshot changelog for the unofficial Google Cloud Next 2026 session tracker.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Cloud Next 2026 — Changelog">
+  <meta name="twitter:description" content="Snapshot-by-snapshot changelog for the unofficial Google Cloud Next 2026 session tracker.">
+  <meta name="changelog-summary" content="./media/changelog-summary.json">
+  <style>
+    :root {
+      --bg:#f8f9fa; --card:#fff; --text:#202124; --muted:#5f6368; --border:#e8eaed; --link:#1a73e8;
+      --green:#34a853; --red:#c62828; --orange:#ef6c00; --purple:#6a1b9a; --blue:#4285f4;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);margin:0}
+    main{max-width:1100px;margin:0 auto;padding:24px 20px 48px}
+    a{color:var(--link)}
+    .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-bottom:8px}
+    .eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 6px}
+    h1{margin:0;font-size:2.1rem;line-height:1.08}
+    .lede{max-width:900px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 22px}
+    .grid{display:grid;gap:14px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .snapshot-header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+    .snapshot-title{margin:0;font-size:1.15rem}
+    .muted{color:var(--muted)}
+    .summary{margin-top:10px;line-height:1.5}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-size:.84rem;font-weight:600}
+    .badge.added{background:#e6f4ea;color:#137333}
+    .badge.removed{background:#fce8e6;color:#a50e0e}
+    .badge.changed{background:#e8f0fe;color:#174ea6}
+    .badge.full{background:#f3e8fd;color:#6a1b9a}
+    .badge.reopened{background:#fff4e5;color:#b06000}
+    details{margin-top:14px}
+    summary{cursor:pointer;font-weight:600}
+    .section-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+    .mini-card{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+    .mini-card h3{margin:0 0 8px;font-size:1rem}
+    ul{margin:0;padding-left:18px}
+    li{margin:4px 0}
+    code{background:#f1f3f4;padding:2px 5px;border-radius:6px}
+    .empty{color:var(--muted);font-style:italic}
+  </style>
+</head>
+<body>
+  <!-- Generated from templates/changelog.template.html using scripts/generate_changelog.mjs. -->
+  <main data-generated-on="__GENERATED_ON__" data-summary-source="./media/changelog-summary.json">
+    <div class="top">
+      <div>
+        <p class="eyebrow">Snapshot history</p>
+        <h1>Google Cloud Next 2026 — Changelog</h1>
+      </div>
+      <div><a href="./index.html">← Back to session explorer</a></div>
+    </div>
+    <p class="lede">__LEDE__</p>
+
+    <div id="app" class="grid">__CHANGELOG_HTML__</div>
+  </main>
+</body>
+</html>

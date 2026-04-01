@@ -138,16 +138,56 @@ function extractSessionIds(libraryHtml) {
   return unique([...libraryHtml.matchAll(/"session_(\d+)"\s*:\s*\{/g)].map((m) => m[1])).sort();
 }
 
+function extractBalancedJsonObject(text, startIndex) {
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  let started = false;
+  for (let i = startIndex; i < text.length; i += 1) {
+    const ch = text[i];
+    if (!started) {
+      if (ch === '{') {
+        started = true;
+        depth = 1;
+      } else if (/\s/.test(ch)) {
+        continue;
+      } else {
+        return null;
+      }
+      continue;
+    }
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+      } else if (ch === '\\') {
+        escaped = true;
+      } else if (ch === '"') {
+        inString = false;
+      }
+      continue;
+    }
+    if (ch === '"') {
+      inString = true;
+      continue;
+    }
+    if (ch === '{') depth += 1;
+    else if (ch === '}') {
+      depth -= 1;
+      if (depth === 0) return text.slice(startIndex, i + 1);
+    }
+  }
+  return null;
+}
+
 function extractSessionRecordsFromLibrary(libraryHtml) {
   const records = [];
   const marker = 'GoogleAgendaBuilder.show_sessions(';
   const start = libraryHtml.indexOf(marker);
   if (start === -1) return records;
   const jsonStart = start + marker.length;
-  const end = libraryHtml.indexOf('}, 19,1106,', jsonStart);
-  if (end === -1) return records;
+  const jsonText = extractBalancedJsonObject(libraryHtml, jsonStart);
+  if (!jsonText) return records;
 
-  const jsonText = libraryHtml.slice(jsonStart, end + 1);
   try {
     const parsed = JSON.parse(jsonText);
     for (const [key, value] of Object.entries(parsed)) {
@@ -162,6 +202,11 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
         end_time_text: value.end_time || '',
         room: value.location_id || '',
         session_category: value.custom_fields?.c_92132 || '',
+        capacity: value.capacity ?? '',
+        remaining_capacity: value.remaining_capacity ?? '',
+        registrant_count: value.registrantCount ?? '',
+        agenda_status: value.addedInAgenda ?? '',
+        disabled_class: value.disabledClass ?? '',
       });
     }
   } catch {
@@ -345,7 +390,7 @@ function buildDateTime(date, startTime, endTime, fallbackText = '') {
   return fallbackText.trim();
 }
 
-function toSessionRecord(url, html) {
+function toSessionRecord(url, html, seed = {}) {
   const obj = extractJsonObject(html, '_obj_session_modal_p5') || {};
   const first = Object.values(obj)[0] || {};
   const speakers = extractSpeakersArray(html)
@@ -357,13 +402,14 @@ function toSessionRecord(url, html) {
 
   const visibleLocation = extractVisibleLocation(html);
   const visibleDateTime = extractVisibleDateTime(html);
-  const room = first.location_id || visibleLocation || '';
-  const date = first.date || '';
-  const start_time = first.start_time || '';
-  const end_time = first.end_time || '';
+  const room = first.location_id || visibleLocation || seed.room || '';
+  const date = first.date || seed.date_text || '';
+  const start_time = first.start_time || seed.start_time_text || '';
+  const end_time = first.end_time || seed.end_time_text || '';
 
   return {
-    title: first.name || '',
+    id: seed.id || String(first.id || ''),
+    title: first.name || seed.title || '',
     description: extractDescription(html),
     url,
     start_at: buildIsoDateTime(date, start_time),
@@ -375,6 +421,12 @@ function toSessionRecord(url, html) {
     room,
     topics: normalizeTopics(first.custom_fields || {}),
     speakers,
+    session_category: seed.session_category || first.custom_fields?.c_92132 || '',
+    capacity: seed.capacity ?? first.capacity ?? '',
+    remaining_capacity: seed.remaining_capacity ?? first.remaining_capacity ?? '',
+    registrant_count: seed.registrant_count ?? first.registrantCount ?? '',
+    agenda_status: seed.agenda_status ?? first.addedInAgenda ?? '',
+    disabled_class: seed.disabled_class ?? first.disabledClass ?? '',
   };
 }
 
@@ -405,6 +457,12 @@ function toYaml(sessions) {
     lines.push('    start_time_text: ' + yamlScalar(s.start_time_text));
     lines.push('    end_time_text: ' + yamlScalar(s.end_time_text));
     lines.push('    room: ' + yamlScalar(s.room));
+    lines.push('    session_category: ' + yamlScalar(s.session_category));
+    lines.push('    capacity: ' + yamlScalar(s.capacity));
+    lines.push('    remaining_capacity: ' + yamlScalar(s.remaining_capacity));
+    lines.push('    registrant_count: ' + yamlScalar(s.registrant_count));
+    lines.push('    agenda_status: ' + yamlScalar(s.agenda_status));
+    lines.push('    disabled_class: ' + yamlScalar(s.disabled_class));
     lines.push('    topics:');
     if (s.topics.length === 0) {
       lines.push('      []');
@@ -444,7 +502,8 @@ async function main() {
   await ensureDir(BY_DAY_DIR);
   await ensureDir(SNAPSHOTS_DIR);
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
-  const { pages, sessionUrls, buckets } = await collectLibraryPages();
+  const { pages, records: libraryRecords, sessionUrls, buckets } = await collectLibraryPages();
+  const libraryRecordsByUrl = new Map(libraryRecords.map((record) => [record.url, record]));
   let selectedUrls = sessionUrls;
   if (CONFIG.bucket) {
     const bucketUrls = buckets[CONFIG.bucket];
@@ -463,7 +522,8 @@ async function main() {
     const sessionId = idMatch?.[1] || `idx-${i + 1}`;
     console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
     const html = await fetchText(url, { cacheKey: `session-${sessionId}.html` });
-    const record = toSessionRecord(url, html);
+    const seed = libraryRecordsByUrl.get(url) || {};
+    const record = toSessionRecord(url, html, seed);
     sessions.push(record);
     await politeDelay();
   }

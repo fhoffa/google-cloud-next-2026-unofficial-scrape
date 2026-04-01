@@ -221,6 +221,18 @@ test('insights page includes richer intelligence sections', () => {
   assert.match(insightsHtml, /id="company-observations"/);
 });
 
+test('index links to changelog page', () => {
+  assert.match(html, /\.\/changelog\.html/);
+});
+
+test('changelog page is generated from summary artifact', () => {
+  const changelogHtml = fs.readFileSync(new URL('../changelog.html', import.meta.url), 'utf8');
+  assert.match(changelogHtml, /Google Cloud Next 2026 — Changelog/);
+  assert.match(changelogHtml, /data-summary-source="\.\/media\/changelog-summary\.json"/);
+  assert.match(changelogHtml, /Now fully booked/);
+  assert.match(changelogHtml, /Reopened since previous snapshot/);
+});
+
 test('insights page uses sankey index and click-map artifacts instead of hardcoded geometry only', () => {
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-click-map\.json'\)/);

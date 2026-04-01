@@ -109,6 +109,16 @@ This rebuilds the checked-in static `insights.html` page from `templates/insight
 
 The insights generator is now `scripts/generate_insights.mjs`, and the shared word-stat rules live in `config/word-rules.json` so both the website and the generator use the same stop words, normalization, and display labels.
 
+### Regenerate changelog page
+
+```bash
+npm run build:changelog
+```
+
+This rebuilds the checked-in static `changelog.html` page from `templates/changelog.template.html` plus the generated `media/changelog-summary.json` summary artifact.
+
+The changelog generator reads timestamped files from `sessions/snapshots/` and produces snapshot-to-snapshot summaries including additions, removals, meaningful metadata edits, fully booked sessions, reopened sessions, and low-availability movements.
+
 ### Preview the website locally
 
 Use any simple static server from the repo root, for example:
