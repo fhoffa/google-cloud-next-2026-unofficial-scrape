@@ -110,6 +110,10 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
     return sum + (topNonGoogle.find(([n]) => n === name)?.[1] || 0);
   }, 0);
   const anthropicCount = topNonGoogle.find(([n]) => n === 'Anthropic')?.[1] || 0;
+  const wizCount = topNonGoogle.find(([n]) => n === 'Wiz')?.[1] || 0;
+  const nvidiaCount = topNonGoogle.find(([n]) => n === 'NVIDIA')?.[1] || 0;
+  const shopifyCount = topNonGoogle.find(([n]) => n === 'Shopify')?.[1] || 0;
+  const snapCount = topNonGoogle.find(([n]) => n === 'Snap')?.[1] || 0;
 
   const companyObservationParts = [];
   if (topCompany) {
@@ -119,10 +123,18 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
     const firmList = CONSULTING_FIRMS.filter((name) => topNonGoogle.find(([n]) => n === name)).join(', ');
     companyObservationParts.push(`The major consulting firms (${firmList}) add up to <strong>${consultingTotal} sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.`);
   }
+  if (nvidiaCount > 0) {
+    companyObservationParts.push(`<strong>NVIDIA</strong> at #2 (${nvidiaCount} sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.`);
+  }
   if (anthropicCount > 0) {
     companyObservationParts.push(`<strong>Anthropic</strong> appears ${anthropicCount} times — Google's AI model investment earns a recurring stage presence.`);
   }
-  companyObservationParts.push('Frequency is the signal — five, ten, twenty sessions means Google put this company on stage repeatedly for a reason.');
+  if (wizCount > 0) {
+    companyObservationParts.push(`<strong>Wiz</strong> shows up ${wizCount} times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.`);
+  }
+  if (shopifyCount > 0 && snapCount > 0) {
+    companyObservationParts.push(`<strong>Shopify</strong> (${shopifyCount}) and <strong>Snap</strong> (${snapCount}) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.`);
+  }
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
