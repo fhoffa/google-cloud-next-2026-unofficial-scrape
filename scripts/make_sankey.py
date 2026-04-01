@@ -45,6 +45,7 @@ COLORS = {
 
 THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other']
 AUDIENCE_ORDER = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
+BAR_WIDTH = 0.022
 
 
 def split_filter_terms(value: str):
@@ -164,33 +165,62 @@ def stack_within(y0, y1, items, scale, gap=0.005):
     return out
 
 
-def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9):
-    bar_w = 0.028
-    ax.add_patch(Rectangle((x, y0), bar_w, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
-    ax.text(x - 0.008, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
+def draw_multiline_label(ax, x, y_center, lines, *, x_offset=0.008, linespacing=1.0, color='#202124', fontweight='bold'):
+    line_heights = [line['fontsize'] * 0.00112 * linespacing for line in lines]
+    total_height = sum(line_heights)
+    y = y_center + total_height / 2
+    for line, height in zip(lines, line_heights):
+        ax.text(
+            x - x_offset,
+            y - height / 2,
+            line['text'],
+            ha='right',
+            va='center',
+            fontsize=line['fontsize'],
+            color=color,
+            fontweight=line.get('fontweight', fontweight),
+        )
+        y -= height
+
+
+def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True, label_lines=None, x_offset=0.008, linespacing=1.0):
+    ax.add_patch(Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
+    if show_label:
+        if label_lines:
+            draw_multiline_label(ax, x, (y0 + y1) / 2, label_lines, x_offset=x_offset, linespacing=linespacing)
+        else:
+            ax.text(x - x_offset, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
 
 
 def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
-    bar_w = 0.028
     c = (xb - xa) * 0.40
     verts = [
-        (xa + bar_w, ya1), (xa + bar_w + c, ya1), (xb - c, yb1), (xb, yb1),
-        (xb, yb0), (xb - c, yb0), (xa + bar_w + c, ya0), (xa + bar_w, ya0), (xa + bar_w, ya1),
+        (xa + BAR_WIDTH, ya1), (xa + BAR_WIDTH + c, ya1), (xb - c, yb1), (xb, yb1),
+        (xb, yb0), (xb - c, yb0), (xa + BAR_WIDTH + c, ya0), (xa + BAR_WIDTH, ya0), (xa + BAR_WIDTH, ya1),
     ]
     codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.LINETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.CLOSEPOLY]
     ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
 
 
-def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
+def render_sankey(
+    sessions,
+    output_path: Path,
+    *,
+    llm_classified: int = 0,
+    fig_width: float = 24,
+    x_positions=(0.08, 0.34, 0.64, 0.93),
+    min_theme_label: int = 12,
+    min_audience_label: int = 10,
+):
     mid, third, fourth = build_chart_data(sessions)
-    fig, ax = plt.subplots(figsize=(18, 30), dpi=220)
+    fig, ax = plt.subplots(figsize=(fig_width, 30), dpi=220)
     fig.patch.set_facecolor('white')
     ax.set_facecolor('white')
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis('off')
 
-    x0, x1, x2, x3 = 0.14, 0.40, 0.63, 0.88
+    x0, x1, x2, x3 = x_positions
     top_margin, bottom_margin = 0.038, 0.038
     usable_h = 1 - top_margin - bottom_margin
     scale = usable_h / len(sessions)
@@ -200,15 +230,64 @@ def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
 
-    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=13.2)
+    draw_bar(
+        ax,
+        x0,
+        *root,
+        COLORS['root'],
+        'GCP Next',
+        len(sessions),
+        show_label=True,
+        label_lines=[
+            {'text': 'Total:', 'fontsize': 34},
+            {'text': str(len(sessions)), 'fontsize': 34},
+            {'text': 'sessions', 'fontsize': 24},
+        ],
+        x_offset=0.014,
+        linespacing=0.62,
+    )
     for label, value in mid:
-        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=28.5)
+        label_size = 54 if value >= 500 else 46 if value >= 250 else 38
+        count_size = max(28, label_size - 10)
+        draw_bar(
+            ax,
+            x1,
+            *mid_pos[label],
+            COLORS[label],
+            label,
+            value,
+            show_label=True,
+            label_lines=[
+                {'text': f'{label}:', 'fontsize': label_size},
+                {'text': f'{value} sessions', 'fontsize': count_size},
+            ],
+            x_offset=0.012,
+            linespacing=0.68,
+        )
     for parent, items in third.items():
         for label, value in items:
-            draw_bar(ax, x2, *third_pos[parent][label], COLORS.get(label, '#ccc'), label, value, fontsize=11.2)
+            draw_bar(
+                ax,
+                x2,
+                *third_pos[parent][label],
+                COLORS.get(label, '#ccc'),
+                label,
+                value,
+                fontsize=34 if value >= 220 else 28 if value >= 160 else 23 if value >= 110 else 17 if value >= 70 else 14,
+                show_label=value >= min_theme_label,
+            )
     for key, items in fourth.items():
         for label, value in items:
-            draw_bar(ax, x3, *fourth_pos[key][label], COLORS.get(label, '#bbb'), label, value, fontsize=8.8)
+            draw_bar(
+                ax,
+                x3,
+                *fourth_pos[key][label],
+                COLORS.get(label, '#bbb'),
+                label,
+                value,
+                fontsize=26 if value >= 150 else 21 if value >= 110 else 17 if value >= 70 else 13 if value >= 45 else 11,
+                show_label=value >= min_audience_label,
+            )
 
     cursor = root[1]
     for label, value in mid:
@@ -228,10 +307,9 @@ def render_sankey(sessions, output_path: Path, *, llm_classified: int = 0):
             ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
             cursor -= h
 
-    classifier_note = f'LLM-classified ({llm_classified}/{len(sessions)} sessions)' if llm_classified else 'Rule-based classification'
-    ax.text(0.06, 0.986, 'Google Cloud Next 2026 sessions', fontsize=24, fontweight='bold', color='#202124', ha='left')
-    ax.text(0.06, 0.965, 'GCP Next → AI vs Not AI → theme → audience', fontsize=12.6, color='#5f6368', ha='left')
-    ax.text(0.06, 0.948, classifier_note, fontsize=10.1, color='#5f6368', ha='left')
+    ax.text(0.03, 0.988, 'Google Cloud Next 2026 sessions', fontsize=52, fontweight='bold', color='#202124', ha='left')
+    ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
+    ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
@@ -241,6 +319,10 @@ def main():
     parser = argparse.ArgumentParser(description='Generate the Google Cloud Next AI Sankey chart.')
     parser.add_argument('--input', default=None, help='Path to sessions JSON file (default: classified_sessions.json if present, else latest.json)')
     parser.add_argument('--output', default='tmp/gcp-next-sankey-not-ai-maxi.png', help='Path to output PNG')
+    parser.add_argument('--fig-width', default=24, type=float, help='Figure width in inches (height remains 30).')
+    parser.add_argument('--x-positions', default='0.08,0.34,0.64,0.93', help='Comma-separated x positions for columns: root,ai/theme,audience.')
+    parser.add_argument('--min-theme-label', default=12, type=int, help='Hide theme labels below this session count.')
+    parser.add_argument('--min-audience-label', default=10, type=int, help='Hide audience labels below this session count.')
     args = parser.parse_args()
 
     cwd = Path.cwd()
@@ -263,7 +345,19 @@ def main():
     source_label = 'LLM' if llm_classified else 'rule-based'
     print(f"Input: {input_path}  ({llm_classified}/{len(sessions)} sessions with LLM classification — {source_label})")
 
-    render_sankey(sessions, output_path, llm_classified=llm_classified)
+    x_positions = tuple(float(value.strip()) for value in args.x_positions.split(','))
+    if len(x_positions) != 4:
+        raise ValueError('--x-positions must contain exactly 4 comma-separated values')
+
+    render_sankey(
+        sessions,
+        output_path,
+        llm_classified=llm_classified,
+        fig_width=args.fig_width,
+        x_positions=x_positions,
+        min_theme_label=args.min_theme_label,
+        min_audience_label=args.min_audience_label,
+    )
     print(output_path)
 
 
