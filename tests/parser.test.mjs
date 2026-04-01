@@ -64,7 +64,9 @@ test('dedupes and partitions library records into date buckets', () => {
     ...extractSessionRecordsFromLibrary(page2),
   ];
   const deduped = dedupeSessionRecords(records);
-  assert.ok(deduped.length < records.length);
+  assert.ok(deduped.length <= records.length);
+  const uniqueUrls = new Set(deduped.map((record) => record.url));
+  assert.equal(uniqueUrls.size, deduped.length);
   const buckets = partitionSessionRecords(deduped);
   assert.ok(buckets.has('Wednesday, April 22, 2026'));
   assert.ok(buckets.has('Thursday, April 23, 2026'));
