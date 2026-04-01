@@ -5,22 +5,26 @@ This file carries forward open tasks after PR #34 (classification refinement —
 ## What PR 34 changed
 
 - Added "Applied AI" as a sixth theme in the classifier
-- Reclassified 55 sessions into Applied AI (agent-centric, voice/chatbot, agentic workflows)
-- Reclassified 14 sessions into Infra (GKE/Kubernetes-heavy + Cloud Run product sessions)
+- Reclassified 74 sessions into Applied AI (agent-centric, voice/chatbot, agentic workflows)
+- Reclassified sessions into Infra (GKE/Kubernetes-heavy + Cloud Run product sessions)
 - Added `scripts/reclassify_rules.py` for deterministic post-processing
+- Added `scripts/classify_new_sessions_rules.py` for classifying new sessions without LLM
 - Added "Agents & Applied AI" interesting slice to insights
+- Reconciled dataset to **1048 canonical sessions** from the 2026-04-01 snapshot
+- Fixed `make_sankey.py` to recognize Applied AI as a valid theme
 
-## Follow-up 1: reconcile session count to 1048
+## Follow-up 1: re-classify new sessions with LLM when API key is available
 
-Current state:
-- `sessions/latest.json` and `sessions/classified_sessions.json` reflect **1037** sessions
-- Latest meaningful snapshot (`sessions/snapshots/2026-04-01T04-47-15Z.json`) reflects **1048** sessions
+The 59 sessions added from the 2026-04-01 snapshot were classified with deterministic
+rules (`scripts/classify_new_sessions_rules.py`) rather than the LLM. Quality is
+reasonable but not as precise as LLM classification.
 
-Work needed:
-- Copy or re-derive `sessions/latest.json` from the 1048-session snapshot
-- Re-run `scripts/classify_sessions_llm.py` on the ~11 new sessions (resume mode skips already-classified ones)
-- Regenerate `insights.html` and `media/insights-summary.json`
-- Regenerate `changelog.html` and `media/changelog-summary.json`
+When an API key is available, run:
+```
+python3 scripts/classify_sessions_llm.py
+```
+Resume mode will skip already-classified sessions — but to re-do the 59 rule-based
+ones, their `llm` fields would need to be cleared first (or a targeted list passed).
 
 ## Follow-up 2: decide how to surface fullness
 
