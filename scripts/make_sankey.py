@@ -40,12 +40,12 @@ OFFICIAL_AUDIENCE_TAGS = {
 COLORS = {
     'root': '#202124', 'AI': '#4285F4', 'Not AI': '#34A853',
     'Data': '#00ACC1', 'Security': '#43A047', 'Infra': '#FB8C00',
-    'Business': '#F9AB00', 'App dev': '#F28B82', 'Other': '#DADCE0',
+    'Business': '#F9AB00', 'App dev': '#F28B82', 'Applied AI': '#7C4DFF', 'Other': '#DADCE0',
     'Leaders': '#C62828', 'Infra/Ops': '#EF6C00', 'Developers': '#6A1B9A',
     'Data pros': '#00ACC1', 'Sec pros': '#43A047',
 }
 
-THEME_ORDER = ['App dev', 'Security', 'Data', 'Business', 'Infra', 'Other']
+THEME_ORDER = ['App dev', 'Applied AI', 'Security', 'Data', 'Business', 'Infra', 'Other']
 AUDIENCE_ORDER = ['Leaders', 'Sec pros', 'Infra/Ops', 'Data pros', 'Developers']
 BAR_WIDTH = 0.022
 
@@ -78,7 +78,7 @@ def ai_class(session: dict, keywords):
 
 def theme(session: dict) -> str:
     llm = session.get('llm')
-    if llm and llm.get('theme') in ('Security', 'Data', 'Infra', 'App dev', 'Business'):
+    if llm and llm.get('theme') in ('Security', 'Data', 'Infra', 'App dev', 'Applied AI', 'Business'):
         return llm['theme']
     hay = session_haystack(session)
     for label, pattern in THEME_RULES:

@@ -199,6 +199,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
     interestingSlices: [
       { title: 'AI for Leaders', desc: 'AI through a strategy lens, not a coding one', params: { ai_focus: 'AI', audience: 'Leaders' } },
       { title: 'AI for Developers', desc: 'Hands-on AI: building, shipping, and deploying', params: { ai_focus: 'AI', audience: 'Developers' } },
+      { title: 'Agents & Applied AI', desc: 'Deploying agents, voice bots, and agentic workflows', params: { theme: 'Applied AI' } },
       { title: 'AI Infrastructure', desc: 'The infrastructure powering all that AI', params: { ai_focus: 'AI', theme: 'Infra' } },
       { title: 'Security without the AI angle', desc: 'Classic security work — no AI required', params: { ai_focus: 'Not AI', theme: 'Security' } },
       { title: 'Data pros', desc: 'For the people who live in the data layer', params: { audience: 'Data pros' } },
