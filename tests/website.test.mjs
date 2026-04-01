@@ -1,11 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 import { initSessionSearch } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
+const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -220,14 +225,58 @@ test('insights page uses sankey index and click-map artifacts instead of hardcod
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-click-map\.json'\)/);
   assert.match(insightsHtml, /for \(const segment of clickMap\.segments \|\| \[\]\)/);
+  assert.doesNotMatch(insightsHtml, /fetch\('\.\/sessions\/classified_sessions\.json'\)/);
+});
+
+test('insights page is generated from a template and summary artifact', () => {
+  assert.match(insightsHtml, /Generated from templates\/insights\.template\.html using scripts\/generate_insights\.py/);
+  assert.match(insightsHtml, /meta name="insights-summary" content="\.\/media\/insights-summary\.json"/);
+  assert.match(insightsHtml, /data-summary-source="\.\/media\/insights-summary\.json"/);
+  assert.equal(insightsSummary.meta.template, 'templates/insights.template.html');
+  assert.equal(insightsSummary.meta.source, 'sessions/classified_sessions.json');
+  assert.equal(insightsSummary.meta.outputHtml, 'insights.html');
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {
   assert.match(insightsHtml, /<h2>Top companies speaking<\/h2>/);
   assert.doesNotMatch(insightsHtml, /Top companies in AI sessions/);
   assert.match(insightsHtml, /Read this less as a popularity contest and more as a map of repeated external presence/);
-  assert.match(insightsHtml, /slice\(0, 120\)/);
-  assert.match(insightsHtml, /count >= 2/);
+  assert.equal(insightsSummary.companies.limit, 120);
+  assert.equal(insightsSummary.companies.minimumCount, 2);
+  assert.ok(insightsSummary.companies.topNonGoogle.length > 0);
+});
+
+test('insights generator reproduces the checked-in summary and HTML', () => {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'insights-gen-'));
+  const generatedHtmlPath = path.join(tmpDir, 'insights.html');
+  const generatedSummaryPath = path.join(tmpDir, 'insights-summary.json');
+  const repoRoot = fileURLToPath(new URL('..', import.meta.url));
+  const run = spawnSync(
+    'python3',
+    [
+      'scripts/generate_insights.py',
+      '--output-html',
+      generatedHtmlPath,
+      '--output-summary',
+      generatedSummaryPath,
+      '--generated-at',
+      insightsSummary.meta.generatedAt,
+    ],
+    {
+      cwd: repoRoot,
+      encoding: 'utf8',
+    },
+  );
+
+  assert.equal(run.status, 0, run.stderr || run.stdout);
+  assert.deepEqual(
+    JSON.parse(fs.readFileSync(generatedSummaryPath, 'utf8')),
+    insightsSummary,
+  );
+  assert.equal(
+    fs.readFileSync(generatedHtmlPath, 'utf8'),
+    insightsHtml,
+  );
 });
 
 test('website loads the dataset and renders results', async () => {

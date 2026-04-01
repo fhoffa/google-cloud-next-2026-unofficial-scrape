@@ -99,6 +99,14 @@ BUCKET=2026-04-22 npm run scrape                     # scrape one day only
 npm run merge                                        # merge by-day/ files into latest.*
 ```
 
+### Regenerate insights page
+
+```bash
+npm run build:insights
+```
+
+This rebuilds the checked-in static `insights.html` page from `templates/insights.template.html` plus the generated `media/insights-summary.json` summary artifact.
+
 ### Preview the website locally
 
 Use any simple static server from the repo root, for example:
