@@ -114,6 +114,9 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   const nvidiaCount = topNonGoogle.find(([n]) => n === 'NVIDIA')?.[1] || 0;
   const shopifyCount = topNonGoogle.find(([n]) => n === 'Shopify')?.[1] || 0;
   const snapCount = topNonGoogle.find(([n]) => n === 'Snap')?.[1] || 0;
+  const geotabEntry = topNonGoogle.find(([n]) => n === 'Geotab');
+  const geotabCount = geotabEntry?.[1] || 0;
+  const geotabRank = geotabEntry ? topNonGoogle.indexOf(geotabEntry) + 1 : null;
 
   const companyObservationParts = [];
   if (topCompany) {
@@ -134,6 +137,9 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
   }
   if (shopifyCount > 0 && snapCount > 0) {
     companyObservationParts.push(`<strong>Shopify</strong> (${shopifyCount}) and <strong>Snap</strong> (${snapCount}) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.`);
+  }
+  if (geotabCount > 0 && geotabRank) {
+    companyObservationParts.push(`Disclosure: <strong>Geotab</strong> (the author's employer) appears ${geotabCount} times, ranked #${geotabRank}. Make of that what you will.`);
   }
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
