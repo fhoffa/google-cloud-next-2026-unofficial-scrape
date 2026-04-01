@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T17:52:28.528Z",
+    "generatedAt": "2026-04-01T18:15:20.947Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -9,7 +9,7 @@
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
-  "lede": "Nine out of ten sessions at Google Cloud Next 2026 are about AI. This page breaks down what that actually means — and what's waiting in the other 10%.",
+  "lede": "932 of 1,048 sessions at Google Cloud Next 2026 are about AI — 89% of the whole conference. Security is the biggest single theme. The 116 non-AI sessions are where the rest of the cloud story holds out.",
   "stats": [
     {
       "value": "1,048",
@@ -26,7 +26,7 @@
       "value": "Security",
       "label": "Largest theme",
       "sub": "233 sessions",
-      "note": "Spans both AI and non-AI content — building things is the dominant conference mode."
+      "note": "Security runs through both AI and non-AI content — it's the one theme that shows up everywhere."
     },
     {
       "value": "Leaders",
@@ -43,22 +43,16 @@
   "fullness": {
     "stats": [
       {
-        "value": "989",
-        "label": "Sessions with live availability",
-        "sub": "94% of catalog",
-        "note": "59 sessions are missing from the cached library availability feed."
-      },
-      {
         "value": "25",
         "label": "Full now",
         "sub": "3%",
-        "note": "A full session has 0 seats remaining in the cached library feed."
+        "note": "94% of the catalog has a live seat signal. A full session has 0 seats remaining."
       },
       {
         "value": "964",
         "label": "Not full now",
         "sub": "97%",
-        "note": "Everything with a positive remaining-capacity signal collapses into not full."
+        "note": "Everything with a positive remaining-capacity signal."
       },
       {
         "value": "15",
@@ -68,8 +62,7 @@
       }
     ],
     "observations": [
-      "<strong>989</strong> sessions still have a live availability signal, covering <strong>94%</strong> of the catalog; 59 sessions have no current seat signal in the cached library pages.",
-      "<a href=\"./index.html?availability=full\"><strong>Open the full-now list</strong></a> for the 25 sessions that are already sold out, or jump to <a href=\"./index.html?availability=not-full\">sessions that still have seats</a> (964).",
+      "<a href=\"./index.html?availability=full\"><strong>25 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">964 still have seats</a>.",
       "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 15 of 38 (39%) are already full."
     ],
     "rankings": {
@@ -191,7 +184,7 @@
   "observations": [
     "<strong>88.9%</strong> of the entire catalog is AI — 932 of 1048 sessions.",
     "<strong>Security</strong> is the most common theme at <strong>233</strong> sessions, spanning both AI and non-AI content.",
-    "Inside AI, <strong>Data</strong> leads at 207 sessions — builders are clearly the primary target.",
+    "Inside AI, <strong>Data</strong> leads at 207 sessions — data work drives more of the AI agenda than any other theme.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
     "<strong>Leaders</strong> get slightly more sessions than developers (314 vs 265).",
     "The major consulting firms together account for <strong>39 sessions</strong> — more than any single non-Google company on the list."
@@ -703,7 +696,7 @@
     ]
   },
   "companies": {
-    "observationHtml": "<li><strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — a persistent presence throughout the program.</li><li>The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>39 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.</li><li><strong>NVIDIA</strong> at #2 (14 sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.</li><li><strong>Anthropic</strong> appears 9 times — Google's AI model investment earns a recurring stage presence.</li><li><strong>Wiz</strong> shows up 6 times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.</li><li><strong>Shopify</strong> (8) and <strong>Snap</strong> (6) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.</li><li>Disclosure: <a href=\"./index.html?company=Geotab\"><strong>Geotab</strong></a> (employer of <a href=\"https://www.linkedin.com/in/hoffa\">Felipe Hoffa</a>, this site's author) appears 2 times.</li>",
+    "observationHtml": "<li><strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — a persistent presence throughout the program.</li><li>The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>39 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.</li><li><strong>NVIDIA</strong> at #2 (14 sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.</li><li><strong>Anthropic</strong> appears 9 times — Google's AI model investment earns a recurring stage presence.</li><li><strong>Wiz</strong> shows up 6 times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.</li><li><strong>Shopify</strong> (8) and <strong>Snap</strong> (6) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.</li>",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",
