@@ -19,8 +19,8 @@
     .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
     a{color:#1a73e8}
     .sankey-wrap{position:relative;aspect-ratio:4/5;min-height:420px;border-radius:12px;border:1px solid #e8eaed;background:#fff;overflow:hidden}
-    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
-    .sankey-map{position:absolute;inset:0;width:100%;height:100%}
+    .hero img{position:absolute;display:block;object-fit:contain}
+    .sankey-map{position:absolute;display:block}
     .sankey-map a rect,.sankey-map a polygon{fill:transparent;stroke:transparent}
     .sankey-map a:hover rect,.sankey-map a:focus rect,.sankey-map a:hover polygon,.sankey-map a:focus polygon{fill:rgba(26,115,232,.18);stroke:#1a73e8;stroke-width:1}
     .sankey-wrap.image-missing::after{content:'Sankey image unavailable';position:absolute;inset:0;display:grid;place-items:center;color:#5f6368;background:rgba(255,255,255,.65);pointer-events:none}
@@ -40,7 +40,7 @@
     <p>This page hosts the Sankey and links every segment to filtered sessions on the main explorer.</p>
     <div class="hero sankey-wrap" id="sankey-wrap">
       <img id="sankey-image" src="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png" alt="Google Cloud Next 2026 Sankey diagram">
-      <svg id="sankey-map" class="sankey-map" viewBox="0 0 1000 1250" preserveAspectRatio="none" aria-label="Clickable Sankey segments"></svg>
+      <svg id="sankey-map" class="sankey-map" viewBox="0 0 1000 1250" preserveAspectRatio="xMidYMid meet" aria-label="Clickable Sankey segments"></svg>
     </div>
     <p style="font-size:.85rem;color:#5f6368;margin-top:8px">Image file: <code id="sankey-file-name">fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png</code></p>
 
@@ -77,8 +77,33 @@
   sankeyImage.addEventListener('error', () => {
     sankeyWrap?.classList.add('image-missing');
   });
+  const layoutOverlay = () => {
+    if (!sankeyWrap || !sankeyImage || !svg) return;
+    const wrapRect = sankeyWrap.getBoundingClientRect();
+    const naturalWidth = sankeyImage.naturalWidth || 1000;
+    const naturalHeight = sankeyImage.naturalHeight || 1250;
+    if (!wrapRect.width || !wrapRect.height || !naturalWidth || !naturalHeight) return;
+    const scale = Math.min(wrapRect.width / naturalWidth, wrapRect.height / naturalHeight);
+    const displayWidth = naturalWidth * scale;
+    const displayHeight = naturalHeight * scale;
+    const left = (wrapRect.width - displayWidth) / 2;
+    const top = (wrapRect.height - displayHeight) / 2;
+    Object.assign(sankeyImage.style, {
+      left: `${left}px`,
+      top: `${top}px`,
+      width: `${displayWidth}px`,
+      height: `${displayHeight}px`,
+    });
+    Object.assign(svg.style, {
+      left: `${left}px`,
+      top: `${top}px`,
+      width: `${displayWidth}px`,
+      height: `${displayHeight}px`,
+    });
+  };
   sankeyImage.addEventListener('load', () => {
     sankeyWrap?.classList.remove('image-missing');
+    layoutOverlay();
   });
 
   const res = await fetch('./sessions/classified_sessions.json');
@@ -275,6 +300,9 @@
       }
     }
   }
+
+  window.addEventListener('resize', layoutOverlay);
+  layoutOverlay();
 </script>
 </body>
 </html>
