@@ -41,6 +41,8 @@ Current site features include:
   - **Sessions**
   - **Top speakers**
   - **Top words**
+- separate **Sankey + insights** page (`/insights.html`) with segment links back to filtered session explorer views
+  - published Sankey images use contextual dated filenames like `fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_YYYYMMDD.png`
 - Top speakers view with:
   - speakers appearing in multiple sessions
   - clickable speaker names to pivot back into the main sessions view
@@ -131,4 +133,3 @@ See [PRIOR-ART.md](./PRIOR-ART.md) for the full story.
 - The scraper is intentionally conservative: caching, retries, backoff, and one-at-a-time requests.
 - Some session types expose less metadata than others.
 - Made by [Felipe Hoffa](https://www.linkedin.com/in/hoffa/) while walking, using OpenClaw ([my setup](https://www.linkedin.com/posts/hoffa_every-single-technology-company-now-has-activity-7439822998578294784-gyWA)), Claude Code, and Codex.
-
