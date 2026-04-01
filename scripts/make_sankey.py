@@ -4,6 +4,7 @@ import json
 import os
 import re
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
 import matplotlib
@@ -315,10 +316,33 @@ def render_sankey(
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
 
 
+def infer_publish_stamp(input_path: Path, sessions) -> str:
+    candidates = []
+    if input_path.exists():
+        candidates.append(datetime.utcfromtimestamp(input_path.stat().st_mtime))
+    for session in sessions:
+        for key in ('startTime', 'start_time', 'updated', 'updatedAt', 'date'):
+            value = session.get(key)
+            if not value or not isinstance(value, str):
+                continue
+            cleaned = value.replace('Z', '+00:00')
+            try:
+                candidates.append(datetime.fromisoformat(cleaned))
+                break
+            except ValueError:
+                continue
+    if not candidates:
+        return datetime.utcnow().strftime('%Y%m%d')
+    latest = max(candidates)
+    return latest.strftime('%Y%m%d')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Generate the Google Cloud Next AI Sankey chart.')
     parser.add_argument('--input', default=None, help='Path to sessions JSON file (default: classified_sessions.json if present, else latest.json)')
     parser.add_argument('--output', default='tmp/gcp-next-sankey-not-ai-maxi.png', help='Path to output PNG')
+    parser.add_argument('--publish', action='store_true', help='Write to repo media/ using the dated published filename convention.')
+    parser.add_argument('--publish-date', default=None, help='Override publish date suffix YYYYMMDD for --publish output.')
     parser.add_argument('--fig-width', default=24, type=float, help='Figure width in inches (height remains 30).')
     parser.add_argument('--x-positions', default='0.08,0.34,0.64,0.93', help='Comma-separated x positions for columns: root,ai/theme,audience.')
     parser.add_argument('--min-theme-label', default=12, type=int, help='Hide theme labels below this session count.')
@@ -340,6 +364,10 @@ def main():
 
     data = json.loads(input_path.read_text())
     sessions = data['sessions'] if isinstance(data, dict) and 'sessions' in data else data
+
+    if args.publish:
+        stamp = args.publish_date or infer_publish_stamp(input_path, sessions)
+        output_path = cwd / 'media' / f'fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_{stamp}.png'
 
     llm_classified = sum(1 for s in sessions if s.get('llm'))
     source_label = 'LLM' if llm_classified else 'rule-based'
