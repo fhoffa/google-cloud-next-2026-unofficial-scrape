@@ -230,7 +230,7 @@ test('changelog page is generated from summary artifact', () => {
   const changelogSummary = JSON.parse(fs.readFileSync(new URL('../media/changelog-summary.json', import.meta.url), 'utf8'));
   assert.match(changelogHtml, /Google Cloud Next 2026 — Changelog/);
   assert.match(changelogHtml, /data-summary-source="\.\/media\/changelog-summary\.json"/);
-  assert.equal(changelogSummary.meta.windowHours, 12);
+  assert.equal(changelogSummary.meta.mergeNearbyHours, 2);
   if (changelogSummary.updates.length > 0) {
     assert.match(changelogHtml, /Availability changes|Updated sessions|New sessions|Removed sessions/);
   }
