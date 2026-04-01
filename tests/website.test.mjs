@@ -745,3 +745,48 @@ test('company query param filters results and renders an active pill', async () 
   assert.match(appHtml, /Geotab/i);
   assert.match(env.document.getElementById('active-filters').innerHTML, /company: geotab/i);
 });
+
+test('combined insights-style filters render all relevant pills', async () => {
+  const env = createEnvironment('?ai_focus=AI&theme=Security&audience=Sec%20pros');
+  const fetchImpl = createFetch({
+    sessions: [
+      { title: 'AI security deep dive', url: 'https://example.com/1', topics: [], speakers: [], llm: { ai_focus: 'AI', theme: 'Security', audience: 'Sec pros' } },
+      { title: 'AI security for leaders', url: 'https://example.com/2', topics: [], speakers: [], llm: { ai_focus: 'AI', theme: 'Security', audience: 'Leaders' } },
+      { title: 'Not AI security', url: 'https://example.com/3', topics: [], speakers: [], llm: { ai_focus: 'Not AI', theme: 'Security', audience: 'Sec pros' } },
+    ],
+  });
+
+  await initSessionSearch({ document: env.document, fetchImpl, location: env.location, history: env.history, storage: { getItem: () => null, setItem: () => {} }, setTimeoutImpl: (fn) => { fn(); return 1; }, clearTimeoutImpl: () => {} });
+
+  const pills = env.document.getElementById('active-filters').innerHTML;
+  assert.match(pills, /AI focus: AI/);
+  assert.match(pills, /theme: Security/);
+  assert.match(pills, /audience: Sec pros/);
+  assert.match(env.document.getElementById('app').innerHTML, /AI security deep dive/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /AI security for leaders/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Not AI security/);
+});
+
+test('search query param renders a search pill', async () => {
+  const env = createEnvironment('?q=agent');
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.match(env.document.getElementById('active-filters').innerHTML, /search: agent/i);
+});
+
+test('buildSearchFromFilters preserves company alongside other insights filters', async () => {
+  const { buildSearchFromFilters } = await import('../website/session-search.mjs');
+  const search = buildSearchFromFilters({ q: '', exclude: '', speaker: '', topic: '', day: '', sort: 'time', start_after: '', start_before: '', company: 'Geotab', ai_focus: 'AI', theme: 'Security', audience: 'Sec pros', view: 'sessions', sessionids: '' });
+  assert.match(search, /company=Geotab/);
+  assert.match(search, /ai_focus=AI/);
+  assert.match(search, /theme=Security/);
+  assert.match(search, /audience=Sec\+pros/);
+});

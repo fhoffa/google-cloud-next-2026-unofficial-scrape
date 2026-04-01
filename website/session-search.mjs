@@ -422,6 +422,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
+  let companyFilter = state.company || '';
   const classificationFilters = { ai_focus: state.ai_focus || '', theme: state.theme || '', audience: state.audience || '' };
   const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
   const sharedFavorites = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
@@ -456,7 +457,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_before: timeRangeEnd && Number(timeRangeEnd.value) < timeBounds.max ? timeIndexToValue(timeRangeEnd.value) : '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
       sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
-      company: state.company || '',
+      company: companyFilter,
       ai_focus: classificationFilters.ai_focus,
       theme: classificationFilters.theme,
       audience: classificationFilters.audience,
@@ -570,7 +571,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
+        companyFilter = button.dataset.companyName || '';
+        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: companyFilter }));
         render();
       });
     }
@@ -585,7 +587,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         if (favoriteToggle) favoriteToggle.checked = false;
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
-        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: button.dataset.companyName || '' }));
+        companyFilter = button.dataset.companyName || '';
+        history.replaceState(null, '', buildSearchFromFilters({ q: '', speaker: '', topic: '', day: '', sort: DEFAULT_SORT, start_after: '', start_before: '', view: DEFAULT_VIEW, sessionids: '', company: companyFilter }));
         render();
       });
     }
@@ -667,7 +670,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'q') qInput.value = '';
     if (key === 'exclude' && excludeInput) excludeInput.value = '';
     if (key === 'speaker') speakerInput.value = '';
-    if (key === 'company') state.company = '';
+    if (key === 'company') companyFilter = '';
     if (key === 'topic') topicSelect.value = '';
     if (key === 'day') applyDaySelection(dayPills, '');
     if (key === 'time') { if (timeRangeStart) timeRangeStart.value = String(timeBounds.min); if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
@@ -695,7 +698,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     qInput.value = '';
     if (excludeInput) excludeInput.value = '';
     speakerInput.value = '';
-    state.company = '';
+    companyFilter = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
