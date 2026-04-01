@@ -53,7 +53,12 @@ def should_be_applied_ai(session: dict) -> bool:
     if not has_agent_keyword(title):
         return False
     # Either explicit Applied AI tag or Agents tag qualifies
-    return "Applied AI" in topics or "Agents" in topics
+    if "Applied AI" not in topics and "Agents" not in topics:
+        return False
+    # Infra always wins: Kubernetes/Infra/Ops sessions are Infra even with agent keywords
+    if should_be_infra(session):
+        return False
+    return True
 
 
 def should_be_infra(session: dict) -> bool:

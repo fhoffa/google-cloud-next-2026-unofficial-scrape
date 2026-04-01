@@ -38288,6 +38288,1979 @@
         "audience": "Infra/Ops",
         "reasoning": "Non-AI; Business theme and General audience based on title, description, and topic tags."
       }
+    },
+    {
+      "title": "Agentic AI in CX \u2014 Now and next with Dialpad and Randstad",
+      "description": "CX is entering a new era defined by agentic AI\u2014systems that can act, decide, and optimize in real time. Dialpad\u2019s CTO outlines what this means for the future of customer experience and is joined by Randstad\u2019s CIO to share how these concepts are taking shape at scale. Explore how leading organizations are unifying CX and building for an AI-driven future.\n\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3888644/agentic-ai-in-cx-\u2014-now-and-next-with-dialpad-and-randstad",
+      "start_at": "2026-04-23T13:15:00",
+      "end_at": "2026-04-23T14:00:00",
+      "date_time": "2026-04-23T13:15:00/2026-04-23T14:00:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "1:15 PM",
+      "end_time_text": "2:00 PM",
+      "room": "Partner Spotlights",
+      "topics": [
+        "Spotlights",
+        "General",
+        "APIs",
+        "Applied AI",
+        "Architecture",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Infrastructure Architects & Admins",
+        "Partner Innovation"
+      ],
+      "speakers": [
+        {
+          "name": "Ryan Henry",
+          "company": "Randstad US"
+        },
+        {
+          "name": "Brian Peterson",
+          "company": "Dialpad"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
+      "description": "The era of the \"\"single prompt\"\" is over. To solve complex, real-world problems\u2014from automating creator engagement to localizing artistic webcomics\u2014industry leaders are moving toward sophisticated agent architectures. Join Stan and Toonsutra for an inside look at how they orchestrated specialized AI agents to automate creativity, commerce, and personalization at scale on Google Cloud.\n\nPresenting Companies\nStan | The Creator Economy Agent: Discover how Stan (getstan.app) is revolutionizing how creators manage their businesses. Learn how they deployed agentic workflows to automate high-intent interactions, turning a creator's link-in-bio into a proactive sales engine. We\u2019ll break down the architecture behind their \"\"AI Assistant\"\" agents that handle everything from lead qualification to personalized product recommendations, allowing creators to scale their impact without increasing their workload.\nToonsutra | The Multimodal Localization Pipeline: India\u2019s #1 webtoon platform reveals their four-agent automated engine for vision-based text extraction and \"\"chapter-aware\"\" character profiling, alongside in-context image editing\u2014replacing dialogue inside speech bubbles while perfectly preserving original typography, alignment, and character voice across Indian languages.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920556/agentic-ai-social-commerce-webtoons-and-the-future-of-personalized-experiences",
+      "start_at": "2026-04-22T11:30:00",
+      "end_at": "2026-04-22T11:50:00",
+      "date_time": "2026-04-22T11:30:00/2026-04-22T11:50:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "11:30 AM",
+      "end_time_text": "11:50 AM",
+      "room": "Customer Theater",
+      "topics": [
+        "Lightning Talks",
+        "Customer Story",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Vishal Anand",
+          "company": "Toonsutra"
+        },
+        {
+          "name": "Parth Chadha",
+          "company": "Stan"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "AI with a mission: From strategy to high-stakes impact",
+      "description": "Mission-driven AI is transforming today\u2019s most high-stakes domains by turning strategy into real-world outcomes. Join leaders from the Cancer AI Alliance (CAIA), PayPal, and Deloitte to hear how CAIA\u2019s federated platform accelerates cancer research and how PayPal leverages Google Cloud to power trusted commerce. You will leave with proven strategies for building resilient data foundations, operationalizing responsible AI, and turning purpose into practice within a complex, highly regulated ecosystem.\n\n\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3915273/ai-with-a-mission-from-strategy-to-high-stakes-impact",
+      "start_at": "2026-04-22T12:15:00",
+      "end_at": "2026-04-22T13:00:00",
+      "date_time": "2026-04-22T12:15:00/2026-04-22T13:00:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "12:15 PM",
+      "end_time_text": "1:00 PM",
+      "room": "Partner Spotlights",
+      "topics": [
+        "Spotlights",
+        "General",
+        "Applied AI",
+        "Gemini",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Customer Story",
+        "Partner Innovation"
+      ],
+      "speakers": [
+        {
+          "name": "Ranjit Bawa",
+          "company": "Deloitte"
+        },
+        {
+          "name": "Brian Bot",
+          "company": "Cancer AI Alliance (CAIA)"
+        },
+        {
+          "name": "Mani Iyer",
+          "company": "PayPal"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "AIOps at scale: Production-ready infrastructure with Cluster Director",
+      "description": "Advanced AI workloads demand absolute reliability, yet teams are routinely slowed by complex configurations and unpredictable hardware failures. Join us to discover how Google Cloud\u2019s Cluster Director is fundamentally changing large-scale distributed AI. Explore how to automate the full infrastructure life cycle, deploying reliable, topology-aware clusters in minutes and optimizing \u201cDay 2\u201d operations with automated health checks. Learn how Cluster Director integrates Google\u2019s most advanced compute, networking, and storage into a unified managed control plane.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913105/aiops-at-scale-production-ready-infrastructure-with-cluster-director",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "date_time": "2026-04-22T11:00:00/2026-04-22T11:45:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "11:00 AM",
+      "end_time_text": "11:45 AM",
+      "room": "Breakers A",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Compute",
+        "Observability",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Infrastructure Architects & Admins",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Ilias Katsardis",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Abhijith Prabhudev",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Align stakeholders on a path forward",
+      "description": "Drive progress with Gemini for Google Workspace. Discover how AI manages the meeting lifecycle - from effortless scheduling to focused participation and instant summaries that turn conversations into clear, actionable results.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920447/align-stakeholders-on-a-path-forward",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Gemini at Work",
+      "topics": [
+        "Demos",
+        "Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "An inside look at the evolution of agent development",
+      "description": "Generative AI has evolved from collaborator to strategic partner. But the leap from \u201ccool demo\u201d to production accuracy meant overcoming hallucinations and context boundaries. In this session, learn how Google built our autonomous workforce. We\u2019ll deconstruct our shift from reactive prompting to strategic planning. Whether you\u2019re building your own agents or deploying ours, join us to gain the architectural principles for the next era of agency. The time for mere assistance is over, and the era of autonomous action is here.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912332/an-inside-look-at-the-evolution-of-agent-development",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "date_time": "2026-04-22T11:00:00/2026-04-22T11:45:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "11:00 AM",
+      "end_time_text": "11:45 AM",
+      "room": "Oceanside C",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Data Analytics",
+        "Agents",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Database Professionals",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Yasmeen Ahmad",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Architecting the future: Enterprise-scale agentic AI platforms for energy",
+      "description": "The energy sector is rapidly shifting from traditional automation to autonomous agent ecosystems. NRG's journey demonstrates how a comprehensive agentic AI platform (GASI) serves as the foundational infrastructure enabling multiple AI agents to orchestrate complex workflows across customer service, pricing optimization, and operational excellence. Learn how NRG leveraged Google Cloud's AI with Quantiphi's expertise to build a unified multi-agent ecosystem while maintaining enterprise-grade security and comprehensive observability frameworks.\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3908671/architecting-the-future-enterprise-scale-agentic-ai-platforms-for-energy",
+      "start_at": "2026-04-24T11:00:00",
+      "end_at": "2026-04-24T11:45:00",
+      "date_time": "2026-04-24T11:00:00/2026-04-24T11:45:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "11:00 AM",
+      "end_time_text": "11:45 AM",
+      "room": "South Seas D",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Applied AI",
+        "Architecture",
+        "Cost Optimization",
+        "Application Developers",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Database Professionals",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Security Professionals",
+        "Customer Story",
+        "Partner Innovation",
+        "Sustainability",
+        "Technology & Leadership",
+        "Small IT Teams",
+        "Startup",
+        "Technology",
+        "Financial Services"
+      ],
+      "speakers": [
+        {
+          "name": "Asif Hasan",
+          "company": "Quantiphi"
+        },
+        {
+          "name": "Gaurav Johar",
+          "company": "Quantiphi"
+        },
+        {
+          "name": "Meryl Thomas",
+          "company": "Quantiphi"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Boost AI inference speed and efficiency",
+      "description": "Deploy and scale custom models using advanced inference techniques including disaggregated serving, intelligent routing, and heterogeneous accelerator support.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920554/boost-ai-inference-speed-and-efficiency",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "AI Infrastructure",
+      "topics": [
+        "Demos",
+        "Advanced Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Build conversational agents on PostgreSQL and MySQL",
+      "description": "Give your conversational data agents a long-term memory. Use CloudSQL to retain context over time, and leverage a dynamic knowledge graph for precise, enterprise-scale management and retrieval.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920461/build-conversational-agents-on-postgresql-and-mysql",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Data Cloud",
+      "topics": [
+        "Demos",
+        "Technical",
+        "Databases",
+        "Database Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "Data pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Build secure-by-design applications for Google Cloud",
+      "description": "\u201cSecure by design\u201d extends beyond architecture; it requires cloud infrastructure that actively defends itself. This technical session will detail how to proactively protect workloads on Google Cloud by integrating Security Command Center protection capabilities with Google Cloud\u2019s Application Design Center.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913052/build-secure-by-design-applications-for-google-cloud",
+      "start_at": "2026-04-24T13:45:00",
+      "end_at": "2026-04-24T14:30:00",
+      "date_time": "2026-04-24T13:45:00/2026-04-24T14:30:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "1:45 PM",
+      "end_time_text": "2:30 PM",
+      "room": "Mandalay Bay L",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Security",
+        "Security Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Sowmya Karmali",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Wael Manasra",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Building AI agents at scale with CVS",
+      "description": "Learn from CVS as they walk through their journey of building and scaling AI agents on Google Cloud. Taking agents from a prototype to scaled production requires robust infrastructure, and in this session, you'll discover how to achieve this using ADK and Google\u2019s modular AI Agent builder platform.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920481/building-ai-agents-at-scale-with-cvs",
+      "start_at": "2026-04-24T13:15:00",
+      "end_at": "2026-04-24T13:35:00",
+      "date_time": "2026-04-24T13:15:00/2026-04-24T13:35:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "1:15 PM",
+      "end_time_text": "1:35 PM",
+      "room": "Customer Theater",
+      "topics": [
+        "Lightning Talks",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership",
+        "Healthcare & Life Sciences"
+      ],
+      "speakers": [
+        {
+          "name": "Keith Baldwin",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Bhanu Nune",
+          "company": "CVS"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Data pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Building an Agentic Platform using Ray Serve LLM and vLLM on GKE",
+      "description": "Discover how to deploy Qwen model on Google Kubernetes Engine (GKE) using Ray Serve and vLLM for high-throughput, low-latency inference. This session provides a guide to integrating an ADK agent for sophisticated chat and tool usage, leveraging TPU-enabled nodes for intensive workloads. Explore Ray native features for autoscaling and fault tolerance while gaining a blueprint to transform LLMs into dynamic \"Agentic\" systems - a key requirement for enterprises building next-generation AI applications.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3932301/building-an-agentic-platform-using-ray-serve-llm-and-vllm-on-gke",
+      "start_at": "2026-04-22T16:00:00",
+      "end_at": "2026-04-22T16:25:00",
+      "date_time": "2026-04-22T16:00:00/2026-04-22T16:25:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "4:00 PM",
+      "end_time_text": "4:25 PM",
+      "room": "Developer Theater",
+      "topics": [
+        "Lightning Talks",
+        "Technical"
+      ],
+      "speakers": [
+        {
+          "name": "Seiji Eicher",
+          "company": "Anyscale"
+        },
+        {
+          "name": "Amrutha Singh",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "CISO Connect Reception",
+      "description": "Sponsored by Accenture & PwC\nAfter a day of impactful sessions, join us on the veranda for a well-earned change of pace. This is your time to unwind with colleagues and our partners from Accenture and PwC in a relaxed outdoor setting. Enjoy refreshments and heavy appetizers as we transition from the day's insights to the next part of your stay in Las Vegas.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3952516/ciso-connect-reception",
+      "start_at": "2026-04-22T17:30:00",
+      "end_at": "2026-04-22T19:00:00",
+      "date_time": "2026-04-22T17:30:00/2026-04-22T19:00:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "5:30 PM",
+      "end_time_text": "7:00 PM",
+      "room": "Veranda Terrace",
+      "topics": [
+        "CISO Connect"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "Not AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "CISO Connect: Security in the Next Era",
+      "description": "CISO Connect is an exclusive gathering of your peers for a day of high-level strategy and candid conversation. This isn\u2019t just another track; it\u2019s a deep dive into the initiatives shaping our industry.\n\nHear directly from Google\u2019s security leadership\u2014including Francis deSouza, Sandra Joyce, Royal Hansen and Heather Adkins \u2014alongside fellow CISOs navigating the same front lines as you.\n\nWhat we\u2019re tackling:\n\n\nIntelligence-Led Defense: Gain fresh visibility into the modern threat landscape and learn how to translate front-line intelligence into executive action.\nThe Evolution of the SOC: Exploring the shift toward \"Agentic\" security and how autonomous capabilities are redefining incident response and operational scale.\nArchitecting for the Future: A strategic look at building resilient systems that can withstand the convergence of AI, quantum computing, and a hyper-connected global infrastructure.\nPeer Leadership & Resilience: Candid discussions with top CISOs on driving a security culture that enables\u2014rather than hinders\u2014rapid business growth.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3947405/ciso-connect-security-in-the-next-era",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T17:30:00",
+      "date_time": "2026-04-22T11:00:00/2026-04-22T17:30:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "11:00 AM",
+      "end_time_text": "5:30 PM",
+      "room": "Four Seasons Ballroom",
+      "topics": [
+        "CISO Connect"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Cloud TPUs and GPUs",
+      "description": "Optimize AI training and inference with Google Cloud\u2019s TPUs and GPUs, the purpose-built accelerators behind AI Hypercomputer.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920442/cloud-tpus-and-gpus",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "AI Infrastructure",
+      "topics": [
+        "Demos",
+        "Introductory",
+        "Compute",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Sustainability",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Customize Gemini CLI with extensions and MCP servers",
+      "description": "Go beyond built-in tools by customizing Gemini CLI with extensions and MCP servers. Get hands-on and connect Gemini CLI to external tools to bridge the gap between the model and your unique needs.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920474/customize-gemini-cli-with-extensions-and-mcp-servers",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Terminal Velocity",
+      "topics": [
+        "Demos",
+        "Introductory",
+        "App Dev",
+        "Gemini",
+        "Application Developers",
+        "Partner Innovation",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Defending against OWASP top 10 for agentic apps",
+      "description": "Learn how to use new agentic capabilities together with Google Cloud security tools and Apigee to protect agents and tools from top OWASP agentic risks.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920532/defending-against-owasp-top-10-for-agentic-apps",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Security",
+      "topics": [
+        "Demos",
+        "Technical",
+        "APIs",
+        "Security",
+        "Vertex AI",
+        "Application Developers",
+        "Security Professionals"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Deliver price-performance with workload-optimized VMs",
+      "description": "Build, deploy, and scale applications on leading performance and price-performance compute designed for speed, scale, and TCO.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920477/deliver-price-performance-with-workload-optimized-vms",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "AI Infrastructure",
+      "topics": [
+        "Demos",
+        "Advanced Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "Not AI",
+        "theme": "Infra",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Drive clinical action with AI agents",
+      "description": "Start transforming healthcare delivery. This demo illustrates how to move from insights to clinical action by leveraging the best of Google Cloud\u2019s advanced AI capabilities combined with enterprise-grade security. We will showcase practical, real-world applications designed to drive significantly better health outcomes.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920548/drive-clinical-action-with-ai-agents",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Industry Hub",
+      "topics": [
+        "Demos",
+        "Technical",
+        "Data Analytics",
+        "Gemini",
+        "Application Developers",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Empower AI agents with Google MCP servers",
+      "description": "Want to securely connect AI agents to Google Cloud services using MCP servers? Check out how an agent analyzes trends in BigQuery, maps locations, and deploys Cloud Run services without writing custom integration code.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920543/empower-ai-agents-with-google-mcp-servers",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Code to Cloud App Dev",
+      "topics": [
+        "Demos",
+        "Advanced Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "From experimentation to enterprise value: How Cox scaled AI for impact",
+      "description": "Cox shifted from AI experimentation to enterprise-scale impact by focusing on a few high\u2011value domains, starting with the contact center. Join us as Danielle Kimmel breaks down how targeted generative AI pilots, like knowledge management, quickly proved valuable and evolved into a full contact center transformation with Google Cloud. Learn how Cox, with Capgemini as a strategic partner, aligned teams, scaled what worked, and turned AI innovation into measurable business outcomes. By attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3881979/from-experimentation-to-enterprise-value-how-cox-scaled-ai-for-impact",
+      "start_at": "2026-04-23T14:45:00",
+      "end_at": "2026-04-23T15:30:00",
+      "date_time": "2026-04-23T14:45:00/2026-04-23T15:30:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "2:45 PM",
+      "end_time_text": "3:30 PM",
+      "room": "Surf C",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Data Analytics",
+        "Cloud Runtimes",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Sustainability",
+        "Customer Story",
+        "Telecommunications",
+        "Retail"
+      ],
+      "speakers": [
+        {
+          "name": "Danielle Kimmel",
+          "company": "Cox Communications"
+        },
+        {
+          "name": "Jennifer Marchand",
+          "company": "Capgemini"
+        },
+        {
+          "name": "Gabriel Tinti",
+          "company": "Capgemini"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "GKE supercluster: Powering secure, planetary scale for AI workloads",
+      "description": "Discover the future of secure AI, co-designed by Google and Anthropic. This session unveils GKE supercluster, a new Google Kubernetes Engine (GKE) architecture that decouples the control plane from the data plane to shatter scaling limits, managing over one million accelerator chips as a single, unified pool. The Titanium Intelligence Enclave delivers hardware-attested, \"sealed vault\" security, ensuring proprietary AI model weights remain cryptographically invisible to cloud providers and platform admins. You'll learn how to secure and train the world's most demanding AI models at scale.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912915/gke-supercluster-powering-secure-planetary-scale-for-ai-workloads",
+      "start_at": "2026-04-23T16:00:00",
+      "end_at": "2026-04-23T16:45:00",
+      "date_time": "2026-04-23T16:00:00/2026-04-23T16:45:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "4:00 PM",
+      "end_time_text": "4:45 PM",
+      "room": "South Seas H",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Kubernetes",
+        "Security",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "IT Managers & Business Leaders",
+        "Security Professionals",
+        "Customer Story",
+        "Small IT Teams",
+        "Startup",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Greg Castle",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Glen Messenger",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Google Cloud x Team USA",
+      "description": "Building an AI analysis engine for Olympic winter sports.\n\nDiscover how Team USA uses Google Cloud to extract lab-grade biomechanical data directly from standard video. Explore interactive demo stations to analyze elite runs frame-by-frame, trace the history of winter sports innovation.\n\nCome by at 11:30 AM on Wednesday to catch a Q&A with U.S. Olympians Alex Hall and Colby Stevenson.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920462/google-cloud-x-team-usa",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Google Cloud x Team USA",
+      "topics": [
+        "Demos",
+        "General",
+        "Gemini",
+        "Vertex AI",
+        "Application Developers",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Database Professionals",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "How Google Cloud and Cyderes Deliver AI-Powered & Context-Driven Security Operations",
+      "description": "Enterprises today struggle with fragmented security stacks, slow investigations, and rising telemetry costs that hinder effective threat detection and response. This session outlines a modern approach to SecOps that combines the power of Google Cloud, AI, and SIEM capabilities with Cyderes\u2019 data fabric platform to drive measurable outcomes for clients, inject pace into operations, and enable continuous fortification. Attendees will learn why managing data through the lens of \u2018Detection' and \u2018Context' accelerates and enhances threat detection, reduces analyst workload and time spent, and surfaces critical risks before they become incidents.\n\n\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920431/how-google-cloud-and-cyderes-deliver-ai-powered-context-driven-security-operations",
+      "start_at": "2026-04-24T12:10:00",
+      "end_at": "2026-04-24T12:30:00",
+      "date_time": "2026-04-24T12:10:00/2026-04-24T12:30:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "12:10 PM",
+      "end_time_text": "12:30 PM",
+      "room": "Security Hub",
+      "topics": [
+        "Lightning Talks",
+        "Technical"
+      ],
+      "speakers": [
+        {
+          "name": "Brian Garrett",
+          "company": "Cyderes"
+        },
+        {
+          "name": "John Kuhn",
+          "company": "Cyderes"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "How we build and use Gemini CLI at Google Cloud",
+      "description": "Have you ever wondered how we use our own tools to build themselves? In this session, you'll go behind the scenes of the Gemini CLI, where we\u2019ll show you how we\u2019re evolving it from a command line into an enterprise-grade developer agent. You will explore our modular capabilities for complex workflows, specifically focusing on skills and extensions. We\u2019ll provide a deep dive into agent-to-agent (A2A) communication, demonstrating how we use it to supercharge the CLI with local and remote agents. And we'll detail how we address the challenge of scale, ensuring speed and security for Google-scale development.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3911930/how-we-build-and-use-gemini-cli-at-google-cloud",
+      "start_at": "2026-04-22T12:30:00",
+      "end_at": "2026-04-22T13:15:00",
+      "date_time": "2026-04-22T12:30:00/2026-04-22T13:15:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "12:30 PM",
+      "end_time_text": "1:15 PM",
+      "room": "South Seas J",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "App Dev",
+        "Architecture",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Security Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Sehoon Shon",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Adam Weidman",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Influential Communication: The Power of Speaking with Precision, Presence, and Purpose",
+      "description": "Your ability to influence is only as strong as your ability to communicate. In this compelling session, Nada Lena Nasserdeen\u2014founder of Rise Up For You\u2014reveals how to master the art and science of transformative communication.\n\nMove beyond transactional directives and learn to speak with precision, command presence, and drive purpose. Whether in 1:1s or boardrooms, this session empowers you to connect deeply and inspire action. Stop just relaying information\u2014start driving results through the power of influential communication.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4045148/influential-communication-the-power-of-speaking-with-precision-presence-and-purpose",
+      "start_at": "2026-04-23T14:30:00",
+      "end_at": "2026-04-23T15:15:00",
+      "date_time": "2026-04-23T14:30:00/2026-04-23T15:15:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "2:30 PM",
+      "end_time_text": "3:15 PM",
+      "room": "Community Lounge",
+      "topics": [
+        "Lounge Sessions",
+        "General",
+        "Business Intelligence"
+      ],
+      "speakers": [
+        {
+          "name": "Nada Lena Nasserdeen",
+          "company": "Rise Up For You"
+        }
+      ],
+      "llm": {
+        "ai_focus": "Not AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Innovate faster with Flutter",
+      "description": "Learn how Talabat, a leading Middle Eastern delivery platform, unified their development teams by migrating from native iOS and Android apps to Flutter. Join us to explore how this transition removed organizational silos and enabled faster feature delivery across 9 diverse markets. Discover practical strategies for scaling cross-platform development while maintaining high performance for millions of users. Learn how Flutter can help your team move faster and focus on delivering consistent, high-quality customer experiences globally.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3911937/innovate-faster-with-flutter",
+      "start_at": "2026-04-23T08:15:00",
+      "end_at": "2026-04-23T09:00:00",
+      "date_time": "2026-04-23T08:15:00/2026-04-23T09:00:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "8:15 AM",
+      "end_time_text": "9:00 AM",
+      "room": "South Seas J",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "App Dev",
+        "Migration",
+        "Mobile and Web",
+        "Application Developers",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Marketplace: Enabling the era of the agentic enterprise",
+      "description": "To maximize agentic AI value, customers must overcome hurdles in security, integration, and trust. This session will offer a blueprint for building the trusted agentic enterprise. Learn how leaders like Palo Alto Networks and ServiceNow have packaged and deployed agents via Google Cloud Marketplace that integrate into existing workflows. Builders will also discover how to monetize and deploy governed solutions through Gemini Enterprise. And finally, we\u2019ll examine real-world examples of organizations that are realizing ROI from implementing trusted solutions.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913029/marketplace-enabling-the-era-of-the-agentic-enterprise",
+      "start_at": "2026-04-22T12:15:00",
+      "end_at": "2026-04-22T13:00:00",
+      "date_time": "2026-04-22T12:15:00/2026-04-22T13:00:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "12:15 PM",
+      "end_time_text": "1:00 PM",
+      "room": "South Seas H",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Vertex AI",
+        "Agents",
+        "Application Developers",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Partner Innovation",
+        "Startup",
+        "Technology & Leadership",
+        "Financial Services"
+      ],
+      "speakers": [
+        {
+          "name": "Pritish Sinha",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Satish Thomas",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Jerry Ting",
+          "company": "Workday"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Maximize your cloud ROI: A developer's approach to cost optimization",
+      "description": "Managing cloud price-performance requires moving beyond static dashboards to contextualized, agentic insights. This session provides a technical blueprint for integrating granular cost-utilization data directly into your enterprise environment. Learn how to architect automated workflows that pinpoint spikes within networking solutions and products like BigQuery to help you proactively optimize your costs. Join us to discover how you can use the power of Gemini Cloud Assist to accelerate root-cause analysis of cost anomalies by correlating them to infrastructure changes.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913054/maximize-your-cloud-roi-a-developer's-approach-to-cost-optimization",
+      "start_at": "2026-04-23T08:00:00",
+      "end_at": "2026-04-23T08:45:00",
+      "date_time": "2026-04-23T08:00:00/2026-04-23T08:45:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "8:00 AM",
+      "end_time_text": "8:45 AM",
+      "room": "Mandalay Bay I",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Cost Optimization",
+        "Gemini",
+        "Application Developers",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Infrastructure Architects & Admins",
+        "Customer Story",
+        "Technology & Leadership",
+        "Media & Entertainment"
+      ],
+      "speakers": [
+        {
+          "name": "Frank Dice",
+          "company": "Major League Baseball"
+        },
+        {
+          "name": "Fahd Ekadioin",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Gobind Johar",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: AI for Academic & Career Navigation: Curiosity to Clarity",
+      "description": "Old Dominion University, with Resultant and Google\u2019s AI Career Pathways platform instantly generates personalized academic plans. It aligns student interests with workforce outcomes, transforming static info into dynamic, AI-guided journeys, demystifying higher education for all students.\n\n\n\nSpeakers:\nSindhu Adini, Vice President, Resultant\nChrysoula Malogianni, PH.D., Vice President for Digital Innovation & Chief Digital Experience Officer, ODU",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037809/mission-talk-ai-for-academic-career-navigation-curiosity-to-clarity",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "Customer Story",
+        "Partner Innovation",
+        "Education",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: Compliant Intelligence: Bringing Google Gemini to the GCC High Tenant",
+      "description": "Securely bridge Gemini AI to Microsoft GCC High with Noctua\u2019s agentic workflow. For government Gemini users, the Secure Data Agent performs Intelligent Discovery to find SharePoint files and uses Human-in-the-Loop validation to ingest context without moving data.\n\n\n\nSpeaker:\nTony Carnevale, Chief Exective Officer, Noctua Technology",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037807/mission-talk-compliant-intelligence-bringing-google-gemini-to-the-gcc-high-tenant",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Databases",
+        "Gemini",
+        "Partner Innovation",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: From 30 Days to 30 Seconds: Scaling Permit Reviews with GenAI",
+      "description": "For natural resource and regulatory agency directors: Watch Gemini-powered agents transform the permitting journey by automating the extraction and compliance validation of 70+ data fields. We demonstrate a shift from a 30-day manual review process to an instantaneous review in 30-seconds.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037799/mission-talk-from-30-days-to-30-seconds-scaling-permit-reviews-with-genai",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "Gemini",
+        "Customer Story",
+        "Partner Innovation",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: Querying Pharmacy Supplies with Gemini Live and Agentic Telephony",
+      "description": "Medical providers struggle because pharmacy medication stock isn't easily accessible, leading to time-consuming calls by nurses to find prescribed drugs for patients. World Wide Technology's \"Pharmacy Stock app\" solves this using agentic AI and telephony technology built on Google Cloud and Gemini Live API. The app automatically calls nearby pharmacies, inquires about medication supply, and records the results on a live dashboard. This frees up staff for other tasks, improves patient care by guiding them to in-stock medications, and saves valuable time for medical staff.\n\n\n\nSpeaker:\nGreg Heier, Technical Solutions Architect, World Wide Technology",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037810/mission-talk-querying-pharmacy-supplies-with-gemini-live-and-agentic-telephony",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "App Dev",
+        "Partner Innovation",
+        "Government",
+        "Healthcare & Life Sciences"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: Reimagining Sourcing and Procurement with Agentic AI",
+      "description": "For public sector procurement teams bogged down by manual processes and siloed systems, this demo showcases how the Orion Agentic AI platform automates the end-to-end sourcing workflow. It delivers faster, more accurate contract reviews, ensures near-100% compliance, and slashes cycle times, freeing your enterprise to focus on strategic priorities.\n\n\n\nSpeaker:\nKevin Youel Page, Special Executive, Deloitte",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037792/mission-talk-reimagining-sourcing-and-procurement-with-agentic-ai",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "Partner Innovation",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talk: Revolutionizing Data Extraction with NESDIS and Agentic AI",
+      "description": "Our AI Agent autonomously parses unstructured email requests to identify, validate, and structure mission data for NESDIS operational teams. Using Gemini, it filters inboxes and extracts info for system execution, transforming manual triage into automated operational efficiency.\n\n\n\nSpeaker:\nNam Nguyen, Director of Engineering, SZNS Solutions",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037800/mission-talk-revolutionizing-data-extraction-with-nesdis-and-agentic-ai",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "Partner Innovation",
+        "Financial Services",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Mission Talks: AI Evidence Intelligence for Federal Investigations",
+      "description": "Digital Hangar's agentic AI, powered by Google Gemini 2.5 Flash and Google\u2019s agent development kit, transforms federal law enforcement investigations. It autonomously extracts, correlates, and synthesizes insights from massive volumes of unstructured video and document evidence. The intelligent platform processes multi-modal evidence, generates structured, traceable reports, and surfaces critical connections across sources, moving investigators from evidence ingestion to actionable intelligence in days instead of weeks.\n\n\n\nSpeaker:\nDavid Lindabuam, Managing Director, Generative AI Center of Excellence Lead, AFS",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4037804/mission-talks-ai-evidence-intelligence-for-federal-investigations",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Public Sector Hub",
+      "topics": [
+        "Expo Experiences",
+        "Technical",
+        "Agents",
+        "Gemini",
+        "Partner Innovation",
+        "Government"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Modern day executive protection",
+      "description": "In an era when executives are increasingly targeted, safeguarding leadership is a critical imperative. This discussion will highlight the need for a unified approach that combines cyber threat intelligence and strategic readiness to mitigate evolving physical and cybersecurity risks.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913101/modern-day-executive-protection",
+      "start_at": "2026-04-24T09:45:00",
+      "end_at": "2026-04-24T10:15:00",
+      "date_time": "2026-04-24T09:45:00/2026-04-24T10:15:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "9:45 AM",
+      "end_time_text": "10:15 AM",
+      "room": "Reef F",
+      "topics": [
+        "Discussion Groups",
+        "Advanced Technical",
+        "Security",
+        "Security Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Samantha Lewis",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "Not AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "NeuroContext: The next modality is your brain",
+      "description": "Have you ever struggled to put thoughts into words, only for an LLM to miss the mark? Welcome to the next evolution of AI. NeuroContext is a brain-driven interface that enables Gemini to interpret your cognitive state in real time. By pioneering Brain-Computer Interfaces (BCI), Gemini gains the ability to sense whether you are engaged, exhausted, or overwhelmed, adapting its responses to match. Moving beyond text, voice, and video, it uses the human brain as a core input to provide relevant answers by meeting your cognitive needs instantly.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920497/neurocontext-the-next-modality-is-your-brain",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Gemini Playspace",
+      "topics": [
+        "Demos",
+        "Technical",
+        "Applied AI",
+        "Gemini",
+        "Application Developers",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Optimize Google Kubernetes Engine to run AI agents",
+      "description": "Keep your business moving forward while bringing all your tools together. Use Google Kubernetes Engine to run powerful AI agents efficiently.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920530/optimize-google-kubernetes-engine-to-run-ai-agents",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "AI Infrastructure",
+      "topics": [
+        "Demos",
+        "Advanced Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Randstad accelerates cloud migration with TCS and Google Cloud",
+      "description": "With rapidly evolving market demands, Randstad is leveraging the contextual knowledge in modernization from Tata Consultancy Services (TCS) and scalable, secure infrastructure from \u00a0Google Cloud to enhance operational agility, improve time-to-market, and drive innovation across their global businesses. Join this session to understand how to enable faster application modernization and greater resilience, as enterprises pivot to a future-ready IT landscape.\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3975391/randstad-accelerates-cloud-migration-with-tcs-and-google-cloud",
+      "start_at": "2026-04-23T10:30:00",
+      "end_at": "2026-04-23T11:15:00",
+      "date_time": "2026-04-23T10:30:00/2026-04-23T11:15:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "10:30 AM",
+      "end_time_text": "11:15 AM",
+      "room": "South Seas B",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Compute",
+        "Migration",
+        "Security",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Customer Story"
+      ],
+      "speakers": [
+        {
+          "name": "Sandeep Singh",
+          "company": "Tata Consultancy Services"
+        }
+      ],
+      "llm": {
+        "ai_focus": "Not AI",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Reinventing Grocery Retail: How Albertsons Uses Databricks on Google Cloud to Unlock Data and AI",
+      "description": "Albertsons, one of the largest grocery and pharmacy retailers in the United States, is reinventing grocery retail with Databricks on Google Cloud as its unified data and AI platform. Using a governed lakehouse, learn how Albertsons designed its Databricks on Google Cloud architecture, established governance and data quality best practices, and operationalized data and AI use cases.\n\n\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4036717/reinventing-grocery-retail-how-albertsons-uses-databricks-on-google-cloud-to-unlock-data-and-ai",
+      "start_at": "2026-04-24T09:30:00",
+      "end_at": "2026-04-24T09:50:00",
+      "date_time": "2026-04-24T09:30:00/2026-04-24T09:50:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "9:30 AM",
+      "end_time_text": "9:50 AM",
+      "room": "Expo Theater 1",
+      "topics": [
+        "Lightning Talks",
+        "General",
+        "Business Intelligence",
+        "Data Analytics"
+      ],
+      "speakers": [
+        {
+          "name": "Patrick Nolan",
+          "company": "Databricks"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Scaling in the agentic era with AI Hypercomputer",
+      "description": "AI Infrastructure demands have shifted from simple inference to complex reasoning for autonomous agents. Join this session to explore how Flipkart re-engineered for the agentic era and how Baseten provides the low-latency, high-throughput inference platform required for agents to think and execute in real time. You'll leave with a technical framework for building agent-ready infrastructure that balances massive scale with cost-efficiency.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4033994/scaling-in-the-agentic-era-with-ai-hypercomputer",
+      "start_at": "2026-04-24T12:30:00",
+      "end_at": "2026-04-24T13:15:00",
+      "date_time": "2026-04-24T12:30:00/2026-04-24T13:15:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "12:30 PM",
+      "end_time_text": "1:15 PM",
+      "room": "South Seas F",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Agents",
+        "Architecture",
+        "Compute",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership",
+        "Retail"
+      ],
+      "speakers": [
+        {
+          "name": "Colin McGrath",
+          "company": "Baseten"
+        },
+        {
+          "name": "Cheng Wei",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Seat at the table: Boost your AI & Cloud confidence with 'Launchpad for Women'",
+      "description": "AI is reshaping the workforce, but a 25% adoption gap for women threatens to stall career parity. It\u2019s time to move from \"AI-curious\" to \"AI-certified.\" Join this session to learn about \"Launchpad for Women,\" a no-cost program designed to help you become a Google Cloud \"Gen AI Leader.\" With 80% of certified learners reporting accelerated promotions, this is more than training\u2014it's a career catalyst. Don't just watch the digital transformation; lead it. Grab your seat at the table and drive the future of your organization today.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/4057398/seat-at-the-table-boost-your-ai-cloud-confidence-with-'launchpad-for-women'",
+      "start_at": "2026-04-23T13:00:00",
+      "end_at": "2026-04-23T13:30:00",
+      "date_time": "2026-04-23T13:00:00/2026-04-23T13:30:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "1:00 PM",
+      "end_time_text": "1:30 PM",
+      "room": "Community Lounge",
+      "topics": [
+        "Lounge Sessions",
+        "General",
+        "Education"
+      ],
+      "speakers": [
+        {
+          "name": "Krista MacGillivray",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Kate Rivera",
+          "company": "Google"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Secure innovation with Google Cloud",
+      "description": "Secure your AI, data, and infrastructure with Google Cloud Security Foundation.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920533/secure-innovation-with-google-cloud",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Security",
+      "topics": [
+        "Demos",
+        "Technical",
+        "Security",
+        "Executive",
+        "Security Professionals"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Shopping agent best practices: Bridge the gap between concept and conversion",
+      "description": "How do you ensure your shopping agent actually drives ROI? This roundtable focuses on the Day 2 realities of deployment. Bring your specific architectural questions and learn how to navigate integration challenges, optimize agent responses for retail accuracy, and anticipate user friction points before they impact your bottom line.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3932015/shopping-agent-best-practices-bridge-the-gap-between-concept-and-conversion",
+      "start_at": "2026-04-23T09:00:00",
+      "end_at": "2026-04-23T09:30:00",
+      "date_time": "2026-04-23T09:00:00/2026-04-23T09:30:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "9:00 AM",
+      "end_time_text": "9:30 AM",
+      "room": "Lunch Caf\u00e9 (L2)",
+      "topics": [
+        "Birds of a Feather",
+        "General",
+        "Applied AI",
+        "Vertex AI",
+        "IT Managers & Business Leaders"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Smart moves: Building resilient transportation systems with AI",
+      "description": "From moving millions of commuters across a city to deploying urgent emergency supplies, government agencies are leveraging advanced AI and geospatial intelligence to reshape the secure, safe, and efficient movement of goods, services, and people across the world\u2019s most complex transportation and supply networks. Join this session to discover how agencies are overcoming critical hurdles in service delivery and operational efficiency, using AI to architect a blueprint for efficient, modern, and resilient systems of the future.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912314/smart-moves-building-resilient-transportation-systems-with-ai",
+      "start_at": "2026-04-24T09:45:00",
+      "end_at": "2026-04-24T10:30:00",
+      "date_time": "2026-04-24T09:45:00/2026-04-24T10:30:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "9:45 AM",
+      "end_time_text": "10:30 AM",
+      "room": "Breakers A",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Applied AI",
+        "Gemini",
+        "Vertex AI",
+        "Application Developers",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership",
+        "Public Sector",
+        "Education"
+      ],
+      "speakers": [
+        {
+          "name": "Carlos Braceras",
+          "company": "Utah Department of Transportation"
+        },
+        {
+          "name": "Anant Dinamani",
+          "company": "Deloitte Consulting LLP"
+        },
+        {
+          "name": "Kristin White",
+          "company": "Google Public Sector"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Sovereign AI",
+      "description": "Run Google\u2019s agentic AI within your sovereign environment. Use Google Distributed Cloud to keep data residency and security locked down while powering high-performance AI tools that stay behind your own firewall.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920551/sovereign-ai",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "AI Infrastructure",
+      "topics": [
+        "Demos",
+        "Advanced Technical",
+        "Compute",
+        "Executive",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Sustainability",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Infra",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Stop Chasing Alerts: Fight Agentic Attacks with next-gen MSSPs",
+      "description": "You don\u2019t need to be a security expert to protect your organization against the next wave of threats. Security teams are drowning in alerts, and traditional managed security models simply aren't fast enough to keep up with today's sophisticated, agentic attacks. In this rapid-fire lightning talk, Google Cloud Security leaders will explore how AI-driven, agentic security operations are transforming customer outcomes. Discover how next-gen managed security service providers (MSSPs) leverage Google's agentic SOC to move beyond basic alert triage. Learn how to quickly implement these expert resources to fight AI with AI, drastically reduce alert fatigue, and remediate threats in real-time.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920561/stop-chasing-alerts-fight-agentic-attacks-with-next-gen-mssps",
+      "start_at": "2026-04-24T13:40:00",
+      "end_at": "2026-04-24T14:00:00",
+      "date_time": "2026-04-24T13:40:00/2026-04-24T14:00:00",
+      "date_text": "Friday, April 24, 2026",
+      "start_time_text": "1:40 PM",
+      "end_time_text": "2:00 PM",
+      "room": "Security Hub",
+      "topics": [
+        "Lightning Talks",
+        "Technical",
+        "Security"
+      ],
+      "speakers": [
+        {
+          "name": "Jonas Kelley",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Pietro Verzi",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Talk to your data with Gemini Enterprise",
+      "description": "Join us for a session on an upcoming capability that connects Google Gemini with Oracle AI Database, enabling natural-language interaction with enterprise data through a managed conversational experience.\n\nWe\u2019ll walk through the end-to-end flow\u2014from capturing user intent to generating and executing database queries, and returning clear, readable results. We\u2019ll also cover key considerations for operational readiness and how this capability reduces the need for custom NL-to-SQL solutions, helping accelerate time to value for builders and enterprise teams.\n\n\n\n\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920343/talk-to-your-data-with-gemini-enterprise",
+      "start_at": "2026-04-22T14:00:00",
+      "end_at": "2026-04-22T14:20:00",
+      "date_time": "2026-04-22T14:00:00/2026-04-22T14:20:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "2:00 PM",
+      "end_time_text": "2:20 PM",
+      "room": "Expo Theater 1",
+      "topics": [
+        "Lightning Talks",
+        "Technical",
+        "Databases",
+        "Multicloud"
+      ],
+      "speakers": [
+        {
+          "name": "Rick Houlihan",
+          "company": "Oracle"
+        },
+        {
+          "name": "Arpan Shah",
+          "company": "Oracle"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "The agents among us",
+      "description": "As AI agents grow more autonomous, we need to know if we can trust them. Agents can be unpredictable, which raises the stakes on every decision they make. This session will explore how to build that trust through the monitoring and iteration of various LLMs \u2013 namely Google Gemini models \u2013 available via Vertex AI. We\u2019ll examine how observability reveals agent reasoning, while controlled experiments and LLM-as-a-judge frameworks enable scalable evaluation. By implementing continuous evaluation, developers can create a safety net for change \u2013 transforming opacity into confidence using Datadog\u2019s observability ecosystem.\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3900517/the-agents-among-us",
+      "start_at": "2026-04-23T12:00:00",
+      "end_at": "2026-04-23T12:45:00",
+      "date_time": "2026-04-23T12:00:00/2026-04-23T12:45:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "12:00 PM",
+      "end_time_text": "12:45 PM",
+      "room": "Lagoon H",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Gemini",
+        "Vertex AI"
+      ],
+      "speakers": [
+        {
+          "name": "Giovanni Peralto",
+          "company": "Datadog"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "The intelligence layer: Building AI-first customer experience",
+      "description": "The AI landscape is transforming from fragmented experiments to unified infrastructure. Join representatives from Dialpad to discover how 2026 will mark the shift to integrated intelligence ecosystems, and how technologies like Agent2Agent and Vertex AI enable features like AI Playbooks \u2013 where AI agents function as a scalable workforce, insights drive exponential outcomes, and customer experience becomes one continuous conversation across voice and digital channels.\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3879138/the-intelligence-layer-building-ai-first-customer-experience",
+      "start_at": "2026-04-22T12:30:00",
+      "end_at": "2026-04-22T13:15:00",
+      "date_time": "2026-04-22T12:30:00/2026-04-22T13:15:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "12:30 PM",
+      "end_time_text": "1:15 PM",
+      "room": "Jasmine C",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Applied AI",
+        "Architecture",
+        "Cost Optimization",
+        "Executive",
+        "IT Managers & Business Leaders",
+        "Infrastructure Architects & Admins",
+        "Customer Story"
+      ],
+      "speakers": [
+        {
+          "name": "Calvin Hohener",
+          "company": "Dialpad"
+        },
+        {
+          "name": "Shezan Kazi",
+          "company": "Dialpad"
+        },
+        {
+          "name": "Tanvi Kopardekar",
+          "company": "Dialpad"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "The new way to use Spark: Intelligent, automated, and lightning fast",
+      "description": "Google Cloud is redefining possibilities for building open lakehouse architectures with Apache Spark. Join us to learn about the latest updates designed to help you develop, deploy, and manage Spark workloads easier, smarter, and faster. Explore how to develop and troubleshoot Spark pipelines using Gemini-driven agentic developer experiences. Learn to execute jobs faster with Lightning Engine, use serverless Spark for automated job execution, and build NoOps (no operations) pipelines that integrate seamlessly with Vertex AI and BigQuery. And discover how Lowe\u2019s built their enterprise data pipelines on Google Cloud.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912240/the-new-way-to-use-spark-intelligent-automated-and-lightning-fast",
+      "start_at": "2026-04-23T08:00:00",
+      "end_at": "2026-04-23T08:45:00",
+      "date_time": "2026-04-23T08:00:00/2026-04-23T08:45:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "8:00 AM",
+      "end_time_text": "8:45 AM",
+      "room": "Oceanside C",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "Architecture",
+        "Data Analytics",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership",
+        "Retail"
+      ],
+      "speakers": [
+        {
+          "name": "Susheel Kaushik",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Saurabh Kumar",
+          "company": "Lowe's"
+        },
+        {
+          "name": "Abhishek Modi",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Devanathan Rajagopalan",
+          "company": "Lowe's"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Troubleshoot applications with Gemini",
+      "description": "Use Gemini Cloud Assist to root-cause networking or storage issues in your Google Cloud projects, and see Gemini-assisted recommendations to help resolve your issue.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920542/troubleshoot-applications-with-gemini",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Code to Cloud App Dev",
+      "topics": [
+        "Demos",
+        "Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Tune, evaluate, and scale with Vertex AI",
+      "description": "Accelerate AI innovation from experimental to production. Use Vertex AI for managed tuning, rigorous eval, and scalable serving to transform open-source models into enterprise value with minimal overhead.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920540/tune-evaluate-and-scale-with-vertex-ai",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Build AI Apps & Agents",
+      "topics": [
+        "Demos",
+        "Technical"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Business",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Unlock agentic collaboration in Google Chat",
+      "description": "Workspace Discussion Group.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3952907/unlock-agentic-collaboration-in-google-chat",
+      "start_at": "2026-04-23T10:30:00",
+      "end_at": "2026-04-23T11:00:00",
+      "date_time": "2026-04-23T10:30:00/2026-04-23T11:00:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "10:30 AM",
+      "end_time_text": "11:00 AM",
+      "room": "Reef B",
+      "topics": [
+        "Discussion Groups",
+        "General",
+        "Workspace"
+      ],
+      "speakers": [
+        {
+          "name": "Angela Ying",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Applied AI",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Vibing with Gemini CLI: Custom Web AI solutions and shareable skills",
+      "description": "Google\u2019s Gemini 3 offers a leap forward in creating technically complex solutions when integrated with standard web-engineering workflows. Join Googlers Jason Mayes, Web AI lead, and Alex Astrum, developer relations engineer, to learn how seasoned engineers can use Gemini CLI to save a staggering amount of time. Mayes will demonstrate Web AI solutions, using LiteRT.js to create a vector search system with minimal effort while maintaining control. And Astrum will cover creating reusable skills that your team can lean on to scale out productivity gains.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912264/vibing-with-gemini-cli-custom-web-ai-solutions-and-shareable-skills",
+      "start_at": "2026-04-23T17:15:00",
+      "end_at": "2026-04-23T18:00:00",
+      "date_time": "2026-04-23T17:15:00/2026-04-23T18:00:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "5:15 PM",
+      "end_time_text": "6:00 PM",
+      "room": "Jasmine C",
+      "topics": [
+        "Breakouts",
+        "Advanced Technical",
+        "App Dev",
+        "Chrome",
+        "Application Developers",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Alex Astrum",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Jason Mayes",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "What's new in network security",
+      "description": "The threat landscape is evolving faster than ever with AI-driven attacks. Staying ahead requires the latest defenses \u2013 do not leave your network exposed. This session will provide a complete wrap-up of Google Cloud\u2019s newest Cross-Cloud Network security features. Come explore the latest in AI-powered capabilities that allow Cloud Next Generation Firewall, DNS Armor, and Google Cloud Armor to address advanced network threats. We\u2019ll also demonstrate a new capability designed to streamline network security operations by assisting with policy generation, recommendation, and simulation. Get all the critical updates you need to secure your hybrid and multicloud environments with confidence.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912970/what's-new-in-network-security",
+      "start_at": "2026-04-22T12:30:00",
+      "end_at": "2026-04-22T13:15:00",
+      "date_time": "2026-04-22T12:30:00/2026-04-22T13:15:00",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_time_text": "12:30 PM",
+      "end_time_text": "1:15 PM",
+      "room": "Breakers C",
+      "topics": [
+        "Breakouts",
+        "Introductory",
+        "Security",
+        "Security Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [
+        {
+          "name": "Sundar Jayashekar",
+          "company": "Palo Alto Networks"
+        },
+        {
+          "name": "Maxim Porges",
+          "company": "Google Cloud"
+        },
+        {
+          "name": "Sid Shibiraj",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "What's new in Spanner: Enterprise-scale AI, search, graph, and analytics",
+      "description": "Discover how Spanner is redefining the future of databases. Join this session to learn how to power agentic AI with integrated vectors, graphs, and search. Explore how to build interactive global applications with geo-partitioning and latency optimizations. Find out how the Spanner columnar engine unifies transactions and analytics, delivering real-time insights without data movement. Learn from leading organizations why Spanner is the database for what\u2019s next, from modernizing critical, always-on, and secure systems to building a new generation of autonomous applications.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912267/what's-new-in-spanner-enterprise-scale-ai-search-graph-and-analytics",
+      "start_at": "2026-04-23T11:45:00",
+      "end_at": "2026-04-23T12:30:00",
+      "date_time": "2026-04-23T11:45:00/2026-04-23T12:30:00",
+      "date_text": "Thursday, April 23, 2026",
+      "start_time_text": "11:45 AM",
+      "end_time_text": "12:30 PM",
+      "room": "Mandalay Bay I",
+      "topics": [
+        "Breakouts",
+        "Technical",
+        "App Dev",
+        "Databases",
+        "Application Developers",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Database Professionals",
+        "DevOps",
+        "IT Ops",
+        "Platform Engineers",
+        "SREs",
+        "Infrastructure Architects & Admins",
+        "IT Managers & Business Leaders",
+        "Customer Story",
+        "Technology & Leadership",
+        "Games"
+      ],
+      "speakers": [
+        {
+          "name": "Wilson Chan",
+          "company": "Electronic Arts"
+        },
+        {
+          "name": "Shalin Shekhar",
+          "company": "Sony"
+        },
+        {
+          "name": "Dave Weissman",
+          "company": "Google Cloud"
+        }
+      ],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "App dev",
+        "audience": "General",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
+    },
+    {
+      "title": "Zero-copy sharing with SAP, Salesforce, and ServiceNow",
+      "description": "Break silos with open data sharing. Analyze SAP, Salesforce, and ServiceNow\ndata using Zero-Copy tech to join logs and inventory instantly. Solve complex supply chain problems in minutes.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3920558/zero-copy-sharing-with-sap-salesforce-and-servicenow",
+      "start_at": "",
+      "end_at": "",
+      "date_time": "",
+      "date_text": "",
+      "start_time_text": "",
+      "end_time_text": "",
+      "room": "Data Cloud",
+      "topics": [
+        "Demos",
+        "Introductory",
+        "Data Analytics",
+        "Databases",
+        "Data Analysts",
+        "Data Scientists",
+        "Data Engineers",
+        "Database Professionals",
+        "Technology & Leadership"
+      ],
+      "speakers": [],
+      "llm": {
+        "ai_focus": "AI",
+        "theme": "Data",
+        "audience": "Data pros",
+        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+      }
     }
   ]
 }
