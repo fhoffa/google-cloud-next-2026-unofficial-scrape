@@ -122,6 +122,77 @@ function friendlyDate(text) {
   return Number.isNaN(parsed.getTime()) ? text : parsed.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 }
 
+function overlapCount(leftItems, rightItems) {
+  const left = new Set((leftItems || []).map((item) => String(item || '').toLowerCase().trim()).filter(Boolean));
+  const right = new Set((rightItems || []).map((item) => String(item || '').toLowerCase().trim()).filter(Boolean));
+  let count = 0;
+  for (const item of left) {
+    if (right.has(item)) count += 1;
+  }
+  return count;
+}
+
+function scoreReplacementCandidate(removed, added) {
+  let score = 0;
+  const reasons = [];
+  if ((removed.date_text || '') && removed.date_text === added.date_text) {
+    score += 3;
+    reasons.push('same day');
+  }
+  if ((removed.start_time_text || '') && removed.start_time_text === added.start_time_text) {
+    score += 4;
+    reasons.push('same start time');
+  }
+  if ((removed.end_time_text || '') && removed.end_time_text === added.end_time_text) {
+    score += 2;
+    reasons.push('same end time');
+  }
+  if ((removed.room || '') && removed.room === added.room) {
+    score += 4;
+    reasons.push('same room');
+  }
+  const topicOverlap = overlapCount(removed.topics, added.topics);
+  if (topicOverlap) {
+    score += Math.min(3, topicOverlap);
+    reasons.push(topicOverlap === 1 ? 'shared topic' : 'shared topics');
+  }
+  const removedSpeakers = (removed.speakers || []).map((speaker) => speaker?.name || '').filter(Boolean);
+  const addedSpeakers = (added.speakers || []).map((speaker) => speaker?.name || '').filter(Boolean);
+  const speakerOverlap = overlapCount(removedSpeakers, addedSpeakers);
+  if (speakerOverlap) {
+    score += Math.min(4, speakerOverlap * 2);
+    reasons.push(speakerOverlap === 1 ? 'shared speaker' : 'shared speakers');
+  }
+  return { score, reasons };
+}
+
+function detectReplacements(removedList, addedList) {
+  const candidates = [];
+  removedList.forEach((removed, removedIndex) => {
+    addedList.forEach((added, addedIndex) => {
+      const { score, reasons } = scoreReplacementCandidate(removed, added);
+      if (score >= 7) {
+        candidates.push({ removedIndex, addedIndex, removed, added, score, reasons });
+      }
+    });
+  });
+  candidates.sort((a, b) => b.score - a.score || a.removedIndex - b.removedIndex || a.addedIndex - b.addedIndex);
+  const usedRemoved = new Set();
+  const usedAdded = new Set();
+  const replacements = [];
+  for (const candidate of candidates) {
+    if (usedRemoved.has(candidate.removedIndex) || usedAdded.has(candidate.addedIndex)) continue;
+    usedRemoved.add(candidate.removedIndex);
+    usedAdded.add(candidate.addedIndex);
+    replacements.push(candidate);
+  }
+  return {
+    replacements,
+    unmatchedRemoved: removedList.filter((_, index) => !usedRemoved.has(index)),
+    unmatchedAdded: addedList.filter((_, index) => !usedAdded.has(index)),
+  };
+}
+
 function parseArgs(argv) {
   const options = {
     snapshotsDir: 'sessions/snapshots',
@@ -205,6 +276,7 @@ function compareSnapshots(previous, current) {
   const currentLimited = currentAvailabilityKnown.filter((session) => availabilityBand(session) === 'limited');
   const materialChanges = changed.filter((item) => item.materialFields.length > 0);
   const minorChanges = changed.filter((item) => item.materialFields.length === 0 && item.minorFields.length > 0);
+  const replacementDetection = detectReplacements(removed, added);
 
   return {
     previous: {
@@ -224,11 +296,19 @@ function compareSnapshots(previous, current) {
       fullSharePhrase: percentagePhrase(currentFull.length, currentAvailabilityKnown.length),
       hasReopened: reopened.length > 0,
       hasMaterialChanges: materialChanges.length > 0,
-      hasAdditions: added.length > 0,
-      hasRemovals: removed.length > 0,
+      hasAdditions: replacementDetection.unmatchedAdded.length > 0,
+      hasRemovals: replacementDetection.unmatchedRemoved.length > 0,
+      hasReplacements: replacementDetection.replacements.length > 0,
     },
-    added: added.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    removed: removed.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    replacements: replacementDetection.replacements.slice(0, 12).map((item) => ({
+      removedTitle: item.removed.title,
+      removedUrl: item.removed.url || '',
+      addedTitle: item.added.title,
+      addedUrl: item.added.url || '',
+      reasons: item.reasons,
+    })),
+    added: replacementDetection.unmatchedAdded.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    removed: replacementDetection.unmatchedRemoved.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     nowFull: nowFull.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     reopened: reopened.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     nowLimited: nowLimited.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
@@ -247,6 +327,7 @@ function compareSnapshots(previous, current) {
 
 function summarySentence(diff) {
   const parts = [];
+  if (diff.summary.hasReplacements) parts.push('some sessions look like one-to-one substitutions');
   if (diff.summary.hasAdditions) parts.push('new sessions showed up');
   if (diff.summary.hasRemovals) parts.push('some sessions disappeared');
   if (diff.summary.hasMaterialChanges) parts.push('a handful of listings changed in meaningful ways');
@@ -273,6 +354,7 @@ function renderDiffHtml(diff) {
       </div>
       <p class="summary">${esc(summarySentence(diff))}</p>
       <div class="badges">
+        <span class="badge changed">Likely replacements</span>
         <span class="badge added">Added sessions</span>
         <span class="badge removed">Removed sessions</span>
         <span class="badge changed">Notable edits</span>
@@ -282,6 +364,10 @@ function renderDiffHtml(diff) {
       <details>
         <summary>Show details</summary>
         <div class="section-grid">
+          <section class="mini-card">
+            <h3>Likely replacements</h3>
+            ${listItems(diff.replacements, (item) => `${item.removedUrl ? `<a href="${esc(item.removedUrl)}" target="_blank" rel="noopener">${esc(item.removedTitle)}</a>` : esc(item.removedTitle)} → ${item.addedUrl ? `<a href="${esc(item.addedUrl)}" target="_blank" rel="noopener">${esc(item.addedTitle)}</a>` : esc(item.addedTitle)} <span class="muted">(${esc(item.reasons.join(', '))})</span>`, 'No strong 1:1 substitutions detected in this update')}
+          </section>
           <section class="mini-card">
             <h3>New sessions</h3>
             ${listItems(diff.added, (session) => session.url ? `<a href="${esc(session.url)}" target="_blank" rel="noopener">${esc(session.title)}</a>` : esc(session.title))}
