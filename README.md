@@ -107,6 +107,8 @@ npm run build:insights
 
 This rebuilds the checked-in static `insights.html` page from `templates/insights.template.html` plus the generated `media/insights-summary.json` summary artifact.
 
+The insights generator is now `scripts/generate_insights.mjs`, and the shared word-stat rules live in `config/word-rules.json` so both the website and the generator use the same stop words, normalization, and display labels.
+
 ### Preview the website locally
 
 Use any simple static server from the repo root, for example:

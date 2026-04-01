@@ -229,12 +229,14 @@ test('insights page uses sankey index and click-map artifacts instead of hardcod
 });
 
 test('insights page is generated from a template and summary artifact', () => {
-  assert.match(insightsHtml, /Generated from templates\/insights\.template\.html using scripts\/generate_insights\.py/);
+  assert.match(insightsHtml, /Generated from templates\/insights\.template\.html using scripts\/generate_insights\.mjs and config\/word-rules\.json/);
   assert.match(insightsHtml, /meta name="insights-summary" content="\.\/media\/insights-summary\.json"/);
   assert.match(insightsHtml, /data-summary-source="\.\/media\/insights-summary\.json"/);
   assert.equal(insightsSummary.meta.template, 'templates/insights.template.html');
   assert.equal(insightsSummary.meta.source, 'sessions/classified_sessions.json');
   assert.equal(insightsSummary.meta.outputHtml, 'insights.html');
+  assert.equal(insightsSummary.meta.generator, 'scripts/generate_insights.mjs');
+  assert.equal(insightsSummary.meta.wordRules, 'config/word-rules.json');
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {
@@ -252,9 +254,9 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
   const generatedSummaryPath = path.join(tmpDir, 'insights-summary.json');
   const repoRoot = fileURLToPath(new URL('..', import.meta.url));
   const run = spawnSync(
-    'python3',
+    'node',
     [
-      'scripts/generate_insights.py',
+      'scripts/generate_insights.mjs',
       '--output-html',
       generatedHtmlPath,
       '--output-summary',
