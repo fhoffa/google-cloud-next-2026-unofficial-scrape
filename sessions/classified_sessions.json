@@ -36709,8 +36709,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -36815,9 +36815,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "theme": "Applied AI",
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -36937,8 +36937,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37036,8 +37036,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "Data pros",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37067,9 +37067,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37220,8 +37220,8 @@
       "llm": {
         "ai_focus": "Not AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Infra/Ops",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37280,8 +37280,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37328,8 +37328,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37443,8 +37443,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Sec pros",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37637,8 +37637,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37665,8 +37665,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37692,8 +37692,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37720,8 +37720,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37748,8 +37748,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37774,8 +37774,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37801,8 +37801,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37828,8 +37828,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37909,8 +37909,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Infra/Ops",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -37977,8 +37977,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38217,8 +38217,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Sec pros",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38251,8 +38251,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38281,8 +38281,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Leaders",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38378,8 +38378,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Data pros",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38400,9 +38400,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38423,9 +38423,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "theme": "Applied AI",
+        "audience": "Developers",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {
@@ -38580,8 +38580,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Data pros",
+        "reasoning": "LLM-reviewed classification based on title, description, and topic tags."
       }
     },
     {

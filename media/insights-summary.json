@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T15:11:12.960Z",
+    "generatedAt": "2026-04-01T15:19:39.346Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -30,8 +30,8 @@
     {
       "value": "Leaders",
       "label": "Largest audience",
-      "sub": "301 sessions",
-      "note": "Slightly ahead of Developers (259 sessions) — the conference leans executive."
+      "sub": "314 sessions",
+      "note": "Slightly ahead of Developers (265 sessions) — the conference leans executive."
     },
     {
       "value": "362",
@@ -65,49 +65,49 @@
       },
       {
         "name": "App dev",
-        "count": 193,
+        "count": 194,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 182,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 141,
+        "count": 142,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 74,
+        "count": 75,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
     "audiences": [
       {
         "name": "Leaders",
-        "count": 301,
+        "count": 314,
         "href": "./index.html?audience=Leaders"
       },
       {
         "name": "Developers",
-        "count": 259,
+        "count": 265,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 195,
+        "count": 197,
         "href": "./index.html?audience=Sec+pros"
       },
       {
         "name": "Data pros",
-        "count": 139,
+        "count": 140,
         "href": "./index.html?audience=Data+pros"
       },
       {
         "name": "Infra/Ops",
-        "count": 112,
+        "count": 113,
         "href": "./index.html?audience=Infra%2FOps"
       }
     ]
@@ -117,7 +117,7 @@
     "<strong>Security</strong> is the most common theme at <strong>233</strong> sessions, spanning both AI and non-AI content.",
     "Inside AI, <strong>Data</strong> leads at 207 sessions — builders are clearly the primary target.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
-    "<strong>Leaders</strong> get slightly more sessions than developers (301 vs 259).",
+    "<strong>Leaders</strong> get slightly more sessions than developers (314 vs 265).",
     "The major consulting firms together account for <strong>39 sessions</strong> — more than any single non-Google company on the list."
   ],
   "rankings": {
@@ -134,49 +134,49 @@
       },
       {
         "name": "App dev",
-        "count": 193,
+        "count": 194,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 182,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 141,
+        "count": 142,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 74,
+        "count": 75,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
     "topAudiences": [
       {
         "name": "Leaders",
-        "count": 301,
+        "count": 314,
         "href": "./index.html?audience=Leaders"
       },
       {
         "name": "Developers",
-        "count": 259,
+        "count": 265,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 195,
+        "count": 197,
         "href": "./index.html?audience=Sec+pros"
       },
       {
         "name": "Data pros",
-        "count": 139,
+        "count": 140,
         "href": "./index.html?audience=Data+pros"
       },
       {
         "name": "Infra/Ops",
-        "count": 112,
+        "count": 113,
         "href": "./index.html?audience=Infra%2FOps"
       }
     ],
@@ -193,22 +193,22 @@
       },
       {
         "name": "App dev",
-        "count": 174,
+        "count": 175,
         "href": "./index.html?ai_focus=AI&theme=App+dev"
       },
       {
         "name": "Business",
-        "count": 165,
+        "count": 162,
         "href": "./index.html?ai_focus=AI&theme=Business"
       },
       {
         "name": "Infra",
-        "count": 120,
+        "count": 121,
         "href": "./index.html?ai_focus=AI&theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 74,
+        "count": 75,
         "href": "./index.html?ai_focus=AI&theme=Applied+AI"
       }
     ],
