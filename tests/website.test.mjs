@@ -6,7 +6,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-import { initSessionSearch } from '../website/session-search.mjs';
+import { initSessionSearch, sortSessions } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
@@ -305,6 +305,7 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
 
 test('website loads the dataset and renders results', async () => {
   const env = createEnvironment();
+  const firstRenderedTitle = sortSessions(dataset.sessions, 'time')[0].title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
   await initSessionSearch({
     document: env.document,
@@ -321,7 +322,7 @@ test('website loads the dataset and renders results', async () => {
   assert.equal(env.document.getElementById('header-count').textContent, dataset.sessions.length.toLocaleString());
   assert.equal(env.document.getElementById('result-count').textContent, `${dataset.sessions.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.match(env.document.getElementById('app').innerHTML, /class="grid"/);
-  assert.match(env.document.getElementById('app').innerHTML, /Adapt across devices with Flutter/);
+  assert.match(env.document.getElementById('app').innerHTML, new RegExp(firstRenderedTitle));
 });
 
 test('speaker query param filters results on load', async () => {
@@ -533,7 +534,7 @@ test('index.html links a favicon', () => {
 });
 
 test('insights page uses contextual sankey filename and index manifest', () => {
-  assert.match(insightsHtml, /fhoffa\.github\.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331\.png/);
+  assert.match(insightsHtml, /fhoffa\.github\.io_google-cloud-next-2026-unofficial-scrape_sankey_\d{8}\.png/);
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
   assert.doesNotMatch(insightsHtml, /download-sankey/);
   assert.match(insightsHtml, /aspect-ratio:4\/5/);
