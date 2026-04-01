@@ -165,10 +165,31 @@ def stack_within(y0, y1, items, scale, gap=0.005):
     return out
 
 
-def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True):
+def draw_multiline_label(ax, x, y_center, lines, *, x_offset=0.008, linespacing=1.0, color='#202124', fontweight='bold'):
+    line_heights = [line['fontsize'] * 0.00112 * linespacing for line in lines]
+    total_height = sum(line_heights)
+    y = y_center + total_height / 2
+    for line, height in zip(lines, line_heights):
+        ax.text(
+            x - x_offset,
+            y - height / 2,
+            line['text'],
+            ha='right',
+            va='center',
+            fontsize=line['fontsize'],
+            color=color,
+            fontweight=line.get('fontweight', fontweight),
+        )
+        y -= height
+
+
+def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True, label_lines=None, x_offset=0.008, linespacing=1.0):
     ax.add_patch(Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
     if show_label:
-        ax.text(x - 0.008, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
+        if label_lines:
+            draw_multiline_label(ax, x, (y0 + y1) / 2, label_lines, x_offset=x_offset, linespacing=linespacing)
+        else:
+            ax.text(x - x_offset, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
 
 
 def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
@@ -209,9 +230,40 @@ def render_sankey(
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
 
-    draw_bar(ax, x0, *root, COLORS['root'], 'GCP Next', len(sessions), fontsize=21)
+    draw_bar(
+        ax,
+        x0,
+        *root,
+        COLORS['root'],
+        'GCP Next',
+        len(sessions),
+        show_label=True,
+        label_lines=[
+            {'text': 'Total:', 'fontsize': 34},
+            {'text': str(len(sessions)), 'fontsize': 34},
+            {'text': 'sessions', 'fontsize': 24},
+        ],
+        x_offset=0.014,
+        linespacing=0.62,
+    )
     for label, value in mid:
-        draw_bar(ax, x1, *mid_pos[label], COLORS[label], label, value, fontsize=50)
+        label_size = 54 if value >= 500 else 46 if value >= 250 else 38
+        count_size = max(28, label_size - 10)
+        draw_bar(
+            ax,
+            x1,
+            *mid_pos[label],
+            COLORS[label],
+            label,
+            value,
+            show_label=True,
+            label_lines=[
+                {'text': f'{label}:', 'fontsize': label_size},
+                {'text': f'{value} sessions', 'fontsize': count_size},
+            ],
+            x_offset=0.012,
+            linespacing=0.68,
+        )
     for parent, items in third.items():
         for label, value in items:
             draw_bar(
@@ -221,7 +273,7 @@ def render_sankey(
                 COLORS.get(label, '#ccc'),
                 label,
                 value,
-                fontsize=23 if value >= 80 else 19,
+                fontsize=34 if value >= 220 else 28 if value >= 160 else 23 if value >= 110 else 17 if value >= 70 else 14,
                 show_label=value >= min_theme_label,
             )
     for key, items in fourth.items():
@@ -233,7 +285,7 @@ def render_sankey(
                 COLORS.get(label, '#bbb'),
                 label,
                 value,
-                fontsize=17 if value >= 40 else 14,
+                fontsize=26 if value >= 150 else 21 if value >= 110 else 17 if value >= 70 else 13 if value >= 45 else 11,
                 show_label=value >= min_audience_label,
             )
 
@@ -255,10 +307,9 @@ def render_sankey(
             ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
             cursor -= h
 
-    classifier_note = f'LLM-classified ({llm_classified}/{len(sessions)} sessions)' if llm_classified else 'Rule-based classification'
-    ax.text(0.06, 0.986, 'Google Cloud Next 2026 sessions', fontsize=34, fontweight='bold', color='#202124', ha='left')
-    ax.text(0.06, 0.965, 'GCP Next → AI vs Not AI → theme → audience', fontsize=17, color='#5f6368', ha='left')
-    ax.text(0.06, 0.948, classifier_note, fontsize=14, color='#5f6368', ha='left')
+    ax.text(0.03, 0.988, 'Google Cloud Next 2026 sessions', fontsize=52, fontweight='bold', color='#202124', ha='left')
+    ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
+    ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
