@@ -108,26 +108,20 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
 
   const companyObservationParts = [];
   if (topCompany) {
-    companyObservationParts.push(`The strongest outside voice in this catalog is <strong>${esc(topCompany[0])}</strong>, with <strong>${topCompany[1]}</strong> sessions — a signal that this company is showing up repeatedly, not just making a single cameo.`);
+    companyObservationParts.push(`<strong>${esc(topCompany[0])}</strong> leads all non-Google companies with <strong>${topCompany[1]}</strong> sessions — this isn't a cameo, it's a recurring presence throughout the program.`);
   }
-  if (topCompany && secondCompany) {
-    companyObservationParts.push(`${esc(topCompany[0])} and ${esc(secondCompany[0])} set the pace near the top, which makes this section useful as a quick read on which partners, customers, and ecosystem names Google is putting on stage over and over.`);
-  }
-  if (geotab) {
-    companyObservationParts.push(`<strong>Geotab</strong> makes the recurring-speaker list too, with <strong>${geotab[1]}</strong> sessions, so it should be visible here rather than disappearing into the long tail.`);
-  }
-  companyObservationParts.push('Read this less as a popularity contest and more as a map of repeated external presence: who appears once can be incidental; who appears again and again is part of the conference narrative.');
+  companyObservationParts.push('One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.');
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
   const topAiTheme = aiThemes[0] || ['n/a', 0];
   const topNotAiTheme = notAiThemes[0] || ['n/a', 0];
   const observationsHtml = [
-    `AI now represents <strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the full conference catalog (${aiCount}/${total}).`,
-    `The largest overall theme is <strong>${esc(themes[0]?.[0] || 'n/a')}</strong> with <strong>${themes[0]?.[1] || 0}</strong> sessions.`,
-    `Inside AI, the biggest theme is <strong>${esc(topAiTheme[0])}</strong> (${topAiTheme[1]} sessions).`,
-    `Outside AI, the biggest theme is <strong>${esc(topNotAiTheme[0])}</strong> (${topNotAiTheme[1]} sessions).`,
-    `The audience split suggests more content for <strong>${leaderShare >= devShare ? 'leaders' : 'developers'}</strong> than for the other group (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)} sessions).`,
+    `AI isn't a track here — it's <strong>${((aiCount / Math.max(1, total)) * 100).toFixed(1)}%</strong> of the entire catalog (${aiCount} of ${total} sessions).`,
+    `<strong>${esc(themes[0]?.[0] || 'n/a')}</strong> is the most common theme at <strong>${themes[0]?.[1] || 0}</strong> sessions, spanning both AI and non-AI content.`,
+    `Inside AI, <strong>${esc(topAiTheme[0])}</strong> leads at ${topAiTheme[1]} sessions — builders are clearly the primary target.`,
+    `Outside AI, <strong>${esc(topNotAiTheme[0])}</strong> takes the top spot with ${topNotAiTheme[1]} sessions.`,
+    `<strong>${leaderShare >= devShare ? 'Leaders' : 'Developers'}</strong> get slightly more sessions than ${leaderShare >= devShare ? 'developers' : 'leaders'} (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)}).`,
   ];
 
   return {
@@ -140,7 +134,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       generator: 'scripts/generate_insights.mjs',
       wordRules: 'config/word-rules.json',
     },
-    lede: 'What is Google Cloud Next 2026 actually about? This page surfaces the shape of the conference — AI vs not AI, dominant themes, intended audiences, standout companies, and the most interesting paths through the catalog.',
+    lede: 'Nine out of ten sessions at Google Cloud Next 2026 are about AI. This page breaks down what that actually means — and what\'s waiting in the other 10%.',
     stats: [
       { value: total.toLocaleString(), label: 'Total sessions' },
       { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}%`, label: 'AI share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI` },
@@ -172,12 +166,12 @@ function buildSummary(sessions, sankeyLatest, generatedAt) {
       limit: 120,
     },
     interestingSlices: [
-      { title: 'AI for Leaders', desc: 'Strategic and executive-facing AI sessions', params: { ai_focus: 'AI', audience: 'Leaders' } },
-      { title: 'AI for Developers', desc: 'Builder-focused AI sessions', params: { ai_focus: 'AI', audience: 'Developers' } },
-      { title: 'AI Infrastructure', desc: 'Where AI meets platforms and ops', params: { ai_focus: 'AI', theme: 'Infra' } },
-      { title: 'Not AI Security', desc: 'Security sessions outside the AI bucket', params: { ai_focus: 'Not AI', theme: 'Security' } },
-      { title: 'Data pros', desc: 'Sessions explicitly aimed at data practitioners', params: { audience: 'Data pros' } },
-      { title: 'Business for Leaders', desc: 'Executive/business-oriented conference framing', params: { theme: 'Business', audience: 'Leaders' } },
+      { title: 'AI for Leaders', desc: 'AI through a strategy lens, not a coding one', params: { ai_focus: 'AI', audience: 'Leaders' } },
+      { title: 'AI for Developers', desc: 'Hands-on AI: building, shipping, and deploying', params: { ai_focus: 'AI', audience: 'Developers' } },
+      { title: 'AI Infrastructure', desc: 'The infrastructure powering all that AI', params: { ai_focus: 'AI', theme: 'Infra' } },
+      { title: 'Security without the AI angle', desc: 'Classic security work — no AI required', params: { ai_focus: 'Not AI', theme: 'Security' } },
+      { title: 'Data pros', desc: 'For the people who live in the data layer', params: { audience: 'Data pros' } },
+      { title: 'Business for Leaders', desc: 'Strategy sessions for business decision-makers', params: { theme: 'Business', audience: 'Leaders' } },
     ],
   };
 }

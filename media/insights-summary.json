@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T04:53:48.915Z",
+    "generatedAt": "2026-04-01T05:27:00.801Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -8,7 +8,7 @@
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
-  "lede": "What is Google Cloud Next 2026 actually about? This page surfaces the shape of the conference — AI vs not AI, dominant themes, intended audiences, standout companies, and the most interesting paths through the catalog.",
+  "lede": "Nine out of ten sessions at Google Cloud Next 2026 are about AI. This page breaks down what that actually means — and what's waiting in the other 10%.",
   "stats": [
     {
       "value": "1,037",
@@ -103,11 +103,11 @@
     ]
   },
   "observations": [
-    "AI now represents <strong>89.1%</strong> of the full conference catalog (924/1037).",
-    "The largest overall theme is <strong>App dev</strong> with <strong>268</strong> sessions.",
-    "Inside AI, the biggest theme is <strong>App dev</strong> (248 sessions).",
-    "Outside AI, the biggest theme is <strong>Security</strong> (41 sessions).",
-    "The audience split suggests more content for <strong>leaders</strong> than for the other group (308 vs 266 sessions)."
+    "AI isn't a track here — it's <strong>89.1%</strong> of the entire catalog (924 of 1037 sessions).",
+    "<strong>App dev</strong> is the most common theme at <strong>268</strong> sessions, spanning both AI and non-AI content.",
+    "Inside AI, <strong>App dev</strong> leads at 248 sessions — builders are clearly the primary target.",
+    "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
+    "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266)."
   ],
   "rankings": {
     "topThemes": [
@@ -606,7 +606,7 @@
     ]
   },
   "companies": {
-    "observationHtml": "The strongest outside voice in this catalog is <strong>Palo Alto Networks</strong>, with <strong>16</strong> sessions — a signal that this company is showing up repeatedly, not just making a single cameo. Palo Alto Networks and NVIDIA set the pace near the top, which makes this section useful as a quick read on which partners, customers, and ecosystem names Google is putting on stage over and over. <strong>Geotab</strong> makes the recurring-speaker list too, with <strong>2</strong> sessions, so it should be visible here rather than disappearing into the long tail. Read this less as a popularity contest and more as a map of repeated external presence: who appears once can be incidental; who appears again and again is part of the conference narrative.",
+    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — this isn't a cameo, it's a recurring presence throughout the program. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",
@@ -1115,7 +1115,7 @@
   "interestingSlices": [
     {
       "title": "AI for Leaders",
-      "desc": "Strategic and executive-facing AI sessions",
+      "desc": "AI through a strategy lens, not a coding one",
       "params": {
         "ai_focus": "AI",
         "audience": "Leaders"
@@ -1123,7 +1123,7 @@
     },
     {
       "title": "AI for Developers",
-      "desc": "Builder-focused AI sessions",
+      "desc": "Hands-on AI: building, shipping, and deploying",
       "params": {
         "ai_focus": "AI",
         "audience": "Developers"
@@ -1131,15 +1131,15 @@
     },
     {
       "title": "AI Infrastructure",
-      "desc": "Where AI meets platforms and ops",
+      "desc": "The infrastructure powering all that AI",
       "params": {
         "ai_focus": "AI",
         "theme": "Infra"
       }
     },
     {
-      "title": "Not AI Security",
-      "desc": "Security sessions outside the AI bucket",
+      "title": "Security without the AI angle",
+      "desc": "Classic security work — no AI required",
       "params": {
         "ai_focus": "Not AI",
         "theme": "Security"
@@ -1147,14 +1147,14 @@
     },
     {
       "title": "Data pros",
-      "desc": "Sessions explicitly aimed at data practitioners",
+      "desc": "For the people who live in the data layer",
       "params": {
         "audience": "Data pros"
       }
     },
     {
       "title": "Business for Leaders",
-      "desc": "Executive/business-oriented conference framing",
+      "desc": "Strategy sessions for business decision-makers",
       "params": {
         "theme": "Business",
         "audience": "Leaders"
