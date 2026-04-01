@@ -6,6 +6,7 @@ import re
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 import matplotlib
 matplotlib.use('Agg')
@@ -185,12 +186,14 @@ def draw_multiline_label(ax, x, y_center, lines, *, x_offset=0.008, linespacing=
 
 
 def draw_bar(ax, x, y0, y1, color, label, value, fontsize=9, *, show_label=True, label_lines=None, x_offset=0.008, linespacing=1.0):
-    ax.add_patch(Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0))
+    rect = Rectangle((x, y0), BAR_WIDTH, y1 - y0, facecolor=color, edgecolor='white', linewidth=1.0)
+    ax.add_patch(rect)
     if show_label:
         if label_lines:
             draw_multiline_label(ax, x, (y0 + y1) / 2, label_lines, x_offset=x_offset, linespacing=linespacing)
         else:
             ax.text(x - x_offset, (y0 + y1) / 2, f'{label} {value}', ha='right', va='center', fontsize=fontsize, color='#202124', fontweight='bold')
+    return rect
 
 
 def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
@@ -200,7 +203,50 @@ def ribbon(ax, xa, xb, ya0, ya1, yb0, yb1, color, alpha=0.34):
         (xb, yb0), (xb - c, yb0), (xa + BAR_WIDTH + c, ya0), (xa + BAR_WIDTH, ya0), (xa + BAR_WIDTH, ya1),
     ]
     codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.LINETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4, MplPath.CLOSEPOLY]
-    ax.add_patch(PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha))
+    patch = PathPatch(MplPath(verts, codes), facecolor=color, edgecolor='none', alpha=alpha)
+    ax.add_patch(patch)
+    return patch
+
+
+def build_click_map(fig, renderer, artists):
+    bbox = fig.get_tightbbox(renderer)
+    x0 = bbox.x0 * fig.dpi
+    y0 = bbox.y0 * fig.dpi
+    width = bbox.width * fig.dpi
+    height = bbox.height * fig.dpi
+    segments = []
+
+    def norm_point(xp, yp):
+        return [max(0.0, min(1.0, (xp - x0) / width)), max(0.0, min(1.0, 1.0 - ((yp - y0) / height)))]
+
+    for item in artists:
+        artist = item['artist']
+        if item['shape_type'] == 'rect':
+            bb = artist.get_window_extent(renderer=renderer)
+            x_left, y_bottom = norm_point(bb.x0, bb.y0)
+            x_right, y_top = norm_point(bb.x1, bb.y1)
+            shape = {
+                'type': 'rect',
+                'x': x_left,
+                'y0': y_bottom,
+                'y1': y_top,
+                'w': max(0.0, x_right - x_left),
+            }
+        else:
+            transformed = artist.get_path().transformed(artist.get_transform())
+            points = [norm_point(xp, yp) for xp, yp in transformed.vertices.tolist()]
+            shape = {'type': 'poly', 'points': points}
+        segments.append({
+            'kind': item['kind'],
+            'title': item['title'],
+            'params': item['params'],
+            'shape': shape,
+        })
+
+    return {
+        'viewBox': {'width': 1000, 'height': 1250},
+        'segments': segments,
+    }
 
 
 def render_sankey(
@@ -212,6 +258,7 @@ def render_sankey(
     x_positions=(0.08, 0.34, 0.64, 0.93),
     min_theme_label: int = 12,
     min_audience_label: int = 10,
+    click_map_path: Path | None = None,
 ):
     mid, third, fourth = build_chart_data(sessions)
     fig, ax = plt.subplots(figsize=(fig_width, 30), dpi=220)
@@ -230,8 +277,9 @@ def render_sankey(
     mid_pos = stack_within(*root, mid, scale=scale, gap=0.038)
     third_pos = {parent: stack_within(*mid_pos[parent], items, scale=scale, gap=0.0075) for parent, items in third.items()}
     fourth_pos = {key: stack_within(*third_pos[key[0]][key[1]], items, scale=scale, gap=0.0038) for key, items in fourth.items()}
+    click_map_artists = []
 
-    draw_bar(
+    root_rect = draw_bar(
         ax,
         x0,
         *root,
@@ -247,10 +295,11 @@ def render_sankey(
         x_offset=0.014,
         linespacing=0.62,
     )
+    click_map_artists.append({'artist': root_rect, 'kind': 'root', 'title': f'Total ({len(sessions)})', 'params': {}, 'shape_type': 'rect'})
     for label, value in mid:
         label_size = 54 if value >= 500 else 46 if value >= 250 else 38
         count_size = max(28, label_size - 10)
-        draw_bar(
+        rect = draw_bar(
             ax,
             x1,
             *mid_pos[label],
@@ -265,9 +314,10 @@ def render_sankey(
             x_offset=0.012,
             linespacing=0.68,
         )
+        click_map_artists.append({'artist': rect, 'kind': 'ai_focus', 'title': f'{label} ({value})', 'params': {'ai_focus': label}, 'shape_type': 'rect'})
     for parent, items in third.items():
         for label, value in items:
-            draw_bar(
+            rect = draw_bar(
                 ax,
                 x2,
                 *third_pos[parent][label],
@@ -277,9 +327,10 @@ def render_sankey(
                 fontsize=34 if value >= 220 else 28 if value >= 160 else 23 if value >= 110 else 17 if value >= 70 else 14,
                 show_label=value >= min_theme_label,
             )
+            click_map_artists.append({'artist': rect, 'kind': 'theme', 'title': f'{parent} → {label} ({value})', 'params': {'ai_focus': parent, 'theme': label}, 'shape_type': 'rect'})
     for key, items in fourth.items():
         for label, value in items:
-            draw_bar(
+            rect = draw_bar(
                 ax,
                 x3,
                 *fourth_pos[key][label],
@@ -289,28 +340,40 @@ def render_sankey(
                 fontsize=26 if value >= 150 else 21 if value >= 110 else 17 if value >= 70 else 13 if value >= 45 else 11,
                 show_label=value >= min_audience_label,
             )
+            click_map_artists.append({'artist': rect, 'kind': 'audience', 'title': f'{key[0]} → {key[1]} → {label} ({value})', 'params': {'ai_focus': key[0], 'theme': key[1], 'audience': label}, 'shape_type': 'rect'})
 
     cursor = root[1]
     for label, value in mid:
         h = value * scale
-        ribbon(ax, x0, x1, cursor - h, cursor, *mid_pos[label], COLORS[label], alpha=0.26)
+        patch = ribbon(ax, x0, x1, cursor - h, cursor, *mid_pos[label], COLORS[label], alpha=0.26)
+        click_map_artists.append({'artist': patch, 'kind': 'ai-flow', 'title': f'{label} ({value})', 'params': {'ai_focus': label}, 'shape_type': 'poly'})
         cursor -= h
     for parent, items in third.items():
         cursor = mid_pos[parent][1]
         for label, value in items:
             h = value * scale
-            ribbon(ax, x1, x2, cursor - h, cursor, *third_pos[parent][label], COLORS.get(label, COLORS[parent]), alpha=0.36)
+            patch = ribbon(ax, x1, x2, cursor - h, cursor, *third_pos[parent][label], COLORS.get(label, COLORS[parent]), alpha=0.36)
+            click_map_artists.append({'artist': patch, 'kind': 'theme-flow', 'title': f'{parent} → {label} ({value})', 'params': {'ai_focus': parent, 'theme': label}, 'shape_type': 'poly'})
             cursor -= h
     for key, items in fourth.items():
         cursor = third_pos[key[0]][key[1]][1]
         for label, value in items:
             h = value * scale
-            ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
+            patch = ribbon(ax, x2, x3, cursor - h, cursor, *fourth_pos[key][label], COLORS.get(label, '#bbb'), alpha=0.44)
+            click_map_artists.append({'artist': patch, 'kind': 'audience-flow', 'title': f'{key[0]} → {key[1]} → {label} ({value})', 'params': {'ai_focus': key[0], 'theme': key[1], 'audience': label}, 'shape_type': 'poly'})
             cursor -= h
 
     ax.text(0.03, 0.988, 'Google Cloud Next 2026 sessions', fontsize=52, fontweight='bold', color='#202124', ha='left')
     ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
     ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
+
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+
+    if click_map_path:
+        click_map = build_click_map(fig, renderer, click_map_artists)
+        click_map_path.parent.mkdir(parents=True, exist_ok=True)
+        click_map_path.write_text(json.dumps(click_map, indent=2))
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(output_path, bbox_inches='tight', dpi=220)
@@ -337,12 +400,35 @@ def infer_publish_stamp(input_path: Path, sessions) -> str:
     return latest.strftime('%Y%m%d')
 
 
+def update_sankey_index(cwd: Path, output_path: Path, stamp: str):
+    index_path = cwd / 'media' / 'sankey-index.json'
+    rel = output_path.relative_to(cwd).as_posix()
+    latest_value = f'https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/{quote(rel)}'
+    payload = {
+        'latest': latest_value,
+        'generated_on': f'{stamp[:4]}-{stamp[4:6]}-{stamp[6:8]}',
+        'history': [latest_value],
+        'notes': '`latest` should be updated whenever a new dated Sankey image is published. Keep prior files in history for archival links.'
+    }
+    if index_path.exists():
+        try:
+            current = json.loads(index_path.read_text())
+            history = current.get('history') or []
+            if latest_value in history:
+                history = [item for item in history if item != latest_value]
+            payload['history'] = [latest_value, *history]
+        except Exception:
+            pass
+    index_path.write_text(json.dumps(payload, indent=2) + '\n')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Generate the Google Cloud Next AI Sankey chart.')
     parser.add_argument('--input', default=None, help='Path to sessions JSON file (default: classified_sessions.json if present, else latest.json)')
     parser.add_argument('--output', default='tmp/gcp-next-sankey-not-ai-maxi.png', help='Path to output PNG')
     parser.add_argument('--publish', action='store_true', help='Write to repo media/ using the dated published filename convention.')
     parser.add_argument('--publish-date', default=None, help='Override publish date suffix YYYYMMDD for --publish output.')
+    parser.add_argument('--click-map-output', default=None, help='Optional path to write click-map JSON for insights overlays.')
     parser.add_argument('--fig-width', default=24, type=float, help='Figure width in inches (height remains 30).')
     parser.add_argument('--x-positions', default='0.08,0.34,0.64,0.93', help='Comma-separated x positions for columns: root,ai/theme,audience.')
     parser.add_argument('--min-theme-label', default=12, type=int, help='Hide theme labels below this session count.')
@@ -365,9 +451,18 @@ def main():
     data = json.loads(input_path.read_text())
     sessions = data['sessions'] if isinstance(data, dict) and 'sessions' in data else data
 
+    stamp = None
     if args.publish:
         stamp = args.publish_date or infer_publish_stamp(input_path, sessions)
         output_path = cwd / 'media' / f'fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_{stamp}.png'
+
+    click_map_path = None
+    if args.click_map_output:
+        click_map_path = Path(args.click_map_output)
+        if not click_map_path.is_absolute():
+            click_map_path = cwd / click_map_path
+    elif args.publish:
+        click_map_path = cwd / 'media' / 'sankey-click-map.json'
 
     llm_classified = sum(1 for s in sessions if s.get('llm'))
     source_label = 'LLM' if llm_classified else 'rule-based'
@@ -385,7 +480,10 @@ def main():
         x_positions=x_positions,
         min_theme_label=args.min_theme_label,
         min_audience_label=args.min_audience_label,
+        click_map_path=click_map_path,
     )
+    if args.publish and stamp:
+        update_sankey_index(cwd, output_path, stamp)
     print(output_path)
 
 
