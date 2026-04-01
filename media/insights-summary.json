@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T14:43:44.376Z",
+    "generatedAt": "2026-04-01T14:54:06.868Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -22,9 +22,9 @@
       "note": "For every non-AI session, there are roughly 8 AI ones."
     },
     {
-      "value": "App dev",
+      "value": "Security",
       "label": "Largest theme",
-      "sub": "241 sessions",
+      "sub": "232 sessions",
       "note": "Spans both AI and non-AI content — building things is the dominant conference mode."
     },
     {
@@ -54,11 +54,6 @@
     ],
     "themes": [
       {
-        "name": "App dev",
-        "count": 241,
-        "href": "./index.html?theme=App+dev"
-      },
-      {
         "name": "Security",
         "count": 232,
         "href": "./index.html?theme=Security"
@@ -69,18 +64,23 @@
         "href": "./index.html?theme=Data"
       },
       {
+        "name": "App dev",
+        "count": 199,
+        "href": "./index.html?theme=App+dev"
+      },
+      {
         "name": "Business",
         "count": 185,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 135,
+        "count": 139,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 17,
+        "count": 55,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
@@ -114,19 +114,14 @@
   },
   "observations": [
     "<strong>89.1%</strong> of the entire catalog is AI — 924 of 1037 sessions.",
-    "<strong>App dev</strong> is the most common theme at <strong>241</strong> sessions, spanning both AI and non-AI content.",
-    "Inside AI, <strong>App dev</strong> leads at 222 sessions — builders are clearly the primary target.",
+    "<strong>Security</strong> is the most common theme at <strong>232</strong> sessions, spanning both AI and non-AI content.",
+    "Inside AI, <strong>Data</strong> leads at 212 sessions — builders are clearly the primary target.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
     "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266).",
     "The major consulting firms together account for <strong>38 sessions</strong> — more than any single non-Google company on the list."
   ],
   "rankings": {
     "topThemes": [
-      {
-        "name": "App dev",
-        "count": 241,
-        "href": "./index.html?theme=App+dev"
-      },
       {
         "name": "Security",
         "count": 232,
@@ -138,18 +133,23 @@
         "href": "./index.html?theme=Data"
       },
       {
+        "name": "App dev",
+        "count": 199,
+        "href": "./index.html?theme=App+dev"
+      },
+      {
         "name": "Business",
         "count": 185,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 135,
+        "count": 139,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 17,
+        "count": 55,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
@@ -182,11 +182,6 @@
     ],
     "topAiThemes": [
       {
-        "name": "App dev",
-        "count": 222,
-        "href": "./index.html?ai_focus=AI&theme=App+dev"
-      },
-      {
         "name": "Data",
         "count": 212,
         "href": "./index.html?ai_focus=AI&theme=Data"
@@ -197,18 +192,23 @@
         "href": "./index.html?ai_focus=AI&theme=Security"
       },
       {
+        "name": "App dev",
+        "count": 180,
+        "href": "./index.html?ai_focus=AI&theme=App+dev"
+      },
+      {
         "name": "Business",
         "count": 166,
         "href": "./index.html?ai_focus=AI&theme=Business"
       },
       {
         "name": "Infra",
-        "count": 116,
+        "count": 120,
         "href": "./index.html?ai_focus=AI&theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 17,
+        "count": 55,
         "href": "./index.html?ai_focus=AI&theme=Applied+AI"
       }
     ],

@@ -1075,9 +1075,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -1922,9 +1922,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -2689,9 +2689,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -2985,9 +2985,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -4177,9 +4177,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -4550,9 +4550,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -4688,9 +4688,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -5269,9 +5269,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/infra focus; Infra theme \u2014 infrastructure-primary session with no App Dev tag."
       }
     },
     {
@@ -5309,9 +5309,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI focus; App dev theme (agent dev tool); Developers audience (Application Developers hard override)."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -6857,9 +6857,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/infra focus; Infra theme \u2014 infrastructure-primary session with no App Dev tag."
       }
     },
     {
@@ -7136,9 +7136,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -8039,9 +8039,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -8084,9 +8084,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/infra focus; Infra theme \u2014 infrastructure-primary session with no App Dev tag."
       }
     },
     {
@@ -8565,9 +8565,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -8644,9 +8644,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -8900,9 +8900,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -9503,9 +9503,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -10645,9 +10645,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -11427,9 +11427,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -12473,9 +12473,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -14342,9 +14342,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -14944,9 +14944,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -15842,9 +15842,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -16249,9 +16249,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -17037,9 +17037,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -18209,9 +18209,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -19448,9 +19448,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -22065,9 +22065,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -22206,9 +22206,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -22418,9 +22418,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -24437,9 +24437,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -25022,9 +25022,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -25639,9 +25639,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -26483,9 +26483,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -27148,9 +27148,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -29670,9 +29670,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -31693,9 +31693,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -33733,9 +33733,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -35158,9 +35158,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -36051,9 +36051,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {
@@ -36847,9 +36847,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/infra focus; Infra theme \u2014 infrastructure-primary session with no App Dev tag."
       }
     },
     {
@@ -37123,9 +37123,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Applied AI",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; Applied AI theme \u2014 agent-centric session with no App Dev tag."
       }
     },
     {

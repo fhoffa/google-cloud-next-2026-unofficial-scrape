@@ -1,18 +1,28 @@
 #!/usr/bin/env python3
 """
 Apply deterministic post-processing rules to classified_sessions.json to fix
-known classification gaps without re-running the LLM:
+known classification gaps without re-running the LLM.
 
-Rule A — Applied AI:
+Rule A — Applied AI (pass 1):
   App dev sessions with `Applied AI` topic tag, no `App Dev` tag, and
   agent/agentic/voice/chatbot keywords in the title → "Applied AI" theme.
 
-Rule B — Infra:
+Rule A2 — Applied AI (pass 2):
+  App dev sessions with `Agents` topic tag, no `App Dev` tag, and
+  agent/agentic/voice/chatbot keywords in the title → "Applied AI" theme.
+  Covers agent-development sessions (ADK, agent architecture, etc.) that
+  the conference tagged `Agents` but not `Applied AI`.
+
+Rule B — Infra (Kubernetes):
   App dev sessions with Infra/Ops audience, no `App Dev` tag, and
   Kubernetes or Infrastructure Architects & Admins topic tags → "Infra" theme.
 
-These rules reflect the classification guidelines added to classify_sessions_llm.py
-and are safe to re-run (idempotent after the first pass).
+Rule C — Infra (Cloud Run):
+  App dev sessions whose title contains "Cloud Run", no `App Dev` tag, and
+  no agent keywords in the title → "Infra" theme.
+  (Sessions where Cloud Run is the primary subject, not just the runtime.)
+
+These rules are idempotent — safe to re-run after adding new sessions.
 
 Usage:
     python3 scripts/reclassify_rules.py
@@ -27,29 +37,41 @@ from pathlib import Path
 AGENT_KEYWORDS = ["agent", "agentic", "voice", "chatbot"]
 
 
+def has_agent_keyword(title: str) -> bool:
+    tl = title.lower()
+    return any(kw in tl for kw in AGENT_KEYWORDS)
+
+
 def should_be_applied_ai(session: dict) -> bool:
     llm = session.get("llm") or {}
     if llm.get("theme") != "App dev":
         return False
     topics = session.get("topics") or []
-    if "Applied AI" not in topics:
-        return False
     if "App Dev" in topics:
         return False
-    title = (session.get("title") or "").lower()
-    return any(kw in title for kw in AGENT_KEYWORDS)
+    title = session.get("title") or ""
+    if not has_agent_keyword(title):
+        return False
+    # Either explicit Applied AI tag or Agents tag qualifies
+    return "Applied AI" in topics or "Agents" in topics
 
 
 def should_be_infra(session: dict) -> bool:
     llm = session.get("llm") or {}
     if llm.get("theme") != "App dev":
         return False
-    if llm.get("audience") != "Infra/Ops":
-        return False
     topics = session.get("topics") or []
     if "App Dev" in topics:
         return False
-    return any(t in topics for t in ["Kubernetes", "Infrastructure Architects & Admins"])
+    title = session.get("title") or ""
+    # Rule B: Kubernetes-heavy sessions with Infra/Ops audience
+    if (llm.get("audience") == "Infra/Ops" and
+            any(t in topics for t in ["Kubernetes", "Infrastructure Architects & Admins"])):
+        return True
+    # Rule C: Cloud Run-primary sessions (Cloud Run in title, no agent focus)
+    if "cloud run" in title.lower() and not has_agent_keyword(title):
+        return True
+    return False
 
 
 def main() -> None:
@@ -74,14 +96,14 @@ def main() -> None:
             if not args.dry_run:
                 session["llm"]["theme"] = "Applied AI"
                 session["llm"]["reasoning"] = (
-                    "AI focus; Applied AI theme — agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
+                    "AI focus; Applied AI theme — agent-centric session with no App Dev tag."
                 )
         elif should_be_infra(session):
             infra_changes.append(session["title"])
             if not args.dry_run:
                 session["llm"]["theme"] = "Infra"
                 session["llm"]["reasoning"] = (
-                    "AI focus; Infra theme — Kubernetes/infra-heavy session with Infra/Ops audience, no App Dev tag."
+                    "AI/infra focus; Infra theme — infrastructure-primary session with no App Dev tag."
                 )
 
     print(f"Applied AI reclassifications: {len(applied_ai_changes)}")
