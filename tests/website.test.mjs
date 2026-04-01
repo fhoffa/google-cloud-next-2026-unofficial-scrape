@@ -6,11 +6,12 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
-import { initSessionSearch, sortSessions } from '../website/session-search.mjs';
+import { initSessionSearch } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
+const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -196,10 +197,10 @@ function createEnvironment(search = '') {
   return { document, location: locationLike, history };
 }
 
-function createFetch(sourceDataset = dataset) {
-  return async () => ({
+function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact) {
+  return async (url = '') => ({
     async json() {
-      return sourceDataset;
+      return String(url).includes('session-availability') ? availabilityDataset : sourceDataset;
     },
   });
 }
@@ -215,7 +216,12 @@ test('index.html includes the website shell and module bootstrap', () => {
 test('insights page includes richer intelligence sections', () => {
   assert.match(insightsHtml, /Google Cloud Next 2026 — Insights/);
   assert.match(insightsHtml, /What stands out/);
+  assert.match(insightsHtml, /How full the conference is getting/);
   assert.match(insightsHtml, /Top companies speaking/);
+  assert.match(insightsHtml, /id="fullness-stats"/);
+  assert.match(insightsHtml, /id="fullness-observations"/);
+  assert.match(insightsHtml, /id="full-now-categories"/);
+  assert.match(insightsHtml, /id="not-full-now-categories"/);
   assert.match(insightsHtml, /id="top-non-google-companies"/);
   assert.match(insightsHtml, /id="company-observations"/);
   assert.match(insightsHtml, /sankey-index\.json|sankey-click-map\.json/);
@@ -249,9 +255,33 @@ test('insights page is generated from a template and summary artifact', () => {
   assert.match(insightsHtml, /data-summary-source="\.\/media\/insights-summary\.json"/);
   assert.equal(insightsSummary.meta.template, 'templates/insights.template.html');
   assert.equal(insightsSummary.meta.source, 'sessions/classified_sessions.json');
+  assert.equal(insightsSummary.meta.availabilitySource, 'sessions/cache');
   assert.equal(insightsSummary.meta.outputHtml, 'insights.html');
   assert.equal(insightsSummary.meta.generator, 'scripts/generate_insights.mjs');
   assert.equal(insightsSummary.meta.wordRules, 'config/word-rules.json');
+});
+
+test('insights summary includes fullness metrics sourced from library availability', () => {
+  assert.equal(insightsSummary.fullness.stats.length, 4);
+  assert.equal(insightsSummary.fullness.stats[0].label, 'Sessions with live availability');
+  assert.equal(insightsSummary.fullness.stats[1].label, 'Full now');
+  assert.equal(insightsSummary.fullness.stats[2].label, 'Not full now');
+  assert.equal(insightsSummary.fullness.stats[3].label, 'Workshops already full');
+  assert.ok(Number(insightsSummary.fullness.stats[0].value) > 0);
+  assert.ok(Number(insightsSummary.fullness.stats[1].value) > 0);
+  assert.ok(Number(insightsSummary.fullness.stats[2].value) > 0);
+  assert.ok(insightsSummary.fullness.observations.some((item) => /cached library pages|availability signal/.test(item)));
+  assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
+  assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
+  assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');
+  assert.ok(insightsSummary.fullness.rankings.notFullByCategory.length > 0);
+});
+
+test('insights build emits a separate session availability artifact', () => {
+  assert.equal(typeof availabilityArtifact.generatedAt, 'string');
+  assert.ok(Array.isArray(availabilityArtifact.records));
+  assert.ok(availabilityArtifact.records.length > 0);
+  assert.ok(availabilityArtifact.records.some((record) => Number(record.remaining_capacity) === 0));
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {
@@ -274,6 +304,7 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'insights-gen-'));
   const generatedHtmlPath = path.join(tmpDir, 'insights.html');
   const generatedSummaryPath = path.join(tmpDir, 'insights-summary.json');
+  const generatedAvailabilityPath = path.join(tmpDir, 'session-availability.json');
   const repoRoot = fileURLToPath(new URL('..', import.meta.url));
   const run = spawnSync(
     'node',
@@ -297,6 +328,10 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
     JSON.parse(fs.readFileSync(generatedSummaryPath, 'utf8')),
     insightsSummary,
   );
+  assert.deepEqual(
+    JSON.parse(fs.readFileSync(generatedAvailabilityPath, 'utf8')),
+    availabilityArtifact,
+  );
   assert.equal(
     fs.readFileSync(generatedHtmlPath, 'utf8'),
     insightsHtml,
@@ -305,7 +340,6 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
 
 test('website loads the dataset and renders results', async () => {
   const env = createEnvironment();
-  const firstRenderedTitle = sortSessions(dataset.sessions, 'time')[0].title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
   await initSessionSearch({
     document: env.document,
@@ -322,7 +356,7 @@ test('website loads the dataset and renders results', async () => {
   assert.equal(env.document.getElementById('header-count').textContent, dataset.sessions.length.toLocaleString());
   assert.equal(env.document.getElementById('result-count').textContent, `${dataset.sessions.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.match(env.document.getElementById('app').innerHTML, /class="grid"/);
-  assert.match(env.document.getElementById('app').innerHTML, new RegExp(firstRenderedTitle));
+  assert.match(env.document.getElementById('app').innerHTML, /Fireside chat with Thomas Kurian/);
 });
 
 test('speaker query param filters results on load', async () => {
@@ -933,4 +967,36 @@ test('availability query param filters full and not-full sessions', async () => 
   assert.deepEqual(filterSessions(sample, notFullFilters).map((s) => s.title), ['Open session']);
   assert.equal(buildSearchFromFilters(fullFilters), '?availability=full');
   assert.equal(buildSearchFromFilters(notFullFilters), '?availability=not-full');
+});
+
+test('session explorer joins availability artifact before applying availability filters', async () => {
+  const env = createEnvironment('?availability=full');
+  const source = {
+    sessions: [
+      { title: 'Full session', url: 'https://example.com/session/1/full', topics: [], speakers: [] },
+      { title: 'Open session', url: 'https://example.com/session/2/open', topics: [], speakers: [] },
+      { title: 'Unknown session', url: 'https://example.com/session/3/unknown', topics: [], speakers: [] },
+    ],
+  };
+  const availability = {
+    generatedAt: '2026-04-01T00:00:00.000Z',
+    records: [
+      { url: 'https://example.com/session/1/full', remaining_capacity: 0 },
+      { url: 'https://example.com/session/2/open', remaining_capacity: 5 },
+    ],
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source, availability),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.match(env.document.getElementById('app').innerHTML, /Full session/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Open session/);
+  assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Unknown session/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /availability: full/);
 });

@@ -1,4 +1,5 @@
 import { canonicalCompanyName, companyMatchesFilter } from '../lib/company-identity.mjs';
+import { availabilityBand, mergeAvailabilityIntoSessions } from '../lib/session-availability-core.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 const DEFAULT_SORT = 'time';
@@ -198,8 +199,9 @@ export function filterSessions(sessions, filters) {
     if (aiFocus && llm.ai_focus !== aiFocus) return false;
     if (theme && llm.theme !== theme) return false;
     if (audience && llm.audience !== audience) return false;
-    if (availability === 'full' && Number(session.remaining_capacity) !== 0) return false;
-    if (availability === 'not-full' && Number(session.remaining_capacity) === 0) return false;
+    const band = availabilityBand(session);
+    if (availability === 'full' && band !== 'full') return false;
+    if (availability === 'not-full' && band !== 'not-full') return false;
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -319,7 +321,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
     const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
-    const statusBadge = Number(session.remaining_capacity) === 0 ? '<span class="status-badge full">Full</span>' : '';
+    const statusBadge = availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : '';
     return `<div class="card" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
@@ -386,7 +388,7 @@ function populateTopicFilter(topicSelect, sessions) {
   topicSelect.appendChild(optgroup);
 }
 
-export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', storage = globalThis.localStorage } = {}) {
+export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', storage = globalThis.localStorage } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
@@ -609,9 +611,16 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   try {
-    const response = await fetchImpl(dataUrl);
+    const [response, availabilityResponse] = await Promise.all([
+      fetchImpl(dataUrl),
+      availabilityUrl ? fetchImpl(availabilityUrl).catch(() => null) : Promise.resolve(null),
+    ]);
     const data = await response.json();
-    sessions = data.sessions || [];
+    const availabilityData = availabilityResponse ? await availabilityResponse.json().catch(() => null) : null;
+    const baseSessions = data.sessions || [];
+    sessions = Array.isArray(availabilityData?.records)
+      ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
+      : baseSessions;
     timeBounds = deriveTimeBounds(sessions);
     if (timeRangeStart) {
       timeRangeStart.min = String(timeBounds.min);
@@ -641,7 +650,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
   [qInput, speakerInput, excludeInput].filter(Boolean).forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
-  [topicSelect, sortSelect, startAfterInput, startBeforeInput, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
+  [topicSelect, sortSelect, startAfterInput, startBeforeInput, availabilitySelect, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
   [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
     let start = Number(timeRangeStart.value);
     let end = Number(timeRangeEnd.value);
@@ -670,6 +679,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'ai_focus') classificationFilters.ai_focus = '';
     if (key === 'theme') classificationFilters.theme = '';
     if (key === 'audience') classificationFilters.audience = '';
+    if (key === 'availability' && availabilitySelect) availabilitySelect.value = '';
     render();
   });
 
@@ -693,6 +703,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     companyFilter = '';
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
+    if (availabilitySelect) availabilitySelect.value = '';
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
     if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
     if (favoriteToggle) favoriteToggle.checked = false;

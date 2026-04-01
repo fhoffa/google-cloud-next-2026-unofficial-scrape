@@ -74,7 +74,7 @@
 </head>
 <body>
   <!-- Generated from templates/insights.template.html using scripts/generate_insights.mjs and config/word-rules.json. -->
-  <main data-generated-on="2026-04-01T15:40:50.293Z" data-summary-source="./media/insights-summary.json">
+  <main data-generated-on="2026-04-01T17:52:28.528Z" data-summary-source="./media/insights-summary.json">
     <div class="top">
       <div>
         <p class="eyebrow">Conference intelligence</p>
@@ -86,6 +86,26 @@
 
     <section class="section">
       <div class="grid" id="stats"><div class="card"><div class="stat-value">1,048</div><div class="stat-label">Total sessions</div><div class="stat-note">Across all formats — keynotes, breakouts, workshops, and labs.</div></div><div class="card"><div class="stat-value">89%</div><div class="stat-label">AI share of the conference</div><div class="stat-sub">932 AI · 116 not AI</div><div class="stat-note">For every non-AI session, there are roughly 8 AI ones.</div></div><div class="card"><div class="stat-value">Security</div><div class="stat-label">Largest theme</div><div class="stat-sub">233 sessions</div><div class="stat-note">Spans both AI and non-AI content — building things is the dominant conference mode.</div></div><div class="card"><div class="stat-value">Leaders</div><div class="stat-label">Largest audience</div><div class="stat-sub">314 sessions</div><div class="stat-note">Slightly ahead of Developers (265 sessions) — the conference leans executive.</div></div><div class="card"><div class="stat-value">362</div><div class="stat-label">Non-Google companies represented</div><div class="stat-note">Most appear once. A handful show up 10+ times and are part of the conference narrative.</div></div></div>
+    </section>
+
+    <section class="section">
+      <h2>How full the conference is getting</h2>
+      <p>Availability comes from the cached public session-library pages, joined back onto the classified session dataset at build time.</p>
+      <div class="grid" id="fullness-stats"><div class="card"><div class="stat-value">989</div><div class="stat-label">Sessions with live availability</div><div class="stat-sub">94% of catalog</div><div class="stat-note">59 sessions are missing from the cached library availability feed.</div></div><div class="card"><div class="stat-value">25</div><div class="stat-label">Full now</div><div class="stat-sub">3%</div><div class="stat-note">A full session has 0 seats remaining in the cached library feed.</div></div><div class="card"><div class="stat-value">964</div><div class="stat-label">Not full now</div><div class="stat-sub">97%</div><div class="stat-note">Everything with a positive remaining-capacity signal collapses into not full.</div></div><div class="card"><div class="stat-value">15</div><div class="stat-label">Workshops already full</div><div class="stat-sub">23 not full</div><div class="stat-note">38 workshops currently expose seat counts.</div></div></div>
+      <div class="mini-grid" style="margin-top:12px">
+        <div class="card">
+          <div class="kicker">What the seat signals say</div>
+          <ul class="bullets" id="fullness-observations"><li><strong>989</strong> sessions still have a live availability signal, covering <strong>94%</strong> of the catalog; 59 sessions have no current seat signal in the cached library pages.</li><li><a href="./index.html?availability=full"><strong>Open the full-now list</strong></a> for the 25 sessions that are already sold out, or jump to <a href="./index.html?availability=not-full">sessions that still have seats</a> (964).</li><li><a href="./index.html?availability=full&amp;topic=Workshops"><strong>Workshops are the main sellout zone</strong></a>: 15 of 38 (39%) are already full.</li></ul>
+        </div>
+        <div class="card">
+          <div class="kicker">Where sessions are full</div>
+          <div class="rank-list" id="full-now-categories"><a class="rank-row" href="./index.html?availability=full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Workshops</div><div class="rank-bar"><div class="rank-fill" style="width:100.000000%;background:#c62828"></div></div></div><div class="rank-count">15</div></a><a class="rank-row" href="./index.html?availability=full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Discussion Groups</div><div class="rank-bar"><div class="rank-fill" style="width:60.000000%;background:#c62828"></div></div></div><div class="rank-count">9</div></a><a class="rank-row" href="./index.html?availability=full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Lounge Sessions</div><div class="rank-bar"><div class="rank-fill" style="width:6.666667%;background:#c62828"></div></div></div><div class="rank-count">1</div></a></div>
+        </div>
+        <div class="card">
+          <div class="kicker">Where sessions are not full</div>
+          <div class="rank-list" id="not-full-now-categories"><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Breakouts</div><div class="rank-bar"><div class="rank-fill" style="width:100.000000%;background:#34a853"></div></div></div><div class="rank-count">421</div></a><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Lightning Talks</div><div class="rank-bar"><div class="rank-fill" style="width:40.617577%;background:#34a853"></div></div></div><div class="rank-count">171</div></a><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Discussion Groups</div><div class="rank-bar"><div class="rank-fill" style="width:17.814727%;background:#34a853"></div></div></div><div class="rank-count">75</div></a><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Solution Talks</div><div class="rank-bar"><div class="rank-fill" style="width:11.876485%;background:#34a853"></div></div></div><div class="rank-count">50</div></a><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Demos</div><div class="rank-bar"><div class="rank-fill" style="width:10.926366%;background:#34a853"></div></div></div><div class="rank-count">46</div></a><a class="rank-row" href="./index.html?availability=not-full" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">Birds of a Feather</div><div class="rank-bar"><div class="rank-fill" style="width:9.738717%;background:#34a853"></div></div></div><div class="rank-count">41</div></a></div>
+        </div>
+      </div>
     </section>
 
     <section class="section hero-layout">
