@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T18:15:20.947Z",
+    "generatedAt": "2026-04-01T18:25:22.359Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -17,8 +17,8 @@
       "note": "Across all formats — keynotes, breakouts, workshops, and labs."
     },
     {
-      "value": "89%",
-      "label": "AI share of the conference",
+      "value": "89% AI",
+      "label": "Share of the conference",
       "sub": "932 AI · 116 not AI",
       "note": "For every non-AI session, there are roughly 8 AI ones."
     },
@@ -36,31 +36,13 @@
     },
     {
       "value": "362",
+      "valueHtml": "<a href=\"#top-companies-speaking\">362</a>",
       "label": "Non-Google companies represented",
       "note": "Most appear once. A handful show up 10+ times and are part of the conference narrative."
     }
   ],
   "fullness": {
-    "stats": [
-      {
-        "value": "25",
-        "label": "Full now",
-        "sub": "3%",
-        "note": "94% of the catalog has a live seat signal. A full session has 0 seats remaining."
-      },
-      {
-        "value": "964",
-        "label": "Not full now",
-        "sub": "97%",
-        "note": "Everything with a positive remaining-capacity signal."
-      },
-      {
-        "value": "15",
-        "label": "Workshops already full",
-        "sub": "23 not full",
-        "note": "38 workshops currently expose seat counts."
-      }
-    ],
+    "stats": [],
     "observations": [
       "<a href=\"./index.html?availability=full\"><strong>25 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">964 still have seats</a>.",
       "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 15 of 38 (39%) are already full."

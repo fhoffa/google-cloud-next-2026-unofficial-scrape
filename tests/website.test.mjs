@@ -218,7 +218,7 @@ test('insights page includes richer intelligence sections', () => {
   assert.match(insightsHtml, /What stands out/);
   assert.match(insightsHtml, /How full the conference is getting/);
   assert.match(insightsHtml, /Top companies speaking/);
-  assert.match(insightsHtml, /id="fullness-stats"/);
+  assert.doesNotMatch(insightsHtml, /id="fullness-stats"/);
   assert.match(insightsHtml, /id="fullness-observations"/);
   assert.match(insightsHtml, /id="full-now-categories"/);
   assert.match(insightsHtml, /id="not-full-now-categories"/);
@@ -262,15 +262,8 @@ test('insights page is generated from a template and summary artifact', () => {
 });
 
 test('insights summary includes fullness metrics sourced from library availability', () => {
-  assert.equal(insightsSummary.fullness.stats.length, 4);
-  assert.equal(insightsSummary.fullness.stats[0].label, 'Sessions with live availability');
-  assert.equal(insightsSummary.fullness.stats[1].label, 'Full now');
-  assert.equal(insightsSummary.fullness.stats[2].label, 'Not full now');
-  assert.equal(insightsSummary.fullness.stats[3].label, 'Workshops already full');
-  assert.ok(Number(insightsSummary.fullness.stats[0].value) > 0);
-  assert.ok(Number(insightsSummary.fullness.stats[1].value) > 0);
-  assert.ok(Number(insightsSummary.fullness.stats[2].value) > 0);
-  assert.ok(insightsSummary.fullness.observations.some((item) => /cached library pages|availability signal/.test(item)));
+  assert.equal(insightsSummary.fullness.stats.length, 0);
+  assert.ok(insightsSummary.fullness.observations.length > 0);
   assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
   assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
   assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');

@@ -110,7 +110,8 @@ function statsCardsHtml(cards) {
   return cards.map((card) => {
     const sub = card.sub ? `<div class="stat-sub">${esc(card.sub)}</div>` : '';
     const note = card.note ? `<div class="stat-note">${card.note}</div>` : '';
-    return `<div class="card"><div class="stat-value">${esc(card.value)}</div><div class="stat-label">${esc(card.label)}</div>${sub}${note}</div>`;
+    const value = card.valueHtml || esc(card.value);
+    return `<div class="card"><div class="stat-value">${value}</div><div class="stat-label">${esc(card.label)}</div>${sub}${note}</div>`;
   }).join('');
 }
 
@@ -224,17 +225,13 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
     lede: `${aiCount.toLocaleString()} of ${total.toLocaleString()} sessions at Google Cloud Next 2026 are about AI — ${Math.round((aiCount / Math.max(1, total)) * 100)}% of the whole conference. ${esc(themes[0]?.[0] || 'Security')} is the biggest single theme. The ${notAiCount} non-AI sessions are where the rest of the cloud story holds out.`,
     stats: [
       { value: total.toLocaleString(), label: 'Total sessions', note: `Across all formats — keynotes, breakouts, workshops, and labs.` },
-      { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}%`, label: 'AI share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI`, note: `For every non-AI session, there are roughly ${Math.round(aiCount / Math.max(1, notAiCount))} AI ones.` },
+      { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}% AI`, label: 'Share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI`, note: `For every non-AI session, there are roughly ${Math.round(aiCount / Math.max(1, notAiCount))} AI ones.` },
       { value: themes[0]?.[0] || 'n/a', label: 'Largest theme', sub: `${themes[0]?.[1] || 0} sessions`, note: themes[0]?.[0] === 'Security' ? 'Security runs through both AI and non-AI content — it\'s the one theme that shows up everywhere.' : themes[0]?.[0] === 'App dev' ? 'Building things is the dominant mode — app dev spans both AI and non-AI sessions.' : `${themes[0]?.[0] || 'This theme'} spans both AI and non-AI content — it shows up across the whole conference.` },
       { value: audiences[0]?.[0] || 'n/a', label: 'Largest audience', sub: `${audiences[0]?.[1] || 0} sessions`, note: `Slightly ahead of Developers (${Math.min(leaderShare, devShare)} sessions) — the conference leans executive.` },
-      { value: nonGoogleCompanyCount.toLocaleString(), label: 'Non-Google companies represented', note: `Most appear once. A handful show up 10+ times and are part of the conference narrative.` },
+      { value: nonGoogleCompanyCount.toLocaleString(), valueHtml: `<a href="#top-companies-speaking">${nonGoogleCompanyCount.toLocaleString()}</a>`, label: 'Non-Google companies represented', note: `Most appear once. A handful show up 10+ times and are part of the conference narrative.` },
     ],
     fullness: {
-      stats: [
-        { value: availability.full.toLocaleString(), label: 'Full now', sub: availability.fullShare, note: `${percentage(availability.known, total)} of the catalog has a live seat signal. A full session has 0 seats remaining.` },
-        { value: availability['not-full'].toLocaleString(), label: 'Not full now', sub: availability.notFullShare, note: 'Everything with a positive remaining-capacity signal.' },
-        { value: workshopAvailability.full.toLocaleString(), label: 'Workshops already full', sub: workshopAvailability.known ? `${workshopAvailability['not-full']} not full` : 'No workshop signal', note: workshopAvailability.known ? `${workshopAvailability.known} workshops currently expose seat counts.` : 'Workshop pages are missing from the current availability feed.' },
-      ],
+      stats: [],
       observations: fullnessObservations,
       rankings: {
         fullByCategory: fullByCategory.slice(0, 6).map(([name, count]) => ({ name, count })),
