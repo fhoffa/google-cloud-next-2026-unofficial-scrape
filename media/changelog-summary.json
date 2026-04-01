@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T14:06:58.568Z",
+    "generatedAt": "2026-04-01T14:10:49.848Z",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
     "outputHtml": "changelog.html",
@@ -11,8 +11,8 @@
   "updates": [
     {
       "previous": {
-        "file": "2026-03-31T19-54-45Z.json",
-        "scrapedAt": "2026-03-31T19:54:45.166Z",
+        "file": "2026-03-27T16-43-18Z.json",
+        "scrapedAt": "2026-03-27T16:43:18.891Z",
         "count": 1037
       },
       "current": {
