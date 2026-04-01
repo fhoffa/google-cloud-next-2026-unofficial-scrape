@@ -296,7 +296,7 @@
         map.set(company, (map.get(company) || 0) + 1);
       }
     }
-    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).filter(([, count]) => count >= 2).slice(0, 40);
+    return [...map.entries()].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0])).filter(([, count]) => count >= 2).slice(0, 120);
   }
 
   function renderCompanies() {
@@ -306,10 +306,10 @@
     const second = topNonGoogle[1];
     const geotab = topNonGoogle.find(([name]) => name === 'Geotab');
     const writeup = [
-      top ? `<strong>${esc(top[0])}</strong> appears most often, with <strong>${top[1]}</strong> sessions in the catalog.` : '',
-      second ? `The drop from #1 to #2 is ${Math.max(0, (top?.[1] || 0) - second[1])}, so the outside-voice leaderboard is ${((top?.[1] || 0) - second[1]) <= 2 ? 'fairly tight' : 'top-heavy'}.` : '',
-      geotab ? `<strong>Geotab</strong> is in the recurring-speaker set too, with <strong>${geotab[1]}</strong> sessions.` : '',
-      'This list is a useful proxy for which non-Google companies Google is repeatedly amplifying across the event.'
+      top ? `The strongest outside voice in this catalog is <strong>${esc(top[0])}</strong>, with <strong>${top[1]}</strong> sessions — a signal that this company is showing up repeatedly, not just making a single cameo.` : '',
+      second ? `${esc(top[0])} and ${esc(second[0])} set the pace near the top, which makes this section useful as a quick read on which partners, customers, and ecosystem names Google is putting on stage over and over.` : '',
+      geotab ? `<strong>Geotab</strong> makes the recurring-speaker list too, with <strong>${geotab[1]}</strong> sessions, so it should be visible here rather than disappearing into the long tail.` : '',
+      'Read this less as a popularity contest and more as a map of repeated external presence: who appears once can be incidental; who appears again and again is part of the conference narrative.'
     ].filter(Boolean).join(' ');
     document.getElementById('company-observations').innerHTML = writeup;
   }

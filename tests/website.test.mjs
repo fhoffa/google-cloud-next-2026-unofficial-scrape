@@ -225,8 +225,8 @@ test('insights page uses sankey index and click-map artifacts instead of hardcod
 test('insights page company section is a single longer non-Google list with write-up', () => {
   assert.match(insightsHtml, /<h2>Top companies speaking<\/h2>/);
   assert.doesNotMatch(insightsHtml, /Top companies in AI sessions/);
-  assert.match(insightsHtml, /This list is a useful proxy for which non-Google companies Google is repeatedly amplifying across the event\./);
-  assert.match(insightsHtml, /slice\(0, 40\)/);
+  assert.match(insightsHtml, /Read this less as a popularity contest and more as a map of repeated external presence/);
+  assert.match(insightsHtml, /slice\(0, 120\)/);
   assert.match(insightsHtml, /count >= 2/);
 });
 
