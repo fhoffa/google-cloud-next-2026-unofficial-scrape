@@ -6,6 +6,7 @@ import re
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 import matplotlib
 matplotlib.use('Agg')
@@ -399,6 +400,28 @@ def infer_publish_stamp(input_path: Path, sessions) -> str:
     return latest.strftime('%Y%m%d')
 
 
+def update_sankey_index(cwd: Path, output_path: Path, stamp: str):
+    index_path = cwd / 'media' / 'sankey-index.json'
+    rel = output_path.relative_to(cwd).as_posix()
+    latest_value = f'https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/{quote(rel)}'
+    payload = {
+        'latest': latest_value,
+        'generated_on': f'{stamp[:4]}-{stamp[4:6]}-{stamp[6:8]}',
+        'history': [latest_value],
+        'notes': '`latest` should be updated whenever a new dated Sankey image is published. Keep prior files in history for archival links.'
+    }
+    if index_path.exists():
+        try:
+            current = json.loads(index_path.read_text())
+            history = current.get('history') or []
+            if latest_value in history:
+                history = [item for item in history if item != latest_value]
+            payload['history'] = [latest_value, *history]
+        except Exception:
+            pass
+    index_path.write_text(json.dumps(payload, indent=2) + '\n')
+
+
 def main():
     parser = argparse.ArgumentParser(description='Generate the Google Cloud Next AI Sankey chart.')
     parser.add_argument('--input', default=None, help='Path to sessions JSON file (default: classified_sessions.json if present, else latest.json)')
@@ -428,6 +451,7 @@ def main():
     data = json.loads(input_path.read_text())
     sessions = data['sessions'] if isinstance(data, dict) and 'sessions' in data else data
 
+    stamp = None
     if args.publish:
         stamp = args.publish_date or infer_publish_stamp(input_path, sessions)
         output_path = cwd / 'media' / f'fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_{stamp}.png'
@@ -458,6 +482,8 @@ def main():
         min_audience_label=args.min_audience_label,
         click_map_path=click_map_path,
     )
+    if args.publish and stamp:
+        update_sankey_index(cwd, output_path, stamp)
     print(output_path)
 
 

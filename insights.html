@@ -212,9 +212,9 @@
       addArea({
         box: {
           x: segment.shape.x * clickMap.viewBox.width,
-          y: segment.shape.y0 * clickMap.viewBox.height,
+          y: segment.shape.y1 * clickMap.viewBox.height,
           w: segment.shape.w * clickMap.viewBox.width,
-          h: (segment.shape.y1 - segment.shape.y0) * clickMap.viewBox.height,
+          h: Math.max(12, (segment.shape.y0 - segment.shape.y1) * clickMap.viewBox.height),
         },
         title: segment.title,
         params: segment.params || {},
