@@ -186,6 +186,8 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
+  const infraOpsShare = audiences.find(([name]) => name === 'Infra/Ops')?.[1] || 0;
+  const dataProsShare = audiences.find(([name]) => name === 'Data pros')?.[1] || 0;
   const topAiTheme = aiThemes[0] || ['n/a', 0];
   const topNotAiTheme = notAiThemes[0] || ['n/a', 0];
   const availability = availabilityBreakdown(withLlm);
@@ -195,8 +197,8 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
 
   const aiThemeNotes = {
     'App dev': '— builders are clearly the primary target',
-    'Data': '— data work drives more of the AI agenda than any other theme',
-    'Security': "— even AI's biggest footprint is in security",
+    'Data': '— the data layer is the primary AI workbench: pipelines, warehouses, and real-time feeds behind the models',
+    'Security': '— 1 in 5 AI sessions is about security; guardrails, IAM, and threat detection are baked into the AI stack',
     'Business': '— the AI story is as much a business case as a technical one',
     'Infra': '— AI infrastructure dominates the technical agenda',
   };
@@ -207,7 +209,8 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
     `<strong>${esc(themes[0]?.[0] || 'n/a')}</strong> is the most common theme at <strong>${themes[0]?.[1] || 0}</strong> sessions, spanning both AI and non-AI content.`,
     `Inside AI, <strong>${esc(topAiTheme[0])}</strong> leads at ${topAiTheme[1]} sessions${aiThemeNote ? ` ${aiThemeNote}` : ''}.`,
     `Outside AI, <strong>${esc(topNotAiTheme[0])}</strong> takes the top spot with ${topNotAiTheme[1]} sessions.`,
-    `<strong>${leaderShare >= devShare ? 'Leaders' : 'Developers'}</strong> get slightly more sessions than ${leaderShare >= devShare ? 'developers' : 'leaders'} (${Math.max(leaderShare, devShare)} vs ${Math.min(leaderShare, devShare)}).`,
+    `<strong>${Math.max(leaderShare, devShare)}</strong> sessions target ${leaderShare >= devShare ? 'Leaders' : 'Developers'}, ${Math.min(leaderShare, devShare)} target ${leaderShare >= devShare ? 'Developers' : 'Leaders'} — the conference tilts toward the buyer side.`,
+    `<strong>${Math.max(infraOpsShare, dataProsShare)}</strong> sessions target ${infraOpsShare >= dataProsShare ? 'infrastructure and ops engineers' : 'data practitioners'}, <strong>${Math.min(infraOpsShare, dataProsShare)}</strong> target ${infraOpsShare >= dataProsShare ? 'data practitioners' : 'infrastructure and ops engineers'}. ${infraOpsShare >= dataProsShare ? 'The platform comes before the pipeline.' : 'The data layer drives the agenda.'}`,
     ...(consultingTotal > 0 ? [`The major consulting firms together account for <strong>${consultingTotal} sessions</strong> — more than any single non-Google company on the list.`] : []),
   ];
   const fullnessObservations = [
