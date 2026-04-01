@@ -177,9 +177,6 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   if (shopifyCount > 0 && snapCount > 0) {
     companyObservationParts.push(`<strong>Shopify</strong> (${shopifyCount}) and <strong>Snap</strong> (${snapCount}) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.`);
   }
-  if (geotabCount > 0) {
-    companyObservationParts.push(`Disclosure: <a href="${esc(makeHref({ company: 'Geotab' }))}"><strong>Geotab</strong></a> (employer of <a href="https://www.linkedin.com/in/hoffa">Felipe Hoffa</a>, this site's author) appears ${geotabCount} times.`);
-  }
 
   const leaderShare = audiences.find(([name]) => name === 'Leaders')?.[1] || 0;
   const devShare = audiences.find(([name]) => name === 'Developers')?.[1] || 0;
