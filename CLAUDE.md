@@ -31,6 +31,7 @@ the shape of the conference (AI vs not-AI, themes, audiences, top companies, voc
 
 ### Patterns to avoid
 - "it's not just X, it's Y" — this construction is banned
+- "not just X" in general — lead with what it is, not what it isn't
 - "makes this section useful as a quick read on..." — meta-commentary about the page itself
 - Ending a sentence with "as well" or "too" when the sentence could just lead with the point
 - Listing features in the lede ("surfaces X, Y, Z, and W") — lead with the story instead
