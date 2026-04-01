@@ -17,7 +17,17 @@ This file carries forward open tasks after PR #34 (classification refinement —
 
 The 59 sessions from the 2026-04-01 snapshot have been reviewed and classified directly.
 
-## Follow-up 2: decide how to surface fullness
+## Follow-up 2: regenerate Sankey chart
+
+`scripts/make_sankey.py` has been updated to include Applied AI (color, THEME_ORDER,
+allowlist), but no new PNG has been produced since the theme was added and the session
+count moved to 1048.
+
+Need to run `make_sankey.py` against the current `classified_sessions.json`, publish
+the output PNG, update `media/sankey-index.json` to point at it, and regenerate
+`insights.html` so the embedded chart reflects the new 6-theme layout.
+
+## Follow-up 3: decide how to surface fullness
 
 PR 33 added explorer filter support for `Full` / `Not full` badges, but not the broader story.
 
