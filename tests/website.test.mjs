@@ -267,6 +267,7 @@ test('insights summary includes fullness metrics sourced from library availabili
   assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
   assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
   assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');
+  assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].share, '39%');
   assert.equal(insightsSummary.fullness.rankings.notFullByCategory, undefined);
 });
 
