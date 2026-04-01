@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T05:30:19.193Z",
+    "generatedAt": "2026-04-01T05:44:03.292Z",
     "source": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
@@ -12,26 +12,31 @@
   "stats": [
     {
       "value": "1,037",
-      "label": "Total sessions"
+      "label": "Total sessions",
+      "note": "Across all formats — keynotes, breakouts, workshops, and labs."
     },
     {
       "value": "89%",
       "label": "AI share of the conference",
-      "sub": "924 AI · 113 not AI"
+      "sub": "924 AI · 113 not AI",
+      "note": "For every non-AI session, there are roughly 8 AI ones."
     },
     {
       "value": "App dev",
       "label": "Largest theme",
-      "sub": "268 sessions"
+      "sub": "268 sessions",
+      "note": "Spans both AI and non-AI content — building things is the dominant conference mode."
     },
     {
       "value": "Leaders",
       "label": "Largest audience",
-      "sub": "308 sessions"
+      "sub": "308 sessions",
+      "note": "Slightly ahead of Developers (266 sessions) — the conference leans executive."
     },
     {
       "value": "358",
-      "label": "Non-Google companies represented"
+      "label": "Non-Google companies represented",
+      "note": "Most appear once. A handful show up 10+ times and are part of the conference narrative."
     }
   ],
   "quickPivots": {
@@ -107,7 +112,8 @@
     "<strong>App dev</strong> is the most common theme at <strong>268</strong> sessions, spanning both AI and non-AI content.",
     "Inside AI, <strong>App dev</strong> leads at 248 sessions — builders are clearly the primary target.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
-    "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266)."
+    "<strong>Leaders</strong> get slightly more sessions than developers (308 vs 266).",
+    "The major consulting firms together account for <strong>38 sessions</strong> — more than any single non-Google company on the list."
   ],
   "rankings": {
     "topThemes": [
@@ -306,13 +312,6 @@
         "href": "./index.html?q=developer"
       },
       {
-        "word": "breakout",
-        "count": 455,
-        "sessionCount": 454,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout"
-      },
-      {
         "word": "manager",
         "count": 455,
         "sessionCount": 452,
@@ -346,6 +345,13 @@
         "sessionCount": 328,
         "label": "customer",
         "href": "./index.html?q=customer"
+      },
+      {
+        "word": "platform",
+        "count": 394,
+        "sessionCount": 328,
+        "label": "platform",
+        "href": "./index.html?q=platform"
       }
     ],
     "ai": [
@@ -434,13 +440,6 @@
         "href": "./index.html?q=developer&ai_focus=AI"
       },
       {
-        "word": "breakout",
-        "count": 418,
-        "sessionCount": 418,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout&ai_focus=AI"
-      },
-      {
         "word": "agentic",
         "count": 413,
         "sessionCount": 260,
@@ -474,6 +473,13 @@
         "sessionCount": 300,
         "label": "customer",
         "href": "./index.html?q=customer&ai_focus=AI"
+      },
+      {
+        "word": "platform",
+        "count": 361,
+        "sessionCount": 302,
+        "label": "platform",
+        "href": "./index.html?q=platform&ai_focus=AI"
       }
     ],
     "notAi": [
@@ -569,13 +575,6 @@
         "href": "./index.html?q=lightning&ai_focus=Not+AI"
       },
       {
-        "word": "breakout",
-        "count": 37,
-        "sessionCount": 36,
-        "label": "breakout/breakouts",
-        "href": "./index.html?q=breakout&ai_focus=Not+AI"
-      },
-      {
         "word": "professionals",
         "count": 37,
         "sessionCount": 36,
@@ -602,11 +601,18 @@
         "sessionCount": 33,
         "label": "introductory",
         "href": "./index.html?q=introductory&ai_focus=Not+AI"
+      },
+      {
+        "word": "platform",
+        "count": 33,
+        "sessionCount": 26,
+        "label": "platform",
+        "href": "./index.html?q=platform&ai_focus=Not+AI"
       }
     ]
   },
   "companies": {
-    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — showing up throughout the program, not just once. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
+    "observationHtml": "<strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>16</strong> sessions — showing up throughout the program, not just once. The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>38 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle. <strong>Anthropic</strong> appears 9 times — Google's AI model investment shows up on stage as a first-class partner, not a footnote. One appearance can be coincidence. Companies that show up five, ten, or twenty times are part of the story Google is telling about its ecosystem.",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",

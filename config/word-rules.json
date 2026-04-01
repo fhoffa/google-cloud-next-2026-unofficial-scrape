@@ -54,6 +54,8 @@
     "next",
     "session",
     "sessions",
+    "breakout",
+    "breakouts",
     "learn",
     "join",
     "explore",
@@ -86,7 +88,6 @@
     "teams": "team",
     "services": "service",
     "workshops": "workshop",
-    "breakouts": "breakout",
     "groups": "group",
     "applications": "application"
   },
@@ -105,7 +106,6 @@
     "team": "team/teams",
     "service": "service/services",
     "workshop": "workshop/workshops",
-    "breakout": "breakout/breakouts",
     "group": "group/groups",
     "application": "application/applications"
   }
