@@ -344,6 +344,27 @@ function listItems(items, formatter, fallback = 'None in this update') {
 
 function renderDiffHtml(diff) {
   const title = `${friendlyDate(diff.previous.scrapedAt)} → ${friendlyDate(diff.current.scrapedAt)}`;
+  const updatedSessions = [
+    ...diff.replacements.map((item) => ({
+      kind: 'replacement',
+      title: `${item.removedTitle} → ${item.addedTitle}`,
+      url: item.addedUrl || item.removedUrl || '',
+      details: item.reasons,
+    })),
+    ...diff.materialChanges.map((item) => ({
+      kind: 'material',
+      title: item.title,
+      url: item.url || '',
+      details: item.changedFields,
+    })),
+  ].slice(0, 16);
+
+  const availabilityChanges = [
+    ...diff.nowFull.map((session) => ({ kind: 'now full', title: session.title, url: session.url || '' })),
+    ...diff.reopened.map((session) => ({ kind: 'reopened', title: session.title, url: session.url || '' })),
+    ...diff.nowLimited.map((session) => ({ kind: 'limited', title: session.title, url: session.url || '' })),
+  ].slice(0, 16);
+
   return `
     <article class="card">
       <div class="snapshot-header">
@@ -354,19 +375,17 @@ function renderDiffHtml(diff) {
       </div>
       <p class="summary">${esc(summarySentence(diff))}</p>
       <div class="badges">
-        <span class="badge changed">Likely replacements</span>
-        <span class="badge added">Added sessions</span>
+        <span class="badge changed">Updated sessions</span>
+        <span class="badge added">New sessions</span>
         <span class="badge removed">Removed sessions</span>
-        <span class="badge changed">Notable edits</span>
-        <span class="badge full">Fully booked share</span>
-        <span class="badge reopened">Reopened sessions</span>
+        <span class="badge full">Availability changes</span>
       </div>
       <details>
         <summary>Show details</summary>
         <div class="section-grid">
           <section class="mini-card">
-            <h3>Likely replacements</h3>
-            ${listItems(diff.replacements, (item) => `${item.removedUrl ? `<a href="${esc(item.removedUrl)}" target="_blank" rel="noopener">${esc(item.removedTitle)}</a>` : esc(item.removedTitle)} → ${item.addedUrl ? `<a href="${esc(item.addedUrl)}" target="_blank" rel="noopener">${esc(item.addedTitle)}</a>` : esc(item.addedTitle)} <span class="muted">(${esc(item.reasons.join(', '))})</span>`, 'No strong 1:1 substitutions detected in this update')}
+            <h3>Updated sessions</h3>
+            ${listItems(updatedSessions, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.details.join(', '))})</span>`, 'No strong replacements or meaningful edits in this update')}
           </section>
           <section class="mini-card">
             <h3>New sessions</h3>
@@ -377,26 +396,19 @@ function renderDiffHtml(diff) {
             ${listItems(diff.removed, (session) => esc(session.title))}
           </section>
           <section class="mini-card">
-            <h3>Now fully booked</h3>
-            ${listItems(diff.nowFull, (session) => session.url ? `<a href="${esc(session.url)}" target="_blank" rel="noopener">${esc(session.title)}</a>` : esc(session.title))}
-          </section>
-          <section class="mini-card">
-            <h3>Reopened since previous snapshot</h3>
-            ${listItems(diff.reopened, (session) => session.url ? `<a href="${esc(session.url)}" target="_blank" rel="noopener">${esc(session.title)}</a>` : esc(session.title))}
-          </section>
-          <section class="mini-card">
-            <h3>Low availability now</h3>
-            ${listItems(diff.nowLimited, (session) => session.url ? `<a href="${esc(session.url)}" target="_blank" rel="noopener">${esc(session.title)}</a>` : esc(session.title))}
-          </section>
-          <section class="mini-card">
-            <h3>Meaningful metadata edits</h3>
-            ${listItems(diff.materialChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`)}
-          </section>
-          <section class="mini-card">
-            <h3>Minor metadata churn</h3>
-            ${listItems(diff.minorChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No obvious low-value churn in this update')}
+            <h3>Availability changes</h3>
+            ${listItems(availabilityChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.kind)})</span>`, 'No notable availability movement in this update')}
           </section>
         </div>
+        <details>
+          <summary>Show minor churn</summary>
+          <div class="section-grid">
+            <section class="mini-card">
+              <h3>Minor metadata churn</h3>
+              ${listItems(diff.minorChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No obvious low-value churn in this update')}
+            </section>
+          </div>
+        </details>
       </details>
     </article>
   `;
