@@ -221,7 +221,7 @@ test('insights page includes richer intelligence sections', () => {
   assert.doesNotMatch(insightsHtml, /id="fullness-stats"/);
   assert.match(insightsHtml, /id="fullness-observations"/);
   assert.match(insightsHtml, /id="full-now-categories"/);
-  assert.match(insightsHtml, /id="not-full-now-categories"/);
+  assert.doesNotMatch(insightsHtml, /id="not-full-now-categories"/);
   assert.match(insightsHtml, /id="top-non-google-companies"/);
   assert.match(insightsHtml, /id="company-observations"/);
   assert.match(insightsHtml, /sankey-index\.json|sankey-click-map\.json/);
@@ -267,7 +267,7 @@ test('insights summary includes fullness metrics sourced from library availabili
   assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
   assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
   assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');
-  assert.ok(insightsSummary.fullness.rankings.notFullByCategory.length > 0);
+  assert.equal(insightsSummary.fullness.rankings.notFullByCategory, undefined);
 });
 
 test('insights build emits a separate session availability artifact', () => {

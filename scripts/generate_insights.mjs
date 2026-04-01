@@ -90,11 +90,11 @@ function companyCounts(subset, { excludeGoogle = false } = {}) {
     .slice(0, 120);
 }
 
-function rankItemsHtml(items, color, paramsFor) {
+function rankItemsHtml(items, color, paramsFor, valueFor = (name, count) => String(count)) {
   const maxCount = items[0]?.[1] || 1;
   return items.map(([name, count]) => {
     const width = maxCount ? (count / maxCount) * 100 : 0;
-    return `<a class="rank-row" href="${esc(makeHref(paramsFor(name)))}" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">${esc(name)}</div><div class="rank-bar"><div class="rank-fill" style="width:${width.toFixed(6)}%;background:${color}"></div></div></div><div class="rank-count">${count}</div></a>`;
+    return `<a class="rank-row" href="${esc(makeHref(paramsFor(name)))}" style="text-decoration:none;color:inherit"><div class="rank-main"><div class="rank-name">${esc(name)}</div><div class="rank-bar"><div class="rank-fill" style="width:${width.toFixed(6)}%;background:${color}"></div></div></div><div class="rank-count">${esc(valueFor(name, count))}</div></a>`;
   }).join('');
 }
 
@@ -187,7 +187,6 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   const workshopSessions = withLlm.filter((session) => session.session_category === 'Workshops');
   const workshopAvailability = availabilityBreakdown(workshopSessions);
   const fullByCategory = categoryCounts(withLlm, 'full');
-  const notFullByCategory = categoryCounts(withLlm, 'not-full');
 
   const aiThemeNotes = {
     'App dev': '— builders are clearly the primary target',
@@ -234,8 +233,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
       stats: [],
       observations: fullnessObservations,
       rankings: {
-        fullByCategory: fullByCategory.slice(0, 6).map(([name, count]) => ({ name, count })),
-        notFullByCategory: notFullByCategory.slice(0, 6).map(([name, count]) => ({ name, count })),
+        fullByCategory: fullByCategory.slice(0, 6).map(([name, count]) => ({ name, count, share: percentage(count, availability.full) })),
       },
     },
     quickPivots: {
@@ -282,8 +280,7 @@ function renderHtml(summary, templateText) {
   const topAiThemes = summary.rankings.topAiThemes.map((item) => [item.name, item.count]);
   const topNotAiThemes = summary.rankings.topNotAiThemes.map((item) => [item.name, item.count]);
   const topNonGoogle = summary.companies.topNonGoogle.map((item) => [item.name, item.count]);
-  const fullByCategory = summary.fullness.rankings.fullByCategory.map((item) => [item.name, item.count]);
-  const notFullByCategory = summary.fullness.rankings.notFullByCategory.map((item) => [item.name, item.count]);
+  const fullByCategory = summary.fullness.rankings.fullByCategory.map((item) => [item.name, item.count, item.share]);
 
   const replacements = {
     '__OG_IMAGE__': esc(summary.meta.sankeyLatest),
@@ -304,8 +301,8 @@ function renderHtml(summary, templateText) {
     '__TOP_WORDS_ALL_HTML__': wordItemsHtml(summary.topWords.all),
     '__TOP_WORDS_AI_HTML__': wordItemsHtml(summary.topWords.ai, { ai_focus: 'AI' }),
     '__TOP_WORDS_NOT_AI_HTML__': wordItemsHtml(summary.topWords.notAi, { ai_focus: 'Not AI' }),
-    '__FULL_NOW_CATEGORIES_HTML__': rankItemsHtml(fullByCategory, '#c62828', () => ({ availability: 'full' })),
-    '__NOT_FULL_NOW_CATEGORIES_HTML__': rankItemsHtml(notFullByCategory, '#34a853', () => ({ availability: 'not-full' })),
+    '__FULL_NOW_CATEGORIES_HTML__': rankItemsHtml(fullByCategory.map(([name, count]) => [name, count]), '#c62828', () => ({ availability: 'full' }), (name) => fullByCategory.find(([n]) => n === name)?.[2] || ''),
+    '__NOT_FULL_NOW_CATEGORIES_HTML__': '',
     '__COMPANY_OBSERVATIONS_HTML__': summary.companies.observationHtml,
     '__TOP_NON_GOOGLE_COMPANIES_HTML__': rankItemsHtml(topNonGoogle, '#6a1b9a', (name) => ({ company: name })),
     '__INTERESTING_SLICES_HTML__': slicesHtml(summary.interestingSlices),

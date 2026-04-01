@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T18:25:22.359Z",
+    "generatedAt": "2026-04-01T18:26:36.766Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -51,41 +51,18 @@
       "fullByCategory": [
         {
           "name": "Workshops",
-          "count": 15
+          "count": 15,
+          "share": "60%"
         },
         {
           "name": "Discussion Groups",
-          "count": 9
+          "count": 9,
+          "share": "36%"
         },
         {
           "name": "Lounge Sessions",
-          "count": 1
-        }
-      ],
-      "notFullByCategory": [
-        {
-          "name": "Breakouts",
-          "count": 421
-        },
-        {
-          "name": "Lightning Talks",
-          "count": 171
-        },
-        {
-          "name": "Discussion Groups",
-          "count": 75
-        },
-        {
-          "name": "Solution Talks",
-          "count": 50
-        },
-        {
-          "name": "Demos",
-          "count": 46
-        },
-        {
-          "name": "Birds of a Feather",
-          "count": 41
+          "count": 1,
+          "share": "4%"
         }
       ]
     }
