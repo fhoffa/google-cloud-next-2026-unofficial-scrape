@@ -698,9 +698,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on large-scale storage operations and platform visibility signals."
       }
     },
     {
@@ -3451,9 +3451,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "AI focus; Infra theme — inference performance session centered on serving infrastructure, cost, and scale."
       }
     },
     {
@@ -5975,8 +5975,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on governance, defense, and agent security signals."
       }
     },
     {
@@ -8674,9 +8674,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "theme": "Infra",
+        "audience": "Infra/Ops",
+        "reasoning": "AI focus; Infra theme — GKE and platform-engineering session about scaling domain-specific AI infrastructure."
       }
     },
     {
@@ -12290,9 +12290,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on AI protection and cloud defense framing."
       }
     },
     {
