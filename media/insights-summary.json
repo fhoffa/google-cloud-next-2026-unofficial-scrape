@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-02T07:09:07.449Z",
+    "generatedAt": "2026-04-02T17:34:55.991Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
