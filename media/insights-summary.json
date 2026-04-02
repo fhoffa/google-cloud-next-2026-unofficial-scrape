@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-01T20:50:24.688Z",
+    "generatedAt": "2026-04-02T16:52:18.787Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -9,7 +9,7 @@
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
-  "lede": "931 of 1,048 sessions at Google Cloud Next 2026 are about AI — 89% of the whole conference. Security is the biggest single theme. The 117 non-AI sessions are where the rest of the cloud story holds out.",
+  "lede": "With 1,000+ sessions, 89% are about AI. 39% of workshops are already full. This, and other Google Cloud Next 2026 insights.",
   "stats": [
     {
       "value": "1,048",

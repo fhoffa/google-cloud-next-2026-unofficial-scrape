@@ -229,7 +229,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
       generator: 'scripts/generate_insights.mjs',
       wordRules: 'config/word-rules.json',
     },
-    lede: `${aiCount.toLocaleString()} of ${total.toLocaleString()} sessions at Google Cloud Next 2026 are about AI — ${Math.round((aiCount / Math.max(1, total)) * 100)}% of the whole conference. ${esc(themes[0]?.[0] || 'Security')} is the biggest single theme. The ${notAiCount} non-AI sessions are where the rest of the cloud story holds out.`,
+    lede: `With ${total >= 1000 ? '1,000+' : total.toLocaleString()} sessions, ${Math.round((aiCount / Math.max(1, total)) * 100)}% are about AI.${workshopAvailability.known ? ` ${percentage(workshopAvailability.full, workshopAvailability.known)} of workshops are already full.` : ''} This, and other Google Cloud Next 2026 insights.`,
     stats: [
       { value: total.toLocaleString(), label: 'Total sessions', note: `Across all formats — keynotes, breakouts, workshops, and labs.` },
       { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}% AI`, label: 'Share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI`, note: `For every non-AI session, there are roughly ${Math.round(aiCount / Math.max(1, notAiCount))} AI ones.` },
