@@ -318,7 +318,7 @@ function renderHtml(summary, templateText) {
 
   let html = templateText;
   for (const [key, value] of Object.entries(replacements)) {
-    html = html.replace(key, value);
+    html = html.replaceAll(key, value);
   }
   return html;
 }
