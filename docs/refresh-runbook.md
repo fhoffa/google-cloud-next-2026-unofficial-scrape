@@ -78,9 +78,16 @@ Common failure modes to watch for:
 ```bash
 node scripts/generate_changelog.mjs
 node scripts/generate_insights.mjs
-/root/.openclaw/workspace/.venv/bin/python scripts/make_sankey.py
+/root/.openclaw/workspace/.venv/bin/python scripts/make_sankey.py --publish
 node --test tests/*.test.mjs
 ```
+
+Important:
+- the default Sankey output path is a temp file (`tmp/gcp-next-sankey-not-ai-maxi.png`)
+- for any real refresh / publish workflow, use `--publish`
+- that writes the dated repo artifact under `media/` and updates:
+  - `media/sankey-index.json`
+  - `media/sankey-click-map.json`
 
 ### Step 6 — sanity checks before PR
 Verify at least these:
