@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-02T01:16:56.587Z",
+    "generatedAt": "2026-04-02T01:43:29.053Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -32,7 +32,7 @@
       "value": "Leaders",
       "label": "Largest audience",
       "sub": "322 sessions",
-      "note": "Slightly ahead of Developers (266 sessions) — the conference leans executive."
+      "note": "Slightly ahead of Developers (265 sessions) — the conference leans executive."
     },
     {
       "value": "362",
@@ -91,22 +91,22 @@
       },
       {
         "name": "App dev",
-        "count": 197,
+        "count": 198,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Data",
-        "count": 190,
+        "count": 188,
         "href": "./index.html?theme=Data"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 187,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 164,
+        "count": 163,
         "href": "./index.html?theme=Infra"
       },
       {
@@ -123,12 +123,12 @@
       },
       {
         "name": "Developers",
-        "count": 266,
+        "count": 265,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 197,
+        "count": 199,
         "href": "./index.html?audience=Sec+pros"
       },
       {
@@ -148,7 +148,7 @@
     "<strong>Security</strong> is the most common theme at <strong>232</strong> sessions, spanning both AI and non-AI content.",
     "Inside AI, <strong>Security</strong> leads at 191 sessions — 1 in 5 AI sessions is about security; guardrails, IAM, and threat detection are baked into the AI stack.",
     "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
-    "<strong>322</strong> sessions target Leaders, 266 target Developers — the conference tilts toward the buyer side.",
+    "<strong>322</strong> sessions target Leaders, 265 target Developers — the conference tilts toward the buyer side.",
     "<strong>139</strong> sessions target infrastructure and ops engineers, <strong>102</strong> target data practitioners. The platform comes before the pipeline.",
     "The major consulting firms together account for <strong>39 sessions</strong> — more than any single non-Google company on the list."
   ],
@@ -161,22 +161,22 @@
       },
       {
         "name": "App dev",
-        "count": 197,
+        "count": 198,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Data",
-        "count": 190,
+        "count": 188,
         "href": "./index.html?theme=Data"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 187,
         "href": "./index.html?theme=Business"
       },
       {
         "name": "Infra",
-        "count": 164,
+        "count": 163,
         "href": "./index.html?theme=Infra"
       },
       {
@@ -193,12 +193,12 @@
       },
       {
         "name": "Developers",
-        "count": 266,
+        "count": 265,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 197,
+        "count": 199,
         "href": "./index.html?audience=Sec+pros"
       },
       {
@@ -219,18 +219,18 @@
         "href": "./index.html?ai_focus=AI&theme=Security"
       },
       {
-        "name": "Data",
-        "count": 179,
-        "href": "./index.html?ai_focus=AI&theme=Data"
-      },
-      {
         "name": "App dev",
         "count": 178,
         "href": "./index.html?ai_focus=AI&theme=App+dev"
       },
       {
+        "name": "Data",
+        "count": 177,
+        "href": "./index.html?ai_focus=AI&theme=Data"
+      },
+      {
         "name": "Business",
-        "count": 163,
+        "count": 165,
         "href": "./index.html?ai_focus=AI&theme=Business"
       },
       {
@@ -252,7 +252,7 @@
       },
       {
         "name": "Infra",
-        "count": 24,
+        "count": 23,
         "href": "./index.html?ai_focus=Not+AI&theme=Infra"
       },
       {
@@ -262,7 +262,7 @@
       },
       {
         "name": "App dev",
-        "count": 19,
+        "count": 20,
         "href": "./index.html?ai_focus=Not+AI&theme=App+dev"
       },
       {

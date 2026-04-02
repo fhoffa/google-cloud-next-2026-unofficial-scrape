@@ -417,9 +417,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on workplace productivity and organizational adoption framing."
       }
     },
     {
@@ -2440,9 +2440,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on enterprise logistics transformation and customer-story framing."
       }
     },
     {
@@ -3714,8 +3714,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on defensive AI security and security-testing context."
       }
     },
     {
@@ -4802,9 +4802,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on trustworthy AI, securing AI, and defense-oriented framing."
       }
     },
     {
@@ -4952,9 +4952,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; App dev theme and Developers audience based on Gemini CLI tooling and extension developer workflow signals."
       }
     },
     {
@@ -9630,8 +9630,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on agent security, governance, and runtime defense signals."
       }
     },
     {
@@ -10406,9 +10406,9 @@
       ],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "Infra",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; Infra theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Developers audience based on explicit developer meetup and Cloud Run builder focus."
       }
     },
     {
@@ -11892,9 +11892,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Infra",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Infra theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on IDE-centric app-building workflow and developer tooling signals."
       }
     },
     {
@@ -11929,9 +11929,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI focus (Open Models topic, running ML models on serverless GPUs); App dev theme and Developers audience."
+        "reasoning": "AI focus; Infra theme and Developers audience based on serverless GPU serving and model infrastructure emphasis."
       }
     },
     {
@@ -12792,8 +12792,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on planning and strategy workflow framing for organizations."
       }
     },
     {
