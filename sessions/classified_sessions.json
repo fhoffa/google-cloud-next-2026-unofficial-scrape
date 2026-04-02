@@ -417,9 +417,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Data theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on workplace productivity and organizational adoption framing."
       }
     },
     {
@@ -2174,8 +2174,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on live-demo showcase framing for applied agentic AI outcomes."
       }
     },
     {
@@ -2440,9 +2440,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on enterprise logistics transformation and customer-story framing."
       }
     },
     {
@@ -2898,8 +2898,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Applied AI",
-        "audience": "Developers",
-        "reasoning": "AI focus; Applied AI theme — agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
+        "audience": "Leaders",
+        "reasoning": "AI focus; Applied AI theme and Leaders audience based on startup outcome storytelling and business-breakthrough framing."
       }
     },
     {
@@ -3415,9 +3415,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on robotics-building and implementation-oriented product engineering framing."
       }
     },
     {
@@ -3714,8 +3714,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on defensive AI security and security-testing context."
       }
     },
     {
@@ -3878,8 +3878,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Data pros",
+        "reasoning": "AI/ML focus; App dev theme and Data pros audience based on database-centered agent architecture and data-platform practitioner focus."
       }
     },
     {
@@ -4802,9 +4802,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "theme": "Security",
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on trustworthy AI, securing AI, and defense-oriented framing."
       }
     },
     {
@@ -4952,9 +4952,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI focus; App dev theme and Developers audience based on Gemini CLI tooling and extension developer workflow signals."
       }
     },
     {
@@ -5197,9 +5197,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Business",
+        "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "AI/ML focus; Business theme and Leaders audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on Config Connector workflow automation and cloud engineering implementation focus."
       }
     },
     {
@@ -5527,8 +5527,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on enterprise SAP modernization and strategic platform adoption framing."
       }
     },
     {
@@ -6393,8 +6393,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Data theme and Developers audience based on hands-on NL2SQL workflow and implementation-oriented analytics tooling context."
       }
     },
     {
@@ -7258,9 +7258,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on Gemini Enterprise rollout and organizational adoption framing for AI agents."
       }
     },
     {
@@ -7535,8 +7535,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; App dev theme and Leaders audience based on at-scale organizational adoption framing for AI agents on Google Cloud."
       }
     },
     {
@@ -8782,9 +8782,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Infra",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags."
+        "theme": "Data",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on enterprise AI data-readiness and executive transformation framing."
       }
     },
     {
@@ -9335,8 +9335,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on enterprise customer-portal and organizational adoption framing."
       }
     },
     {
@@ -9503,8 +9503,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Infra theme and Developers audience based on agent-building reliability patterns and builder-facing implementation context."
       }
     },
     {
@@ -9630,8 +9630,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Sec pros",
+        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on agent security, governance, and runtime defense signals."
       }
     },
     {
@@ -10406,9 +10406,9 @@
       ],
       "llm": {
         "ai_focus": "Not AI",
-        "theme": "Infra",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "Non-AI; Infra theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "Non-AI; App dev theme and Developers audience based on explicit developer meetup and Cloud Run builder focus."
       }
     },
     {
@@ -11136,9 +11136,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
+        "theme": "Infra",
         "audience": "Sec pros",
-        "reasoning": "AI/ML focus; Security theme and Sec pros audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; Infra theme and Sec pros audience based on cross-cloud networking fabric and platform infrastructure emphasis."
       }
     },
     {
@@ -11611,9 +11611,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on meetup-style practitioner exchange and builder-community framing in this taxonomy."
       }
     },
     {
@@ -11892,9 +11892,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Infra",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Infra theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on IDE-centric app-building workflow and developer tooling signals."
       }
     },
     {
@@ -11929,9 +11929,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
+        "theme": "Infra",
         "audience": "Developers",
-        "reasoning": "AI focus (Open Models topic, running ML models on serverless GPUs); App dev theme and Developers audience."
+        "reasoning": "AI focus; Infra theme and Developers audience based on serverless GPU serving and model infrastructure emphasis."
       }
     },
     {
@@ -12405,9 +12405,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on Gemini CLI workflow automation and developer-tooling context."
       }
     },
     {
@@ -12443,8 +12443,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on digital-experience strategy and business outcome framing."
       }
     },
     {
@@ -12792,8 +12792,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "General",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on planning and strategy workflow framing for organizations."
       }
     },
     {
