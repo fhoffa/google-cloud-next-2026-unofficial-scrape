@@ -96,6 +96,13 @@ Verify at least these:
 - `insights.html` top-level totals match the current live count
 - fullness section still uses percentage-based category reporting
 - changelog latest comparison reflects the new snapshot window
+- no unreplaced template placeholders in `insights.html` — grep for `__` to confirm:
+  ```bash
+  grep -c '__[A-Z_]\+__' insights.html   # must return 0
+  ```
+  Root cause if this fires: `generate_insights.mjs` uses `.replaceAll()` for template
+  substitution — if you ever see `.replace()` there, it will silently miss duplicate
+  placeholder occurrences (e.g. the same key in both a meta tag and a JS variable).
 
 ### Step 7 — open PR
 PR description should mention:
@@ -117,4 +124,5 @@ PR description should mention:
 - [ ] rebuild Sankey
 - [ ] run tests
 - [ ] verify live/classified counts match
+- [ ] grep insights.html for unreplaced `__PLACEHOLDER__` tokens (must be 0)
 - [ ] open PR
