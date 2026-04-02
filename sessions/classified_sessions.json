@@ -5527,8 +5527,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on enterprise SAP modernization and strategic platform adoption framing."
       }
     },
     {
@@ -6393,8 +6393,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Data theme and Developers audience based on hands-on NL2SQL workflow and implementation-oriented analytics tooling context."
       }
     },
     {
@@ -7258,9 +7258,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "App dev",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; App dev theme and Developers audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on Gemini Enterprise rollout and organizational adoption framing for AI agents."
       }
     },
     {
@@ -9335,8 +9335,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Business",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; Business theme and General audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on enterprise customer-portal and organizational adoption framing."
       }
     },
     {
@@ -9503,8 +9503,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; Infra theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; Infra theme and Developers audience based on agent-building reliability patterns and builder-facing implementation context."
       }
     },
     {
@@ -11611,9 +11611,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on meetup-style practitioner exchange and builder-community framing in this taxonomy."
       }
     },
     {
@@ -12405,9 +12405,9 @@
       "speakers": [],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Security",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Security theme and Leaders audience based on title, description, and topic tags."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on Gemini CLI workflow automation and developer-tooling context."
       }
     },
     {
@@ -12443,8 +12443,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Data",
-        "audience": "Developers",
-        "reasoning": "AI/ML focus; Data theme and Developers audience based on title, description, and topic tags."
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Data theme and Leaders audience based on digital-experience strategy and business outcome framing."
       }
     },
     {
