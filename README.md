@@ -99,6 +99,78 @@ BUCKET=2026-04-22 npm run scrape                     # scrape one day only
 npm run merge                                        # merge by-day/ files into latest.*
 ```
 
+### Practical scrape pipeline: fast detection vs full publication pass
+
+This repo currently supports a **full scrape** (`npm run scrape`) and also exposes enough metadata from the paginated session-library pages to justify a future lighter-weight detection pass.
+
+#### What the paginated session-library pages already contain
+
+The library pages already expose useful structured fields such as:
+- `id`
+- `url`
+- `title`
+- `date_text`
+- `start_time_text`
+- `end_time_text`
+- `room`
+- `session_category`
+- `capacity`
+- `remaining_capacity`
+- `registrant_count`
+- `agenda_status`
+- `disabled_class`
+
+That means a **library-only pass** is likely sufficient for:
+- detecting newly added or removed sessions
+- detecting timing/room/status changes
+- availability / fullness monitoring
+- deciding whether a full rebuild is worth doing
+
+#### What the individual session-page fetch adds
+
+The per-session fetch is still valuable because it adds or normalizes:
+- full `description`
+- richer normalized `topics`
+- structured `speakers` + company
+- derived time fields like `start_at`, `end_at`, and `date_time`
+- page-level fallbacks when listing metadata is incomplete
+
+That richer metadata is still the safer basis for:
+- high-quality classification
+- insights regeneration
+- Sankey generation
+- publication-quality rebuilds
+
+#### Current recommended workflow
+
+Use a two-tier mental model:
+
+1. **Fast/library pass**
+   - use paginated library data as a cheap detection gate
+   - if nothing meaningful changed, you may skip the expensive full pass
+
+2. **Full publication pass**
+   - run `npm run scrape`
+   - refresh classifications as needed
+   - rebuild `sessions/classified_sessions.json` from the **current live `sessions/latest.json` only**
+   - rebuild changelog
+   - rebuild insights
+   - rebuild Sankey
+   - run tests
+
+#### Important invariant: classified data must track the current live snapshot
+
+`sessions/classified_sessions.json` is for the **current live dataset**, not an ever-growing archive of every historically seen session.
+
+That means after each fresh scrape:
+- keep classifications for sessions whose `url` is still present in `sessions/latest.json`
+- classify any newly added live sessions
+- drop classified entries for URLs that are no longer present in the live snapshot
+
+If this invariant is violated, downstream outputs like `insights.html`, Sankey counts, and top-level conference stats will overcount stale removed sessions.
+
+In short: the library pages already carry enough metadata to support change detection and fullness checks, but the individual session fetch still matters for publication-grade classification and derived artifacts — and classified output must always be trimmed back to the current live scrape before rebuilding published views.
+
 ### Regenerate insights page
 
 ```bash
