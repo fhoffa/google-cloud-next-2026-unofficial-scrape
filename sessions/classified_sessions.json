@@ -779,9 +779,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "App dev",
+        "audience": "Developers",
+        "reasoning": "AI focus; App dev theme — agent development tooling session centered on CLI, MCP, and builder workflows."
       }
     },
     {
@@ -5908,9 +5908,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Data",
-        "audience": "Data pros",
-        "reasoning": "AI/ML focus; Data theme and Data pros audience based on title, description, and topic tags."
+        "theme": "Business",
+        "audience": "Leaders",
+        "reasoning": "AI/ML focus; Business theme and Leaders audience based on enterprise transformation and executive-oriented framing."
       }
     },
     {
@@ -7998,8 +7998,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "Infra",
-        "audience": "Leaders",
-        "reasoning": "AI/ML focus; Infra theme and Leaders audience based on title, description, and topic tags."
+        "audience": "Infra/Ops",
+        "reasoning": "AI/infra focus; Infra theme and Infra/Ops audience based on compute, GKE, and infrastructure scaling signals."
       }
     },
     {
@@ -8282,8 +8282,8 @@
       "llm": {
         "ai_focus": "AI",
         "theme": "App dev",
-        "audience": "Infra/Ops",
-        "reasoning": "AI/ML focus; App dev theme and Infra/Ops audience based on title, description, and topic tags."
+        "audience": "Developers",
+        "reasoning": "AI/ML focus; App dev theme and Developers audience based on Cloud Run, development acceleration, and builder workflow signals."
       }
     },
     {
@@ -12098,9 +12098,9 @@
       ],
       "llm": {
         "ai_focus": "AI",
-        "theme": "Applied AI",
+        "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI focus; Applied AI theme — agent/voice/chatbot use case with Applied AI tag, no App Dev tag."
+        "reasoning": "AI focus; App dev theme — hands-on startup workshop for building agents with Gemini tooling."
       }
     },
     {
