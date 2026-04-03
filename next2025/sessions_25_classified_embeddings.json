@@ -3634,10 +3634,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Ask an Expert",
           "Google Cloud x Mars",
@@ -4826,10 +4826,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Business",
         "audience": "General",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Google Cloud x FairPrice Group",
           "Physical AI for Retail Operations and Workforce Enablement",
@@ -7927,10 +7927,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Timberlake: Keeping BigQuery and Looker *NSYNC'd",
           "The 2026 AI threat landscape",
@@ -10103,10 +10103,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Agentic SOC Experience",
           "Agentic SOC Experience",
@@ -23500,10 +23500,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "What's new in network security",
           "What's new in the Cross-Cloud Network",
@@ -29554,10 +29554,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Monetize the moment: AI-powered apps with Looker embedded",
           "What's new in Looker: Empowering business users in the governed agentic era",
@@ -33806,10 +33806,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Stop reacting, start anticipating: Agentic defense for modern security teams",
           "SecOps customer panel: How global leaders automate defense at hyperscale",
@@ -33884,10 +33884,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Stop reacting, start anticipating: Agentic defense for modern security teams",
           "SecOps customer panel: How global leaders automate defense at hyperscale",
@@ -36926,10 +36926,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Build secure-by-design applications for Google Cloud",
           "Built-in defense: The next evolution of Security Command Center for AI-era",
@@ -37191,10 +37191,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Chrome Enterprise Premium Experience",
           "Chrome Enterprise Premium Experience",
@@ -38771,10 +38771,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Home run AI: MLB and Firestore with MongoDB compatibility",
           "Fast-track the future of apps with Firebase",
@@ -38868,10 +38868,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Home run AI: MLB and Firestore with MongoDB compatibility",
           "Fast-track the future of apps with Firebase",
@@ -42347,10 +42347,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Global scale, AI, and new integrations for Oracle databases on Google Cloud",
           "Unlock Google Cloud's migration secrets: Security, speed, and scale",
@@ -42857,10 +42857,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Hyperdisk: Optimize block storage for AI and enterprise workloads",
           "Simplify your data life cycle with hybrid storage architecture in Bigtable",
@@ -55741,10 +55741,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Optimize data cloud fleet management with AI observability agents",
           "Serverless data science: Seamless AI workflows with Spark and BigQuery",
@@ -70397,10 +70397,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Data pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Data Validation at Scale: Architecting an AI-Native Validation Engine",
           "Building AI-Native Data Foundations: An Agentic Approach to Data Modeling",
@@ -79004,10 +79004,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "The BigQuery advantage: AI-powered migrations to an AI-ready data platform",
           "Data Engineering Agent: Your partner for BigQuery and the open lakehouse",
@@ -82915,10 +82915,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Google Cloud storage products: The AI-ready foundation for your data",
           "Intel raising the performance bar: AI, compute & security on Google Cloud",
@@ -83200,10 +83200,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Stop reacting, start anticipating: Agentic defense for modern security teams",
           "SecOps customer panel: How global leaders automate defense at hyperscale",
@@ -83960,10 +83960,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Optimize data cloud fleet management with AI observability agents",
           "Serverless data science: Seamless AI workflows with Spark and BigQuery",
@@ -84813,10 +84813,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "Data",
         "audience": "Leaders",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Global scale, AI, and new integrations for Oracle databases on Google Cloud",
           "Unlock Google Cloud's migration secrets: Security, speed, and scale",
@@ -87143,10 +87143,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Home run AI: MLB and Firestore with MongoDB compatibility",
           "Fast-track the future of apps with Firebase",
@@ -87240,10 +87240,10 @@
       "agenda_status": "",
       "disabled_class": "",
       "llm": {
-        "ai_focus": "Not AI",
+        "ai_focus": "AI",
         "theme": "App dev",
         "audience": "Developers",
-        "reasoning": "AI keyword gate => Not AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
+        "reasoning": "AI keyword gate => AI; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
         "neighbor_titles": [
           "Home run AI: MLB and Firestore with MongoDB compatibility",
           "NoSQL for modern apps and AI: The future of Memorystore, Firestore, and Bigtable",

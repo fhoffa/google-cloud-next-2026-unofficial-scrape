@@ -20,11 +20,27 @@ BATCH = int(os.environ.get('EMBED_BATCH_SIZE', '64'))
 TOP_K = int(os.environ.get('EMBED_K', '9'))
 MAX_CANDIDATES = int(os.environ.get('EMBED_MAX_CANDIDATES', '180'))
 STOP = {'the','and','for','with','from','into','your','you','how','why','what','using','use','build','google','cloud','next','session','talk','workshop','lab'}
-AI_KEYWORDS = [
-    ' ai ', ' gemini', ' agent', ' agents', ' llm', ' ml ', 'machine learning', ' genai',
-    ' generative', ' vertex', ' prompt', ' rag', ' inference', ' model', ' models',
-    ' foundation', ' agentic', ' agentspace', ' notebooklm', ' deepmind', ' tensorflow',
-    ' gemma', ' mcp'
+AI_PATTERNS = [
+    re.compile(r'\bai\b'),
+    re.compile(r'\bgemini\b'),
+    re.compile(r'\bagent(s|ic)?\b'),
+    re.compile(r'\bllm(s)?\b'),
+    re.compile(r'\bml\b'),
+    re.compile(r'\bmachine learning\b'),
+    re.compile(r'\bgenai\b|\bgen ai\b'),
+    re.compile(r'\bgenerative\b'),
+    re.compile(r'\bvertex\b'),
+    re.compile(r'\bprompt(s|ing)?\b'),
+    re.compile(r'\brag\b'),
+    re.compile(r'\binference\b'),
+    re.compile(r'\bmodel(s|ing)?\b'),
+    re.compile(r'\bfoundation(al)?\b'),
+    re.compile(r'\bagentspace\b'),
+    re.compile(r'\bnotebooklm\b'),
+    re.compile(r'\bdeepmind\b'),
+    re.compile(r'\btensorflow\b'),
+    re.compile(r'\bgemma\b'),
+    re.compile(r'\bmcp\b'),
 ]
 
 
@@ -64,11 +80,11 @@ def session_text(session):
 
 def has_ai_keyword(session):
     text = ' '.join([
-        ' ' + clean(session.get('title')).lower() + ' ',
-        ' ' + clean(session.get('description')).lower() + ' ',
-        ' ' + ' '.join((session.get('topics') or [])).lower() + ' ',
+        clean(session.get('title')).lower(),
+        clean(session.get('description')).lower(),
+        ' '.join((session.get('topics') or [])).lower(),
     ])
-    return any(keyword in text for keyword in AI_KEYWORDS)
+    return any(pattern.search(text) for pattern in AI_PATTERNS)
 
 
 def chunks(seq, size):
