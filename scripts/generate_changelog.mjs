@@ -256,16 +256,23 @@ function mergeNearbySnapshots(snapshots, mergeHours = MERGE_NEARBY_SNAPSHOTS_HOU
 function compareSnapshots(previous, current) {
   const prevMap = new Map(previous.sessions.map((session) => [sessionKey(session), session]));
   const curMap = new Map(current.sessions.map((session) => [sessionKey(session), session]));
+  const prevById = new Map(previous.sessions.filter((session) => session.id).map((session) => [String(session.id), session]));
+  const curById = new Map(current.sessions.filter((session) => session.id).map((session) => [String(session.id), session]));
 
   const added = [];
   const removed = [];
   const changed = [];
+  const moved = [];
+  const renamed = [];
+  const metadataChanges = [];
   const nowFull = [];
   const reopened = [];
   const nowLimited = [];
 
   for (const [key, session] of curMap.entries()) {
     if (!prevMap.has(key)) {
+      const sameIdBefore = session.id ? prevById.get(String(session.id)) : null;
+      if (sameIdBefore) continue;
       added.push(session);
       continue;
     }
@@ -287,7 +294,22 @@ function compareSnapshots(previous, current) {
   }
 
   for (const [key, session] of prevMap.entries()) {
-    if (!curMap.has(key)) removed.push(session);
+    if (!curMap.has(key)) {
+      const sameIdAfter = session.id ? curById.get(String(session.id)) : null;
+      if (sameIdAfter) continue;
+      removed.push(session);
+    }
+  }
+
+  for (const [sid, before] of prevById.entries()) {
+    if (!curById.has(sid)) continue;
+    const after = curById.get(sid);
+    const moveFields = ['date_text','start_time_text','end_time_text','start_at','end_at','room'].filter((field) => fieldChanged(before, after, field));
+    const renameFields = ['title','url'].filter((field) => fieldChanged(before, after, field));
+    const metadataFields = ['description','speakers','topics','session_category'].filter((field) => fieldChanged(before, after, field));
+    if (moveFields.length) moved.push({ before, after, changedFields: moveFields });
+    if (renameFields.length) renamed.push({ before, after, changedFields: renameFields });
+    if (metadataFields.length) metadataChanges.push({ before, after, changedFields: metadataFields });
   }
 
   const currentAvailabilityKnown = current.sessions.filter((session) => availabilityBand(session) !== 'unknown');
@@ -318,7 +340,38 @@ function compareSnapshots(previous, current) {
       hasAdditions: replacementDetection.unmatchedAdded.length > 0,
       hasRemovals: replacementDetection.unmatchedRemoved.length > 0,
       hasReplacements: replacementDetection.replacements.length > 0,
+      hasMoves: moved.length > 0,
+      hasRenames: renamed.length > 0,
+      hasMetadataChanges: metadataChanges.length > 0,
     },
+    moved: moved.slice(0, 20).map((item) => ({
+      title: item.after.title || item.before.title,
+      url: item.after.url || item.before.url || '',
+      before: {
+        date: item.before.date_text || '',
+        start: item.before.start_time_text || '',
+        end: item.before.end_time_text || '',
+        room: item.before.room || '',
+      },
+      after: {
+        date: item.after.date_text || '',
+        start: item.after.start_time_text || '',
+        end: item.after.end_time_text || '',
+        room: item.after.room || '',
+      },
+      changedFields: item.changedFields,
+    })),
+    renamed: renamed.slice(0, 20).map((item) => ({
+      beforeTitle: item.before.title || '',
+      afterTitle: item.after.title || '',
+      url: item.after.url || item.before.url || '',
+      changedFields: item.changedFields,
+    })),
+    metadataChanges: metadataChanges.slice(0, 20).map((item) => ({
+      title: item.after.title || item.before.title,
+      url: item.after.url || item.before.url || '',
+      changedFields: item.changedFields,
+    })),
     replacements: replacementDetection.replacements.slice(0, 12).map((item) => ({
       removedTitle: item.removed.title,
       removedUrl: item.removed.url || '',
@@ -359,10 +412,11 @@ function hasMeaningfulDiff(diff) {
 
 function summarySentence(diff) {
   const parts = [];
-  if (diff.summary.hasReplacements) parts.push('some sessions look like one-to-one substitutions');
+  if (diff.summary.hasMoves) parts.push('some session IDs moved time slots or rooms');
+  if (diff.summary.hasRenames) parts.push('some session IDs were retitled');
+  if (diff.summary.hasMetadataChanges) parts.push('some existing sessions changed descriptions or speakers');
   if (diff.summary.hasAdditions) parts.push('new sessions showed up');
   if (diff.summary.hasRemovals) parts.push('some sessions disappeared');
-  if (diff.summary.hasMaterialChanges) parts.push('a handful of listings changed in meaningful ways');
   if (diff.summary.currentAvailabilityKnown) parts.push(`${diff.summary.fullSharePhrase} of sessions with availability signals are fully booked`);
   if (diff.summary.hasReopened) parts.push('some previously full sessions reopened');
   if (!parts.length) return 'Mostly quiet update with little visible catalog movement.';
@@ -376,20 +430,10 @@ function listItems(items, formatter, fallback = 'None in this update') {
 
 function renderDiffHtml(diff) {
   const title = `${friendlyDate(diff.previous.scrapedAt)} → ${friendlyDate(diff.current.scrapedAt)}`;
-  const updatedSessions = [
-    ...diff.replacements.map((item) => ({
-      kind: item.sameSessionId ? 'rename' : 'replacement',
-      title: `${item.removedTitle} → ${item.addedTitle}`,
-      url: item.addedUrl || item.removedUrl || '',
-      details: item.sameSessionId ? ['session rename'] : item.reasons,
-    })),
-    ...diff.materialChanges.map((item) => ({
-      kind: 'material',
-      title: item.title,
-      url: item.url || '',
-      details: item.changedFields,
-    })),
-  ].slice(0, 16);
+  const movedSessions = diff.moved.slice(0, 16);
+  const renamedSessions = diff.renamed.slice(0, 16);
+  const metadataUpdates = diff.metadataChanges.slice(0, 16);
+  const possibleReplacements = diff.replacements.filter((item) => !item.sameSessionId).slice(0, 12);
 
   const availabilityChanges = [
     ...diff.nowFull.map((session) => ({ kind: 'now full', title: session.title, url: session.url || '' })),
@@ -407,7 +451,8 @@ function renderDiffHtml(diff) {
       </div>
       <p class="summary">${esc(summarySentence(diff))}</p>
       <div class="badges">
-        <span class="badge changed">Updated sessions</span>
+        <span class="badge changed">Moved sessions</span>
+        <span class="badge changed">Renamed sessions</span>
         <span class="badge added">New sessions</span>
         <span class="badge removed">Removed sessions</span>
         <span class="badge full">Availability changes</span>
@@ -416,8 +461,12 @@ function renderDiffHtml(diff) {
         <summary>Show details</summary>
         <div class="section-grid">
           <section class="mini-card">
-            <h3>Updated sessions</h3>
-            ${listItems(updatedSessions, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.details.join(', '))})</span>`, 'No strong replacements or meaningful edits in this update')}
+            <h3>Moved sessions</h3>
+            ${listItems(movedSessions, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(`${item.before.date} ${item.before.start}-${item.before.end}${item.before.room ? `, ${item.before.room}` : ''}`.trim())} → ${esc(`${item.after.date} ${item.after.start}-${item.after.end}${item.after.room ? `, ${item.after.room}` : ''}`.trim())})</span>`, 'No same-ID time or room moves in this update')}
+          </section>
+          <section class="mini-card">
+            <h3>Renamed sessions</h3>
+            ${listItems(renamedSessions, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.beforeTitle)} → ${esc(item.afterTitle)}</a>` : `${esc(item.beforeTitle)} → ${esc(item.afterTitle)}`}`, 'No same-ID retitles in this update')}
           </section>
           <section class="mini-card">
             <h3>New sessions</h3>
@@ -428,13 +477,21 @@ function renderDiffHtml(diff) {
             ${listItems(diff.removed, (session) => esc(session.title))}
           </section>
           <section class="mini-card">
+            <h3>Metadata changes</h3>
+            ${listItems(metadataUpdates, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No same-ID description or speaker changes in this update')}
+          </section>
+          <section class="mini-card">
             <h3>Availability changes</h3>
             ${listItems(availabilityChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.kind)})</span>`, 'No notable availability movement in this update')}
           </section>
         </div>
         <details>
-          <summary>Show minor churn</summary>
+          <summary>Show possible slot replacements</summary>
           <div class="section-grid">
+            <section class="mini-card">
+              <h3>Possible slot replacements</h3>
+              ${listItems(possibleReplacements, (item) => `${item.addedUrl || item.removedUrl ? `<a href="${esc(item.addedUrl || item.removedUrl)}" target="_blank" rel="noopener">${esc(item.removedTitle)} → ${esc(item.addedTitle)}</a>` : `${esc(item.removedTitle)} → ${esc(item.addedTitle)}`} <span class="muted">(${esc(item.reasons.join(', '))})</span>`, 'No heuristic slot-replacement guesses in this update')}
+            </section>
             <section class="mini-card">
               <h3>Minor metadata churn</h3>
               ${listItems(diff.minorChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No obvious low-value churn in this update')}
