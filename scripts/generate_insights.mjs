@@ -21,8 +21,11 @@ function esc(value) {
     .replace(/"/g, '&quot;');
 }
 
+let explorerHref = './index.html';
+
 function makeHref(params) {
-  return `./index.html?${new URLSearchParams(params).toString()}`;
+  if (!explorerHref || explorerHref === '#') return '#';
+  return `${explorerHref}?${new URLSearchParams(params).toString()}`;
 }
 
 function counts(key, subset) {
@@ -322,6 +325,7 @@ function renderHtml(summary, templateText, options = {}) {
     '__INTERESTING_SLICES_HTML__': slicesHtml(summary.interestingSlices),
     '__CONFERENCE_LABEL__': esc(conferenceLabel),
     '__OG_DESCRIPTION__': esc(ogDescription),
+    '__EXPLORER_HREF__': esc(explorerHref || '#'),
   };
 
   let html = templateText;
@@ -343,6 +347,7 @@ function parseArgs(argv) {
     generatedAt: null,
     conferenceLabel: 'Google Cloud Next 2026',
     ogDescription: 'AI vs Not AI, themes, audiences, top words, top companies, and conference insights.',
+    explorerHref: './index.html',
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -357,6 +362,7 @@ function parseArgs(argv) {
     else if (arg === '--generated-at') options.generatedAt = argv[++index];
     else if (arg === '--conference-label') options.conferenceLabel = argv[++index];
     else if (arg === '--og-description') options.ogDescription = argv[++index];
+    else if (arg === '--explorer-href') options.explorerHref = argv[++index];
     else throw new Error(`Unknown argument: ${arg}`);
   }
 
@@ -398,6 +404,8 @@ function main() {
   if (!sankeyLatest) {
     sankeyLatest = './media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260331.png';
   }
+
+  explorerHref = args.explorerHref;
 
   const generatedAt = args.generatedAt || new Date().toISOString();
   const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir, dataScrapedAt, {
