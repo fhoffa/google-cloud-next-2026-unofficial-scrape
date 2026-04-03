@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&RID=22943&CVER=22&X-HTTP-Session-Id=gsessionid&zx=vzkaaqb1zx8l&t=1",
+    "status": 200,
+    "text": "51\n[[0,[\"c\",\"D85HhSQQPZwXrlX07HDMHQ\",\"\",8,14,30000]]]\n"
+  },
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&gsessionid=oa42IuW0lIrFN-16LiR547RIEZDs4euu-toFvZP5HlN4l9XeIgbawQ&SID=D85HhSQQPZwXrlX07HDMHQ&RID=22944&AID=2930&zx=i6ca1ke6gubv&t=1",
+    "status": 200,
+    "text": "11\n[1,2930,7]\n"
+  },
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&gsessionid=oa42IuW0lIrFN-16LiR547RIEZDs4euu-toFvZP5HlN4l9XeIgbawQ&SID=D85HhSQQPZwXrlX07HDMHQ&RID=22945&AID=2930&zx=u5vkbpykp43r&t=1",
+    "status": 200,
+    "text": "11\n[1,2944,7]\n"
+  },
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&gsessionid=oa42IuW0lIrFN-16LiR547RIEZDs4euu-toFvZP5HlN4l9XeIgbawQ&SID=D85HhSQQPZwXrlX07HDMHQ&RID=22946&AID=2930&zx=i7hze1j7hk2w&t=1",
+    "status": 200,
+    "text": "11\n[1,2945,7]\n"
+  },
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&gsessionid=oa42IuW0lIrFN-16LiR547RIEZDs4euu-toFvZP5HlN4l9XeIgbawQ&SID=D85HhSQQPZwXrlX07HDMHQ&RID=22947&AID=2948&zx=pm3te8x8meov&t=1",
+    "status": 200,
+    "text": "11\n[1,2948,7]\n"
+  },
+  {
+    "url": "https://firestore.googleapis.com/google.firestore.v1.Firestore/Listen/channel?VER=8&database=projects%2Fgweb-cloudnext2025%2Fdatabases%2Fnextcontent&gsessionid=oa42IuW0lIrFN-16LiR547RIEZDs4euu-toFvZP5HlN4l9XeIgbawQ&SID=D85HhSQQPZwXrlX07HDMHQ&RID=22948&AID=2948&zx=umxf42x39dlf&t=1",
+    "status": 200,
+    "text": "11\n[1,2949,7]\n"
+  }
+]
