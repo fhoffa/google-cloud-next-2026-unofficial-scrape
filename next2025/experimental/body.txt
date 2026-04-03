@@ -1,0 +1,406 @@
+Skip to main content
+menu
+search
+Sign in
+Day 1 Recordings
+View sessions
+Day 2 Recordings
+View sessions
+Day 3 Recordings
+View sessions
+Session Library
+With over 500 sessions in our library, you’ll find more than one that piques your interest. Whether you’re into security and architecture or curious about the future of AI and the latest cloud solutions, Google Cloud Next has something for everyone.
+
+Check out the full list of sessions.
+All
+April 9
+April 10
+April 11
+968 Results
+Clear Filters
+search
+
+Powered by Vertex AI
+
+Session format
+keyboard_arrow_down
+info Learn more
+Learning level
+keyboard_arrow_down
+info Learn more
+Topic
+keyboard_arrow_down
+Job role
+keyboard_arrow_down
+Area of interest
+keyboard_arrow_down
+Industry
+keyboard_arrow_down
+Session Viewing Experience
+keyboard_arrow_down
+Keynotes
+Keynotes
+ASL Developer Keynote: You can just build things
+DEVKEY-ASL • AI, APP DEV, GEMINI
+schedule
+April 10 • 9:30 PM - 10:45 PM
+location_on
+Michelob ULTRA Arena
+play_circle
+Play now
+playlist_add
+Keynotes
+ASL Opening Keynote: The new way to cloud
+GENKEY-ASL • AI, GEMINI
+schedule
+April 9 • 4:00 PM - 5:35 PM
+location_on
+Michelob ULTRA Arena
+play_circle
+Play now
+playlist_add
+Keynotes
+Developer Keynote in 10 minutes
+DEVKEY-RC3 • AI, APP DEV, GEMINI
+play_circle
+Play now
+playlist_add
+Keynotes
+Developer Keynote in 2 minutes
+DEVKEY-RC1 • AI, APP DEV, GEMINI
+play_circle
+Play now
+playlist_add
+Keynotes
+Developer Keynote: You can just build things
+DEVKEY • AI, APP DEV, GEMINI
+schedule
+April 10 • 9:30 PM - 10:45 PM
+location_on
+Michelob ULTRA Arena
+play_circle
+Play now
+playlist_add
+Keynotes
+Google Cloud Next 25 in a minute
+EVENT-01
+play_circle
+Play now
+playlist_add
+Keynotes
+Next 25 Opening Keynote in 10 minutes
+GENKEY-RC4 • AI, GEMINI
+play_circle
+Play now
+playlist_add
+Keynotes
+Next 25 Opening Keynote in less than 5 minutes
+GENKEY-RC2 • AI, GEMINI
+play_circle
+Play now
+playlist_add
+Keynotes
+Opening Keynote: The new way to cloud
+GENKEY • AI, GEMINI
+schedule
+April 9 • 4:00 PM - 5:35 PM
+location_on
+Michelob ULTRA Arena
+play_circle
+Play now
+playlist_add
+All Sessions
+chair
+Lounge Sessions
+¡Hola, Olá, Hello! AI
+BFEL2
+schedule
+April 10 • 7:00 PM - 7:30 PM
+location_on
+Community Lounge
+category
+Breakouts
+[NEW!] Introducing Firestore with MongoDB compatibility. Dive-deep into its capabilities and use-cases.
+BRK2-113 • APP DEV, DATABASES, FIREBASE
+schedule
+April 9 • 7:15 PM - 8:00 PM
+location_on
+Breakers E
+play_circle
+Play now
+playlist_add
+flare
+Spotlights
+10 infrastructure innovations to accelerate your AI solutions anywhere
+SPTL205 • AI
+schedule
+April 10 • 9:45 PM - 10:30 PM
+location_on
+Spotlight 1
+play_circle
+Play now
+playlist_add
+flare
+Spotlights
+10 infrastructure innovations to accelerate your AI solutions anywhere (Recap)
+SPTL205-RC • AI
+play_circle
+Play now
+playlist_add
+chair
+Lounge Sessions
+10X innovation: mindset, AI & the startup journey
+SU206 • AI, GEMINI, VERTEX AI
+schedule
+April 9 • 8:00 PM - 9:30 PM
+location_on
+Startup Hub
+cloud
+Cloud Talks
+12-Week Blitz: Legacy to PostgresSQL-Guaranteed Modernization
+CT1-48 • DATABASES, MIGRATION
+schedule
+April 10 • 8:30 PM - 8:50 PM
+location_on
+Cloud Talk Theater 1
+category
+Breakouts
+184-year-old business supercharges data analytics and AI with Google Cloud
+BRK2-137 • BUSINESS INTELLIGENCE, DATA ANALYTICS, MIGRATION
+schedule
+April 9 • 6:00 PM - 6:45 PM
+location_on
+Reef C
+bolt
+Lightning Talks
+5 reasons why Google Cloud is the best place for your PostgreSQL workloads
+CUSLT-129 • AI, APP DEV, DATABASES
+schedule
+April 10 • 7:45 PM - 8:10 PM
+location_on
+Customer Theater
+category
+Breakouts
+A beginner's guide to assembling agents
+BRK2-195 • GEMINI, VERTEX AI
+schedule
+April 10 • 8:30 PM - 9:15 PM
+location_on
+Mandalay Bay Ballroom A
+play_circle
+Play now
+playlist_add
+category
+Breakouts
+A conversation with Anthropic: How AI is shaping the future for startups
+BRK1-096 • AI, GEMINI, VERTEX AI
+schedule
+April 10 • 4:15 PM - 5:00 PM
+location_on
+Mandalay Bay Ballroom F
+play_circle
+Play now
+playlist_add
+flare
+Spotlights
+A conversation with Replit and Anthropic: Empowering the next billion creators with Claude
+SPTL212 • AI
+schedule
+April 10 • 6:45 PM - 7:30 PM
+location_on
+Spotlight 1
+play_circle
+Play now
+playlist_add
+rocket_launch
+Solution Talks
+A Deep Dive into Conversational AI Agents on Google Cloud
+SOL205
+schedule
+April 9 • 5:45 PM - 6:30 PM
+location_on
+Solution Talks 3
+category
+Breakouts
+A guide to enterprise AI deployment: Best practices from AI CxOs
+BRK2-166 • AI
+schedule
+April 10 • 3:15 PM - 4:00 PM
+location_on
+Mandalay Bay Ballroom D
+category
+Breakouts
+A master class in managing billions of Google Cloud storage objects and beyond
+BRK2-134 • STORAGE
+schedule
+April 9 • 11:00 PM - 11:45 PM
+location_on
+Mandalay Bay Ballroom A
+play_circle
+Play now
+playlist_add
+category
+Breakouts
+A new BigQuery capability: Integrated Earth data for better decision making
+BRK2-204 • APIS, BUSINESS INTELLIGENCE, DATA ANALYTICS
+schedule
+April 9 • 11:00 PM - 11:45 PM
+location_on
+Mandalay Bay Ballroom F
+play_circle
+Play now
+playlist_add
+category
+Breakouts
+A new era of AI for BI with Conversational Analytics for BigQuery and Looker
+BRK2-086 • AI, BUSINESS INTELLIGENCE, DATA ANALYTICS
+schedule
+April 10 • 9:45 PM - 10:30 PM
+location_on
+Oceanside B
+play_circle
+Play now
+playlist_add
+category
+Breakouts
+A new era of self-service and beautiful visualizations: Studio in Looker
+BRK2-088 • AI, BUSINESS INTELLIGENCE
+schedule
+April 11 • 6:00 PM - 6:45 PM
+location_on
+Oceanside C
+play_circle
+Play now
+playlist_add
+rocket_launch
+Solution Talks
+A practical guide to data mesh on Google Cloud
+SOL303
+schedule
+April 9 • 7:00 PM - 7:45 PM
+location_on
+Solution Talks 2
+category
+Breakouts
+Accelerate AI adoption in your organization with Google Workspace
+BRK1-076 • GEMINI, WORKSPACE
+schedule
+April 10 • 12:00 AM - 12:45 AM
+location_on
+Mandalay Bay Ballroom D
+auto_fix_high
+Showcase Demos
+Accelerate AI workloads with TPUs and GPUs
+HWV-101 • ARCHITECTURE, COMPUTE, VERTEX AI
+location_on
+Hardware-Verse
+category
+Breakouts
+Accelerate creative media content with gen AI
+BRK2-203 • GEMINI, VERTEX AI
+schedule
+April 10 • 12:15 AM - 1:00 AM
+location_on
+Oceanside B
+play_circle
+Play now
+playlist_add
+category
+Breakouts
+Accelerate creative media content with gen AI (Recap)
+BRK2-203-RC • GEMINI, VERTEX AI
+play_circle
+Play now
+playlist_add
+auto_fix_high
+Showcase Demos
+Accelerate data insights with AI data agents
+DAI-102 • ARCHITECTURE, DATA ANALYTICS, DATABASES
+location_on
+Data & AI Applications
+category
+Breakouts
+Accelerate end-to-end Java application development with Gemini Code Assist
+BRK3-015 • AI, APP DEV, GEMINI
+schedule
+April 11 • 4:45 PM - 5:30 PM
+location_on
+Mandalay Bay Ballroom D
+category
+Breakouts
+Accelerate enterprise Android app development with Gemini in Android Studio
+BRK2-073 • AI, APP DEV
+schedule
+April 10 • 4:30 PM - 5:15 PM
+location_on
+Jasmine C
+play_circle
+Play now
+playlist_add
+auto_fix_high
+Showcase Demos
+Accelerate life science innovation with Google Cloud
+IND-113
+location_on
+Healthcare & Life Sciences
+auto_fix_high
+Showcase Demos
+Accelerate migration to BigQuery
+DC-105B • ARCHITECTURE, DATA ANALYTICS, MIGRATION
+location_on
+Data Cloud
+cloud
+Cloud Talks
+Accelerate Retail AI Journey: from Data Platform to Business Value
+CT1-36 • AI, DATA ANALYTICS, MIGRATION
+schedule
+April 10 • 4:30 PM - 4:50 PM
+location_on
+Cloud Talk Theater 1
+category
+Breakouts
+Accelerate security incident response with Gemini
+BRK3-041 • AI, SECURITY
+schedule
+April 10 • 7:00 PM - 7:45 PM
+location_on
+Mandalay Bay Ballroom D
+category
+Breakouts
+Accelerate your code reviews with Gemini Code Assist in GitHub
+BRK2-078 • AI, APP DEV, GEMINI
+schedule
+April 9 • 10:45 PM - 11:30 PM
+location_on
+Oceanside C
+play_circle
+Play now
+playlist_add
+View more
+
+Follow us
+
+Why Google Cloud
+
+Choosing Google Cloud
+Trust and security
+Open cloud
+Multicloud
+Global infrastructure
+Sustainability
+Customers and case studies
+Analyst reports
+Whitepapers
+
+Event information
+
+Terms of service
+Code of conduct
+
+Explore more
+
+Join user research
+Google
+About Google
+Privacy
+Site Terms
