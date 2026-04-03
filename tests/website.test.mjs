@@ -12,6 +12,7 @@ const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
 const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
+const relatedSessionsArtifact = JSON.parse(fs.readFileSync(new URL('../media/related-sessions-2026-embeddings.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -95,6 +96,20 @@ class FakeElement {
       const matches = [...String(this.innerHTML || '').matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
       return matches.map((match) => ({
         dataset: { sessionId: match[1] },
+        listeners: new Map(),
+        addEventListener(type, listener) {
+          if (!this.listeners.has(type)) this.listeners.set(type, []);
+          this.listeners.get(type).push(listener);
+        },
+        click() {
+          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+        },
+      }));
+    }
+    if (selector === '.related-session-link') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-session-link\"[\s\S]*?data-related-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
+      return matches.map((match) => ({
+        dataset: { relatedSessionId: match[1] },
         listeners: new Map(),
         addEventListener(type, listener) {
           if (!this.listeners.has(type)) this.listeners.set(type, []);
@@ -197,10 +212,12 @@ function createEnvironment(search = '') {
   return { document, location: locationLike, history };
 }
 
-function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact) {
+function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact, relatedDataset = relatedSessionsArtifact) {
   return async (url = '') => ({
     async json() {
-      return String(url).includes('session-availability') ? availabilityDataset : sourceDataset;
+      if (String(url).includes('session-availability')) return availabilityDataset;
+      if (String(url).includes('related-sessions')) return relatedDataset;
+      return sourceDataset;
     },
   });
 }
@@ -366,6 +383,67 @@ test('website loads the dataset and renders results', async () => {
   assert.equal(env.document.getElementById('result-count').textContent, `${dataset.sessions.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.match(env.document.getElementById('app').innerHTML, /class="grid"/);
   assert.match(env.document.getElementById('app').innerHTML, /Fireside chat with Thomas Kurian/);
+});
+
+test('index wires the 2026 related-sessions artifact into the explorer', () => {
+  assert.match(html, /relatedSessionsUrl: 'media\/related-sessions-2026-embeddings\.json'/);
+});
+
+test('related sessions are shown on session cards when the artifact is loaded', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    relatedSessionsUrl: 'media/related-sessions-2026-embeddings.json',
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const app = env.document.getElementById('app');
+  assert.match(app.innerHTML, /class="related-sessions-label"/);
+  assert.ok(app.querySelectorAll('.related-session-link')[0], 'expected visible related session buttons');
+  assert.doesNotMatch(app.innerHTML, /Find similar/);
+  assert.doesNotMatch(app.innerHTML, /Hide similar/);
+  assert.match(app.innerHTML, /class="related-sessions-label"/);
+});
+
+test('clicking a related session narrows the explorer to that one session via sessionids', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    relatedSessionsUrl: 'media/related-sessions-2026-embeddings.json',
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const app = env.document.getElementById('app');
+  const relatedButton = app.querySelectorAll('.related-session-link')[0];
+  assert.ok(relatedButton, 'expected at least one related session button after expanding');
+  const relatedSessionId = relatedButton.dataset.relatedSessionId;
+  relatedButton.click();
+
+  const appHtml = app.innerHTML;
+  assert.equal((appHtml.match(/class="card"/g) || []).length, 1);
+  assert.match(env.location.search, new RegExp(`sessionids=${relatedSessionId}`));
+  assert.match(env.document.getElementById('active-filters').innerHTML, /selected session/);
+});
+
+test('2026 related-sessions artifact covers the classified explorer dataset with top-5 neighbors', () => {
+  const classified = JSON.parse(fs.readFileSync(new URL('../sessions/classified_sessions.json', import.meta.url), 'utf8'));
+  assert.equal(relatedSessionsArtifact.meta.topK, 5);
+  assert.equal(Object.keys(relatedSessionsArtifact.sessions).length, classified.sessions.length);
+  const sample = relatedSessionsArtifact.sessions[classified.sessions[0].id];
+  assert.ok(sample);
+  assert.ok(Array.isArray(sample.related));
+  assert.ok(sample.related.length <= 5);
+  assert.ok(sample.related.every((item) => item.sessionId !== classified.sessions[0].id));
 });
 
 test('speaker query param filters results on load', async () => {
