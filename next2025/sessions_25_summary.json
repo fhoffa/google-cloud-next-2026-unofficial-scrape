@@ -1,0 +1,357 @@
+{
+  "meta": {
+    "year": 2025,
+    "event": "Google Cloud Next 2025",
+    "dates": "April 9–11, 2025",
+    "venue": "Mandalay Bay, Las Vegas",
+    "generatedAt": "2026-04-03T16:02:44.891Z",
+    "dataSource": "next2025/experimental/sessions_25.json",
+    "speakerDataSource": "next2025/sessions_25_speakers.json",
+    "totalSessionsInCatalog": 977,
+    "sessionsWithSpeakerData": 49,
+    "speakerCoverageNote": "Speaker/company data covers 49 of 977 sessions (5%). Full modal extraction was not completed. Company rankings are illustrative."
+  },
+  "stats": [
+    {
+      "value": "977",
+      "label": "Total sessions",
+      "note": "All formats — keynotes, breakouts, solution talks, showcase demos, and more."
+    },
+    {
+      "value": "32% AI-tagged",
+      "label": "Sessions with AI product tag",
+      "sub": "315 sessions",
+      "note": "Based on raw product tags from card data. 2026 used LLM-based classification which likely yields higher counts (89%)."
+    },
+    {
+      "value": "Breakouts",
+      "label": "Largest format",
+      "sub": "488 sessions"
+    },
+    {
+      "value": "GEMINI",
+      "label": "Top product tag (ex-AI)",
+      "sub": "200 sessions"
+    }
+  ],
+  "sessionsByType": [
+    {
+      "name": "Breakouts",
+      "count": 488
+    },
+    {
+      "name": "Showcase Demos",
+      "count": 134
+    },
+    {
+      "name": "Other",
+      "count": 79
+    },
+    {
+      "name": "Cloud Talks",
+      "count": 77
+    },
+    {
+      "name": "Lightning Talks",
+      "count": 69
+    },
+    {
+      "name": "Solution Talks",
+      "count": 54
+    },
+    {
+      "name": "Spotlights",
+      "count": 38
+    },
+    {
+      "name": "Lounge Sessions",
+      "count": 20
+    },
+    {
+      "name": "Keynotes",
+      "count": 18
+    }
+  ],
+  "topProductTags": [
+    {
+      "tag": "AI",
+      "count": 315
+    },
+    {
+      "tag": "GEMINI",
+      "count": 200
+    },
+    {
+      "tag": "APP DEV",
+      "count": 169
+    },
+    {
+      "tag": "VERTEX AI",
+      "count": 121
+    },
+    {
+      "tag": "DATA ANALYTICS",
+      "count": 111
+    },
+    {
+      "tag": "SECURITY",
+      "count": 105
+    },
+    {
+      "tag": "ARCHITECTURE",
+      "count": 92
+    },
+    {
+      "tag": "DATABASES",
+      "count": 80
+    },
+    {
+      "tag": "COMPUTE",
+      "count": 63
+    },
+    {
+      "tag": "MIGRATION",
+      "count": 56
+    },
+    {
+      "tag": "BUSINESS INTELLIGENCE",
+      "count": 46
+    },
+    {
+      "tag": "WORKSPACE",
+      "count": 45
+    },
+    {
+      "tag": "MULTICLOUD",
+      "count": 36
+    },
+    {
+      "tag": "SERVERLESS",
+      "count": 30
+    },
+    {
+      "tag": "APPLIED AI",
+      "count": 26
+    },
+    {
+      "tag": "NETWORKING",
+      "count": 23
+    },
+    {
+      "tag": "STORAGE",
+      "count": 19
+    },
+    {
+      "tag": "FIREBASE",
+      "count": 17
+    },
+    {
+      "tag": "COST OPTIMIZATION",
+      "count": 16
+    },
+    {
+      "tag": "APIS",
+      "count": 15
+    }
+  ],
+  "topCompanies": {
+    "coverageSessions": 49,
+    "totalSessions": 977,
+    "coveragePct": "5%",
+    "note": "Partial coverage — speaker data from modal extraction of ~6% of sessions.",
+    "nonGoogle": [
+      {
+        "company": "CME Group",
+        "sessions": 2
+      },
+      {
+        "company": "The Home Depot",
+        "sessions": 2
+      },
+      {
+        "company": "Shopify",
+        "sessions": 2
+      },
+      {
+        "company": "Accenture",
+        "sessions": 2
+      },
+      {
+        "company": "Ford",
+        "sessions": 2
+      },
+      {
+        "company": "HCA Healthcare",
+        "sessions": 2
+      },
+      {
+        "company": "Rackspace",
+        "sessions": 2
+      },
+      {
+        "company": "L'Oréal",
+        "sessions": 2
+      },
+      {
+        "company": "Mayo Clinic",
+        "sessions": 1
+      },
+      {
+        "company": "Anthropic",
+        "sessions": 1
+      },
+      {
+        "company": "Virgin Media 02",
+        "sessions": 1
+      },
+      {
+        "company": "Quantiphi Inc.",
+        "sessions": 1
+      },
+      {
+        "company": "Eightfold",
+        "sessions": 1
+      },
+      {
+        "company": "Oatmeal Health",
+        "sessions": 1
+      },
+      {
+        "company": "Kyron Learning",
+        "sessions": 1
+      },
+      {
+        "company": "Master Concept",
+        "sessions": 1
+      },
+      {
+        "company": "Palo Alto Networks",
+        "sessions": 1
+      },
+      {
+        "company": "Anomalo",
+        "sessions": 1
+      },
+      {
+        "company": "Aritzia",
+        "sessions": 1
+      },
+      {
+        "company": "Charles Schwab",
+        "sessions": 1
+      },
+      {
+        "company": "Priceline",
+        "sessions": 1
+      },
+      {
+        "company": "Watershed",
+        "sessions": 1
+      },
+      {
+        "company": "NVIDIA",
+        "sessions": 1
+      },
+      {
+        "company": "TRIARQ Health",
+        "sessions": 1
+      },
+      {
+        "company": "Best Buy",
+        "sessions": 1
+      },
+      {
+        "company": "Faraday",
+        "sessions": 1
+      },
+      {
+        "company": "Material Security",
+        "sessions": 1
+      },
+      {
+        "company": "Electronic Arts",
+        "sessions": 1
+      },
+      {
+        "company": "Dialpad, Inc.",
+        "sessions": 1
+      },
+      {
+        "company": "ID.me",
+        "sessions": 1
+      },
+      {
+        "company": "Baseten",
+        "sessions": 1
+      },
+      {
+        "company": "Munich Re",
+        "sessions": 1
+      },
+      {
+        "company": "Chubb Cyber",
+        "sessions": 1
+      },
+      {
+        "company": "Security Professionals",
+        "sessions": 1
+      },
+      {
+        "company": "WellSky",
+        "sessions": 1
+      },
+      {
+        "company": "MEDITECH",
+        "sessions": 1
+      },
+      {
+        "company": "Hackensack Meridian Health",
+        "sessions": 1
+      },
+      {
+        "company": "Enterprise Data Management Council",
+        "sessions": 1
+      },
+      {
+        "company": "Intesa Sanpaolo",
+        "sessions": 1
+      },
+      {
+        "company": "ANZ Bank",
+        "sessions": 1
+      },
+      {
+        "company": "School of Computing and Data Science, University of Hong Kong",
+        "sessions": 1
+      },
+      {
+        "company": "Avery Dennison",
+        "sessions": 1
+      },
+      {
+        "company": "Mercer International",
+        "sessions": 1
+      },
+      {
+        "company": "GiagOM",
+        "sessions": 1
+      },
+      {
+        "company": "Pythian",
+        "sessions": 1
+      },
+      {
+        "company": "Banco BV",
+        "sessions": 1
+      },
+      {
+        "company": "Teradata",
+        "sessions": 1
+      },
+      {
+        "company": "LATAM Airlines",
+        "sessions": 1
+      }
+    ]
+  }
+}
