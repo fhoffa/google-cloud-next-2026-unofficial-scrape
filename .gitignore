@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 tmp/
 node_modules/
+next2025/.tmp-*

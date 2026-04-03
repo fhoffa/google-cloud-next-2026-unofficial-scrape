@@ -1,122 +1,79 @@
-# How to build a full 2025 insights page
+# Next steps for 2025 insights
 
-This document describes what's needed to take the current partial 2025 dataset
-to a complete `insights.html` — with all sessions, speakers, descriptions,
-themes, and audiences — matching what the 2026 pipeline produces.
+The hard part — extracting structured 2025 session data — is now mostly solved via Nuxt state.
 
 ## Current state
 
 | What | Status |
 |---|---|
-| 977 session codes + titles + product tags | ✅ `experimental/sessions_25.json` |
-| 62 sessions with speakers + descriptions | ✅ `sessions_25_speakers.json` |
-| 915 sessions missing speaker/description data | ❌ modal scrape incomplete |
-| Theme / audience classification | ❌ not run |
+| Structured 2025 sessions from Nuxt state | ✅ `next2025/sessions_25_full.json` |
+| Session titles + summaries | ✅ |
+| Speaker names + companies + roles + affiliations | ✅ for 776 sessions |
+| Older modal-based partial extraction | legacy / fallback |
+| LLM classification | not run yet |
+| 2025 insights page / summary aligned to 2026 pipeline | next step |
 
----
+## Recommended path
 
-## Step 1 — Re-scrape all 977 session modals
+### Step 1 — treat `sessions_25_full.json` as the 2025 base dataset
 
-Requires: Node.js + Playwright (`npm install playwright`)
+Regenerate if needed with:
 
-The 2025 session library is still live at:
-`https://cloud.withgoogle.com/next/25/session-library`
-
-Each session modal contains title, description, and speaker blocks (name, role,
-company, affiliation). The original scrape only captured 62 sessions because
-many modals didn't render within the 4-second timeout.
-
-**What to do:**
-
-Write a scraper based on `experimental/extract_2025_modal_structured_shard.mjs`
-(which is now deleted — use `parse_2025_speakers.mjs` as the fixed parser logic)
-with these improvements:
-- Increase per-session wait to **8–10 seconds**
-- Try `page.waitForSelector('[role="dialog"]', { timeout: 10000 })` instead of a
-  fixed sleep
-- Retry once on empty result before marking `found: false`
-- Checkpoint after every session (already in original design)
-
-Run across all 977 codes from `experimental/sessions_25.json`.
-
-**Target output** — one file `sessions_25_full.json`, each record shaped like
-`sessions/classified_sessions.json` in the 2026 repo:
-
-```json
-{
-  "code": "BRK1-096",
-  "title": "A conversation with Anthropic: How AI is shaping the future for startups",
-  "description": "Join Matt Bell, VP of Product Research at Anthropic...",
-  "session_category": "Breakouts",
-  "topics": ["AI", "GEMINI", "VERTEX AI"],
-  "speakers": [
-    { "name": "Matt Bell", "company": "Anthropic" },
-    { "name": "Francis deSouza", "company": "Google Cloud" }
-  ]
-}
+```bash
+node next2025/extract_2025_from_nuxt_state.mjs
 ```
 
-**Correctness checks** (same as `parse_2025_speakers.mjs` validation):
-- `BRK1-096` must have Matt Bell → Anthropic AND Francis deSouza → Google Cloud
-- `SOL303` must have Chandu Bhuman → Virgin Media O2
-- `IND-113`, `AIN-106`, `DAI-101` must have `speakers: []` (no fake rows)
+This extraction reads from:
+- `window.__NUXT__.state.sessions`
+- `window.__NUXT__.state.speakers`
 
----
+and avoids the older modal-text scraping path.
 
-## Step 2 — LLM classification
+### Step 2 — classify the 2025 sessions like 2026
 
-Once all sessions have `title` + `description`, classify each one with Claude
-using the same prompt the 2026 pipeline uses.
+Run the same LLM classification used for the 2026 pipeline:
 
-Find the prompt in `scripts/generate_insights.mjs` (search for `buildLlmPrompt`
-or the classification call). Apply it to the 2025 session list to assign:
-
-| Field | Values |
-|---|---|
-| `ai_focus` | `"AI"` / `"Not AI"` |
-| `theme` | `"Security"` / `"App dev"` / `"Business"` / `"Data"` / `"Infra"` / `"Applied AI"` |
-| `audience` | `"Leaders"` / `"Developers"` / `"Sec pros"` / `"Infra/Ops"` / `"Data pros"` |
-
-Store the result in the `llm` field of each session record, matching 2026:
-
-```json
-"llm": {
-  "ai_focus": "AI",
-  "theme": "Security",
-  "audience": "Sec pros",
-  "reasoning": "..."
-}
+```bash
+python3 scripts/classify_sessions_llm.py \
+  --input next2025/sessions_25_full.json \
+  --output next2025/sessions_25_classified.json \
+  --concurrency 5
 ```
 
----
+Goal: assign the same fields used in 2026, including:
+- `ai_focus`
+- `theme`
+- `audience`
 
-## Step 3 — Adapt generate_insights.mjs
+### Step 3 — generate 2025 insights outputs
 
-With a classified `sessions_25_full.json` in hand, the 2026 generator needs
-only minor changes:
+Use the existing generator with the 2025 classified input:
 
-1. Point `SOURCE_FILE` at `next2025/sessions_25_full.json`
-2. Update the lede and observation copy in `buildSummary()` to reflect 2025 numbers
-3. Update year/branding references in `templates/insights.template.html`
-4. Run: `node scripts/generate_insights.mjs`
+```bash
+node scripts/generate_insights.mjs \
+  --input next2025/sessions_25_classified.json \
+  --output-html next2025/insights-2025.html \
+  --output-summary next2025/insights-2025-summary.json
+```
 
-The Sankey diagram, word clouds, company rankings, and theme/audience charts
-will all work without further changes — they read from the classified session
-data generically.
+## Validation checks
 
----
+These sessions should remain correct in the extracted dataset:
 
-## Reference numbers (2025 vs 2026)
+- `BRK1-096`
+  - Matt Bell → Anthropic
+  - Francis deSouza → Google Cloud
+- `SOL303`
+  - Chandu Bhuman → Virgin Media 02
+  - Pedro Esteves → Google Cloud
+  - Suda Srinivasan → Google Cloud
+- `CT2-28`
+  - Ajay Singh → Databricks
+  - Vivek Menon → Digital Turbine
+- `IND-113`
+  - `speakers: []`
 
-| | 2025 | 2026 |
-|---|---|---|
-| Total sessions | 977 | 1,054 |
-| AI share (product tag) | 32% | — |
-| AI share (LLM-classified) | unknown | 89% |
-| Largest format | Breakouts (488) | Breakouts (442) |
-| Top non-Google company (partial) | several tied at 2 | Palo Alto Networks (16) |
+## Notes
 
-The AI share difference between years is partly methodological: 2025's 32%
-uses raw product tags (explicit "AI" tag only), while 2026's 89% uses LLM
-classification that catches AI content regardless of tagging. Expect the
-LLM-classified 2025 number to be significantly higher than 32%.
+- The older modal-based files under `next2025/experimental/` remain useful as audit/debug artifacts, but they are no longer the preferred extraction source.
+- If needed, a later cleanup pass can remove obsolete helper scripts and temporary `.tmp-*` files once the Nuxt-state extraction path is committed and stable.
