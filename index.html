@@ -584,6 +584,43 @@
 
     .reserve-seat-note a { color: #7a5c00; }
 
+    .related-sessions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 4px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .related-sessions-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gray-600);
+      text-transform: uppercase;
+    }
+
+    .related-sessions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .related-session-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      color: var(--blue-dark);
+      background: var(--blue-light);
+      text-decoration: none;
+    }
+
+    .related-session-link:hover {
+      background: #d2e3fc;
+    }
+
     .favorite-btn {
       border: none;
       background: transparent;
@@ -739,7 +776,7 @@
 <script type="module">
   import { initSessionSearch } from './website/session-search.mjs';
 
-  initSessionSearch({ dataUrl: 'sessions/classified_sessions.json', availabilityUrl: 'media/session-availability.json' });
+  initSessionSearch({ dataUrl: 'sessions/classified_sessions.json', availabilityUrl: 'media/session-availability.json', relatedSessionsUrl: 'media/related-sessions-2026-embeddings.json' });
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "180c426920c04604b145ff6190dc82d6"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

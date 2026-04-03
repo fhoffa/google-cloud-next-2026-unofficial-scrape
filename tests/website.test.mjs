@@ -12,6 +12,7 @@ const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
 const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
+const relatedSessionsArtifact = JSON.parse(fs.readFileSync(new URL('../media/related-sessions-2026-embeddings.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
 class FakeClassList {
@@ -366,6 +367,21 @@ test('website loads the dataset and renders results', async () => {
   assert.equal(env.document.getElementById('result-count').textContent, `${dataset.sessions.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.match(env.document.getElementById('app').innerHTML, /class="grid"/);
   assert.match(env.document.getElementById('app').innerHTML, /Fireside chat with Thomas Kurian/);
+});
+
+test('index wires the 2026 related-sessions artifact into the explorer', () => {
+  assert.match(html, /relatedSessionsUrl: 'media\/related-sessions-2026-embeddings\.json'/);
+});
+
+test('2026 related-sessions artifact covers the classified explorer dataset with top-5 neighbors', () => {
+  const classified = JSON.parse(fs.readFileSync(new URL('../sessions/classified_sessions.json', import.meta.url), 'utf8'));
+  assert.equal(relatedSessionsArtifact.meta.topK, 5);
+  assert.equal(Object.keys(relatedSessionsArtifact.sessions).length, classified.sessions.length);
+  const sample = relatedSessionsArtifact.sessions[classified.sessions[0].id];
+  assert.ok(sample);
+  assert.ok(Array.isArray(sample.related));
+  assert.ok(sample.related.length <= 5);
+  assert.ok(sample.related.every((item) => item.sessionId !== classified.sessions[0].id));
 });
 
 test('speaker query param filters results on load', async () => {

@@ -307,11 +307,17 @@ function renderTabs(activeView) {
   return `<div class="tabs" role="tablist" aria-label="Views">${tabs.map((tab) => `<button class="tab-btn${tab.id === activeView ? ' active' : ''}" type="button" data-view="${tab.id}" role="tab" aria-selected="${tab.id === activeView ? 'true' : 'false'}">${tab.label}</button>`).join('')}</div>`;
 }
 
-function renderCards(sessions, q, favoriteIds, expandedIds) {
+function renderRelatedSessions(relatedItems) {
+  if (!Array.isArray(relatedItems) || !relatedItems.length) return '';
+  return `<div class="related-sessions"><div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<a class="related-session-link" href="#session-${escHtml(item.sessionId || '')}" title="Jump to ${escHtml(item.title || '')}">${escHtml(item.title || '')}</a>`).join('')}</div></div>`;
+}
+
+function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
+    const relatedItems = relatedLookup?.[sessionId]?.related || [];
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
@@ -322,7 +328,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
     const statusBadge = availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : '';
-    return `<div class="card" data-session-id="${escHtml(sessionId)}">
+    return `<div class="card" id="session-${escHtml(sessionId)}" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
       <div class="card-meta">
@@ -334,6 +340,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds) {
       ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
+      ${renderRelatedSessions(relatedItems)}
       ${session.url ? `<div class="reserve-seat-note">Note: the \u201cReserve a Seat\u201d button is broken on individual session pages. To reserve, search for this session by name in the <a href="https://www.googlecloudevents.com/next-vegas/session-library" target="_blank" rel="noopener">Session Library</a> instead.</div>` : ''}
     </div>`;
   }).join('');
@@ -388,7 +395,7 @@ function populateTopicFilter(topicSelect, sessions) {
   topicSelect.appendChild(optgroup);
 }
 
-export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', storage = globalThis.localStorage } = {}) {
+export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', relatedSessionsUrl = '', storage = globalThis.localStorage } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
@@ -437,6 +444,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let activeView = VALID_VIEWS.has(state.view) ? state.view : DEFAULT_VIEW;
   const expandedIds = new Set();
   let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
+  let relatedLookup = {};
 
   function currentFilters() {
     return {
@@ -489,7 +497,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
@@ -611,16 +619,19 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   try {
-    const [response, availabilityResponse] = await Promise.all([
+    const [response, availabilityResponse, relatedSessionsResponse] = await Promise.all([
       fetchImpl(dataUrl),
       availabilityUrl ? fetchImpl(availabilityUrl).catch(() => null) : Promise.resolve(null),
+      relatedSessionsUrl ? fetchImpl(relatedSessionsUrl).catch(() => null) : Promise.resolve(null),
     ]);
     const data = await response.json();
     const availabilityData = availabilityResponse ? await availabilityResponse.json().catch(() => null) : null;
+    const relatedSessionsData = relatedSessionsResponse ? await relatedSessionsResponse.json().catch(() => null) : null;
     const baseSessions = data.sessions || [];
     sessions = Array.isArray(availabilityData?.records)
       ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
       : baseSessions;
+    relatedLookup = relatedSessionsData?.sessions || {};
     timeBounds = deriveTimeBounds(sessions);
     if (timeRangeStart) {
       timeRangeStart.min = String(timeBounds.min);
