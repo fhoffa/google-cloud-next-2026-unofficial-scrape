@@ -311,7 +311,7 @@ function renderTabs(activeView) {
 
 function renderRelatedSessions(sessionId, relatedItems, visible) {
   if (!Array.isArray(relatedItems) || !relatedItems.length) return '';
-  return `<div class="related-sessions"><button class="related-toggle-btn" type="button" data-session-id="${escHtml(sessionId || '')}" aria-expanded="${visible ? 'true' : 'false'}">${visible ? 'Hide similar' : 'Find similar'}</button>${visible ? `<div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<button class="related-session-link" type="button" data-related-session-id="${escHtml(item.sessionId || '')}" title="Show ${escHtml(item.title || '')}">${escHtml(item.title || '')}</button>`).join('')}</div>` : ''}</div>`;
+  return `<div class="related-sessions"><div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<button class="related-session-link" type="button" data-related-session-id="${escHtml(item.sessionId || '')}" title="Show ${escHtml(item.title || '')}">${escHtml(item.title || '')}</button>`).join('')}</div></div>`;
 }
 
 function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set()) {
@@ -320,7 +320,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
     const relatedItems = relatedLookup?.[sessionId]?.related || [];
-    const relatedVisible = visibleRelatedIds.has(sessionId) && !selectedSessionIds.size;
+    const relatedVisible = true;
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
@@ -627,13 +627,6 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         render();
       });
     }
-    for (const button of app.querySelectorAll ? app.querySelectorAll('.related-toggle-btn') : []) {
-      button.addEventListener('click', () => {
-        const id = button.dataset.sessionId;
-        if (visibleRelatedIds.has(id)) visibleRelatedIds.delete(id); else visibleRelatedIds.add(id);
-        render();
-      });
-    }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.related-session-link') : []) {
       button.addEventListener('click', () => {
         const relatedSessionId = button.dataset.relatedSessionId;
@@ -655,7 +648,6 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         activeView = DEFAULT_VIEW;
         applyDaySelection(dayPills, '');
         selectedSessionIds = new Set(relatedSessionId ? [relatedSessionId] : []);
-        visibleRelatedIds.clear();
         render();
       });
     }

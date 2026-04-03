@@ -106,20 +106,6 @@ class FakeElement {
         },
       }));
     }
-    if (selector === '.related-toggle-btn') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-toggle-btn\"[\s\S]*?data-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
-      return matches.map((match) => ({
-        dataset: { sessionId: match[1] },
-        listeners: new Map(),
-        addEventListener(type, listener) {
-          if (!this.listeners.has(type)) this.listeners.set(type, []);
-          this.listeners.get(type).push(listener);
-        },
-        click() {
-          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
-        },
-      }));
-    }
     if (selector === '.related-session-link') {
       const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-session-link\"[\s\S]*?data-related-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
       return matches.map((match) => ({
@@ -403,7 +389,7 @@ test('index wires the 2026 related-sessions artifact into the explorer', () => {
   assert.match(html, /relatedSessionsUrl: 'media\/related-sessions-2026-embeddings\.json'/);
 });
 
-test('related sessions stay hidden until Find similar is clicked', async () => {
+test('related sessions are shown on session cards when the artifact is loaded', async () => {
   const env = createEnvironment();
 
   await initSessionSearch({
@@ -417,22 +403,10 @@ test('related sessions stay hidden until Find similar is clicked', async () => {
   });
 
   const app = env.document.getElementById('app');
-  assert.match(app.innerHTML, /Find similar/);
+  assert.match(app.innerHTML, /class="related-sessions-label"/);
+  assert.ok(app.querySelectorAll('.related-session-link')[0], 'expected visible related session buttons');
+  assert.doesNotMatch(app.innerHTML, /Find similar/);
   assert.doesNotMatch(app.innerHTML, /Hide similar/);
-  assert.doesNotMatch(app.innerHTML, /class="related-sessions-label"/);
-
-  const toggles = app.querySelectorAll('.related-toggle-btn');
-  let foundExpanded = false;
-  for (const toggle of toggles) {
-    toggle.click();
-    if (app.querySelectorAll('.related-session-link')[0]) {
-      foundExpanded = true;
-      break;
-    }
-  }
-
-  assert.ok(foundExpanded, 'expected at least one session with revealable related-session buttons');
-  assert.match(app.innerHTML, /Hide similar/);
   assert.match(app.innerHTML, /class="related-sessions-label"/);
 });
 
@@ -450,13 +424,7 @@ test('clicking a related session narrows the explorer to that one session via se
   });
 
   const app = env.document.getElementById('app');
-  const toggles = app.querySelectorAll('.related-toggle-btn');
-  let relatedButton = null;
-  for (const toggle of toggles) {
-    toggle.click();
-    relatedButton = app.querySelectorAll('.related-session-link')[0];
-    if (relatedButton) break;
-  }
+  const relatedButton = app.querySelectorAll('.related-session-link')[0];
   assert.ok(relatedButton, 'expected at least one related session button after expanding');
   const relatedSessionId = relatedButton.dataset.relatedSessionId;
   relatedButton.click();
@@ -465,7 +433,6 @@ test('clicking a related session narrows the explorer to that one session via se
   assert.equal((appHtml.match(/class="card"/g) || []).length, 1);
   assert.match(env.location.search, new RegExp(`sessionids=${relatedSessionId}`));
   assert.match(env.document.getElementById('active-filters').innerHTML, /selected session/);
-  assert.doesNotMatch(appHtml, /class="related-sessions-label"/);
 });
 
 test('2026 related-sessions artifact covers the classified explorer dataset with top-5 neighbors', () => {
