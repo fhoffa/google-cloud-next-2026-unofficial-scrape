@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-03T12:33:36.896Z",
+    "generatedAt": "2026-04-03T12:47:40.224Z",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
     "outputHtml": "changelog.html",
@@ -42,7 +42,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Scaling Claude: Inside Anthropic's TPU strategy and architecture",
@@ -54,7 +55,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The future of the data lakehouse: Open and interoperable for the agentic era",
@@ -65,7 +67,8 @@
             "same day",
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "From vision to value: Scaling Gemini Enterprise at The Venetian",
@@ -76,7 +79,8 @@
             "same day",
             "same room",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Adapt across devices with Flutter",
@@ -86,7 +90,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Agentic forecasting and planning",
@@ -96,7 +101,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI Photo Booth",
@@ -106,7 +112,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI-ready compute",
@@ -116,7 +123,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Automate your workflow with Gemini CLI",
@@ -126,7 +134,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Building secure agents: protecting access and data",
@@ -136,7 +145,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Chat with your data using Gemini",
@@ -146,7 +156,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Gemini driven manufacturing intelligence hub",
@@ -156,7 +167,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         }
       ],
       "added": [
@@ -527,7 +539,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Maximize your cloud ROI: A developer's approach to cost optimization",
@@ -539,7 +552,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The intelligence layer: Building AI-first customer experience",
@@ -551,7 +565,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The new way to use Spark: Intelligent, automated, and lightning fast",
@@ -563,7 +578,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AIOps at scale: Production-ready infrastructure with Cluster Director",
@@ -575,7 +591,8 @@
             "same start time",
             "same end time",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Reinventing Grocery Retail: How Albertsons Uses Databricks on Google Cloud to Unlock Data and AI",
@@ -586,7 +603,8 @@
             "same day",
             "same room",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Build conversational agents on PostgreSQL and MySQL",
@@ -596,7 +614,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Cloud TPUs and GPUs",
@@ -606,7 +625,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Customize Gemini CLI with extensions and MCP servers",
@@ -616,7 +636,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Defending against OWASP top 10 for agentic apps",
@@ -626,7 +647,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Drive clinical action with AI agents",
@@ -636,7 +658,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Mission Talk: AI for Academic & Career Navigation: Curiosity to Clarity",
@@ -646,7 +669,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         }
       ],
       "added": [
@@ -1013,7 +1037,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Ask more from your agents with Google Antigravity",
@@ -1025,7 +1050,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Redefining data science with Antigravity: Google's AI-native IDE",
@@ -1037,7 +1063,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The agentic shift in the software development life cycle",
@@ -1049,7 +1076,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Building multi-agent orchestration: Key challenges and solution approaches",
@@ -1061,7 +1089,8 @@
             "same start time",
             "same end time",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "From vision to value: Scaling Gemini Enterprise at The Venetian",
@@ -1072,7 +1101,8 @@
             "same day",
             "same room",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Agentic forecasting and planning",
@@ -1082,7 +1112,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI Photo Booth",
@@ -1092,7 +1123,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI-ready compute",
@@ -1102,7 +1134,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Automate your workflow with Gemini CLI",
@@ -1112,7 +1145,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Building secure agents: protecting access and data",
@@ -1122,7 +1156,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Chat with your data using Gemini",
@@ -1132,7 +1167,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         }
       ],
       "added": [

@@ -124,44 +124,49 @@ function overlapCount(leftItems, rightItems) {
 function scoreReplacementCandidate(removed, added) {
   let score = 0;
   const reasons = [];
+  const sameSessionId = String(removed.id || '').trim() && String(removed.id || '').trim() === String(added.id || '').trim();
+  if (sameSessionId) {
+    score += 100;
+    reasons.push('same session ID');
+  }
   if ((removed.date_text || '') && removed.date_text === added.date_text) {
     score += 3;
-    reasons.push('same day');
+    if (!sameSessionId) reasons.push('same day');
   }
   if ((removed.start_time_text || '') && removed.start_time_text === added.start_time_text) {
     score += 4;
-    reasons.push('same start time');
+    if (!sameSessionId) reasons.push('same start time');
   }
   if ((removed.end_time_text || '') && removed.end_time_text === added.end_time_text) {
     score += 2;
-    reasons.push('same end time');
+    if (!sameSessionId) reasons.push('same end time');
   }
   if ((removed.room || '') && removed.room === added.room) {
     score += 4;
-    reasons.push('same room');
+    if (!sameSessionId) reasons.push('same room');
   }
   const topicOverlap = overlapCount(removed.topics, added.topics);
   if (topicOverlap) {
     score += Math.min(3, topicOverlap);
-    reasons.push(topicOverlap === 1 ? 'shared topic' : 'shared topics');
+    if (!sameSessionId) reasons.push(topicOverlap === 1 ? 'shared topic' : 'shared topics');
   }
   const removedSpeakers = (removed.speakers || []).map((speaker) => speaker?.name || '').filter(Boolean);
   const addedSpeakers = (added.speakers || []).map((speaker) => speaker?.name || '').filter(Boolean);
   const speakerOverlap = overlapCount(removedSpeakers, addedSpeakers);
   if (speakerOverlap) {
     score += Math.min(4, speakerOverlap * 2);
-    reasons.push(speakerOverlap === 1 ? 'shared speaker' : 'shared speakers');
+    if (!sameSessionId) reasons.push(speakerOverlap === 1 ? 'shared speaker' : 'shared speakers');
   }
-  return { score, reasons };
+  return { score, reasons, sameSessionId };
 }
 
 function detectReplacements(removedList, addedList) {
   const candidates = [];
   removedList.forEach((removed, removedIndex) => {
     addedList.forEach((added, addedIndex) => {
-      const { score, reasons } = scoreReplacementCandidate(removed, added);
+      const { score, reasons, sameSessionId } = scoreReplacementCandidate(removed, added);
       if (score >= 7) {
-        candidates.push({ removedIndex, addedIndex, removed, added, score, reasons });
+        candidates.push({ removedIndex, addedIndex, removed, added, score, reasons, sameSessionId });
       }
     });
   });
@@ -320,6 +325,7 @@ function compareSnapshots(previous, current) {
       addedTitle: item.added.title,
       addedUrl: item.added.url || '',
       reasons: item.reasons,
+      sameSessionId: Boolean(item.sameSessionId),
     })),
     added: replacementDetection.unmatchedAdded.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     removed: replacementDetection.unmatchedRemoved.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
@@ -372,10 +378,10 @@ function renderDiffHtml(diff) {
   const title = `${friendlyDate(diff.previous.scrapedAt)} → ${friendlyDate(diff.current.scrapedAt)}`;
   const updatedSessions = [
     ...diff.replacements.map((item) => ({
-      kind: 'replacement',
+      kind: item.sameSessionId ? 'rename' : 'replacement',
       title: `${item.removedTitle} → ${item.addedTitle}`,
       url: item.addedUrl || item.removedUrl || '',
-      details: item.reasons,
+      details: item.sameSessionId ? ['session rename'] : item.reasons,
     })),
     ...diff.materialChanges.map((item) => ({
       kind: 'material',
