@@ -1,5 +1,10 @@
 # Google Cloud Next 2026 unofficial scrape
 
+## Explore the published site
+
+- **Session explorer:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/
+- **Insights page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/insights.html
+
 Unofficial scraper/exporter for the Google Cloud Next 2026 session library — plus a fast browseable website for actually exploring the sessions.
 
 ## What this project does
