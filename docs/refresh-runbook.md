@@ -62,9 +62,44 @@ Rules:
 ### Step 4 — classify newly added sessions carefully
 Preferred order:
 1. reuse existing classification by exact URL when still live
-2. use direct human/agent judgment on newly added sessions
-3. use embedding neighborhoods as audit help, not automatic truth
-4. only use rule-based fallback when higher-quality classification is unavailable
+2. decide `ai_focus` conservatively from explicit AI keyword evidence first
+3. use direct human/agent judgment on newly added sessions
+4. use embedding neighborhoods to help with transfer / audit work, not automatic truth
+5. only use rule-based fallback when higher-quality classification is unavailable
+
+For `ai_focus`, use a keyword-first gate before embeddings:
+- check explicit AI terms in title / description / topics first
+- use regex / word-boundary matching so terms like `AI-driven`, `AI-powered`, and `AI-first` are counted correctly
+- if explicit AI keyword evidence is absent, do not let embeddings alone aggressively pull sessions into `AI`
+
+Recommended explicit AI terms include:
+- `AI`
+- `Gemini`
+- `agent` / `agents` / `agentic`
+- `LLM`
+- `ML` / `machine learning`
+- `GenAI` / `generative`
+- `Vertex`
+- `prompt`
+- `RAG`
+- `inference`
+- `model` / `models`
+- `foundation`
+- `AgentSpace`
+- `NotebookLM`
+- `DeepMind`
+- `TensorFlow`
+- `Gemma`
+- `MCP`
+
+When adapting this pipeline to a different but related conference dataset or event source:
+- parameterize conference-specific branding/copy early (page title, OG text, lede assumptions)
+- keep reusable publishing code generic and keep source-specific extraction/probe code separate
+- convert the new source into the repo's canonical session shape as early as possible so downstream classification / insights / Sankey steps stay unchanged
+
+When debugging extraction for a new source:
+- inspect exposed client-side state / hydration payloads early before investing heavily in brittle modal scraping or low-level protocol decoding
+- if structured client state already contains the session + speaker corpus, prefer that over UI scraping
 
 If using rule-based fallback, manually review suspicious cases before rebuilding published artifacts.
 
@@ -73,6 +108,7 @@ Common failure modes to watch for:
 - business/customer-story sessions mislabeled as `Security`
 - Gemini CLI sessions skewing too infra/security-heavy on audience
 - database/platform sessions mislabeled as `App dev`
+- embedding-transfer classification overcalling `ai_focus: AI` on a new dataset because the nearest labeled source conference was more AI-saturated
 
 ### Step 5 — rebuild published artifacts
 ```bash

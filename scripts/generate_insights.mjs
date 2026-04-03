@@ -128,7 +128,9 @@ function slicesHtml(items) {
   return items.map((item) => `<a class="slice-link" href="${esc(makeHref(item.params))}"><strong>${esc(item.title)}</strong><span>${esc(item.desc)}</span></a>`).join('');
 }
 
-function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, dataScrapedAt) {
+function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, dataScrapedAt, options = {}) {
+  const conferenceLabel = options.conferenceLabel || 'Google Cloud Next 2026';
+  const sourceFile = options.sourceFile || 'sessions/classified_sessions.json';
   const withLlm = sessions.filter((session) => session.llm);
   const ai = counts('ai_focus', withLlm);
   const themes = counts('theme', withLlm);
@@ -222,7 +224,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, d
     meta: {
       generatedAt,
       dataScrapedAt,
-      source: 'sessions/classified_sessions.json',
+      source: sourceFile,
       availabilitySource,
       template: 'templates/insights.template.html',
       outputHtml: 'insights.html',
@@ -230,7 +232,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, d
       generator: 'scripts/generate_insights.mjs',
       wordRules: 'config/word-rules.json',
     },
-    lede: `${aiCount.toLocaleString()} of ${total.toLocaleString()} sessions at Google Cloud Next 2026 are about AI — ${Math.round((aiCount / Math.max(1, total)) * 100)}% of the whole conference. ${esc(themes[0]?.[0] || 'Security')} is the biggest single theme. The ${notAiCount} non-AI sessions are where the rest of the cloud story holds out.`,
+    lede: `${aiCount.toLocaleString()} of ${total.toLocaleString()} sessions at ${conferenceLabel} are about AI — ${Math.round((aiCount / Math.max(1, total)) * 100)}% of the whole conference. ${esc(themes[0]?.[0] || 'Security')} is the biggest single theme. The ${notAiCount} non-AI sessions are where the rest of the cloud story holds out.`,
     stats: [
       { value: total.toLocaleString(), label: 'Total sessions', note: `Across all formats — keynotes, breakouts, workshops, and labs.` },
       { value: `${Math.round((aiCount / Math.max(1, total)) * 100)}% AI`, label: 'Share of the conference', sub: `${aiCount.toLocaleString()} AI · ${notAiCount.toLocaleString()} not AI`, note: `For every non-AI session, there are roughly ${Math.round(aiCount / Math.max(1, notAiCount))} AI ones.` },
@@ -280,7 +282,9 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, d
   };
 }
 
-function renderHtml(summary, templateText) {
+function renderHtml(summary, templateText, options = {}) {
+  const conferenceLabel = options.conferenceLabel || 'Google Cloud Next 2026';
+  const ogDescription = options.ogDescription || 'AI vs Not AI, themes, audiences, top words, top companies, and conference insights.';
   const aiFocusCounts = summary.quickPivots.aiFocus.map((item) => [item.name, item.count]);
   const themeCounts = summary.quickPivots.themes.map((item) => [item.name, item.count]);
   const audienceCounts = summary.quickPivots.audiences.map((item) => [item.name, item.count]);
@@ -316,6 +320,8 @@ function renderHtml(summary, templateText) {
     '__COMPANY_OBSERVATIONS_HTML__': summary.companies.observationHtml,
     '__TOP_NON_GOOGLE_COMPANIES_HTML__': rankItemsHtml(topNonGoogle, '#6a1b9a', (name) => ({ company: name })),
     '__INTERESTING_SLICES_HTML__': slicesHtml(summary.interestingSlices),
+    '__CONFERENCE_LABEL__': esc(conferenceLabel),
+    '__OG_DESCRIPTION__': esc(ogDescription),
   };
 
   let html = templateText;
@@ -335,6 +341,8 @@ function parseArgs(argv) {
     outputAvailability: null,
     sankeyIndex: 'media/sankey-index.json',
     generatedAt: null,
+    conferenceLabel: 'Google Cloud Next 2026',
+    ogDescription: 'AI vs Not AI, themes, audiences, top words, top companies, and conference insights.',
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -347,6 +355,8 @@ function parseArgs(argv) {
     else if (arg === '--output-availability') options.outputAvailability = argv[++index];
     else if (arg === '--sankey-index') options.sankeyIndex = argv[++index];
     else if (arg === '--generated-at') options.generatedAt = argv[++index];
+    else if (arg === '--conference-label') options.conferenceLabel = argv[++index];
+    else if (arg === '--og-description') options.ogDescription = argv[++index];
     else throw new Error(`Unknown argument: ${arg}`);
   }
 
@@ -390,8 +400,14 @@ function main() {
   }
 
   const generatedAt = args.generatedAt || new Date().toISOString();
-  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir, dataScrapedAt);
-  const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'));
+  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir, dataScrapedAt, {
+    conferenceLabel: args.conferenceLabel,
+    sourceFile: args.input,
+  });
+  const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'), {
+    conferenceLabel: args.conferenceLabel,
+    ogDescription: args.ogDescription,
+  });
   const availabilityArtifact = createAvailabilityArtifact(availabilityRecords, { generatedAt });
 
   fs.mkdirSync(path.dirname(outputSummaryPath), { recursive: true });
