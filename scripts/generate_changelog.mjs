@@ -111,6 +111,14 @@ function friendlyDate(text) {
   return Number.isNaN(parsed.getTime()) ? text : parsed.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 }
 
+function extractSessionId(session) {
+  const explicit = String(session?.id || '').trim();
+  if (explicit) return explicit;
+  const url = String(session?.url || '').trim();
+  const match = url.match(/\/session\/([^/]+)\//);
+  return match?.[1] || '';
+}
+
 function overlapCount(leftItems, rightItems) {
   const left = new Set((leftItems || []).map((item) => String(item || '').toLowerCase().trim()).filter(Boolean));
   const right = new Set((rightItems || []).map((item) => String(item || '').toLowerCase().trim()).filter(Boolean));
@@ -256,8 +264,8 @@ function mergeNearbySnapshots(snapshots, mergeHours = MERGE_NEARBY_SNAPSHOTS_HOU
 function compareSnapshots(previous, current) {
   const prevMap = new Map(previous.sessions.map((session) => [sessionKey(session), session]));
   const curMap = new Map(current.sessions.map((session) => [sessionKey(session), session]));
-  const prevById = new Map(previous.sessions.filter((session) => session.id).map((session) => [String(session.id), session]));
-  const curById = new Map(current.sessions.filter((session) => session.id).map((session) => [String(session.id), session]));
+  const prevById = new Map(previous.sessions.map((session) => [extractSessionId(session), session]).filter(([id]) => id));
+  const curById = new Map(current.sessions.map((session) => [extractSessionId(session), session]).filter(([id]) => id));
 
   const added = [];
   const removed = [];
@@ -271,7 +279,8 @@ function compareSnapshots(previous, current) {
 
   for (const [key, session] of curMap.entries()) {
     if (!prevMap.has(key)) {
-      const sameIdBefore = session.id ? prevById.get(String(session.id)) : null;
+      const sessionId = extractSessionId(session);
+      const sameIdBefore = sessionId ? prevById.get(sessionId) : null;
       if (sameIdBefore) continue;
       added.push(session);
       continue;
@@ -295,7 +304,8 @@ function compareSnapshots(previous, current) {
 
   for (const [key, session] of prevMap.entries()) {
     if (!curMap.has(key)) {
-      const sameIdAfter = session.id ? curById.get(String(session.id)) : null;
+      const sessionId = extractSessionId(session);
+      const sameIdAfter = sessionId ? curById.get(sessionId) : null;
       if (sameIdAfter) continue;
       removed.push(session);
     }
