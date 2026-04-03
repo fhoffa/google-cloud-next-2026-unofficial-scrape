@@ -59,10 +59,13 @@ def matches_term(haystack: str, term: str) -> bool:
 
 
 def session_haystack(session: dict) -> str:
+    room = session.get('room') or ''
+    if isinstance(room, dict):
+        room = ' '.join(str(room.get(key) or '') for key in ('name', 'id', 'url'))
     return ' '.join([
         session.get('title') or '',
         session.get('description') or '',
-        session.get('room') or '',
+        room,
         *(session.get('topics') or []),
         *[x for item in (session.get('speakers') or []) for x in [item.get('name') or '', item.get('company') or '']],
     ]).lower()
