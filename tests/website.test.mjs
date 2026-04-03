@@ -325,9 +325,16 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
       meta: {
         ...generatedSummary.meta,
         sankeyLatest: insightsSummary.meta.sankeyLatest,
+        dataScrapedAt: insightsSummary.meta.dataScrapedAt ?? generatedSummary.meta.dataScrapedAt,
       },
     },
-    insightsSummary,
+    {
+      ...insightsSummary,
+      meta: {
+        ...insightsSummary.meta,
+        dataScrapedAt: insightsSummary.meta.dataScrapedAt ?? generatedSummary.meta.dataScrapedAt,
+      },
+    },
   );
   assert.deepEqual(
     JSON.parse(fs.readFileSync(generatedAvailabilityPath, 'utf8')),

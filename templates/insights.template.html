@@ -27,7 +27,8 @@
     .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start;margin-bottom:8px}
     .eyebrow{font-size:.9rem;color:var(--muted);margin:0 0 6px}
     h1{margin:0;font-size:2.2rem;line-height:1.05}
-    .lede{max-width:920px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 18px}
+    .lede{max-width:920px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 10px}
+    .freshness{color:var(--muted);font-size:.92rem;margin:0 0 18px}
     .section{margin-top:28px}
     .section h2{margin:0 0 10px;font-size:1.45rem}
     .section p{color:var(--muted)}
@@ -74,7 +75,7 @@
 </head>
 <body>
   <!-- Generated from templates/insights.template.html using scripts/generate_insights.mjs and config/word-rules.json. -->
-  <main data-generated-on="__GENERATED_ON__" data-summary-source="./media/insights-summary.json">
+  <main data-generated-on="__GENERATED_ON__" data-data-scraped-on="__DATA_SCRAPED_ON__" data-summary-source="./media/insights-summary.json">
     <div class="top">
       <div>
         <p class="eyebrow">Conference intelligence</p>
@@ -83,6 +84,7 @@
       <div><a href="./index.html">← Back to session explorer</a></div>
     </div>
     <p class="lede">__LEDE__</p>
+    <p class="freshness" id="freshness-line">Last updated: loading…</p>
 
     <section class="section">
       <div class="grid" id="stats">__STATS_HTML__</div>
@@ -185,6 +187,31 @@
   </main>
 <script type="module">
   const DEFAULT_SANKEY = '__DEFAULT_SANKEY__';
+  const main = document.querySelector('main');
+  const freshnessLine = document.getElementById('freshness-line');
+  const formatUtc = (value) => {
+    if (!value) return null;
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'UTC',
+      timeZoneName: 'short',
+    }).format(date);
+  };
+  if (freshnessLine && main) {
+    const dataScrapedAt = main.dataset.dataScrapedOn || '';
+    const generatedAt = main.dataset.generatedOn || '';
+    const parts = [];
+    if (dataScrapedAt) parts.push(`Live session data scraped: ${formatUtc(dataScrapedAt)}`);
+    if (generatedAt) parts.push(`Insights page generated: ${formatUtc(generatedAt)}`);
+    freshnessLine.textContent = parts.join(' · ') || 'Last updated: unavailable';
+  }
   const sankeyWrap = document.getElementById('sankey-wrap');
   const sankeyImage = document.getElementById('sankey-image');
   let currentSankeyFile = DEFAULT_SANKEY;

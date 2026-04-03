@@ -128,7 +128,7 @@ function slicesHtml(items) {
   return items.map((item) => `<a class="slice-link" href="${esc(makeHref(item.params))}"><strong>${esc(item.title)}</strong><span>${esc(item.desc)}</span></a>`).join('');
 }
 
-function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
+function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, dataScrapedAt) {
   const withLlm = sessions.filter((session) => session.llm);
   const ai = counts('ai_focus', withLlm);
   const themes = counts('theme', withLlm);
@@ -221,6 +221,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource) {
   return {
     meta: {
       generatedAt,
+      dataScrapedAt,
       source: 'sessions/classified_sessions.json',
       availabilitySource,
       template: 'templates/insights.template.html',
@@ -293,6 +294,7 @@ function renderHtml(summary, templateText) {
   const replacements = {
     '__OG_IMAGE__': esc(summary.meta.sankeyLatest),
     '__GENERATED_ON__': esc(summary.meta.generatedAt),
+    '__DATA_SCRAPED_ON__': esc(summary.meta.dataScrapedAt || ''),
     '__LEDE__': esc(summary.lede),
     '__DEFAULT_SANKEY__': esc(summary.meta.sankeyLatest),
     '__STATS_HTML__': statsCardsHtml(summary.stats),
@@ -367,6 +369,16 @@ function main() {
 
   const sessionsPayload = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
   const baseSessions = Array.isArray(sessionsPayload) ? sessionsPayload : sessionsPayload.sessions;
+  let dataScrapedAt = Array.isArray(sessionsPayload) ? '' : (sessionsPayload.scraped_at || '');
+  if (!dataScrapedAt) {
+    const latestPath = path.resolve(repoRoot, 'sessions/latest.json');
+    if (fs.existsSync(latestPath)) {
+      try {
+        const latestPayload = JSON.parse(fs.readFileSync(latestPath, 'utf8'));
+        dataScrapedAt = latestPayload?.scraped_at || '';
+      } catch {}
+    }
+  }
   const availabilityRecords = loadLibraryAvailabilityRecords(libraryCacheDir);
   const sessions = mergeAvailabilityIntoSessions(baseSessions, availabilityRecords);
   let sankeyLatest = '';
@@ -378,7 +390,7 @@ function main() {
   }
 
   const generatedAt = args.generatedAt || new Date().toISOString();
-  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir);
+  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir, dataScrapedAt);
   const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'));
   const availabilityArtifact = createAvailabilityArtifact(availabilityRecords, { generatedAt });
 

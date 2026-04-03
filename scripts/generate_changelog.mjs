@@ -414,9 +414,10 @@ function summarySentence(diff) {
   const parts = [];
   if (diff.summary.hasMoves) parts.push('some session IDs moved time slots or rooms');
   if (diff.summary.hasRenames) parts.push('some session IDs were retitled');
-  if (diff.summary.hasMetadataChanges) parts.push('some existing sessions changed descriptions or speakers');
-  if (diff.summary.hasAdditions) parts.push('new sessions showed up');
-  if (diff.summary.hasRemovals) parts.push('some sessions disappeared');
+  if (diff.summary.hasMetadataChanges) parts.push('some existing sessions changed descriptions, speakers, or other metadata');
+  if (diff.summary.hasAdditions) parts.push('new session IDs appeared');
+  if (diff.summary.hasRemovals) parts.push('some session IDs disappeared');
+  if (!diff.summary.hasMoves && !diff.summary.hasRenames && diff.summary.hasReplacements) parts.push('a few listings may reflect slot swaps or related replacements');
   if (diff.summary.currentAvailabilityKnown) parts.push(`${diff.summary.fullSharePhrase} of sessions with availability signals are fully booked`);
   if (diff.summary.hasReopened) parts.push('some previously full sessions reopened');
   if (!parts.length) return 'Mostly quiet update with little visible catalog movement.';
