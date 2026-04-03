@@ -106,6 +106,34 @@ class FakeElement {
         },
       }));
     }
+    if (selector === '.related-toggle-btn') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-toggle-btn\"[\s\S]*?data-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
+      return matches.map((match) => ({
+        dataset: { sessionId: match[1] },
+        listeners: new Map(),
+        addEventListener(type, listener) {
+          if (!this.listeners.has(type)) this.listeners.set(type, []);
+          this.listeners.get(type).push(listener);
+        },
+        click() {
+          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+        },
+      }));
+    }
+    if (selector === '.related-session-link') {
+      const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-session-link\"[\s\S]*?data-related-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
+      return matches.map((match) => ({
+        dataset: { relatedSessionId: match[1] },
+        listeners: new Map(),
+        addEventListener(type, listener) {
+          if (!this.listeners.has(type)) this.listeners.set(type, []);
+          this.listeners.get(type).push(listener);
+        },
+        click() {
+          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+        },
+      }));
+    }
     return [];
   }
 }
@@ -198,10 +226,12 @@ function createEnvironment(search = '') {
   return { document, location: locationLike, history };
 }
 
-function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact) {
+function createFetch(sourceDataset = dataset, availabilityDataset = availabilityArtifact, relatedDataset = relatedSessionsArtifact) {
   return async (url = '') => ({
     async json() {
-      return String(url).includes('session-availability') ? availabilityDataset : sourceDataset;
+      if (String(url).includes('session-availability')) return availabilityDataset;
+      if (String(url).includes('related-sessions')) return relatedDataset;
+      return sourceDataset;
     },
   });
 }
@@ -371,6 +401,71 @@ test('website loads the dataset and renders results', async () => {
 
 test('index wires the 2026 related-sessions artifact into the explorer', () => {
   assert.match(html, /relatedSessionsUrl: 'media\/related-sessions-2026-embeddings\.json'/);
+});
+
+test('related sessions stay hidden until Find similar is clicked', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    relatedSessionsUrl: 'media/related-sessions-2026-embeddings.json',
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const app = env.document.getElementById('app');
+  assert.match(app.innerHTML, /Find similar/);
+  assert.doesNotMatch(app.innerHTML, /Hide similar/);
+  assert.doesNotMatch(app.innerHTML, /class="related-sessions-label"/);
+
+  const toggles = app.querySelectorAll('.related-toggle-btn');
+  let foundExpanded = false;
+  for (const toggle of toggles) {
+    toggle.click();
+    if (app.querySelectorAll('.related-session-link')[0]) {
+      foundExpanded = true;
+      break;
+    }
+  }
+
+  assert.ok(foundExpanded, 'expected at least one session with revealable related-session buttons');
+  assert.match(app.innerHTML, /Hide similar/);
+  assert.match(app.innerHTML, /class="related-sessions-label"/);
+});
+
+test('clicking a related session narrows the explorer to that one session via sessionids', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    relatedSessionsUrl: 'media/related-sessions-2026-embeddings.json',
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const app = env.document.getElementById('app');
+  const toggles = app.querySelectorAll('.related-toggle-btn');
+  let relatedButton = null;
+  for (const toggle of toggles) {
+    toggle.click();
+    relatedButton = app.querySelectorAll('.related-session-link')[0];
+    if (relatedButton) break;
+  }
+  assert.ok(relatedButton, 'expected at least one related session button after expanding');
+  const relatedSessionId = relatedButton.dataset.relatedSessionId;
+  relatedButton.click();
+
+  const appHtml = app.innerHTML;
+  assert.equal((appHtml.match(/class="card"/g) || []).length, 1);
+  assert.match(env.location.search, new RegExp(`sessionids=${relatedSessionId}`));
+  assert.match(env.document.getElementById('active-filters').innerHTML, /selected session/);
+  assert.doesNotMatch(appHtml, /class="related-sessions-label"/);
 });
 
 test('2026 related-sessions artifact covers the classified explorer dataset with top-5 neighbors', () => {

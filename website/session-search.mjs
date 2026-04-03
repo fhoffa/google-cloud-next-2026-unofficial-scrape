@@ -98,6 +98,7 @@ function renderFilterPills(filters) {
   if (filters.day) pills.push({ key: 'day', label: filters.day.replace(', 2026', '') });
   if (filters.start_after || filters.start_before) pills.push({ key: 'time', label: `time: ${filters.start_after || 'start'} – ${filters.start_before || 'end'}` });
   if (filters.view === 'favorites') pills.push({ key: 'favorites', label: 'favorites' });
+  if (filters.sessionids && filters.view !== 'favorites') pills.push({ key: 'sessionids', label: 'selected session' });
   if (filters.ai_focus) pills.push({ key: 'ai_focus', label: `AI focus: ${filters.ai_focus}` });
   if (filters.theme) pills.push({ key: 'theme', label: `theme: ${filters.theme}` });
   if (filters.audience) pills.push({ key: 'audience', label: `audience: ${filters.audience}` });
@@ -164,7 +165,7 @@ export function buildSearchFromFilters(filters) {
   if (filters.audience) params.set('audience', filters.audience);
   if (filters.availability) params.set('availability', filters.availability);
   if (filters.view && filters.view !== DEFAULT_VIEW) params.set('view', filters.view);
-  if (filters.view === 'favorites' && filters.sessionids) params.set('sessionids', filters.sessionids);
+  if (filters.sessionids) params.set('sessionids', filters.sessionids);
   const query = params.toString();
   return query ? `?${query}` : '';
 }
@@ -185,7 +186,8 @@ export function filterSessions(sessions, filters) {
   const startBefore = filters.start_before || '';
 
   return sessions.filter((session) => {
-    if (filters.view === 'favorites' && !favoriteIds.has(sessionKey(session))) return false;
+    if (favoriteIds.size && !favoriteIds.has(sessionKey(session))) return false;
+    if (filters.view === 'favorites' && !favoriteIds.size) return false;
     if (day && session.date_text !== day) return false;
     if (topic && !(session.topics || []).includes(topic)) return false;
     const startTime = session.start_at ? session.start_at.slice(11, 16) : '';
@@ -307,17 +309,18 @@ function renderTabs(activeView) {
   return `<div class="tabs" role="tablist" aria-label="Views">${tabs.map((tab) => `<button class="tab-btn${tab.id === activeView ? ' active' : ''}" type="button" data-view="${tab.id}" role="tab" aria-selected="${tab.id === activeView ? 'true' : 'false'}">${tab.label}</button>`).join('')}</div>`;
 }
 
-function renderRelatedSessions(relatedItems) {
+function renderRelatedSessions(sessionId, relatedItems, visible) {
   if (!Array.isArray(relatedItems) || !relatedItems.length) return '';
-  return `<div class="related-sessions"><div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<a class="related-session-link" href="#session-${escHtml(item.sessionId || '')}" title="Jump to ${escHtml(item.title || '')}">${escHtml(item.title || '')}</a>`).join('')}</div></div>`;
+  return `<div class="related-sessions"><button class="related-toggle-btn" type="button" data-session-id="${escHtml(sessionId || '')}" aria-expanded="${visible ? 'true' : 'false'}">${visible ? 'Hide similar' : 'Find similar'}</button>${visible ? `<div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<button class="related-session-link" type="button" data-related-session-id="${escHtml(item.sessionId || '')}" title="Show ${escHtml(item.title || '')}">${escHtml(item.title || '')}</button>`).join('')}</div>` : ''}</div>`;
 }
 
-function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}) {
+function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
     const isExpanded = expandedIds.has(sessionId);
     const relatedItems = relatedLookup?.[sessionId]?.related || [];
+    const relatedVisible = visibleRelatedIds.has(sessionId) && !selectedSessionIds.size;
     const speakers = (session.speakers || []).map((speaker) => `
       <span class="speaker-chip">
         <span class="speaker-avatar" style="background:${avatarColor(speaker.name || '')}">${escHtml(initials(speaker.name || ''))}</span>
@@ -340,7 +343,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}) 
       ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
-      ${renderRelatedSessions(relatedItems)}
+      ${renderRelatedSessions(sessionId, relatedItems, relatedVisible)}
       ${session.url ? `<div class="reserve-seat-note">Note: the \u201cReserve a Seat\u201d button is broken on individual session pages. To reserve, search for this session by name in the <a href="https://www.googlecloudevents.com/next-vegas/session-library" target="_blank" rel="noopener">Session Library</a> instead.</div>` : ''}
     </div>`;
   }).join('');
@@ -424,7 +427,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let companyFilter = state.company || '';
   const classificationFilters = { ai_focus: state.ai_focus || '', theme: state.theme || '', audience: state.audience || '' };
   const storedFavorites = new Set((() => { try { return JSON.parse(storage?.getItem(FAVORITES_STORAGE_KEY) || '[]'); } catch { return []; } })().map((value) => sessionKey({ id: value, url: value })));
-  const sharedFavorites = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
+  const incomingSessionIds = String(state.sessionids || '').split(',').map((v) => sessionKey({ id: v.trim(), url: v.trim() })).filter(Boolean);
+  const sharedFavorites = state.view === 'favorites' ? incomingSessionIds : [];
   const favoriteIds = new Set(sharedFavorites.length ? sharedFavorites : [...storedFavorites]);
   try { storage?.setItem(FAVORITES_STORAGE_KEY, JSON.stringify([...storedFavorites])); } catch {}
   qInput.value = state.q;
@@ -443,6 +447,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let debounceId;
   let activeView = VALID_VIEWS.has(state.view) ? state.view : DEFAULT_VIEW;
   const expandedIds = new Set();
+  const visibleRelatedIds = new Set();
+  let selectedSessionIds = new Set(state.view === 'favorites' ? [] : incomingSessionIds);
   let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
   let relatedLookup = {};
 
@@ -457,7 +463,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       start_after: timeRangeStart && Number(timeRangeStart.value) > timeBounds.min ? timeIndexToValue(timeRangeStart.value) : '',
       start_before: timeRangeEnd && Number(timeRangeEnd.value) < timeBounds.max ? timeIndexToValue(timeRangeEnd.value) : '',
       view: favoriteToggle?.checked ? 'favorites' : activeView,
-      sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : '',
+      sessionids: favoriteToggle?.checked ? [...favoriteIds].join(',') : [...selectedSessionIds].join(','),
       company: companyFilter,
       ai_focus: classificationFilters.ai_focus,
       theme: classificationFilters.theme,
@@ -497,7 +503,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
@@ -529,6 +535,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
@@ -543,6 +550,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.speaker-summary-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         qInput.value = '';
         speakerInput.value = button.dataset.speakerName || '';
         topicSelect.value = '';
@@ -557,6 +565,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.topic-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         topicSelect.value = button.dataset.topicName || '';
         activeView = DEFAULT_VIEW;
         render();
@@ -564,6 +573,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.company-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         qInput.value = '';
         speakerInput.value = '';
         topicSelect.value = '';
@@ -580,6 +590,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.company-summary-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         qInput.value = '';
         speakerInput.value = '';
         topicSelect.value = '';
@@ -596,6 +607,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     }
     for (const button of app.querySelectorAll ? app.querySelectorAll('.word-link') : []) {
       button.addEventListener('click', () => {
+        selectedSessionIds = new Set();
         qInput.value = button.dataset.word || '';
         speakerInput.value = '';
         topicSelect.value = '';
@@ -612,6 +624,38 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       button.addEventListener('click', () => {
         const id = button.dataset.sessionId;
         if (expandedIds.has(id)) expandedIds.delete(id); else expandedIds.add(id);
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.related-toggle-btn') : []) {
+      button.addEventListener('click', () => {
+        const id = button.dataset.sessionId;
+        if (visibleRelatedIds.has(id)) visibleRelatedIds.delete(id); else visibleRelatedIds.add(id);
+        render();
+      });
+    }
+    for (const button of app.querySelectorAll ? app.querySelectorAll('.related-session-link') : []) {
+      button.addEventListener('click', () => {
+        const relatedSessionId = button.dataset.relatedSessionId;
+        qInput.value = '';
+        if (excludeInput) excludeInput.value = '';
+        speakerInput.value = '';
+        topicSelect.value = '';
+        sortSelect.value = DEFAULT_SORT;
+        if (availabilitySelect) availabilitySelect.value = '';
+        if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
+        if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
+        if (startAfterInput) startAfterInput.value = '';
+        if (startBeforeInput) startBeforeInput.value = '';
+        if (favoriteToggle) favoriteToggle.checked = false;
+        companyFilter = '';
+        classificationFilters.ai_focus = '';
+        classificationFilters.theme = '';
+        classificationFilters.audience = '';
+        activeView = DEFAULT_VIEW;
+        applyDaySelection(dayPills, '');
+        selectedSessionIds = new Set(relatedSessionId ? [relatedSessionId] : []);
+        visibleRelatedIds.clear();
         render();
       });
     }
@@ -659,10 +703,11 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     return { render };
   }
 
-  dayPills.forEach((pill) => pill.addEventListener('click', () => { applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
-  [qInput, speakerInput, excludeInput].filter(Boolean).forEach((input) => input.addEventListener('input', () => { clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
-  [topicSelect, sortSelect, startAfterInput, startBeforeInput, availabilitySelect, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
+  dayPills.forEach((pill) => pill.addEventListener('click', () => { selectedSessionIds = new Set(); applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
+  [qInput, speakerInput, excludeInput].filter(Boolean).forEach((input) => input.addEventListener('input', () => { selectedSessionIds = new Set(); clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
+  [topicSelect, sortSelect, startAfterInput, startBeforeInput, availabilitySelect, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input !== favoriteToggle) selectedSessionIds = new Set(); if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
   [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
+    selectedSessionIds = new Set();
     let start = Number(timeRangeStart.value);
     let end = Number(timeRangeEnd.value);
     start = Math.max(timeBounds.min, Math.min(timeBounds.max, start));
@@ -687,6 +732,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'day') applyDaySelection(dayPills, '');
     if (key === 'time') { if (timeRangeStart) timeRangeStart.value = String(timeBounds.min); if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max); if (startAfterInput) startAfterInput.value = ''; if (startBeforeInput) startBeforeInput.value = ''; }
     if (key === 'favorites' && favoriteToggle) favoriteToggle.checked = false;
+    if (key === 'sessionids') selectedSessionIds = new Set();
     if (key === 'ai_focus') classificationFilters.ai_focus = '';
     if (key === 'theme') classificationFilters.theme = '';
     if (key === 'audience') classificationFilters.audience = '';
@@ -695,14 +741,17 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   });
 
   qClearBtn?.addEventListener('click', () => {
+    selectedSessionIds = new Set();
     qInput.value = '';
     render();
   });
   excludeClearBtn?.addEventListener('click', () => {
+    selectedSessionIds = new Set();
     if (excludeInput) excludeInput.value = '';
     render();
   });
   speakerClearBtn?.addEventListener('click', () => {
+    selectedSessionIds = new Set();
     speakerInput.value = '';
     render();
   });
@@ -718,6 +767,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
     if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
     if (favoriteToggle) favoriteToggle.checked = false;
+    selectedSessionIds = new Set();
     classificationFilters.ai_focus = '';
     classificationFilters.theme = '';
     classificationFilters.audience = '';
