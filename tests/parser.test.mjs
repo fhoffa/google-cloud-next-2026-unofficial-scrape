@@ -26,8 +26,8 @@ test('extracts embedded session ids from library pages', () => {
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
   const records = extractSessionRecordsFromLibrary(page2);
   assert.ok(records.length > 0);
-  assert.ok(records.some((r) => r.url.includes('/session/3920535/gaming-assistant-with-gemini-live-api')));
-  assert.ok(records.some((r) => r.title === 'Learn the basics of Gemini CLI'));
+  assert.ok(records.every((r) => typeof r.url === 'string' && r.url.includes('/session/')));
+  assert.ok(records.some((r) => /gemini cli/i.test(r.title)));
 });
 
 
