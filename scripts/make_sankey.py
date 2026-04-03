@@ -262,6 +262,8 @@ def render_sankey(
     min_theme_label: int = 12,
     min_audience_label: int = 10,
     click_map_path: Path | None = None,
+    title: str = 'Google Cloud Next 2026 sessions',
+    subtitle: str = 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape',
 ):
     mid, third, fourth = build_chart_data(sessions)
     fig, ax = plt.subplots(figsize=(fig_width, 30), dpi=220)
@@ -366,8 +368,8 @@ def render_sankey(
             click_map_artists.append({'artist': patch, 'kind': 'audience-flow', 'title': f'{key[0]} → {key[1]} → {label} ({value})', 'params': {'ai_focus': key[0], 'theme': key[1], 'audience': label}, 'shape_type': 'poly'})
             cursor -= h
 
-    ax.text(0.03, 0.988, 'Google Cloud Next 2026 sessions', fontsize=52, fontweight='bold', color='#202124', ha='left')
-    ax.text(0.03, 0.968, 'fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', fontsize=24, color='#3c4043', ha='left')
+    ax.text(0.03, 0.988, title, fontsize=52, fontweight='bold', color='#202124', ha='left')
+    ax.text(0.03, 0.968, subtitle, fontsize=24, color='#3c4043', ha='left')
     ax.text(0.012, 0.005, 'by Felipe Hoffa\nlinkedin.com/in/hoffa', fontsize=24, color='#5f6368', ha='left', va='bottom')
 
     fig.canvas.draw()
@@ -436,6 +438,8 @@ def main():
     parser.add_argument('--x-positions', default='0.08,0.34,0.64,0.93', help='Comma-separated x positions for columns: root,ai/theme,audience.')
     parser.add_argument('--min-theme-label', default=12, type=int, help='Hide theme labels below this session count.')
     parser.add_argument('--min-audience-label', default=10, type=int, help='Hide audience labels below this session count.')
+    parser.add_argument('--title', default='Google Cloud Next 2026 sessions', help='Chart title.')
+    parser.add_argument('--subtitle', default='fhoffa.github.io/google-cloud-next-2026-unofficial-scrape', help='Chart subtitle.')
     args = parser.parse_args()
 
     cwd = Path.cwd()
@@ -484,6 +488,8 @@ def main():
         min_theme_label=args.min_theme_label,
         min_audience_label=args.min_audience_label,
         click_map_path=click_map_path,
+        title=args.title,
+        subtitle=args.subtitle,
     )
     if args.publish and stamp:
         update_sankey_index(cwd, output_path, stamp)
