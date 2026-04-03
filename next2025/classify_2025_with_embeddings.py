@@ -20,6 +20,12 @@ BATCH = int(os.environ.get('EMBED_BATCH_SIZE', '64'))
 TOP_K = int(os.environ.get('EMBED_K', '9'))
 MAX_CANDIDATES = int(os.environ.get('EMBED_MAX_CANDIDATES', '180'))
 STOP = {'the','and','for','with','from','into','your','you','how','why','what','using','use','build','google','cloud','next','session','talk','workshop','lab'}
+AI_KEYWORDS = [
+    ' ai ', ' gemini', ' agent', ' agents', ' llm', ' ml ', 'machine learning', ' genai',
+    ' generative', ' vertex', ' prompt', ' rag', ' inference', ' model', ' models',
+    ' foundation', ' agentic', ' agentspace', ' notebooklm', ' deepmind', ' tensorflow',
+    ' gemma', ' mcp'
+]
 
 
 def clean(value):
@@ -54,6 +60,15 @@ def session_text(session):
     if speakers:
         parts.append(f'Speaker companies: {", ".join(speakers[:6])}')
     return '\n'.join(parts)
+
+
+def has_ai_keyword(session):
+    text = ' '.join([
+        ' ' + clean(session.get('title')).lower() + ' ',
+        ' ' + clean(session.get('description')).lower() + ' ',
+        ' ' + ' '.join((session.get('topics') or [])).lower() + ' ',
+    ])
+    return any(keyword in text for keyword in AI_KEYWORDS)
 
 
 def chunks(seq, size):
@@ -151,11 +166,12 @@ def main():
             sims.append((cosine(vec, train_vecs[cid], None, train_norms[cid]), train_rows[cid]['session']))
         sims.sort(key=lambda x: x[0], reverse=True)
         nbrs = sims[:TOP_K]
+        ai_focus = 'AI' if has_ai_keyword(session) else 'Not AI'
         session['llm'] = {
-            'ai_focus': vote(nbrs, 'ai_focus'),
+            'ai_focus': ai_focus,
             'theme': vote(nbrs, 'theme'),
             'audience': vote(nbrs, 'audience'),
-            'reasoning': 'Embedding kNN classification using nearest labeled 2026 sessions after token-overlap candidate filtering.',
+            'reasoning': f"AI keyword gate => {ai_focus}; theme/audience from embedding kNN using nearest labeled 2026 sessions after token-overlap filtering.",
             'neighbor_titles': [n['title'] for _, n in nbrs[:3]],
             'neighbor_scores': [round(s, 4) for s, _ in nbrs[:3]],
         }
