@@ -422,11 +422,11 @@ function toSessionRecord(url, html, seed = {}) {
     topics: normalizeTopics(first.custom_fields || {}),
     speakers,
     session_category: seed.session_category || first.custom_fields?.c_92132 || '',
-    capacity: seed.capacity ?? first.capacity ?? '',
-    remaining_capacity: seed.remaining_capacity ?? first.remaining_capacity ?? '',
-    registrant_count: seed.registrant_count ?? first.registrantCount ?? '',
-    agenda_status: seed.agenda_status ?? first.addedInAgenda ?? '',
-    disabled_class: seed.disabled_class ?? first.disabledClass ?? '',
+    capacity: first.capacity ?? seed.capacity ?? '',
+    remaining_capacity: first.remaining_capacity ?? seed.remaining_capacity ?? '',
+    registrant_count: first.registrantCount ?? seed.registrant_count ?? '',
+    agenda_status: first.addedInAgenda ?? seed.agenda_status ?? '',
+    disabled_class: first.disabledClass ?? seed.disabled_class ?? '',
   };
 }
 

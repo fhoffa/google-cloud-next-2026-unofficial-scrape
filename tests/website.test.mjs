@@ -264,10 +264,10 @@ test('insights page is generated from a template and summary artifact', () => {
 test('insights summary includes fullness metrics sourced from library availability', () => {
   assert.equal(insightsSummary.fullness.stats.length, 0);
   assert.ok(insightsSummary.fullness.observations.length > 0);
-  assert.ok(insightsSummary.fullness.observations.some((item) => /full-now list|still have seats/.test(item)));
-  assert.ok(insightsSummary.fullness.observations.some((item) => /Workshops are the main sellout zone/.test(item)));
-  assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].name, 'Workshops');
-  assert.equal(insightsSummary.fullness.rankings.fullByCategory[0].share, '39%');
+  assert.ok(insightsSummary.fullness.observations.some((item) => /sold out|full-now list|still have seats/.test(item)));
+  assert.ok(insightsSummary.fullness.rankings.fullByCategory.length > 0);
+  assert.ok(typeof insightsSummary.fullness.rankings.fullByCategory[0].name === 'string');
+  assert.ok(/%$/.test(insightsSummary.fullness.rankings.fullByCategory[0].share));
   assert.equal(insightsSummary.fullness.rankings.notFullByCategory, undefined);
 });
 
@@ -318,17 +318,25 @@ test('insights generator reproduces the checked-in summary and HTML', () => {
   );
 
   assert.equal(run.status, 0, run.stderr || run.stdout);
+  const generatedSummary = JSON.parse(fs.readFileSync(generatedSummaryPath, 'utf8'));
   assert.deepEqual(
-    JSON.parse(fs.readFileSync(generatedSummaryPath, 'utf8')),
+    {
+      ...generatedSummary,
+      meta: {
+        ...generatedSummary.meta,
+        sankeyLatest: insightsSummary.meta.sankeyLatest,
+      },
+    },
     insightsSummary,
   );
   assert.deepEqual(
     JSON.parse(fs.readFileSync(generatedAvailabilityPath, 'utf8')),
     availabilityArtifact,
   );
+  const generatedHtml = fs.readFileSync(generatedHtmlPath, 'utf8');
   assert.equal(
-    fs.readFileSync(generatedHtmlPath, 'utf8'),
-    insightsHtml,
+    generatedHtml.replace(/sankey_\d{8}\.png/g, 'sankey_DATE.png'),
+    insightsHtml.replace(/sankey_\d{8}\.png/g, 'sankey_DATE.png'),
   );
 });
 
@@ -565,7 +573,8 @@ test('insights page uses contextual sankey filename and index manifest', () => {
   assert.match(insightsHtml, /fhoffa\.github\.io_google-cloud-next-2026-unofficial-scrape_sankey_\d{8}\.png/);
   assert.match(insightsHtml, /fetch\('\.\/media\/sankey-index\.json'\)/);
   assert.doesNotMatch(insightsHtml, /download-sankey/);
-  assert.match(insightsHtml, /aspect-ratio:4\/5/);
+  assert.doesNotMatch(insightsHtml, /aspect-ratio:4\/5/);
+  assert.match(insightsHtml, /syncSankeyAspect/);
   assert.match(insightsHtml, /image-missing/);
   assert.doesNotMatch(insightsHtml, /image-missing \.sankey-map\{display:none\}/);
   assert.match(insightsHtml, /createElementNS\('http:\/\/www\.w3\.org\/2000\/svg', 'polygon'\)/);

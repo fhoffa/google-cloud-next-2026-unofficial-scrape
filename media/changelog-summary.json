@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-02T06:47:32.409Z",
+    "generatedAt": "2026-04-03T13:06:25.783Z",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
     "outputHtml": "changelog.html",
@@ -9,6 +9,1298 @@
   },
   "lede": "A changelog that collapses near-duplicate scrape bursts while preserving meaningful gaps between publishes: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.",
   "updates": [
+    {
+      "previous": {
+        "file": "2026-04-02T05-58-38Z.json",
+        "scrapedAt": "2026-04-02T05:58:38.161Z",
+        "count": 1037
+      },
+      "current": {
+        "file": "2026-04-03T08-13-45Z.json",
+        "scrapedAt": "2026-04-03T08:13:45.087Z",
+        "count": 1054
+      },
+      "summary": {
+        "currentAvailabilityKnown": 1054,
+        "currentFull": 89,
+        "currentLimited": 0,
+        "fullSharePhrase": "a small share",
+        "hasReopened": false,
+        "hasMaterialChanges": true,
+        "hasAdditions": true,
+        "hasRemovals": true,
+        "hasReplacements": true,
+        "hasMoves": true,
+        "hasRenames": true,
+        "hasMetadataChanges": true
+      },
+      "moved": [
+        {
+          "title": "Achieve sovereign control over your AI with Google Workspace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912921/achieve-sovereign-control-over-your-ai-with-google-workspace",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "South Seas F"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "2:00 PM",
+            "room": "South Seas F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "AI at enterprise scale: Williams Sonoma, Smyths Toys, and Northwell Health",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913157/ai-at-enterprise-scale-williams-sonoma-smyths-toys-and-northwell-health",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "10:30 AM",
+            "end": "11:15 AM",
+            "room": "South Seas F"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Breakers A"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "AI in the Physical World with Gemini Robotics",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3989103/ai-in-the-physical-world-with-gemini-robotics",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "1:30 PM",
+            "end": "1:55 PM",
+            "room": "Developer Theater"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "1:40 PM",
+            "room": "Developer Theater"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "Beyond Chatbots: Building Realtime Multimodal Agents with the Gemini Live API",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3991556/beyond-chatbots-building-realtime-multimodal-agents-with-the-gemini-live-api",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "1:40 PM",
+            "room": "Developer Theater"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:15 PM",
+            "end": "2:40 PM",
+            "room": "Developer Theater"
+          },
+          "changedFields": [
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "Breaking free at scale: The inside story of Candescent's Google Cloud journey",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920339/breaking-free-at-scale-the-inside-story-of-candescent's-google-cloud-journey",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Breakers A"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "9:45 AM",
+            "end": "10:30 PM",
+            "room": "South Seas J"
+          },
+          "changedFields": [
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Breaking the migration bottleneck: AI-agentic code conversion at scale",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908829/breaking-the-migration-bottleneck-ai-agentic-code-conversion-at-scale",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Solution Talks 3 - Palm H"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "From recipe to cart: Materializing the agentic pantry with Woolworths",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3950485/from-recipe-to-cart-materializing-the-agentic-pantry-with-woolworths",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Lagoon L"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Mandalay Bay H"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Gemini in regulated sectors: Accelerate human impact with secure AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912916/gemini-in-regulated-sectors-accelerate-human-impact-with-secure-ai",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "2:00 PM",
+            "room": "South Seas F"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "South Seas F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "GenAI for architects: Supercharge your workflow from blueprint to biz case",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908760/genai-for-architects-supercharge-your-workflow-from-blueprint-to-biz-case",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "2:00 PM",
+            "room": "Solution Talks 1 - Palm E"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Global scale, AI, and new integrations for Oracle databases on Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912293/global-scale-ai-and-new-integrations-for-oracle-databases-on-google-cloud",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Mandalay Bay I"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Mandalay Bay E"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Governing agentic state: Architect auditable loans with HITL on Vertex AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908812/governing-agentic-state-architect-auditable-loans-with-hitl-on-vertex-ai",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Solution Talks 3 - Palm H"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "How Google's data centers and global networks solved AI-era challenges",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913087/how-google's-data-centers-and-global-networks-solved-ai-era-challenges",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Lagoon B"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Breakers E"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Modernizing the SOC for the AI era",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913160/modernizing-the-soc-for-the-ai-era",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:45 PM",
+            "room": "Mandalay Bay L"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "9:45 AM",
+            "end": "10:30 AM",
+            "room": "Mandalay Bay L"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "Next-gen pharma R&D: Redefining discovery with HPC and agentic AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913134/next-gen-pharma-rd-redefining-discovery-with-hpc-and-agentic-ai",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Breakers E"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "12:30 PM",
+            "end": "1:15 PM",
+            "room": "Lagoon F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Agentic AI in action for financial services and insurance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908820/agentic-ai-in-action-for-financial-services-and-insurance",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "Put actionable AI to work: Activate enterprise data at scale",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913151/put-actionable-ai-to-work-activate-enterprise-data-at-scale",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Breakers A"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "10:30 AM",
+            "end": "11:15 AM",
+            "room": "South Seas F"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "Scale and protect internet-facing web, API, and AI services just like Google",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913021/scale-and-protect-internet-facing-web-api-and-ai-services-just-like-google",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "12:30 PM",
+            "end": "1:15 PM",
+            "room": "Lagoon F"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Lagoon B"
+          },
+          "changedFields": [
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "SecOps large scale migrations steps and leveraging genAI to accelerate",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908825/secops-large-scale-migrations-steps-and-leveraging-genai-to-accelerate",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 2 - Palm F"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:15 PM",
+            "end": "2:00 PM",
+            "room": "Solution Talks 1 - Palm E"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        },
+        {
+          "title": "The Cloud Security maturity playbook: From noise to risk ownership",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913065/the-cloud-security-maturity-playbook-from-noise-to-risk-ownership",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "9:45 AM",
+            "end": "10:30 AM",
+            "room": "Mandalay Bay L"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:45 PM",
+            "room": "Mandalay Bay L"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at"
+          ]
+        },
+        {
+          "title": "The AI stylist: Nordstrom’s new era of personal luxury",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3950281/the-ai-stylist-nordstrom’s-new-era-of-personal-luxury",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "12:15 PM",
+            "end": "1:00 PM",
+            "room": "Mandalay Bay H"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Lagoon L"
+          },
+          "changedFields": [
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "start_at",
+            "end_at",
+            "room"
+          ]
+        }
+      ],
+      "renamed": [
+        {
+          "beforeTitle": "Accelerate cloud migration with TCS Migration Factory",
+          "afterTitle": "Randstad accelerates cloud migration with TCS and Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3975391/randstad-accelerates-cloud-migration-with-tcs-and-google-cloud",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Agentic AI: wardrobes, webtoons, and the future of personalized experiences",
+          "afterTitle": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920556/agentic-ai-social-commerce-webtoons-and-the-future-of-personalized-experiences",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Architecting with Ray on GKE: Apple's playbook",
+          "afterTitle": "Reve AI platform playbook: Scaling multimodal foundation models with Ray on GKE",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912908/reve-ai-platform-playbook-scaling-multimodal-foundation-models-with-ray-on-gke",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Build Agentic Platform using Ray on GKE and vLLM",
+          "afterTitle": "Building an Agentic Platform using Ray Serve LLM and vLLM on GKE",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3932301/building-an-agentic-platform-using-ray-serve-llm-and-vllm-on-gke",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Build secure apps with Application Design Center and Security Command Center",
+          "afterTitle": "Build secure-by-design applications for Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913052/build-secure-by-design-applications-for-google-cloud",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Build without boundaries: Unifying vibe coding and production with Vertex AI Studio and MCP",
+          "afterTitle": "Vibe coding to production with Vertex AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913132/vibe-coding-to-production-with-vertex-ai",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "DeepMind startup workshop: Building agents with Gemini and Antigravity",
+          "afterTitle": "DeepMind startup workshop: Building agents with Gemini",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909245/deepmind-startup-workshop-building-agents-with-gemini",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Deploy and govern the Gemini CLI at scale",
+          "afterTitle": "How we build and use Gemini CLI at Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911930/how-we-build-and-use-gemini-cli-at-google-cloud",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Enable developer productivity with Gemini Enterprise",
+          "afterTitle": "Complex workflows made easy with Gemini Enterprise agents",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913068/complex-workflows-made-easy-with-gemini-enterprise-agents",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Engineering the autonomous enterprise: Deploying agents across the energy value chain",
+          "afterTitle": "Engineering the autonomous enterprise: deploying agents across the energy value chain",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908801/engineering-the-autonomous-enterprise-deploying-agents-across-the-energy-value-chain",
+          "changedFields": [
+            "title"
+          ]
+        },
+        {
+          "beforeTitle": "Enterprise AI for CX - A customer case study with Randstad",
+          "afterTitle": "Agentic AI in CX — Now and next with Dialpad and Randstad",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3888644/agentic-ai-in-cx-—-now-and-next-with-dialpad-and-randstad",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "How Farmers Insurance engineered AI-native customer engagement",
+          "afterTitle": "Architecting the future: Enterprise-scale agentic AI platforms for energy",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908671/architecting-the-future-enterprise-scale-agentic-ai-platforms-for-energy",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Interactive breakout: Software development in the age of AI agents",
+          "afterTitle": "Software development in the age of AI agents",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920365/software-development-in-the-age-of-ai-agents",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Learning to trust the agents among us",
+          "afterTitle": "The agents among us",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3900517/the-agents-among-us",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Limitless AI orchestration on GKE: Power secure, planetary-scale AI",
+          "afterTitle": "GKE supercluster: Powering secure, planetary scale for AI workloads",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912915/gke-supercluster-powering-secure-planetary-scale-for-ai-workloads",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Marketplace: Enabling the era of the trusted agentic enterprise",
+          "afterTitle": "Marketplace: Enabling the era of the agentic enterprise",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913029/marketplace-enabling-the-era-of-the-agentic-enterprise",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Offensive AI: Architecting red teaming pipelines for genAI models",
+          "afterTitle": "Agentic AI in action for financial services and insurance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908820/agentic-ai-in-action-for-financial-services-and-insurance",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Redefining data science with Antigravity: Google's AI-native IDE",
+          "afterTitle": "The agentic revolution: Redefining the data science life cycle",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912210/the-agentic-revolution-redefining-the-data-science-life-cycle",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Scale open model serving on TPUs",
+          "afterTitle": "Scaling open LLMs: Inside Spotify’s LLM backend on Google Cloud TPUs and GPUs",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913115/scaling-open-llms-inside-spotify’s-llm-backend-on-google-cloud-tpus-and-gpus",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        },
+        {
+          "beforeTitle": "Scaling autonomous SRE with Vertex AI Agent Engine",
+          "afterTitle": "Running autonomous agents in production",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912988/running-autonomous-agents-in-production",
+          "changedFields": [
+            "title",
+            "url"
+          ]
+        }
+      ],
+      "metadataChanges": [
+        {
+          "title": "Accelerate AI adoption: Strategies for upskilling and managing change",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912911/accelerate-ai-adoption-strategies-for-upskilling-and-managing-change",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Randstad accelerates cloud migration with TCS and Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3975391/randstad-accelerates-cloud-migration-with-tcs-and-google-cloud",
+          "changedFields": [
+            "description",
+            "speakers"
+          ]
+        },
+        {
+          "title": "Accelerate R&D with Gemini-based agents Co-Scientist and AlphaEvolve",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920154/accelerate-rd-with-gemini-based-agents-co-scientist-and-alphaevolve",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912966/accelerate-your-most-demanding-ai-workloads-with-managed-lustre",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Accelerate your path to AI readiness with Google Cloud VMware Engine",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912979/accelerate-your-path-to-ai-readiness-with-google-cloud-vmware-engine",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Accelerating alpha: Citadel's hybrid HPC and AI strategy",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913010/accelerating-alpha-citadel's-hybrid-hpc-and-ai-strategy",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Achieve multicloud security at scale with Google Unified Security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913121/achieve-multicloud-security-at-scale-with-google-unified-security",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Advance medicine and healthcare outcomes with Gemini",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912232/advance-medicine-and-healthcare-outcomes-with-gemini",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Agent value",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3932033/agent-value",
+          "changedFields": [
+            "description"
+          ]
+        },
+        {
+          "title": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920556/agentic-ai-social-commerce-webtoons-and-the-future-of-personalized-experiences",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Agentic commerce: How Ulta and Bunnings re-imagined the shopping experience",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3950366/agentic-commerce-how-ulta-and-bunnings-re-imagined-the-shopping-experience",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Agentic commerce: Transform the shopping experience with Google agents and open standards",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912969/agentic-commerce-transform-the-shopping-experience-with-google-agents-and-open-standards",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Agentic transformation in the public sector",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3856628/agentic-transformation-in-the-public-sector",
+          "changedFields": [
+            "description",
+            "topics"
+          ]
+        },
+        {
+          "title": "Agents in action: Startup breakthroughs across industries",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912300/agents-in-action-startup-breakthroughs-across-industries",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AI Agent Developer Meetup",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913482/ai-agent-developer-meetup",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AI Application Developer Meetup",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913495/ai-application-developer-meetup",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AI at enterprise scale: Williams Sonoma, Smyths Toys, and Northwell Health",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913157/ai-at-enterprise-scale-williams-sonoma-smyths-toys-and-northwell-health",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AI Hypercomputer: Resilient AI infrastructure at scale",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913036/ai-hypercomputer-resilient-ai-infrastructure-at-scale",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AI upskilling strategies from the world's most innovative retailers",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912280/ai-upskilling-strategies-from-the-world's-most-innovative-retailers",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "AlloyDB AI in action: Powering next-gen search and intelligent agents",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912252/alloydb-ai-in-action-powering-next-gen-search-and-intelligent-agents",
+          "changedFields": [
+            "speakers"
+          ]
+        }
+      ],
+      "replacements": [
+        {
+          "removedTitle": "Ask more from your agents with Google Antigravity",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3911919/ask-more-from-your-agents-with-google-antigravity",
+          "addedTitle": "From experimentation to enterprise value: How Cox scaled AI for impact",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3881979/from-experimentation-to-enterprise-value-how-cox-scaled-ai-for-impact",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Scaling Claude: Inside Anthropic's TPU strategy and architecture",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3913022/scaling-claude-inside-anthropic's-tpu-strategy-and-architecture",
+          "addedTitle": "AIOps at scale: Production-ready infrastructure with Cluster Director",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3913105/aiops-at-scale-production-ready-infrastructure-with-cluster-director",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "The future of the data lakehouse: Open and interoperable for the agentic era",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3912226/the-future-of-the-data-lakehouse-open-and-interoperable-for-the-agentic-era",
+          "addedTitle": "An inside look at the evolution of agent development",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3912332/an-inside-look-at-the-evolution-of-agent-development",
+          "reasons": [
+            "same day",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "From vision to value: Scaling Gemini Enterprise at The Venetian",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/4001636/from-vision-to-value-scaling-gemini-enterprise-at-the-venetian",
+          "addedTitle": "Reinventing Grocery Retail: How Albertsons Uses Databricks on Google Cloud to Unlock Data and AI",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/4036717/reinventing-grocery-retail-how-albertsons-uses-databricks-on-google-cloud-to-unlock-data-and-ai",
+          "reasons": [
+            "same day",
+            "same room",
+            "shared topic"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Adapt across devices with Flutter",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920387/adapt-across-devices-with-flutter",
+          "addedTitle": "Build real-time apps with PostgreSQL and Firebase",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920424/build-real-time-apps-with-postgresql-and-firebase",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Agentic forecasting and planning",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920441/agentic-forecasting-and-planning",
+          "addedTitle": "Agentic service resolution",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3976448/agentic-service-resolution",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "AI Photo Booth",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920526/ai-photo-booth",
+          "addedTitle": "NeuroContext: The next modality is your brain",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920497/neurocontext-the-next-modality-is-your-brain",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "AI-ready compute",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920493/ai-ready-compute",
+          "addedTitle": "Cloud TPUs and GPUs",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920442/cloud-tpus-and-gpus",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Automate your workflow with Gemini CLI",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920511/automate-your-workflow-with-gemini-cli",
+          "addedTitle": "Customize Gemini CLI with extensions and MCP servers",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920474/customize-gemini-cli-with-extensions-and-mcp-servers",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Building secure agents: protecting access and data",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920536/building-secure-agents-protecting-access-and-data",
+          "addedTitle": "Build custom SecOps agents",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920465/build-custom-secops-agents",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Chat with your data using Gemini",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920538/chat-with-your-data-using-gemini",
+          "addedTitle": "Build conversational agents on PostgreSQL and MySQL",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920461/build-conversational-agents-on-postgresql-and-mysql",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Gemini driven manufacturing intelligence hub",
+          "removedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920398/gemini-driven-manufacturing-intelligence-hub",
+          "addedTitle": "Drive clinical action with AI agents",
+          "addedUrl": "https://www.googlecloudevents.com/next-vegas/session/3920548/drive-clinical-action-with-ai-agents",
+          "reasons": [
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        }
+      ],
+      "added": [
+        {
+          "title": "AI with a mission: From strategy to high-stakes impact",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3915273/ai-with-a-mission-from-strategy-to-high-stakes-impact"
+        },
+        {
+          "title": "Align stakeholders on a path forward",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920447/align-stakeholders-on-a-path-forward"
+        },
+        {
+          "title": "Analyze data and make an informed decision",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920408/analyze-data-and-make-an-informed-decision"
+        },
+        {
+          "title": "Automate incident response with generative AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920539/automate-incident-response-with-generative-ai"
+        },
+        {
+          "title": "Build agents at scale: How Shopify powers Sidekick with Claude on Vertex AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913106/build-agents-at-scale-how-shopify-powers-sidekick-with-claude-on-vertex-ai"
+        },
+        {
+          "title": "Building AI agents at scale with CVS",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920481/building-ai-agents-at-scale-with-cvs"
+        },
+        {
+          "title": "CISO Connect Reception",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3952516/ciso-connect-reception"
+        },
+        {
+          "title": "CISO Connect: Security in the Next Era",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3947405/ciso-connect-security-in-the-next-era"
+        },
+        {
+          "title": "Deliver price-performance with workload-optimized VMs",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920477/deliver-price-performance-with-workload-optimized-vms"
+        },
+        {
+          "title": "Empower AI agents with Google MCP servers",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920543/empower-ai-agents-with-google-mcp-servers"
+        },
+        {
+          "title": "Google Cloud x FairPrice Group",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920492/google-cloud-x-fairprice-group"
+        },
+        {
+          "title": "Google custom silicon",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920476/google-custom-silicon"
+        }
+      ],
+      "removed": [
+        {
+          "title": "Beyond the basics in Gemini CLI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920378/beyond-the-basics-in-gemini-cli"
+        },
+        {
+          "title": "Build a cloud-native game with Antigravity",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920484/build-a-cloud-native-game-with-antigravity"
+        },
+        {
+          "title": "Build agents with Vertex AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920385/build-agents-with-vertex-ai"
+        },
+        {
+          "title": "Execute a project and drive an outcome",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920501/execute-a-project-and-drive-an-outcome"
+        },
+        {
+          "title": "Explore the Gemini CLI extensions ecosystem",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920450/explore-the-gemini-cli-extensions-ecosystem"
+        },
+        {
+          "title": "Find and synthesize information",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920406/find-and-synthesize-information"
+        },
+        {
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows"
+        },
+        {
+          "title": "Gaming assistant with Gemini Live API",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920535/gaming-assistant-with-gemini-live-api"
+        },
+        {
+          "title": "Gemini Robotics",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920470/gemini-robotics"
+        },
+        {
+          "title": "Generative media for marketing & advertising",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920418/generative-media-for-marketing-advertising"
+        },
+        {
+          "title": "GenLatte",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920393/genlatte"
+        },
+        {
+          "title": "Learn the basics of Gemini CLI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920521/learn-the-basics-of-gemini-cli"
+        }
+      ],
+      "nowFull": [
+        {
+          "title": "Agent development and AgentOps with BigQuery, ADK, and MCP",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912305/agent-development-and-agentops-with-bigquery-adk-and-mcp"
+        },
+        {
+          "title": "Agentic playbook: Scale and govern AI agents with Gemini Enterprise",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913085/agentic-playbook-scale-and-govern-ai-agents-with-gemini-enterprise"
+        },
+        {
+          "title": "All about agents with Google Cloud databases",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912268/all-about-agents-with-google-cloud-databases"
+        },
+        {
+          "title": "Apps, automation, and agents: The future of building on Google Workspace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920156/apps-automation-and-agents-the-future-of-building-on-google-workspace"
+        },
+        {
+          "title": "Architecting agents: Scale and govern your AI workforce",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913044/architecting-agents-scale-and-govern-your-ai-workforce"
+        },
+        {
+          "title": "Architecting reinforcement learning workflows for LLMs",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913137/architecting-reinforcement-learning-workflows-for-llms"
+        },
+        {
+          "title": "Assembling Digital Twins for Physical AI: Accelerate Sim-to-Real using NVIDIA Isaac Sim with Cosmos on Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/4008108/assembling-digital-twins-for-physical-ai-accelerate-sim-to-real-using-nvidia-isaac-sim-with-cosmos-on-google-cloud"
+        },
+        {
+          "title": "Beyond the prototype: Scaling production-grade agents with Gemini",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908804/beyond-the-prototype-scaling-production-grade-agents-with-gemini"
+        },
+        {
+          "title": "BigQuery multimodal embeddings and vector search",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912313/bigquery-multimodal-embeddings-and-vector-search"
+        },
+        {
+          "title": "Boosting productivity with Gemini CLI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912223/boosting-productivity-with-gemini-cli"
+        },
+        {
+          "title": "Build and optimize GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance"
+        },
+        {
+          "title": "Build multi-agent systems that actually work",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3890818/build-multi-agent-systems-that-actually-work"
+        }
+      ],
+      "reopened": [],
+      "nowLimited": [],
+      "materialChanges": [
+        {
+          "title": "Accelerate AI adoption: Strategies for upskilling and managing change",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912911/accelerate-ai-adoption-strategies-for-upskilling-and-managing-change"
+        },
+        {
+          "title": "Accelerate R&D with Gemini-based agents Co-Scientist and AlphaEvolve",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920154/accelerate-rd-with-gemini-based-agents-co-scientist-and-alphaevolve"
+        },
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912966/accelerate-your-most-demanding-ai-workloads-with-managed-lustre"
+        },
+        {
+          "title": "Accelerating alpha: Citadel's hybrid HPC and AI strategy",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913010/accelerating-alpha-citadel's-hybrid-hpc-and-ai-strategy"
+        },
+        {
+          "title": "Achieve sovereign control over your AI with Google Workspace",
+          "changedFields": [
+            "date_time",
+            "date_text",
+            "start_time_text",
+            "end_time_text"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912921/achieve-sovereign-control-over-your-ai-with-google-workspace"
+        },
+        {
+          "title": "Advance medicine and healthcare outcomes with Gemini",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912232/advance-medicine-and-healthcare-outcomes-with-gemini"
+        },
+        {
+          "title": "Agentic AI in action for financial services and insurance",
+          "changedFields": [
+            "title",
+            "date_time",
+            "date_text",
+            "start_time_text",
+            "end_time_text",
+            "speakers",
+            "description"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908820/agentic-ai-in-action-for-financial-services-and-insurance"
+        },
+        {
+          "title": "Agentic AI in CX — Now and next with Dialpad and Randstad",
+          "changedFields": [
+            "title",
+            "description"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3888644/agentic-ai-in-cx-—-now-and-next-with-dialpad-and-randstad"
+        },
+        {
+          "title": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
+          "changedFields": [
+            "title"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920556/agentic-ai-social-commerce-webtoons-and-the-future-of-personalized-experiences"
+        },
+        {
+          "title": "Agentic commerce: How Ulta and Bunnings re-imagined the shopping experience",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3950366/agentic-commerce-how-ulta-and-bunnings-re-imagined-the-shopping-experience"
+        },
+        {
+          "title": "Agentic commerce: Transform the shopping experience with Google agents and open standards",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912969/agentic-commerce-transform-the-shopping-experience-with-google-agents-and-open-standards"
+        },
+        {
+          "title": "Agentic transformation in the public sector",
+          "changedFields": [
+            "topics"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3856628/agentic-transformation-in-the-public-sector"
+        }
+      ],
+      "minorChanges": [
+        {
+          "title": "Accelerate your path to AI readiness with Google Cloud VMware Engine",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912979/accelerate-your-path-to-ai-readiness-with-google-cloud-vmware-engine"
+        },
+        {
+          "title": "Achieve multicloud security at scale with Google Unified Security",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913121/achieve-multicloud-security-at-scale-with-google-unified-security"
+        },
+        {
+          "title": "Agent value",
+          "changedFields": [
+            "description"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3932033/agent-value"
+        },
+        {
+          "title": "Agents in action: Startup breakthroughs across industries",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912300/agents-in-action-startup-breakthroughs-across-industries"
+        },
+        {
+          "title": "AI Agent Developer Meetup",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913482/ai-agent-developer-meetup"
+        },
+        {
+          "title": "AI Application Developer Meetup",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913495/ai-application-developer-meetup"
+        },
+        {
+          "title": "Antigravity Developer Meetup",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913492/antigravity-developer-meetup"
+        },
+        {
+          "title": "Architecting megascale AI: Co-creating an AI supercomputer deployment",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908792/architecting-megascale-ai-co-creating-an-ai-supercomputer-deployment"
+        },
+        {
+          "title": "Assembling Digital Twins for Physical AI: Accelerate Sim-to-Real using NVIDIA Isaac Sim with Cosmos on Google Cloud",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/4008108/assembling-digital-twins-for-physical-ai-accelerate-sim-to-real-using-nvidia-isaac-sim-with-cosmos-on-google-cloud"
+        },
+        {
+          "title": "Behind Google's strategic bets in AI: A conversation with the hosts of Acquired",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/4043993/behind-google's-strategic-bets-in-ai-a-conversation-with-the-hosts-of-acquired"
+        },
+        {
+          "title": "BigQuery Graph: Uncover complex, hidden relationships in your data",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912233/bigquery-graph-uncover-complex-hidden-relationships-in-your-data"
+        },
+        {
+          "title": "Bridging worlds: Bringing Google Cloud Platform's power to open source data lakes",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908809/bridging-worlds-bringing-google-cloud-platform's-power-to-open-source-data-lakes"
+        }
+      ]
+    },
     {
       "previous": {
         "file": "2026-04-01T04-47-15Z.json",
@@ -29,8 +1321,14 @@
         "hasMaterialChanges": true,
         "hasAdditions": true,
         "hasRemovals": true,
-        "hasReplacements": true
+        "hasReplacements": true,
+        "hasMoves": false,
+        "hasRenames": false,
+        "hasMetadataChanges": false
       },
+      "moved": [],
+      "renamed": [],
+      "metadataChanges": [],
       "replacements": [
         {
           "removedTitle": "From experimentation to enterprise value: How Cox scaled AI for impact",
@@ -42,7 +1340,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Maximize your cloud ROI: A developer's approach to cost optimization",
@@ -54,7 +1353,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The intelligence layer: Building AI-first customer experience",
@@ -66,7 +1366,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The new way to use Spark: Intelligent, automated, and lightning fast",
@@ -78,7 +1379,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AIOps at scale: Production-ready infrastructure with Cluster Director",
@@ -90,7 +1392,8 @@
             "same start time",
             "same end time",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Reinventing Grocery Retail: How Albertsons Uses Databricks on Google Cloud to Unlock Data and AI",
@@ -101,7 +1404,8 @@
             "same day",
             "same room",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Build conversational agents on PostgreSQL and MySQL",
@@ -111,7 +1415,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Cloud TPUs and GPUs",
@@ -121,7 +1426,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Customize Gemini CLI with extensions and MCP servers",
@@ -131,7 +1437,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Defending against OWASP top 10 for agentic apps",
@@ -141,7 +1448,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Drive clinical action with AI agents",
@@ -151,7 +1459,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Mission Talk: AI for Academic & Career Navigation: Curiosity to Clarity",
@@ -161,7 +1470,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         }
       ],
       "added": [
@@ -515,8 +1825,14 @@
         "hasMaterialChanges": true,
         "hasAdditions": true,
         "hasRemovals": true,
-        "hasReplacements": true
+        "hasReplacements": true,
+        "hasMoves": false,
+        "hasRenames": false,
+        "hasMetadataChanges": false
       },
+      "moved": [],
+      "renamed": [],
+      "metadataChanges": [],
       "replacements": [
         {
           "removedTitle": "Architecting high-performance SaaS: Lessons from top ISVs",
@@ -528,7 +1844,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Ask more from your agents with Google Antigravity",
@@ -540,7 +1857,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Redefining data science with Antigravity: Google's AI-native IDE",
@@ -552,7 +1870,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "The agentic shift in the software development life cycle",
@@ -564,7 +1883,8 @@
             "same start time",
             "same end time",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Building multi-agent orchestration: Key challenges and solution approaches",
@@ -576,7 +1896,8 @@
             "same start time",
             "same end time",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "From vision to value: Scaling Gemini Enterprise at The Venetian",
@@ -587,7 +1908,8 @@
             "same day",
             "same room",
             "shared topic"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Agentic forecasting and planning",
@@ -597,7 +1919,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI Photo Booth",
@@ -607,7 +1930,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "AI-ready compute",
@@ -617,7 +1941,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Automate your workflow with Gemini CLI",
@@ -627,7 +1952,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Building secure agents: protecting access and data",
@@ -637,7 +1963,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         },
         {
           "removedTitle": "Chat with your data using Gemini",
@@ -647,7 +1974,8 @@
           "reasons": [
             "same room",
             "shared topics"
-          ]
+          ],
+          "sameSessionId": false
         }
       ],
       "added": [
