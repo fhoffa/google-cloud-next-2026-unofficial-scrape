@@ -1,0 +1,1108 @@
+[
+  {
+    "code": "DEVKEY-ASL",
+    "title": "ASL Developer Keynote: You can just build things",
+    "speakers": [
+      {
+        "name": "Brad Calder",
+        "role": "VP & GM",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Richard Seroter",
+        "role": "Chief Evangelist",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Stephanie Wong",
+        "role": "Head of Developer Skills & Community",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Paige Bailey",
+        "role": "AI Developer Experience Engineer",
+        "company": "Google DeepMind",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Debi Cabrera",
+        "role": "Senior Developer Advocate",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Scott Densmore",
+        "role": "Senior Director, Engineering, Code Assist",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Jake DiBattista",
+        "role": "Google Cloud X MLB (TM) Hackathon Winner!",
+        "company": "Fran Hinkelmann"
+      },
+      {
+        "name": "Logan Kilpatrick",
+        "role": "Senior Product Manager",
+        "company": "Google DeepMind",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Jeff Nelson",
+        "role": "Developer Advocate",
+        "company": "Google Cloud"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-113",
+    "title": "[NEW!] Introducing Firestore with MongoDB compatibility. Dive-deep into its capabilities and use-cases.",
+    "speakers": [
+      {
+        "name": "Vaibhav Govil",
+        "role": "Director, Product Management",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Stacy Moening",
+        "role": "Director – Product Management, Cloud Foundational Products",
+        "company": "Mayo Clinic",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Phaneendhar Vemuru",
+        "role": "Engineering Director",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-096",
+    "title": "A conversation with Anthropic: How AI is shaping the future for startups",
+    "speakers": [
+      {
+        "name": "Matt Bell",
+        "role": "VP of Product Research",
+        "company": "Anthropic",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Francis deSouza",
+        "role": "COO, Google Cloud",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "SOL303",
+    "title": "A practical guide to data mesh on Google Cloud",
+    "speakers": [
+      {
+        "name": "Chandu Bhuman",
+        "role": "Senior Manager, Data Strategy, Cloud and Engineering",
+        "company": "Virgin Media 02",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Pedro Esteves",
+        "role": "EMEA Data Analytics Solution Lead",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Suda Srinivasan",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "IND-113",
+    "title": "Accelerate life science innovation with Google Cloud",
+    "speakers": []
+  },
+  {
+    "code": "BRK1-137",
+    "title": "Accelerated AI-driven mainframe modernization by Definity and Quantiphi",
+    "speakers": [
+      {
+        "name": "Mohak Moondra",
+        "role": "Global Practice Leader for Data Cloud",
+        "company": "Quantiphi Inc."
+      }
+    ]
+  },
+  {
+    "code": "BRK2-121",
+    "title": "Achieve operational resilience for critical apps in regulated industries",
+    "speakers": [
+      {
+        "name": "Mary Koes",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Udaya Pillalamarri",
+        "role": "Engineering Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Priti Singh",
+        "role": "Executive Director",
+        "company": "CME Group",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "CUSLT-118",
+    "title": "Adopting AI at scale: learnings from CME Group's rollout of Gemini Code Assist",
+    "speakers": [
+      {
+        "name": "Dennis Lee",
+        "role": "Director, Software Engineering",
+        "company": "CME Group"
+      }
+    ]
+  },
+  {
+    "code": "AIN-106",
+    "title": "Agents and search for your employees",
+    "speakers": []
+  },
+  {
+    "code": "BRK1-105",
+    "title": "AI for building responsible startups",
+    "speakers": [
+      {
+        "name": "Ashutosh Garg",
+        "role": "CEO",
+        "company": "Eightfold",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Jonathan Govette",
+        "role": "CEO",
+        "company": "Oatmeal Health",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Jessica Guererro",
+        "role": "Global Head of Cloud GTM Belonging, Culture & Engagement",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Rajen Sheth",
+        "role": "CEO and Co-founder",
+        "company": "Kyron Learning",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-112",
+    "title": "AI in action: SMBs transforming customer experiences with Google Cloud",
+    "speakers": [
+      {
+        "name": "Derek Chan",
+        "role": "Director & Co-Founder",
+        "company": "Master Concept"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-099",
+    "title": "AI-assisted database management: From fleet-wide optimization to granular performance troubleshooting",
+    "speakers": [
+      {
+        "name": "Niranjan Shivprasad",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Apoorv Shrivastava",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Sangeeth Talluri",
+        "role": "Senior Principal Reliability Engineer",
+        "company": "The Home Depot",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "IND-109",
+    "title": "AI-powered operations for enterprise and factory data",
+    "speakers": []
+  },
+  {
+    "code": "DAI-101",
+    "title": "Analyze customer sentiment in real time",
+    "speakers": []
+  },
+  {
+    "code": "BRK2-103",
+    "title": "Architecting the future: Spanner's multimodel power and technological foundation",
+    "speakers": [
+      {
+        "name": "Wenzhe Cao",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Praveen Sinha",
+        "role": "Distinguished Engineer Architect",
+        "company": "Palo Alto Networks",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Chris Taylor",
+        "role": "Google Fellow",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Farhan Thawar",
+        "role": "VP and Head of Engineering",
+        "company": "Shopify",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "CUSLT-131",
+    "title": "Automating data quality: Aritzia’s approach with Anomalo & BigQuery",
+    "speakers": [
+      {
+        "name": "Jeff Ferguson",
+        "role": "Strategic Partnerships",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Amy Reams",
+        "role": "Vice President of Business Development",
+        "company": "Anomalo"
+      },
+      {
+        "name": "Andrew Storrs",
+        "role": "Vice President, Data & Analytics Platform",
+        "company": "Aritzia"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-179-RC",
+    "title": "Best practices for building a lakehouse on Google Cloud (Recap)",
+    "speakers": [
+      {
+        "name": "Brad Miro",
+        "role": "Developer Advocate",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-139",
+    "title": "Beyond hype: How Google Distributed Cloud unlocks AI for regulated industries",
+    "speakers": [
+      {
+        "name": "Manu Batra",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Ray Colline",
+        "role": "Software Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Praveen Gorur",
+        "role": "Managing Director",
+        "company": "Accenture"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-118",
+    "title": "Boost app reliability with AI-powered incident management: A real-world story",
+    "speakers": [
+      {
+        "name": "Charles Baer",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Ram Gogineni",
+        "role": "Director of SRE",
+        "company": "Charles Schwab",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Benji Soto",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "LRN202",
+    "title": "Build a BI dashboard using Looker Studio and BigQuery",
+    "speakers": []
+  },
+  {
+    "code": "SOL-101",
+    "title": "Build an AI Agent",
+    "speakers": []
+  },
+  {
+    "code": "DC-106B",
+    "title": "Build customer 360 recommendation applications using BigQuery graph",
+    "speakers": []
+  },
+  {
+    "code": "BRK3-012",
+    "title": "Build high-performance apps for the edge with Wasm in Go 1.24",
+    "speakers": [
+      {
+        "name": "Cameron Balahan",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Justin Reid",
+        "role": "Principal Engineer",
+        "company": "Shopify",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Arman Rye",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-111",
+    "title": "Build scalable apps with Firestore and Firebase",
+    "speakers": [
+      {
+        "name": "Dong Chang",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Raghu Penumalee",
+        "role": "NoSQL Product Lead",
+        "company": "Ford",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Alexander Schiff",
+        "role": "Full Stack Engineer",
+        "company": "Ford",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Kara Yu",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "CT1-10",
+    "title": "Building an AI-powered data supply chain",
+    "speakers": []
+  },
+  {
+    "code": "BRK-001",
+    "title": "Building gen AI solutions with responsible guardrails",
+    "speakers": [
+      {
+        "name": "Kanchan Chaudhari",
+        "role": "Technical Account Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Rajy Tanneeru",
+        "role": "Distinguished AI/ML Architect",
+        "company": "Priceline",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-116",
+    "title": "Building the tools for valuable business insights from sustainability data",
+    "speakers": [
+      {
+        "name": "Anuradha Bajpai",
+        "role": "Cloud Solutions Architect",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Jake Feintzeig",
+        "role": "Data Scientist",
+        "company": "Watershed"
+      }
+    ]
+  },
+  {
+    "code": "SOL238",
+    "title": "Chat with a Grandmaster",
+    "speakers": [
+      {
+        "name": "David Austin",
+        "role": "Principal AI Software Engineer, Kaggle Grandmaster",
+        "company": "NVIDIA"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-018",
+    "title": "Cloud migration conquered: Strategies for small but mighty IT teams",
+    "speakers": [
+      {
+        "name": "Corinne Boudreau",
+        "role": "Director, Product Management",
+        "company": "TRIARQ Health",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Eyvonne Sharp",
+        "role": "Platform Engineering Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "SOL218",
+    "title": "Community health monitoring through public health surveillance",
+    "speakers": [
+      {
+        "name": "Reshma Philip",
+        "role": "HCLS Industry Solutions Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "SOL209",
+    "title": "Consumer-Facing AI Chatbots: Insights on Agent Design, Scaling and Brand Safety",
+    "speakers": [
+      {
+        "name": "Afshaan Mazagonwalla",
+        "role": "AI Engineer",
+        "company": "Google",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "SOL102",
+    "title": "Conversational AI: Architecting a revenue-driven contact center",
+    "speakers": [
+      {
+        "name": "Rajesh Singh",
+        "role": "Conversation AI Solutions Architect",
+        "company": "Google",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "IND-103",
+    "title": "Create the connected store with edge-to-cloud solutions",
+    "speakers": []
+  },
+  {
+    "code": "BRK1-047-RC",
+    "title": "Customer Engagement Suite: Elevate customer experiences with Google AI (Recap)",
+    "speakers": [
+      {
+        "name": "Ashley Daniels",
+        "role": "Vice President for Omnichannel & People Technology",
+        "company": "Best Buy",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Ewa Duerr",
+        "role": "Group Outbound Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Muli Salem",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-101",
+    "title": "Data-driven decisions: Gemini and BigQuery for startups",
+    "speakers": [
+      {
+        "name": "Seamus Abshere",
+        "role": "CTO",
+        "company": "Faraday",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Abhishek Agrawal",
+        "role": "Co-Founder & CEO",
+        "company": "Material Security",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Aniket Arora",
+        "role": "Senior Principal Product Strategy Operations",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-150",
+    "title": "Defense in depth for internet-facing apps with the Cross-Cloud Network",
+    "speakers": [
+      {
+        "name": "Emil Kiner",
+        "role": "Senior Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Maxim Porges",
+        "role": "Engineering Director",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "John Whitley",
+        "role": "Manager of Cloud Platform Engineering",
+        "company": "The Home Depot",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "EESHD-8",
+    "title": "Demo: Cloud Compliance and Governance",
+    "speakers": []
+  },
+  {
+    "code": "EESHD-13",
+    "title": "Demo: Google Workspace",
+    "speakers": []
+  },
+  {
+    "code": "BRK2-173-RC",
+    "title": "Deploy AlloyDB Omni on Kubernetes next to local AI models (Recap)",
+    "speakers": [
+      {
+        "name": "Gleb Otochkin",
+        "role": "Developer Advocate",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-039",
+    "title": "Design a cross-cloud network to connect apps securely across clouds",
+    "speakers": [
+      {
+        "name": "Wilson Chan",
+        "role": "Senior Principal Architect at Electronic Arts",
+        "company": "Electronic Arts",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Himanshu Mehra",
+        "role": "Director of Product Management",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Anoop Vetteth",
+        "role": "Senior Director of Product Management",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-112",
+    "title": "Dialing In: Firestore with MongoDB compatibility in Action",
+    "speakers": [
+      {
+        "name": "Patrick Costello",
+        "role": "Engineering Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Nick Foster",
+        "role": "VP Engineering",
+        "company": "Dialpad, Inc.",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Minh Nguyen",
+        "role": "Senior Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-152",
+    "title": "Ditch the dinosaurs: Best practices for SIEM migration",
+    "speakers": [
+      {
+        "name": "Symeon Brown",
+        "role": "Director, Cybersecurity",
+        "company": "ID.me",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Danny Dawes",
+        "role": "Managing Director - MXDR",
+        "company": "Accenture"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-033",
+    "title": "Drive platform engineering and software delivery with Gemini Cloud Assist and Code Assist",
+    "speakers": [
+      {
+        "name": "Rania Dib",
+        "role": "Engineering Director",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Payam Ebrahimi",
+        "role": "Partner Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Rania Mohamed",
+        "role": "Customer Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK3-039",
+    "title": "Effortless AI/ML: Accessing GPUs and TPUs on GKE made easy",
+    "speakers": [
+      {
+        "name": "Fisayo Feyisetan",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Ed Shrager",
+        "role": "Chief Strategy Officer",
+        "company": "Baseten",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Michal Zylinski",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "CUSLT-124",
+    "title": "Enabling Shared Fate: Cyber insurance innovation from Chubb, Munich Re, and Beazley",
+    "speakers": [
+      {
+        "name": "Robert Parisi",
+        "role": "Head of Cyber Solutions-North America",
+        "company": "Munich Re"
+      },
+      {
+        "name": "Matthew Prevost",
+        "role": "EVP, Chief Underwriting Officer",
+        "company": "Chubb Cyber"
+      },
+      {
+        "name": "Monica Shokrai",
+        "role": "Head of Business Risk & Insurance",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Customer Story",
+        "role": "Security",
+        "company": "Security Professionals"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-061",
+    "title": "Enhance the safety, quality, and performance of AI apps with Firebase",
+    "speakers": [
+      {
+        "name": "Jon Mensing",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Alex Singer",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-049",
+    "title": "Enterprise-ready gen AI applications: Scale from prototype to production",
+    "speakers": [
+      {
+        "name": "Benazir Fateh",
+        "role": "Technical Solutions Manager, Applied AI Engineering",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Balki Nakshatrala",
+        "role": "Chief Architect",
+        "company": "WellSky",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Mark Schadler",
+        "role": "Principal Software Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "AIN-101",
+    "title": "Explore Google’s specialized AI models",
+    "speakers": []
+  },
+  {
+    "code": "BRK1-091",
+    "title": "Faster, smarter healthcare: Agentic workflows and modern data platforms",
+    "speakers": [
+      {
+        "name": "J.R. Allen",
+        "role": "Chief Data Officer",
+        "company": "HCA Healthcare",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Aashima Gupta",
+        "role": "Director, Healthcare Solutions",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Michelle O'Connor",
+        "role": "President & CEO",
+        "company": "MEDITECH",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Sameer Sethi",
+        "role": "SVP, Chief AI Officer",
+        "company": "Hackensack Meridian Health",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-056",
+    "title": "From chaos to confidence: Master governance in the age of AI",
+    "speakers": [
+      {
+        "name": "John Bottega",
+        "role": "President",
+        "company": "Enterprise Data Management Council"
+      },
+      {
+        "name": "Davide Corda",
+        "role": "Senior Director of Data",
+        "company": "Intesa Sanpaolo",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Art Kaluza",
+        "role": "GM of Strategy, Digital Transformation and Data",
+        "company": "ANZ Bank",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Sanjay Krishnamurthi",
+        "role": "VP, Engineering BigQuery",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Lu Yang",
+        "role": "Group Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-035",
+    "title": "From portal to platform: Unlock the power of Backstage on Google Cloud",
+    "speakers": [
+      {
+        "name": "Rawan Badawi",
+        "role": "Reliability Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Cameron Farmer",
+        "role": "Manager, Developer Platform",
+        "company": "HCA Healthcare",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "BRK1-108",
+    "title": "Future-proof your AI skills: Credentialing the modern workforce",
+    "speakers": [
+      {
+        "name": "Linda Moss",
+        "role": "Director, Cloud Learning Services",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Travis Runty",
+        "role": "Head of Security, Public Cloud, Rackspace",
+        "company": "Rackspace",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Shefali Victors",
+        "role": "GCP CoE Lead Architect",
+        "company": "Rackspace",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "BRK3-026",
+    "title": "Gemini Code Assist: Superpowers for building apps on Google Cloud databases",
+    "speakers": [
+      {
+        "name": "Reynold Cheng",
+        "role": "Professor, Division Head (Computer Science)",
+        "company": "School of Computing and Data Science, University of Hong Kong"
+      }
+    ]
+  },
+  {
+    "code": "CUSLT-120",
+    "title": "Gen AI adoption: Real-world customer stories with Avery Dennison and Mercer International",
+    "speakers": [
+      {
+        "name": "Luciana Salles",
+        "role": "Digital Product Manager in Digital Workplace Services",
+        "company": "Avery Dennison"
+      },
+      {
+        "name": "Kelly Shannon",
+        "role": "Productivity & Collaboration Lead, Google Workspace",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Alistair Skey",
+        "role": "Chief Information Officer",
+        "company": "Mercer International",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "DEVLT-216",
+    "title": "GenAI Services for All, the API everywhere",
+    "speakers": [
+      {
+        "name": "Antoine Castex",
+        "role": "Data & A.I Enterprise Architect",
+        "company": "L'Oréal",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Thomas Menard",
+        "role": "Head of A.I COE",
+        "company": "L'Oréal",
+        "affiliation": "Customer"
+      }
+    ]
+  },
+  {
+    "code": "DC-108",
+    "title": "Get instant business insights with Looker",
+    "speakers": []
+  },
+  {
+    "code": "CT2-11",
+    "title": "GigaOM Leverages Gemini AI to Enhance Client Access to Analyst Insights",
+    "speakers": [
+      {
+        "name": "Howard Holton",
+        "role": "COO",
+        "company": "GiagOM",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Paul Lewis",
+        "role": "Chief Technology Officer",
+        "company": "Pythian"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-047",
+    "title": "Goodbye intranet. Hello AI.",
+    "speakers": [
+      {
+        "name": "Sri Gari",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Fabio Jabur",
+        "role": "Data & Analytics Executive",
+        "company": "Banco BV",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Stuart Moncada",
+        "role": "Head of Outbound Product Management, Cloud AI Search and Agent Builder",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "GWSX-102",
+    "title": "Google Workspace: 50 States, 50 Stories",
+    "speakers": [
+      {
+        "name": "Google Docs",
+        "role": "Google Drive",
+        "company": "Google Meet"
+      },
+      {
+        "name": "Google Sheets",
+        "role": "Google Slides",
+        "company": "Google Workspace"
+      }
+    ]
+  },
+  {
+    "code": "BRK3-059",
+    "title": "Grow your business with BigQuery and Google Maps Platform",
+    "speakers": [
+      {
+        "name": "Greg Leon",
+        "role": "Group Product Manager",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Henrik Valve",
+        "role": "Solutions Engineer",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Erika Yamasaki",
+        "role": "Group Product Manager",
+        "company": "Google",
+        "affiliation": "Googler"
+      }
+    ]
+  },
+  {
+    "code": "BRK2-216",
+    "title": "How a global bank transformed their data estate with Teradata + Google",
+    "speakers": [
+      {
+        "name": "Cameron Curtis",
+        "role": "Sr Director Product Strategy",
+        "company": "Teradata"
+      }
+    ]
+  },
+  {
+    "code": "BRK3-066",
+    "title": "How good is your AI? Evaluate it at every stage.",
+    "speakers": [
+      {
+        "name": "Ivan Nardini",
+        "role": "Developer Relations Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Irina Sigler",
+        "role": "Product Manager",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Nicolas Venegas",
+        "role": "Manager of Data & AI Operations",
+        "company": "LATAM Airlines",
+        "affiliation": "Customer"
+      }
+    ]
+  }
+]
