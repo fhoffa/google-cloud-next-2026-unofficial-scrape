@@ -135,7 +135,14 @@
       {
         "name": "Mohak Moondra",
         "role": "Global Practice Leader for Data Cloud",
-        "company": "Quantiphi Inc."
+        "company": "Quantiphi Inc.",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Manjula Vadlamudi",
+        "role": "Director of Data Platform & Engineering",
+        "company": "Definity",
+        "affiliation": "Customer"
       }
     ]
   },
@@ -216,7 +223,26 @@
       {
         "name": "Derek Chan",
         "role": "Director & Co-Founder",
-        "company": "Master Concept"
+        "company": "Master Concept",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Taru Dahiya",
+        "role": "Managing Director, JAPAC SMB & Scaled Services",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Jim Slocum",
+        "role": "CIO, SVP",
+        "company": "OneUnited Bank",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Eunice Wong",
+        "role": "Co-Founder & CEO",
+        "company": "Talkstack",
+        "affiliation": "Customer"
       }
     ]
   },
@@ -337,7 +363,14 @@
       {
         "name": "Praveen Gorur",
         "role": "Managing Director",
-        "company": "Accenture"
+        "company": "Accenture",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Nathan Verrill",
+        "role": "AI Strategist, Strategic Mission Innovation",
+        "company": "SAIC",
+        "affiliation": "Customer"
       }
     ]
   },
@@ -470,7 +503,26 @@
       {
         "name": "Jake Feintzeig",
         "role": "Data Scientist",
-        "company": "Watershed"
+        "company": "Watershed",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Justin Fitzpatrick",
+        "role": "CEO",
+        "company": "ESG Book",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Justin Keeble",
+        "role": "Managing Director, Sustainability",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Dilip Krishna",
+        "role": "Global CTO, Sustainability and Climate",
+        "company": "Deloitte",
+        "affiliation": "Partner"
       }
     ]
   },
@@ -481,7 +533,26 @@
       {
         "name": "David Austin",
         "role": "Principal AI Software Engineer, Kaggle Grandmaster",
-        "company": "NVIDIA"
+        "company": "NVIDIA",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Ruchi Bhatia",
+        "role": "Product Marketing Manager, Data Science & AI - Kaggle Grandmaster",
+        "company": "HP",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Chris Deotte",
+        "role": "Data Scientist & Researcher",
+        "company": "NVIDIA",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Brenda Flynn",
+        "role": "Senior Program Manager",
+        "company": "Google",
+        "affiliation": "Googler"
       }
     ]
   },
@@ -699,7 +770,26 @@
       {
         "name": "Danny Dawes",
         "role": "Managing Director - MXDR",
-        "company": "Accenture"
+        "company": "Accenture",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Marcela Denniston",
+        "role": "Senior Director, Threat Management",
+        "company": "Salesforce",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Vijay Ganti",
+        "role": "Director of Product Management",
+        "company": "Google",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Manija Poulatova",
+        "role": "Director of Security Engineering and Operations",
+        "company": "Lloyds Bank",
+        "affiliation": "Customer"
       }
     ]
   },
@@ -939,7 +1029,20 @@
       {
         "name": "Reynold Cheng",
         "role": "Professor, Division Head (Computer Science)",
-        "company": "School of Computing and Data Science, University of Hong Kong"
+        "company": "School of Computing and Data Science, University of Hong Kong",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Per Jacobsson",
+        "role": "Principal Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
+      },
+      {
+        "name": "Haoyu Wang",
+        "role": "Staff Software Engineer",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
       }
     ]
   },
@@ -1002,7 +1105,8 @@
       {
         "name": "Paul Lewis",
         "role": "Chief Technology Officer",
-        "company": "Pythian"
+        "company": "Pythian",
+        "affiliation": "Partner"
       }
     ]
   },
@@ -1077,7 +1181,26 @@
       {
         "name": "Cameron Curtis",
         "role": "Sr Director Product Strategy",
-        "company": "Teradata"
+        "company": "Teradata",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Mike Hodges",
+        "role": "Head of Data Platform Modernization | Group Data Technology",
+        "company": "HSBC",
+        "affiliation": "Customer"
+      },
+      {
+        "name": "Ben Lewis",
+        "role": "Senior Vice President, Financial Services",
+        "company": "Teradata",
+        "affiliation": "Partner"
+      },
+      {
+        "name": "Stephen Orban",
+        "role": "VP, Migrations, ISVs, and Marketplace",
+        "company": "Google Cloud",
+        "affiliation": "Googler"
       }
     ]
   },

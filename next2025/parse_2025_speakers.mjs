@@ -34,7 +34,7 @@ console.log(`  not found: ${all.filter(s => !s.found).length}`);
 // --- Parser constants ---
 const affiliationWords = new Set(['Partner', 'Customer', 'Googler']);
 const stopWords = new Set([
-  'Partner', 'Read more', 'Related sessions', 'playlist_add', 'Add to playlist',
+  'Read more', 'Related sessions', 'playlist_add', 'Add to playlist',
   'RESOURCES', 'Follow us', 'Why Google Cloud', 'Event information', 'Explore more',
 ]);
 const badNames = new Set([
