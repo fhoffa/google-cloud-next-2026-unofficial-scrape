@@ -39,12 +39,22 @@ class FakeElement {
     this.value = value;
     this.dataset = dataset;
     this.textContent = '';
-    this.innerHTML = '';
+    this._innerHTML = '';
     this.children = [];
     this.listeners = new Map();
     this.classList = new FakeClassList(classes);
     this.style = {};
     this.ownerDocument = null;
+    this._queryCache = new Map();
+  }
+
+  get innerHTML() {
+    return this._innerHTML;
+  }
+
+  set innerHTML(value) {
+    this._innerHTML = value;
+    this._queryCache.clear();
   }
 
   appendChild(child) {
@@ -70,57 +80,42 @@ class FakeElement {
   }
 
   querySelectorAll(selector) {
+    const html = String(this.innerHTML || '');
+    const cached = this._queryCache.get(selector);
+    if (cached && cached.html === html) return cached.nodes;
+
+    const makeNode = (dataset) => ({
+      dataset,
+      listeners: new Map(),
+      addEventListener(type, listener) {
+        if (!this.listeners.has(type)) this.listeners.set(type, []);
+        this.listeners.get(type).push(listener);
+      },
+      click() {
+        for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
+      },
+    });
+
+    let nodes = [];
     if (selector === '.favorite-btn') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"favorite-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
-      return matches.map((match) => ({
-        dataset: { sessionId: match[1] },
-        listeners: new Map(),
-        addEventListener(type, listener) {
-          if (!this.listeners.has(type)) this.listeners.set(type, []);
-          this.listeners.get(type).push(listener);
-        },
-        click() {
-          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
-        },
-      }));
+      const matches = [...html.matchAll(/class=\"favorite-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
+      nodes = matches.map((match) => makeNode({ sessionId: match[1] }));
+    } else if (selector === '.speaker-link') {
+      const matches = [...html.matchAll(/class=\"speaker-link\"[^>]*data-speaker-name=\"([^\"]+)\"[^>]*>/g)];
+      nodes = matches.map((match) => makeNode({ speakerName: match[1] }));
+    } else if (selector === '.company-link') {
+      const matches = [...html.matchAll(/class=\"company-link\"[^>]*data-company-name=\"([^\"]+)\"[^>]*>/g)];
+      nodes = matches.map((match) => makeNode({ companyName: match[1] }));
+    } else if (selector === '.see-more-btn') {
+      const matches = [...html.matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
+      nodes = matches.map((match) => makeNode({ sessionId: match[1] }));
+    } else if (selector === '.related-session-link') {
+      const matches = [...html.matchAll(/class=\"related-session-link\"[\s\S]*?data-related-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
+      nodes = matches.map((match) => makeNode({ relatedSessionId: match[1] }));
     }
-    if (selector === '.speaker-link') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"speaker-link\"[^>]*data-speaker-name=\"([^\"]+)\"[^>]*>/g)];
-      return matches.map((match) => ({ dataset: { speakerName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
-    }
-    if (selector === '.company-link') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"company-link\"[^>]*data-company-name=\"([^\"]+)\"[^>]*>/g)];
-      return matches.map((match) => ({ dataset: { companyName: match[1] }, listeners: new Map(), addEventListener(type, listener) { if (!this.listeners.has(type)) this.listeners.set(type, []); this.listeners.get(type).push(listener); }, click() { for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this }); } }));
-    }
-    if (selector === '.see-more-btn') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"see-more-btn\"[^>]*data-session-id=\"([^\"]+)\"[^>]*>([^<]+)</g)];
-      return matches.map((match) => ({
-        dataset: { sessionId: match[1] },
-        listeners: new Map(),
-        addEventListener(type, listener) {
-          if (!this.listeners.has(type)) this.listeners.set(type, []);
-          this.listeners.get(type).push(listener);
-        },
-        click() {
-          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
-        },
-      }));
-    }
-    if (selector === '.related-session-link') {
-      const matches = [...String(this.innerHTML || '').matchAll(/class=\"related-session-link\"[\s\S]*?data-related-session-id=\"([^\"]+)\"[\s\S]*?>([^<]+)</g)];
-      return matches.map((match) => ({
-        dataset: { relatedSessionId: match[1] },
-        listeners: new Map(),
-        addEventListener(type, listener) {
-          if (!this.listeners.has(type)) this.listeners.set(type, []);
-          this.listeners.get(type).push(listener);
-        },
-        click() {
-          for (const listener of this.listeners.get('click') || []) listener({ type: 'click', currentTarget: this, target: this });
-        },
-      }));
-    }
-    return [];
+
+    this._queryCache.set(selector, { html, nodes });
+    return nodes;
   }
 }
 
