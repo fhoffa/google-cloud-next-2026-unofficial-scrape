@@ -16,11 +16,11 @@ const root = path.resolve('sessions/cache');
 const page1 = fs.readFileSync(path.join(root, 'session-library.html'), 'utf8');
 const page2 = fs.readFileSync(path.join(root, 'session-library-page-2.html'), 'utf8');
 const keynote = fs.readFileSync(path.join(root, 'session-3922022.html'), 'utf8');
-const geminiCli = fs.readFileSync(path.join(root, 'session-3920378.html'), 'utf8');
+const geminiCli = fs.readFileSync(path.join(root, 'session-3911908.html'), 'utf8');
 
 test('extracts embedded session ids from library pages', () => {
   assert.equal(extractSessionIds(page1).length, 60);
-  assert.equal(extractSessionIds(page2).length, 75);
+  assert.equal(extractSessionIds(page2).length, 72);
 });
 
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
@@ -41,7 +41,8 @@ test('extracts scheduled and unscheduled dates from library records', () => {
 
 test('extracts full description from Gemini CLI session page', () => {
   const desc = extractDescription(geminiCli);
-  assert.match(desc, /what's new and what's next for Gemini CLI/i);
+  assert.match(desc, /Gemini CLI/i);
+  assert.match(desc, /Agent Skills|subagents|productivity/i);
 });
 
 test('builds machine-friendly ISO datetime', () => {
