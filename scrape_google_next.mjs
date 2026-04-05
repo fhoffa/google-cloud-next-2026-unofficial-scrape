@@ -21,6 +21,7 @@ const CONFIG = {
   retries: Number(process.env.RETRIES || 4),
   timeoutMs: Number(process.env.TIMEOUT_MS || 30000),
   forceRefresh: process.env.FORCE_REFRESH === '1',
+  useLibraryCache: process.env.USE_LIBRARY_CACHE === '1',
   maxSessions: process.env.MAX_SESSIONS ? Number(process.env.MAX_SESSIONS) : null,
   bucket: process.env.BUCKET || '',
   userAgent:
@@ -56,11 +57,11 @@ function snapshotStamp(isoString) {
   return isoString.replace(/[:]/g, '-').replace(/\.\d{3}Z$/, 'Z');
 }
 
-async function fetchText(url, { cacheKey = null } = {}) {
+async function fetchText(url, { cacheKey = null, preferCache = true } = {}) {
   await ensureDir(CACHE_DIR);
   const cachePath = cacheKey ? path.join(CACHE_DIR, cacheKey) : null;
 
-  if (cachePath && !CONFIG.forceRefresh) {
+  if (cachePath && preferCache && !CONFIG.forceRefresh) {
     try {
       return await fs.readFile(cachePath, 'utf8');
     } catch {}
@@ -320,7 +321,10 @@ async function collectLibraryPages() {
     const url = page === 1 ? LIBRARY_URL : `${LIBRARY_URL}?page=${page}`;
     const cacheKey = page === 1 ? 'session-library.html' : `session-library-page-${page}.html`;
     console.log(`Fetching library page ${page}: ${url}`);
-    const html = await fetchText(url, { cacheKey });
+    const html = await fetchText(url, {
+      cacheKey,
+      preferCache: CONFIG.useLibraryCache,
+    });
     const ids = extractSessionIds(html);
     const pageRecords = extractSessionRecordsFromLibrary(html);
     const signature = ids.join(',');

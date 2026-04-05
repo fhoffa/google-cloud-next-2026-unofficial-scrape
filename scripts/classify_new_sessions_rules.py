@@ -3,12 +3,13 @@
 Classify sessions that are missing from classified_sessions.json using
 deterministic rules that mirror the LLM prompt logic.
 
-Used when the LLM classifier cannot be run (no API key) but new sessions
-need to be folded into the dataset.
+Used when the LLM classifier cannot be run (no API key) but the current live
+dataset still needs deterministic fallback labels.
 
 Usage:
     python3 scripts/classify_new_sessions_rules.py
     python3 scripts/classify_new_sessions_rules.py --dry-run
+    python3 scripts/classify_new_sessions_rules.py --input sessions/latest.json
 """
 
 import argparse
@@ -260,23 +261,25 @@ def classify(session: dict) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--latest", default="sessions/latest.json")
-    parser.add_argument("--snapshot", default="sessions/snapshots/2026-04-01T04-47-15Z.json")
+    parser.add_argument("--input", "--latest", dest="input", default="sessions/latest.json")
     parser.add_argument("--classified", default="sessions/classified_sessions.json")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    latest_path = REPO / args.latest
-    snap_path = REPO / args.snapshot
+    input_path = REPO / args.input
     classified_path = REPO / args.classified
 
-    snap_data = json.loads(snap_path.read_text())
-    snap_sessions = snap_data["sessions"] if isinstance(snap_data, dict) else snap_data
+    input_data = json.loads(input_path.read_text())
+    live_sessions = input_data["sessions"] if isinstance(input_data, dict) else input_data
 
-    classified_data = json.loads(classified_path.read_text())
-    existing_urls = {s["url"] for s in classified_data["sessions"] if s.get("llm")}
+    if classified_path.exists():
+        classified_data = json.loads(classified_path.read_text())
+    else:
+        classified_data = {"sessions": []}
+    existing_classified_sessions = classified_data.get("sessions", []) if isinstance(classified_data, dict) else []
+    existing_urls = {s["url"] for s in existing_classified_sessions if s.get("llm")}
 
-    new_sessions = [s for s in snap_sessions if s.get("url") not in existing_urls]
+    new_sessions = [s for s in live_sessions if s.get("url") not in existing_urls]
     print(f"New sessions to classify: {len(new_sessions)}")
 
     for s in new_sessions:
@@ -287,19 +290,28 @@ def main() -> None:
         print("\nDry run — no changes written.")
         return
 
-    # Update latest.json
-    latest_data = json.loads(latest_path.read_text())
-    existing_latest_urls = {s["url"] for s in latest_data["sessions"]}
-    added = [s for s in snap_sessions if s["url"] not in existing_latest_urls]
-    latest_data["sessions"].extend(added)
-    latest_path.write_text(json.dumps(latest_data, indent=2), encoding="utf-8")
-    print(f"\nUpdated latest.json: {len(latest_data['sessions'])} sessions (+{len(added)})")
+    existing_llm_by_url = {
+        session["url"]: session["llm"]
+        for session in existing_classified_sessions
+        if session.get("url") and session.get("llm")
+    }
+    classified_sessions = []
+    reused = 0
+    for session in live_sessions:
+        llm = existing_llm_by_url.get(session.get("url"))
+        if llm:
+            reused += 1
+        else:
+            llm = classify(session)
+        classified_sessions.append({**session, "llm": llm})
 
-    # Append classified new sessions
-    for s in new_sessions:
-        classified_data["sessions"].append({**s, "llm": classify(s)})
-    classified_path.write_text(json.dumps(classified_data, indent=2), encoding="utf-8")
-    print(f"Updated classified_sessions.json: {len(classified_data['sessions'])} sessions")
+    output_data = dict(input_data) if isinstance(input_data, dict) else {"sessions": live_sessions}
+    output_data["sessions"] = classified_sessions
+    output_data["count"] = len(classified_sessions)
+    classified_path.write_text(json.dumps(output_data, indent=2), encoding="utf-8")
+    print(f"\nUpdated classified_sessions.json: {len(classified_sessions)} sessions")
+    print(f"Reused existing classifications: {reused}")
+    print(f"Rule-classified current live sessions: {len(classified_sessions) - reused}")
 
 
 if __name__ == "__main__":

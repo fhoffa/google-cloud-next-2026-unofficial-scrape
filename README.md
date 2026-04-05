@@ -163,6 +163,7 @@ Use a two-tier mental model:
 
 2. **Full publication pass**
    - run `npm run scrape`
+   - run `npm run refresh:verify`
    - refresh classifications as needed
    - rebuild `sessions/classified_sessions.json` from the **current live `sessions/latest.json` only**
    - rebuild changelog
@@ -183,6 +184,33 @@ If this invariant is violated, downstream outputs like `insights.html`, Sankey c
 
 In short: the library pages already carry enough metadata to support change detection and fullness checks, but the individual session fetch still matters for publication-grade classification and derived artifacts — and classified output must always be trimmed back to the current live scrape before rebuilding published views.
 
+### Refresh sanity check
+
+```bash
+npm run refresh:verify
+```
+
+This resolves the current refresh deterministically as:
+- `sessions/latest.json`
+- the snapshot in `sessions/snapshots/` whose `scraped_at` exactly matches `latest.json`
+- the immediately previous live snapshot
+
+It writes `media/refresh-sanity.json` and prints:
+- added/removed snapshot counts
+- concrete `remaining_capacity` deltas
+- concrete `registrant_count` deltas
+- warnings when seat/registrant movement exists even though no session crossed the full/not-full boundary
+
+If `latest.json` does not match a snapshot on disk, or if the matching snapshot is not the newest one, the command fails so the refresh cannot quietly build a changelog from a stale pair.
+
+### Rule-based classification fallback
+
+```bash
+python3 scripts/classify_new_sessions_rules.py
+```
+
+The fallback classifier now reads `sessions/latest.json` by default and rewrites `sessions/classified_sessions.json` for the current live dataset only. It no longer appends sessions from a hardcoded old snapshot or mutates `sessions/latest.json`.
+
 ### Regenerate insights page
 
 ```bash
@@ -201,7 +229,7 @@ npm run build:changelog
 
 This rebuilds the checked-in static `changelog.html` page from `templates/changelog.template.html` plus the generated `media/changelog-summary.json` summary artifact.
 
-The changelog generator reads timestamped files from `sessions/snapshots/` and produces snapshot-to-snapshot summaries including additions, removals, meaningful metadata edits, fully booked sessions, reopened sessions, and low-availability movements.
+The changelog generator now verifies that `sessions/latest.json` matches the newest snapshot on disk before building. Its summary metadata records the exact previous/current live snapshot pair used for the current refresh.
 
 ### Preview the website locally
 

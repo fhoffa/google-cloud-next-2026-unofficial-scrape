@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { buildRefreshSanityReport } from '../lib/refresh-sanity.mjs';
 import { availabilityBand } from '../lib/session-availability.mjs';
 
 function esc(value) {
@@ -197,6 +198,7 @@ function detectReplacements(removedList, addedList) {
 
 function parseArgs(argv) {
   const options = {
+    latest: 'sessions/latest.json',
     snapshotsDir: 'sessions/snapshots',
     template: 'templates/changelog.template.html',
     outputHtml: 'changelog.html',
@@ -206,7 +208,8 @@ function parseArgs(argv) {
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
-    if (arg === '--snapshots-dir') options.snapshotsDir = argv[++index];
+    if (arg === '--latest') options.latest = argv[++index];
+    else if (arg === '--snapshots-dir') options.snapshotsDir = argv[++index];
     else if (arg === '--template') options.template = argv[++index];
     else if (arg === '--output-html') options.outputHtml = argv[++index];
     else if (arg === '--output-summary') options.outputSummary = argv[++index];
@@ -236,6 +239,36 @@ function loadSnapshots(snapshotsDir) {
     .filter((entry) => entry.sessions.length > 0);
 }
 
+function buildFlappySessionMap(snapshots, minTransitions = 2) {
+  const keys = new Set();
+  const presenceBySnapshot = snapshots.map((snapshot) => {
+    const map = new Map();
+    for (const session of snapshot.sessions) {
+      const key = sessionKey(session);
+      keys.add(key);
+      map.set(key, session);
+    }
+    return map;
+  });
+
+  const flappy = new Map();
+  for (const key of keys) {
+    const timeline = presenceBySnapshot.map((map) => (map.has(key) ? 1 : 0));
+    const transitions = timeline.slice(1).reduce((count, present, index) => count + (present !== timeline[index] ? 1 : 0), 0);
+    if (transitions < minTransitions || !timeline.includes(0) || !timeline.includes(1)) continue;
+    const session = presenceBySnapshot.map((map) => map.get(key)).find(Boolean) || null;
+    flappy.set(key, {
+      key,
+      transitions,
+      timeline,
+      title: session?.title || '',
+      url: session?.url || '',
+      id: extractSessionId(session),
+    });
+  }
+  return flappy;
+}
+
 function mergeNearbySnapshots(snapshots, mergeHours = MERGE_NEARBY_SNAPSHOTS_HOURS) {
   const merged = [];
   const mergeMs = mergeHours * 60 * 60 * 1000;
@@ -261,7 +294,7 @@ function mergeNearbySnapshots(snapshots, mergeHours = MERGE_NEARBY_SNAPSHOTS_HOU
   return merged;
 }
 
-function compareSnapshots(previous, current) {
+function compareSnapshots(previous, current, { flappySessions = new Map() } = {}) {
   const prevMap = new Map(previous.sessions.map((session) => [sessionKey(session), session]));
   const curMap = new Map(current.sessions.map((session) => [sessionKey(session), session]));
   const prevById = new Map(previous.sessions.map((session) => [extractSessionId(session), session]).filter(([id]) => id));
@@ -328,6 +361,20 @@ function compareSnapshots(previous, current) {
   const materialChanges = changed.filter((item) => item.materialFields.length > 0);
   const minorChanges = changed.filter((item) => item.materialFields.length === 0 && item.minorFields.length > 0);
   const replacementDetection = detectReplacements(removed, added);
+  const flappyAdded = replacementDetection.unmatchedAdded.filter((session) => flappySessions.has(sessionKey(session)));
+  const flappyRemoved = replacementDetection.unmatchedRemoved.filter((session) => flappySessions.has(sessionKey(session)));
+  const stableAdded = replacementDetection.unmatchedAdded.filter((session) => !flappySessions.has(sessionKey(session)));
+  const stableRemoved = replacementDetection.unmatchedRemoved.filter((session) => !flappySessions.has(sessionKey(session)));
+  const flappyChanges = [...new Map([
+    ...flappyAdded.map((session) => {
+      const info = flappySessions.get(sessionKey(session));
+      return [sessionKey(session), { title: session.title, url: session.url || '', id: extractSessionId(session), transitions: info?.transitions || 0 }];
+    }),
+    ...flappyRemoved.map((session) => {
+      const info = flappySessions.get(sessionKey(session));
+      return [sessionKey(session), { title: session.title, url: session.url || '', id: extractSessionId(session), transitions: info?.transitions || 0 }];
+    }),
+  ].filter(Boolean)).values()];
 
   return {
     previous: {
@@ -347,9 +394,10 @@ function compareSnapshots(previous, current) {
       fullSharePhrase: percentagePhrase(currentFull.length, currentAvailabilityKnown.length),
       hasReopened: reopened.length > 0,
       hasMaterialChanges: materialChanges.length > 0,
-      hasAdditions: replacementDetection.unmatchedAdded.length > 0,
-      hasRemovals: replacementDetection.unmatchedRemoved.length > 0,
+      hasAdditions: stableAdded.length > 0,
+      hasRemovals: stableRemoved.length > 0,
       hasReplacements: replacementDetection.replacements.length > 0,
+      hasFlappy: flappyChanges.length > 0,
       hasMoves: moved.length > 0,
       hasRenames: renamed.length > 0,
       hasMetadataChanges: metadataChanges.length > 0,
@@ -390,8 +438,9 @@ function compareSnapshots(previous, current) {
       reasons: item.reasons,
       sameSessionId: Boolean(item.sameSessionId),
     })),
-    added: replacementDetection.unmatchedAdded.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    removed: replacementDetection.unmatchedRemoved.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    added: stableAdded.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    removed: stableRemoved.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    flappyChanges: flappyChanges.slice(0, 12),
     nowFull: nowFull.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     reopened: reopened.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
     nowLimited: nowLimited.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
@@ -413,6 +462,7 @@ function hasMeaningfulDiff(diff) {
     diff.summary.hasReplacements ||
     diff.summary.hasAdditions ||
     diff.summary.hasRemovals ||
+    diff.summary.hasFlappy ||
     diff.summary.hasMaterialChanges ||
     diff.summary.hasReopened ||
     (diff.summary.currentFull > 0) ||
@@ -428,6 +478,7 @@ function summarySentence(diff) {
   if (diff.summary.hasAdditions) parts.push('new session IDs appeared');
   if (diff.summary.hasRemovals) parts.push('some session IDs disappeared');
   if (!diff.summary.hasMoves && !diff.summary.hasRenames && diff.summary.hasReplacements) parts.push('a few listings may reflect slot swaps or related replacements');
+  if (diff.summary.hasFlappy) parts.push('some listings continue to flap in and out of the catalog');
   if (diff.summary.currentAvailabilityKnown) parts.push(`${diff.summary.fullSharePhrase} of sessions with availability signals are fully booked`);
   if (diff.summary.hasReopened) parts.push('some previously full sessions reopened');
   if (!parts.length) return 'Mostly quiet update with little visible catalog movement.';
@@ -507,6 +558,10 @@ function renderDiffHtml(diff) {
               <h3>Minor metadata churn</h3>
               ${listItems(diff.minorChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No obvious low-value churn in this update')}
             </section>
+            <section class="mini-card">
+              <h3>Flappy / unstable listings</h3>
+              ${listItems(diff.flappyChanges || [], (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(`${item.transitions} presence transitions across snapshots`)})</span>`, 'No known flappy listings in this update')}
+            </section>
           </div>
         </details>
       </details>
@@ -521,17 +576,24 @@ function renderHtml(summary, templateText) {
     .replace('__CHANGELOG_HTML__', summary.updates.map(renderDiffHtml).join('\n'));
 }
 
-function main() {
-  const args = parseArgs(process.argv.slice(2));
+export function generateChangelog(rawArgs = process.argv.slice(2)) {
+  const args = parseArgs(rawArgs);
   const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const latestPath = path.resolve(repoRoot, args.latest);
   const snapshotsDir = path.resolve(repoRoot, args.snapshotsDir);
   const templatePath = path.resolve(repoRoot, args.template);
   const outputHtmlPath = path.resolve(repoRoot, args.outputHtml);
   const outputSummaryPath = path.resolve(repoRoot, args.outputSummary);
 
   const generatedAt = args.generatedAt || new Date().toISOString();
+  const refreshSanity = buildRefreshSanityReport({ latestPath, snapshotsDir });
+  const refreshErrors = refreshSanity.issues.filter((issue) => issue.level === 'error');
+  if (refreshErrors.length) {
+    throw new Error(refreshErrors.map((issue) => issue.message).join('\n'));
+  }
   const snapshots = loadSnapshots(snapshotsDir);
   const mergedGroups = mergeNearbySnapshots(snapshots, MERGE_NEARBY_SNAPSHOTS_HOURS);
+  const flappySessions = buildFlappySessionMap(snapshots);
   const groupedSnapshots = mergedGroups.map((items) => ({
     first: items[0],
     last: items[items.length - 1],
@@ -539,7 +601,7 @@ function main() {
   }));
   const updates = [];
   for (let index = 1; index < groupedSnapshots.length; index += 1) {
-    const diff = compareSnapshots(groupedSnapshots[index - 1].last, groupedSnapshots[index].last);
+    const diff = compareSnapshots(groupedSnapshots[index - 1].last, groupedSnapshots[index].last, { flappySessions });
     if (hasMeaningfulDiff(diff)) updates.push(diff);
   }
   updates.reverse();
@@ -547,11 +609,14 @@ function main() {
   const summary = {
     meta: {
       generatedAt,
+      latest: args.latest,
       snapshotsDir: args.snapshotsDir,
       template: args.template,
       outputHtml: args.outputHtml,
       generator: 'scripts/generate_changelog.mjs',
       mergeNearbyHours: MERGE_NEARBY_SNAPSHOTS_HOURS,
+      latestLivePair: refreshSanity.pair,
+      refreshWarnings: refreshSanity.issues.filter((issue) => issue.level === 'warning'),
     },
     lede: 'A changelog that collapses near-duplicate scrape bursts while preserving meaningful gaps between publishes: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.',
     updates,
@@ -565,6 +630,13 @@ function main() {
   fs.writeFileSync(outputHtmlPath, html);
 
   process.stdout.write(`${outputSummaryPath}\n${outputHtmlPath}\n`);
+  return { summary, outputSummaryPath, outputHtmlPath };
 }
 
-main();
+function main() {
+  generateChangelog();
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main();
+}

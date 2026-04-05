@@ -1,0 +1,233 @@
+{
+  "latest": {
+    "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/latest.json",
+    "scrapedAt": "2026-04-05T18:08:51.484Z",
+    "count": 1056
+  },
+  "pair": {
+    "current": {
+      "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-05T18-08-51Z.json",
+      "fileName": "2026-04-05T18-08-51Z.json",
+      "scrapedAt": "2026-04-05T18:08:51.484Z",
+      "count": 1056
+    },
+    "previous": {
+      "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-05T16-43-11Z.json",
+      "fileName": "2026-04-05T16-43-11Z.json",
+      "scrapedAt": "2026-04-05T16:43:11.520Z",
+      "count": 1053
+    }
+  },
+  "comparison": {
+    "addedCount": 19,
+    "removedCount": 16,
+    "overlappingSessions": 1037,
+    "bandChangeCount": 0,
+    "changedRemainingCount": 1,
+    "totalRemainingDelta": -1,
+    "changedRegistrantCount": 697,
+    "totalRegistrantDelta": 2396,
+    "added": [
+      {
+        "title": "Analyze data and make an informed decision",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920408/analyze-data-and-make-an-informed-decision"
+      },
+      {
+        "title": "Automate incident response with generative AI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920539/automate-incident-response-with-generative-ai"
+      },
+      {
+        "title": "Automating excellence: How Gemini and Config Connector help create 10x cloud teams",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3912910/automating-excellence-how-gemini-and-config-connector-help-create-10x-cloud-teams"
+      },
+      {
+        "title": "Beat fraud at its own game with an AI shield",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920379/beat-fraud-at-its-own-game-with-an-ai-shield"
+      },
+      {
+        "title": "Create a light show from songs with Gemini CLI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920466/create-a-light-show-from-songs-with-gemini-cli"
+      },
+      {
+        "title": "Data-grounded support: Build AI augmented agents with CX Agent Studio",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3932037/data-grounded-support-build-ai-augmented-agents-with-cx-agent-studio"
+      },
+      {
+        "title": "From pilot to production: Scaling Gemini with proven practices",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3913127/from-pilot-to-production-scaling-gemini-with-proven-practices"
+      },
+      {
+        "title": "Gemini driven manufacturing intelligence hub",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920398/gemini-driven-manufacturing-intelligence-hub"
+      },
+      {
+        "title": "Gemini Enterprise for Customer Experience: Redefining CSP cost structures",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3976449/gemini-enterprise-for-customer-experience-redefining-csp-cost-structures"
+      },
+      {
+        "title": "Gemini in regulated sectors: Accelerate human impact with secure AI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3912916/gemini-in-regulated-sectors-accelerate-human-impact-with-secure-ai"
+      },
+      {
+        "title": "Generative media for marketing & advertising",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920418/generative-media-for-marketing-advertising"
+      },
+      {
+        "title": "How healthcare leaders escaped pilot purgatory to deliver real-world impact",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3913114/how-healthcare-leaders-escaped-pilot-purgatory-to-deliver-real-world-impact"
+      }
+    ],
+    "removed": [
+      {
+        "title": "Agentic service resolution",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3976448/agentic-service-resolution"
+      },
+      {
+        "title": "AI-ready compute",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920493/ai-ready-compute"
+      },
+      {
+        "title": "Architecting Enterprise GenAI: Building Production-Grade Agents on Vertex AI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3908805/architecting-enterprise-genai-building-production-grade-agents-on-vertex-ai"
+      },
+      {
+        "title": "Architecting for the agent and beyond: Inside Mattel's product quality world",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3895149/architecting-for-the-agent-and-beyond-inside-mattel's-product-quality-world"
+      },
+      {
+        "title": "Build a multicloud open data lakehouse",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920383/build-a-multicloud-open-data-lakehouse"
+      },
+      {
+        "title": "Build dynamic apps with Generative UI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920401/build-dynamic-apps-with-generative-ui"
+      },
+      {
+        "title": "From weeks to minutes: Build a secure dev sandbox on Google Cloud Platform withGemini Code Assist",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3908800/from-weeks-to-minutes-build-a-secure-dev-sandbox-on-google-cloud-platform-withgemini-code-assist"
+      },
+      {
+        "title": "Gemini Enterprise for marketing",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920559/gemini-enterprise-for-marketing"
+      },
+      {
+        "title": "GenLatte",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920393/genlatte"
+      },
+      {
+        "title": "Google Cloud x Team USA",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920462/google-cloud-x-team-usa"
+      },
+      {
+        "title": "Learn on-the-go with AI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920417/learn-on-the-go-with-ai"
+      },
+      {
+        "title": "Sentient Screen: Iterative video with Gemini & Veo",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920413/sentient-screen-iterative-video-with-gemini-veo"
+      }
+    ],
+    "topRemainingDeltas": [
+      {
+        "title": "10x productivity with the Gemini CLI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3911908/10x-productivity-with-the-gemini-cli",
+        "before": 600,
+        "after": 599,
+        "delta": -1
+      }
+    ],
+    "topRegistrantDeltas": [
+      {
+        "title": "Get real: Agents in the autonomous era",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920528/get-real-agents-in-the-autonomous-era",
+        "before": 15567,
+        "after": 15633,
+        "delta": 66
+      },
+      {
+        "title": "Opening keynote: The agentic cloud",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3922022/opening-keynote-the-agentic-cloud",
+        "before": 27748,
+        "after": 27803,
+        "delta": 55
+      },
+      {
+        "title": "What's new with Gemini from Google DeepMind",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3912993/what's-new-with-gemini-from-google-deepmind",
+        "before": 654,
+        "after": 673,
+        "delta": 19
+      },
+      {
+        "title": "Build production-ready agents on Google Cloud: A guide for architects and CTOs",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3913053/build-production-ready-agents-on-google-cloud-a-guide-for-architects-and-ctos",
+        "before": 451,
+        "after": 469,
+        "delta": 18
+      },
+      {
+        "title": "Agent context engineering for production",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3920161/agent-context-engineering-for-production",
+        "before": 333,
+        "after": 350,
+        "delta": 17
+      },
+      {
+        "title": "Accelerate CI/CD with coding agents",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3911929/accelerate-cicd-with-coding-agents",
+        "before": 251,
+        "after": 266,
+        "delta": 15
+      },
+      {
+        "title": "What's new in Google Cloud's agent platform",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3913028/what's-new-in-google-cloud's-agent-platform",
+        "before": 363,
+        "after": 377,
+        "delta": 14
+      },
+      {
+        "title": "After software: Anthropic's vision for the next era of enterprise AI",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3893414/after-software-anthropic's-vision-for-the-next-era-of-enterprise-ai",
+        "before": 453,
+        "after": 466,
+        "delta": 13
+      },
+      {
+        "title": "Building reliable agents",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3909328/building-reliable-agents",
+        "before": 268,
+        "after": 281,
+        "delta": 13
+      },
+      {
+        "title": "Building an AI app: A low-code guide for small teams",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3912298/building-an-ai-app-a-low-code-guide-for-small-teams",
+        "before": 237,
+        "after": 249,
+        "delta": 12
+      },
+      {
+        "title": "From vision to value: Powering the agentic enterprise, together",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3909211/from-vision-to-value-powering-the-agentic-enterprise-together",
+        "before": 15999,
+        "after": 16011,
+        "delta": 12
+      },
+      {
+        "title": "The journey to agentic applications at Spotify",
+        "url": "https://www.googlecloudevents.com/next-vegas/session/3908786/the-journey-to-agentic-applications-at-spotify",
+        "before": 444,
+        "after": 456,
+        "delta": 12
+      }
+    ]
+  },
+  "issues": [
+    {
+      "level": "warning",
+      "code": "hidden-availability-drift",
+      "message": "Seat/registrant counts changed for 697 overlapping sessions, but no session crossed the full/not-full availability band boundary."
+    }
+  ]
+}
