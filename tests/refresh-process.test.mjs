@@ -110,6 +110,7 @@ test('generate_changelog records the verified latest live pair in summary metada
   const summary = JSON.parse(fs.readFileSync(outputSummary, 'utf8'));
   assert.equal(summary.meta.latestLivePair.current.fileName, '2026-04-05T16-43-11Z.json');
   assert.equal(summary.meta.latestLivePair.previous.fileName, '2026-04-04T06-24-23Z.json');
+  assert.match(fs.readFileSync(outputHtml, 'utf8'), /index\.html\?sessionids=1/);
 });
 
 test('generate_changelog demotes flappy sessions out of headline add/remove buckets', () => {
