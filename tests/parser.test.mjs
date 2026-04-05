@@ -4,10 +4,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   buildIsoDateTime,
+  computeDetailFingerprint,
   dedupeSessionRecords,
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  isReusableDetailEntry,
   partitionSessionRecords,
   toSessionRecord,
 } from '../scrape_google_next.mjs';
@@ -20,7 +22,7 @@ const geminiCli = fs.readFileSync(path.join(root, 'session-3911908.html'), 'utf8
 
 test('extracts embedded session ids from library pages', () => {
   assert.equal(extractSessionIds(page1).length, 60);
-  assert.equal(extractSessionIds(page2).length, 72);
+  assert.equal(extractSessionIds(page2).length, 74);
 });
 
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
@@ -72,4 +74,84 @@ test('dedupes and partitions library records into date buckets', () => {
   assert.ok(buckets.has('Wednesday, April 22, 2026'));
   assert.ok(buckets.has('Thursday, April 23, 2026'));
   assert.ok(buckets.has('UNSCHEDULED'));
+});
+
+test('detail fingerprint is stable for unchanged library metadata and changes when relevant fields change', () => {
+  const [record] = extractSessionRecordsFromLibrary(page1);
+  assert.ok(record);
+
+  const sameFingerprint = computeDetailFingerprint({ ...record });
+  assert.equal(computeDetailFingerprint(record), sameFingerprint);
+
+  const changedTime = computeDetailFingerprint({
+    ...record,
+    start_time_text: '11:45 AM',
+  });
+  assert.notEqual(changedTime, sameFingerprint);
+
+  const changedCapacity = computeDetailFingerprint({
+    ...record,
+    remaining_capacity: 7,
+  });
+  assert.notEqual(changedCapacity, sameFingerprint);
+});
+
+test('detail reuse requires matching manifest fingerprint, previous enriched data, and cache presence', () => {
+  const [record] = extractSessionRecordsFromLibrary(page2);
+  const fingerprint = computeDetailFingerprint(record);
+
+  assert.equal(
+    isReusableDetailEntry({
+      manifestEntry: { fingerprint },
+      record,
+      enrichedRecord: { url: record.url, title: record.title },
+      cacheExists: true,
+      forceRefresh: false,
+    }),
+    true,
+  );
+
+  assert.equal(
+    isReusableDetailEntry({
+      manifestEntry: { fingerprint: 'stale' },
+      record,
+      enrichedRecord: { url: record.url, title: record.title },
+      cacheExists: true,
+      forceRefresh: false,
+    }),
+    false,
+  );
+
+  assert.equal(
+    isReusableDetailEntry({
+      manifestEntry: { fingerprint },
+      record,
+      enrichedRecord: null,
+      cacheExists: true,
+      forceRefresh: false,
+    }),
+    false,
+  );
+
+  assert.equal(
+    isReusableDetailEntry({
+      manifestEntry: { fingerprint },
+      record,
+      enrichedRecord: { url: record.url, title: record.title },
+      cacheExists: false,
+      forceRefresh: false,
+    }),
+    false,
+  );
+
+  assert.equal(
+    isReusableDetailEntry({
+      manifestEntry: { fingerprint },
+      record,
+      enrichedRecord: { url: record.url, title: record.title },
+      cacheExists: true,
+      forceRefresh: true,
+    }),
+    false,
+  );
 });

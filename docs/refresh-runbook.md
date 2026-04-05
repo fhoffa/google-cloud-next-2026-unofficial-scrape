@@ -43,13 +43,26 @@ This updates:
 - `sessions/snapshots/<timestamp>.yaml`
 
 ### Step 2 — compare against previous live snapshot
-At minimum, compute:
+Run:
+
+```bash
+npm run refresh:verify
+```
+
+This is the canonical safety gate for a real refresh. It deterministically binds the run to:
+- `sessions/latest.json`
+- the snapshot whose `scraped_at` matches that latest payload
+- the immediately previous live snapshot
+
+It writes `media/refresh-sanity.json` and reports, at minimum:
 - previous live count
 - new live count
 - added URLs
 - removed URLs
+- concrete `remaining_capacity` deltas
+- concrete `registrant_count` deltas
 
-This tells you whether you only have churn or real catalog movement.
+Stop and investigate if it reports an error. Review warnings before publishing; warnings are where hidden availability drift shows up even if no session crossed the full/not-full boundary.
 
 ### Step 3 — rebuild `classified_sessions.json` from the current live dataset only
 **Invariant:** `sessions/classified_sessions.json` must represent the current live `sessions/latest.json`, not an archive of all historically seen sessions.
@@ -103,6 +116,14 @@ When debugging extraction for a new source:
 
 If using rule-based fallback, manually review suspicious cases before rebuilding published artifacts.
 
+Safe fallback command:
+
+```bash
+python3 scripts/classify_new_sessions_rules.py
+```
+
+This now uses `sessions/latest.json` by default and rewrites `sessions/classified_sessions.json` for the current live dataset only. It must not be used to merge an older snapshot into `latest.json`.
+
 Common failure modes to watch for:
 - overuse of `audience: General`
 - business/customer-story sessions mislabeled as `Security`
@@ -118,6 +139,8 @@ node scripts/generate_insights.mjs
 node --test tests/*.test.mjs
 ```
 
+`generate_changelog.mjs` now fails fast if `sessions/latest.json` does not match the newest snapshot pair on disk, so the latest refresh cannot silently publish against a stale comparison window.
+
 Important:
 - the default Sankey output path is a temp file (`tmp/gcp-next-sankey-not-ai-maxi.png`)
 - for any real refresh / publish workflow, use `--publish`
@@ -131,7 +154,8 @@ Verify at least these:
 - no missing `llm` classifications for current live sessions
 - `insights.html` top-level totals match the current live count
 - fullness section still uses percentage-based category reporting
-- changelog latest comparison reflects the new snapshot window
+- `media/refresh-sanity.json` points at the expected previous/current live snapshot pair
+- changelog latest comparison reflects that same refresh window
 - no unreplaced template placeholders in `insights.html` — grep for `__` to confirm:
   ```bash
   grep -c '__[A-Z_]\+__' insights.html   # must return 0
@@ -152,7 +176,7 @@ PR description should mention:
 
 - [ ] clean branch from `main`
 - [ ] run `npm run scrape`
-- [ ] diff old vs new live URLs
+- [ ] run `npm run refresh:verify`
 - [ ] rebuild `classified_sessions.json` for current live only
 - [ ] manually review/classify new sessions
 - [ ] rebuild changelog
