@@ -130,6 +130,12 @@ function overlapCount(leftItems, rightItems) {
   return count;
 }
 
+function buildExplorerHref(session) {
+  const sessionId = extractSessionId(session);
+  if (!sessionId) return String(session?.url || '').trim();
+  return `index.html?sessionids=${encodeURIComponent(sessionId)}`;
+}
+
 function scoreReplacementCandidate(removed, added) {
   let score = 0;
   const reasons = [];
@@ -404,7 +410,7 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
     },
     moved: moved.slice(0, 20).map((item) => ({
       title: item.after.title || item.before.title,
-      url: item.after.url || item.before.url || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
       before: {
         date: item.before.date_text || '',
         start: item.before.start_time_text || '',
@@ -422,37 +428,37 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
     renamed: renamed.slice(0, 20).map((item) => ({
       beforeTitle: item.before.title || '',
       afterTitle: item.after.title || '',
-      url: item.after.url || item.before.url || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
       changedFields: item.changedFields,
     })),
     metadataChanges: metadataChanges.slice(0, 20).map((item) => ({
       title: item.after.title || item.before.title,
-      url: item.after.url || item.before.url || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
       changedFields: item.changedFields,
     })),
     replacements: replacementDetection.replacements.slice(0, 12).map((item) => ({
       removedTitle: item.removed.title,
-      removedUrl: item.removed.url || '',
+      removedUrl: buildExplorerHref(item.removed),
       addedTitle: item.added.title,
-      addedUrl: item.added.url || '',
+      addedUrl: buildExplorerHref(item.added),
       reasons: item.reasons,
       sameSessionId: Boolean(item.sameSessionId),
     })),
-    added: stableAdded.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    removed: stableRemoved.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    flappyChanges: flappyChanges.slice(0, 12),
-    nowFull: nowFull.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    reopened: reopened.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
-    nowLimited: nowLimited.slice(0, 12).map((session) => ({ title: session.title, url: session.url || '' })),
+    added: stableAdded.slice(0, 12).map((session) => ({ title: session.title, url: buildExplorerHref(session) })),
+    removed: stableRemoved.slice(0, 12).map((session) => ({ title: session.title, url: buildExplorerHref(session) })),
+    flappyChanges: flappyChanges.slice(0, 12).map((item) => ({ ...item, url: buildExplorerHref(item) })),
+    nowFull: nowFull.slice(0, 12).map((session) => ({ title: session.title, url: buildExplorerHref(session) })),
+    reopened: reopened.slice(0, 12).map((session) => ({ title: session.title, url: buildExplorerHref(session) })),
+    nowLimited: nowLimited.slice(0, 12).map((session) => ({ title: session.title, url: buildExplorerHref(session) })),
     materialChanges: materialChanges.slice(0, 12).map((item) => ({
       title: item.after.title || item.before.title,
       changedFields: item.materialFields,
-      url: item.after.url || item.before.url || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
     })),
     minorChanges: minorChanges.slice(0, 12).map((item) => ({
       title: item.after.title || item.before.title,
       changedFields: item.minorFields,
-      url: item.after.url || item.before.url || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
     })),
   };
 }
