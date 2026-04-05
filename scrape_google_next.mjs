@@ -2,6 +2,7 @@
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const BASE = 'https://www.googlecloudevents.com';
 const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
@@ -11,6 +12,8 @@ const LATEST_JSON = path.join(OUT_DIR, 'latest.json');
 const BY_DAY_DIR = path.join(OUT_DIR, 'by-day');
 const SNAPSHOTS_DIR = path.join(OUT_DIR, 'snapshots');
 const CACHE_DIR = path.join(OUT_DIR, 'cache');
+const DETAIL_MANIFEST_PATH = path.join(OUT_DIR, 'detail-manifest.json');
+const DETAIL_MANIFEST_VERSION = 1;
 
 const CONFIG = {
   minDelayMs: Number(process.env.MIN_DELAY_MS || 1200),
@@ -39,6 +42,14 @@ async function politeDelay() {
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
+}
+
+async function readJsonFile(filePath, fallback) {
+  try {
+    return JSON.parse(await fs.readFile(filePath, 'utf8'));
+  } catch {
+    return fallback;
+  }
 }
 
 function snapshotStamp(isoString) {
@@ -100,6 +111,18 @@ function unique(arr) {
   return [...new Set(arr)];
 }
 
+function stableStringify(value) {
+  if (Array.isArray(value)) {
+    return `[${value.map((item) => stableStringify(item)).join(',')}]`;
+  }
+  if (value && typeof value === 'object') {
+    return `{${Object.keys(value)
+      .sort()
+      .map((key) => `${JSON.stringify(key)}:${stableStringify(value[key])}`)
+      .join(',')}}`;
+  }
+  return JSON.stringify(value);
+}
 
 function dedupeSessionRecords(records) {
   const byUrl = new Map();
@@ -214,6 +237,78 @@ function extractSessionRecordsFromLibrary(libraryHtml) {
   }
 
   return records;
+}
+
+function sessionDetailCacheKey(record, index = 0) {
+  const sessionId =
+    record?.id ||
+    record?.url?.match(/\/session\/(\d+)\//)?.[1] ||
+    `idx-${index + 1}`;
+  return {
+    sessionId: String(sessionId),
+    cacheKey: `session-${sessionId}.html`,
+  };
+}
+
+function detailFingerprintInput(record = {}) {
+  return {
+    id: record.id || '',
+    url: record.url || '',
+    title: record.title || '',
+    date_text: record.date_text || '',
+    start_time_text: record.start_time_text || '',
+    end_time_text: record.end_time_text || '',
+    room: record.room || '',
+    session_category: record.session_category || '',
+    capacity: record.capacity ?? '',
+    remaining_capacity: record.remaining_capacity ?? '',
+    registrant_count: record.registrant_count ?? '',
+    agenda_status: record.agenda_status ?? '',
+    disabled_class: record.disabled_class ?? '',
+  };
+}
+
+function computeDetailFingerprint(record = {}) {
+  return crypto
+    .createHash('sha256')
+    .update(stableStringify(detailFingerprintInput(record)))
+    .digest('hex');
+}
+
+function isReusableDetailEntry({
+  manifestEntry,
+  record,
+  enrichedRecord,
+  cacheExists,
+  forceRefresh = false,
+}) {
+  if (forceRefresh) return false;
+  if (!manifestEntry || !record || !enrichedRecord) return false;
+  if (!cacheExists) return false;
+  return manifestEntry.fingerprint === computeDetailFingerprint(record);
+}
+
+async function readDetailManifest() {
+  const manifest = await readJsonFile(DETAIL_MANIFEST_PATH, null);
+  if (!manifest || typeof manifest !== 'object') {
+    return { version: DETAIL_MANIFEST_VERSION, entries: {} };
+  }
+  const entries =
+    manifest.entries && typeof manifest.entries === 'object' ? manifest.entries : {};
+  return {
+    version: manifest.version || DETAIL_MANIFEST_VERSION,
+    updated_at: manifest.updated_at || '',
+    entries,
+  };
+}
+
+async function writeDetailManifest(entries, updatedAt) {
+  const payload = {
+    version: DETAIL_MANIFEST_VERSION,
+    updated_at: updatedAt,
+    entries,
+  };
+  await fs.writeFile(DETAIL_MANIFEST_PATH, JSON.stringify(payload, null, 2));
 }
 
 async function collectLibraryPages() {
@@ -485,12 +580,14 @@ function toYaml(sessions) {
 export {
   buildIsoDateTime,
   buildDateTime,
+  computeDetailFingerprint,
   collectLibraryPages,
   extractDescription,
   extractJsonObject,
   dedupeSessionRecords,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  isReusableDetailEntry,
   normalizeTopics,
   partitionSessionRecords,
   stripTags,
@@ -501,9 +598,24 @@ async function main() {
   await ensureDir(OUT_DIR);
   await ensureDir(BY_DAY_DIR);
   await ensureDir(SNAPSHOTS_DIR);
+  const previousLatest = await readJsonFile(LATEST_JSON, null);
+  const priorSessionsByUrl = new Map(
+    Array.isArray(previousLatest?.sessions)
+      ? previousLatest.sessions
+          .filter((session) => session?.url)
+          .map((session) => [session.url, session])
+      : [],
+  );
+  const existingManifest = await readDetailManifest();
+  const nextManifestEntries = { ...existingManifest.entries };
   console.log(`Fetching paginated library: ${LIBRARY_URL}`);
   const { pages, records: libraryRecords, sessionUrls, buckets } = await collectLibraryPages();
   const libraryRecordsByUrl = new Map(libraryRecords.map((record) => [record.url, record]));
+  if (!CONFIG.bucket) {
+    for (const url of Object.keys(nextManifestEntries)) {
+      if (!libraryRecordsByUrl.has(url)) delete nextManifestEntries[url];
+    }
+  }
   let selectedUrls = sessionUrls;
   if (CONFIG.bucket) {
     const bucketUrls = buckets[CONFIG.bucket];
@@ -516,15 +628,56 @@ async function main() {
   else console.log(`Scraping ${selectedUrls.length} URLs.`);
 
   const sessions = [];
+  let detailFetchCount = 0;
+  let detailReuseCount = 0;
   for (let i = 0; i < selectedUrls.length; i++) {
     const url = selectedUrls[i];
-    const idMatch = url.match(/\/session\/(\d+)\//);
-    const sessionId = idMatch?.[1] || `idx-${i + 1}`;
-    console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
-    const html = await fetchText(url, { cacheKey: `session-${sessionId}.html` });
     const seed = libraryRecordsByUrl.get(url) || {};
+    const { sessionId, cacheKey } = sessionDetailCacheKey(seed, i);
+    const cachePath = path.join(CACHE_DIR, cacheKey);
+    const fingerprint = computeDetailFingerprint(seed);
+    const manifestEntry = existingManifest.entries[url];
+    const previousEnriched = priorSessionsByUrl.get(url);
+    const cacheExists = await fs
+      .access(cachePath)
+      .then(() => true)
+      .catch(() => false);
+
+    console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
+
+    if (
+      isReusableDetailEntry({
+        manifestEntry,
+        record: seed,
+        enrichedRecord: previousEnriched,
+        cacheExists,
+        forceRefresh: CONFIG.forceRefresh,
+      })
+    ) {
+      sessions.push(previousEnriched);
+      detailReuseCount += 1;
+      nextManifestEntries[url] = {
+        ...manifestEntry,
+        id: sessionId,
+        cache_path: path.relative(OUT_DIR, cachePath),
+        last_seen_at: new Date().toISOString(),
+      };
+      console.log('  reused cached detail enrichment');
+      continue;
+    }
+
+    const html = await fetchText(url, { cacheKey });
     const record = toSessionRecord(url, html, seed);
     sessions.push(record);
+    detailFetchCount += 1;
+    const fetchedAt = new Date().toISOString();
+    nextManifestEntries[url] = {
+      id: sessionId,
+      cache_path: path.relative(OUT_DIR, cachePath),
+      fingerprint,
+      last_detail_fetch_at: fetchedAt,
+      last_seen_at: fetchedAt,
+    };
     await politeDelay();
   }
 
@@ -540,6 +693,7 @@ async function main() {
     sessions,
   };
   const stamp = snapshotStamp(scrapedAt);
+  await writeDetailManifest(nextManifestEntries, scrapedAt);
 
   if (CONFIG.bucket) {
     const slug = bucketFileSlug(CONFIG.bucket);
@@ -550,6 +704,7 @@ async function main() {
     console.log('Wrote:');
     console.log(`- ${bucketJson}`);
     console.log(`- ${bucketYaml}`);
+    console.log(`- ${DETAIL_MANIFEST_PATH}`);
   } else {
     const snapshotJson = path.join(SNAPSHOTS_DIR, `${stamp}.json`);
     const snapshotYaml = path.join(SNAPSHOTS_DIR, `${stamp}.yaml`);
@@ -562,7 +717,10 @@ async function main() {
     console.log(`- ${LATEST_YAML}`);
     console.log(`- ${snapshotJson}`);
     console.log(`- ${snapshotYaml}`);
+    console.log(`- ${DETAIL_MANIFEST_PATH}`);
   }
+  console.log(`Detail pages fetched: ${detailFetchCount}`);
+  console.log(`Detail pages reused: ${detailReuseCount}`);
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

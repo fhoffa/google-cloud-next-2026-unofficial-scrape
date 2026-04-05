@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-04-04T09:47:47.611Z",
-    "dataScrapedAt": "2026-04-04T06:24:23.616Z",
+    "generatedAt": "2026-04-05T16:50:33.839Z",
+    "dataScrapedAt": "2026-04-05T16:43:11.520Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
-    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260403.png",
+    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260404.png",
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },

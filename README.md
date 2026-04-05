@@ -67,6 +67,7 @@ The scraper exports:
 - `sessions/latest.json` / `sessions/latest.yaml` — full dataset, latest run
 - `sessions/by-day/YYYY-MM-DD.json` / `.yaml` — sessions partitioned by date
 - `sessions/by-day/unscheduled.json` / `.yaml` — sessions with no date yet
+- `sessions/detail-manifest.json` — durable detail-cache manifest used to skip unchanged session-page refetches
 - `sessions/snapshots/` — timestamped archive of every run
 
 ## Fields
@@ -93,6 +94,8 @@ Each session record includes:
 ```bash
 npm run scrape
 ```
+
+Normal runs keep the fast library extraction and only refetch detail pages for sessions whose library metadata changed, whose detail cache is missing, or whose enrichment is not yet present in `sessions/latest.json`. `FORCE_REFRESH=1 npm run scrape` still performs a full detail rebuild.
 
 Useful options:
 
@@ -125,6 +128,8 @@ The library pages already expose useful structured fields such as:
 - `agenda_status`
 - `disabled_class`
 
+The scraper now hashes those library-stage fields into a stable per-session fingerprint and stores it in `sessions/detail-manifest.json` alongside the cached detail HTML path and last detail fetch metadata.
+
 That means a **library-only pass** is likely sufficient for:
 - detecting newly added or removed sessions
 - detecting timing/room/status changes
@@ -139,6 +144,8 @@ The per-session fetch is still valuable because it adds or normalizes:
 - structured `speakers` + company
 - derived time fields like `start_at`, `end_at`, and `date_time`
 - page-level fallbacks when listing metadata is incomplete
+
+When the fingerprint is unchanged, the scraper reuses the previously enriched session record from `sessions/latest.json` instead of reopening the detail page. If the fingerprint changes, the cache file is missing, or `FORCE_REFRESH=1` is set, the detail page is fetched again and the manifest entry is updated.
 
 That richer metadata is still the safer basis for:
 - high-quality classification
