@@ -29,11 +29,11 @@
     h1{margin:0;font-size:2.2rem;line-height:1.05}
     .lede{max-width:920px;color:var(--muted);font-size:1.02rem;line-height:1.5;margin:10px 0 10px}
     .freshness{color:var(--muted);font-size:.92rem;margin:0 0 18px}
-    .promo-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);gap:16px;align-items:center;background:linear-gradient(135deg,#fff 0%,#f8fbff 100%);border:1px solid var(--border);border-radius:16px;padding:16px;margin:0 0 22px}
-    .promo-card h2{margin:0 0 8px;font-size:1.25rem}
-    .promo-card p{margin:0 0 10px;color:var(--muted);line-height:1.45}
-    .promo-card img{display:block;width:100%;border-radius:12px;border:1px solid var(--border);background:#111}
-    .promo-link{display:inline-flex;align-items:center;gap:6px;font-weight:600;text-decoration:none}
+    .promo-card{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(180px,.65fr);gap:14px;align-items:center;background:linear-gradient(135deg,#fff 0%,#f8fbff 100%);border:1px solid var(--border);border-radius:16px;padding:14px;margin:10px 0 18px}
+    .promo-card h2{margin:0 0 6px;font-size:1.1rem;line-height:1.2}
+    .promo-card p{margin:0 0 8px;color:var(--muted);line-height:1.4;font-size:.95rem}
+    .promo-card img{display:block;width:100%;max-height:180px;object-fit:cover;border-radius:12px;border:1px solid var(--border);background:#111}
+    .promo-link{display:inline-flex;align-items:center;gap:6px;font-weight:600;text-decoration:none;font-size:.95rem}
     .section{margin-top:28px}
     .section h2{margin:0 0 10px;font-size:1.45rem}
     .section p{color:var(--muted)}
@@ -80,7 +80,7 @@
 </head>
 <body>
   <!-- Generated from templates/insights.template.html using scripts/generate_insights.mjs and config/word-rules.json. -->
-  <main data-generated-on="2026-04-06T22:16:12.585Z" data-data-scraped-on="2026-04-06T03:38:32.498Z" data-summary-source="./media/insights-summary.json">
+  <main data-generated-on="2026-04-06T22:22:22.798Z" data-data-scraped-on="2026-04-06T03:38:32.498Z" data-summary-source="./media/insights-summary.json">
     <div class="top">
       <div>
         <p class="eyebrow">Conference intelligence</p>
@@ -91,20 +91,20 @@
     <p class="lede">935 of 1,054 sessions at Google Cloud Next 2026 are about AI — 89% of the whole conference. Security is the biggest single theme. The 119 non-AI sessions are where the rest of the cloud story holds out.</p>
     <p class="freshness" id="freshness-line">Last updated: loading…</p>
 
+    <section class="section">
+      <div class="grid" id="stats"><div class="card"><div class="stat-value">1,054</div><div class="stat-label">Total sessions</div><div class="stat-note">Across all formats — keynotes, breakouts, workshops, and labs.</div></div><div class="card"><div class="stat-value">89% AI</div><div class="stat-label">Share of the conference</div><div class="stat-sub">935 AI · 119 not AI</div><div class="stat-note">For every non-AI session, there are roughly 8 AI ones.</div></div><div class="card"><div class="stat-value">Security</div><div class="stat-label">Largest theme</div><div class="stat-sub">233 sessions</div><div class="stat-note">Security runs through both AI and non-AI content — it's the one theme that shows up everywhere.</div></div><div class="card"><div class="stat-value">Leaders</div><div class="stat-label">Largest audience</div><div class="stat-sub">302 sessions</div><div class="stat-note">Slightly ahead of Developers (249 sessions) — the conference leans executive.</div></div><div class="card"><div class="stat-value"><a href="#top-companies-speaking">427</a></div><div class="stat-label">Non-Google companies represented</div><div class="stat-note">Most appear once. A handful show up 10+ times and are part of the conference narrative.</div></div></div>
+    </section>
+
     <section class="promo-card" aria-label="Featured MCP analysis">
       <div>
         <div class="kicker">Featured analysis</div>
         <h2>MCP at Google Cloud Next: 2025 → 2026</h2>
-        <p>Want the focused take on how MCP, protocol language, A2A, and &ldquo;skills&rdquo; changed from the 2025 catalog to 2026? This LinkedIn discussion breaks down the shift and links back into this explorer.</p>
-        <a class="promo-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7447038163493036032/">Read the MCP discussion on LinkedIn →</a>
+        <p>A focused comparison of how MCP, protocol language, A2A, and &ldquo;skills&rdquo; shifted from the 2025 catalog to 2026.</p>
+        <a class="promo-link" href="https://www.linkedin.com/feed/update/urn:li:activity:7447038163493036032/">Read the LinkedIn discussion →</a>
       </div>
       <a href="https://www.linkedin.com/feed/update/urn:li:activity:7447038163493036032/" aria-label="Open MCP 2025 to 2026 discussion on LinkedIn">
         <img src="./media/mcp-2025-vs-2026-linkedin.jpg" alt="Preview image for the LinkedIn post comparing MCP-related Google Cloud Next 2025 and 2026 sessions">
       </a>
-    </section>
-
-    <section class="section">
-      <div class="grid" id="stats"><div class="card"><div class="stat-value">1,054</div><div class="stat-label">Total sessions</div><div class="stat-note">Across all formats — keynotes, breakouts, workshops, and labs.</div></div><div class="card"><div class="stat-value">89% AI</div><div class="stat-label">Share of the conference</div><div class="stat-sub">935 AI · 119 not AI</div><div class="stat-note">For every non-AI session, there are roughly 8 AI ones.</div></div><div class="card"><div class="stat-value">Security</div><div class="stat-label">Largest theme</div><div class="stat-sub">233 sessions</div><div class="stat-note">Security runs through both AI and non-AI content — it's the one theme that shows up everywhere.</div></div><div class="card"><div class="stat-value">Leaders</div><div class="stat-label">Largest audience</div><div class="stat-sub">302 sessions</div><div class="stat-note">Slightly ahead of Developers (249 sessions) — the conference leans executive.</div></div><div class="card"><div class="stat-value"><a href="#top-companies-speaking">427</a></div><div class="stat-label">Non-Google companies represented</div><div class="stat-note">Most appear once. A handful show up 10+ times and are part of the conference narrative.</div></div></div>
     </section>
 
     <section class="section">
