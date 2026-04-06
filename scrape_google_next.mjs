@@ -289,6 +289,28 @@ function isReusableDetailEntry({
   return manifestEntry.fingerprint === computeDetailFingerprint(record);
 }
 
+function mergeFreshLibraryFields(previousEnriched = {}, seed = {}) {
+  return {
+    ...previousEnriched,
+    id: seed.id ?? previousEnriched.id ?? '',
+    url: seed.url ?? previousEnriched.url ?? '',
+    title: seed.title ?? previousEnriched.title ?? '',
+    date_text: seed.date_text ?? previousEnriched.date_text ?? '',
+    start_time_text: seed.start_time_text ?? previousEnriched.start_time_text ?? '',
+    end_time_text: seed.end_time_text ?? previousEnriched.end_time_text ?? '',
+    date_time: seed.date_time ?? previousEnriched.date_time ?? '',
+    start_at: seed.start_at ?? previousEnriched.start_at ?? '',
+    end_at: seed.end_at ?? previousEnriched.end_at ?? '',
+    room: seed.room ?? previousEnriched.room ?? '',
+    session_category: seed.session_category ?? previousEnriched.session_category ?? '',
+    capacity: seed.capacity ?? previousEnriched.capacity ?? '',
+    remaining_capacity: seed.remaining_capacity ?? previousEnriched.remaining_capacity ?? '',
+    registrant_count: seed.registrant_count ?? previousEnriched.registrant_count ?? '',
+    agenda_status: seed.agenda_status ?? previousEnriched.agenda_status ?? '',
+    disabled_class: seed.disabled_class ?? previousEnriched.disabled_class ?? '',
+  };
+}
+
 async function readDetailManifest() {
   const manifest = await readJsonFile(DETAIL_MANIFEST_PATH, null);
   if (!manifest || typeof manifest !== 'object') {
@@ -592,6 +614,7 @@ export {
   extractSessionIds,
   extractSessionRecordsFromLibrary,
   isReusableDetailEntry,
+  mergeFreshLibraryFields,
   normalizeTopics,
   partitionSessionRecords,
   stripTags,
@@ -658,7 +681,7 @@ async function main() {
         forceRefresh: CONFIG.forceRefresh,
       })
     ) {
-      sessions.push(previousEnriched);
+      sessions.push(mergeFreshLibraryFields(previousEnriched, seed));
       detailReuseCount += 1;
       nextManifestEntries[url] = {
         ...manifestEntry,

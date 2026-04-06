@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-05T18:53:57.861Z",
+    "generatedAt": "2026-04-06T04:57:43.680Z",
     "latest": "sessions/latest.json",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
@@ -9,23 +9,23 @@
     "mergeNearbyHours": 2,
     "latestLivePair": {
       "current": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-05T18-08-51Z.json",
-        "fileName": "2026-04-05T18-08-51Z.json",
-        "scrapedAt": "2026-04-05T18:08:51.484Z",
-        "count": 1056
+        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-06T03-38-32Z.json",
+        "fileName": "2026-04-06T03-38-32Z.json",
+        "scrapedAt": "2026-04-06T03:38:32.498Z",
+        "count": 1054
       },
       "previous": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-05T16-43-11Z.json",
-        "fileName": "2026-04-05T16-43-11Z.json",
-        "scrapedAt": "2026-04-05T16:43:11.520Z",
-        "count": 1053
+        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-05T19-29-41Z.json",
+        "fileName": "2026-04-05T19-29-41Z.json",
+        "scrapedAt": "2026-04-05T19:29:41.541Z",
+        "count": 1054
       }
     },
     "refreshWarnings": [
       {
         "level": "warning",
         "code": "hidden-availability-drift",
-        "message": "Seat/registrant counts changed for 697 overlapping sessions, but no session crossed the full/not-full availability band boundary."
+        "message": "Seat/registrant counts changed for 510 overlapping sessions, but no session crossed the full/not-full availability band boundary."
       }
     ]
   },
@@ -33,24 +33,63 @@
   "updates": [
     {
       "previous": {
+        "file": "2026-04-05T19-29-41Z.json",
+        "scrapedAt": "2026-04-05T19:29:41.541Z",
+        "count": 1054
+      },
+      "current": {
+        "file": "2026-04-06T03-38-32Z.json",
+        "scrapedAt": "2026-04-06T03:38:32.498Z",
+        "count": 1054
+      },
+      "summary": {
+        "currentAvailabilityKnown": 1054,
+        "currentFull": 96,
+        "currentLimited": 0,
+        "fullSharePhrase": "a small share",
+        "hasReopened": false,
+        "hasMaterialChanges": false,
+        "hasAdditions": false,
+        "hasRemovals": false,
+        "hasReplacements": false,
+        "hasFlappy": false,
+        "hasMoves": false,
+        "hasRenames": false,
+        "hasMetadataChanges": false
+      },
+      "moved": [],
+      "renamed": [],
+      "metadataChanges": [],
+      "replacements": [],
+      "added": [],
+      "removed": [],
+      "flappyChanges": [],
+      "nowFull": [],
+      "reopened": [],
+      "nowLimited": [],
+      "materialChanges": [],
+      "minorChanges": []
+    },
+    {
+      "previous": {
         "file": "2026-04-04T06-24-23Z.json",
         "scrapedAt": "2026-04-04T06:24:23.616Z",
         "count": 1053
       },
       "current": {
-        "file": "2026-04-05T18-08-51Z.json",
-        "scrapedAt": "2026-04-05T18:08:51.484Z",
-        "count": 1056
+        "file": "2026-04-05T19-29-41Z.json",
+        "scrapedAt": "2026-04-05T19:29:41.541Z",
+        "count": 1054
       },
       "summary": {
-        "currentAvailabilityKnown": 1056,
-        "currentFull": 95,
+        "currentAvailabilityKnown": 1054,
+        "currentFull": 96,
         "currentLimited": 0,
         "fullSharePhrase": "a small share",
         "hasReopened": false,
         "hasMaterialChanges": false,
         "hasAdditions": true,
-        "hasRemovals": false,
+        "hasRemovals": true,
         "hasReplacements": true,
         "hasFlappy": true,
         "hasMoves": false,
@@ -76,8 +115,8 @@
           "sameSessionId": false
         },
         {
-          "removedTitle": "Architecting Enterprise GenAI: Building Production-Grade Agents on Vertex AI",
-          "removedUrl": "index.html?sessionids=3908805",
+          "removedTitle": "Scaling simulation and rendering: Real-world use cases",
+          "removedUrl": "index.html?sessionids=3912996",
           "addedTitle": "From pilot to production: Scaling Gemini with proven practices",
           "addedUrl": "index.html?sessionids=3913127",
           "reasons": [
@@ -91,21 +130,8 @@
         {
           "removedTitle": "Architecting for the agent and beyond: Inside Mattel's product quality world",
           "removedUrl": "index.html?sessionids=3895149",
-          "addedTitle": "How healthcare leaders escaped pilot purgatory to deliver real-world impact",
-          "addedUrl": "index.html?sessionids=3913114",
-          "reasons": [
-            "same day",
-            "same start time",
-            "same end time",
-            "shared topics"
-          ],
-          "sameSessionId": false
-        },
-        {
-          "removedTitle": "From weeks to minutes: Build a secure dev sandbox on Google Cloud Platform withGemini Code Assist",
-          "removedUrl": "index.html?sessionids=3908800",
-          "addedTitle": "Taming the black box: A whiteboard session on real-world optimization",
-          "addedUrl": "index.html?sessionids=3908808",
+          "addedTitle": "Automating excellence: How Gemini and Config Connector help create 10x cloud teams",
+          "addedUrl": "index.html?sessionids=3912910",
           "reasons": [
             "same day",
             "same start time",
@@ -198,7 +224,12 @@
           "url": "index.html?sessionids=3920525"
         }
       ],
-      "removed": [],
+      "removed": [
+        {
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "index.html?sessionids=3911933"
+        }
+      ],
       "flappyChanges": [
         {
           "title": "Analyze data and make an informed decision",
@@ -211,12 +242,6 @@
           "url": "index.html?sessionids=3920539",
           "id": "3920539",
           "transitions": 3
-        },
-        {
-          "title": "Automating excellence: How Gemini and Config Connector help create 10x cloud teams",
-          "url": "index.html?sessionids=3912910",
-          "id": "3912910",
-          "transitions": 2
         },
         {
           "title": "Gemini in regulated sectors: Accelerate human impact with secure AI",
@@ -273,7 +298,16 @@
           "transitions": 4
         }
       ],
-      "nowFull": [],
+      "nowFull": [
+        {
+          "title": "AI on the frontlines: Experiences leveraging Gemini",
+          "url": "index.html?sessionids=3913162"
+        },
+        {
+          "title": "Building agents with Go",
+          "url": "index.html?sessionids=3912219"
+        }
+      ],
       "reopened": [],
       "nowLimited": [],
       "materialChanges": [],

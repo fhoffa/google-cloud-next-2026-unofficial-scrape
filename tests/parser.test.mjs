@@ -10,6 +10,7 @@ import {
   extractSessionIds,
   extractSessionRecordsFromLibrary,
   isReusableDetailEntry,
+  mergeFreshLibraryFields,
   partitionSessionRecords,
   toSessionRecord,
 } from '../scrape_google_next.mjs';
@@ -154,4 +155,38 @@ test('detail reuse requires matching manifest fingerprint, previous enriched dat
     }),
     false,
   );
+});
+
+test('detail reuse keeps rich cached fields while refreshing live library fields', () => {
+  const merged = mergeFreshLibraryFields(
+    {
+      id: '123',
+      url: 'https://example.com/session/123/demo',
+      title: 'Old title',
+      room: 'Old room',
+      remaining_capacity: 42,
+      registrant_count: 100,
+      description: 'keep me',
+      speakers: [{ name: 'Ada' }],
+      topics: ['ai'],
+    },
+    {
+      id: '123',
+      url: 'https://example.com/session/123/demo',
+      title: 'New title',
+      room: 'New room',
+      remaining_capacity: 5,
+      registrant_count: 111,
+      capacity: 60,
+    },
+  );
+
+  assert.equal(merged.title, 'New title');
+  assert.equal(merged.room, 'New room');
+  assert.equal(merged.remaining_capacity, 5);
+  assert.equal(merged.registrant_count, 111);
+  assert.equal(merged.capacity, 60);
+  assert.equal(merged.description, 'keep me');
+  assert.deepEqual(merged.speakers, [{ name: 'Ada' }]);
+  assert.deepEqual(merged.topics, ['ai']);
 });
