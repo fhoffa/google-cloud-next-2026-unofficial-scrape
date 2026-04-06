@@ -185,6 +185,8 @@ That wrapper runs the current checked-in publication sequence in order:
 - related-sessions rebuild
 - test suite
 
+By default it uses `/root/.openclaw/workspace/.venv/bin/python` for all Python steps, but you can override that interpreter explicitly with `PYTHON=/path/to/python` when needed.
+
 It is meant as a convenience wrapper for maintainers, not as a replacement for understanding the individual steps above.
 
 #### Important invariant: classified data must track the current live snapshot
