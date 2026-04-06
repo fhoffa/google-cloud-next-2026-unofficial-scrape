@@ -69,8 +69,12 @@ function categoryCounts(subset, allowedBand) {
     if (band === allowedBand) matches.set(value, (matches.get(value) || 0) + 1);
   }
   return [...matches.entries()]
-    .map(([name, count]) => [name, count, totals.get(name) || count])
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    .map(([name, count]) => {
+      const totalKnown = totals.get(name) || count;
+      const shareValue = totalKnown ? (count / totalKnown) * 100 : 0;
+      return [name, count, totalKnown, shareValue];
+    })
+    .sort((a, b) => b[3] - a[3] || b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
 function wordStats(subset, limit = 18) {
@@ -247,7 +251,7 @@ function buildSummary(sessions, sankeyLatest, generatedAt, availabilitySource, d
       stats: [],
       observations: fullnessObservations,
       rankings: {
-        fullByCategory: fullByCategory.slice(0, 6).map(([name, count, totalKnown]) => ({ name, count, totalKnown, share: percentage(count, totalKnown) })),
+        fullByCategory: fullByCategory.slice(0, 6).map(([name, count, totalKnown, shareValue]) => ({ name, count, totalKnown, share: percentage(count, totalKnown), shareValue })),
       },
     },
     quickPivots: {
@@ -296,7 +300,7 @@ function renderHtml(summary, templateText, options = {}) {
   const topAiThemes = summary.rankings.topAiThemes.map((item) => [item.name, item.count]);
   const topNotAiThemes = summary.rankings.topNotAiThemes.map((item) => [item.name, item.count]);
   const topNonGoogle = summary.companies.topNonGoogle.map((item) => [item.name, item.count]);
-  const fullByCategory = summary.fullness.rankings.fullByCategory.map((item) => [item.name, item.count, item.share]);
+  const fullByCategory = summary.fullness.rankings.fullByCategory.map((item) => [item.name, item.shareValue, `${item.share} (${item.count}/${item.totalKnown})`]);
 
   const replacements = {
     '__OG_IMAGE__': esc(summary.meta.sankeyLatest),
