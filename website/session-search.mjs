@@ -1,5 +1,5 @@
 import { canonicalCompanyName, companyMatchesFilter } from '../lib/company-identity.mjs';
-import { availabilityBand, mergeAvailabilityIntoSessions } from '../lib/session-availability-core.mjs';
+import { availabilityBand, mergeAvailabilityIntoSessions, normalizeNumber } from '../lib/session-availability-core.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 const DEFAULT_SORT = 'time';
@@ -314,6 +314,28 @@ function renderRelatedSessions(sessionId, relatedItems, visible) {
   return `<div class="related-sessions"><div class="related-sessions-label">Related sessions</div><div class="related-sessions-list">${relatedItems.map((item) => `<button class="related-session-link" type="button" data-related-session-id="${escHtml(item.sessionId || '')}" title="Show ${escHtml(item.title || '')}">${escHtml(item.title || '')}</button>`).join('')}</div></div>`;
 }
 
+function seatFillData(session) {
+  const capacity = normalizeNumber(session?.capacity);
+  const registrants = normalizeNumber(session?.registrant_count);
+  if (capacity == null || registrants == null || capacity <= 0) return null;
+  const rawPct = (registrants / capacity) * 100;
+  const pct = Math.max(0, Math.min(100, rawPct));
+  return {
+    capacity,
+    registrants,
+    pct,
+    isOverbooked: registrants > capacity,
+  };
+}
+
+function renderSeatFill(session) {
+  const fill = seatFillData(session);
+  if (!fill) return '';
+  const label = `${fill.registrants.toLocaleString()} / ${fill.capacity.toLocaleString()} seats`;
+  const pctLabel = `${Math.round(fill.pct)}% full`;
+  return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
+}
+
 function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
@@ -340,6 +362,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
         ${timeStr ? `<span class="dot meta-icon">${escHtml(timeStr)}</span>` : ''}
         ${session.room ? `<span class="dot meta-icon">${escHtml(session.room)}</span>` : ''}
       </div>
+      ${renderSeatFill(session)}
       ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
