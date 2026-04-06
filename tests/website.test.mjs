@@ -1083,3 +1083,36 @@ test('session explorer joins availability artifact before applying availability 
   assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Unknown session/);
   assert.match(env.document.getElementById('active-filters').innerHTML, /availability: full/);
 });
+
+test('session explorer renders a seat fill visualization when capacity and registrations are known', async () => {
+  const env = createEnvironment();
+  const source = {
+    sessions: [
+      { title: 'Seat viz session', url: 'https://example.com/session/seat-viz', topics: [], speakers: [] },
+      { title: 'No capacity session', url: 'https://example.com/session/no-capacity', topics: [], speakers: [] },
+    ],
+  };
+  const availability = {
+    generatedAt: '2026-04-01T00:00:00.000Z',
+    records: [
+      { url: 'https://example.com/session/seat-viz', remaining_capacity: 6, capacity: '48', registrant_count: '42' },
+      { url: 'https://example.com/session/no-capacity', remaining_capacity: 1, capacity: '', registrant_count: '90' },
+    ],
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source, availability),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Seat viz session/);
+  assert.match(appHtml, /42 \/ 48 seats/);
+  assert.match(appHtml, /88% full/);
+  assert.match(appHtml, /seat-fill-bar-fill/);
+  assert.doesNotMatch(appHtml, /No capacity session[\s\S]*seat-fill/);
+});

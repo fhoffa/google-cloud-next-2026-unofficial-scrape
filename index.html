@@ -462,6 +462,48 @@
       gap: 4px;
     }
 
+    .seat-fill {
+      display: grid;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .seat-fill-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 0.76rem;
+      color: var(--gray-600);
+    }
+
+    .seat-fill-label {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .seat-fill-value {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .seat-fill-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gray-200);
+      overflow: hidden;
+    }
+
+    .seat-fill-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #7baaf7 0%, #1a73e8 100%);
+    }
+
+    .seat-fill-bar-fill.overbooked {
+      background: linear-gradient(90deg, #f29900 0%, #d93025 100%);
+    }
+
     .card-desc {
       font-size: 0.82rem;
       color: var(--gray-600);
