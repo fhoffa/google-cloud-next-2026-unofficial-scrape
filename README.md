@@ -171,6 +171,22 @@ Use a two-tier mental model:
    - rebuild Sankey
    - run tests
 
+If you want a single local command for that publication rebuild, use:
+
+```bash
+bash scripts/run_publish_pipeline.sh
+```
+
+That wrapper runs the current checked-in publication sequence in order:
+- rule-based live classification refresh
+- changelog rebuild
+- insights rebuild
+- Sankey rebuild
+- related-sessions rebuild
+- test suite
+
+It is meant as a convenience wrapper for maintainers, not as a replacement for understanding the individual steps above.
+
 #### Important invariant: classified data must track the current live snapshot
 
 `sessions/classified_sessions.json` is for the **current live dataset**, not an ever-growing archive of every historically seen session.
