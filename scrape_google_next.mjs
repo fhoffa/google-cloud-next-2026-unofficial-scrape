@@ -7,7 +7,6 @@ import crypto from 'node:crypto';
 const BASE = 'https://www.googlecloudevents.com';
 const LIBRARY_URL = `${BASE}/next-vegas/session-library`;
 const OUT_DIR = path.resolve('sessions');
-const LATEST_YAML = path.join(OUT_DIR, 'latest.yaml');
 const LATEST_JSON = path.join(OUT_DIR, 'latest.json');
 const BY_DAY_DIR = path.join(OUT_DIR, 'by-day');
 const SNAPSHOTS_DIR = path.join(OUT_DIR, 'snapshots');
@@ -551,58 +550,6 @@ function toSessionRecord(url, html, seed = {}) {
   };
 }
 
-function yamlScalar(value) {
-  if (value == null) return '""';
-  const str = String(value);
-  if (str === '') return '""';
-  if (str.includes('\n')) {
-    return `|\n${str
-      .split('\n')
-      .map((line) => `    ${line}`)
-      .join('\n')}`;
-  }
-  return JSON.stringify(str);
-}
-
-function toYaml(sessions) {
-  const lines = [];
-  lines.push('sessions:');
-  for (const s of sessions) {
-    lines.push('  - title: ' + yamlScalar(s.title));
-    lines.push('    description: ' + yamlScalar(s.description));
-    lines.push('    url: ' + yamlScalar(s.url));
-    lines.push('    start_at: ' + yamlScalar(s.start_at));
-    lines.push('    end_at: ' + yamlScalar(s.end_at));
-    lines.push('    date_time: ' + yamlScalar(s.date_time));
-    lines.push('    date_text: ' + yamlScalar(s.date_text));
-    lines.push('    start_time_text: ' + yamlScalar(s.start_time_text));
-    lines.push('    end_time_text: ' + yamlScalar(s.end_time_text));
-    lines.push('    room: ' + yamlScalar(s.room));
-    lines.push('    session_category: ' + yamlScalar(s.session_category));
-    lines.push('    capacity: ' + yamlScalar(s.capacity));
-    lines.push('    remaining_capacity: ' + yamlScalar(s.remaining_capacity));
-    lines.push('    registrant_count: ' + yamlScalar(s.registrant_count));
-    lines.push('    agenda_status: ' + yamlScalar(s.agenda_status));
-    lines.push('    disabled_class: ' + yamlScalar(s.disabled_class));
-    lines.push('    topics:');
-    if (s.topics.length === 0) {
-      lines.push('      []');
-    } else {
-      for (const topic of s.topics) lines.push('      - ' + yamlScalar(topic));
-    }
-    lines.push('    speakers:');
-    if (s.speakers.length === 0) {
-      lines.push('      []');
-    } else {
-      for (const sp of s.speakers) {
-        lines.push('      - name: ' + yamlScalar(sp.name));
-        lines.push('        company: ' + yamlScalar(sp.company));
-      }
-    }
-  }
-  return lines.join('\n') + '\n';
-}
-
 export {
   buildIsoDateTime,
   buildDateTime,
@@ -725,25 +672,17 @@ async function main() {
   if (CONFIG.bucket) {
     const slug = bucketFileSlug(CONFIG.bucket);
     const bucketJson = path.join(BY_DAY_DIR, `${slug}.json`);
-    const bucketYaml = path.join(BY_DAY_DIR, `${slug}.yaml`);
     await fs.writeFile(bucketJson, JSON.stringify(payload, null, 2));
-    await fs.writeFile(bucketYaml, toYaml(sessions), 'utf8');
     console.log('Wrote:');
     console.log(`- ${bucketJson}`);
-    console.log(`- ${bucketYaml}`);
     console.log(`- ${DETAIL_MANIFEST_PATH}`);
   } else {
     const snapshotJson = path.join(SNAPSHOTS_DIR, `${stamp}.json`);
-    const snapshotYaml = path.join(SNAPSHOTS_DIR, `${stamp}.yaml`);
     await fs.writeFile(LATEST_JSON, JSON.stringify(payload, null, 2));
-    await fs.writeFile(LATEST_YAML, toYaml(sessions), 'utf8');
     await fs.writeFile(snapshotJson, JSON.stringify(payload, null, 2));
-    await fs.writeFile(snapshotYaml, toYaml(sessions), 'utf8');
     console.log('Wrote:');
     console.log(`- ${LATEST_JSON}`);
-    console.log(`- ${LATEST_YAML}`);
     console.log(`- ${snapshotJson}`);
-    console.log(`- ${snapshotYaml}`);
     console.log(`- ${DETAIL_MANIFEST_PATH}`);
   }
   console.log(`Detail pages fetched: ${detailFetchCount}`);

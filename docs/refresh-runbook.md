@@ -38,9 +38,7 @@ npm run scrape
 
 This updates:
 - `sessions/latest.json`
-- `sessions/latest.yaml`
 - `sessions/snapshots/<timestamp>.json`
-- `sessions/snapshots/<timestamp>.yaml`
 
 ### Step 2 — compare against previous live snapshot
 Run:
