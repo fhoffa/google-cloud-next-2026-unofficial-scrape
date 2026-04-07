@@ -9,6 +9,7 @@ import {
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  extractSessionSource,
   isReusableDetailEntry,
   mergeFreshLibraryFields,
   partitionSessionRecords,
@@ -48,6 +49,20 @@ test('extracts full description from Gemini CLI session page', () => {
   assert.match(desc, /Agent Skills|subagents|productivity/i);
 });
 
+test('extracts a source-first session model with speaker job titles', () => {
+  const source = extractSessionSource(geminiCli);
+  assert.equal(source.sourceSession.id, '3911908');
+  assert.equal(source.sourceSession.name, '10x productivity with the Gemini CLI');
+  assert.match(source.sourceDescription, /Gemini CLI/i);
+  assert.ok(source.sourceSpeakers.length >= 2);
+  assert.deepEqual(source.sourceSpeakers[0], {
+    name: 'Dmitry Lyalin',
+    company: 'Google Cloud',
+    job_title: 'Group Product manager',
+    moreInfoUrl: 'https://www.googlecloudevents.com/next-vegas/speaker/2144511/dmitry-lyalin',
+  });
+});
+
 test('builds machine-friendly ISO datetime', () => {
   assert.equal(buildIsoDateTime('Wednesday, April 22, 2026', '1:30 PM'), '2026-04-22T13:30:00');
 });
@@ -58,6 +73,7 @@ test('parses keynote session with URL, room, datetime, and speakers', () => {
   assert.equal(rec.start_at, '2026-04-22T09:00:00');
   assert.equal(rec.end_at, '2026-04-22T10:30:00');
   assert.ok(rec.speakers.length > 0);
+  assert.ok(rec.speakers.every((speaker) => 'job_title' in speaker));
   assert.match(rec.description, /The Next '26 Opening Keynote/i);
 });
 
