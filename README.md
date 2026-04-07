@@ -14,7 +14,7 @@ This repo now has **two useful layers**:
 1. **Scraper/exporter**
    - crawls the paginated session library
    - fetches individual session pages
-   - exports structured JSON/YAML snapshots
+   - exports structured JSON snapshots
 
 2. **Website UI**
    - lets you browse, filter, favorite, share, and explore sessions in a much nicer way than the source site
@@ -64,9 +64,9 @@ Current site features include:
 
 The scraper exports:
 
-- `sessions/latest.json` / `sessions/latest.yaml` — full dataset, latest run
-- `sessions/by-day/YYYY-MM-DD.json` / `.yaml` — sessions partitioned by date
-- `sessions/by-day/unscheduled.json` / `.yaml` — sessions with no date yet
+- `sessions/latest.json` — full dataset, latest run
+- `sessions/by-day/YYYY-MM-DD.json` — sessions partitioned by date
+- `sessions/by-day/unscheduled.json` — sessions with no date yet
 - `sessions/detail-manifest.json` — durable detail-cache manifest used to skip unchanged session-page refetches
 - `sessions/snapshots/` — timestamped archive of every run
 
@@ -104,7 +104,7 @@ MAX_SESSIONS=10 npm run scrape
 FORCE_REFRESH=1 npm run scrape
 MIN_DELAY_MS=2000 MAX_DELAY_MS=5000 npm run scrape
 BUCKET=2026-04-22 npm run scrape                     # scrape one day only
-npm run merge                                        # merge by-day/ files into latest.*
+npm run merge                                        # merge by-day/ files into latest.json + a new snapshot
 ```
 
 ### Practical scrape pipeline: fast detection vs full publication pass
