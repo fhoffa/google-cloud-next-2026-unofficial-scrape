@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generatedAt": "2026-04-07T04:57:06.633Z",
-    "dataScrapedAt": "2026-04-07T04:57:05.244Z",
+    "generatedAt": "2026-04-07T21:35:22.834Z",
+    "dataScrapedAt": "2026-04-07T21:31:30.098Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
@@ -10,34 +10,34 @@
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
-  "lede": "936 of 1,056 sessions at Google Cloud Next 2026 are about AI — 89% of the whole conference. Security is the biggest single theme. The 120 non-AI sessions are where the rest of the cloud story holds out.",
+  "lede": "937 of 1,057 sessions at Google Cloud Next 2026 are about AI — 89% of the whole conference. Security is the biggest single theme. The 120 non-AI sessions are where the rest of the cloud story holds out.",
   "stats": [
     {
-      "value": "1,056",
+      "value": "1,057",
       "label": "Total sessions",
       "note": "Across all formats — keynotes, breakouts, workshops, and labs."
     },
     {
       "value": "89% AI",
       "label": "Share of the conference",
-      "sub": "936 AI · 120 not AI",
+      "sub": "937 AI · 120 not AI",
       "note": "For every non-AI session, there are roughly 8 AI ones."
     },
     {
       "value": "Security",
       "label": "Largest theme",
-      "sub": "230 sessions",
+      "sub": "228 sessions",
       "note": "Security runs through both AI and non-AI content — it's the one theme that shows up everywhere."
     },
     {
       "value": "Leaders",
       "label": "Largest audience",
-      "sub": "305 sessions",
-      "note": "Slightly ahead of Developers (246 sessions) — the conference leans executive."
+      "sub": "303 sessions",
+      "note": "Slightly ahead of Developers (249 sessions) — the conference leans executive."
     },
     {
-      "value": "427",
-      "valueHtml": "<a href=\"#top-companies-speaking\">427</a>",
+      "value": "430",
+      "valueHtml": "<a href=\"#top-companies-speaking\">430</a>",
       "label": "Non-Google companies represented",
       "note": "Most appear once. A handful show up 10+ times and are part of the conference narrative."
     }
@@ -45,52 +45,52 @@
   "fullness": {
     "stats": [],
     "observations": [
-      "<a href=\"./index.html?availability=full\"><strong>116 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">940 still have seats</a>.",
-      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 33 of 37 (89%) are already full."
+      "<a href=\"./index.html?availability=full\"><strong>129 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">928 still have seats</a>.",
+      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 32 of 37 (86%) are already full."
     ],
     "rankings": {
       "fullByCategory": [
         {
           "name": "Workshops",
-          "count": 33,
+          "count": 32,
           "totalKnown": 37,
-          "share": "89%",
-          "shareValue": 89.1891891891892
+          "share": "86%",
+          "shareValue": 86.48648648648648
         },
         {
           "name": "Lounge Sessions",
-          "count": 12,
+          "count": 13,
           "totalKnown": 21,
-          "share": "57%",
-          "shareValue": 57.14285714285714
+          "share": "62%",
+          "shareValue": 61.904761904761905
         },
         {
           "name": "Discussion Groups",
-          "count": 51,
-          "totalKnown": 92,
-          "share": "55%",
-          "shareValue": 55.434782608695656
-        },
-        {
-          "name": "Partner Summit Breakouts",
-          "count": 3,
-          "totalKnown": 12,
-          "share": "25%",
-          "shareValue": 25
+          "count": 54,
+          "totalKnown": 90,
+          "share": "60%",
+          "shareValue": 60
         },
         {
           "name": "Solution Talks",
-          "count": 10,
-          "totalKnown": 49,
-          "share": "20%",
-          "shareValue": 20.408163265306122
+          "count": 18,
+          "totalKnown": 50,
+          "share": "36%",
+          "shareValue": 36
+        },
+        {
+          "name": "Partner Summit Breakouts",
+          "count": 4,
+          "totalKnown": 12,
+          "share": "33%",
+          "shareValue": 33.33333333333333
         },
         {
           "name": "Breakouts",
-          "count": 7,
-          "totalKnown": 441,
+          "count": 8,
+          "totalKnown": 439,
           "share": "2%",
-          "shareValue": 1.5873015873015872
+          "shareValue": 1.8223234624145785
         }
       ]
     }
@@ -99,7 +99,7 @@
     "aiFocus": [
       {
         "name": "AI",
-        "count": 936,
+        "count": 937,
         "href": "./index.html?ai_focus=AI"
       },
       {
@@ -111,17 +111,17 @@
     "themes": [
       {
         "name": "Security",
-        "count": 230,
+        "count": 228,
         "href": "./index.html?theme=Security"
       },
       {
         "name": "App dev",
-        "count": 190,
+        "count": 195,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 184,
         "href": "./index.html?theme=Business"
       },
       {
@@ -131,34 +131,34 @@
       },
       {
         "name": "Infra",
-        "count": 163,
+        "count": 161,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 112,
+        "count": 113,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
     "audiences": [
       {
         "name": "Leaders",
-        "count": 305,
+        "count": 303,
         "href": "./index.html?audience=Leaders"
       },
       {
         "name": "Developers",
-        "count": 246,
+        "count": 249,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 201,
+        "count": 202,
         "href": "./index.html?audience=Sec+pros"
       },
       {
         "name": "Infra/Ops",
-        "count": 138,
+        "count": 137,
         "href": "./index.html?audience=Infra%2FOps"
       },
       {
@@ -169,29 +169,29 @@
     ]
   },
   "observations": [
-    "<strong>88.6%</strong> of the entire catalog is AI — 936 of 1056 sessions.",
-    "<strong>Security</strong> is the most common theme at <strong>230</strong> sessions, spanning both AI and non-AI content.",
-    "Inside AI, <strong>Security</strong> leads at 188 sessions — 1 in 5 AI sessions is about security; guardrails, IAM, and threat detection are baked into the AI stack.",
-    "Outside AI, <strong>Security</strong> takes the top spot with 42 sessions.",
-    "<strong>305</strong> sessions target Leaders, 246 target Developers — the conference tilts toward the buyer side.",
-    "<strong>138</strong> sessions target infrastructure and ops engineers, <strong>99</strong> target data practitioners. The platform comes before the pipeline.",
+    "<strong>88.6%</strong> of the entire catalog is AI — 937 of 1057 sessions.",
+    "<strong>Security</strong> is the most common theme at <strong>228</strong> sessions, spanning both AI and non-AI content.",
+    "Inside AI, <strong>Security</strong> leads at 187 sessions — 1 in 5 AI sessions is about security; guardrails, IAM, and threat detection are baked into the AI stack.",
+    "Outside AI, <strong>Security</strong> takes the top spot with 41 sessions.",
+    "<strong>303</strong> sessions target Leaders, 249 target Developers — the conference tilts toward the buyer side.",
+    "<strong>137</strong> sessions target infrastructure and ops engineers, <strong>99</strong> target data practitioners. The platform comes before the pipeline.",
     "The major consulting firms together account for <strong>39 sessions</strong> — more than any single non-Google company on the list."
   ],
   "rankings": {
     "topThemes": [
       {
         "name": "Security",
-        "count": 230,
+        "count": 228,
         "href": "./index.html?theme=Security"
       },
       {
         "name": "App dev",
-        "count": 190,
+        "count": 195,
         "href": "./index.html?theme=App+dev"
       },
       {
         "name": "Business",
-        "count": 185,
+        "count": 184,
         "href": "./index.html?theme=Business"
       },
       {
@@ -201,34 +201,34 @@
       },
       {
         "name": "Infra",
-        "count": 163,
+        "count": 161,
         "href": "./index.html?theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 112,
+        "count": 113,
         "href": "./index.html?theme=Applied+AI"
       }
     ],
     "topAudiences": [
       {
         "name": "Leaders",
-        "count": 305,
+        "count": 303,
         "href": "./index.html?audience=Leaders"
       },
       {
         "name": "Developers",
-        "count": 246,
+        "count": 249,
         "href": "./index.html?audience=Developers"
       },
       {
         "name": "Sec pros",
-        "count": 201,
+        "count": 202,
         "href": "./index.html?audience=Sec+pros"
       },
       {
         "name": "Infra/Ops",
-        "count": 138,
+        "count": 137,
         "href": "./index.html?audience=Infra%2FOps"
       },
       {
@@ -240,12 +240,12 @@
     "topAiThemes": [
       {
         "name": "Security",
-        "count": 188,
+        "count": 187,
         "href": "./index.html?ai_focus=AI&theme=Security"
       },
       {
         "name": "App dev",
-        "count": 168,
+        "count": 172,
         "href": "./index.html?ai_focus=AI&theme=App+dev"
       },
       {
@@ -255,35 +255,35 @@
       },
       {
         "name": "Business",
-        "count": 162,
+        "count": 161,
         "href": "./index.html?ai_focus=AI&theme=Business"
       },
       {
         "name": "Infra",
-        "count": 141,
+        "count": 139,
         "href": "./index.html?ai_focus=AI&theme=Infra"
       },
       {
         "name": "Applied AI",
-        "count": 112,
+        "count": 113,
         "href": "./index.html?ai_focus=AI&theme=Applied+AI"
       }
     ],
     "topNotAiThemes": [
       {
         "name": "Security",
-        "count": 42,
+        "count": 41,
         "href": "./index.html?ai_focus=Not+AI&theme=Security"
+      },
+      {
+        "name": "App dev",
+        "count": 23,
+        "href": "./index.html?ai_focus=Not+AI&theme=App+dev"
       },
       {
         "name": "Business",
         "count": 23,
         "href": "./index.html?ai_focus=Not+AI&theme=Business"
-      },
-      {
-        "name": "App dev",
-        "count": 22,
-        "href": "./index.html?ai_focus=Not+AI&theme=App+dev"
       },
       {
         "name": "Infra",
@@ -301,127 +301,127 @@
     "all": [
       {
         "word": "ai",
-        "count": 1856,
+        "count": 1847,
         "sessionCount": 757,
         "label": "ai",
         "href": "./index.html?q=ai"
       },
       {
         "word": "data",
-        "count": 1275,
-        "sessionCount": 401,
+        "count": 1263,
+        "sessionCount": 400,
         "label": "data",
         "href": "./index.html?q=data"
       },
       {
         "word": "agent",
-        "count": 1195,
+        "count": 1186,
         "sessionCount": 472,
         "label": "agent/agents",
         "href": "./index.html?q=agent"
       },
       {
         "word": "security",
-        "count": 772,
+        "count": 767,
         "sessionCount": 271,
         "label": "security",
         "href": "./index.html?q=security"
       },
       {
         "word": "technology",
-        "count": 726,
-        "sessionCount": 662,
+        "count": 725,
+        "sessionCount": 663,
         "label": "technology",
         "href": "./index.html?q=technology"
       },
       {
         "word": "technical",
-        "count": 709,
-        "sessionCount": 648,
+        "count": 706,
+        "sessionCount": 644,
         "label": "technical",
         "href": "./index.html?q=technical"
       },
       {
         "word": "leadership",
-        "count": 656,
-        "sessionCount": 647,
+        "count": 658,
+        "sessionCount": 648,
         "label": "leadership",
         "href": "./index.html?q=leadership"
       },
       {
         "word": "business",
         "count": 651,
-        "sessionCount": 521,
+        "sessionCount": 520,
         "label": "business",
         "href": "./index.html?q=business"
       },
       {
         "word": "gemini",
-        "count": 635,
-        "sessionCount": 364,
+        "count": 631,
+        "sessionCount": 359,
         "label": "gemini",
         "href": "./index.html?q=gemini"
       },
       {
         "word": "leader",
-        "count": 585,
-        "sessionCount": 509,
+        "count": 581,
+        "sessionCount": 507,
         "label": "leader/leaders",
         "href": "./index.html?q=leader"
       },
       {
         "word": "application",
         "count": 479,
-        "sessionCount": 384,
+        "sessionCount": 386,
         "label": "application/applications",
         "href": "./index.html?q=application"
       },
       {
-        "word": "infrastructure",
-        "count": 463,
-        "sessionCount": 359,
-        "label": "infrastructure",
-        "href": "./index.html?q=infrastructure"
-      },
-      {
         "word": "manager",
-        "count": 461,
-        "sessionCount": 458,
+        "count": 460,
+        "sessionCount": 457,
         "label": "manager/managers",
         "href": "./index.html?q=manager"
       },
       {
+        "word": "infrastructure",
+        "count": 458,
+        "sessionCount": 355,
+        "label": "infrastructure",
+        "href": "./index.html?q=infrastructure"
+      },
+      {
         "word": "developer",
-        "count": 453,
-        "sessionCount": 367,
+        "count": 452,
+        "sessionCount": 369,
         "label": "developer/developers",
         "href": "./index.html?q=developer"
       },
       {
-        "word": "engineers",
-        "count": 444,
-        "sessionCount": 352,
-        "label": "engineers",
-        "href": "./index.html?q=engineers"
-      },
-      {
         "word": "agentic",
-        "count": 440,
-        "sessionCount": 276,
+        "count": 439,
+        "sessionCount": 275,
         "label": "agentic",
         "href": "./index.html?q=agentic"
       },
       {
+        "word": "engineers",
+        "count": 439,
+        "sessionCount": 348,
+        "label": "engineers",
+        "href": "./index.html?q=engineers"
+      },
+      {
         "word": "platform",
-        "count": 408,
-        "sessionCount": 338,
+        "count": 407,
+        "sessionCount": 335,
         "label": "platform",
         "href": "./index.html?q=platform"
       },
       {
         "word": "customer",
-        "count": 401,
-        "sessionCount": 335,
+        "count": 404,
+        "sessionCount": 333,
         "label": "customer",
         "href": "./index.html?q=customer"
       }
@@ -429,152 +429,145 @@
     "ai": [
       {
         "word": "ai",
-        "count": 1855,
+        "count": 1846,
         "sessionCount": 756,
         "label": "ai",
         "href": "./index.html?q=ai&ai_focus=AI"
       },
       {
         "word": "agent",
-        "count": 1192,
+        "count": 1183,
         "sessionCount": 469,
         "label": "agent/agents",
         "href": "./index.html?q=agent&ai_focus=AI"
       },
       {
         "word": "data",
-        "count": 1169,
+        "count": 1159,
         "sessionCount": 366,
         "label": "data",
         "href": "./index.html?q=data&ai_focus=AI"
       },
       {
         "word": "technology",
-        "count": 656,
-        "sessionCount": 602,
+        "count": 658,
+        "sessionCount": 605,
         "label": "technology",
         "href": "./index.html?q=technology&ai_focus=AI"
       },
       {
         "word": "technical",
-        "count": 641,
-        "sessionCount": 585,
+        "count": 638,
+        "sessionCount": 581,
         "label": "technical",
         "href": "./index.html?q=technical&ai_focus=AI"
       },
       {
         "word": "gemini",
-        "count": 635,
-        "sessionCount": 364,
+        "count": 631,
+        "sessionCount": 359,
         "label": "gemini",
         "href": "./index.html?q=gemini&ai_focus=AI"
       },
       {
         "word": "security",
-        "count": 622,
-        "sessionCount": 226,
+        "count": 621,
+        "sessionCount": 227,
         "label": "security",
         "href": "./index.html?q=security&ai_focus=AI"
       },
       {
         "word": "leadership",
-        "count": 597,
-        "sessionCount": 590,
+        "count": 601,
+        "sessionCount": 593,
         "label": "leadership",
         "href": "./index.html?q=leadership&ai_focus=AI"
       },
       {
         "word": "business",
         "count": 588,
-        "sessionCount": 470,
+        "sessionCount": 469,
         "label": "business",
         "href": "./index.html?q=business&ai_focus=AI"
       },
       {
         "word": "leader",
-        "count": 531,
-        "sessionCount": 457,
+        "count": 529,
+        "sessionCount": 456,
         "label": "leader/leaders",
         "href": "./index.html?q=leader&ai_focus=AI"
       },
       {
         "word": "agentic",
-        "count": 440,
-        "sessionCount": 276,
+        "count": 439,
+        "sessionCount": 275,
         "label": "agentic",
         "href": "./index.html?q=agentic&ai_focus=AI"
       },
       {
         "word": "application",
-        "count": 431,
-        "sessionCount": 350,
+        "count": 430,
+        "sessionCount": 351,
         "label": "application/applications",
         "href": "./index.html?q=application&ai_focus=AI"
       },
       {
         "word": "infrastructure",
-        "count": 421,
-        "sessionCount": 325,
+        "count": 417,
+        "sessionCount": 322,
         "label": "infrastructure",
         "href": "./index.html?q=infrastructure&ai_focus=AI"
       },
       {
         "word": "manager",
-        "count": 413,
-        "sessionCount": 410,
+        "count": 412,
+        "sessionCount": 409,
         "label": "manager/managers",
         "href": "./index.html?q=manager&ai_focus=AI"
       },
       {
         "word": "developer",
-        "count": 410,
-        "sessionCount": 338,
+        "count": 408,
+        "sessionCount": 339,
         "label": "developer/developers",
         "href": "./index.html?q=developer&ai_focus=AI"
       },
       {
         "word": "engineers",
-        "count": 408,
-        "sessionCount": 321,
+        "count": 403,
+        "sessionCount": 317,
         "label": "engineers",
         "href": "./index.html?q=engineers&ai_focus=AI"
       },
       {
-        "word": "platform",
-        "count": 374,
-        "sessionCount": 311,
-        "label": "platform",
-        "href": "./index.html?q=platform&ai_focus=AI"
-      },
-      {
         "word": "customer",
-        "count": 369,
-        "sessionCount": 307,
+        "count": 374,
+        "sessionCount": 306,
         "label": "customer",
         "href": "./index.html?q=customer&ai_focus=AI"
+      },
+      {
+        "word": "platform",
+        "count": 373,
+        "sessionCount": 308,
+        "label": "platform",
+        "href": "./index.html?q=platform&ai_focus=AI"
       }
     ],
     "notAi": [
       {
         "word": "security",
-        "count": 150,
-        "sessionCount": 45,
+        "count": 146,
+        "sessionCount": 44,
         "label": "security",
         "href": "./index.html?q=security&ai_focus=Not+AI"
       },
       {
         "word": "data",
-        "count": 106,
-        "sessionCount": 35,
+        "count": 104,
+        "sessionCount": 34,
         "label": "data",
         "href": "./index.html?q=data&ai_focus=Not+AI"
-      },
-      {
-        "word": "technology",
-        "count": 70,
-        "sessionCount": 60,
-        "label": "technology",
-        "href": "./index.html?q=technology&ai_focus=Not+AI"
       },
       {
         "word": "technical",
@@ -582,6 +575,13 @@
         "sessionCount": 63,
         "label": "technical",
         "href": "./index.html?q=technical&ai_focus=Not+AI"
+      },
+      {
+        "word": "technology",
+        "count": 67,
+        "sessionCount": 58,
+        "label": "technology",
+        "href": "./index.html?q=technology&ai_focus=Not+AI"
       },
       {
         "word": "business",
@@ -592,15 +592,15 @@
       },
       {
         "word": "leadership",
-        "count": 59,
-        "sessionCount": 57,
+        "count": 57,
+        "sessionCount": 55,
         "label": "leadership",
         "href": "./index.html?q=leadership&ai_focus=Not+AI"
       },
       {
         "word": "leader",
-        "count": 54,
-        "sessionCount": 52,
+        "count": 52,
+        "sessionCount": 51,
         "label": "leader/leaders",
         "href": "./index.html?q=leader&ai_focus=Not+AI"
       },
@@ -613,8 +613,8 @@
       },
       {
         "word": "application",
-        "count": 48,
-        "sessionCount": 34,
+        "count": 49,
+        "sessionCount": 35,
         "label": "application/applications",
         "href": "./index.html?q=application&ai_focus=Not+AI"
       },
@@ -627,15 +627,15 @@
       },
       {
         "word": "developer",
-        "count": 43,
-        "sessionCount": 29,
+        "count": 44,
+        "sessionCount": 30,
         "label": "developer/developers",
         "href": "./index.html?q=developer&ai_focus=Not+AI"
       },
       {
         "word": "infrastructure",
-        "count": 42,
-        "sessionCount": 34,
+        "count": 41,
+        "sessionCount": 33,
         "label": "infrastructure",
         "href": "./index.html?q=infrastructure&ai_focus=Not+AI"
       },
@@ -655,8 +655,8 @@
       },
       {
         "word": "threat",
-        "count": 37,
-        "sessionCount": 19,
+        "count": 38,
+        "sessionCount": 20,
         "label": "threat",
         "href": "./index.html?q=threat&ai_focus=Not+AI"
       },
@@ -668,23 +668,23 @@
         "href": "./index.html?q=engineers&ai_focus=Not+AI"
       },
       {
-        "word": "innovation",
-        "count": 34,
-        "sessionCount": 33,
-        "label": "innovation",
-        "href": "./index.html?q=innovation&ai_focus=Not+AI"
-      },
-      {
         "word": "platform",
         "count": 34,
         "sessionCount": 27,
         "label": "platform",
         "href": "./index.html?q=platform&ai_focus=Not+AI"
+      },
+      {
+        "word": "enterprise",
+        "count": 33,
+        "sessionCount": 16,
+        "label": "enterprise",
+        "href": "./index.html?q=enterprise&ai_focus=Not+AI"
       }
     ]
   },
   "companies": {
-    "observationHtml": "<li><strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>18</strong> sessions — a persistent presence throughout the program.</li><li>The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>39 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.</li><li><strong>NVIDIA</strong> at #2 (16 sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.</li><li><strong>Anthropic</strong> appears 10 times — Google's AI model investment earns a recurring stage presence.</li><li><strong>Wiz</strong> shows up 10 times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.</li><li><strong>Shopify</strong> (9) and <strong>Snap</strong> (6) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.</li>",
+    "observationHtml": "<li><strong>Palo Alto Networks</strong> leads all non-Google companies with <strong>18</strong> sessions — a persistent presence throughout the program.</li><li>The major consulting firms (Accenture, McKinsey & Company, Deloitte, PwC, Cognizant, HCLTech) add up to <strong>39 sessions combined</strong> — more than any individual non-Google company. A big slice of the conference is about enterprise adoption, with consultants as the delivery vehicle.</li><li><strong>NVIDIA</strong> at #2 (16 sessions) makes the AI hardware dependency explicit — the software story at this conference runs on their chips.</li><li><strong>Anthropic</strong> appears 9 times — Google's AI model investment earns a recurring stage presence.</li><li><strong>Wiz</strong> shows up 11 times, all in Security — Google acquired Wiz for ~$32B, yet the catalog still lists them as an external company.</li><li><strong>Shopify</strong> (9) and <strong>Snap</strong> (6) are consumer brands, not enterprise software companies — Google is using them as scale proof points for what Cloud infrastructure can handle.</li>",
     "topNonGoogle": [
       {
         "name": "Palo Alto Networks",
@@ -702,19 +702,19 @@
         "href": "./index.html?company=ROI+Training"
       },
       {
+        "name": "Wiz",
+        "count": 11,
+        "href": "./index.html?company=Wiz"
+      },
+      {
         "name": "Accenture",
         "count": 10,
         "href": "./index.html?company=Accenture"
       },
       {
         "name": "Anthropic",
-        "count": 10,
+        "count": 9,
         "href": "./index.html?company=Anthropic"
-      },
-      {
-        "name": "Wiz",
-        "count": 10,
-        "href": "./index.html?company=Wiz"
       },
       {
         "name": "Insight",
@@ -782,11 +782,6 @@
         "href": "./index.html?company=Onix"
       },
       {
-        "name": "Replit",
-        "count": 5,
-        "href": "./index.html?company=Replit"
-      },
-      {
         "name": "ServiceNow",
         "count": 5,
         "href": "./index.html?company=ServiceNow"
@@ -807,14 +802,14 @@
         "href": "./index.html?company=Deloitte"
       },
       {
+        "name": "Dialpad",
+        "count": 4,
+        "href": "./index.html?company=Dialpad"
+      },
+      {
         "name": "Elastic",
         "count": 4,
         "href": "./index.html?company=Elastic"
-      },
-      {
-        "name": "Equifax",
-        "count": 4,
-        "href": "./index.html?company=Equifax"
       },
       {
         "name": "Mercado Libre",
@@ -830,6 +825,16 @@
         "name": "Pythian",
         "count": 4,
         "href": "./index.html?company=Pythian"
+      },
+      {
+        "name": "Replit",
+        "count": 4,
+        "href": "./index.html?company=Replit"
+      },
+      {
+        "name": "Tata Consultancy Services",
+        "count": 4,
+        "href": "./index.html?company=Tata+Consultancy+Services"
       },
       {
         "name": "Vodafone",
@@ -862,14 +867,14 @@
         "href": "./index.html?company=Datatonic"
       },
       {
-        "name": "Dialpad",
-        "count": 3,
-        "href": "./index.html?company=Dialpad"
-      },
-      {
         "name": "EPAM",
         "count": 3,
         "href": "./index.html?company=EPAM"
+      },
+      {
+        "name": "Equifax",
+        "count": 3,
+        "href": "./index.html?company=Equifax"
       },
       {
         "name": "Foresite Cybersecurity",
@@ -902,11 +907,6 @@
         "href": "./index.html?company=SAP"
       },
       {
-        "name": "Tata Consultancy Services",
-        "count": 3,
-        "href": "./index.html?company=Tata+Consultancy+Services"
-      },
-      {
         "name": "TENEX.ai",
         "count": 3,
         "href": "./index.html?company=TENEX.ai"
@@ -932,11 +932,6 @@
         "href": "./index.html?company=Air+Liquide"
       },
       {
-        "name": "Allianz SE",
-        "count": 2,
-        "href": "./index.html?company=Allianz+SE"
-      },
-      {
         "name": "AMD",
         "count": 2,
         "href": "./index.html?company=AMD"
@@ -945,11 +940,6 @@
         "name": "Anyscale",
         "count": 2,
         "href": "./index.html?company=Anyscale"
-      },
-      {
-        "name": "AppLovin",
-        "count": 2,
-        "href": "./index.html?company=AppLovin"
       },
       {
         "name": "AT&T",
