@@ -379,14 +379,43 @@ async function collectLibraryPages() {
   };
 }
 
-function extractJsonObject(html, varName) {
+function extractBalancedJsonValue(html, startIndex) {
+  const opener = html[startIndex];
+  if (!['{', '['].includes(opener)) return null;
+  const closer = opener === '{' ? '}' : ']';
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let i = startIndex; i < html.length; i += 1) {
+    const ch = html[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === '\\') escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') {
+      inString = true;
+      continue;
+    }
+    if (ch === opener) depth += 1;
+    if (ch === closer) {
+      depth -= 1;
+      if (depth === 0) return html.slice(startIndex, i + 1);
+    }
+  }
+  return null;
+}
+
+function extractAssignedJson(html, varName, opener) {
   const marker = `var ${varName} = `;
   const start = html.indexOf(marker);
   if (start === -1) return null;
   const from = start + marker.length;
-  const end = html.indexOf(';', from);
-  if (end === -1) return null;
-  const jsonText = html.slice(from, end).trim();
+  const jsonStart = html.indexOf(opener, from);
+  if (jsonStart === -1) return null;
+  const jsonText = extractBalancedJsonValue(html, jsonStart);
+  if (!jsonText) return null;
   try {
     return JSON.parse(jsonText);
   } catch {
@@ -394,19 +423,12 @@ function extractJsonObject(html, varName) {
   }
 }
 
+function extractJsonObject(html, varName) {
+  return extractAssignedJson(html, varName, '{');
+}
+
 function extractSpeakersArray(html) {
-  const marker = 'var speakers = ';
-  const start = html.indexOf(marker);
-  if (start === -1) return [];
-  const from = start + marker.length;
-  const end = html.indexOf('];', from);
-  if (end === -1) return [];
-  const jsonText = html.slice(from, end + 1).trim();
-  try {
-    return JSON.parse(jsonText);
-  } catch {
-    return [];
-  }
+  return extractAssignedJson(html, 'speakers', '[') || [];
 }
 
 function stripTags(html = '') {
@@ -510,27 +532,37 @@ function buildDateTime(date, startTime, endTime, fallbackText = '') {
   return fallbackText.trim();
 }
 
-function toSessionRecord(url, html, seed = {}) {
+function extractSessionSource(html) {
   const obj = extractJsonObject(html, '_obj_session_modal_p5') || {};
-  const first = Object.values(obj)[0] || {};
-  const speakers = extractSpeakersArray(html)
-    .map((s) => ({
-      name: [s.first_name, s.last_name].filter(Boolean).join(' ').trim() || s.fullName || '',
-      company: s.company || '',
+  const sourceSession = Object.values(obj)[0] || {};
+  const sourceSpeakers = extractSpeakersArray(html)
+    .map((speaker) => ({
+      name: [speaker.first_name, speaker.last_name].filter(Boolean).join(' ').trim() || speaker.fullName || '',
+      company: speaker.company || '',
+      job_title: speaker.job_title || '',
+      moreInfoUrl: decodeJsonEscapedUrl(speaker.moreInfoUrl || ''),
     }))
-    .filter((s) => s.name);
+    .filter((speaker) => speaker.name);
+  return {
+    sourceSession,
+    sourceSpeakers,
+    sourceDescription: extractDescription(html),
+  };
+}
 
+function toSessionRecord(url, html, seed = {}) {
+  const { sourceSession, sourceSpeakers, sourceDescription } = extractSessionSource(html);
   const visibleLocation = extractVisibleLocation(html);
   const visibleDateTime = extractVisibleDateTime(html);
-  const room = first.location_id || visibleLocation || seed.room || '';
-  const date = first.date || seed.date_text || '';
-  const start_time = first.start_time || seed.start_time_text || '';
-  const end_time = first.end_time || seed.end_time_text || '';
+  const room = sourceSession.location_id || visibleLocation || seed.room || '';
+  const date = sourceSession.date || seed.date_text || '';
+  const start_time = sourceSession.start_time || seed.start_time_text || '';
+  const end_time = sourceSession.end_time || seed.end_time_text || '';
 
   return {
-    id: seed.id || String(first.id || ''),
-    title: first.name || seed.title || '',
-    description: extractDescription(html),
+    id: seed.id || String(sourceSession.id || ''),
+    title: sourceSession.name || seed.title || '',
+    description: sourceDescription,
     url,
     start_at: buildIsoDateTime(date, start_time),
     end_at: buildIsoDateTime(date, end_time),
@@ -539,14 +571,14 @@ function toSessionRecord(url, html, seed = {}) {
     start_time_text: start_time,
     end_time_text: end_time,
     room,
-    topics: normalizeTopics(first.custom_fields || {}),
-    speakers,
-    session_category: seed.session_category || first.custom_fields?.c_92132 || '',
-    capacity: first.capacity ?? seed.capacity ?? '',
-    remaining_capacity: first.remaining_capacity ?? seed.remaining_capacity ?? '',
-    registrant_count: first.registrantCount ?? seed.registrant_count ?? '',
-    agenda_status: first.addedInAgenda ?? seed.agenda_status ?? '',
-    disabled_class: first.disabledClass ?? seed.disabled_class ?? '',
+    topics: normalizeTopics(sourceSession.custom_fields || {}),
+    speakers: sourceSpeakers,
+    session_category: seed.session_category || sourceSession.custom_fields?.c_92132 || '',
+    capacity: sourceSession.capacity ?? seed.capacity ?? '',
+    remaining_capacity: sourceSession.remaining_capacity ?? seed.remaining_capacity ?? '',
+    registrant_count: sourceSession.registrantCount ?? seed.registrant_count ?? '',
+    agenda_status: sourceSession.addedInAgenda ?? seed.agenda_status ?? '',
+    disabled_class: sourceSession.disabledClass ?? seed.disabled_class ?? '',
   };
 }
 
@@ -557,6 +589,7 @@ export {
   collectLibraryPages,
   extractDescription,
   extractJsonObject,
+  extractSessionSource,
   dedupeSessionRecords,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
