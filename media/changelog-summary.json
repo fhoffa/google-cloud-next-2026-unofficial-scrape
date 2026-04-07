@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-07T04:57:05.598Z",
+    "generatedAt": "2026-04-07T05:44:51.736Z",
     "latest": "sessions/latest.json",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
@@ -48,68 +48,11 @@
         "hasReplacements": true,
         "hasFlappy": true,
         "hasMoves": false,
-        "hasRenames": true,
+        "hasRenames": false,
         "hasMetadataChanges": false
       },
       "moved": [],
-      "renamed": [
-        {
-          "beforeTitle": "Build and govern your Autonomous Workforce on ServiceNow powered by Gemini",
-          "afterTitle": "Build and govern your Autonomous Workforce on ServiceNow powered by Gemini",
-          "url": "index.html?sessionids=3965424",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Customize Antigravity for your organization",
-          "afterTitle": "Customize Antigravity for your organization",
-          "url": "index.html?sessionids=3920495",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Erasing the aisle: Lowe's agentic AI foundation for DIY shoppers",
-          "afterTitle": "Erasing the aisle: Lowe's agentic AI foundation for DIY shoppers",
-          "url": "index.html?sessionids=3950365",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "GKE supercluster: Powering secure, planetary scale for AI workloads",
-          "afterTitle": "GKE supercluster: Powering secure, planetary scale for AI workloads",
-          "url": "index.html?sessionids=3912915",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Mission Talk: Revolutionizing Data Extraction with NESDIS and Agentic AI",
-          "afterTitle": "Mission Talk: Revolutionizing Data Extraction with NESDIS and Agentic AI",
-          "url": "index.html?sessionids=4037800",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Modernizing legacy code with Antigravity",
-          "afterTitle": "Modernizing legacy code with Antigravity",
-          "url": "index.html?sessionids=3920420",
-          "changedFields": [
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Storytelling at scale with AI-generated video in Google Vids and Flow",
-          "afterTitle": "Storytelling at scale with AI-generated video in Google Vids and Flow",
-          "url": "index.html?sessionids=3912898",
-          "changedFields": [
-            "url"
-          ]
-        }
-      ],
+      "renamed": [],
       "metadataChanges": [],
       "replacements": [
         {
@@ -393,7 +336,57 @@
       "reopened": [],
       "nowLimited": [],
       "materialChanges": [],
-      "minorChanges": []
+      "minorChanges": [
+        {
+          "title": "Build and govern your Autonomous Workforce on ServiceNow powered by Gemini",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3965424"
+        },
+        {
+          "title": "Customize Antigravity for your organization",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3920495"
+        },
+        {
+          "title": "Erasing the aisle: Lowe's agentic AI foundation for DIY shoppers",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3950365"
+        },
+        {
+          "title": "GKE supercluster: Powering secure, planetary scale for AI workloads",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912915"
+        },
+        {
+          "title": "Mission Talk: Revolutionizing Data Extraction with NESDIS and Agentic AI",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=4037800"
+        },
+        {
+          "title": "Modernizing legacy code with Antigravity",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3920420"
+        },
+        {
+          "title": "Storytelling at scale with AI-generated video in Google Vids and Flow",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912898"
+        }
+      ]
     },
     {
       "previous": {
@@ -843,8 +836,7 @@
           "afterTitle": "The agentic era: how AI is reshaping medical imaging discovery at scale",
           "url": "index.html?sessionids=3920481",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -852,8 +844,7 @@
           "afterTitle": "Agentic commerce in your pocket: Delivering smart food ordering at Papa Johns",
           "url": "index.html?sessionids=3950367",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -861,8 +852,7 @@
           "afterTitle": "Build a PDF Parsing Agent with Gemma and Nemotron on Vertex AI",
           "url": "index.html?sessionids=4008109",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -870,8 +860,7 @@
           "afterTitle": "Why Cloud Agents are a Systems Problem in Disguise",
           "url": "index.html?sessionids=3916661",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -879,8 +868,7 @@
           "afterTitle": "AI-dentity: Best practices for scaling architecture and controls for AI Integration",
           "url": "index.html?sessionids=3913032",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -888,8 +876,7 @@
           "afterTitle": "Orchestrating complex AI pipelines with NVIDIA BioNeMo on Google Kubernetes Engine",
           "url": "index.html?sessionids=4008106",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -897,8 +884,7 @@
           "afterTitle": "Sovereign AI in action: Planning your Sovereign AI roadmap on Google Cloud",
           "url": "index.html?sessionids=3913033",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -906,8 +892,7 @@
           "afterTitle": "Serve NVIDIA Open Models with Google Cloud Run and GKE",
           "url": "index.html?sessionids=4008110",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -915,8 +900,7 @@
           "afterTitle": "Changing the game: A conversation with Shaun White and Bryson DeChambeau",
           "url": "index.html?sessionids=3920367",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         }
       ],
@@ -2015,8 +1999,7 @@
           "afterTitle": "Randstad accelerates cloud migration with TCS and Google Cloud",
           "url": "index.html?sessionids=3975391",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2024,8 +2007,7 @@
           "afterTitle": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
           "url": "index.html?sessionids=3920556",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2033,8 +2015,7 @@
           "afterTitle": "Reve AI platform playbook: Scaling multimodal foundation models with Ray on GKE",
           "url": "index.html?sessionids=3912908",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2042,8 +2023,7 @@
           "afterTitle": "Building an Agentic Platform using Ray Serve LLM and vLLM on GKE",
           "url": "index.html?sessionids=3932301",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2051,8 +2031,7 @@
           "afterTitle": "Build secure-by-design applications for Google Cloud",
           "url": "index.html?sessionids=3913052",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2060,8 +2039,7 @@
           "afterTitle": "Vibe coding to production with Vertex AI",
           "url": "index.html?sessionids=3913132",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2069,8 +2047,7 @@
           "afterTitle": "DeepMind startup workshop: Building agents with Gemini",
           "url": "index.html?sessionids=3909245",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2078,8 +2055,7 @@
           "afterTitle": "How we build and use Gemini CLI at Google Cloud",
           "url": "index.html?sessionids=3911930",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2087,8 +2063,7 @@
           "afterTitle": "Complex workflows made easy with Gemini Enterprise agents",
           "url": "index.html?sessionids=3913068",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2104,8 +2079,7 @@
           "afterTitle": "Agentic AI in CX — Now and next with Dialpad and Randstad",
           "url": "index.html?sessionids=3888644",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2113,8 +2087,7 @@
           "afterTitle": "Architecting the future: Enterprise-scale agentic AI platforms for energy",
           "url": "index.html?sessionids=3908671",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2122,8 +2095,7 @@
           "afterTitle": "Software development in the age of AI agents",
           "url": "index.html?sessionids=3920365",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2131,8 +2103,7 @@
           "afterTitle": "The agents among us",
           "url": "index.html?sessionids=3900517",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2140,8 +2111,7 @@
           "afterTitle": "GKE supercluster: Powering secure, planetary scale for AI workloads",
           "url": "index.html?sessionids=3912915",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2149,8 +2119,7 @@
           "afterTitle": "Marketplace: Enabling the era of the agentic enterprise",
           "url": "index.html?sessionids=3913029",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2158,8 +2127,7 @@
           "afterTitle": "Agentic AI in action for financial services and insurance",
           "url": "index.html?sessionids=3908820",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2167,8 +2135,7 @@
           "afterTitle": "The agentic revolution: Redefining the data science life cycle",
           "url": "index.html?sessionids=3912210",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2176,8 +2143,7 @@
           "afterTitle": "Scaling open LLMs: Inside Spotify’s LLM backend on Google Cloud TPUs and GPUs",
           "url": "index.html?sessionids=3913115",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2185,8 +2151,7 @@
           "afterTitle": "Running autonomous agents in production",
           "url": "index.html?sessionids=3912988",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         }
       ],
@@ -2976,8 +2941,7 @@
           "afterTitle": "Enterprise AI for CX - A customer case study with Randstad",
           "url": "index.html?sessionids=3888644",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2985,8 +2949,7 @@
           "afterTitle": "Agentic AI: wardrobes, webtoons, and the future of personalized experiences",
           "url": "index.html?sessionids=3920556",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -2994,8 +2957,7 @@
           "afterTitle": "How Farmers Insurance engineered AI-native customer engagement",
           "url": "index.html?sessionids=3908671",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3003,8 +2965,7 @@
           "afterTitle": "Build secure apps with Application Design Center and Security Command Center",
           "url": "index.html?sessionids=3913052",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3012,8 +2973,7 @@
           "afterTitle": "Build Agentic Platform using Ray on GKE and vLLM",
           "url": "index.html?sessionids=3932301",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3029,8 +2989,7 @@
           "afterTitle": "Limitless AI orchestration on GKE: Power secure, planetary-scale AI",
           "url": "index.html?sessionids=3912915",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3038,8 +2997,7 @@
           "afterTitle": "Deploy and govern the Gemini CLI at scale",
           "url": "index.html?sessionids=3911930",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3047,8 +3005,7 @@
           "afterTitle": "Marketplace: Enabling the era of the trusted agentic enterprise",
           "url": "index.html?sessionids=3913029",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3056,8 +3013,7 @@
           "afterTitle": "Accelerate cloud migration with TCS Migration Factory",
           "url": "index.html?sessionids=3975391",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3065,16 +3021,7 @@
           "afterTitle": "Scaling the agentic era: How Flipkart powers the next wave of AI with GPUs",
           "url": "index.html?sessionids=4033994",
           "changedFields": [
-            "title",
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Shopping agent best practices: Bridge the gap between concept and conversion",
-          "afterTitle": "Shopping agent best practices: Bridge the gap between concept and conversion",
-          "url": "index.html?sessionids=3932015",
-          "changedFields": [
-            "url"
+            "title"
           ]
         },
         {
@@ -3082,8 +3029,7 @@
           "afterTitle": "Smart moves: Build resilient logistics and transportation systems with AI",
           "url": "index.html?sessionids=3912314",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3091,8 +3037,7 @@
           "afterTitle": "Talk to your data from Gemini Enterprise: Oracle AI Database + Lakehouse",
           "url": "index.html?sessionids=3920343",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3100,8 +3045,7 @@
           "afterTitle": "Learning to trust the agents among us",
           "url": "index.html?sessionids=3900517",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3109,8 +3053,7 @@
           "afterTitle": "Vibing with Google Antigravity: Custom web AI solutions and shareable skills",
           "url": "index.html?sessionids=3912264",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3118,8 +3061,7 @@
           "afterTitle": "What's new in Spanner: Enterprise-scale agentic AI, operations, and analytics",
           "url": "index.html?sessionids=3912267",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         }
       ],
@@ -3870,8 +3812,7 @@
           "afterTitle": "Randstad accelerates cloud migration with TCS and Google Cloud",
           "url": "index.html?sessionids=3975391",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3879,8 +3820,7 @@
           "afterTitle": "Agentic AI: social commerce, webtoons, and the future of personalized experiences",
           "url": "index.html?sessionids=3920556",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3888,8 +3828,7 @@
           "afterTitle": "Building an Agentic Platform using Ray Serve LLM and vLLM on GKE",
           "url": "index.html?sessionids=3932301",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3897,8 +3836,7 @@
           "afterTitle": "Build secure-by-design applications for Google Cloud",
           "url": "index.html?sessionids=3913052",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3906,8 +3844,7 @@
           "afterTitle": "How we build and use Gemini CLI at Google Cloud",
           "url": "index.html?sessionids=3911930",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3923,8 +3860,7 @@
           "afterTitle": "Agentic AI in CX — Now and next with Dialpad and Randstad",
           "url": "index.html?sessionids=3888644",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3932,8 +3868,7 @@
           "afterTitle": "Architecting the future: Enterprise-scale agentic AI platforms for energy",
           "url": "index.html?sessionids=3908671",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3941,8 +3876,7 @@
           "afterTitle": "The agents among us",
           "url": "index.html?sessionids=3900517",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3950,8 +3884,7 @@
           "afterTitle": "GKE supercluster: Powering secure, planetary scale for AI workloads",
           "url": "index.html?sessionids=3912915",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3959,8 +3892,7 @@
           "afterTitle": "Marketplace: Enabling the era of the agentic enterprise",
           "url": "index.html?sessionids=3913029",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3968,16 +3900,7 @@
           "afterTitle": "Scaling in the agentic era with AI Hypercomputer",
           "url": "index.html?sessionids=4033994",
           "changedFields": [
-            "title",
-            "url"
-          ]
-        },
-        {
-          "beforeTitle": "Shopping agent best practices: Bridge the gap between concept and conversion",
-          "afterTitle": "Shopping agent best practices: Bridge the gap between concept and conversion",
-          "url": "index.html?sessionids=3932015",
-          "changedFields": [
-            "url"
+            "title"
           ]
         },
         {
@@ -3985,8 +3908,7 @@
           "afterTitle": "Smart moves: Building resilient transportation systems with AI",
           "url": "index.html?sessionids=3912314",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -3994,8 +3916,7 @@
           "afterTitle": "Talk to your data with Gemini Enterprise",
           "url": "index.html?sessionids=3920343",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -4003,8 +3924,7 @@
           "afterTitle": "Vibing with Gemini CLI: Custom Web AI solutions and shareable skills",
           "url": "index.html?sessionids=3912264",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         },
         {
@@ -4012,8 +3932,7 @@
           "afterTitle": "What's new in Spanner: Enterprise-scale AI, search, graph, and analytics",
           "url": "index.html?sessionids=3912267",
           "changedFields": [
-            "title",
-            "url"
+            "title"
           ]
         }
       ],

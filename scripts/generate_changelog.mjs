@@ -354,11 +354,13 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
     if (!curById.has(sid)) continue;
     const after = curById.get(sid);
     const moveFields = ['date_text','start_time_text','end_time_text','start_at','end_at','room'].filter((field) => fieldChanged(before, after, field));
-    const renameFields = ['title','url'].filter((field) => fieldChanged(before, after, field));
+    const renamedFields = ['title'].filter((field) => fieldChanged(before, after, field));
+    const linkOnlyFields = ['url'].filter((field) => fieldChanged(before, after, field));
     const metadataFields = ['description','speakers','topics','session_category'].filter((field) => fieldChanged(before, after, field));
     if (moveFields.length) moved.push({ before, after, changedFields: moveFields });
-    if (renameFields.length) renamed.push({ before, after, changedFields: renameFields });
+    if (renamedFields.length) renamed.push({ before, after, changedFields: renamedFields });
     if (metadataFields.length) metadataChanges.push({ before, after, changedFields: metadataFields });
+    if (linkOnlyFields.length) changed.push({ before, after, changedFields: linkOnlyFields, materialFields: [], minorFields: linkOnlyFields });
   }
 
   const currentAvailabilityKnown = current.sessions.filter((session) => availabilityBand(session) !== 'unknown');
