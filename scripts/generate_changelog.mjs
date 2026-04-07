@@ -311,6 +311,7 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
   const changed = [];
   const moved = [];
   const renamed = [];
+  const linkUpdates = [];
   const metadataChanges = [];
   const nowFull = [];
   const reopened = [];
@@ -354,10 +355,12 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
     if (!curById.has(sid)) continue;
     const after = curById.get(sid);
     const moveFields = ['date_text','start_time_text','end_time_text','start_at','end_at','room'].filter((field) => fieldChanged(before, after, field));
-    const renameFields = ['title','url'].filter((field) => fieldChanged(before, after, field));
+    const renamedFields = ['title'].filter((field) => fieldChanged(before, after, field));
+    const linkOnlyFields = ['url'].filter((field) => fieldChanged(before, after, field));
     const metadataFields = ['description','speakers','topics','session_category'].filter((field) => fieldChanged(before, after, field));
     if (moveFields.length) moved.push({ before, after, changedFields: moveFields });
-    if (renameFields.length) renamed.push({ before, after, changedFields: renameFields });
+    if (renamedFields.length) renamed.push({ before, after, changedFields: renamedFields });
+    if (linkOnlyFields.length) linkUpdates.push({ before, after, changedFields: linkOnlyFields });
     if (metadataFields.length) metadataChanges.push({ before, after, changedFields: metadataFields });
   }
 
@@ -406,6 +409,7 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
       hasFlappy: flappyChanges.length > 0,
       hasMoves: moved.length > 0,
       hasRenames: renamed.length > 0,
+      hasLinkUpdates: linkUpdates.length > 0,
       hasMetadataChanges: metadataChanges.length > 0,
     },
     moved: moved.slice(0, 20).map((item) => ({
@@ -428,6 +432,13 @@ function compareSnapshots(previous, current, { flappySessions = new Map() } = {}
     renamed: renamed.slice(0, 20).map((item) => ({
       beforeTitle: item.before.title || '',
       afterTitle: item.after.title || '',
+      url: buildExplorerHref(item.after.url ? item.after : item.before),
+      changedFields: item.changedFields,
+    })),
+    linkUpdates: linkUpdates.slice(0, 20).map((item) => ({
+      title: item.after.title || item.before.title,
+      beforeUrl: item.before.url || '',
+      afterUrl: item.after.url || '',
       url: buildExplorerHref(item.after.url ? item.after : item.before),
       changedFields: item.changedFields,
     })),
@@ -480,6 +491,7 @@ function summarySentence(diff) {
   const parts = [];
   if (diff.summary.hasMoves) parts.push('some session IDs moved time slots or rooms');
   if (diff.summary.hasRenames) parts.push('some session IDs were retitled');
+  if (diff.summary.hasLinkUpdates) parts.push('some existing sessions changed canonical links or URL slugs');
   if (diff.summary.hasMetadataChanges) parts.push('some existing sessions changed descriptions, speakers, or other metadata');
   if (diff.summary.hasAdditions) parts.push('new session IDs appeared');
   if (diff.summary.hasRemovals) parts.push('some session IDs disappeared');
@@ -500,6 +512,7 @@ function renderDiffHtml(diff) {
   const title = `${friendlyDate(diff.previous.scrapedAt)} → ${friendlyDate(diff.current.scrapedAt)}`;
   const movedSessions = diff.moved.slice(0, 16);
   const renamedSessions = diff.renamed.slice(0, 16);
+  const linkUpdates = (diff.linkUpdates || []).slice(0, 16);
   const metadataUpdates = diff.metadataChanges.slice(0, 16);
   const possibleReplacements = diff.replacements.filter((item) => !item.sameSessionId).slice(0, 12);
 
@@ -521,6 +534,7 @@ function renderDiffHtml(diff) {
       <div class="badges">
         <span class="badge changed">Moved sessions</span>
         <span class="badge changed">Renamed sessions</span>
+        <span class="badge changed">Link updates</span>
         <span class="badge added">New sessions</span>
         <span class="badge removed">Removed sessions</span>
         <span class="badge full">Availability changes</span>
@@ -535,6 +549,10 @@ function renderDiffHtml(diff) {
           <section class="mini-card">
             <h3>Renamed sessions</h3>
             ${listItems(renamedSessions, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.beforeTitle)} → ${esc(item.afterTitle)}</a>` : `${esc(item.beforeTitle)} → ${esc(item.afterTitle)}`}`, 'No same-ID retitles in this update')}
+          </section>
+          <section class="mini-card">
+            <h3>Link updates</h3>
+            ${listItems(linkUpdates, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(URL/slug update)</span>`, 'No same-ID URL-only updates in this update')}
           </section>
           <section class="mini-card">
             <h3>New sessions</h3>
