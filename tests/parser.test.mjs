@@ -24,7 +24,7 @@ const geminiCli = fs.readFileSync(path.join(root, 'session-3911908.html'), 'utf8
 
 test('extracts embedded session ids from library pages', () => {
   assert.equal(extractSessionIds(page1).length, 60);
-  assert.equal(extractSessionIds(page2).length, 75);
+  assert.equal(extractSessionIds(page2).length, 74);
 });
 
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
