@@ -9,6 +9,9 @@
     "refresh:verify": "node scripts/refresh_sanity.mjs",
     "build:insights": "node scripts/generate_insights.mjs",
     "build:changelog": "node scripts/generate_changelog.mjs",
+    "analytics:init": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py init",
+    "analytics:top-fillers": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py top-fillers",
+    "analytics:flappy": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py flappy",
     "test": "node --test tests/*.test.mjs",
     "merge": "node merge_buckets.mjs"
   }

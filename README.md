@@ -219,6 +219,37 @@ It writes `media/refresh-sanity.json` and prints:
 - concrete `registrant_count` deltas
 - warnings when seat/registrant movement exists even though no session crossed the full/not-full boundary
 
+### Snapshot analytics with DuckDB
+
+For repeated questions about history — for example:
+- which sessions are truly new vs reappeared?
+- which sessions are flappy?
+- which sessions filled a lot of seats quickly?
+- what is the snapshot-by-snapshot history for one session id?
+
+— this repo now includes a tiny DuckDB-backed scaffold.
+
+Initialize the local analytics database (stored under ignored `tmp/`):
+
+```bash
+npm run analytics:init
+```
+
+Then query it with canned helpers:
+
+```bash
+npm run analytics:top-fillers
+npm run analytics:flappy
+/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py history 3911901
+```
+
+The loader builds three local structures:
+- `snapshot_index` — one row per snapshot file
+- `snapshot_sessions` — one row per session per snapshot
+- `session_summary` / `fast_fill_candidates` — derived history metrics like first/last seen, registrant growth, presence count, transitions, and a starter `fast_fill_score`
+
+This is intentionally lightweight: local file, no daemon, good enough for repeatable analytical questions without rebuilding a whole service.
+
 If `latest.json` does not match a snapshot on disk, or if the matching snapshot is not the newest one, the command fails so the refresh cannot quietly build a changelog from a stale pair.
 
 ### Rule-based classification fallback
