@@ -33,7 +33,7 @@ function stripTags(html = '') {
 
 function extractFirstHref(html = '') {
   const match = html.match(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/i);
-  return match ? decodeHtmlEntities(match[1]) : '';
+  return match ? sanitizeUrl(decodeHtmlEntities(match[1])) : '';
 }
 
 function normalizeDayHeading(text = '') {
@@ -45,8 +45,33 @@ function extractTitle(html = '') {
   return match ? stripTags(match[1]) : '';
 }
 
+function extractMetaDescription(html = '') {
+  const match = html.match(/<meta[^>]+(?:name=["']description["']|property=["']og:description["'])[^>]+content=["']([\s\S]*?)["'][^>]*>/i);
+  return match ? stripTags(match[1]) : '';
+}
+
 function compact(text = '') {
   return text.replace(/\s+/g, ' ').trim();
+}
+
+function sanitizeUrl(raw = '') {
+  if (!raw) return '';
+  try {
+    const url = new URL(raw);
+    url.search = '';
+    url.hash = '';
+    return url.toString();
+  } catch {
+    return raw.split('?')[0].split('#')[0];
+  }
+}
+
+function sanitizeExcerpt(text = '') {
+  return compact(text)
+    .replace(/AIza[0-9A-Za-z_-]{20,}/g, '[redacted-api-key]')
+    .replace(/window\[['"]ppConfig['"]\][\s\S]*/i, '')
+    .replace(/window\.WIZ_global_data[\s\S]*/i, '')
+    .slice(0, 1000);
 }
 
 function classifyAccess(event, fetched = {}) {
@@ -360,10 +385,11 @@ async function fetchLandingMeta(url) {
     });
     const text = await response.text();
     const title = extractTitle(text);
-    const excerpt = compact(stripTags(text)).slice(0, 2500);
+    const metaDescription = extractMetaDescription(text);
+    const excerpt = sanitizeExcerpt(metaDescription || stripTags(text));
     return {
       status: response.status,
-      final_url: response.url,
+      final_url: sanitizeUrl(response.url),
       page_title: title,
       page_excerpt: excerpt,
     };
