@@ -252,8 +252,26 @@ function latestNewSessionIds(changelogSummary) {
   const ids = new Set();
   const latestUpdate = changelogSummary?.updates?.[0];
   for (const item of latestUpdate?.added || []) {
-    const id = sessionKey({ id: item?.id || '', url: item?.url || '' });
-    if (id) ids.add(id);
+    const explicit = String(item?.id || '').trim();
+    if (explicit) {
+      ids.add(explicit);
+      continue;
+    }
+    const url = String(item?.url || '').trim();
+    if (!url) continue;
+    try {
+      const parsed = new URL(url, 'https://example.com');
+      const sessionIds = parsed.searchParams.get('sessionids');
+      if (sessionIds) {
+        for (const value of sessionIds.split(',')) {
+          const clean = String(value).trim();
+          if (clean) ids.add(clean);
+        }
+        continue;
+      }
+    } catch {}
+    const fallback = sessionKey({ id: '', url });
+    if (fallback) ids.add(fallback);
   }
   return ids;
 }
