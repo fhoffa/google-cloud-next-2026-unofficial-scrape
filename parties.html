@@ -222,16 +222,6 @@
       line-height: 1.45;
       color: var(--gray-800);
     }
-    .summary-note {
-      margin-top: 10px;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: var(--gray-800);
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-radius: 12px;
-      padding: 10px 12px;
-    }
     footer {
       max-width: 1100px;
       margin: 0 auto 32px;
@@ -427,7 +417,6 @@
                 <div>
                   <div class="label">Event</div>
                   <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
-                  <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Venue vibe: ${esc(event.venue?.vibe || 'Venue unclear')}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
                   <div style="margin-top:10px">
                     <div class="label">Open invite</div>
                     ${clickableBadge('openness', event.access?.openness || 'Unclear', badgeClass(event.access?.openness || ''))}
