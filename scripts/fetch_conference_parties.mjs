@@ -25,6 +25,9 @@ function stripTags(html = '') {
     html
       .replace(/<br\s*\/?>/gi, '\n')
       .replace(/<\/p>/gi, '\n')
+      .replace(/<\/div>/gi, '\n')
+      .replace(/<\/li>/gi, '\n')
+      .replace(/<\/h[1-6]>/gi, '\n')
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s*\n\s*/g, '\n')
       .replace(/[ \t]+/g, ' ')
@@ -46,17 +49,8 @@ function extractTitle(html = '') {
 }
 
 function extractMetaDescription(html = '') {
-  const match = html.match(/<meta[^>]+(?:name=["']description["']|property=["']og:description["'])[^>]+content=["']([\s\S]*?)["'][^>]*>/i);
-  return match ? stripTags(match[1]) : '';
-}
-
-function extractReadableBodyText(html = '') {
-  const cleaned = html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
-    .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, ' ');
-  return stripTags(cleaned);
+  const matches = [...html.matchAll(/<meta[^>]+(?:name=["']description["']|property=["']og:description["'])[^>]+content=["']([\s\S]*?)["'][^>]*>/gi)];
+  return matches.map((m) => stripTags(m[1])).filter(Boolean)[0] || '';
 }
 
 function compact(text = '') {
@@ -75,35 +69,180 @@ function sanitizeUrl(raw = '') {
   }
 }
 
-function sanitizeExcerpt(text = '') {
+function normalizeLine(text = '') {
   return compact(text)
+    .replace(/^\W+|\W+$/g, '')
+    .replace(/[•·▪◦]+/g, ' • ')
+    .replace(/\s*•\s*/g, ' • ')
+    .trim();
+}
+
+function extractReadableBodyTextFallback(html = '') {
+  const cleaned = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, ' ');
+  return stripTags(cleaned);
+}
+
+function sanitizeExcerpt(text = '') {
+  return stripBoilerplate(compact(text))
     .replace(/AIza[0-9A-Za-z_-]{20,}/g, '[redacted-api-key]')
     .replace(/window\[['"]ppConfig['"]\][\s\S]*/i, '')
     .replace(/window\.WIZ_global_data[\s\S]*/i, '')
-    .slice(0, 1400);
+    .slice(0, 1800);
 }
 
-function deriveInviteExcerpt(text = '', title = '') {
-  let excerpt = compact(text);
-  if (!excerpt) return '';
-  const titleCompact = compact(title).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  if (titleCompact) {
-    excerpt = excerpt.replace(new RegExp(`^${titleCompact}[:\-–—\s]*`, 'i'), '');
-  }
-  excerpt = excerpt
-    .replace(/^(google cloud next 2026:|striim rsvp -|why prosperops|products|solutions|resources)\s*/i, '')
-    .replace(/\b(request a free savings analysis|sign up|resources)\b[\s\S]*$/i, '')
+function stripBoilerplate(text = '') {
+  return compact(text)
+    .replace(/please enable js and disable any ad blocker/gi, '')
+    .replace(/(?:explore events|sign in|contact the host|report event|discover pricing help host your event with luma)[\s\S]*$/i, '')
+    .replace(/(?:products|solutions|resources|company|platform|pricing|docs|blog|support|careers)(?:\s+[A-Z][A-Za-z&/+'’-]+){6,}/g, '')
+    .replace(/(?:copyright|privacy policy|terms of use|all rights reserved)[\s\S]*$/i, '')
+    .replace(/\b(register now|get a demo|book a demo|try it free|request a demo|learn more|request your free savings analysis)\b[\s\S]*$/i, '')
     .trim();
-  return excerpt.slice(0, 280).trim();
+}
+
+function isLikelyBoilerplate(line = '') {
+  const lower = line.toLowerCase();
+  if (!lower) return true;
+  if (lower.length < 24) return true;
+  if (/^(products|solutions|resources|company|support|docs|pricing|careers|contact us|sign in|login|menu|search)$/.test(lower)) return true;
+  if (/^(explore events|discover pricing help|host your event with luma|view all|book a demo)$/.test(lower)) return true;
+  if (/privacy policy|all rights reserved|cookie|skip to content|open search|open menu/.test(lower)) return true;
+  if (/request your free savings analysis|book a demo|get a demo|try it free|request a demo/.test(lower)) return true;
+  if ((line.match(/[|>]/g) || []).length >= 4) return true;
+  if ((line.match(/\b(products|solutions|resources|platform|pricing|docs|blog|company)\b/gi) || []).length >= 4) return true;
+  return false;
+}
+
+function scoreBlock(text = '') {
+  const line = normalizeLine(stripBoilerplate(text));
+  if (!line || isLikelyBoilerplate(line)) return 0;
+  const len = line.length;
+  const punctuation = (line.match(/[.!?;:]/g) || []).length;
+  const keywords = (line.match(/\b(join|invite|event|party|reception|network|networking|happy hour|dinner|lunch|breakfast|drinks|cocktails|food|cloud|google next|register|rsvp|builders|leaders|community|founders|engineers)\b/gi) || []).length;
+  const penalties = (line.match(/\b(products|solutions|resources|pricing|blog|docs|support|careers|platform overview)\b/gi) || []).length;
+  return Math.min(len, 500) + punctuation * 30 + keywords * 45 - penalties * 80;
+}
+
+function extractReadableBlocks(html = '') {
+  const cleaned = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, ' ')
+    .replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/gi, ' ')
+    .replace(/<footer\b[^>]*>[\s\S]*?<\/footer>/gi, ' ')
+    .replace(/<header\b[^>]*>[\s\S]*?<\/header>/gi, ' ')
+    .replace(/<form\b[^>]*>[\s\S]*?<\/form>/gi, ' ')
+    .replace(/<aside\b[^>]*>[\s\S]*?<\/aside>/gi, ' ')
+    .replace(/<!--([\s\S]*?)-->/g, ' ');
+
+  const rawBlocks = [];
+  const blockRegex = /<(main|article|section|div|p|li|h1|h2|h3)\b[^>]*>([\s\S]*?)<\/\1>/gi;
+  for (const match of cleaned.matchAll(blockRegex)) {
+    const text = normalizeLine(stripTags(match[2]));
+    if (!text) continue;
+    rawBlocks.push(text);
+  }
+
+  const unique = [];
+  const seen = new Set();
+  for (const block of rawBlocks) {
+    const key = block.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    unique.push(block);
+  }
+
+  return unique
+    .map((text) => ({ text: stripBoilerplate(text), score: scoreBlock(text) }))
+    .filter((entry) => entry.text && entry.score > 80)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 10);
+}
+
+function splitSentences(text = '') {
+  return compact(text)
+    .split(/(?<=[.!?])\s+(?=[A-Z0-9“"(])/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+}
+
+function cleanSentence(sentence = '', title = '') {
+  let value = compact(stripBoilerplate(sentence))
+    .replace(/^about event\s*/i, '')
+    .replace(/^summary\s*-\s*/i, '')
+    .replace(/^(register|request to join|welcome!?)\s*/i, '')
+    .replace(/\bsubmit the form to request your free cloud savings analysis\b/gi, '')
+    .trim();
+  if (title) {
+    const escaped = compact(title).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    value = value.replace(new RegExp(`^${escaped}[\s:–—-]*`, 'i'), '').trim();
+  }
+  return value;
+}
+
+function chooseInviteExcerpt(content = {}, event = {}) {
+  const candidates = [
+    content.metaDescription,
+    ...content.blocks.map((b) => b.text),
+    content.pageText,
+    content.legacy_excerpt,
+  ];
+
+  for (const candidate of candidates) {
+    const cleaned = cleanSentence(candidate, event.title);
+    if (!cleaned || cleaned.length < 80) continue;
+    if (isLikelyBoilerplate(cleaned)) continue;
+    return cleaned.slice(0, 360).trim();
+  }
+
+  return '';
+}
+
+function summarizeEvent(event, fetched = {}) {
+  const sentences = [
+    ...splitSentences(fetched.metaDescription || ''),
+    ...fetched.blocks.flatMap((block) => splitSentences(block.text)),
+    ...splitSentences(fetched.pageText || ''),
+    ...splitSentences(fetched.legacy_excerpt || ''),
+  ].map((sentence) => cleanSentence(sentence, event.title));
+
+  const selected = [];
+  const seen = new Set();
+
+  for (const sentence of sentences) {
+    const lower = sentence.toLowerCase();
+    if (!sentence || sentence.length < 35 || sentence.length > 220) continue;
+    if (isLikelyBoilerplate(sentence)) continue;
+    if (seen.has(lower)) continue;
+    if (selected.some((existing) => existing.toLowerCase().includes(lower) || lower.includes(existing.toLowerCase()))) continue;
+    seen.add(lower);
+
+    const hasSignal = /\b(join|welcome|network|networking|meet|connect|conversation|community|builders|leaders|engineers|founders|drinks|cocktails|bites|food|dinner|lunch|breakfast|music|racing|simulators|golf|after party|happy hour|reception|roundtable|summit|sushi|executive|security|finops|cloud native|kubernetes)\b/i.test(sentence);
+    if (!hasSignal && selected.length === 0) continue;
+    selected.push(sentence);
+    if (selected.length === 2) break;
+  }
+
+  const summary = selected.join(' ').trim();
+  if (/developer documentation|open source pricing|case studies|support professional services|events upcoming events|customer stories about resources|buffalo sabres|dallas stars|lightning vs\.|hockey night/i.test(summary)) {
+    const titleFallback = cleanSentence(fetched.page_title || '', event.title);
+    return titleFallback || chooseInviteExcerpt(fetched, event);
+  }
+  return summary || chooseInviteExcerpt(fetched, event);
 }
 
 function classifyAccess(event, fetched = {}) {
-  const raw = [event.title, event.location, fetched.page_title, fetched.page_excerpt, fetched.final_url]
+  const raw = [event.title, event.location, fetched.page_title, fetched.invite_excerpt, fetched.summary, fetched.pageText, fetched.final_url]
     .filter(Boolean)
     .join(' \n ')
     .toLowerCase();
 
-  if (/at capacity|sold out|waitlist only|fully booked|no longer accepting/i.test(raw)) {
+  if (/at capacity|sold out|waitlist only|fully booked|no longer accepting|space is limited and full/.test(raw)) {
     return {
       openness: 'Full / closed',
       exclusivity: 'N/A',
@@ -111,37 +250,27 @@ function classifyAccess(event, fetched = {}) {
     };
   }
 
-  if (/\bvip\b|executive|founder|ciso|roundtable|register to see address|register to unlock location|private address/.test(raw)
-      && !/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
+  if (/approval required|invite-only|strictly limited capacity|manually reviewed|select group|private event/.test(raw)) {
     return {
       openness: 'Curated guest list',
       exclusivity: 'High',
-      rationale: 'VIP / executive / private-address signals a screened guest list.',
+      rationale: 'The page explicitly says approval, invite-only, or a small curated guest list.',
     };
   }
 
-  if (/request an invite|request invite|invite only|apply|approval/.test(raw)
-      && !/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
+  if (/request an invite|request invite|request to join|request an invitation|apply/.test(raw)) {
     return {
       openness: 'Request invite',
       exclusivity: 'Medium',
-      rationale: 'Invite-style flow: not fully open, but not ultra-exclusive either.',
+      rationale: 'There is an invite/request flow rather than instant registration.',
     };
   }
 
-  if (/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
+  if (/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|save your spot today|register below|register now|register today|rsvp today|public event/.test(raw)) {
     return {
       openness: 'Open RSVP',
       exclusivity: 'Low',
-      rationale: 'Very inclusive language: feels easy to drop into rather than screened.',
-    };
-  }
-
-  if (/eventbrite|ticket|register now|save your spot|register here/.test(raw)) {
-    return {
-      openness: 'Open RSVP',
-      exclusivity: 'Low',
-      rationale: 'Looks like normal public registration.',
+      rationale: 'The page reads like normal registration, not approval-only screening.',
     };
   }
 
@@ -149,7 +278,15 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Likely open RSVP',
       exclusivity: 'Low-medium',
-      rationale: 'Usually fairly open, though approval can still happen case by case.',
+      rationale: 'The Luma page is public and does not clearly say approval is required.',
+    };
+  }
+
+  if (/eventbrite|ticket|register here/.test(raw)) {
+    return {
+      openness: 'Open RSVP',
+      exclusivity: 'Low',
+      rationale: 'Looks like a standard public registration flow.',
     };
   }
 
@@ -157,7 +294,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Probably curated',
       exclusivity: 'Medium-high',
-      rationale: 'Seems somewhat gated, so approval is probably more controlled.',
+      rationale: 'The landing page is gated, so details are limited and registration may be more controlled.',
     };
   }
 
@@ -169,53 +306,41 @@ function classifyAccess(event, fetched = {}) {
 }
 
 function classifyAudience(event, fetched = {}) {
-  const raw = [event.title, event.sponsor, event.location, fetched.page_title, fetched.page_excerpt]
+  const raw = [event.title, event.sponsor, event.location, fetched.summary, fetched.invite_excerpt, fetched.page_title]
     .filter(Boolean)
     .join(' \n ')
     .toLowerCase();
 
-  if (/sres?|platform engineers?|google cloud experts?|builders?/.test(raw)) {
-    return {
-      label: 'Broad technical / cloud practitioners',
-      rationale: 'The invite explicitly calls out builders and cloud practitioners.',
-    };
-  }
-
   const rules = [
     {
-      match: /\bciso\b|security pros|security leader|cybersecurity leader|secops|threat intel|wiz|crowdstrike|fortinet|sentinelone|netskope|zscaler|menlo security|xm cyber|infoblox/,
-      label: 'Security leaders / practitioners',
-      rationale: 'Security-heavy hosts and language point to security buyers, leaders, or operators.',
-    },
-    {
-      match: /sre|platform engineers?|google cloud experts?|developers?|devops|kube|mcp|baseten|chronosphere|dagster|langchain|mongodb|confluent|redis|clickhouse|neo4j|yugabyte/,
-      label: 'Broad technical / cloud practitioners',
-      rationale: 'The invite calls out builders and cloud practitioners more than buyers or executives.',
-    },
-    {
-      match: /finops|finout|nops|prosperops|cloud cost|doit/,
-      label: 'FinOps / cloud economics',
-      rationale: 'Centered on cloud spend, optimization, or financial operations.',
-    },
-    {
-      match: /women in tech|innovathers|veterans|career transition|meetup/,
+      match: /women in tech|innovathers|veterans|career transition|meetup|community legends/,
       label: 'Community / affinity group',
-      rationale: 'Reads as community / affinity-group oriented.',
+      rationale: 'Reads as a community or affinity-group meetup more than a generic mixer.',
     },
     {
-      match: /founder|saas startup|startup|venture|executive|vip|leader|leaders|roundtable|dinner|private|exclusive/,
+      match: /ciso|security pros|security leader|cybersecurity|secops|threat|fortinet|crowdstrike|sentinelone|netskope|zscaler|menlo security|xm cyber|infoblox|wiz/,
+      label: 'Security leaders / practitioners',
+      rationale: 'Security-heavy hosts and wording point to security teams, leaders, or buyers.',
+    },
+    {
+      match: /finops|cloud economics|cloud spend|cost optimization|prosperops|finout|nops|doit|archera/,
+      label: 'FinOps / cloud economics',
+      rationale: 'The event language is centered on cloud cost, savings, or FinOps people.',
+    },
+    {
+      match: /kube|kubernetes|platform engineers?|cloud architects?|developers?|devops|sre|builders?|engineers?|cloud native|langchain|confluent|mongodb|redis|clickhouse|neo4j|dagster|baseten|chronosphere|yugabyte|mcp/,
+      label: 'Broad technical / cloud practitioners',
+      rationale: 'This reads like a technical cloud crowd rather than a pure exec or sales room.',
+    },
+    {
+      match: /founder|cto|executive|leaders?|buyers?|roundtable|dinner|private event|select group|smbs|retail leaders/,
       label: 'Executives / curated buyers',
-      rationale: 'Skews executive / buyer / curated-business rather than broad drop-in traffic.',
+      rationale: 'The wording skews toward executives, founders, or a smaller buyer-style audience.',
     },
     {
-      match: /happy hour|house party|after party|welcome party|reception|drinks|social|sushi social/,
+      match: /happy hour|after party|reception|cocktails|social|drinks|networking|welcome party|house party/,
       label: 'Broad networking crowd',
-      rationale: 'Feels like broad networking rather than a narrow niche crowd.',
-    },
-    {
-      match: /drop in anytime|free play mode|all are welcome|everyone welcome|before hotel check-in|early arrivals/,
-      label: 'Broad / inclusive conference crowd',
-      rationale: 'The language is notably inclusive and drop-in friendly, not selective.',
+      rationale: 'This sounds like a general networking mixer rather than a tightly defined niche audience.',
     },
   ];
 
@@ -230,41 +355,41 @@ function classifyAudience(event, fetched = {}) {
 }
 
 function describeFood(event, fetched = {}) {
-  const raw = [event.title, event.location, fetched.page_title, fetched.page_excerpt]
+  const raw = [event.title, event.location, fetched.summary, fetched.invite_excerpt, fetched.page_title, fetched.pageText]
     .filter(Boolean)
     .join(' \n ');
   const lower = compact(raw).toLowerCase();
 
   const explicitEntries = [
     {
-      match: /coffee[^a-z]|coffee\s*\+|coffee •|snacks|lunch on us|happy hour.*drinks|drinks, music|coffee \+ arrival|power-up lunch/,
+      match: /coffee|snacks|lunch on us|open bar|free drinks|appetizers|refreshments|great food|delicious food/,
       label: 'Food and drinks clearly provided',
-      note: 'The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event.',
+      note: 'The page explicitly promises food, drinks, or both.',
     },
     {
-      match: /\bdinner\b|wine & dine|sunset dinner|executive dinner|roundtable dinner|steakhouse/,
+      match: /\bdinner\b|wine & dine|sunset dinner|executive dinner|roundtable dinner/,
       label: 'Dinner likely',
-      note: 'The invite explicitly says dinner, so odds of a real meal are much better than usual.'
+      note: 'The event explicitly says dinner, so meal odds are much better than average.',
     },
     {
       match: /breakfast/,
       label: 'Breakfast likely',
-      note: 'Explicit breakfast event, not just coffee.'
+      note: 'Explicit breakfast event, not just coffee.',
     },
     {
       match: /lunch|lunch & learn|cto lunch/,
       label: 'Lunch likely',
-      note: 'Explicit lunch signal, which matters more than the venue name.'
+      note: 'Explicit lunch signal, which matters more than the venue name.',
     },
     {
-      match: /sushi/,
+      match: /sushi|japanese restaurant/,
       label: 'Sushi / Japanese food likely',
-      note: 'The invite itself mentions sushi, which is stronger evidence than the venue alone.'
+      note: 'Sushi or Japanese food is explicitly part of the pitch.',
     },
     {
-      match: /aperitifs|martinis|cocktail|cocktail reception|happy hour|drinks|after party|house party|reception/,
+      match: /bites|passed bites|cocktails|martinis|aperitifs|happy hour|drinks|after party|reception/,
       label: 'Drinks-first, food secondary',
-      note: 'Sounds drinks-led, so expect light bites or passed food more than a dependable meal.'
+      note: 'Reads like a drinks-led reception; food is probably lighter than a real meal.',
     },
   ];
 
@@ -276,52 +401,37 @@ function describeFood(event, fetched = {}) {
     {
       match: /kumi/,
       label: 'Japanese / sushi likely',
-      note: 'Japanese food is plausible, but still not a guaranteed full meal; many events there stay reception-style.'
+      note: 'Japanese food is plausible, but still may be reception-style rather than a full dinner.',
     },
     {
       match: /bourbon steak|stripsteak|tender steakhouse/,
       label: 'Dinner maybe, but not guaranteed',
-      note: 'Better dinner odds than average, but still could be standing reception food unless the invite explicitly says dinner.'
+      note: 'Better dinner odds than average, but many conference events there are still standing receptions.',
     },
     {
       match: /border grill/,
       label: 'Mexican / shared plates likely',
-      note: 'Mexican / shared-plate food is plausible, but still likely event-style rather than guaranteed sit-down dinner.'
+      note: 'Mexican food is plausible here, though still not guaranteed to be a full sit-down meal.',
     },
     {
       match: /libertine social/,
       label: 'Gastropub / cocktail bites likely',
-      note: 'Expect cocktails and passed bites more than a formal seated meal.'
+      note: 'Expect cocktails and event-style bites more than a formal dinner.',
     },
     {
       match: /house of blues/,
       label: 'Bar food / comfort food maybe',
-      note: 'More bar-food territory than fine dining, but still probably reception-style.'
+      note: 'More bar-food territory than fine dining, but still probably reception-style.',
     },
     {
       match: /hakkasan|marquee nightclub|chandelier bar|clique|hazel lounge|skyfall lounge/,
       label: 'Drinks-first, food unclear',
-      note: 'More nightlife than dinner plan. Eat beforehand unless the invite explicitly promises food.'
+      note: 'These skew nightlife-first, so food is secondary unless the page explicitly promises it.',
     },
     {
-      match: /swingers|topgolf|play playground|f1 arcade|f1 grand prix plaza|tailgate beach club/,
+      match: /swingers|topgolf|play playground|f1 arcade|f1 grand prix plaza|tailgate beach club|dream racing/,
       label: 'Snacks / party food likely',
-      note: 'Usually drinks plus snackable event food, not a memorable meal.'
-    },
-    {
-      match: /eiffel tower restaurant|cascata golf club/,
-      label: 'Dinner maybe, stronger odds',
-      note: 'A fuller meal is more plausible here, but the invite wording still matters more than the location name.'
-    },
-    {
-      match: /1923 prohibition bar/,
-      label: 'Cocktails first, light bites maybe',
-      note: 'Drinks and atmosphere first; food is secondary unless the invite says dinner.'
-    },
-    {
-      match: /register to see address|register to unlock location/,
-      label: 'Food unknown until approved',
-      note: 'Private-address events are opaque, so don’t assume a meal standard from the listing alone.'
+      note: 'Usually drinks plus snackable event food, not a meal worth planning around.',
     },
   ];
 
@@ -331,7 +441,7 @@ function describeFood(event, fetched = {}) {
 
   return {
     label: 'Food unclear',
-    note: 'Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one.'
+    note: 'The page does not make the food situation clear enough to rely on.',
   };
 }
 
@@ -340,116 +450,71 @@ function describeVenue(location = '') {
   const lower = raw.toLowerCase();
 
   const entries = [
-    {
-      match: /hakkasan night?club|hakkasan/,
-      vibe: 'Big Vegas flex',
-      note: 'Classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Great for spectacle, bad for easy conversation.',
-    },
-    {
-      match: /marquee nightclub/,
-      vibe: 'Big Vegas flex',
-      note: 'Obvious status venue with wow factor, but not a low-key networking spot.',
-    },
-    {
-      match: /chandelier bar/,
-      vibe: 'Stylish Vegas',
-      note: 'Visually memorable and very Vegas-chic: good for “cool photo” energy even if it is not very private.',
-    },
-    {
-      match: /eiffel tower restaurant/,
-      vibe: 'Fancy destination dinner',
-      note: 'Wins on novelty and skyline views. More special than a random hotel bar, but also more curated and dinner-ish.',
-    },
-    {
-      match: /f1 arcade|f1 grand prix plaza|swingers|topgolf|play playground|dream racing/,
-      vibe: 'Activity venue',
-      note: 'Good for memorable activity energy; worse for intimate conversation.',
-    },
-    {
-      match: /cascata golf club/,
-      vibe: 'Fancy off-site dinner',
-      note: 'Feels more special than another casino restaurant: polished, off-site, and executive-dinner friendly, but less spontaneous.',
-    },
-    {
-      match: /house of blues courtyard/,
-      vibe: 'Outdoor concert-adjacent',
-      note: 'Gets some of the House of Blues energy without feeling like another windowless hotel room. Better atmosphere than a generic reception.',
-    },
-    {
-      match: /house of blues/,
-      vibe: 'Lively and scalable',
-      note: 'Recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow.',
-    },
-    {
-      match: /1923 prohibition bar|clique|hazel lounge|bourbon steak|stripsteak|border grill|libertine social|kumi/,
-      vibe: 'Nice hotel venue',
-      note: 'Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive.',
-    },
-    {
-      match: /skyfall lounge/,
-      vibe: 'Great views',
-      note: 'Mostly about the views. Better backdrop than a generic bar, and more memorable for a happy hour.',
-    },
-    {
-      match: /tailgate beach club/,
-      vibe: 'Playful outdoor-ish',
-      note: 'More playful and casual than a boardroom dinner, which makes it feel friendlier than the usual executive reception formula.',
-    },
-    {
-      match: /industrial/,
-      vibe: 'Off-strip scene',
-      note: 'Off-strip warehouse/event-space vibe: cooler and more intentional than another casino bar, but less convenient.',
-    },
-    {
-      match: /register to see address|register to unlock location/,
-      vibe: 'Hidden / curated',
-      note: 'Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not.',
-    },
+    { match: /hakkasan|marquee nightclub/, vibe: 'Big Vegas flex', note: 'Flashy, loud, high-spectacle Vegas venue; great for buzz, worse for easy conversation.' },
+    { match: /chandelier bar/, vibe: 'Stylish Vegas', note: 'Memorable Vegas-chic backdrop, more stylish than private.' },
+    { match: /eiffel tower restaurant/, vibe: 'Fancy destination dinner', note: 'Novelty/views make it feel more special than a generic hotel bar.' },
+    { match: /f1 arcade|f1 grand prix plaza|swingers|topgolf|play playground|dream racing/, vibe: 'Activity venue', note: 'Memorable activity energy, but not ideal for quiet conversation.' },
+    { match: /cascata golf club/, vibe: 'Fancy off-site dinner', note: 'Polished off-site setting that feels more intentional than another casino venue.' },
+    { match: /house of blues courtyard/, vibe: 'Outdoor concert-adjacent', note: 'Better atmosphere than a generic ballroom or hotel lounge.' },
+    { match: /house of blues/, vibe: 'Lively and scalable', note: 'Recognizable live-music venue with actual night-out energy.' },
+    { match: /1923 prohibition bar|clique|hazel lounge|bourbon steak|stripsteak|border grill|libertine social|kumi/, vibe: 'Nice hotel venue', note: 'Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive.' },
+    { match: /skyfall lounge/, vibe: 'Great views', note: 'Mostly about the views; more memorable than a generic bar.' },
+    { match: /tailgate beach club/, vibe: 'Playful outdoor-ish', note: 'Casual, playful energy instead of boardroom-dinner formality.' },
+    { match: /industrial/, vibe: 'Off-strip scene', note: 'Off-strip warehouse/event-space vibe: cooler and more intentional than another casino bar.' },
+    { match: /register to see address|register to unlock location/, vibe: 'Hidden / curated', note: 'Hidden address usually means either exclusivity or a small private venue.' },
   ];
 
   for (const entry of entries) {
     if (entry.match.test(lower)) return entry;
   }
 
-  if (/mandalay bay|luxor|cosmopolitan|mgm grand|paris hotel|caesars palace/.test(lower)) {
+  if (/mandalay bay|luxor|cosmopolitan|mgm grand|paris hotel|caesars palace|w hotel/.test(lower)) {
     return {
       vibe: 'Convenient hotel spot',
-      note: 'Convenient and easy to attend, but usually less distinctive than an off-property destination venue.',
+      note: 'Easy to attend, but usually less distinctive than an off-property destination.',
     };
   }
 
   return {
     vibe: 'Unknown vibe',
-    note: 'Not in the current venue-note map yet; check the original listing for the exact draw.',
+    note: 'Not enough location signal for a better venue note yet.',
   };
 }
 
 async function fetchLandingMeta(url) {
-  if (!url) return { status: null, final_url: '', page_title: '', page_excerpt: '' };
+  if (!url) return { status: null, final_url: '', page_title: '', metaDescription: '', blocks: [], pageText: '' };
   try {
     const response = await fetch(url, {
       redirect: 'follow',
       headers: {
-        'user-agent': 'Mozilla/5.0 (compatible; GoogleNextPartiesIndexer/1.1; +https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape)',
+        'user-agent': 'Mozilla/5.0 (compatible; GoogleNextPartiesIndexer/1.2; +https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape)',
       },
     });
-    const text = await response.text();
-    const title = extractTitle(text);
-    const metaDescription = extractMetaDescription(text);
-    const readableBody = extractReadableBodyText(text);
-    const excerpt = sanitizeExcerpt([metaDescription, readableBody].filter(Boolean).join(' '));
+    const html = await response.text();
+    const title = extractTitle(html);
+    const metaDescription = extractMetaDescription(html);
+    const blocks = extractReadableBlocks(html);
+    const fallbackText = sanitizeExcerpt(extractReadableBodyTextFallback(html));
+    const pageText = stripBoilerplate(compact((blocks.length ? blocks.map((b) => b.text).join(' ') : fallbackText))).slice(0, 2500);
+    const legacy_excerpt = sanitizeExcerpt([metaDescription, fallbackText].filter(Boolean).join(' '));
     return {
       status: response.status,
       final_url: sanitizeUrl(response.url),
       page_title: title,
-      page_excerpt: excerpt,
+      metaDescription,
+      blocks,
+      pageText,
+      legacy_excerpt,
     };
   } catch (error) {
     return {
       status: null,
       final_url: url,
       page_title: '',
-      page_excerpt: '',
+      metaDescription: '',
+      blocks: [],
+      pageText: '',
+      legacy_excerpt: '',
       fetch_error: error.message,
     };
   }
@@ -457,18 +522,29 @@ async function fetchLandingMeta(url) {
 
 async function enrichEvent(event) {
   const fetched = await fetchLandingMeta(event.url);
-  const access = classifyAccess(event, fetched);
-  const audience = classifyAudience(event, fetched);
-  const food = describeFood(event, fetched);
+  const invite_excerpt = chooseInviteExcerpt(fetched, event);
+  const summary = summarizeEvent(event, { ...fetched, invite_excerpt });
+  const access = classifyAccess(event, { ...fetched, invite_excerpt, summary });
+  const audience = classifyAudience(event, { ...fetched, invite_excerpt, summary });
+  const food = describeFood(event, { ...fetched, invite_excerpt, summary });
   const venue = describeVenue(event.location);
+
   return {
     ...event,
+    summary,
+    invite_excerpt,
     access,
     audience,
     food,
     venue,
-    invite_excerpt: deriveInviteExcerpt(fetched.page_excerpt, event.title),
-    link_meta: fetched,
+    link_meta: {
+      status: fetched.status,
+      final_url: fetched.final_url,
+      page_title: fetched.page_title,
+      page_excerpt: fetched.pageText,
+      top_blocks: fetched.blocks.map(({ text, score }) => ({ text: text.slice(0, 320), score })),
+      fetch_error: fetched.fetch_error,
+    },
   };
 }
 
@@ -523,7 +599,7 @@ function parseConferenceParties(html) {
 async function main() {
   const response = await fetch(SOURCE_URL, {
     headers: {
-      'user-agent': 'Mozilla/5.0 (compatible; GoogleNextPartiesIndexer/1.1; +https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape)',
+      'user-agent': 'Mozilla/5.0 (compatible; GoogleNextPartiesIndexer/1.2; +https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape)',
     },
   });
   if (!response.ok) throw new Error(`Failed to fetch ${SOURCE_URL}: ${response.status}`);
