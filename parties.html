@@ -91,20 +91,25 @@
       color: var(--gray-800);
     }
     .filters {
-      display: flex;
+      display: grid;
       gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
       margin-bottom: 14px;
+    }
+    .filter-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .filter-pill {
       border: 1.5px solid var(--gray-200);
       background: white;
       color: var(--gray-800);
       border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.83rem;
+      padding: 6px 10px;
+      font-size: 0.8rem;
       cursor: pointer;
+      line-height: 1.1;
     }
     .filter-pill:hover {
       border-color: var(--blue);
@@ -119,16 +124,16 @@
       border: none;
       background: none;
       color: var(--blue);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       cursor: pointer;
-      padding: 6px 4px;
+      padding: 4px 2px;
     }
     .clear-btn:hover { text-decoration: underline; }
     .active-filters {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .active-filter {
       display: inline-flex;
@@ -165,7 +170,7 @@
     }
     .event {
       display: grid;
-      grid-template-columns: 115px 160px 1fr 180px 110px;
+      grid-template-columns: 140px 160px 1fr 220px;
       gap: 14px;
       padding: 14px 18px;
       border-top: 1px solid var(--gray-200);
@@ -217,16 +222,6 @@
       line-height: 1.45;
       color: var(--gray-800);
     }
-    .summary-note {
-      margin-top: 10px;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: var(--gray-800);
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-radius: 12px;
-      padding: 10px 12px;
-    }
     footer {
       max-width: 1100px;
       margin: 0 auto 32px;
@@ -266,14 +261,6 @@
   <div class="rainbow-bar"></div>
 
   <main>
-    <div class="notice">
-      <strong>Source credit:</strong> these party listings are indexed from
-      <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">ConferenceParties.com’s Google Cloud Next 26 page</a>.
-      This page is just a cleaner browseable copy with update metadata. RSVP details may change; check the source/original event page before relying on any listing.
-      The RSVP access, likely audience, food/drink expectations, and venue-vibe notes are heuristic annotations from the linked landing pages and event wording, with venue used only as fallback context.
-      In particular, a steakhouse or nice restaurant does <em>not</em> automatically mean a full dinner — many conference parties are still drinks-and-standing-food unless the invite explicitly says breakfast, lunch, dinner, sushi, cocktails, etc.
-    </div>
-
     <div class="stats" id="stats"></div>
     <div class="filters" id="filters"></div>
     <div class="active-filters" id="active-filters"></div>
@@ -281,6 +268,14 @@
   </main>
 
   <footer>
+    <p>
+      Source credit: these party listings are indexed from
+      <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">ConferenceParties.com’s Google Cloud Next 26 page</a>.
+      This page is just a cleaner browseable copy with update metadata. RSVP details may change; check the source/original event page before relying on any listing.
+    </p>
+    <p>
+      The RSVP access, likely audience, food/drink expectations, and venue-vibe notes are heuristic annotations from the linked landing pages and event wording, with venue used only as fallback context. In particular, a steakhouse or nice restaurant does not automatically mean a full dinner — many conference parties are still drinks-and-standing-food unless the invite explicitly says breakfast, lunch, dinner, sushi, cocktails, etc.
+    </p>
     <p>
       Built from a refreshable JSON snapshot in this repo. If the source page changes format, the importer may need a small parser update.
     </p>
@@ -319,6 +314,13 @@
       };
     }
 
+    function shortDayLabel(label = '') {
+      const match = String(label).match(/^(\w+)\s+-\s+(\w+)\s+(\d{1,2}),\s+(\d{4})$/);
+      if (!match) return label;
+      const [, weekday, month, day] = match;
+      return `${weekday.slice(0,3)} ${month.slice(0,3)} ${day}`;
+    }
+
     function toggleFilter(key, value) {
       filterState[key] = filterState[key] === value ? '' : value;
       render(window.__partyData);
@@ -347,8 +349,8 @@
       ];
 
       filtersEl.innerHTML = defs.map(([key, label, values]) => `
-        <div>
-          <div class="label" style="margin-bottom:6px">${esc(label)}</div>
+        <div class="filter-group">
+          <div class="label" style="margin-bottom:0;min-width:88px">${esc(label)}</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             ${values.map((value) => `<button class="filter-pill ${filterState[key] === value ? 'active' : ''}" type="button" data-filter-key="${esc(key)}" data-filter-value="${esc(value)}">${esc(value)}</button>`).join('')}
           </div>
@@ -406,16 +408,15 @@
 
       app.innerHTML = filteredDays.map((day) => `
         <section class="day">
-          <h2>${esc(day.label)} · ${esc(day.events?.length ?? 0)} events</h2>
+          <h2>${esc(shortDayLabel(day.label))} · ${esc(day.events?.length ?? 0)} events</h2>
           <div class="events">
             ${(day.events || []).map((event) => `
               <article class="event">
-                <div><div class="label">When</div><div class="value">${esc(day.label)}\n${esc(event.time)}</div></div>
-                <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
+                <div><div class="label">When</div><div class="value">${esc(shortDayLabel(day.label))} · ${esc(event.time)}</div></div>
+                <div><div class="label">Host</div><div class="value">${esc(event.sponsor)}</div></div>
                 <div>
                   <div class="label">Event</div>
                   <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
-                  <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Venue vibe: ${esc(event.venue?.vibe || 'Venue unclear')}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
                   <div style="margin-top:10px">
                     <div class="label">Open invite</div>
                     ${clickableBadge('openness', event.access?.openness || 'Unclear', badgeClass(event.access?.openness || ''))}
@@ -437,15 +438,18 @@
                   </div>
                 </div>
                 <div>
-                  <div class="label">Location</div>
-                  <div class="value">${esc(event.location)}</div>
+                  <div class="label">At</div>
+                  <div class="value"><strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? `\n${esc(splitLocation(event.location).area)}` : ''}</div>
                   <div style="margin-top:10px">
                     <div class="label">Venue vibe</div>
                     ${clickableBadge('vibe', event.venue?.vibe || 'Venue')}
                     <div class="meta-note">${esc(event.venue?.note || '')}</div>
                   </div>
+                  <div style="margin-top:10px">
+                    <div class="label">Listed</div>
+                    <div class="value">${esc(event.listed)}</div>
+                  </div>
                 </div>
-                <div><div class="label">Listed</div><div class="value">${esc(event.listed)}</div></div>
               </article>
             `).join('')}
           </div>

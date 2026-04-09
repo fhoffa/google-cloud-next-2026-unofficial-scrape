@@ -84,7 +84,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Full / closed',
       exclusivity: 'N/A',
-      rationale: 'The listing or landing page suggests the event is already full or no longer openly taking registrations.',
+      rationale: 'Looks full or no longer taking registrations.',
     };
   }
 
@@ -92,7 +92,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Curated guest list',
       exclusivity: 'High',
-      rationale: 'Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list.',
+      rationale: 'VIP / executive / private-address signals a screened guest list.',
     };
   }
 
@@ -100,7 +100,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Request invite',
       exclusivity: 'Medium',
-      rationale: 'The page uses invite-style language, so this is not fully open even if many people may still get approved.',
+      rationale: 'Invite-style flow: not fully open, but not ultra-exclusive either.',
     };
   }
 
@@ -108,7 +108,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Open RSVP',
       exclusivity: 'Low',
-      rationale: 'The RSVP flow looks closer to normal public registration than a screened guest-list flow.',
+      rationale: 'Looks like normal public registration.',
     };
   }
 
@@ -116,7 +116,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Likely open RSVP',
       exclusivity: 'Low-medium',
-      rationale: 'Luma links are often fairly open, though approval can still happen case by case.',
+      rationale: 'Usually fairly open, though approval can still happen case by case.',
     };
   }
 
@@ -124,14 +124,14 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Probably curated',
       exclusivity: 'Medium-high',
-      rationale: 'The landing page is behind some gating/anti-bot layer, which often correlates with a more controlled RSVP flow, but this is not definitive.',
+      rationale: 'Seems somewhat gated, so approval is probably more controlled.',
     };
   }
 
   return {
     openness: 'Unclear',
     exclusivity: 'Unclear',
-    rationale: 'Not enough signal from the listing and landing page to confidently classify the RSVP flow.',
+    rationale: 'Not enough signal to classify confidently.',
   };
 }
 
@@ -145,32 +145,32 @@ function classifyAudience(event, fetched = {}) {
     {
       match: /\bciso\b|security pros|security leader|cybersecurity leader|secops|threat intel|wiz|crowdstrike|fortinet|sentinelone|netskope|zscaler|menlo security|xm cyber|infoblox/,
       label: 'Security leaders / practitioners',
-      rationale: 'Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd.',
+      rationale: 'Security-heavy hosts and language point to security buyers, leaders, or operators.',
     },
     {
       match: /women in tech|innovathers|veterans|career transition|community celebration|meetup/,
       label: 'Community / affinity group',
-      rationale: 'The event framing looks community-oriented rather than purely executive or sales-led.',
+      rationale: 'Reads as community / affinity-group oriented.',
     },
     {
       match: /developer|devops|kube|platform engineering|mcp|github|baseten|chronosphere|dagster|langchain|mongodb|confluent|redis|clickhouse|neo4j|yugabyte/,
       label: 'Technical builders',
-      rationale: 'The wording and hosts point toward developers, platform engineers, or hands-on technical attendees.',
+      rationale: 'Feels aimed at developers, platform engineers, or other hands-on technical attendees.',
     },
     {
       match: /finops|finout|nops|prosperops|cloud cost|doit/,
       label: 'FinOps / cloud economics',
-      rationale: 'The event language is centered on cloud spend, optimization, or financial operations.',
+      rationale: 'Centered on cloud spend, optimization, or financial operations.',
     },
     {
       match: /founder|saas startup|startup|venture|executive|vip|leader|leaders|roundtable|dinner|private|exclusive/,
       label: 'Executives / curated buyers',
-      rationale: 'The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd.',
+      rationale: 'Skews executive / buyer / curated-business rather than broad drop-in traffic.',
     },
     {
       match: /happy hour|house party|after party|welcome party|reception|drinks|social|sushi social/,
       label: 'Broad networking crowd',
-      rationale: 'This reads like a general networking/social event rather than a tightly filtered niche audience.',
+      rationale: 'Feels like broad networking rather than a narrow niche crowd.',
     },
   ];
 
@@ -180,7 +180,7 @@ function classifyAudience(event, fetched = {}) {
 
   return {
     label: 'General conference crowd',
-    rationale: 'Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event.',
+    rationale: 'Looks like a general conference-side networking event.',
   };
 }
 
@@ -194,17 +194,17 @@ function describeFood(event, fetched = {}) {
     {
       match: /\bdinner\b|wine & dine|sunset dinner|executive dinner|roundtable dinner|steakhouse/,
       label: 'Dinner likely',
-      note: 'The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception.'
+      note: 'The invite explicitly says dinner, so odds of a real meal are much better than usual.'
     },
     {
       match: /breakfast/,
       label: 'Breakfast likely',
-      note: 'The event is explicitly framed as breakfast, so expect morning food rather than just coffee.'
+      note: 'Explicit breakfast event, not just coffee.'
     },
     {
       match: /lunch|lunch & learn|cto lunch/,
       label: 'Lunch likely',
-      note: 'The invite explicitly says lunch, which is a much stronger signal than the venue name.'
+      note: 'Explicit lunch signal, which matters more than the venue name.'
     },
     {
       match: /sushi/,
@@ -214,7 +214,7 @@ function describeFood(event, fetched = {}) {
     {
       match: /aperitifs|martinis|cocktail|cocktail reception|happy hour|drinks|after party|house party|reception/,
       label: 'Drinks-first, food secondary',
-      note: 'The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal.'
+      note: 'Sounds drinks-led, so expect light bites or passed food more than a dependable meal.'
     },
   ];
 
@@ -226,52 +226,52 @@ function describeFood(event, fetched = {}) {
     {
       match: /kumi/,
       label: 'Japanese / sushi likely',
-      note: 'Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner.'
+      note: 'Japanese food is plausible, but still not a guaranteed full meal; many events there stay reception-style.'
     },
     {
       match: /bourbon steak|stripsteak|tender steakhouse/,
       label: 'Dinner maybe, but not guaranteed',
-      note: 'Steakhouse venue improves the odds of substantial food, but conference events there can still be standing receptions or appetizer-heavy formats unless the invite explicitly says dinner.'
+      note: 'Better dinner odds than average, but still could be standing reception food unless the invite explicitly says dinner.'
     },
     {
       match: /border grill/,
       label: 'Mexican / shared plates likely',
-      note: 'Venue suggests Mexican / shared-plate food, but likely still in event format rather than a guaranteed sit-down meal.'
+      note: 'Mexican / shared-plate food is plausible, but still likely event-style rather than guaranteed sit-down dinner.'
     },
     {
       match: /libertine social/,
       label: 'Gastropub / cocktail bites likely',
-      note: 'Expect upscale bar food, cocktails, and passed bites more than a formal seated meal.'
+      note: 'Expect cocktails and passed bites more than a formal seated meal.'
     },
     {
       match: /house of blues/,
       label: 'Bar food / comfort food maybe',
-      note: 'House of Blues points toward drinks plus comfort-food territory, but the actual format may still skew reception-style.'
+      note: 'More bar-food territory than fine dining, but still probably reception-style.'
     },
     {
       match: /hakkasan|marquee nightclub|chandelier bar|clique|hazel lounge|skyfall lounge/,
       label: 'Drinks-first, food unclear',
-      note: 'This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food.'
+      note: 'More nightlife than dinner plan. Eat beforehand unless the invite explicitly promises food.'
     },
     {
       match: /swingers|topgolf|play playground|f1 arcade|f1 grand prix plaza|tailgate beach club/,
       label: 'Snacks / party food likely',
-      note: 'Activity venues usually mean drinks plus snackable event food, not a memorable meal.'
+      note: 'Usually drinks plus snackable event food, not a memorable meal.'
     },
     {
       match: /eiffel tower restaurant|cascata golf club/,
       label: 'Dinner maybe, stronger odds',
-      note: 'These venues make a fuller meal more plausible than a random happy hour, but the invite wording still matters more than the location name.'
+      note: 'A fuller meal is more plausible here, but the invite wording still matters more than the location name.'
     },
     {
       match: /1923 prohibition bar/,
       label: 'Cocktails first, light bites maybe',
-      note: 'Speakeasy-style venues usually lead with drinks and atmosphere; food is often secondary unless the invite says dinner.'
+      note: 'Drinks and atmosphere first; food is secondary unless the invite says dinner.'
     },
     {
       match: /register to see address|register to unlock location/,
       label: 'Food unknown until approved',
-      note: 'Private-address events are opaque by design, so you should not assume a meal standard from the listing alone.'
+      note: 'Private-address events are opaque, so don’t assume a meal standard from the listing alone.'
     },
   ];
 
@@ -281,7 +281,7 @@ function describeFood(event, fetched = {}) {
 
   return {
     label: 'Food unclear',
-    note: 'This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one.'
+    note: 'Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one.'
   };
 }
 
@@ -293,67 +293,67 @@ function describeVenue(location = '') {
     {
       match: /hakkasan night?club|hakkasan/,
       vibe: 'Big Vegas flex',
-      note: 'Hakkasan is a classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Cool if you want spectacle; bad if you want easy conversation.',
+      note: 'Classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Great for spectacle, bad for easy conversation.',
     },
     {
       match: /marquee nightclub/,
       vibe: 'Big Vegas flex',
-      note: 'Marquee is another obvious status venue: strong wow factor, but not the place for low-key networking.',
+      note: 'Obvious status venue with wow factor, but not a low-key networking spot.',
     },
     {
       match: /chandelier bar/,
       vibe: 'Stylish Vegas',
-      note: 'The Chandelier Bar is visually memorable and very Vegas-chic, which makes it a good “cool photo” venue even if it is not super private.',
+      note: 'Visually memorable and very Vegas-chic: good for “cool photo” energy even if it is not very private.',
     },
     {
       match: /eiffel tower restaurant/,
       vibe: 'Fancy destination dinner',
-      note: 'The Eiffel Tower Restaurant wins on novelty and skyline views. Feels more special than a random hotel bar, but it is also a more curated dinner-style pick.',
+      note: 'Wins on novelty and skyline views. More special than a random hotel bar, but also more curated and dinner-ish.',
     },
     {
       match: /f1 arcade|f1 grand prix plaza|swingers|topgolf|play playground|dream racing/,
       vibe: 'Activity venue',
-      note: 'Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy.',
+      note: 'Good for memorable activity energy; worse for intimate conversation.',
     },
     {
       match: /cascata golf club/,
       vibe: 'Fancy off-site dinner',
-      note: 'Cascata feels more special than another casino restaurant because it is a destination-style off-site club setting. Nice if you want a polished executive dinner, less spontaneous because of the travel overhead.',
+      note: 'Feels more special than another casino restaurant: polished, off-site, and executive-dinner friendly, but less spontaneous.',
     },
     {
       match: /house of blues courtyard/,
       vibe: 'Outdoor concert-adjacent',
-      note: 'The courtyard gets some of the House of Blues energy without being just another windowless hotel room. Better atmosphere than a generic reception, though still very conference-adjacent.',
+      note: 'Gets some of the House of Blues energy without feeling like another windowless hotel room. Better atmosphere than a generic reception.',
     },
     {
       match: /house of blues/,
       vibe: 'Lively and scalable',
-      note: 'House of Blues is a recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow.',
+      note: 'Recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow.',
     },
     {
       match: /1923 prohibition bar|clique|hazel lounge|bourbon steak|stripsteak|border grill|libertine social|kumi/,
       vibe: 'Nice hotel venue',
-      note: 'This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues.',
+      note: 'Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive.',
     },
     {
       match: /skyfall lounge/,
       vibe: 'Great views',
-      note: 'Skyfall is cool mostly for the views. Better backdrop than a generic bar, and more memorable for a happy hour.',
+      note: 'Mostly about the views. Better backdrop than a generic bar, and more memorable for a happy hour.',
     },
     {
       match: /tailgate beach club/,
       vibe: 'Playful outdoor-ish',
-      note: 'Tailgate Beach Club is more playful and casual than a boardroom dinner, which can make it feel friendlier than the usual executive reception formula.',
+      note: 'More playful and casual than a boardroom dinner, which makes it feel friendlier than the usual executive reception formula.',
     },
     {
       match: /industrial/,
       vibe: 'Off-strip scene',
-      note: 'An off-strip warehouse/event-space vibe can feel cooler and more intentional than another casino bar, but it is less convenient for casual drop-ins.',
+      note: 'Off-strip warehouse/event-space vibe: cooler and more intentional than another casino bar, but less convenient.',
     },
     {
       match: /register to see address|register to unlock location/,
       vibe: 'Hidden / curated',
-      note: 'A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not.',
+      note: 'Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not.',
     },
   ];
 
@@ -364,13 +364,13 @@ function describeVenue(location = '') {
   if (/mandalay bay|luxor|cosmopolitan|mgm grand|paris hotel|caesars palace/.test(lower)) {
     return {
       vibe: 'Convenient hotel spot',
-      note: 'Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue.',
+      note: 'Convenient and easy to attend, but usually less distinctive than an off-property destination venue.',
     };
   }
 
   return {
     vibe: 'Unknown vibe',
-    note: 'Venue is not in the current note map yet; check the original listing for the exact draw.',
+    note: 'Not in the current venue-note map yet; check the original listing for the exact draw.',
   };
 }
 
