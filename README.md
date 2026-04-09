@@ -4,6 +4,7 @@
 
 - **Session explorer:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/
 - **Insights page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/insights.html
+- **Conference parties page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/parties.html
 
 Unofficial scraper/exporter for the Google Cloud Next 2026 session library — plus a fast browseable website for actually exploring the sessions.
 
@@ -48,6 +49,7 @@ Current site features include:
   - **Top words**
 - separate **Insights** page (`/insights.html`) with Sankey segment links back to filtered session explorer views
   - published Sankey images use contextual dated filenames like `fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_YYYYMMDD.png`
+- separate **Conference parties** page (`/parties.html`) that indexes the Google Cloud Next 2026 party list with explicit source credit back to `conferenceparties.com/next26/`
 - Top speakers view with:
   - speakers appearing in multiple sessions
   - clickable speaker names to pivot back into the main sessions view
@@ -201,6 +203,16 @@ That means after each fresh scrape:
 If this invariant is violated, downstream outputs like `insights.html`, Sankey counts, and top-level conference stats will overcount stale removed sessions.
 
 In short: the library pages already carry enough metadata to support change detection and fullness checks, but the individual session fetch still matters for publication-grade classification and derived artifacts — and classified output must always be trimmed back to the current live scrape before rebuilding published views.
+
+### Refresh conference parties index
+
+```bash
+npm run update:parties
+```
+
+This fetches the current `https://conferenceparties.com/next26/` page, parses the published party table, and writes `media/conference-parties-next26.json` for the static `parties.html` page.
+
+The repo page intentionally gives explicit source credit and links back to ConferenceParties.com rather than pretending the listings originated here.
 
 ### Refresh sanity check
 

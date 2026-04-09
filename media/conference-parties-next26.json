@@ -1,0 +1,512 @@
+{
+  "source": {
+    "name": "ConferenceParties.com",
+    "url": "https://conferenceparties.com/next26/",
+    "credit": "Party listings indexed from ConferenceParties.com"
+  },
+  "fetched_at": "2026-04-09T02:58:50.300Z",
+  "total_days": 4,
+  "total_events": 48,
+  "days": [
+    {
+      "label": "Tuesday - April 21, 2026",
+      "events": [
+        {
+          "time": "10AM–6PM",
+          "sponsor": "Striim",
+          "title": "Press Start Before Google Next Kicks Off.\nDay Zero: Data Origins - Please Register",
+          "url": "https://go2.striim.com/2026-pre-day-at-google-next",
+          "location": "Register to Unlock Location",
+          "listed": "4/8",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5:30–9:30PM",
+          "sponsor": "Founder's Mixer",
+          "title": "🍻 AI + Saas Startups Happy Hour\nRequest an Invite",
+          "url": "https://luma.com/bs579fyh",
+          "location": "Register to See Address",
+          "listed": "3/27",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5:30–10PM",
+          "sponsor": "Glean",
+          "title": "NEXT '26 Welcome Party\nRequest an Invite",
+          "url": "https://events.glean.com/next26welcomeparty",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Promevo & gPanel.io",
+          "title": "Google Next 2026 Happy Hour\nwith Promevo, gPanel, CloudM & JumpCloud\nRequest an Invite",
+          "url": "https://hubs.ly/Q046rbVL0",
+          "location": "Libertine Social\nMandalay Bay",
+          "listed": "3/11",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–9PM",
+          "sponsor": "Harness",
+          "title": "Where Innovation Meets the Blues\nRequest an Invite",
+          "url": "https://www.harness.io/events/where-innovation-meets-the-blues?utm_source=conferenceparties&utm_medium=website&utm_content=special-event",
+          "location": "House of Blues\nMandalay Bay",
+          "listed": "3/12",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "7–10PM",
+          "sponsor": "ProsperOps, Flexera,\nDash0 & Masthead",
+          "title": "Cloud Community Celebration!\nRequest an Invite",
+          "url": "https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/?utm_source=conferenceparties",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "3/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "7–11PM",
+          "sponsor": "AvePoint",
+          "title": "#AvePointRED Party\nRequest an Invite",
+          "url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party?utm_source=google-next-2026&utm_medium=events&utm_campaign=global_ai-confidence_cmp-14744-k4c2k",
+          "location": "Diablo’s Cantina\nLuxor Hotel & Casino",
+          "listed": "3/3",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "7:30PM–1AM",
+          "sponsor": "Platform Engineering,\nGoogle Cloud, Baseten\n& Chronosphere",
+          "title": "House of Kube\nRequest an Invite",
+          "url": "https://luma.com/pnj3xb0w",
+          "location": "the INDUSTRIAL\n2330 S Industrial Rd",
+          "listed": "2/20",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        }
+      ]
+    },
+    {
+      "label": "Wednesday - April 22, 2026",
+      "events": [
+        {
+          "time": "8–9AM",
+          "sponsor": "Glean",
+          "title": "Coffee & Context: AI Strategy Summit\nRequest an Invite",
+          "url": "https://events.glean.com/coffeeandcontext",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "2–4PM",
+          "sponsor": "Glean",
+          "title": "Women in Tech Meetup: Sushi & Scarves\nRequest an Invite",
+          "url": "https://events.glean.com/sushiandscarves-next26",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Thoughtworks &\nMechanical Orchard",
+          "title": "The Modernization Speakeasy\nRequest an Invite",
+          "url": "https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next",
+          "location": "1923 Prohibition Bar\nMandalay Bay",
+          "listed": "3/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5:30–8:30PM",
+          "sponsor": "Valtech & Optimizely",
+          "title": "An Exclusive Sunset Dinner at Cascata\nRequest an Invite",
+          "url": "https://www.valtech.com/events/sunset-dinner-cascata-google-next/",
+          "location": "Cascata Golf Club\nTravel from Mandalay Bay",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–9PM",
+          "sponsor": "Redis",
+          "title": "Double Stack at Google Cloud Next\nRequest an Invite",
+          "url": "https://redis.io/events/double-stack-at-google-cloud-next/",
+          "location": "F1 Grand Prix Plaza\nTurn 1 Lounge\n4400 Koval Ln",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5:30–10PM",
+          "sponsor": "Glean, Databricks & NVIDIA",
+          "title": "Sushi Social: Networking Reception\nRequest an Invite",
+          "url": "https://events.glean.com/sushisocial-next26",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "Lucid Software",
+          "title": "DevOps & Drinks at Play Playground\nRequest an Invite",
+          "url": "https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125",
+          "location": "Play Playground\nLuxor",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "ZCS",
+          "title": "ZCS Happy Hour at Google Cloud Next 2026\nRequest an Invite",
+          "url": "https://zionclouds.com/google-next-2026#nx-happy-hour-form",
+          "location": "Rí Rá Irish Pub\n3930 S Las Vegas Blvd",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "Striim, Yugabyte & Dagster",
+          "title": "AI After Hours\nRequest an Invite",
+          "url": "https://go2.striim.com/next-ai-after-hours",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "DoiT, AMD & Snowflake",
+          "title": "Fore-ward Drive: DoiT & AMD in Full Swing\nRequest an Invite",
+          "url": "https://events.doit.com/qKylDl?rt=cvLEvGmS30KHDU47HWhdyg&utm_source=doit-invite&utm_campaign=FY26-Q2-NA-GCP-DoiT%2526AMDFullSwing&utm_medium=n%252Fa&RefId=DoiT+UTM",
+          "location": "Swingers Golf\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "CISO Ventures",
+          "title": "Cybersecurity Leader Networking Dinner\nRequest an Invite",
+          "url": "https://luma.com/d45s399w",
+          "location": "Register to See Address\nMandalay Bay",
+          "listed": "4/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "Elastic & Google Cloud",
+          "title": "Sip. Search. Repeat.\nRequest an Invite",
+          "url": "https://events.elastic.co/sipsearchrepeatwithelastic",
+          "location": "Hazel Lounge\nMandalay Bay",
+          "listed": "3/31",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–8PM",
+          "sponsor": "ZoomInfo",
+          "title": "MCPs & Martinis: ZoomInfo &\nGemini Enterprise Launch Happy Hour\nRequest an Invite",
+          "url": "https://events.cdmmedia.com/ZgQZva?RefId=mktg-a-CPS",
+          "location": "Eiffel Tower Restaurant\nParis Hotel",
+          "listed": "4/2",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Sela Cloud",
+          "title": "Founder Networking Dinner\nRequest an Invite",
+          "url": "https://luma.com/ym6t0ccu",
+          "location": "Register to See Address",
+          "listed": "3/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–9:30PM",
+          "sponsor": "Commit, Wiv\n& Google Cloud",
+          "title": "Commit, WIV & Google Cloud: Wine & Dine\nExecutive Reception & F1 Race Experience\nRequest an Invite",
+          "url": "https://luma.com/q9vzbqi1",
+          "location": "F1 Arcade Las Vegas\nThe Forum Shops\nCaesars Palace",
+          "listed": "3/12",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Eon",
+          "title": "Eon's First Class Club\nRequest an Invite",
+          "url": "https://www.eon.io/event/eon-party-google-cloud-next?utm_medium=third_party&utm_source=google_next&utm_campaign=26Q1-conference-google-cloud-next&utm_content=conference_parties&utm_source_most_recent=google_next&utm_medium_most_recent=third_party&utm_campaign_most_recent=26Q1-conference-google-cloud-next&utm_content_most_recent=conference_parties",
+          "location": "Clique\nThe Cosmopolitan",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "MathCO",
+          "title": "Ai & Aperitifs\nRequest an Invite",
+          "url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
+          "location": "Bourbon Steak\nMandalay Bay",
+          "listed": "3/31",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "Canonical-Ubuntu\n& Google Cloud",
+          "title": "VIP Dinner: Building Trusted Cloud Environments\nRequest an Invite",
+          "url": "https://forms.gle/N8PS6k7Fy7UejvjYA",
+          "location": "Tender Steakhouse\nLuxor",
+          "listed": "3/19",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "7–11PM",
+          "sponsor": "GitHub",
+          "title": "The Oasis by GitHub\nRequest an Invite",
+          "url": "https://gh.io/gcn26-reception",
+          "location": "Tailgate Beach Club\nMandalay Bay",
+          "listed": "3/20",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "7:30–10:30PM",
+          "sponsor": "Onix",
+          "title": "Bollywood Nights Live:\nOnix's Google Cloud Next After Party\nRequest an Invite",
+          "url": "https://www.onixnet.com/google-next-26-after-party/",
+          "location": "House of Blues Courtyard\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "8–11PM",
+          "sponsor": "Wonderful",
+          "title": "Sorry. At Capacity\nWonderful Golf Night",
+          "url": "",
+          "location": "Topgolf MGM Grand\n4627 Koval Ln",
+          "listed": "3/22",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "8–11PM",
+          "sponsor": "Publicis Sapient",
+          "title": "Exclusive VIP Party\nRequest an Invite",
+          "url": "https://events.publicissapient.com/googlenext2026-vip-party",
+          "location": "Marquee Nightclub\nThe Cosmopolitan",
+          "listed": "3/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "8:30–11PM",
+          "sponsor": "Zencore, Domo,\nProsperOps & Foresite",
+          "title": "Our Exclusive Party!\nRequest an Invite",
+          "url": "https://zencore.dev/google-cloud-next-hh",
+          "location": "Chandelier Bar Level 1.5\nThe Cosmopolitan Lounge",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "9PM–12AM",
+          "sponsor": "Fortinet, Crowdstrike, Infoblox, Menlo Security, NetEnrich,\nOptiv, XM Cyber & Wiz",
+          "title": "Security Pros Reception\nRequest an Invite",
+          "url": "https://rsvp.withgoogle.com/events/next26-swingers",
+          "location": "Swingers\nThe Crazy Golf Club\nMandalay Bay",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "9PM–12AM",
+          "sponsor": "Insight",
+          "title": "Insight After Party\nRequest an Invite",
+          "url": "https://learn.insight.com/google-cloud-next-2026-after-party?hs_preview=QumhWrfQ-204537725622",
+          "location": "The Cove\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "9:30PM–12AM",
+          "sponsor": "ClickHouse",
+          "title": "House Party Featuring The Chainsmokers",
+          "url": "https://clickhouse.com/houseparty/google-next?utm_source=event&utm_medium=social&utm_campaign=openhouse2026&utm_content=conferenceparties",
+          "location": "Hakkasan Nightclub\nMGM Grand",
+          "listed": "2/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        }
+      ]
+    },
+    {
+      "label": "Thursday - April 23, 2026",
+      "events": [
+        {
+          "time": "7–9AM",
+          "sponsor": "Elastic & Google Cloud",
+          "title": "InnovatHERs Breakfast\nRequest an Invite",
+          "url": "https://events.elastic.co/innovathersbreakfastwithelastic",
+          "location": "Register to See Address\nW Penthouse Suite",
+          "listed": "4/7",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "12–1:30PM",
+          "sponsor": "Archera",
+          "title": "CTO Lunch - Google Next\nRequest an Invite",
+          "url": "https://luma.com/i03kjswj",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "12–2PM",
+          "sponsor": "Striim & Dagster",
+          "title": "Lunch & Learn: AI Roundtable\nRequest an Invite",
+          "url": "https://go2.striim.com/next-ai-roundtable",
+          "location": "Libertine Social\nMandalay Bay",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "4–7PM",
+          "sponsor": "Fortinet & TD SYNNEX",
+          "title": "Fortinet LATAM Closing Reception\nRequest an Invite",
+          "url": "https://fortinet.mktmo.com/googlecloud_next2026_closingreception/index.php",
+          "location": "F1 Arcade\nCaesars Palace",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "4:30–6:30PM",
+          "sponsor": "Google Cloud",
+          "title": "SMB Connect at Next'26\nRequest an Invite",
+          "url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
+          "location": "Skyfall Lounge\nW Hotel",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5–6:30PM",
+          "sponsor": "Fortinet, Crowdstrike,\nMenlo Security, Netskope,\nSentinelOne, ZScaler & Wiz",
+          "title": "Kentucky Derby Pre-Party\nRequest an Invite",
+          "url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
+          "location": "Register to See Address",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5–6:30PM",
+          "sponsor": "GrowthLoop & Tredence",
+          "title": "Retail Leaders Happy Hour\nRequest an Invite",
+          "url": "https://go.growthloop.com/next-happy-hour",
+          "location": "Stripsteak\nMandalay Bay",
+          "listed": "3/18",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Speedscale",
+          "title": "Happy Hour\nRequest an Invite",
+          "url": "https://speedscale.com/events/google-cloud-next/",
+          "location": "Flanker Kitchen\n& Sports Bar\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Neo4j & Databricks",
+          "title": "Executive Reception Happy Hour\nSwingers Crazy Golf - Request an Invite",
+          "url": "http://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
+          "location": "Swingers Crazy Golf\nMandalay Bay",
+          "listed": "3/24",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "5:30–7PM",
+          "sponsor": "MongoDB, Confluent\n& LangChain",
+          "title": "MongoDB Happy Hour\nRequest an Invite",
+          "url": "https://events.mongodb.com/googlecloudnext2026happyhour",
+          "location": "Border Grill\nMandalay Bay",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "CyberProof",
+          "title": "It's a Golf Party! - Join us at Swingers!\nRequest an Invite",
+          "url": "https://www.cyberproof.com/google-cloud-next-2026/#b-af-hero-with-media-2",
+          "location": "Swingers\nMandalay Bay",
+          "listed": "3/17",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Sela Cloud",
+          "title": "Executive Roundtable Dinner\nRequest an Invite",
+          "url": "https://luma.com/cv6udqb9",
+          "location": "Register to See Address",
+          "listed": "3/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "Finout & nOps",
+          "title": "FinOps After Dark\nRequest an Invite",
+          "url": "https://luma.com/jpvcga70",
+          "location": "1923 Prohibition Bar\nMandalay Bay",
+          "listed": "3/11",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        }
+      ]
+    },
+    {
+      "label": "Friday - April 24, 2026",
+      "events": [
+        {
+          "time": "10AM–12PM",
+          "sponsor": "Gruntwork",
+          "title": "VIP Supercar Racing Experience\nRequest an Invite",
+          "url": "https://www.gruntwork.io/lp/gruntwork-racing",
+          "location": "Dream Racing LV\n7000 N Las Vegas Blvd",
+          "listed": "2/9",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/"
+        }
+      ]
+    }
+  ]
+}
