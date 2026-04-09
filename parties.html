@@ -170,7 +170,7 @@
     }
     .event {
       display: grid;
-      grid-template-columns: 135px 150px 1fr 190px 82px;
+      grid-template-columns: 140px 160px 1fr 220px;
       gap: 14px;
       padding: 14px 18px;
       border-top: 1px solid var(--gray-200);
@@ -408,12 +408,12 @@
 
       app.innerHTML = filteredDays.map((day) => `
         <section class="day">
-          <h2>${esc(day.label)} · ${esc(day.events?.length ?? 0)} events</h2>
+          <h2>${esc(shortDayLabel(day.label))} · ${esc(day.events?.length ?? 0)} events</h2>
           <div class="events">
             ${(day.events || []).map((event) => `
               <article class="event">
                 <div><div class="label">When</div><div class="value">${esc(shortDayLabel(day.label))} · ${esc(event.time)}</div></div>
-                <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
+                <div><div class="label">Host</div><div class="value">${esc(event.sponsor)}</div></div>
                 <div>
                   <div class="label">Event</div>
                   <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
@@ -438,15 +438,18 @@
                   </div>
                 </div>
                 <div>
-                  <div class="label">Location</div>
-                  <div class="value">${esc(event.location)}</div>
+                  <div class="label">At</div>
+                  <div class="value"><strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? `\n${esc(splitLocation(event.location).area)}` : ''}</div>
                   <div style="margin-top:10px">
                     <div class="label">Venue vibe</div>
                     ${clickableBadge('vibe', event.venue?.vibe || 'Venue')}
                     <div class="meta-note">${esc(event.venue?.note || '')}</div>
                   </div>
+                  <div style="margin-top:10px">
+                    <div class="label">Listed</div>
+                    <div class="value">${esc(event.listed)}</div>
+                  </div>
                 </div>
-                <div><div class="label">Listed</div><div class="value">${esc(event.listed)}</div></div>
               </article>
             `).join('')}
           </div>
