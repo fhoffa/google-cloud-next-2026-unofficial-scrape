@@ -80,7 +80,21 @@ function sanitizeExcerpt(text = '') {
     .replace(/AIza[0-9A-Za-z_-]{20,}/g, '[redacted-api-key]')
     .replace(/window\[['"]ppConfig['"]\][\s\S]*/i, '')
     .replace(/window\.WIZ_global_data[\s\S]*/i, '')
-    .slice(0, 1000);
+    .slice(0, 1400);
+}
+
+function deriveInviteExcerpt(text = '', title = '') {
+  let excerpt = compact(text);
+  if (!excerpt) return '';
+  const titleCompact = compact(title).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (titleCompact) {
+    excerpt = excerpt.replace(new RegExp(`^${titleCompact}[:\-–—\s]*`, 'i'), '');
+  }
+  excerpt = excerpt
+    .replace(/^(google cloud next 2026:|striim rsvp -|why prosperops|products|solutions|resources)\s*/i, '')
+    .replace(/\b(request a free savings analysis|sign up|resources)\b[\s\S]*$/i, '')
+    .trim();
+  return excerpt.slice(0, 280).trim();
 }
 
 function classifyAccess(event, fetched = {}) {
@@ -453,6 +467,7 @@ async function enrichEvent(event) {
     audience,
     food,
     venue,
+    invite_excerpt: deriveInviteExcerpt(fetched.page_excerpt, event.title),
     link_meta: fetched,
   };
 }

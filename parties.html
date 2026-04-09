@@ -417,6 +417,7 @@
                 <div>
                   <div class="label">Event</div>
                   <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
+                  ${event.invite_excerpt ? `<div style="margin-top:10px"><div class="label">Invite says</div><div class="meta-note">${esc(event.invite_excerpt)}</div></div>` : ''}
                   <div style="margin-top:10px">
                     <div class="label">Open invite</div>
                     ${clickableBadge('openness', event.access?.openness || 'Unclear', badgeClass(event.access?.openness || ''))}
