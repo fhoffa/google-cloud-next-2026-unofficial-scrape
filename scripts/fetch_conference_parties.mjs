@@ -262,7 +262,7 @@ function classifyAccess(event, fetched = {}) {
     return {
       openness: 'Request invite',
       exclusivity: 'Medium',
-      rationale: 'There is an invite/request flow rather than instant registration.',
+      rationale: 'Invitation request required.',
     };
   }
 
