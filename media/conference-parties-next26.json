@@ -4,9 +4,9 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T06:13:34.954Z",
+  "fetched_at": "2026-04-09T19:22:03.542Z",
   "total_days": 4,
-  "total_events": 48,
+  "total_events": 49,
   "days": [
     {
       "label": "Tuesday - April 21, 2026",
@@ -63,7 +63,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -118,7 +118,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -219,7 +219,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -270,7 +270,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -311,7 +311,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "General conference crowd",
@@ -407,7 +407,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -445,7 +445,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Community / affinity group",
@@ -483,7 +483,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -577,7 +577,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -620,7 +620,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -658,7 +658,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -704,16 +704,16 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
-          "summary": "Happy Hour Join Us in Las Vegas An evening with teams building and scaling AI systems. Location Rí Rá Irish Pub 3930 Las Vegas Blvd South Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Join Our Happy Hour A visual break built for connection.",
-          "invite_excerpt": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experiences across industries. Book a Meeting Join",
+          "summary": "Meet the Team Connect with Our Leadership and AI Experts Meet the ZionCloud Solutions team joining Google Cloud Next 2026 across leadership, alliances, delivery, and AI engineering. Talk to Our Team Let's Build Your AI Roadmap Together Whether you're exploring your first AI use case or scaling an existing solution, our team is ready to help you move from strategy to production.",
+          "invite_excerpt": "AI Readiness Framework The Structured AI Readiness Path A structured approach to moving from experimentation to production. Talk to Our Team 01 Discovery Assess business goals, operational bottlenecks, and the highest-value AI opportunities. 02 Use Case Mapping Prioritize use cases by impact, feasibility, workflow complexity, and stakeholder readiness. 03 Da",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
-            "label": "Broad networking crowd",
-            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
@@ -728,11 +728,43 @@
             "status": 200,
             "final_url": "https://zionclouds.com/google-next-2026",
             "page_title": "google next 2026 - Zionclouds",
-            "page_excerpt": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experiences across industries. Book a Meeting Join Our Happy Hour Enterprise AI Multi-Agent Systems Workflow Automation Google Cloud Architecture Data & Systems Alignment Continuous Optimization Enterprise AI Multi-Agent Systems Workflow Automation Google Cloud Architecture Data & Systems Alignment Continuous Optimization ZCS Advantage We’re enabling enterprises and agencies to move beyond experimentation into AI-driven operations. At Next, we’ll be focusing on: AI systems orchestrating complex workflows From decision support to operational execution, AI can help coordinate multi-step enterprise processes. Collaborative systems for enterprise decisioning Specialized AI components can work across tasks, systems, and teams to support faster and smarter outcomes. Automation across internal and customer-facing processes Streamline operations across service delivery, support, workflows, and digital experiences. Scalable architectures built on Google Cloud Build on secure, resilient, and production-ready cloud foundations designed for enterprise growth. AI Readiness Framework The Structured AI Readiness Path A structured approach to moving from experimentation to production. 01 Step 1 Discovery Assess business goals, operational bottlenecks, and the highest-value AI opportunities. 02 Step 2 Use Case Mapping Prioritize use cases by impact, feasibility, workflow complexity, and stakeholder readiness. 03 Step 3 Data & System Alignment Align source systems, data flows, governance, and integrations required for execution. 04 Step 4 Solution Design Define orchestration patterns, controls, escalation rules, and user interaction models. 05 Step 5 Deployment Launch into production with the right cloud architecture, monitoring, and operational safeguards. 06 Step 6 Continuous Optimization Improve model quality, workflow performance, governance, and ROI over time. Happy Hour Join Us in Las Vegas An evening with teams building and scaling AI systems. Location Rí Rá Irish Pub 3930 Las Vegas Blvd South Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Join Our Happy Hour A visual break built for connection. Step out of the sessions and into a more relaxed c",
+            "page_excerpt": "AI Readiness Framework The Structured AI Readiness Path A structured approach to moving from experimentation to production. Talk to Our Team 01 Discovery Assess business goals, operational bottlenecks, and the highest-value AI opportunities. 02 Use Case Mapping Prioritize use cases by impact, feasibility, workflow complexity, and stakeholder readiness. 03 Data & System Alignment Align source systems, data flows, governance, and integrations required for execution. 04 Solution Design Define orchestration patterns, controls, escalation rules, and user interaction models. 05 Deployment Launch into production with the right cloud architecture, monitoring, and operational safeguards. 06 Continuous Optimization Improve model quality, workflow performance, governance, and ROI over time ZCS Advantage Enterprise AI for enterprise workflows We’re enabling enterprises and agencies to move beyond experimentation into AI-driven operations with architectures built for execution, governance, and scale. ✓ AI systems orchestrating complex workflows ✓ Collaborative systems for enterprise decisioning ✓ Automation across internal and customer-facing processes ✓ Scalable architectures built on Google Cloud Event Details Google Cloud Next 2026 Dates April 22–24, 2026 Venue Mandalay Bay Convention Center City Las Vegas Focus Enterprise AI in action Venue Rí Rá Irish Pub Address 3930 Las Vegas Blvd South, Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Happy Hour Join Us in Las Vegas Step out of the sessions and into a more relaxed conversation with teams focused on enterprise AI, workflow automation, and scalable Google Cloud architectures Meet the Team Connect with Our Leadership and AI Experts Meet the ZionCloud Solutions team joining Google Cloud Next 2026 across leadership, alliances, delivery, and AI engineering. Arun Reddy CEO Connect Talk to Arun → Soaham Joshi CTO Connect Talk to Soaham → Chandra Pillutla Head of Delivery, Data & AI Connect Talk to Chandra → Sri Dhanya K Partner Alliance Manager Connect Talk to Sri → Shamita Naidu AIML Engineer Connect Talk to Shamita → Chandrahas Gurram AI Lead, ZionAi Connect Talk to Chandrahas Talk to Our Team Let's Build Your AI Roadmap Together Whether you're exploring your first AI use case or scaling an existing solution, our team is ready to help you move from strategy to production. Discuss your enterprise AI goals and challenges Get expert guidance on Google Cloud architecture Explore workflow automation and ag",
             "top_blocks": [
               {
-                "text": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experience",
-                "score": 2435
+                "text": "AI Readiness Framework The Structured AI Readiness Path A structured approach to moving from experimentation to production. Talk to Our Team 01 Discovery Assess business goals, operational bottlenecks, and the highest-value AI opportunities. 02 Use Case Mapping Prioritize use cases by impact, feasibility, workflow comp",
+                "score": 725
+              },
+              {
+                "text": "ZCS Advantage Enterprise AI for enterprise workflows We’re enabling enterprises and agencies to move beyond experimentation into AI-driven operations with architectures built for execution, governance, and scale. ✓ AI systems orchestrating complex workflows ✓ Collaborative systems for enterprise decisioning ✓ Automatio",
+                "score": 665
+              },
+              {
+                "text": "Venue Rí Rá Irish Pub Address 3930 Las Vegas Blvd South, Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Happy Hour Join Us in Las Vegas Step out of the sessions and into a more relaxed conversation with teams focused on enterprise AI, workflow automation, and scalable Google Cloud architectures",
+                "score": 508
+              },
+              {
+                "text": "Meet the Team Connect with Our Leadership and AI Experts Meet the ZionCloud Solutions team joining Google Cloud Next 2026 across leadership, alliances, delivery, and AI engineering. Arun Reddy CEO Connect Talk to Arun → Soaham Joshi CTO Connect Talk to Soaham → Chandra Pillutla Head of Delivery, Data & AI Connect Talk ",
+                "score": 495
+              },
+              {
+                "text": "Talk to Our Team Let's Build Your AI Roadmap Together Whether you're exploring your first AI use case or scaling an existing solution, our team is ready to help you move from strategy to production. Discuss your enterprise AI goals and challenges Get expert guidance on Google Cloud architecture Explore workflow automat",
+                "score": 480
+              },
+              {
+                "text": "At Google Cloud Next 2026, we’re showcasing how AI transforms enterprise operations from decision-making to execution through workflow orchestration, automation, and production-ready cloud architecture",
+                "score": 291
+              },
+              {
+                "text": "ZionCloud Solutions Certified Google Cloud Partner Google Cloud Select Co-Sell Partner Google Cloud Select Services Partner Google Cloud AI & ML Specialization",
+                "score": 259
+              },
+              {
+                "text": "60 Sec Assessment Meet our team at the booth to explore architecture, automation, operations, and production-ready AI programs. Six Step Readiness A structured path from discovery to deployment and optimization",
+                "score": 240
+              },
+              {
+                "text": "Join Our Happy Hour Book a Meeting",
+                "score": 124
               }
             ]
           }
@@ -751,7 +783,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -793,7 +825,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -882,7 +914,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "General conference crowd",
@@ -915,12 +947,12 @@
           "listed": "4/2",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
-          "summary": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-          "invite_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+          "summary": "Happy Hour Program - Bringing AI Agents to Life with Trusted GTM Data",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -939,8 +971,8 @@
           "link_meta": {
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary",
-            "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+            "page_title": "Happy Hour Program - Bringing AI Agents to Life with Trusted GTM Data",
+            "page_excerpt": "Happy Hour Program - Bringing AI Agents to Life with Trusted GTM Data",
             "top_blocks": []
           }
         },
@@ -958,7 +990,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -1013,7 +1045,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1060,7 +1092,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -1107,7 +1139,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "General conference crowd",
@@ -1154,7 +1186,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1196,7 +1228,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -1381,7 +1413,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -1419,7 +1451,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1457,7 +1489,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1547,7 +1579,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Community / affinity group",
@@ -1585,7 +1617,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -1635,7 +1667,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -1678,7 +1710,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1729,7 +1761,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1808,7 +1840,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1893,7 +1925,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -1939,7 +1971,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1977,7 +2009,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
@@ -2015,7 +2047,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -2125,7 +2157,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -2157,6 +2189,51 @@
               }
             ]
           }
+        },
+        {
+          "time": "7PM–",
+          "sponsor": "Qodo",
+          "title": "Next at Night - Qodo VIP Lounge\nRequest an Invite",
+          "url": "https://luma.com/vonq3h03",
+          "location": "Allegiant Stadium\n3333 Al Davis Way",
+          "listed": "4/9",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us inside the Qodo VIP Lounge for access to a premium,… Approved guests will receive access to the Qodo VIP Lounge for the event",
+          "invite_excerpt": "Qodo is the title sponsor of Next at Night at Google Cloud Next, featuring Benson Boone and Weezer. Join us inside the Qodo VIP Lounge for access to a premium,…",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Looks like a general conference-side networking event."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "The page does not make the food situation clear enough to rely on."
+          },
+          "venue": {
+            "vibe": "Unknown vibe",
+            "note": "Not enough location signal for a better venue note yet."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/vonq3h03",
+            "page_title": "Experience Next at Night from the Qodo VIP Lounge · Luma",
+            "page_excerpt": "Qodo is the title sponsor of Next at Night at Google Cloud Next, featuring Benson Boone and Weezer. ​ Join us inside the Qodo VIP Lounge for access to a premium, reserved viewing space at the night’s biggest performances. Skip the crowds and experience Next at Night from a dedicated area alongside the Qodo team and a curated group of guests. ​ This is an invite-only experience with limited availability. ​ Request an invite to be considered. Approved guests will receive access to the Qodo VIP Lounge for the event Welcome! To join the event, please register below",
+            "top_blocks": [
+              {
+                "text": "Qodo is the title sponsor of Next at Night at Google Cloud Next, featuring Benson Boone and Weezer. ​ Join us inside the Qodo VIP Lounge for access to a premium, reserved viewing space at the night’s biggest performances. Skip the crowds and experience Next at Night from a dedicated area alongside the Qodo team and a c",
+                "score": 875
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              }
+            ]
+          }
         }
       ]
     },
@@ -2177,7 +2254,7 @@
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "There is an invite/request flow rather than instant registration."
+            "rationale": "Invitation request required."
           },
           "audience": {
             "label": "Broad technical / cloud practitioners",
