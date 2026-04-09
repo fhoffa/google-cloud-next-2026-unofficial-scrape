@@ -174,6 +174,7 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'favorites-only' }));
   document.register(new FakeElement({ id: 'copy-favorites-link' }));
   document.register(new FakeElement({ id: 'copy-favorites-link' }));
+  document.register(new FakeElement({ id: 'version-marker', value: 'Version: loading…' }));
 
   document.dayPills = [
     new FakeElement({ dataset: { day: '' }, classes: ['pill', 'active'] }),
@@ -658,8 +659,25 @@ test('next2025 explorer bootstraps the shared UI with the related-sessions artif
   assert.match(next2025Html, /sessions_25_classified_embeddings\.json/);
 });
 
-test('index.html exposes a visible version marker', () => {
-  assert.match(html, /Version:\s*(?:[0-9a-f]{7,}|\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC)/i);
+test('index.html exposes a visible version marker container', () => {
+  assert.match(html, /id="version-marker"/);
+  assert.match(html, /Version:/i);
+});
+
+test('session explorer updates the version marker from the loaded dataset timestamp', async () => {
+  const env = createEnvironment();
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(),
+    location: env.location,
+    history: env.history,
+    storage: { getItem: () => null, setItem: () => {} },
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  assert.equal(env.document.getElementById('version-marker').textContent, 'Version: 2026-04-09 08:01 UTC');
 });
 
 

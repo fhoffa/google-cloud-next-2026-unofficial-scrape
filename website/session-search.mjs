@@ -23,6 +23,17 @@ const TIME_STEP_MINUTES = 15;
 const MAX_TIME_INDEX = 95;
 const MIN_TIME_INDEX = 0;
 
+function formatUtcVersion(value) {
+  const date = new Date(value || '');
+  if (Number.isNaN(date.getTime())) return '';
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(date.getUTCDate()).padStart(2, '0');
+  const hours = String(date.getUTCHours()).padStart(2, '0');
+  const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day} ${hours}:${minutes} UTC`;
+}
+
 function timeIndexToLabel(index) {
   const totalMinutes = Number(index) * TIME_STEP_MINUTES;
   const hours24 = Math.floor(totalMinutes / 60);
@@ -519,6 +530,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   const clearBtn = document.getElementById('clear-btn');
   const favoriteToggle = document.getElementById('favorites-only');
   const copyFavoritesBtn = document.getElementById('copy-favorites-link');
+  const versionMarker = document.getElementById('version-marker');
   const dayPills = [...document.querySelectorAll('.pill[data-day]')];
 
   const state = readFiltersFromSearch(location.search);
@@ -769,6 +781,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     const relatedSessionsData = relatedSessionsResponse ? await relatedSessionsResponse.json().catch(() => null) : null;
     const changelogSummaryData = changelogSummaryResponse ? await changelogSummaryResponse.json().catch(() => null) : null;
     const baseSessions = data.sessions || [];
+    const versionText = formatUtcVersion(data?.scraped_at || availabilityData?.generatedAt || '');
+    if (versionMarker && versionText) versionMarker.textContent = `Version: ${versionText}`;
     sessions = Array.isArray(availabilityData?.records)
       ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
       : baseSessions;

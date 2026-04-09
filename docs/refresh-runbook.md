@@ -154,6 +154,7 @@ Verify at least these:
 - fullness section still uses percentage-based category reporting
 - `media/refresh-sanity.json` points at the expected previous/current live snapshot pair
 - changelog latest comparison reflects that same refresh window
+- homepage footer version marker matches the current refresh timestamp from `sessions/classified_sessions.json.scraped_at` (or the availability artifact `generatedAt` for static/historical datasets), not a manually hardcoded date
 - no unreplaced template placeholders in `insights.html` — grep for `__` to confirm:
   ```bash
   grep -c '__[A-Z_]\+__' insights.html   # must return 0
@@ -182,5 +183,6 @@ PR description should mention:
 - [ ] rebuild Sankey
 - [ ] run tests
 - [ ] verify live/classified counts match
+- [ ] verify homepage footer version marker reflects the current refresh timestamp
 - [ ] grep insights.html for unreplaced `__PLACEHOLDER__` tokens (must be 0)
 - [ ] open PR
