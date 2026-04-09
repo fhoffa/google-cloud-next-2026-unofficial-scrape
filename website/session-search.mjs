@@ -8,6 +8,7 @@ const CHANGELOG_SUMMARY_URL = 'media/changelog-summary.json';
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
+const MAX_NEW_PRIORITY = 6;
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
   const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
@@ -224,7 +225,7 @@ export function filterSessions(sessions, filters) {
   });
 }
 
-export function sortSessions(sessions, sort, { newSessionIds = new Set(), prioritizeNew = false } = {}) {
+export function sortSessions(sessions, sort, { prioritizedNewSessionIds = new Set(), prioritizeNew = false } = {}) {
   const items = [...sessions];
   if (sort === 'title') {
     items.sort((a, b) => a.title.localeCompare(b.title));
@@ -232,8 +233,8 @@ export function sortSessions(sessions, sort, { newSessionIds = new Set(), priori
   }
   items.sort((a, b) => {
     if (prioritizeNew) {
-      const leftNew = newSessionIds.has(sessionKey(a));
-      const rightNew = newSessionIds.has(sessionKey(b));
+      const leftNew = prioritizedNewSessionIds.has(sessionKey(a));
+      const rightNew = prioritizedNewSessionIds.has(sessionKey(b));
       if (leftNew && !rightNew) return -1;
       if (!leftNew && rightNew) return 1;
     }
@@ -274,6 +275,17 @@ function shouldPrioritizeNew(filters, timeBounds) {
     && filters.sort === DEFAULT_SORT
     && !filters.start_after
     && !filters.start_before;
+}
+
+function prioritizedNewSessions(sessions, newSessionIds) {
+  return sessions
+    .filter((session) => newSessionIds.has(sessionKey(session)) && availabilityBand(session) === 'not-full')
+    .sort((a, b) => {
+      const left = a.start_at || a.date_text || '';
+      const right = b.start_at || b.date_text || '';
+      return left.localeCompare(right);
+    })
+    .slice(0, MAX_NEW_PRIORITY);
 }
 
 function escHtml(value) {
@@ -371,7 +383,7 @@ function renderSeatFill(session) {
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
 }
 
-function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), newSessionIds = new Set()) {
+function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), prioritizedNewSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
@@ -387,7 +399,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
     const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
-    const isNew = newSessionIds.has(sessionId);
+    const isNew = prioritizedNewSessionIds.has(sessionId);
     const statusBadge = `${isNew ? '<span class="status-badge new">*new</span>' : ''}${availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : ''}`;
     return `<div class="card" id="session-${escHtml(sessionId)}" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
@@ -511,6 +523,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
   let relatedLookup = {};
   let newSessionIds = new Set();
+  let prioritizedNewSessionIds = new Set();
 
   function currentFilters() {
     return {
@@ -558,13 +571,15 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   function render() {
     const filters = currentFilters();
     const prioritizeNew = shouldPrioritizeNew(filters, timeBounds);
-    const filtered = sortSessions(filterSessions(sessions, filters), filters.sort, { newSessionIds, prioritizeNew });
+    const filteredSource = filterSessions(sessions, filters);
+    prioritizedNewSessionIds = prioritizeNew ? new Set(prioritizedNewSessions(filteredSource, newSessionIds).map((session) => sessionKey(session))) : new Set();
+    const filtered = sortSessions(filteredSource, filters.sort, { prioritizedNewSessionIds, prioritizeNew });
     syncInputClearButtons();
     if (activeFilters) activeFilters.innerHTML = renderFilterPills(filters);
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds, newSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds, prioritizedNewSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
