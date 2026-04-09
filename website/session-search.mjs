@@ -8,7 +8,7 @@ const CHANGELOG_SUMMARY_URL = 'media/changelog-summary.json';
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
-const MAX_NEW_PRIORITY = 6;
+const MAX_NEW_PRIORITY = 9;
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
   const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
@@ -249,30 +249,37 @@ export function sortSessions(sessions, sort, { prioritizedNewSessionIds = new Se
   return items;
 }
 
+function addedItemIds(item) {
+  const ids = [];
+  const explicit = String(item?.id || '').trim();
+  if (explicit) return [explicit];
+  const url = String(item?.url || '').trim();
+  if (!url) return ids;
+  try {
+    const parsed = new URL(url, 'https://example.com');
+    const sessionIds = parsed.searchParams.get('sessionids');
+    if (sessionIds) {
+      for (const value of sessionIds.split(',')) {
+        const clean = String(value).trim();
+        if (clean) ids.push(clean);
+      }
+      return ids;
+    }
+  } catch {}
+  const fallback = sessionKey({ id: '', url });
+  if (fallback) ids.push(fallback);
+  return ids;
+}
+
 function latestNewSessionIds(changelogSummary) {
   const ids = new Set();
-  const latestUpdate = changelogSummary?.updates?.[0];
-  for (const item of latestUpdate?.added || []) {
-    const explicit = String(item?.id || '').trim();
-    if (explicit) {
-      ids.add(explicit);
-      continue;
-    }
-    const url = String(item?.url || '').trim();
-    if (!url) continue;
-    try {
-      const parsed = new URL(url, 'https://example.com');
-      const sessionIds = parsed.searchParams.get('sessionids');
-      if (sessionIds) {
-        for (const value of sessionIds.split(',')) {
-          const clean = String(value).trim();
-          if (clean) ids.add(clean);
-        }
-        continue;
+  for (const update of changelogSummary?.updates || []) {
+    for (const item of update?.added || []) {
+      for (const id of addedItemIds(item)) {
+        ids.add(id);
+        if (ids.size >= MAX_NEW_PRIORITY) return ids;
       }
-    } catch {}
-    const fallback = sessionKey({ id: '', url });
-    if (fallback) ids.add(fallback);
+    }
   }
   return ids;
 }
@@ -296,14 +303,16 @@ function shouldPrioritizeNew(filters, timeBounds) {
 }
 
 function prioritizedNewSessions(sessions, newSessionIds) {
-  return sessions
-    .filter((session) => newSessionIds.has(sessionKey(session)) && availabilityBand(session) === 'not-full')
+  const candidates = sessions
+    .filter((session) => newSessionIds.has(sessionKey(session)))
     .sort((a, b) => {
       const left = a.start_at || a.date_text || '';
       const right = b.start_at || b.date_text || '';
       return left.localeCompare(right);
-    })
-    .slice(0, MAX_NEW_PRIORITY);
+    });
+  const available = candidates.filter((session) => availabilityBand(session) === 'not-full');
+  const fallback = candidates.filter((session) => availabilityBand(session) !== 'not-full');
+  return [...available, ...fallback].slice(0, MAX_NEW_PRIORITY);
 }
 
 function escHtml(value) {
