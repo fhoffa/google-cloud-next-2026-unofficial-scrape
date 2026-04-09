@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T03:11:33.082Z",
+  "fetched_at": "2026-04-09T03:14:18.979Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -64,8 +64,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -99,7 +99,7 @@
           "food": {
             "match": {},
             "label": "Japanese / sushi likely",
-            "note": "Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner."
+            "note": "Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner."
           },
           "venue": {
             "match": {},
@@ -110,7 +110,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/next26welcomeparty",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAiMTlWKIG4msAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a2274e17f1bc1e433dc7619db37511578c6cc260582e38117460328e12f5476ba4d1b2fb19ab5c17a9c4e2b8d3c314a2','qp':'','host':'geo.captcha-delivery.com','cookie':'~qUow2E5hhgmggcyepZieXWKULCEpS~ASLF8kKrPqVJ4yyrHgRTZvZnm5dwNAcnHDaW2dp0cgyhj1HCQNrlcFHF_eTPvKhlk1501adOSUoi2wjK5whsK138MDamuJB~G'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAPKK-fNQmZRUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'f654910f120457a57f41c3520dcb5969ffaec6f18cbd7e425a85f278b83a5d4f84aa32290b815fcd1b9bbabffa45e33e','qp':'','host':'geo.captcha-delivery.com','cookie':'imoza5oPWE7tapobeFL11rV5MWn2IoWPDYjP6NFuuPbsBweLOhQUdOe_m4FJuMZNy4TyqZAkMxV8uwCP~FedI_HI6mGQ_zLRZIsAVwGtPhVfBFduYTz6LFHahcbYoEZi'}"
           }
         },
         {
@@ -132,8 +132,8 @@
           },
           "food": {
             "match": {},
-            "label": "Gastropub / cocktail bites likely",
-            "note": "Expect upscale bar food, cocktails, and passed bites more than a formal seated meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -166,8 +166,8 @@
           },
           "food": {
             "match": {},
-            "label": "Southern / bar food likely",
-            "note": "House of Blues usually means drinks plus comfort-food / bar-food territory, not fine dining."
+            "label": "Bar food / comfort food maybe",
+            "note": "House of Blues points toward drinks plus comfort-food territory, but the actual format may still skew reception-style."
           },
           "venue": {
             "match": {},
@@ -199,8 +199,8 @@
             "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -231,8 +231,8 @@
             "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -263,8 +263,9 @@
             "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "food": {
-            "label": "Food unclear",
-            "note": "The venue name alone is not enough to confidently predict the food situation."
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -303,7 +304,7 @@
           "food": {
             "match": {},
             "label": "Japanese / sushi likely",
-            "note": "Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner."
+            "note": "Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner."
           },
           "venue": {
             "match": {},
@@ -314,7 +315,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/coffeeandcontext",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAFZpC9y5pt_wAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'04928ad3795a8609bafe81f117927e13cff770f0a8a13df614fa504478ea2322f891690014404aff8dce87ae8f247103','qp':'','host':'geo.captcha-delivery.com','cookie':'uaG2FGTuMThQqTx31287yPuvEQvU8U47N1mkhKVG32DRT6P3sh0sd9J8pPJ3R~6BjRDaxwMWQ8F9GVzpTD6NO4TENSqfu~YdsWG1dhmNufGqmhbl7FyNjUg5uolFsgGz'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAdv-DG3_Y7fkAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'e04c8ec1e5e1b846a3cdcb9d7730798109c47a13154a70c4e52d66b7759616db6dfc8fb9c848b55ecae3597a06030cec','qp':'','host':'geo.captcha-delivery.com','cookie':'tc9~w_zbW0srmB_kzLfUkgR_KipPoHsz_CYTdsy5pUeDowAnQIjXdh4R2hZaEFe9NjKNavTXPSmwKmb64hejjwJP2rRxz_cl~Y_dvZ_qCFkP_q9kh~YnNKT_I72PUdFM'}"
           }
         },
         {
@@ -336,8 +337,8 @@
           },
           "food": {
             "match": {},
-            "label": "Japanese / sushi likely",
-            "note": "Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner."
+            "label": "Sushi / Japanese food likely",
+            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
           },
           "venue": {
             "match": {},
@@ -348,7 +349,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushiandscarves-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAx0BU3VV1SNwAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'09952f8195d01042fb511cc3eb03e790e418cbb2fdfc5083d63d56d44733db7e3517e5afe0a1a7c1e61e1bc9185a417a','qp':'','host':'geo.captcha-delivery.com','cookie':'fpxLMXG3UWUlpfT~zmaoQgHy6mvQuVoMI2vuCVAHjn61MTvBglJ~ALbQUEzISBim5sQ8w_FSoJ9T9ht7dyAm2AalAlBDtS6Np_bGx1csMngapD1KkjWGgAHmcP8MwJOC'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA6zZlepKV6yYAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'afe7091c87535ca80735c59f554cd44706e195776fb3f5df909c23aaf6aa63438450e7d996345849a95890d2ba889cd5','qp':'','host':'geo.captcha-delivery.com','cookie':'8Il~ypIYvO0LUdKt85RoOMWorFltcxmKl0EVmz3AWXfr0WFpWx~Lv5ZmP9yTsmLrxG4A0Ri_IIHGcQnwvqQuSgN2SSMNvuYBzL1MWZG3APOTdTJQ8_0D36dxgn1hz5yy'}"
           }
         },
         {
@@ -404,8 +405,8 @@
           },
           "food": {
             "match": {},
-            "label": "Fancy dinner likely",
-            "note": "This sounds like a real sit-down dinner or at least a more serious food program than a typical happy hour."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "match": {},
@@ -438,8 +439,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -472,8 +473,8 @@
           },
           "food": {
             "match": {},
-            "label": "Japanese / sushi likely",
-            "note": "Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner."
+            "label": "Sushi / Japanese food likely",
+            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
           },
           "venue": {
             "match": {},
@@ -484,7 +485,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushisocial-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAB5DfjCbzEQIAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'e002de168dbf7a4c0816abec5de08885144b40bac4eb825520d76ab0cb85adaa31e10620d32745487b4e907f2e1b9cc7','qp':'','host':'geo.captcha-delivery.com','cookie':'51cftRwzelYa0Z7wr3N6S6mzkz12zb_4Gfnhny1kz3Fni1cMlwPHEVbAfr3xrla8kZ5vhpy2Thbyj_kxYUkXBcKqEjkXZCjNq~FR6NuEHrQDfcM2GVvBVUiMGSKhZK6g'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAMiHGjcP2lBUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'eb4d45c074293f4f31ad30c93156d9cbe352fb78840b91bb3eaa9a145a50da8b044ebc2cec067c79f2a266c408ab8e89','qp':'','host':'geo.captcha-delivery.com','cookie':'yLwytsO_tZFCmAg1kTvHDaVslwawxS3okj4iBR5Sf8UFSp9RWHC7fM9G4JLG44Xni6~pfEfJDVZjIluDW4Eoc0IXmTQJOimcVh11DcfRiB66sgG5qP12XbUUtXHbD9CZ'}"
           }
         },
         {
@@ -506,8 +507,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -539,8 +540,9 @@
             "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "food": {
-            "label": "Food unclear",
-            "note": "The venue name alone is not enough to confidently predict the food situation."
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "vibe": "Unknown vibe",
@@ -571,8 +573,8 @@
             "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -604,8 +606,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -638,8 +640,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "match": {},
@@ -684,7 +686,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA5jewkpvhehQAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'eb19c0e139d6e80cb3099e8a189d8f892645e7492c0229e2d5b5aae4665f732df2aed855126ac237e58aefcb409ccf56','qp':'','host':'geo.captcha-delivery.com','cookie':'pEPqSsUTFH6wRdhUYaGX9pQ3Cy_mSz7Hbw8dslLkBP0Wyiw7uV1rfCP2mjm0l7h2wlsnM~NpNFD_Z38J5f7w1QEA7hL0uqaMrY10dqN4keMqlEuo_XQn6wbWuelqOkVi'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAVdextOgMVN0Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'c24d7971d2d32e892ca9a7b78a1d6ebd277d19eddcdd5cc9088e6b41874206e14626808f80c57e25ac365f0ca42da2f5','qp':'','host':'geo.captcha-delivery.com','cookie':'gCYzrtAs_5p~Z5_v4eNTay4ujhU5Zejis2S~_VlLoN_lB4IjgI0XuGhDcnbR8NlLu3lgZSZ8yyl1gr5yQApcYdDfzTGKUPccivol7IydHdBZHujTkus4SFtqPTOvdYDB'}"
           }
         },
         {
@@ -706,8 +708,8 @@
           },
           "food": {
             "match": {},
-            "label": "Fancy dinner likely",
-            "note": "This sounds like a real sit-down dinner or at least a more serious food program than a typical happy hour."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -718,7 +720,7 @@
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary?RefId=mktg-a-CPS",
             "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"f60fac3d-b7c3-402a-9d6e-315929d32b23\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"f60fac3d-b7c3-402a-9d6e-315929d32b23\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"e59cc39b-f52c-40c5-9741-ba70f083bc30\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"e59cc39b-f52c-40c5-9741-ba70f083bc30\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
           }
         },
         {
@@ -740,8 +742,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "match": {},
@@ -774,8 +776,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "match": {},
@@ -808,8 +810,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food unclear",
-            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "label": "Lunch likely",
+            "note": "The invite explicitly says lunch, which is a much stronger signal than the venue name."
           },
           "venue": {
             "match": {},
@@ -842,8 +844,8 @@
           },
           "food": {
             "match": {},
-            "label": "Steakhouse dinner",
-            "note": "This is likely the heaviest food option on the list: actual steakhouse dinner energy, not just passed appetizers."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -876,8 +878,8 @@
           },
           "food": {
             "match": {},
-            "label": "Steakhouse dinner",
-            "note": "This is likely the heaviest food option on the list: actual steakhouse dinner energy, not just passed appetizers."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -943,8 +945,8 @@
           },
           "food": {
             "match": {},
-            "label": "Southern / bar food likely",
-            "note": "House of Blues usually means drinks plus comfort-food / bar-food territory, not fine dining."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1023,7 +1025,7 @@
             "status": 403,
             "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
             "page_title": "publicissapient.com",
-            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAiZknU_XlT80Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'41d29a68fca9a84dac5990b3fe70b905c1d5a5283bf0ab7e499fe5a84474b45e1dad1999ab924d516b47fb7b4881b7e0','qp':'','host':'geo.captcha-delivery.com','cookie':'VqBtP4hZuoyp41UphjR3DQOB1rCzhmllCYnajtzBmSGMoR2Fv9GFogvAE38EgqiydV_nf3UQc~mMt6dbkLGp~0o8PHqFUU0rSvtl1o3Mc5NaXcDvYSUAoXL_0L76F1G0'}"
+            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAPFBoD5ELFl8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'b4ad9776bf9ff42cf067142976aedc3d3c14e6269f5647d094464bdecec02f132d180d402ad986e0163a771b7a1c2e81','qp':'','host':'geo.captcha-delivery.com','cookie':'a4DE15f7ZirLL2kfNSVSbniFoel62CpHaCLc0ygV6gxtzk14gko0LHYWZld1KnES8gouG_hEB5mrFU93B4KVEG6GmQtEncogTjUX_auTmJQ9NKzJu1IHT443EHizA~Ve'}"
           }
         },
         {
@@ -1045,8 +1047,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food unclear",
-            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1079,8 +1081,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1091,7 +1093,7 @@
             "status": 200,
             "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
             "page_title": "Security Professionals Reception at Next'26",
-            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"-8271557689825900222\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\""
+            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"-1846188749357809657\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\""
           }
         },
         {
@@ -1112,8 +1114,9 @@
             "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -1145,8 +1148,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food unclear",
-            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1184,8 +1187,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Breakfast likely",
+            "note": "The event is explicitly framed as breakfast, so expect morning food rather than just coffee."
           },
           "venue": {
             "match": {},
@@ -1196,7 +1199,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAWEC6I432Aj4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'1db11e316aa5daa2ce834198abf2f6bc249e2b242c1b7c5907b995f2754ccf3145df64407121fac49d2c7b5cc7e40161','qp':'','host':'geo.captcha-delivery.com','cookie':'fNfrFzPm~3QuxFPWKtUtORRBeeZVJwIxFyyM~pcquh6gfRJVpu7jVuW7~qNGuyQ9~xWZ8nDHZrRmWpgl7LYGZXUjklVIQgZ9pcWgxlkW0KQSCQf~D1xbkVwprGtqUrLR'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAxALxG5-EvqEAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'7590c8908ea9fa901d42836f9d204869103ef10de5daae7915e9c2d0349f1b75ca56cc3f35019df79547798bf15057da','qp':'','host':'geo.captcha-delivery.com','cookie':'zBFlnbY~aPZNQgcX8m0Trb4xqi_XJmrEeMFlOuaxAY7r7HyxQJbV9tr1PWFIrwjV__XWXhxI3Sndr9afVL_4RELnI1rBhgNEI9cmUzBltTxgn_ItyFGYT_mYndcI0IYW'}"
           }
         },
         {
@@ -1217,8 +1220,9 @@
             "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "match": {},
+            "label": "Lunch likely",
+            "note": "The invite explicitly says lunch, which is a much stronger signal than the venue name."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -1250,8 +1254,8 @@
           },
           "food": {
             "match": {},
-            "label": "Gastropub / cocktail bites likely",
-            "note": "Expect upscale bar food, cocktails, and passed bites more than a formal seated meal."
+            "label": "Lunch likely",
+            "note": "The invite explicitly says lunch, which is a much stronger signal than the venue name."
           },
           "venue": {
             "match": {},
@@ -1284,8 +1288,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1318,8 +1322,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food unclear",
-            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1330,7 +1334,7 @@
             "status": 200,
             "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
             "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
-            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"-9036473998004884105\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagr"
+            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"4923151544634758056\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagra"
           }
         },
         {
@@ -1352,8 +1356,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1386,8 +1390,8 @@
           },
           "food": {
             "match": {},
-            "label": "Steakhouse dinner",
-            "note": "This is likely the heaviest food option on the list: actual steakhouse dinner energy, not just passed appetizers."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1419,8 +1423,9 @@
             "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "food": {
-            "label": "Hotel reception food maybe",
-            "note": "Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks."
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -1452,8 +1457,8 @@
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1464,7 +1469,7 @@
             "status": 403,
             "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
             "page_title": "neo4j.com",
-            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAhmb37hV2b_MAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'5819e4636110d46d2c20a8dff0320842d9d554d3284be536ae036ceaecd2c46282706ee34dcc93c8dd06dc349a8b6500','qp':'','host':'geo.captcha-delivery.com','cookie':'v6s6BCqiJN24vwi~E39uW5X5F5YP5uFqTDa8OkT0BeXgEKtTXkzRKdhm9wsbnte9sPzBVYO~wDUPwvV7QGEnxYEu4mcnhmS~7oeuI63ze5lUquUbOWI_TTPV9x9Ycttn'}"
+            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAf6RVqdYho0QAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'c0e41f15565cb2e7a2e3c16360207a38df1354c99d2f19a5644dc1a318a44d871abbd3c10b9798b389a1807a75cd2b5e','qp':'','host':'geo.captcha-delivery.com','cookie':'s4P3EZouk_WqghXmZ3_LtPctO2zoNjB_4qS5SxRYhcATsSakD4GKXvUiJJ4Pt_MVcQ7R2esqine3VzmlwSU6mGIO7OKpP7Twne8RwONc2GUeXxGkf200JniH0nj1AbK~'}"
           }
         },
         {
@@ -1486,8 +1491,8 @@
           },
           "food": {
             "match": {},
-            "label": "Mexican / shared plates likely",
-            "note": "Border Grill usually implies tacos, shared plates, and a more casual-food vibe than a formal dinner."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1498,7 +1503,7 @@
             "status": 403,
             "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
             "page_title": "mongodb.com",
-            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAhEYMGAkMnb8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'aee0c3879fbff02ab1521d29ea8d59672f3adda4632b6b0157dad275ab949769202cf559562677554f796d399ab04da1','qp':'','host':'geo.captcha-delivery.com','cookie':'DVjZF7wo~gvN1caPCva0_fXQBq~3lOMoxFhATSJLWvP92b~eI0KSiLqoxMaLy0WRovIAjx~AewEWDUyrO_U9dMqoCKPdY9VNZAII8OwjS6WBwTLUf4oweu9FfiQ4t7xa'}"
+            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAyYl4ImHcXTAAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'9eb85b4a2f32ec912a571faf5d5bb906c81d3bc0444a38bfb1ba5f6d24cd0a36e0e9dec24a3c3ee72c8f1bf5bdd5e3be','qp':'','host':'geo.captcha-delivery.com','cookie':'yUfvD0sTxKtRU3Qf~cSngc~bXstnH~1l3w9pfqVfIhVmRxUMvNnv5AX5EdHpmAGwOqrJ4WvFZiVdln94K2kSB4m2RjUhNxfJKjdMv3sfecf9Hyp6OVWw4mp94KXvmBBb'}"
           }
         },
         {
@@ -1554,8 +1559,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
           },
           "venue": {
             "match": {},
@@ -1588,8 +1593,8 @@
           },
           "food": {
             "match": {},
-            "label": "Cocktails first, light bites maybe",
-            "note": "Speakeasy-style venues usually lead with drinks and atmosphere; food is often secondary unless the invite says dinner."
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
           },
           "venue": {
             "match": {},
@@ -1627,7 +1632,7 @@
           },
           "food": {
             "label": "Food unclear",
-            "note": "The venue name alone is not enough to confidently predict the food situation."
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
           },
           "venue": {
             "match": {},

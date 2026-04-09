@@ -178,25 +178,59 @@ function classifyAudience(event, fetched = {}) {
   };
 }
 
-function describeFood(location = '') {
-  const raw = compact(location);
-  const lower = raw.toLowerCase();
+function describeFood(event, fetched = {}) {
+  const raw = [event.title, event.location, fetched.page_title, fetched.page_excerpt]
+    .filter(Boolean)
+    .join(' \n ');
+  const lower = compact(raw).toLowerCase();
 
-  const entries = [
+  const explicitEntries = [
+    {
+      match: /\bdinner\b|wine & dine|sunset dinner|executive dinner|roundtable dinner|steakhouse/,
+      label: 'Dinner likely',
+      note: 'The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception.'
+    },
+    {
+      match: /breakfast/,
+      label: 'Breakfast likely',
+      note: 'The event is explicitly framed as breakfast, so expect morning food rather than just coffee.'
+    },
+    {
+      match: /lunch|lunch & learn|cto lunch/,
+      label: 'Lunch likely',
+      note: 'The invite explicitly says lunch, which is a much stronger signal than the venue name.'
+    },
+    {
+      match: /sushi/,
+      label: 'Sushi / Japanese food likely',
+      note: 'The invite itself mentions sushi, which is stronger evidence than the venue alone.'
+    },
+    {
+      match: /aperitifs|martinis|cocktail|cocktail reception|happy hour|drinks|after party|house party|reception/,
+      label: 'Drinks-first, food secondary',
+      note: 'The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal.'
+    },
+  ];
+
+  for (const entry of explicitEntries) {
+    if (entry.match.test(lower)) return entry;
+  }
+
+  const venueFallbacks = [
     {
       match: /kumi/,
       label: 'Japanese / sushi likely',
-      note: 'Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner.'
+      note: 'Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner.'
     },
     {
       match: /bourbon steak|stripsteak|tender steakhouse/,
-      label: 'Steakhouse dinner',
-      note: 'This is likely the heaviest food option on the list: actual steakhouse dinner energy, not just passed appetizers.'
+      label: 'Dinner maybe, but not guaranteed',
+      note: 'Steakhouse venue improves the odds of substantial food, but conference events there can still be standing receptions or appetizer-heavy formats unless the invite explicitly says dinner.'
     },
     {
       match: /border grill/,
       label: 'Mexican / shared plates likely',
-      note: 'Border Grill usually implies tacos, shared plates, and a more casual-food vibe than a formal dinner.'
+      note: 'Venue suggests Mexican / shared-plate food, but likely still in event format rather than a guaranteed sit-down meal.'
     },
     {
       match: /libertine social/,
@@ -205,8 +239,8 @@ function describeFood(location = '') {
     },
     {
       match: /house of blues/,
-      label: 'Southern / bar food likely',
-      note: 'House of Blues usually means drinks plus comfort-food / bar-food territory, not fine dining.'
+      label: 'Bar food / comfort food maybe',
+      note: 'House of Blues points toward drinks plus comfort-food territory, but the actual format may still skew reception-style.'
     },
     {
       match: /hakkasan|marquee nightclub|chandelier bar|clique|hazel lounge|skyfall lounge/,
@@ -220,8 +254,8 @@ function describeFood(location = '') {
     },
     {
       match: /eiffel tower restaurant|cascata golf club/,
-      label: 'Fancy dinner likely',
-      note: 'This sounds like a real sit-down dinner or at least a more serious food program than a typical happy hour.'
+      label: 'Dinner maybe, stronger odds',
+      note: 'These venues make a fuller meal more plausible than a random happy hour, but the invite wording still matters more than the location name.'
     },
     {
       match: /1923 prohibition bar/,
@@ -235,20 +269,13 @@ function describeFood(location = '') {
     },
   ];
 
-  for (const entry of entries) {
+  for (const entry of venueFallbacks) {
     if (entry.match.test(lower)) return entry;
-  }
-
-  if (/mandalay bay|luxor|cosmopolitan|mgm grand|paris hotel|caesars palace/.test(lower)) {
-    return {
-      label: 'Hotel reception food maybe',
-      note: 'Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks.'
-    };
   }
 
   return {
     label: 'Food unclear',
-    note: 'The venue name alone is not enough to confidently predict the food situation.'
+    note: 'This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one.'
   };
 }
 
@@ -374,7 +401,7 @@ async function enrichEvent(event) {
   const fetched = await fetchLandingMeta(event.url);
   const access = classifyAccess(event, fetched);
   const audience = classifyAudience(event, fetched);
-  const food = describeFood(event.location);
+  const food = describeFood(event, fetched);
   const venue = describeVenue(event.location);
   return {
     ...event,
