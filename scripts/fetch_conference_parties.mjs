@@ -160,6 +160,13 @@ function classifyAudience(event, fetched = {}) {
     .join(' \n ')
     .toLowerCase();
 
+  if (/sres?|platform engineers?|google cloud experts?|builders?/.test(raw)) {
+    return {
+      label: 'Broad technical / cloud practitioners',
+      rationale: 'The invite explicitly calls out builders and cloud practitioners.',
+    };
+  }
+
   const rules = [
     {
       match: /\bciso\b|security pros|security leader|cybersecurity leader|secops|threat intel|wiz|crowdstrike|fortinet|sentinelone|netskope|zscaler|menlo security|xm cyber|infoblox/,
@@ -167,19 +174,19 @@ function classifyAudience(event, fetched = {}) {
       rationale: 'Security-heavy hosts and language point to security buyers, leaders, or operators.',
     },
     {
-      match: /women in tech|innovathers|veterans|career transition|community celebration|meetup/,
-      label: 'Community / affinity group',
-      rationale: 'Reads as community / affinity-group oriented.',
-    },
-    {
-      match: /developer|devops|kube|platform engineering|mcp|github|baseten|chronosphere|dagster|langchain|mongodb|confluent|redis|clickhouse|neo4j|yugabyte/,
-      label: 'Technical builders',
-      rationale: 'Feels aimed at developers, platform engineers, or other hands-on technical attendees.',
+      match: /sre|platform engineers?|google cloud experts?|developers?|devops|kube|mcp|baseten|chronosphere|dagster|langchain|mongodb|confluent|redis|clickhouse|neo4j|yugabyte/,
+      label: 'Broad technical / cloud practitioners',
+      rationale: 'The invite calls out builders and cloud practitioners more than buyers or executives.',
     },
     {
       match: /finops|finout|nops|prosperops|cloud cost|doit/,
       label: 'FinOps / cloud economics',
       rationale: 'Centered on cloud spend, optimization, or financial operations.',
+    },
+    {
+      match: /women in tech|innovathers|veterans|career transition|meetup/,
+      label: 'Community / affinity group',
+      rationale: 'Reads as community / affinity-group oriented.',
     },
     {
       match: /founder|saas startup|startup|venture|executive|vip|leader|leaders|roundtable|dinner|private|exclusive/,
@@ -416,7 +423,7 @@ async function fetchLandingMeta(url) {
     const title = extractTitle(text);
     const metaDescription = extractMetaDescription(text);
     const readableBody = extractReadableBodyText(text);
-    const excerpt = sanitizeExcerpt(metaDescription || readableBody);
+    const excerpt = sanitizeExcerpt([metaDescription, readableBody].filter(Boolean).join(' '));
     return {
       status: response.status,
       final_url: sanitizeUrl(response.url),
