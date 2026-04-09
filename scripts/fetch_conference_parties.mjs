@@ -50,6 +50,15 @@ function extractMetaDescription(html = '') {
   return match ? stripTags(match[1]) : '';
 }
 
+function extractReadableBodyText(html = '') {
+  const cleaned = html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, ' ');
+  return stripTags(cleaned);
+}
+
 function compact(text = '') {
   return text.replace(/\s+/g, ' ').trim();
 }
@@ -88,7 +97,8 @@ function classifyAccess(event, fetched = {}) {
     };
   }
 
-  if (/\bvip\b|executive|founder|ciso|roundtable|register to see address|register to unlock location|private address/.test(raw)) {
+  if (/\bvip\b|executive|founder|ciso|roundtable|register to see address|register to unlock location|private address/.test(raw)
+      && !/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
     return {
       openness: 'Curated guest list',
       exclusivity: 'High',
@@ -96,11 +106,20 @@ function classifyAccess(event, fetched = {}) {
     };
   }
 
-  if (/request an invite|request invite|invite only|apply|approval/.test(raw)) {
+  if (/request an invite|request invite|invite only|apply|approval/.test(raw)
+      && !/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
     return {
       openness: 'Request invite',
       exclusivity: 'Medium',
       rationale: 'Invite-style flow: not fully open, but not ultra-exclusive either.',
+    };
+  }
+
+  if (/drop in anytime|free play mode|all are welcome|everyone welcome|open to all|before hotel check-in|early arrivals/.test(raw)) {
+    return {
+      openness: 'Open RSVP',
+      exclusivity: 'Low',
+      rationale: 'Very inclusive language: feels easy to drop into rather than screened.',
     };
   }
 
@@ -172,6 +191,11 @@ function classifyAudience(event, fetched = {}) {
       label: 'Broad networking crowd',
       rationale: 'Feels like broad networking rather than a narrow niche crowd.',
     },
+    {
+      match: /drop in anytime|free play mode|all are welcome|everyone welcome|before hotel check-in|early arrivals/,
+      label: 'Broad / inclusive conference crowd',
+      rationale: 'The language is notably inclusive and drop-in friendly, not selective.',
+    },
   ];
 
   for (const rule of rules) {
@@ -191,6 +215,11 @@ function describeFood(event, fetched = {}) {
   const lower = compact(raw).toLowerCase();
 
   const explicitEntries = [
+    {
+      match: /coffee[^a-z]|coffee\s*\+|coffee •|snacks|lunch on us|happy hour.*drinks|drinks, music|coffee \+ arrival|power-up lunch/,
+      label: 'Food and drinks clearly provided',
+      note: 'The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event.',
+    },
     {
       match: /\bdinner\b|wine & dine|sunset dinner|executive dinner|roundtable dinner|steakhouse/,
       label: 'Dinner likely',
@@ -386,7 +415,8 @@ async function fetchLandingMeta(url) {
     const text = await response.text();
     const title = extractTitle(text);
     const metaDescription = extractMetaDescription(text);
-    const excerpt = sanitizeExcerpt(metaDescription || stripTags(text));
+    const readableBody = extractReadableBodyText(text);
+    const excerpt = sanitizeExcerpt(metaDescription || readableBody);
     return {
       status: response.status,
       final_url: sanitizeUrl(response.url),
