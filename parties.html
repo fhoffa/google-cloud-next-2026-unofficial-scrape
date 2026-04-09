@@ -90,6 +90,57 @@
       font-size: 0.9rem;
       color: var(--gray-800);
     }
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .filter-pill {
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      color: var(--gray-800);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.83rem;
+      cursor: pointer;
+    }
+    .filter-pill:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+    .filter-pill.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+    .clear-btn {
+      border: none;
+      background: none;
+      color: var(--blue);
+      font-size: 0.84rem;
+      cursor: pointer;
+      padding: 6px 4px;
+    }
+    .clear-btn:hover { text-decoration: underline; }
+    .active-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .active-filter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      color: var(--gray-800);
+    }
     .days {
       display: grid;
       gap: 18px;
@@ -148,6 +199,14 @@
       margin-bottom: 6px;
       background: var(--blue-light);
       color: var(--blue-dark);
+    }
+    button.badge {
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    button.badge:hover {
+      filter: brightness(0.97);
     }
     .badge.open { background: #e6f4ea; color: #137333; }
     .badge.invite { background: #fef7e0; color: #8d6524; }
@@ -216,6 +275,8 @@
     </div>
 
     <div class="stats" id="stats"></div>
+    <div class="filters" id="filters"></div>
+    <div class="active-filters" id="active-filters"></div>
     <div id="app" class="loading">Loading party listings…</div>
   </main>
 
@@ -228,6 +289,15 @@
   <script type="module">
     const app = document.getElementById('app');
     const stats = document.getElementById('stats');
+    const filtersEl = document.getElementById('filters');
+    const activeFiltersEl = document.getElementById('active-filters');
+    const filterState = {
+      openness: '',
+      exclusivity: '',
+      audience: '',
+      food: '',
+      vibe: '',
+    };
 
     function esc(text = '') {
       return String(text)
@@ -249,75 +319,150 @@
       };
     }
 
+    function toggleFilter(key, value) {
+      filterState[key] = filterState[key] === value ? '' : value;
+      render(window.__partyData);
+    }
+
+    function matchesFilters(event) {
+      return (!filterState.openness || event.access?.openness === filterState.openness)
+        && (!filterState.exclusivity || event.access?.exclusivity === filterState.exclusivity)
+        && (!filterState.audience || event.audience?.label === filterState.audience)
+        && (!filterState.food || event.food?.label === filterState.food)
+        && (!filterState.vibe || event.venue?.vibe === filterState.vibe);
+    }
+
+    function clickableBadge(key, value, extraClass = '') {
+      return `<button class="badge ${extraClass} ${filterState[key] === value ? 'active' : ''}" type="button" data-filter-key="${esc(key)}" data-filter-value="${esc(value)}">${esc(value)}</button>`;
+    }
+
+    function renderFilters(data) {
+      const allEvents = (data.days || []).flatMap((day) => day.events || []);
+      const defs = [
+        ['openness', 'Open invite', [...new Set(allEvents.map((e) => e.access?.openness).filter(Boolean))]],
+        ['exclusivity', 'Exclusivity', [...new Set(allEvents.map((e) => e.access?.exclusivity).filter(Boolean))]],
+        ['audience', 'Audience', [...new Set(allEvents.map((e) => e.audience?.label).filter(Boolean))]],
+        ['food', 'Food', [...new Set(allEvents.map((e) => e.food?.label).filter(Boolean))]],
+        ['vibe', 'Venue vibe', [...new Set(allEvents.map((e) => e.venue?.vibe).filter(Boolean))]],
+      ];
+
+      filtersEl.innerHTML = defs.map(([key, label, values]) => `
+        <div>
+          <div class="label" style="margin-bottom:6px">${esc(label)}</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            ${values.map((value) => `<button class="filter-pill ${filterState[key] === value ? 'active' : ''}" type="button" data-filter-key="${esc(key)}" data-filter-value="${esc(value)}">${esc(value)}</button>`).join('')}
+          </div>
+        </div>
+      `).join('') + '<button class="clear-btn" id="clear-filters-btn" type="button">Clear filters</button>';
+
+      const active = Object.entries(filterState).filter(([, value]) => value);
+      activeFiltersEl.innerHTML = active.map(([key, value]) => `<div class="active-filter"><strong>${esc(key)}</strong>: ${esc(value)}</div>`).join('');
+
+      filtersEl.querySelectorAll('[data-filter-key]').forEach((button) => {
+        button.addEventListener('click', () => toggleFilter(button.dataset.filterKey, button.dataset.filterValue));
+      });
+      const clearBtn = document.getElementById('clear-filters-btn');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          Object.keys(filterState).forEach((key) => filterState[key] = '');
+          render(window.__partyData);
+        });
+      }
+    }
+
+    function render(data) {
+      window.__partyData = data;
+      const allEvents = (data.days || []).flatMap((day) => day.events || []);
+      const filteredDays = (data.days || []).map((day) => ({
+        ...day,
+        events: (day.events || []).filter(matchesFilters),
+      })).filter((day) => day.events.length);
+      const filteredCount = filteredDays.reduce((sum, day) => sum + day.events.length, 0);
+
+      const fetched = data.fetched_at ? new Date(data.fetched_at).toISOString().replace('T', ' ').replace('.000Z', ' UTC') : 'unknown';
+      stats.innerHTML = [
+        stat('days', filteredDays.length),
+        stat('events shown', filteredCount),
+        stat('events total', allEvents.length),
+        stat('last refresh', fetched),
+      ].join('');
+
+      renderFilters(data);
+
+      app.className = 'days';
+      const badgeClass = (label = '') => {
+        const lower = label.toLowerCase();
+        if (lower.includes('open')) return 'open';
+        if (lower.includes('high') || lower.includes('exclusive') || lower.includes('curated')) return 'exclusive';
+        if (lower.includes('closed') || lower.includes('full')) return 'closed';
+        return 'invite';
+      };
+
+      if (!filteredDays.length) {
+        app.className = 'error';
+        app.textContent = 'No parties match the current filters.';
+        return;
+      }
+
+      app.innerHTML = filteredDays.map((day) => `
+        <section class="day">
+          <h2>${esc(day.label)} · ${esc(day.events?.length ?? 0)} events</h2>
+          <div class="events">
+            ${(day.events || []).map((event) => `
+              <article class="event">
+                <div><div class="label">When</div><div class="value">${esc(day.label)}\n${esc(event.time)}</div></div>
+                <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
+                <div>
+                  <div class="label">Event</div>
+                  <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
+                  <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Venue vibe: ${esc(event.venue?.vibe || 'Venue unclear')}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
+                  <div style="margin-top:10px">
+                    <div class="label">Open invite</div>
+                    ${clickableBadge('openness', event.access?.openness || 'Unclear', badgeClass(event.access?.openness || ''))}
+                    <div class="meta-note">${esc(event.access?.rationale || '')}</div>
+                  </div>
+                  <div style="margin-top:10px">
+                    <div class="label">Exclusivity</div>
+                    ${clickableBadge('exclusivity', event.access?.exclusivity || 'Unclear', badgeClass(event.access?.exclusivity || ''))}
+                  </div>
+                  <div style="margin-top:10px">
+                    <div class="label">Target audience</div>
+                    ${clickableBadge('audience', event.audience?.label || 'Audience unclear')}
+                    <div class="meta-note">${esc(event.audience?.rationale || '')}</div>
+                  </div>
+                  <div style="margin-top:10px">
+                    <div class="label">Food</div>
+                    ${clickableBadge('food', event.food?.label || 'Food unclear')}
+                    <div class="meta-note">${esc(event.food?.note || '')}</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="label">Location</div>
+                  <div class="value">${esc(event.location)}</div>
+                  <div style="margin-top:10px">
+                    <div class="label">Venue vibe</div>
+                    ${clickableBadge('vibe', event.venue?.vibe || 'Venue')}
+                    <div class="meta-note">${esc(event.venue?.note || '')}</div>
+                  </div>
+                </div>
+                <div><div class="label">Listed</div><div class="value">${esc(event.listed)}</div></div>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+      `).join('');
+
+      app.querySelectorAll('[data-filter-key]').forEach((button) => {
+        button.addEventListener('click', () => toggleFilter(button.dataset.filterKey, button.dataset.filterValue));
+      });
+    }
+
     fetch('./media/conference-parties-next26.json')
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load party data: ${r.status}`);
         return r.json();
       })
-      .then((data) => {
-        const fetched = data.fetched_at ? new Date(data.fetched_at).toISOString().replace('T', ' ').replace('.000Z', ' UTC') : 'unknown';
-        stats.innerHTML = [
-          stat('days', data.total_days ?? 0),
-          stat('events', data.total_events ?? 0),
-          stat('last refresh', fetched),
-        ].join('');
-
-        app.className = 'days';
-        const badgeClass = (label = '') => {
-          const lower = label.toLowerCase();
-          if (lower.includes('open')) return 'open';
-          if (lower.includes('high') || lower.includes('exclusive') || lower.includes('curated')) return 'exclusive';
-          if (lower.includes('closed') || lower.includes('full')) return 'closed';
-          return 'invite';
-        };
-
-        app.innerHTML = (data.days || []).map((day) => `
-          <section class="day">
-            <h2>${esc(day.label)} · ${esc(day.events?.length ?? 0)} events</h2>
-            <div class="events">
-              ${(day.events || []).map((event) => `
-                <article class="event">
-                  <div><div class="label">When</div><div class="value">${esc(day.label)}\n${esc(event.time)}</div></div>
-                  <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
-                  <div>
-                    <div class="label">Event</div>
-                    <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
-                    <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Venue vibe: ${esc(event.venue?.vibe || 'Venue unclear')}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
-                    <div style="margin-top:10px">
-                      <div class="label">Open invite</div>
-                      <span class="badge ${badgeClass(event.access?.openness)}">${esc(event.access?.openness || 'Unclear')}</span>
-                      <div class="meta-note">${esc(event.access?.rationale || '')}</div>
-                    </div>
-                    <div style="margin-top:10px">
-                      <div class="label">Exclusivity</div>
-                      <span class="badge ${badgeClass(event.access?.exclusivity)}">${esc(event.access?.exclusivity || 'Unclear')}</span>
-                    </div>
-                    <div style="margin-top:10px">
-                      <div class="label">Target audience</div>
-                      <span class="badge">${esc(event.audience?.label || 'Audience unclear')}</span>
-                      <div class="meta-note">${esc(event.audience?.rationale || '')}</div>
-                    </div>
-                    <div style="margin-top:10px">
-                      <div class="label">Food</div>
-                      <span class="badge">${esc(event.food?.label || 'Food unclear')}</span>
-                      <div class="meta-note">${esc(event.food?.note || '')}</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="label">Location</div>
-                    <div class="value">${esc(event.location)}</div>
-                    <div style="margin-top:10px">
-                      <span class="badge">${esc(event.venue?.vibe || 'Venue')}</span>
-                      <div class="meta-note">${esc(event.venue?.note || '')}</div>
-                    </div>
-                  </div>
-                  <div><div class="label">Listed</div><div class="value">${esc(event.listed)}</div></div>
-                </article>
-              `).join('')}
-            </div>
-          </section>
-        `).join('');
-      })
+      .then((data) => render(data))
       .catch((error) => {
         app.className = 'error';
         app.textContent = error.message;
