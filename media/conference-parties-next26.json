@@ -1,0 +1,1699 @@
+{
+  "source": {
+    "name": "ConferenceParties.com",
+    "url": "https://conferenceparties.com/next26/",
+    "credit": "Party listings indexed from ConferenceParties.com"
+  },
+  "fetched_at": "2026-04-09T03:51:42.735Z",
+  "total_days": 4,
+  "total_events": 48,
+  "days": [
+    {
+      "label": "Tuesday - April 21, 2026",
+      "events": [
+        {
+          "time": "10AM–6PM",
+          "sponsor": "Striim",
+          "title": "Press Start Before Google Next Kicks Off.\nDay Zero: Data Origins - Please Register",
+          "url": "https://go2.striim.com/2026-pre-day-at-google-next",
+          "location": "Register to Unlock Location",
+          "listed": "4/8",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Food unknown until approved",
+            "note": "Private-address events are opaque by design, so you should not assume a meal standard from the listing alone."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/2026-pre-day-at-google-next",
+            "page_title": "Striim RSVP - Pre Day at Google NEXT",
+            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1652737422958 .formCustom__container { background:#fff; border-radius:6px; padding:40px; } #hs_cos_wrapper_widget_1652737422958 .formCustom__container .hs-form-field { display:block !important; } #hs_cos_wrapper_footer_social .social-"
+          }
+        },
+        {
+          "time": "5:30–9:30PM",
+          "sponsor": "Founder's Mixer",
+          "title": "🍻 AI + Saas Startups Happy Hour\nRequest an Invite",
+          "url": "https://luma.com/bs579fyh",
+          "location": "Register to See Address",
+          "listed": "3/27",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/bs579fyh",
+            "page_title": "🍻 AI + Saas Startups Happy Hour @ Google Next Cloud · Luma",
+            "page_excerpt": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders,…"
+          }
+        },
+        {
+          "time": "5:30–10PM",
+          "sponsor": "Glean",
+          "title": "NEXT '26 Welcome Party\nRequest an Invite",
+          "url": "https://events.glean.com/next26welcomeparty",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Japanese / sushi likely",
+            "note": "Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/next26welcomeparty",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAjLdMO2Wc0OwAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'181fbf9eb69315f5e93138c7c3e3bc7051eec2e96aaffa3aca2190e542287d1b26deb83f63a362f7a2ceab78b2a1b555','qp':'','host':'geo.captcha-delivery.com','cookie':'YTevPut26z6qt6E7~ZPcgVSmBwJej8mXfp1j59d2usibpTvgLxJyHUNqP1D9YfLFyLwtV6ZWPPc~RIizJXFtJzGNPegw5xmB5I7OuCwGrUzz9vDbrRUuQsr2uC9XfAjF'}"
+          }
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Promevo & gPanel.io",
+          "title": "Google Next 2026 Happy Hour\nwith Promevo, gPanel, CloudM & JumpCloud\nRequest an Invite",
+          "url": "https://hubs.ly/Q046rbVL0",
+          "location": "Libertine Social\nMandalay Bay",
+          "listed": "3/11",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://promevo.com/google-next-2026-happy-hour",
+            "page_title": "Google Next 2026 Happy Hour with Promevo, gPanel, CloudM & JumpCloud",
+            "page_excerpt": "Join Promevo, gPanel, CloudM, and JumpCloud for a happy hour at Google Cloud Next 2026 on April 21. Reserve your spot now for networking and refreshments."
+          }
+        },
+        {
+          "time": "6:30–9PM",
+          "sponsor": "Harness",
+          "title": "Where Innovation Meets the Blues\nRequest an Invite",
+          "url": "https://www.harness.io/events/where-innovation-meets-the-blues",
+          "location": "House of Blues\nMandalay Bay",
+          "listed": "3/12",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Bar food / comfort food maybe",
+            "note": "House of Blues points toward drinks plus comfort-food territory, but the actual format may still skew reception-style."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Lively and scalable",
+            "note": "House of Blues is a recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.harness.io/events/where-innovation-meets-the-blues",
+            "page_title": "Where Innovation Meets the Blues",
+            "page_excerpt": "Where Innovation Meets the Blues !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.removeItem('intellimize_opt_out_117384792'); } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.setItem('intellimize_data_tracking_type', 'optOut'); } (function(e){var s={r:[]};e.wf={r:s.r,ready:t=>{s.r.push(t)}}})(window) (function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=\" \"+p,setTimeout(function(){n.className=n.className.replace(RegExp(\" ?\"+p),\"\")},t)})(window, "
+          }
+        },
+        {
+          "time": "7–10PM",
+          "sponsor": "ProsperOps, Flexera,\nDash0 & Masthead",
+          "title": "Cloud Community Celebration!\nRequest an Invite",
+          "url": "https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "3/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/",
+            "page_title": "Google Cloud Next 2026: Cloud Community Celebration! - ProsperOps",
+            "page_excerpt": "Join ProsperOps, Dash0, Flexera and Masthead on April 21st for the Cloud Community Celebration at Google Cloud Next 2026!"
+          }
+        },
+        {
+          "time": "7–11PM",
+          "sponsor": "AvePoint",
+          "title": "#AvePointRED Party\nRequest an Invite",
+          "url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party",
+          "location": "Diablo’s Cantina\nLuxor Hotel & Casino",
+          "listed": "3/3",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party",
+            "page_title": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint",
+            "page_excerpt": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"author\":{\"@id\":\"#identity\"},\"copyrightHolder\":{\"@id\":\"#identity\"},\"copyrightYear\":\"2026\",\"creator\":{\"@id\":\"#creator\"},\"dateCreated\":\"2026-02-25T13:35:01-05:00\",\"dateModified\":\"2026-04-06T17:44:11-04:00\",\"datePublished\":\"2026-04-06T01:10:00-04:00\",\"description\":\"AvePoint Red Party at Google Cloud Next 2026 - request an invite to this exclusive opening-night networking event with cloud leaders, partners, and industry peers.\",\"headline\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://assets.avepoint.com/upload/images/landingpage/_1200x630_crop_center-center_82_none/Google-NEXT-Red-Party-Promo-Graphics_FBLinkedin-1200x628.jpg?mtime=1772204938\"},\"inLanguage\":\"en-us\",\"mainEntityOfPage\":\"https://www.avepoint.com/events/google-next-2026-avepoint-red-party\",\"name\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"publisher\":{\"@id\":\"#creator\"},\"url\":"
+          }
+        },
+        {
+          "time": "7:30PM–1AM",
+          "sponsor": "Platform Engineering,\nGoogle Cloud, Baseten\n& Chronosphere",
+          "title": "House of Kube\nRequest an Invite",
+          "url": "https://luma.com/pnj3xb0w",
+          "location": "the INDUSTRIAL\n2330 S Industrial Rd",
+          "listed": "2/20",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Off-strip scene",
+            "note": "An off-strip warehouse/event-space vibe can feel cooler and more intentional than another casino bar, but it is less convenient for casual drop-ins."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/pnj3xb0w",
+            "page_title": "House of Kube @ Google Cloud Next · Luma",
+            "page_excerpt": "The desert just got a little more cloud native. ☁️🌵 Welcome to House of Kube Las Vegas @ Google Cloud Next edition. When the conference lights go down, we…"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Wednesday - April 22, 2026",
+      "events": [
+        {
+          "time": "8–9AM",
+          "sponsor": "Glean",
+          "title": "Coffee & Context: AI Strategy Summit\nRequest an Invite",
+          "url": "https://events.glean.com/coffeeandcontext",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Japanese / sushi likely",
+            "note": "Venue suggests Japanese food, but this still does not guarantee a full meal; many conference parties there will be more reception-style than seated dinner."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/coffeeandcontext",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAD5nlNGKc5KoAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'cee32e7c5d5d3c826fc0ea24b86d7f886e939c455e26870fc0dda9db1638caa6323c1732d06db8d29cf0ed43b90e9dfb','qp':'','host':'geo.captcha-delivery.com','cookie':'BZPGOGC8TODoGUrsF8oi84vqP155cVyh7yAMDyHKPrfXjToDnm6Wenbny0WjankQJJiqQZ6qAc9o5JVhihv0eo6Z9QczHyeB~vdLXjTdDELiZTbJDyz4i3v_Ktoxf6qa'}"
+          }
+        },
+        {
+          "time": "2–4PM",
+          "sponsor": "Glean",
+          "title": "Women in Tech Meetup: Sushi & Scarves\nRequest an Invite",
+          "url": "https://events.glean.com/sushiandscarves-next26",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
+          "food": {
+            "match": {},
+            "label": "Sushi / Japanese food likely",
+            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/sushiandscarves-next26",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAx7ZEoqcmkwYAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'477f605ff44d9c208e91776a3f7c83b28a51ea1fc00dd17b6ccfbf5d713f8ccd968509688d084ed0091e1f688322065d','qp':'','host':'geo.captcha-delivery.com','cookie':'aQB7AJkWK0xMwjx1ndnugj_PrkJuesGMG2q~NUPl5Aw6s6b9KM7x0a_zIV14Fl2meyTvXvZlpUncddCe4WDODPIoOpNk8l4DYxvYJjc9IhN~ALKxugVbjlY4uCbQsh5E'}"
+          }
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Thoughtworks &\nMechanical Orchard",
+          "title": "The Modernization Speakeasy\nRequest an Invite",
+          "url": "https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next",
+          "location": "1923 Prohibition Bar\nMandalay Bay",
+          "listed": "3/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Cocktails first, light bites maybe",
+            "note": "Speakeasy-style venues usually lead with drinks and atmosphere; food is often secondary unless the invite says dinner."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next",
+            "page_title": "Google Cloud Next | Thoughtworks United States",
+            "page_excerpt": "Thoughtworks is a proud sponsor of Google Cloud Next 2026. Join us at Booth #5504."
+          }
+        },
+        {
+          "time": "5:30–8:30PM",
+          "sponsor": "Valtech & Optimizely",
+          "title": "An Exclusive Sunset Dinner at Cascata\nRequest an Invite",
+          "url": "https://www.valtech.com/events/sunset-dinner-cascata-google-next/",
+          "location": "Cascata Golf Club\nTravel from Mandalay Bay",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Fancy off-site dinner",
+            "note": "Cascata feels more special than another casino restaurant because it is a destination-style off-site club setting. Nice if you want a polished executive dinner, less spontaneous because of the travel overhead."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.valtech.com/events/sunset-dinner-cascata-google-next/",
+            "page_title": "Exclusive sunset dinner at Cascata | Valtech",
+            "page_excerpt": "Join Valtech and Optimizely for an exclusive sunset dinner at Cascata Golf Club during Google Cloud Next 2026."
+          }
+        },
+        {
+          "time": "6:30–9PM",
+          "sponsor": "Redis",
+          "title": "Double Stack at Google Cloud Next\nRequest an Invite",
+          "url": "https://redis.io/events/double-stack-at-google-cloud-next/",
+          "location": "F1 Grand Prix Plaza\nTurn 1 Lounge\n4400 Koval Ln",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://redis.io/events/double-stack-at-google-cloud-next/",
+            "page_title": "Double Stack: Redis' welcome party at Google Cloud Next",
+            "page_excerpt": "Join us for an evening at the Grand Prix Plaza for head-to-head F1 racing simulators, go-karting on the F1 Las Vegas Circuit, and drinks in the Turn 1 Lounge."
+          }
+        },
+        {
+          "time": "5:30–10PM",
+          "sponsor": "Glean, Databricks & NVIDIA",
+          "title": "Sushi Social: Networking Reception\nRequest an Invite",
+          "url": "https://events.glean.com/sushisocial-next26",
+          "location": "Kumi Japanese Restaurant\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Sushi / Japanese food likely",
+            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/sushisocial-next26",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMADOWvkH2o_B4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'8b417cefa86abaf91301931924ad9dd8272390d0639c0702db310abb9155f5a03befbb75771fa5b403c6a430a1cf94a2','qp':'','host':'geo.captcha-delivery.com','cookie':'4a1uo3dZvb4h3r7rKXZbIleTpU0PrrYdeypQ0BBpglu4XAVw91KdeYA8rXbmKPs3iAzMwC3fU5C8QP6EDVLg2Z~rBcyrFpArKMfecKHRV2GqxOa_zAYe3zLgAuByaOyU'}"
+          }
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "Lucid Software",
+          "title": "DevOps & Drinks at Play Playground\nRequest an Invite",
+          "url": "https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125",
+          "location": "Play Playground\nLuxor",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125",
+            "page_title": "DevOps & Drinks at Play Playground Tickets, Wednesday, Apr 22 from 6 pm to 8 pm | Eventbrite",
+            "page_excerpt": "Eventbrite - LUCID SOFTWARE presents DevOps & Drinks at Play Playground - Wednesday, April 22, 2026 at Play Playground, Las Vegas, NV. Find event and ticket information."
+          }
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "ZCS",
+          "title": "ZCS Happy Hour at Google Cloud Next 2026\nRequest an Invite",
+          "url": "https://zionclouds.com/google-next-2026",
+          "location": "Rí Rá Irish Pub\n3930 S Las Vegas Blvd",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "vibe": "Unknown vibe",
+            "note": "Venue is not in the current note map yet; check the original listing for the exact draw."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://zionclouds.com/google-next-2026",
+            "page_title": "google next 2026 - Zionclouds",
+            "page_excerpt": "google next 2026 - Zionclouds --> window[(function(_xwN,_5b){var _9Iozh='';for(var _6qOyjc=0;_6qOyjc 1;_9Iozh==_9Iozh;_Mr0J-=_5b;_Mr0J!=_6qOyjc;_Mr0J+=61;_Mr0J%=94;_Mr0J+=33;_9Iozh+=String.fromCharCode(_Mr0J)}return _9Iozh})(atob('fWxzNzQvKig5bio+'), 35)] = '2c07090e121718653191'; var zi = document.createElement('script'); (zi.type = 'text/javascript'), (zi.async = true), (zi.src = (function(_svn,_B7){var _GB0c6='';for(var _unT32y=0;_unT32y 9;_GB0c6==_GB0c6;_GB0c6+=String.fromCharCode(_DWMd)}return _GB0c6})(atob('bHh4dHc+MzNudzJ+bTF3Z3ZtdHh3MmdzcTN+bTF4ZWsybnc='), 4)), document.readyState === 'complete'?document.body.appendChild(zi): window.addEventListener('load', function(){ document.body.appendChild(zi) }); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore("
+          }
+        },
+        {
+          "time": "6–8PM",
+          "sponsor": "Striim, Yugabyte & Dagster",
+          "title": "AI After Hours\nRequest an Invite",
+          "url": "https://go2.striim.com/next-ai-after-hours",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/next-ai-after-hours",
+            "page_title": "AI After Hours at Google Next",
+            "page_excerpt": "AI After Hours at Google Next hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex"
+          }
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "DoiT, AMD & Snowflake",
+          "title": "Fore-ward Drive: DoiT & AMD in Full Swing\nRequest an Invite",
+          "url": "https://events.doit.com/qKylDl",
+          "location": "Swingers Golf\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
+          },
+          "food": {
+            "match": {},
+            "label": "Snacks / party food likely",
+            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://events.doit.com/event/ForewardDriveDoiTAMD/summary",
+            "page_title": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing",
+            "page_excerpt": ".dragContainer { position: absolute; height: 6.25rem; width: 6.25rem; top: 40%; left: 50%; margin-left: -5rem; display: none; } .outerContainer { top: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 11.75rem; height: 11.75rem; padding: 1rem; background-color: #f7f8f9; border-radius: 50%; box-sizing: border-box; } .container { position: relative; margin: 0 auto; transform: translateZ(0) rotate(.1); } .outerCircle { width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation-duration: 3s; border-color: #006ae1 #006ae1 #aed4ff; box-sizing: border-box; } .circle { border-radius: 50%; border-style: solid; position: absolute; border-width: 0.75rem; width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation: 3s linear infinite spinner; animation-play-state: inherit; box-sizing: border-box; } @keyframes spinner { 0% { transform: translate3d(-50%, -50%, 0) rotate(0deg); } 100% { transform: translate3d(-50%, -50%, 0) rotate(360deg); } } @media on"
+          }
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "CISO Ventures",
+          "title": "Cybersecurity Leader Networking Dinner\nRequest an Invite",
+          "url": "https://luma.com/d45s399w",
+          "location": "Register to See Address\nMandalay Bay",
+          "listed": "4/5",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/d45s399w",
+            "page_title": "Cybersecurity Leader Networking Dinner · Luma",
+            "page_excerpt": "Cybersecurity Leader Networking Dinner (invite-only) This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting.…"
+          }
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "Elastic & Google Cloud",
+          "title": "Sip. Search. Repeat.\nRequest an Invite",
+          "url": "https://events.elastic.co/sipsearchrepeatwithelastic",
+          "location": "Hazel Lounge\nMandalay Bay",
+          "listed": "3/31",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food unclear",
+            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
+            "page_title": "elastic.co",
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAXDDKrT1hGGcAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a4e4d8f56575ee4646e2e65d3270ee984ea53d9f043e9060757b6eddf2ca1ad131c6f331865c6fdaa91a544921518c53','qp':'','host':'geo.captcha-delivery.com','cookie':'WhlS91EPFv2ARkX6pmbtfYibdsr2~euFm~GC7zp_3Z46J8RA~i49W_8RknmUUrviLu7rXN0pyVxo68mXd9FVKqFTKlkMOEtkM4MiPWTFmdAKXEMmnbBYaqAPEo2PXyCA'}"
+          }
+        },
+        {
+          "time": "6:30–8PM",
+          "sponsor": "ZoomInfo",
+          "title": "MCPs & Martinis: ZoomInfo &\nGemini Enterprise Launch Happy Hour\nRequest an Invite",
+          "url": "https://events.cdmmedia.com/ZgQZva",
+          "location": "Eiffel Tower Restaurant\nParis Hotel",
+          "listed": "4/2",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Fancy destination dinner",
+            "note": "The Eiffel Tower Restaurant wins on novelty and skyline views. Feels more special than a random hotel bar, but it is also a more curated dinner-style pick."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary",
+            "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"749630d9-3fde-4ab0-8654-61d5530dbeb6\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"749630d9-3fde-4ab0-8654-61d5530dbeb6\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\"
+          }
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Sela Cloud",
+          "title": "Founder Networking Dinner\nRequest an Invite",
+          "url": "https://luma.com/ym6t0ccu",
+          "location": "Register to See Address",
+          "listed": "3/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/ym6t0ccu",
+            "page_title": "Founder Networking Dinner at Google Next · Luma",
+            "page_excerpt": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. Join a small group of cloud founders for an evening of great food and…"
+          }
+        },
+        {
+          "time": "6–9:30PM",
+          "sponsor": "Commit, Wiv\n& Google Cloud",
+          "title": "Commit, WIV & Google Cloud: Wine & Dine\nExecutive Reception & F1 Race Experience\nRequest an Invite",
+          "url": "https://luma.com/q9vzbqi1",
+          "location": "F1 Arcade Las Vegas\nThe Forum Shops\nCaesars Palace",
+          "listed": "3/12",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/q9vzbqi1",
+            "page_title": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas · Luma",
+            "page_excerpt": "Commit × WIV × Google Cloud invite you to an exclusive F1 Evening Step into one of the most talked-about experiences on the Strip, F1 Arcade Las Vegas, just 10…"
+          }
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Eon",
+          "title": "Eon's First Class Club\nRequest an Invite",
+          "url": "https://www.eon.io/event/eon-party-google-cloud-next",
+          "location": "Clique\nThe Cosmopolitan",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.eon.io/event/eon-party-google-cloud-next",
+            "page_title": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon",
+            "page_excerpt": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": \"Join us for Eon's VIP Gold Rush @ Google Cloud Next\", \"description\": \"Step away from the noise at Google Cloud Next and join Eon at Clique for an unforgettable evening. We're celebrating Vegas-style with craft cocktails, elevated bites, and entertainment that will blow your mind.\", \"startDate\": \"2026-04-22T22:30:00.000Z\", \"endDate\": \"\", \"location\": { \"@type\": \"Place\", \"name\": \"6:30 - 8:30 PM @ Clique in The Cosmopolitan\", \"hasMap\": \"\" }, \"image\": \"https://cdn.prod.website-files.com/675ab1d60fb117a2f287dbc5/69cbf176f59685b124263f22_Join-the-VIP-Gold-Rush-Clique.png\", \"organizer\": { \"@type\": \"Organization\", \"name\": \"Eon\", \"url\": \"https://www.eon.io\" }, \"eventAttendanceMode\": \"https://schema"
+          }
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "MathCO",
+          "title": "Ai & Aperitifs\nRequest an Invite",
+          "url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
+          "location": "Bourbon Steak\nMandalay Bay",
+          "listed": "3/31",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
+            "page_title": "AI and Aperitifs by MathCo",
+            "page_excerpt": "AI and Aperitifs by MathCo a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__container { margin-top:30px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list { gap:100px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item, #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item__image"
+          }
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "Canonical-Ubuntu\n& Google Cloud",
+          "title": "VIP Dinner: Building Trusted Cloud Environments\nRequest an Invite",
+          "url": "https://forms.gle/N8PS6k7Fy7UejvjYA",
+          "location": "Tender Steakhouse\nLuxor",
+          "listed": "3/19",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://docs.google.com/forms/d/e/1FAIpQLScRqI43T_dgLhG87X5KTKzUdapfiIiJtKv8IaxOA_Zc4__e6w/viewform",
+            "page_title": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments",
+            "page_excerpt": "Beyond the Google Next expo floor, join Canonical’s leadership and a curated group of industry peers for an evening of high-level networking and strategic discussion. As enterprises accelerate their AI journeys on Google Cloud, the “missing puzzle piece” is often the underlying security and compliance of the open-source stack. When: Wednesday, April 22, 2026 Time: 6:30 PM – 9:30 PM Where: Tender Steakhouse & Lounge - The Luxor, Las Vegas Request an invitation to the Executive Dinner **Please Note:** This is an invite-only event with strictly limited capacity. All registrations will be manually reviewed by the Canonical team. You will receive a formal confirmation and calendar invite once your attendance is approved."
+          }
+        },
+        {
+          "time": "7–11PM",
+          "sponsor": "GitHub",
+          "title": "The Oasis by GitHub\nRequest an Invite",
+          "url": "https://gh.io/gcn26-reception",
+          "location": "Tailgate Beach Club\nMandalay Bay",
+          "listed": "3/20",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Snacks / party food likely",
+            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Playful outdoor-ish",
+            "note": "Tailgate Beach Club is more playful and casual than a boardroom dinner, which can make it feel friendlier than the usual executive reception formula."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://github.registration.goldcast.io/events/7e9424cd-3b44-4d43-8c54-a72f4e6cb923",
+            "page_title": "403 Forbidden",
+            "page_excerpt": "403 Forbidden 403 Forbidden"
+          }
+        },
+        {
+          "time": "7:30–10:30PM",
+          "sponsor": "Onix",
+          "title": "Bollywood Nights Live:\nOnix's Google Cloud Next After Party\nRequest an Invite",
+          "url": "https://www.onixnet.com/google-next-26-after-party/",
+          "location": "House of Blues Courtyard\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Outdoor concert-adjacent",
+            "note": "The courtyard gets some of the House of Blues energy without being just another windowless hotel room. Better atmosphere than a generic reception, though still very conference-adjacent."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.onixnet.com/google-next-26-after-party/",
+            "page_title": "Bollywood Nights Live - Onix’s Google Cloud Next After Party",
+            "page_excerpt": "Wrap up day one of Google Cloud Next 2026 with Onix at Bollywood Nights Live. Enjoy live entertainment, great food, and networking at Mandalay Bay in Las Vegas."
+          }
+        },
+        {
+          "time": "8–11PM",
+          "sponsor": "Wonderful",
+          "title": "Sorry. At Capacity\nWonderful Golf Night",
+          "url": "",
+          "location": "Topgolf MGM Grand\n4627 Koval Ln",
+          "listed": "3/22",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Full / closed",
+            "exclusivity": "N/A",
+            "rationale": "The listing or landing page suggests the event is already full or no longer openly taking registrations."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Snacks / party food likely",
+            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": null,
+            "final_url": "",
+            "page_title": "",
+            "page_excerpt": ""
+          }
+        },
+        {
+          "time": "8–11PM",
+          "sponsor": "Publicis Sapient",
+          "title": "Exclusive VIP Party\nRequest an Invite",
+          "url": "https://events.publicissapient.com/googlenext2026-vip-party",
+          "location": "Marquee Nightclub\nThe Cosmopolitan",
+          "listed": "3/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food unclear",
+            "note": "This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Big Vegas flex",
+            "note": "Marquee is another obvious status venue: strong wow factor, but not the place for low-key networking."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
+            "page_title": "publicissapient.com",
+            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA8_KGWJUMDz4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'3cf720782a6beefde25526fbbbe7e422ce893d6bd8ae73484e4ac10902eaf6a069a28742a5f3a974758c08745359a9f8','qp':'','host':'geo.captcha-delivery.com','cookie':'zfklK9MFdhg~n8JTdzE0aTJVVRmGz31IxokBmB4MCEVTgKWIzbT0S8T8QytYDr6O~b0Q1ghp5j4aH8V8IXyGfq5inOzDB6OQJMIYJ8ohBh64Q_EA81SFAuow_EkwILWm'}"
+          }
+        },
+        {
+          "time": "8:30–11PM",
+          "sponsor": "Zencore, Domo,\nProsperOps & Foresite",
+          "title": "Our Exclusive Party!\nRequest an Invite",
+          "url": "https://zencore.dev/google-cloud-next-hh",
+          "location": "Chandelier Bar Level 1.5\nThe Cosmopolitan Lounge",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Stylish Vegas",
+            "note": "The Chandelier Bar is visually memorable and very Vegas-chic, which makes it a good “cool photo” venue even if it is not super private."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://zencore.dev/google-cloud-next-hh",
+            "page_title": "Google Cloud Next '26 Happy Hour",
+            "page_excerpt": "Join Zencore, Domo, ProsperOps, and Foresite for an exclusive evening of networking, conversation, and refreshments at The Cosmopolitan"
+          }
+        },
+        {
+          "time": "9PM–12AM",
+          "sponsor": "Fortinet, Crowdstrike, Infoblox, Menlo Security, NetEnrich,\nOptiv, XM Cyber & Wiz",
+          "title": "Security Pros Reception\nRequest an Invite",
+          "url": "https://rsvp.withgoogle.com/events/next26-swingers",
+          "location": "Swingers\nThe Crazy Golf Club\nMandalay Bay",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
+            "page_title": "Security Professionals Reception at Next'26",
+            "page_excerpt": ""
+          }
+        },
+        {
+          "time": "9PM–12AM",
+          "sponsor": "Insight",
+          "title": "Insight After Party\nRequest an Invite",
+          "url": "https://learn.insight.com/google-cloud-next-2026-after-party",
+          "location": "The Cove\nMandalay Bay",
+          "listed": "3/30",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://learn.insight.com/google-cloud-next-2026-after-party",
+            "page_title": "After party",
+            "page_excerpt": "After party hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_module_1743012173363208 { display: block !important; padding-bottom: 15px !important; padding-left: 15px !important; padding-right: 15px !important; padding-top: 15px !important } var _hsp = window._hsp = window._hsp || []; _hsp.push(['addPrivacyConsentListener', fu"
+          }
+        },
+        {
+          "time": "9:30PM–12AM",
+          "sponsor": "ClickHouse",
+          "title": "House Party Featuring The Chainsmokers",
+          "url": "https://clickhouse.com/houseparty/google-next",
+          "location": "Hakkasan Nightclub\nMGM Grand",
+          "listed": "2/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Unclear",
+            "exclusivity": "Unclear",
+            "rationale": "Not enough signal from the listing and landing page to confidently classify the RSVP flow."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Big Vegas flex",
+            "note": "Hakkasan is a classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Cool if you want spectacle; bad if you want easy conversation."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://clickhouse.com/houseparty/google-next",
+            "page_title": "House Party with The Chainsmokers — Google Cloud Next 2026",
+            "page_excerpt": "Ready to trade dashboards for dance floors? Join us in Vegas during Google Cloud Next for House Party with The Chainsmokers 2026. Step away from the tech talk, grab a drink, and get ready for a night of music, energy, and unforgettable vibes."
+          }
+        }
+      ]
+    },
+    {
+      "label": "Thursday - April 23, 2026",
+      "events": [
+        {
+          "time": "7–9AM",
+          "sponsor": "Elastic & Google Cloud",
+          "title": "InnovatHERs Breakfast\nRequest an Invite",
+          "url": "https://events.elastic.co/innovathersbreakfastwithelastic",
+          "location": "Register to See Address\nW Penthouse Suite",
+          "listed": "4/7",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
+          "food": {
+            "match": {},
+            "label": "Breakfast likely",
+            "note": "The event is explicitly framed as breakfast, so expect morning food rather than just coffee."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
+            "page_title": "elastic.co",
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAUAxkL_j2pp0Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'c8bfbe2f98f4ad619feaa7191a71ec3d61e99780c5115efa83abca2f51f50b3a36109bc22abecead7c101f22665cc846','qp':'','host':'geo.captcha-delivery.com','cookie':'_1C2rtY7NAmrBCOglQdgV1cT6kFeNXhnOqvfoQ8NX4cGF5F2kw75_qm3gaqsTHULBM_RWod7Y8DsCYOU9juqOpML3Hjh2sVx9WJFgzG5Zo3cH1enyQuxN1szZRoqMZOm'}"
+          }
+        },
+        {
+          "time": "12–1:30PM",
+          "sponsor": "Archera",
+          "title": "CTO Lunch - Google Next\nRequest an Invite",
+          "url": "https://luma.com/i03kjswj",
+          "location": "Rí Rá Irish Pub\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Lunch likely",
+            "note": "The invite explicitly says lunch, which is a much stronger signal than the venue name."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/i03kjswj",
+            "page_title": "CTO Lunch Google Next - Sponsored by Archera · Luma",
+            "page_excerpt": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and…"
+          }
+        },
+        {
+          "time": "12–2PM",
+          "sponsor": "Striim & Dagster",
+          "title": "Lunch & Learn: AI Roundtable\nRequest an Invite",
+          "url": "https://go2.striim.com/next-ai-roundtable",
+          "location": "Libertine Social\nMandalay Bay",
+          "listed": "3/4",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Lunch likely",
+            "note": "The invite explicitly says lunch, which is a much stronger signal than the venue name."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/next-ai-roundtable",
+            "page_title": "Google Next AI Roundtable",
+            "page_excerpt": "Google Next AI Roundtable hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex; al"
+          }
+        },
+        {
+          "time": "4–7PM",
+          "sponsor": "Fortinet & TD SYNNEX",
+          "title": "Fortinet LATAM Closing Reception\nRequest an Invite",
+          "url": "https://fortinet.mktmo.com/googlecloud_next2026_closingreception/index.php",
+          "location": "F1 Arcade\nCaesars Palace",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://fortinet.mktmo.com/googlecloud_next2026_closingreception/index.php",
+            "page_title": "Google Cloud Next 2026 Closing Reception – Fortinet",
+            "page_excerpt": "Google Cloud Next 2026 Closing Reception – Fortinet ENG ES POR Seguridad para avanzar en la nube En la Fórmula 1, la velocidad es protagonista. Pero lo que permite competir al más alto nivel es la seguridad. Los equipos pueden asumir riesgos, innovar y empujar los límites porque existe una base sólida de ingeniería, control y protocolos de seguridad. En la nube ocurre lo mismo. La innovación exige avanzar. Los negocios exigen resultados . La seguridad es lo que permite gestionar el riesgo y proteger el crecimiento. F1 Arcade Las Vegas será el escenario para compartir esta idea en una experiencia donde tecnología, comunidad y energía se encuentran. El cierre de Google Cloud Next 2026 Fortinet invita a su comunidad de clientes de Latinoamérica a cerrar Google Cloud Next 2026 con una experiencia donde la innovación, la nube y la seguridad se encuentran. Después de una semana dedicada a nuevas ideas, tecnologías y oportunidades en Google Cloud, lo invitamos a compartir una experiencia dife"
+          }
+        },
+        {
+          "time": "4:30–6:30PM",
+          "sponsor": "Google Cloud",
+          "title": "SMB Connect at Next'26\nRequest an Invite",
+          "url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
+          "location": "Skyfall Lounge\nW Hotel",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Great views",
+            "note": "Skyfall is cool mostly for the views. Better backdrop than a generic bar, and more memorable for a happy hour."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
+            "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
+            "page_excerpt": "Google Cloud Next '26: Special Reception at the Skyfall Lounge, W Las Vegas"
+          }
+        },
+        {
+          "time": "5–6:30PM",
+          "sponsor": "Fortinet, Crowdstrike,\nMenlo Security, Netskope,\nSentinelOne, ZScaler & Wiz",
+          "title": "Kentucky Derby Pre-Party\nRequest an Invite",
+          "url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
+          "location": "Register to See Address",
+          "listed": "4/1",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
+            "page_title": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision",
+            "page_excerpt": "(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-N5T23D5'); window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-187842707-2'); Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = sc"
+          }
+        },
+        {
+          "time": "5–6:30PM",
+          "sponsor": "GrowthLoop & Tredence",
+          "title": "Retail Leaders Happy Hour\nRequest an Invite",
+          "url": "https://go.growthloop.com/next-happy-hour",
+          "location": "Stripsteak\nMandalay Bay",
+          "listed": "3/18",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.growthloop.com/resources/events/next-happy-hour",
+            "page_title": "Invite-Only Retail Leaders Happy Hour | Google Cloud Next 2026",
+            "page_excerpt": "An invite-only happy hour for senior retail marketing and data leaders at Google Cloud Next. Join GrowthLoop and Tredence for peer networking, premium drinks, and compelling conversation at StripSteak, Mandalay Bay."
+          }
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Speedscale",
+          "title": "Happy Hour\nRequest an Invite",
+          "url": "https://speedscale.com/events/google-cloud-next/",
+          "location": "Flanker Kitchen\n& Sports Bar\nMandalay Bay",
+          "listed": "4/6",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://speedscale.com/events/google-cloud-next/",
+            "page_title": "Speedscale at Google Cloud Next 2026 | Speedscale",
+            "page_excerpt": "Meet the Speedscale team at Google Cloud Next 2026 in Las Vegas, April 22-24. Schedule a face-to-face conversation about testing and validating applications on Google Cloud."
+          }
+        },
+        {
+          "time": "5–7PM",
+          "sponsor": "Neo4j & Databricks",
+          "title": "Executive Reception Happy Hour\nSwingers Crazy Golf - Request an Invite",
+          "url": "http://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
+          "location": "Swingers Crazy Golf\nMandalay Bay",
+          "listed": "3/24",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
+            "page_title": "neo4j.com",
+            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMADUrCSjVziUAAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'f3a4622d9cc4b33343b2464dec4e36f90b06d828dc6fe35c93a504bbf5263dadfc77253dc3e14e885823c589e23bceaa','qp':'','host':'geo.captcha-delivery.com','cookie':'wEa6XGkekgCW5uxXDDaixZoGxMqBrDHNmH6QGMV86fCHvLKY_2En1dv~AWjmxllGTr3ATCNXBCAVyi55AllbrmElgJCGQvt56b6KoFpKICMTllzBJobRXV_PhFVXyszd'}"
+          }
+        },
+        {
+          "time": "5:30–7PM",
+          "sponsor": "MongoDB, Confluent\n& LangChain",
+          "title": "MongoDB Happy Hour\nRequest an Invite",
+          "url": "https://events.mongodb.com/googlecloudnext2026happyhour",
+          "location": "Border Grill\nMandalay Bay",
+          "listed": "3/25",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
+          "food": {
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "The wording sounds drinks-led, so food may be passed appetizers or light bites rather than a dependable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
+            "page_title": "mongodb.com",
+            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAufFdFfoccXYAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'428a7ef88fb7f08ed70f6ec9a60431cc61a8e6483205f6e0b8dafcb42684cdde87ffeb2f55dcbd4dfff3a4670d12720d','qp':'','host':'geo.captcha-delivery.com','cookie':'h84QTcWPjr22_pmBQ77CkYvGXFpKiT8VIPAVN~yBTDYaG3_DTQzGTmPZbzMVUtoN2pYK4RtPWa7TKxdPjZUxQi2AxWTFrZQWA87TFS0AYBZwwfLLer2RyzkxJ0_MI3Mg'}"
+          }
+        },
+        {
+          "time": "6–9PM",
+          "sponsor": "CyberProof",
+          "title": "It's a Golf Party! - Join us at Swingers!\nRequest an Invite",
+          "url": "https://www.cyberproof.com/google-cloud-next-2026/",
+          "location": "Swingers\nMandalay Bay",
+          "listed": "3/17",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
+          "food": {
+            "match": {},
+            "label": "Snacks / party food likely",
+            "note": "Activity venues usually mean drinks plus snackable event food, not a memorable meal."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.cyberproof.com/google-cloud-next-2026/",
+            "page_title": "Google Cloud Next 2026",
+            "page_excerpt": "Join us at Google Cloud Next 2026"
+          }
+        },
+        {
+          "time": "6:30–8:30PM",
+          "sponsor": "Sela Cloud",
+          "title": "Executive Roundtable Dinner\nRequest an Invite",
+          "url": "https://luma.com/cv6udqb9",
+          "location": "Register to See Address",
+          "listed": "3/16",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "match": {},
+            "label": "Dinner likely",
+            "note": "The invite language explicitly suggests dinner, so this is more likely to include a real meal than a typical standing reception."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/cv6udqb9",
+            "page_title": "Executive Roundtable Dinner at Google Next · Luma",
+            "page_excerpt": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. This invite-only gathering will bring together a select group of technology and…"
+          }
+        },
+        {
+          "time": "6:30–9:30PM",
+          "sponsor": "Finout & nOps",
+          "title": "FinOps After Dark\nRequest an Invite",
+          "url": "https://luma.com/jpvcga70",
+          "location": "1923 Prohibition Bar\nMandalay Bay",
+          "listed": "3/11",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
+          },
+          "food": {
+            "match": {},
+            "label": "Cocktails first, light bites maybe",
+            "note": "Speakeasy-style venues usually lead with drinks and atmosphere; food is often secondary unless the invite says dinner."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/jpvcga70",
+            "page_title": "FinOps After Dark @ GoogleNext 2026 · Luma",
+            "page_excerpt": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026. We’re taking over Prohibition Bar for…"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Friday - April 24, 2026",
+      "events": [
+        {
+          "time": "10AM–12PM",
+          "sponsor": "Gruntwork",
+          "title": "VIP Supercar Racing Experience\nRequest an Invite",
+          "url": "https://www.gruntwork.io/lp/gruntwork-racing",
+          "location": "Dream Racing LV\n7000 N Las Vegas Blvd",
+          "listed": "2/9",
+          "source": "ConferenceParties.com",
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
+          "food": {
+            "label": "Food unclear",
+            "note": "This is a best-effort guess from event wording plus venue context; if the invite does not promise a meal, do not assume one."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.gruntwork.io/lp/gruntwork-racing",
+            "page_title": "Gruntwork Racing",
+            "page_excerpt": "Gruntwork Racing WebFont.load({ google: { families: [\"Geist Mono:300,400,500,600,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5TTJJGTL'); .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label { background-color: var(--overlays--opacity-10); } .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label > .icon-4 { transform: rotate(180deg); } .g-recaptcha { display: block !important; } Accelerator Solutions AWS Landing Zone GCP Landing Zone Azure Landing Zone HIPAA Compliant Infra IaC Re"
+          }
+        }
+      ]
+    }
+  ]
+}
