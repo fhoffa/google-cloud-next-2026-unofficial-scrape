@@ -138,31 +138,25 @@
       letter-spacing: 0.05em;
       color: var(--gray-500);
     }
-    .filter-pills-wrap {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    .filter-pill {
+    .filter-select {
+      width: 100%;
+      min-width: 0;
+      padding: 8px 32px 8px 10px;
       border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      font-size: 0.82rem;
       background: white;
       color: var(--gray-800);
-      border-radius: 999px;
-      padding: 5px 9px;
-      font-size: 0.76rem;
       cursor: pointer;
-      line-height: 1.1;
-      transition: all 0.15s ease;
+      outline: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239aa0a6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
     }
-    .filter-pill:hover {
+    .filter-select:focus {
       border-color: var(--blue);
-      color: var(--blue);
-    }
-    .filter-pill.active {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: white;
-      box-shadow: none;
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
     }
     .filters-toolbar {
       display: flex;
@@ -567,22 +561,26 @@
 
       filtersEl.innerHTML = defs.map(([key, label, values]) => `
         <div class="filter-group">
-          <div class="filter-title">${esc(label)}</div>
-          <div class="filter-pills-wrap">
-            ${values.map((value) => `<button class="filter-pill ${filterState[key] === value ? 'active' : ''}" type="button" data-filter-key="${esc(key)}" data-filter-value="${esc(value)}">${esc(value)}</button>`).join('')}
-          </div>
+          <label class="filter-title" for="filter-${esc(key)}">${esc(label)}</label>
+          <select class="filter-select" id="filter-${esc(key)}" data-filter-key="${esc(key)}">
+            <option value="">All</option>
+            ${values.map((value) => `<option value="${esc(value)}" ${filterState[key] === value ? 'selected' : ''}>${esc(value)}</option>`).join('')}
+          </select>
         </div>
       `).join('') + `
         <div class="filters-toolbar">
-          <div class="filters-help">Tap any badge in a card to filter by that tag.</div>
+          <div class="filters-help">You can also tap badges in a card to filter by that tag.</div>
           <button class="clear-btn" id="clear-filters-btn" type="button">Clear filters</button>
         </div>`;
 
       const active = Object.entries(filterState).filter(([, value]) => value);
       activeFiltersEl.innerHTML = active.map(([key, value]) => `<div class="active-filter"><strong>${esc(key)}</strong>: ${esc(value)}</div>`).join('');
 
-      filtersEl.querySelectorAll('[data-filter-key]').forEach((button) => {
-        button.addEventListener('click', () => toggleFilter(button.dataset.filterKey, button.dataset.filterValue));
+      filtersEl.querySelectorAll('select[data-filter-key]').forEach((select) => {
+        select.addEventListener('change', () => {
+          filterState[select.dataset.filterKey] = select.value;
+          render(window.__partyData);
+        });
       });
       const clearBtn = document.getElementById('clear-filters-btn');
       if (clearBtn) {
