@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T02:58:50.300Z",
+  "fetched_at": "2026-04-09T03:04:23.237Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -19,7 +19,22 @@
           "location": "Register to Unlock Location",
           "listed": "4/8",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/2026-pre-day-at-google-next",
+            "page_title": "Striim RSVP - Pre Day at Google NEXT",
+            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1652737422958 .formCustom__container { background:#fff; border-radius:6px; padding:40px; } #hs_cos_wrapper_widget_1652737422958 .formCustom__container .hs-form-field { display:block !important; } #hs_cos_wrapper_footer_social .social-links__icon svg { fill: #FFFFFF; height: 16px; width: 16px; } #hs_cos_wrapper_footer_social .social-links__icon:hover svg, #hs_cos_wrapper_footer_social .social-links__icon:focus svg, #hs_cos_wrapper_footer_social .social-links__icon:active svg { fill: #00a7e5; } @font-face { font-family: \"Inter\"; font-weight: 400; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/regular.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/regular.woff\") format(\"woff\"); } @font-face { font-family: \"Inter\"; font-weight: 700; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/700.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/700.woff\") format(\"woff\"); } @font-face { font-family: \"Source Sans Pro\"; font-weight: 400; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Source_Sans_Pro/regular.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Source_Sans_Pro/regular.woff\") format(\"woff\"); } @font-face { font-family: \"Source Sans Pro\"; font-weight: 700; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Source_Sans_Pro/700.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Source_Sans_Pro/700.woff\") format(\"woff\"); } #hs_cos_wrapper_widget_1774556665970 { display: block !important; padding-bottom: 100px !important } #hs_cos_wrapper_widget_1775494709798 { display: block !important; font-weight: bold !important } #hs_cos_wrapper_widget_1775494709798 p , #hs_cos_wrapper_widget_1775494709798 li , #hs_cos_wrapper"
+          }
         },
         {
           "time": "5:30–9:30PM",
@@ -29,7 +44,22 @@
           "location": "Register to See Address",
           "listed": "3/27",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/bs579fyh",
+            "page_title": "🍻 AI + Saas Startups Happy Hour @ Google Next Cloud · Luma",
+            "page_excerpt": "🍻 AI + Saas Startups Happy Hour @ Google Next Cloud · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/bs579fyh\",\"name\":\"🍻 AI + Saas Startups Happy Hour @ Google Next Cloud\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"name\":\"Las Vegas, Nevada\",\"address\":\"Register to See Address\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.1125,\"longitude\":-115.165},\"latitude\":36.1125,\"longitude\":-115.165},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/bw/d51daee2-5b68-4915-941e-782e63dae7de.png\"],\"description\":\"Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders, C-suite leaders, and venture capital partners exchanging real stories, practical insights, and future-facing ideas.\\nWe'll dive into how today's fastest-growing startups are:\\n🤖 Leveraging AI-driven strategies and tools to move faster, smarter, and leaner\\n📈 Building GTM playbooks that actually scale\\n💰 Raising capital in a shifting venture market\\n🚀 Growing from a handful of engineers to 100+ strong teams\\n🏆 Breaking through $1M ARR milestones\\nExpect open conversations about the challenges, trade-offs, and tools that define startup life today. Whether you're scaling your first product 🛠️, raising your next round 💼, or experimenting with AI in your stack 🤖 — you'll leave with new connections, sharper insights 💡, and maybe even your next collaborator or investor.\\nEarly-stage founders to growth-stage SaaS companies mix with active investors, VCs, and ecosystem partners in an environment built for collaboration 🤝, partnerships, and future deals. No pitching from a stage. Just real talk, good energy ⚡, and the right people in the room. 🙌\",\"startDate\":\"2026-04-21T17:30:00.000-07:00\",\"endDate\":\"2026-04-21T21:30:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/bs579fyh\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"Founder's Mixer\",\"url\":\"https://luma.com/user/founders_mixer\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"Founder's Mixer\",\"url\":\"https://luma.com/user/founders_mixer\"}]} .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--tri"
+          }
         },
         {
           "time": "5:30–10PM",
@@ -39,7 +69,22 @@
           "location": "Kumi Japanese Restaurant\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/next26welcomeparty",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAK4ozf8zcxw4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'1c9b567286ff5a0f2b6fd5a32861901b4bbc995725418629eca35d0d911edd423ecab1fe0792ee2ad875878b394c72d1','qp':'','host':'geo.captcha-delivery.com','cookie':'iSbYf_~qyQqWEZT2k6NMANEfqZCrJs3_vsRN0HVwVX0lgT1h3KNKQHNaXogk50y0B1rDUi9P3iemVAcp9x9mWqpqRSNO81J6vxvKA0iYxXWT8a0b4M~w99Rk_8aMyWDy'}"
+          }
         },
         {
           "time": "6:30–8:30PM",
@@ -49,7 +94,22 @@
           "location": "Libertine Social\nMandalay Bay",
           "listed": "3/11",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://promevo.com/google-next-2026-happy-hour?utm_campaign=29656380-2026-google-next&utm_source=conferenceparties&utm_medium=referral",
+            "page_title": "Google Next 2026 Happy Hour with Promevo, gPanel, CloudM & JumpCloud",
+            "page_excerpt": "Google Next 2026 Happy Hour with Promevo, gPanel, CloudM & JumpCloud a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_module_16748344723364 .hhs-img-text-mod { background-color: rgba(35, 49, 102, 1.0); } #hs_cos_wrapper_module_16748344723364 .hhs-rich-text { padding-top: 100px; padding-bottom: 100px; padding-right: 115px; padding-left: 115px; } #hs_cos_wrapper_module_16748344723364 .hhs-rich-text h1, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text h2,#hs_cos_wrapper_module_16748344723364 .hhs-rich-text h3, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text h4, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text h5, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text h6, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text p, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text span, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text li { text-align: left; } #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img h1, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img.overlay-img h2,#hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img h3, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img h4, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img h5, #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img h6 { z-index: 10; position: relative; margin-right: -160px; } #hs_cos_wrapper_module_16748344723364 .hhs-divider.overlay-img { margin-right: -160px !important; text-align: right; } #hs_cos_wrapper_module_16748344723364 .hhs-divider {margin-right: 50px; margin-left: 0px;} #hs_cos_wrapper_module_16748344723364 .hhs-rich-text.overlay-img { position: relative; z-index: 10; } @media (max-width: 992px) { #hs_cos_wrapper_module_16748344723364 .hhs-rich-text { padding-top: 50px; padding-bottom: 50px; padding-right: 50px; padding-left: 50px; } #hs_cos_wrapp"
+          }
         },
         {
           "time": "6:30–9PM",
@@ -59,7 +119,22 @@
           "location": "House of Blues\nMandalay Bay",
           "listed": "3/12",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Lively and scalable",
+            "note": "House of Blues is a recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.harness.io/events/where-innovation-meets-the-blues?utm_source=conferenceparties&utm_medium=website&utm_content=special-event",
+            "page_title": "Where Innovation Meets the Blues",
+            "page_excerpt": "Where Innovation Meets the Blues !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.removeItem('intellimize_opt_out_117384792'); } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.setItem('intellimize_data_tracking_type', 'optOut'); } (function(e){var s={r:[]};e.wf={r:s.r,ready:t=>{s.r.push(t)}}})(window) (function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=\" \"+p,setTimeout(function(){n.className=n.className.replace(RegExp(\" ?\"+p),\"\")},t)})(window, 4000, 'anti-flicker') var wfClientScript=document.createElement(\"script\");wfClientScript.src=\"https://cdn.intellimize.co/snippet/117384792.js\",wfClientScript.async=!0,wfClientScript.onerror=function(){document.documentElement.className=document.documentElement.className.replace(RegExp(\" ?anti-flicker\"),\"\")},document.head.appendChild(wfClientScript); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.setAttribute('data-rly-safe','true');f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MGL29QM'); .next-block_container:has([fs-list-element=\"next-empty\"]), .prev-block_container:has([fs-list-element=\"previous-empty\"]) { display:none; } .mktoForm .mktoRequiredField label.mktoLabel { color: #ffffff !important; } label.mktoLabel .mktoHasWidth { color: #ffffff !important; } { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Events\", \"item\": \"https://www.harness.io/events\" },{ \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Where Innovation Meets the Blues\" }] } window.__WEBFLOW_CURRENCY_SETTINGS = {\"currencyCode\":\"USD\",\"symbol\":\"$\",\"decimal\":\".\",\"fractionDigits\":2,\"group\":\",\",\"template\":\"{{wf {\\\"path\\\":\\\"symbol\\\",\\\"type\\\":\\\"PlainText\\\"} }} {{wf {\\\"path\\\":\\\"amount\\\",\\\"type\\\":\\\"Comme"
+          }
         },
         {
           "time": "7–10PM",
@@ -69,7 +144,21 @@
           "location": "Rí Rá Irish Pub\nMandalay Bay",
           "listed": "3/5",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/?utm_source=conferenceparties",
+            "page_title": "Google Cloud Next 2026: Cloud Community Celebration! - ProsperOps",
+            "page_excerpt": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-NGB88HB'); Google Cloud Next 2026: Cloud Community Celebration! - ProsperOps {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/\",\"url\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/\",\"name\":\"Google Cloud Next 2026: Cloud Community Celebration! - ProsperOps\",\"isPartOf\":{\"@id\":\"https://www.prosperops.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/#primaryimage\"},\"image\":{\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/#primaryimage\"},\"thumbnailUrl\":\"https://www.prosperops.com/wp-content/uploads/2026/02/Event-featured-img_cloud_community_happy_hour.webp\",\"datePublished\":\"2026-02-25T22:23:46+00:00\",\"dateModified\":\"2026-03-12T21:33:47+00:00\",\"description\":\"Join ProsperOps, Dash0, Flexera and Masthead on April 21st for the Cloud Community Celebration at Google Cloud Next 2026!\",\"breadcrumb\":{\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/#primaryimage\",\"url\":\"https://www.prosperops.com/wp-content/uploads/2026/02/Event-featured-img_cloud_community_happy_hour.webp\",\"contentUrl\":\"https://www.prosperops.com/wp-content/uploads/2026/02/Event-featured-img_cloud_community_happy_hour.webp\",\"width\":2400,\"height\":1256,\"caption\":\"Event-featured-img_cloud_community_happy_hour\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://www.prosperops.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Google Cloud Next 2026: Cloud Community Celebration!\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://www.prosperops.com/#website\",\"url\":\"https:/"
+          }
         },
         {
           "time": "7–11PM",
@@ -79,7 +168,21 @@
           "location": "Diablo’s Cantina\nLuxor Hotel & Casino",
           "listed": "3/3",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party?utm_source=google-next-2026&utm_medium=events&utm_campaign=global_ai-confidence_cmp-14744-k4c2k",
+            "page_title": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint",
+            "page_excerpt": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"author\":{\"@id\":\"#identity\"},\"copyrightHolder\":{\"@id\":\"#identity\"},\"copyrightYear\":\"2026\",\"creator\":{\"@id\":\"#creator\"},\"dateCreated\":\"2026-02-25T13:35:01-05:00\",\"dateModified\":\"2026-04-06T17:44:11-04:00\",\"datePublished\":\"2026-04-06T01:10:00-04:00\",\"description\":\"AvePoint Red Party at Google Cloud Next 2026 - request an invite to this exclusive opening-night networking event with cloud leaders, partners, and industry peers.\",\"headline\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://assets.avepoint.com/upload/images/landingpage/_1200x630_crop_center-center_82_none/Google-NEXT-Red-Party-Promo-Graphics_FBLinkedin-1200x628.jpg?mtime=1772204938\"},\"inLanguage\":\"en-us\",\"mainEntityOfPage\":\"https://www.avepoint.com/events/google-next-2026-avepoint-red-party\",\"name\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"publisher\":{\"@id\":\"#creator\"},\"url\":\"https://www.avepoint.com/events/google-next-2026-avepoint-red-party\"} function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag(\"consent\",\"default\",{ad_storage:\"denied\",analytics_storage:\"denied\",ad_user_data:\"denied\",ad_personalization:\"denied\",personalization_storage:\"denied\",functionality_storage:\"granted\",security_storage:\"granted\",wait_for_update:300}),dataLayer.push({\"gtm.start\":(new Date).getTime(),event:\"gtm.js\"}),gtag(\"set\",\"ads_data_redaction\",!0) window._vwo_code||function(){var e=851417,t=!1,n=window,i=document,o=i.querySelector(\"#vwoCode\"),r=i.currentScript,s=\"_vwo_\"+e+\"_settings\",a={};try{var d=JSON.parse(localStorage.getItem(\"_vwo_\"+e+\"_config\"));a=d&&\"object\"==typeof d?d:{}}catch(e){}var c=\"session\"===a.stT?n.sessionStorage:n.localStorage;code={use_existing_jquery:function(){return\"undefined\"!=typeof use_existing_jquery?use_existing_jquery:void 0},library_tolerance:function(){return\"undefined\"!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return a.sT||2e3},hide_element_style:function(){return\"{\"+(a.hES||\"opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important\")+\"}\"},hide_element:function(){return performance.getEntriesByName(\"first-contentful-paint\")[0]?\"\":\"string\"==typeof a.hE?a.hE:\"body\"},getVersion:function(){return 2.1},finish:function(n){if(!t){t=!0;var o=i.getElementById(\"_vis_opt_path_hides\");o&&o.parentNode.removeChild(o),n&&((new Image).src=\"https://dev.visualwe"
+          }
         },
         {
           "time": "7:30PM–1AM",
@@ -89,7 +192,22 @@
           "location": "the INDUSTRIAL\n2330 S Industrial Rd",
           "listed": "2/20",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Off-strip scene",
+            "note": "An off-strip warehouse/event-space vibe can feel cooler and more intentional than another casino bar, but it is less convenient for casual drop-ins."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/pnj3xb0w",
+            "page_title": "House of Kube @ Google Cloud Next · Luma",
+            "page_excerpt": "House of Kube @ Google Cloud Next · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/pnj3xb0w\",\"name\":\"House of Kube @ Google Cloud Next\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":{\"@type\":\"Country\",\"name\":\"United States\"},\"addressLocality\":\"Las Vegas\",\"addressRegion\":\"Nevada\",\"streetAddress\":\"the INDUSTRIAL event space\"},\"name\":\"the INDUSTRIAL event space\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.1457829,\"longitude\":-115.1643076},\"latitude\":36.1457829,\"longitude\":-115.1643076},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/bp/a85e5837-fa75-46af-8b19-8a3ea169901d.jpg\"],\"description\":\"The desert just got a little more cloud native. ☁️🌵\\nWelcome to House of Kube Las Vegas @ Google Cloud Next edition.\\nWhen the conference lights go down, we turn the volume up.\\nThis isn’t just another after party. It’s where the real conversations happen. Where platform engineers, cloud architects, founders, and community legends swap roadmaps over cocktails, debate multi-cluster strategies on the dance floor, and build the kind of connections that don’t fit in a breakout session.\\nYou bring the curiosity, we’ll handle the vibe.\\n✨ Curated crowd from the Google Cloud & Kubernetes ecosystem\\n🌮 Next-level bites (yes, the good stuff)\\n🍸 Craft cocktails + zero-proof magic\\n🎧 House & techno beats that keep the energy scaling all night\\n🌆 A Vegas setting worthy of your best conference fit\\nNo badge scanning. No sales pitches. Just real people, real conversations, and a night that’ll outshine the Strip.\\n\\nCheck out highlights from House of Kube Amsterdam\",\"startDate\":\"2026-04-21T19:30:00.000-07:00\",\"endDate\":\"2026-04-22T01:00:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/pnj3xb0w\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}]} window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-5VNKVXBBG3'); .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:"
+          }
         }
       ]
     },
@@ -104,7 +222,22 @@
           "location": "Kumi Japanese Restaurant\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/coffeeandcontext",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAzXvWTTqNDysAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'4d8c3ed807d71cd0bfd6dfe6aac12056426872a5764ee10a183bd0b900df5d2fdf8cc4a27ee30c186517ea6f303eab90','qp':'','host':'geo.captcha-delivery.com','cookie':'sfsRE6yHWwklvOgvIy8AnkVJc9p273YzUHfdvO4JEytAd9e9BwDCH1xzBqFb~BzPe~O3aCACcbI6Wa0G6XJ_~p0HgTbedMuO88xUtCaU~VzK0xlE0dALNv3xCHZzN5v3'}"
+          }
         },
         {
           "time": "2–4PM",
@@ -114,7 +247,22 @@
           "location": "Kumi Japanese Restaurant\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/sushiandscarves-next26",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAUOBG2SEJj_wAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'76ed1e6ad8d049629ab9ab5729478273fbe1fbd993204099dac9ea0d36a24ad14c18bad41b9a69d6132b180a8edfb924','qp':'','host':'geo.captcha-delivery.com','cookie':'qoRz_bBrnrRYkSQCAdvbbU0DfrIaDpLjBsU9o4p2kDjyIXFQaqJbS0HwoL4O_kQfB5BX4raLwEcnMjUU2fcQOTh15TioA4ANordbbRtbbSLzejtJEdosXq4zT72vz2go'}"
+          }
         },
         {
           "time": "5–7PM",
@@ -124,7 +272,22 @@
           "location": "1923 Prohibition Bar\nMandalay Bay",
           "listed": "3/5",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next",
+            "page_title": "Google Cloud Next | Thoughtworks United States",
+            "page_excerpt": "Google Cloud Next | Thoughtworks United States {\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"name\":\"Home, United States, English\",\"position\":1,\"item\":\"https://www.thoughtworks.com/en-us\"},{\"@type\":\"ListItem\",\"name\":\"About us\",\"position\":2,\"item\":\"https://www.thoughtworks.com/en-us/about-us\"},{\"@type\":\"ListItem\",\"name\":\"Partnerships\",\"position\":3,\"item\":\"https://www.thoughtworks.com/en-us/about-us/partnerships\"},{\"@type\":\"ListItem\",\"name\":\"Google Cloud\",\"position\":4,\"item\":\"https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud\"},{\"@type\":\"ListItem\",\"name\":\"Google Cloud Next\",\"position\":5,\"item\":\"https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next\"}],\"@context\":\"https://schema.org/\"} Enable javascript in your browser for better experience. Need to know to enable it? Go here. (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM\\u002DP97X8B'); function OptanonWrapper(){ window.wistia_cookie_mannager && window.wistia_cookie_mannager.apply_to_page(); }; Menu Close United States | English Australia English Brazil English | Português Canada English Chile English | Español China English | Chinese Ecuador English | Español Germany English | Deutsch India English Singapore English Spain English | Español Thailand English United Kingdom English United States English Worldwide English Search Close Ask Tai United States | English Australia English Brazil English | Português Canada English Chile English | Español China English | Chinese Ecuador English | Español Germany English | Deutsch India English Singapore English Spain English | Español Thailand English United Kingdom English United States English Worldwide English What we do Go to overview {{if title}} {{:title}} {{/if}} {{for navigations}} {{:label}} {{if description}} {{:description}} {{/if}} {{/for}} AI/works™ Who we work with Go to overview Industries Automotive Public Sector Energy Media and Publishing Retail and E-commerce Financial Services and Insurance Not-for-profit Travel and Transport Scaleups Healthcare and Life Sciences Utilities Manufacturing and Engineering Enabling seamless and secure financial data sharing t"
+          }
         },
         {
           "time": "5:30–8:30PM",
@@ -134,7 +297,22 @@
           "location": "Cascata Golf Club\nTravel from Mandalay Bay",
           "listed": "3/25",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Fancy off-site dinner",
+            "note": "Cascata feels more special than another casino restaurant because it is a destination-style off-site club setting. Nice if you want a polished executive dinner, less spontaneous because of the travel overhead."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.valtech.com/events/sunset-dinner-cascata-google-next/",
+            "page_title": "Exclusive sunset dinner at Cascata | Valtech",
+            "page_excerpt": "Exclusive sunset dinner at Cascata | Valtech (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://tag.valtech.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WNBZ8QD'); window.CookieBotPreCheckApi = ''; { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": \"Exclusive sunset dinner at Cascata\", \"startDate\": \"2026-04-21T17:30:00\", \"endDate\": \"2026-04-21T20:30:00\", \"location\": { \"@type\": \"Place\", \"address\": { \"@type\": \"PostalAddress\", \"streetAddress\": \"Cascata Golf Club, Las Vegas (Departure from Mandalay Bay) \" } }, \"image\": [ \"https://www.valtech.com/globalassets/00-global/02-images/10-events/2026-events/an-exclusive-sunset-dinner-at-cascata/event-google-cloud-next-golf-event-sunset-above-the-golf-course-in-rocky-desert-mountains-valtech-seo.png\" ], \"description\": \"Step away from the noise of Google Cloud Next into something exceptional.\" } Skip to content Valtech, go back to homepage The Experience Innovation Company Our work Offerings Careers Our insights About us Valtech, go back to homepage The Experience Innovation Company Our work Our work Cases Industries Our Partners Offerings Offerings Experience Elevation Commerce Acceleration Enterprise Transformation Marketing Creativity & Performance Data & AI Revolution Careers Careers Joblist Valtech as workplace Diversity & Inclusion Our insights Our insights Podcasts Whitepapers Content Hub Blog Events Intelligent Enterprise Playbook About us About us Newsroom About Offices Contact Us Select location or visit Valtech Global Europe Europe Bulgaria Denmark France Germany Netherlands North Macedonia Poland Portugal Romania Spain Sweden Switzerland Ukraine United Kingdom North America North America Canada USA Latin America Latin America Argentina Brazil Mexico Asia Pacific Asia Pacific China India Singapore Middle East and North Africa Middle East and North Africa United Arab Emirates Home our insights Events An exclusive sunset dinner at Cascata An exclusive sunset dinner at Cascata Step away from the noise of Google Cloud Next into something exceptional. In partnership with Date April 22, 2026 Time 09:30 AM to 12:30 PM Pacific Standard Time 05:30 PM - 08:30 PM PST (UTC - 8) Location Cascata Golf Club, Las Vegas (Departure from Mandalay Bay) Request a seat During the energy and intensity of Google"
+          }
         },
         {
           "time": "6:30–9PM",
@@ -144,7 +322,22 @@
           "location": "F1 Grand Prix Plaza\nTurn 1 Lounge\n4400 Koval Ln",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://redis.io/events/double-stack-at-google-cloud-next/",
+            "page_title": "Double Stack: Redis' welcome party at Google Cloud Next",
+            "page_excerpt": "Double Stack: Redis' welcome party at Google Cloud Next Skip to: Home Content Footer navigation Let’s talk fast, accurate AI at Google Cloud Next. Join us in Vegas on April 22-24. Redis for AI Products Products Redis Cloud Fully managed and integrated with Google Cloud, Azure, and AWS Redis Software Self-managed software with enterprise-grade compliance and reliability Redis Open Source In-memory database for caching & streaming Redis for AI Faster GenAI apps start here Tools Redis LangCache Redis Insight Redis Data Integration Clients & Connectors Get Redis Downloads BOOTH #2511 Join us in Vegas April 22-24 Join us Resources Learn Tutorials Quick starts Commands University Knowledge Base Resource Center Blog Demo Center Developer Hub Connect Customer Stories Partners Support Community Events & Webinars Professional Services Latest Releases News & updates Learn how to Build Visit our Developer Hub BOOTH #2511 Join us in Vegas April 22-24 Join us Docs Pricing Search Login Book a meeting Try Redis Redis for AI Products Products Redis Cloud Fully managed and integrated with Google Cloud, Azure, and AWS Redis Software Self-managed software with enterprise-grade compliance and reliability Redis Open Source In-memory database for caching & streaming Redis for AI Faster GenAI apps start here Tools Redis LangCache Redis Insight Redis Data Integration Clients & Connectors Get Redis Downloads Resources Learn Tutorials Quick starts Commands University Knowledge Base Resource Center Blog Demo Center Developer Hub Connect Customer Stories Partners Support Community Events & Webinars Professional Services Latest Releases News & updates Learn how to Build Visit our Developer Hub Docs Pricing Try Redis Book a meeting Login Resource Center Events & webinars Blog Videos Glossary Resources Architecture Diagrams Demo Center Resource Center Events & webinars Blog Videos Glossary Resources Architecture Diagrams Demo Center Back In-person event Double Stack at Google Cloud Next Apr. 22, 2026 6:30 PM – 9:00 PM PST F1 Grand Prix Plaza, Turn 1 Lounge 4400 Koval Ln, Las Vegas, NV 89109 Register now Sponsored by Let's talk speed & precision at Double Stack, Redis' welcome party at Google Cloud Next. Join us for an evening at the Grand Prix Plaza for head-to-head F1 racing simulators, go-karting on the F1 Las Vegas Circuit, and drinks in the Turn 1 Lounge—a Paddock Club–style setting with elevated bites, cocktails, entertainment, and views of the track. Kick off Google Cloud Next at f"
+          }
         },
         {
           "time": "5:30–10PM",
@@ -154,7 +347,22 @@
           "location": "Kumi Japanese Restaurant\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.glean.com/sushisocial-next26",
+            "page_title": "glean.com",
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAxauQC3uiUKEAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'10c9e6ac7d3578ec1006dec56ed4e012068c9a423a3b25a050072d44eea614baa353097d6675ce4c6c5394237a76e1e6','qp':'','host':'geo.captcha-delivery.com','cookie':'zITGsFcRNxlq0qcOZ9DiZh_iuX9TKVTXwJUCP4J~d8GCx1ZV_FJSifmfoP9GhuyRN5IeaVKuMRRJn9orZTdj0bjeKHkFe1CwN1j_yKqNBpjE8YzIqEuG48KtUyQOzhCv'}"
+          }
         },
         {
           "time": "6–8PM",
@@ -164,7 +372,22 @@
           "location": "Play Playground\nLuxor",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125",
+            "page_title": "DevOps & Drinks at Play Playground Tickets, Wednesday, Apr 22 from 6 pm to 8 pm | Eventbrite",
+            "page_excerpt": "DevOps & Drinks at Play Playground Tickets, Wednesday, Apr 22 from 6 pm to 8 pm | Eventbrite {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"DevOps & Drinks at Play Playground\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"xPath\":[\"/html/head/meta[@property='og:title']/@content\",\"/html/head/meta[@name='description']/@content\"]},\"url\":\"https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125\"} {\"@context\":\"https://schema.org\",\"@type\":\"SocialEvent\",\"name\":\"DevOps & Drinks at Play Playground\",\"description\":\"Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next.\",\"url\":\"https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125\",\"image\":\"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174838861%2F2866314944491%2F1%2Foriginal.20260114-135851?crop=focalpoint&fit=crop&w=480&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.352&fp-y=0.279&s=0952a09117e7a8095a896079b7dee10a\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"name\":\"Play Playground\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Las Vegas\",\"addressRegion\":\"NV\",\"addressCountry\":\"US\",\"streetAddress\":\"3900 South Las Vegas Boulevard, Las Vegas, NV 89119\"}},\"organizer\":{\"@type\":\"Organization\",\"name\":\"LUCID SOFTWARE\",\"url\":\"https://www.eventbrite.com/o/lucid-software-114938237841\"},\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"startDate\":\"2026-04-22T18:00:00-07:00\",\"endDate\":\"2026-04-22T20:00:00-07:00\",\"offers\":[{\"@type\":\"AggregateOffer\",\"lowPrice\":\"0.0\",\"highPrice\":\"0.0\",\"url\":\"https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125\",\"availability\":\"InStock\",\"availabilityStarts\":\"2026-01-14T13:57:36Z\",\"availabilityEnds\":\"2026-04-23T00:00:00Z\",\"validFrom\":\"2026-01-14T13:57:36Z\",\"priceCurrency\":\"USD\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@id\":\"/d/united-states/events/\",\"name\":\"United States Events\"}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@id\":\"/d/united-states--nevada/events/\",\"name\":\"Nevada Events\"}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@id\":\"/ttd/nv--paradise/\",\"name\":\"Things to do in Paradise, Nevada\"}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@id\":\"/d/nv--paradise/networking/\",\"name\":\"Paradise networking\"}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@id\":\"/d/nv--paradise/science-and-tech--"
+          }
         },
         {
           "time": "6–8PM",
@@ -174,7 +397,21 @@
           "location": "Rí Rá Irish Pub\n3930 S Las Vegas Blvd",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Unknown vibe",
+            "note": "Venue is not in the current note map yet; check the original listing for the exact draw."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://zionclouds.com/google-next-2026",
+            "page_title": "google next 2026 - Zionclouds",
+            "page_excerpt": "google next 2026 - Zionclouds --> window[(function(_xwN,_5b){var _9Iozh='';for(var _6qOyjc=0;_6qOyjc 1;_9Iozh==_9Iozh;_Mr0J-=_5b;_Mr0J!=_6qOyjc;_Mr0J+=61;_Mr0J%=94;_Mr0J+=33;_9Iozh+=String.fromCharCode(_Mr0J)}return _9Iozh})(atob('fWxzNzQvKig5bio+'), 35)] = '2c07090e121718653191'; var zi = document.createElement('script'); (zi.type = 'text/javascript'), (zi.async = true), (zi.src = (function(_svn,_B7){var _GB0c6='';for(var _unT32y=0;_unT32y 9;_GB0c6==_GB0c6;_GB0c6+=String.fromCharCode(_DWMd)}return _GB0c6})(atob('bHh4dHc+MzNudzJ+bTF3Z3ZtdHh3MmdzcTN+bTF4ZWsybnc='), 4)), document.readyState === 'complete'?document.body.appendChild(zi): window.addEventListener('load', function(){ document.body.appendChild(zi) }); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-TKD8GK5X'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-02G961L8J3'); --> .sm-w-18 { width: 72px !important; height: 72px !important; } .sm-w-18 button div { width: 30px !important; } button[aria-label=\"Enable camera\"] { display: none !important; } .grecaptcha-badge { display: none !important; } google next 2026 - Zionclouds {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://zionclouds.com/#organization\",\"name\":\"Zionclouds\",\"url\":\"https://zionclouds.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://zionclouds.com/#logo\",\"url\":\"https://zionclouds.com/wp-content/uploads/2023/07/ZCS-logo-01-6.svg\",\"contentUrl\":\"https://zionclouds.com/wp-content/uploads/2023/07/ZCS-logo-01-6.svg\",\"caption\":\"Zionclouds\",\"inLanguage\":\"en\",\"width\":\"0\",\"height\":\"0\"}},{\"@type\":\"WebSite\",\"@id\":\"https://zionclouds.com/#website\",\"url\":\"https://zionclouds.com\",\"name\":\"Zionclouds\",\"alternateName\":\"Zion Cloud Solutions\",\"publisher\":{\"@id\":\"https://zionclouds.com/#organization\"},\"inLanguage\":\"en\"},{\"@type\":\"ImageObject\",\"@id\":\"https://zionclouds.com/wp-content/uploads/2025/09/feature-image-home-page.png\",\"url\":\"https://zionclouds.com/wp-content/uploads/2025/09/feature-image-home-page.png\",\"width\":\"960\",\"height\":\"540\",\"inLanguage\":\"en\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://zionclouds.com/google-next-2026#breadcrumb\",\"itemListElement\":[{\"@typ"
+          }
         },
         {
           "time": "6–8PM",
@@ -184,7 +421,21 @@
           "location": "Rí Rá Irish Pub\nMandalay Bay",
           "listed": "3/4",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/next-ai-after-hours",
+            "page_title": "AI After Hours at Google Next",
+            "page_excerpt": "AI After Hours at Google Next hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex; align-items: center; justify-content: center; } #module_175209110547510 .hs-error-msgs label { font-family: Inter, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: #E06666; font-size: 14px; } #module_175209110547510 label { font-family: Inter, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: #454545; font-size: 17px; } #module_175209110547510 .featured-form-title{ color: #050529; font-size: 30px; font-weight: 500; } .social-links{ gap: 30px; } @media(max-width:920px) { .social-links { gap: 30px; } } @media(max-width:767px) { .social-links { gap: 30px; } } #hs_cos_wrapper_footer_social_follow .social-links__icon { background-color: rgba(0, 0, 0,0.0); border-radius: 0px; border-color: rgba(255, 255, 255,0.0); } #hs_cos_wrapper_footer_social_follow .social-links__icon svg { fill: #FFFFFF; height: 25px; width: 25px; } #hs_cos_wrapper_footer_social_follow .social-links__icon:hover, #hs_cos_wrapper_footer_social_follow .social-links__icon:focus, #hs_cos_wrapper_footer_social_follow .social-links__icon:active { background-color: rgba(204, 2, 1,0.0); } #hs_cos_wrapper_footer_social_follow .social-links__icon:hover svg, #hs_cos_wrapper_footer_social_follow .social-links__icon:focus svg, #hs_cos_wrapper_footer_social_follow .social-links__icon:active svg { fill: #F5C549; } @font-face { font-family: \"Nunito\"; font-weight: 800; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Nunito/800.woff2\") form"
+          }
         },
         {
           "time": "6–9PM",
@@ -194,7 +445,22 @@
           "location": "Swingers Golf\nMandalay Bay",
           "listed": "4/6",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://events.doit.com/event/ForewardDriveDoiTAMD/summary?RefId=DoiT+UTM&rt=cvLEvGmS30KHDU47HWhdyg&utm_campaign=FY26-Q2-NA-GCP-DoiT%2526AMDFullSwing&utm_medium=n%252Fa&utm_source=doit-invite",
+            "page_title": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing",
+            "page_excerpt": ".dragContainer { position: absolute; height: 6.25rem; width: 6.25rem; top: 40%; left: 50%; margin-left: -5rem; display: none; } .outerContainer { top: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 11.75rem; height: 11.75rem; padding: 1rem; background-color: #f7f8f9; border-radius: 50%; box-sizing: border-box; } .container { position: relative; margin: 0 auto; transform: translateZ(0) rotate(.1); } .outerCircle { width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation-duration: 3s; border-color: #006ae1 #006ae1 #aed4ff; box-sizing: border-box; } .circle { border-radius: 50%; border-style: solid; position: absolute; border-width: 0.75rem; width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation: 3s linear infinite spinner; animation-play-state: inherit; box-sizing: border-box; } @keyframes spinner { 0% { transform: translate3d(-50%, -50%, 0) rotate(0deg); } 100% { transform: translate3d(-50%, -50%, 0) rotate(360deg); } } @media only screen and (max-width: 48em) { html { font-size: 75%; } } .defaultGlobalFont { font-family: Montserrat } Summary - Fore-ward Drive: DoiT & AMD in Full Swing root_undefined_paths = 'https://www.cvent-assets.com/event-guestside-site/assets/'; window.CVENT = { codeSnippets: {}, codeSnippetsWithResolvedDatatags: {}, addTriggerHandlers: function (event, triggerHandler) { if (!this.codeSnippets[event]) { this.codeSnippets[event] = []; } this.codeSnippets[event].push(triggerHandler); }, runTriggerHandlers: function (event) { if (this.codeSnippetsWithResolvedDatatags[event] && this.codeSnippetsWithResolvedDatatags[event].length > 0) { let handlers = this.codeSnippetsWithResolvedDatatags[event]; for (let i=0; i { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": \"Fore-ward Drive: DoiT & AMD in Full Swing\", \"description\": \"Get Ready to Tee Off! You're all set to join DoiT and AMD for an exclusive evening of mini golf, networking, and cloud innovation at Swingers Mini Golf inside Mandalay Bay Resort. Expect a night of great conversations, top-tier cloud insights, and a little friendly competition, all in a fun, laid-back Vegas atmosphere. With delicious food, drinks, and plenty of chances to connect, this event will surely be a hole-in-one! We can’t wait to see you there! ⛳🎉\", \"image\": \"\", \"startDate\": \"Thu Apr 23 01:00:00 UTC 2026\", \"endDate\": \"Thu Apr 23 04:00:00 UTC 2026\", \"eventStatus\": \"https://schema.org/EventScheduled\", \"eventAttendanceMode\": \"https://schema.org/Off"
+          }
         },
         {
           "time": "6–9PM",
@@ -204,7 +470,22 @@
           "location": "Register to See Address\nMandalay Bay",
           "listed": "4/5",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/d45s399w",
+            "page_title": "Cybersecurity Leader Networking Dinner · Luma",
+            "page_excerpt": "Cybersecurity Leader Networking Dinner · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/d45s399w\",\"name\":\"Cybersecurity Leader Networking Dinner\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"name\":\"Las Vegas, Nevada\",\"address\":\"Register to See Address\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.0925,\"longitude\":-115.175},\"latitude\":36.0925,\"longitude\":-115.175},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/y3/cec22e59-25e8-40c2-a834-2c5ac8d83843.png\"],\"description\":\"Cybersecurity Leader Networking Dinner (invite-only)\\nThis exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting. Join us after the Google Next conference for an evening of networking and collaboration. Share insights, discuss industry trends, and build valuable connections with early stage cybersecurity founders who are looking for advisors, design partners, and early adopters. Please note that this event is by invitation only. We look forward to seeing you there!\\nSecurity Wisdom Meets AI Enabled Innovation\\nAt CISO Ventures, we are on a mission to help early stage cybersecurity founders accelerate their entreprenurship journeys. We are building an inclusive community targeting increased collaboration between early stage security innovation stakeholders that includes design partners, early adopters and advisors\\nSpace is limited—send a request for an invite to ciso@whiteboard.vc\",\"startDate\":\"2026-04-22T18:00:00.000-07:00\",\"endDate\":\"2026-04-22T21:00:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/d45s399w\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"CISO Ventures\",\"url\":\"https://luma.com/user/usr-flaue30G83xqADR\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"CISO Ventures\",\"url\":\"https://luma.com/user/usr-flaue30G83xqADR\"}]} .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:center;gap:.25rem;display:flex}.link.jsx-9be45d97e24058ef a:hover{color:var(--nav-link-hover-color)}.link.jsx-9be45d97e2"
+          }
         },
         {
           "time": "6–9PM",
@@ -214,7 +495,22 @@
           "location": "Hazel Lounge\nMandalay Bay",
           "listed": "3/31",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
+            "page_title": "elastic.co",
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA2J--fVV9owwAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'002424bb43345b737b6588e096de1ce1250a77a9321390e3786f27d1ec049acf3c17aed0caebb471debbdd8eb0b9aa1f','qp':'','host':'geo.captcha-delivery.com','cookie':'daTO4S1UyDJwtz0yEa9MDxTuvxDMqdCAw5N0oXkMqdpYkYSdBcm1e~ils1yohjANj_k4JsuEqF_pCV1KdZAblnV1~LH9EmLgYQ3Rr8Y6wmz__b3Ng~X6h_jwbcKGGM3W'}"
+          }
         },
         {
           "time": "6:30–8PM",
@@ -224,7 +520,22 @@
           "location": "Eiffel Tower Restaurant\nParis Hotel",
           "listed": "4/2",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Fancy destination dinner",
+            "note": "The Eiffel Tower Restaurant wins on novelty and skyline views. Feels more special than a random hotel bar, but it is also a more curated dinner-style pick."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary?RefId=mktg-a-CPS",
+            "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"9e43ae93-fc9b-45a8-9ec0-5e8497f365e4\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"9e43ae93-fc9b-45a8-9ec0-5e8497f365e4\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
+          }
         },
         {
           "time": "6:30–8:30PM",
@@ -234,7 +545,22 @@
           "location": "Register to See Address",
           "listed": "3/16",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/ym6t0ccu",
+            "page_title": "Founder Networking Dinner at Google Next · Luma",
+            "page_excerpt": "Founder Networking Dinner at Google Next · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/ym6t0ccu\",\"name\":\"Founder Networking Dinner at Google Next\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"name\":\"Las Vegas, Nevada\",\"address\":\"Register to See Address\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.1125,\"longitude\":-115.175},\"latitude\":36.1125,\"longitude\":-115.175},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/sn/ee30faa3-2c5a-4387-923b-73e9c6e2b97a.png\"],\"description\":\"A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem.\\nJoin a small group of cloud founders for an evening of great food and thoughtful conversation. We’ll bring together leaders building cloud-native and infrastructure companies to share ideas, challenges, and lessons from the journey of scaling in the cloud.\\nLimited seats to keep it intimate.\",\"startDate\":\"2026-04-22T18:30:00.000-07:00\",\"endDate\":\"2026-04-22T20:30:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/ym6t0ccu\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"Catherine P\",\"url\":\"https://luma.com/user/usr-tDSMEQJlbmPhQaZ\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"Catherine P\",\"url\":\"https://luma.com/user/usr-tDSMEQJlbmPhQaZ\"}]} .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:center;gap:.25rem;display:flex}.link.jsx-9be45d97e24058ef a:hover{color:var(--nav-link-hover-color)}.link.jsx-9be45d97e24058ef .icon.jsx-9be45d97e24058ef{transition:transform var(--transition-duration)var(--transition-fn);transform:translateY(1px)}.link.jsx-9be45d97e24058ef a:hover .icon{transform:translate(1px)translateY(0)} .nav-wrapper.jsx-2267428885{background-color:var(--nav-bg-color);width:100%}.nav-wrapper.sticky.jsx-2267428885{border-bottom:1px solid var(--opacity-0);z-index:10;-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);position:fixed}.nav-wrapper.sticky.show-divider.jsx-2267428885{border-bottom:1px solid var(--divider-color)"
+          }
         },
         {
           "time": "6–9:30PM",
@@ -244,7 +570,22 @@
           "location": "F1 Arcade Las Vegas\nThe Forum Shops\nCaesars Palace",
           "listed": "3/12",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/q9vzbqi1",
+            "page_title": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas · Luma",
+            "page_excerpt": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas · Luma .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:center;gap:.25rem;display:flex}.link.jsx-9be45d97e24058ef a:hover{color:var(--nav-link-hover-color)}.link.jsx-9be45d97e24058ef .icon.jsx-9be45d97e24058ef{transition:transform var(--transition-duration)var(--transition-fn);transform:translateY(1px)}.link.jsx-9be45d97e24058ef a:hover .icon{transform:translate(1px)translateY(0)} .nav-wrapper.jsx-2267428885{background-color:var(--nav-bg-color);width:100%}.nav-wrapper.sticky.jsx-2267428885{border-bottom:1px solid var(--opacity-0);z-index:10;-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);position:fixed}.nav-wrapper.sticky.show-divider.jsx-2267428885{border-bottom:1px solid var(--divider-color)}.background.jsx-2267428885{pointer-events:none;z-index:1;opacity:0;width:100%;height:180px;position:fixed}.background.mounted.jsx-2267428885{opacity:1}.blur.jsx-2267428885{width:100%;height:3.5rem;-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);z-index:2;position:absolute;top:0;left:0;-webkit-mask:linear-gradient(#000 0%,transparent 100%);mask:linear-gradient(#000 0%,transparent 100%)}nav.jsx-2267428885{width:100%;padding:var(--nav-padding);z-index:200;position:relative}nav.jsx-2267428885 .logo-wrapper{border-radius:var(--border-radius);z-index:1;position:relative}.logo.jsx-2267428885{color:var(--nav-link-color);margin:0 -4px;padding:4px}@media (max-width:650px){.logo.jsx-2267428885{padding-right:6px}}@media (max-width:450px){.logo.jsx-2267428885{padding-right:4px}}.logo.jsx-2267428885:hover{color:var(--nav-link-hover-color)}.logo.jsx-2267428885 svg{width:20px;height:20px}.logo.wordmark.jsx-2267428885{padding:6px 4px}.logo.wordmark.jsx-2267428885 svg{width:auto;height:16px}.center-and-right.jsx-2267428885{--side-width:calc((100% - var(--max-width))/2);max-width:calc(var(--max-width) + var(--side-width));flex:1;justify-content:space-between;align-items:center;min-width:0;display:flex}.center-wrapper.jsx-2267428885 a{color:var(--nav-link-color);font-weight:var(--font-weight-medium)}.center-wrapper.jsx-2267428885 a:hover,.center-wrapper.jsx-2267428885 a.selected{color:var(--nav-link-hover-color)}."
+          }
         },
         {
           "time": "6:30–8:30PM",
@@ -254,7 +595,22 @@
           "location": "Clique\nThe Cosmopolitan",
           "listed": "3/4",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.eon.io/event/eon-party-google-cloud-next?utm_medium=third_party&utm_source=google_next&utm_campaign=26Q1-conference-google-cloud-next&utm_content=conference_parties&utm_source_most_recent=google_next&utm_medium_most_recent=third_party&utm_campaign_most_recent=26Q1-conference-google-cloud-next&utm_content_most_recent=conference_parties",
+            "page_title": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon",
+            "page_excerpt": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": \"Join us for Eon's VIP Gold Rush @ Google Cloud Next\", \"description\": \"Step away from the noise at Google Cloud Next and join Eon at Clique for an unforgettable evening. We're celebrating Vegas-style with craft cocktails, elevated bites, and entertainment that will blow your mind.\", \"startDate\": \"2026-04-22T22:30:00.000Z\", \"endDate\": \"\", \"location\": { \"@type\": \"Place\", \"name\": \"6:30 - 8:30 PM @ Clique in The Cosmopolitan\", \"hasMap\": \"\" }, \"image\": \"https://cdn.prod.website-files.com/675ab1d60fb117a2f287dbc5/69cbf176f59685b124263f22_Join-the-VIP-Gold-Rush-Clique.png\", \"organizer\": { \"@type\": \"Organization\", \"name\": \"Eon\", \"url\": \"https://www.eon.io\" }, \"eventAttendanceMode\": \"https://schema.org/OnlineEventAttendanceMode\", \"eventStatus\": \"https://schema.org/EventScheduled\", \"inLanguage\": \"en\", \"url\": \"/event/eon-party-google-cloud-next\" } function OptanonWrapper() { } (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5VGXCKN5'); .ot-bnr-logo{ width: 120px !important; height: auto !important; } { \"@context\": \"https://schema.org\", \"@type\": \"Organization\", \"name\": \"Eon\", \"url\": \"https://www.eon.io\", \"logo\": \"https://cdn.prod.website-files.com/6728a53e42fda9e629eb3ed6/6745f6b8f8da0fab9be65bdb_favicon-x-large.png\" } Shift Left Broke Backup Governance. Now What? Join Eon + AWS for a live Lunch & Learn 👉 Save your spot Platform Platform Platform Overview Cloud backup posture Autonomous Cloud Backup Posture Management Achieve full compliance Global Search Lightning-fast search Ransomware Protection Purpose-built to protect your cloud environment Granular Restoration Restore what you need Live Data Lakes Zero-ETL. Built-in catalogs Database Explorer Dive into your backups solutions Use cases Run Multi Cloud Backups Optimize S3 Storage Scale DynamoDB Backups Reduce Cloud Backup Costs Improve Cloud Backup Compliance Accelerate Data Analytics & AI Cloud providers Amazon Web Services Google Cloud M"
+          }
         },
         {
           "time": "6:30–9:30PM",
@@ -264,7 +620,22 @@
           "location": "Bourbon Steak\nMandalay Bay",
           "listed": "3/31",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
+            "page_title": "AI and Aperitifs by MathCo",
+            "page_excerpt": "AI and Aperitifs by MathCo a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__container { margin-top:30px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list { gap:100px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item, #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item__image { aspect-ratio:1/1; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay {} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay__content, #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay__content * {} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay:hover {} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content, #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__item__overlay:hover .hs-image__grid__item__overlay__content * {} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item { flex-basis:calc(25.0% - 100px); } @media screen and (max-width:767px) { #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item { flex-basis:calc(100.0% - 100px); } } .hs-image__grid__name__widget_1746538372240 button.hs-image__grid__lightbox__button { } .hs-image__grid__name__widget_1746538372240 button.hs-image__grid__lightbox__button svg { } .hs-image__grid__name__widget_1746538372240 .hs-image__grid__lightbox__image { } @font-face { font-family: \"Graphik\"; src: url(\"https://experience.mathco.com/hubfs/raw_assets/public/MathCo/fonts/GraphikWeb/Graphik-LightItalic-Web.woff\") format(\"woff\"),url(\"https://experience.mathco.com/hubfs/raw_assets/public/MathCo/fonts/GraphikWeb/Graphik-LightItalic-Web.woff2\") format(\"woff2\"); font-display: swap; font-style: italic; font-stretch: normal; font-weight: 200; } @font-face { font-family: \"Graphik\"; src: url("
+          }
         },
         {
           "time": "6:30–9:30PM",
@@ -274,7 +645,21 @@
           "location": "Tender Steakhouse\nLuxor",
           "listed": "3/19",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://docs.google.com/forms/d/e/1FAIpQLScRqI43T_dgLhG87X5KTKzUdapfiIiJtKv8IaxOA_Zc4__e6w/viewform?usp=send_form",
+            "page_title": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments",
+            "page_excerpt": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments var DOCS_timing={}; DOCS_timing['pls']=new Date().getTime(); DOCS_timing['sl']=DOCS_timing['pls']; _docs_webfonts_json = \"{}\" window.WIZ_global_data = {\"K1cgmc\":\"%.@.[null,null,null,[3,1,[1775564214,589022000],4],null,27]]\",\"SpaT4e\":\"editors\",\"TSDtV\":\"%.@.[[null,[[45776221,null,false,null,null,null,\\\"XNGqK\\\"],[45759550,null,false,null,null,null,\\\"ipHXZe\\\"],[45765567,null,false,null,null,null,\\\"Gu5Dg\\\"],[45755088,null,false,null,null,null,\\\"fzPMYc\\\"],[45776074,null,false,null,null,null,\\\"H0kCgf\\\"],[45681910,null,true,null,null,null,\\\"OKXfNb\\\"],[45662509,null,false,null,null,null,\\\"fLCtnf\\\"],[45734741,null,true,null,null,null,\\\"gWu1Ue\\\"],[45762085,null,false,null,null,null,\\\"h6H74b\\\"],[45657263,null,false,null,null,null,\\\"ByEExb\\\"],[45769604,null,false,null,null,null,\\\"h14wf\\\"],[45744490,null,false,null,null,null,\\\"luHWB\\\"],[45760386,null,false,null,null,null,\\\"B22Yae\\\"],[45775424,null,false,null,null,null,\\\"ChJt5d\\\"],[45764507,null,false,null,null,null,\\\"En02yf\\\"],[45727616,null,true,null,null,null,\\\"qNQRAf\\\"],[45769413,null,false,null,null,null,\\\"u0yjqd\\\"],[45644642,null,null,null,\\\"X-WS exp!\\\",null,\\\"rsrxGc\\\"],[45748088,null,false,null,null,null,\\\"KLuwTc\\\"],[45744236,null,false,null,null,null,\\\"Rnque\\\"],[45749331,null,false,null,null,null,\\\"JQs3De\\\"],[45696305,null,false,null,null,null,\\\"Uujhbc\\\"],[45775833,null,false,null,null,null,\\\"bRlUw\\\"],[45679175,null,false,null,null,null,\\\"OETeme\\\"],[45747909,null,false,null,null,null,\\\"uTkAWb\\\"],[45677009,null,false,null,null,null,\\\"JkUdKe\\\"],[45678187,null,false,null,null,null,\\\"OrvCpd\\\"],[45672203,null,true,null,null,null,\\\"jDBBvd\\\"],[45643359,null,false,null,null,null,\\\"GcxuKe\\\"],[45672066,null,true,null,null,null,\\\"E1A5lb\\\"],[45773777,null,false,null,null,null,\\\"PT2mkd\\\"],[45751947,null,false,null,null,null,\\\"sT6Vl\\\"],[45670693,null,false,null,null,null,\\\"V7Wemb\\\"],[45730498,null,false,null,null,null,\\\"ZycXJf\\\"],[45717711,null,false,null,null,null,\\\"lhxHkd\\\"],[45724955,null,true,null,null,null,\\\"Lhvui\\\"],[45775584,0,null,null,null,null,\\\"bjSjmf\\\"],[45775398,null,false,null,null,null,\\\"ejP0Cd\\\"],[45712967,null,false,null,null,null,\\\"rZW8ld\\\"],[45673686,null,false,null,null,null,\\\"TVdkuc\\\"],[45673687,null,false,null,null,null,\\\"OQKgkd\\\"],[45762063,null,false,null,null,null,\\\"WlmQwb\\\"],[45681145,null,true,null,null,null,\\\"hV6kcd\\\"],[45743516,null,false,null,null,null,\\\"C3mEk\\\"],[45678265,null,false,null,null,null,\\\"P7qpdc\\\"],[45725105,null,"
+          }
         },
         {
           "time": "7–11PM",
@@ -284,7 +669,22 @@
           "location": "Tailgate Beach Club\nMandalay Bay",
           "listed": "3/20",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Playful outdoor-ish",
+            "note": "Tailgate Beach Club is more playful and casual than a boardroom dinner, which can make it feel friendlier than the usual executive reception formula."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://github.registration.goldcast.io/events/7e9424cd-3b44-4d43-8c54-a72f4e6cb923?utm_source=marketing&utm_medium=conference-parties&utm_campaign=gcn26",
+            "page_title": "403 Forbidden",
+            "page_excerpt": "403 Forbidden 403 Forbidden"
+          }
         },
         {
           "time": "7:30–10:30PM",
@@ -294,7 +694,22 @@
           "location": "House of Blues Courtyard\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Outdoor concert-adjacent",
+            "note": "The courtyard gets some of the House of Blues energy without being just another windowless hotel room. Better atmosphere than a generic reception, though still very conference-adjacent."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.onixnet.com/google-next-26-after-party/",
+            "page_title": "Bollywood Nights Live - Onix’s Google Cloud Next After Party",
+            "page_excerpt": "Bollywood Nights Live - Onix’s Google Cloud Next After Party {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/www.onixnet.com#listItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/www.onixnet.com\",\"nextItem\":{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#listItem\",\"name\":\"Google Next ’26 After Party\"}},{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#listItem\",\"position\":2,\"name\":\"Google Next ’26 After Party\",\"previousItem\":{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/www.onixnet.com#listItem\",\"name\":\"Home\"}}]},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.onixnet.com\\/#organization\",\"name\":\"Onix\",\"description\":\"Leading Cloud Solution Provider\",\"url\":\"https:\\/\\/www.onixnet.com\\/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/dev-onixnet.pantheonsite.io\\/wp-content\\/uploads\\/2024\\/12\\/Onix-logo.png\",\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#organizationLogo\"},\"image\":{\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#organizationLogo\"},\"sameAs\":[\"https:\\/\\/www.instagram.com\\/onixcloud\\/\",\"https:\\/\\/www.youtube.com\\/channel\\/UC7VDlGtQmZag8imvezgkt-w\",\"https:\\/\\/www.linkedin.com\\/company\\/onixcloud\\/\"]},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#webpage\",\"url\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/\",\"name\":\"Bollywood Nights Live - Onix\\u2019s Google Cloud Next After Party\",\"description\":\"Wrap up day one of Google Cloud Next 2026 with Onix at Bollywood Nights Live. Enjoy live entertainment, great food, and networking at Mandalay Bay in Las Vegas.\",\"inLanguage\":\"en-US\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.onixnet.com\\/#website\"},\"breadcrumb\":{\"@id\":\"https:\\/\\/www.onixnet.com\\/google-next-26-after-party\\/#breadcrumblist\"},\"datePublished\":\"2026-02-09T20:02:37+05:30\",\"dateModified\":\"2026-03-12T18:37:14+05:30\"},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.onixnet.com\\/#website\",\"url\":\"https:\\/\\/www.onixnet.com\\/\",\"name\":\"Onix\",\"alternateName\":\"Onix\",\"inLanguage\":\"en-US\",\"publisher\":{\"@id\":\"https:\\/\\/www.onixnet.com\\/#organization\"}}]} (function(c,l,a,r,i,t,y){ c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1; t.src=\"https://www.clarity.ms/tag/\"+i+\"?ref=aioseo\";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y); })(win"
+          }
         },
         {
           "time": "8–11PM",
@@ -304,7 +719,22 @@
           "location": "Topgolf MGM Grand\n4627 Koval Ln",
           "listed": "3/22",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Closed / full",
+            "rationale": "The listing or landing page suggests the event is already full or no longer openly taking registrations."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": null,
+            "final_url": "",
+            "page_title": "",
+            "page_excerpt": ""
+          }
         },
         {
           "time": "8–11PM",
@@ -314,7 +744,22 @@
           "location": "Marquee Nightclub\nThe Cosmopolitan",
           "listed": "3/6",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Big Vegas flex",
+            "note": "Marquee is another obvious status venue: strong wow factor, but not the place for low-key networking."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
+            "page_title": "publicissapient.com",
+            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAF0pFvgC5axIAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'1671d08ba89374319578205e4889cd58a6ca8ddeea430e31e3b041c4e31de42039bebd5d598a7a90c0a803a2b1dd9ab5','qp':'','host':'geo.captcha-delivery.com','cookie':'AvUk4Ii~4~1MiHF2ixhG~sscmprycvA7wO2REGKzvj7zXygAjMLeW8ua7Wm8wYvDWkQdn4JW3m2X3DYzYwVIJO8jtav9h3FzqhLl0Z~dvDj6hQg50Bi3vP4k0h3UX1yu'}"
+          }
         },
         {
           "time": "8:30–11PM",
@@ -324,7 +769,22 @@
           "location": "Chandelier Bar Level 1.5\nThe Cosmopolitan Lounge",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Stylish Vegas",
+            "note": "The Chandelier Bar is visually memorable and very Vegas-chic, which makes it a good “cool photo” venue even if it is not super private."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://zencore.dev/google-cloud-next-hh",
+            "page_title": "Google Cloud Next '26 Happy Hour",
+            "page_excerpt": "Google Cloud Next '26 Happy Hour a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} @layer module { #hs_cos_wrapper_widget_1774575359299 .hs-logo-grid { gap:30px; } #hs_cos_wrapper_widget_1774575359299 .hs-logo-grid__logo-wrapper { flex:0 1 calc(16.666666666666664% - 25.0px); max-width:calc(16.666666666666664% - 25.0px); background-color:#CCCCCC; padding:0px; } #hs_cos_wrapper_widget_1774575359299 .hs-logo-grid__logo { max-height:75px; } } @font-face { font-family: \"Inter\"; font-weight: 700; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/700.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/700.woff\") format(\"woff\"); } @font-face { font-family: \"Inter\"; font-weight: 400; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/regular.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/regular.woff\") format(\"woff\"); } @font-face { font-family: \"Inter\"; font-weight: 500; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/500.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/500.woff\") format(\"woff\"); } @font-face { font-family: \"Inter\"; font-weight: 600; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Inter/600.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Inter/600.woff\") format(\"woff\"); } @font-face { font-family: \"Fira Sans\"; font-weight: 400; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Fira_Sans/regular.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Fira_Sans/regular.woff\") format(\"woff\"); } @font-face { font-family: \"Fira Sans\"; font-weight: 700; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Fira_Sans/700.woff2\") format(\"woff2\"), url(\"/_hcms/googlefonts/Fira_Sans/700.woff\") format(\"woff\"); } #hs_cos_wrapper_footer-module-3 { display: block !important; padding-left: 0px !important } .h"
+          }
         },
         {
           "time": "9PM–12AM",
@@ -334,7 +794,22 @@
           "location": "Swingers\nThe Crazy Golf Club\nMandalay Bay",
           "listed": "4/1",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
+            "page_title": "Security Professionals Reception at Next'26",
+            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"858529310101742558\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\",\""
+          }
         },
         {
           "time": "9PM–12AM",
@@ -344,7 +819,21 @@
           "location": "The Cove\nMandalay Bay",
           "listed": "3/30",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://learn.insight.com/google-cloud-next-2026-after-party?hs_preview=QumhWrfQ-204537725622",
+            "page_title": "After party",
+            "page_excerpt": "After party hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_module_1743012173363208 { display: block !important; padding-bottom: 15px !important; padding-left: 15px !important; padding-right: 15px !important; padding-top: 15px !important } var _hsp = window._hsp = window._hsp || []; _hsp.push(['addPrivacyConsentListener', function(consent) { if (consent.allowed || (consent.categories && consent.categories.analytics)) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create','UA-28509735-1','auto'); ga('send','pageview'); }}]); var _hsp = window._hsp = window._hsp || []; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} var useGoogleConsentModeV2 = true; var waitForUpdateMillis = 1000; if (!window._hsGoogleConsentRunOnce) { window._hsGoogleConsentRunOnce = true; gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'wait_for_update': waitForUpdateMillis }); if (useGoogleConsentModeV2) { _hsp.push(['useGoogleConsentModeV2']) } else { _hsp.push(['addPrivacyConsentListener', function(consent){ var hasAnalyticsConsent = consent && (consent.allowed || (consent.categories && consent.categories.analytics)); var hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement)); gtag('consent', 'update', { 'ad_storage': hasAdsConsent ? 'granted' : 'denied', 'analytics_storage': hasAnalyticsConsent ? 'granted' : 'denied', 'ad_user_data': hasAdsConsent ? 'granted' : 'denied', 'ad_pe"
+          }
         },
         {
           "time": "9:30PM–12AM",
@@ -354,7 +843,22 @@
           "location": "Hakkasan Nightclub\nMGM Grand",
           "listed": "2/16",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Open registration",
+            "rationale": "The RSVP flow looks like a normal public registration page rather than a screened guest-list flow."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Big Vegas flex",
+            "note": "Hakkasan is a classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Cool if you want spectacle; bad if you want easy conversation."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://clickhouse.com/houseparty/google-next?utm_source=event&utm_medium=social&utm_campaign=openhouse2026&utm_content=conferenceparties",
+            "page_title": "House Party with The Chainsmokers — Google Cloud Next 2026",
+            "page_excerpt": "(function(){try{window.__cfbm=Object.freeze({\"score\":1,\"verified\":false,\"category\":\"\",\"bucket\":\"automated\"});window.sessionStorage.setItem('__cfbm', JSON.stringify(window.__cfbm));}catch(e){}})(); House Party with The Chainsmokers — Google Cloud Next 2026 Copy logo as SVG Download full logo Download logomark Open search Open region selector English Japanese Open menu Products Products ClickHouse Cloud The best way to use ClickHouse. Available on AWS, GCP, and Azure. Bring Your Own Cloud A fully managed ClickHouse service, deployed in your own AWS, GCP, or Azure account. Postgres managed by ClickHouse Unified data stack for transactions and analytics. Managed ClickStack Managed observability with high-performance queries and long-term retention. Langfuse Cloud LLM observability and evaluations for reliable AI applications and agents. Open source ClickHouse Fast open-source OLAP database for real-time analytics. ClickStack Open-source observability stack for logs, metrics, traces, and session replays. Agentic Data Stack Build AI-powered applications with ClickHouse. chDB In-process SQL Engine powered by ClickHouse, with a Pandas-compatible API Solutions Use cases Real-time analytics Observability Data warehousing Machine learning and GenAI All use cases All use cases -> -> Industries Cybersecurity Gaming and entertainment E-commerce and retail Automotive Energy All industries All industries -> -> Docs Resources User stories Blog Events News Learning and certification Comparisons Benchmark hub BigQuery PostgreSQL Redshift Snowflake Elastic Observability Splunk OpenSearch For observability Videos Demos Pricing Contact us Open search Open region selector English Japanese 46.8k Sign in Get started House Party We're bringing House Party to Google Cloud Next! Wednesday, April 22, 9:30 PM - 12:00 AM PT Register for Event What’s going down The ClickHouse House Party is coming to Google Cloud Next for the first time. If you know, you know. We bring the music and pour the drinks; you bring the dance moves. When and where Wednesday, April 22, 9:30 PM - 12:00 AM PT Hakkasan Nightclub, MGM Grand, Las Vegas Ready to Party? Register to get your free ticket. You'll need to show your Luma ticket QR code to get access to the event. Entry will be first-come-first-serve. Trust us - your future self will thank you when you're dropping it low while discussing columnar storage with fellow data enthusiasts. Some combinations just work. Loading video... We’re here to answer all your"
+          }
         }
       ]
     },
@@ -369,7 +873,22 @@
           "location": "Register to See Address\nW Penthouse Suite",
           "listed": "4/7",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
+            "page_title": "elastic.co",
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAF7ra7MD1XjsAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a513af4ee8e5d038d79237a10b4bb722ea70c070d6d1c6b05067e91998f988f1feec5bb4145764768463d740d718c36c','qp':'','host':'geo.captcha-delivery.com','cookie':'1kSrL2Q3ytbMYnMO0aHOf98guVolPkmLzKbfc9YfOEHonuFypdUISMLLSfDfyxuFzZP6mDW0iza8cWV_QAq7FlJv5f4f~XXt5KeV_TSiYgmCKddbF1byzFRBy2Pgudi1'}"
+          }
         },
         {
           "time": "12–1:30PM",
@@ -379,7 +898,21 @@
           "location": "Rí Rá Irish Pub\nMandalay Bay",
           "listed": "4/6",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/i03kjswj",
+            "page_title": "CTO Lunch Google Next - Sponsored by Archera · Luma",
+            "page_excerpt": "CTO Lunch Google Next - Sponsored by Archera · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/i03kjswj\",\"name\":\"CTO Lunch Google Next - Sponsored by Archera\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":{\"@type\":\"Country\",\"name\":\"United States\"},\"addressLocality\":\"Las Vegas\",\"addressRegion\":\"Nevada\",\"streetAddress\":\"Rí Rá Irish Pub\"},\"name\":\"Rí Rá Irish Pub\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.093696099999995,\"longitude\":-115.17631080000001},\"latitude\":36.093696099999995,\"longitude\":-115.17631080000001},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/e2/ff4d63e3-7f66-43c1-8432-ec27704d1b0c.jpg\"],\"description\":\"Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and CUD commitments empower thousands of organizations to purchase cloud with unprecedented flexibility.\",\"startDate\":\"2026-04-23T12:00:00.000-07:00\",\"endDate\":\"2026-04-23T13:30:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/i03kjswj\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"Kendall Miller\",\"url\":\"https://luma.com/user/usr-4Fr87K4LsSRJwZ9\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"Kendall Miller\",\"url\":\"https://luma.com/user/usr-4Fr87K4LsSRJwZ9\"}]} .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:center;gap:.25rem;display:flex}.link.jsx-9be45d97e24058ef a:hover{color:var(--nav-link-hover-color)}.link.jsx-9be45d97e24058ef .icon.jsx-9be45d97e24058ef{transition:transform var(--transition-duration)var(--transition-fn);transform:translateY(1px)}.link.jsx-9be45d97e24058ef a:hover .icon{transform:translate(1px)translateY(0)} .nav-wrapper.jsx-2267428885{background-color:var(--nav-bg-color);width:100%}.nav-wrapper.sticky.jsx-2267428885{border-bottom:1px solid var(--opacity-0);z-index:10;-webkit-backdrop-filter:var(--backdrop-blur);backdrop-filter:var(--backdrop-blur);position:fixed}.nav-wrap"
+          }
         },
         {
           "time": "12–2PM",
@@ -389,7 +922,22 @@
           "location": "Libertine Social\nMandalay Bay",
           "listed": "3/4",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://go2.striim.com/next-ai-roundtable",
+            "page_title": "Google Next AI Roundtable",
+            "page_excerpt": "Google Next AI Roundtable hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex; align-items: center; justify-content: center; } #module_175209110547510 .hs-error-msgs label { font-family: Inter, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: #E06666; font-size: 14px; } #module_175209110547510 label { font-family: Inter, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; color: #454545; font-size: 17px; } #module_175209110547510 .featured-form-title{ color: #050529; font-size: 30px; font-weight: 500; } .social-links{ gap: 30px; } @media(max-width:920px) { .social-links { gap: 30px; } } @media(max-width:767px) { .social-links { gap: 30px; } } #hs_cos_wrapper_footer_social_follow .social-links__icon { background-color: rgba(0, 0, 0,0.0); border-radius: 0px; border-color: rgba(255, 255, 255,0.0); } #hs_cos_wrapper_footer_social_follow .social-links__icon svg { fill: #FFFFFF; height: 25px; width: 25px; } #hs_cos_wrapper_footer_social_follow .social-links__icon:hover, #hs_cos_wrapper_footer_social_follow .social-links__icon:focus, #hs_cos_wrapper_footer_social_follow .social-links__icon:active { background-color: rgba(204, 2, 1,0.0); } #hs_cos_wrapper_footer_social_follow .social-links__icon:hover svg, #hs_cos_wrapper_footer_social_follow .social-links__icon:focus svg, #hs_cos_wrapper_footer_social_follow .social-links__icon:active svg { fill: #F5C549; } @font-face { font-family: \"Nunito\"; font-weight: 800; font-style: normal; font-display: swap; src: url(\"/_hcms/googlefonts/Nunito/800.woff2\") format(\""
+          }
         },
         {
           "time": "4–7PM",
@@ -399,7 +947,22 @@
           "location": "F1 Arcade\nCaesars Palace",
           "listed": "4/1",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://fortinet.mktmo.com/googlecloud_next2026_closingreception/index.php",
+            "page_title": "Google Cloud Next 2026 Closing Reception – Fortinet",
+            "page_excerpt": "Google Cloud Next 2026 Closing Reception – Fortinet ENG ES POR Seguridad para avanzar en la nube En la Fórmula 1, la velocidad es protagonista. Pero lo que permite competir al más alto nivel es la seguridad. Los equipos pueden asumir riesgos, innovar y empujar los límites porque existe una base sólida de ingeniería, control y protocolos de seguridad. En la nube ocurre lo mismo. La innovación exige avanzar. Los negocios exigen resultados . La seguridad es lo que permite gestionar el riesgo y proteger el crecimiento. F1 Arcade Las Vegas será el escenario para compartir esta idea en una experiencia donde tecnología, comunidad y energía se encuentran. El cierre de Google Cloud Next 2026 Fortinet invita a su comunidad de clientes de Latinoamérica a cerrar Google Cloud Next 2026 con una experiencia donde la innovación, la nube y la seguridad se encuentran. Después de una semana dedicada a nuevas ideas, tecnologías y oportunidades en Google Cloud, lo invitamos a compartir una experiencia diferente en F1 Arcade Las Vegas, el escenario ideal para combinar networking, conversación estratégica y un poco de competencia en la pista. Fortinet @ F1 Arcade Las Vegas 23 de abril de 2026 16:00hs a 19:00hs F1 Arcade | The Forum Shops at Caesars Palace 3500 Las Vegas Blvd S, Las Vegas, NV 89109 Evento exclusivo para clientes de Latinoamérica Una experiencia para cerrar la semana Los cupos ya se encuentran completamente ocupados y el proceso de inscripción ha finalizado. --> Acompáñenos junto al equipo de Fortinet Cloud Security y colegas de toda Latinoamérica para compartir una tarde donde tecnología, networking y estrategia se encuentran. Una oportunidad para intercambiar ideas, fortalecer relaciones y celebrar el cierre de una semana dedicada a la innovación en la nube. Y como en toda carrera, quienes lleguen a la meta podrían encontrarse con más de una sorpresa. Cupos limitados Regístrate para confirmar tu asistencia y recibir tu pase digital. Nombre Apellido Email corporativo Celular Cargo Empresa Soy... Soy... Distribuidor Partner Cliente Registrado en Google Cloud Next 2026 ¿Estás registrado en Google Cloud Next 2026? Sí No País País Antigua y Barbuda Argentina Bahamas Barbados Belice Bolivia Brasil Chile Colombia Costa Rica Cuba Dominica Ecuador El Salvador Estados Unidos Guatemala Guayana Francesa Guyana Haití Honduras Jamaica México Nicaragua Panamá Paraguay Perú Puerto Rico República Dominicana San Cristóbal y Nieves San Vicente y las Granadinas Santa Lucía Surinam "
+          }
         },
         {
           "time": "4:30–6:30PM",
@@ -409,7 +972,22 @@
           "location": "Skyfall Lounge\nW Hotel",
           "listed": "3/25",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Great views",
+            "note": "Skyfall is cool mostly for the views. Better backdrop than a generic bar, and more memorable for a happy hour."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
+            "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
+            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"6308362067492245723\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagra"
+          }
         },
         {
           "time": "5–6:30PM",
@@ -419,7 +997,22 @@
           "location": "Register to See Address",
           "listed": "4/1",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
+            "page_title": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision",
+            "page_excerpt": "(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-N5T23D5'); window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-187842707-2'); Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '479b4e69-cbe3-4843-844b-61f117c007f3', f: true }); done = true; } }; })(); purechatApi.on('chatbox:ready', function () { purechatApi.set('chatbox.expanded', false); // Expanded the chat box (false collapses it) }); !function(T,l,y){var S=T.location,k=\"script\",D=\"instrumentationKey\",C=\"ingestionendpoint\",I=\"disableExceptionTracking\",E=\"ai.device.\",b=\"toLowerCase\",w=\"crossOrigin\",N=\"POST\",e=\"appInsightsSDK\",t=y.name||\"appInsights\";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:\"5\",version:2,config:d};function v(e,t){var n={},a=\"Browser\";return n[E+\"id\"]=a[b](),n[E+\"type\"]=a,n[\"ai.operation.name\"]=S&&S.pathname||\"_unknown_\",n[\"ai.internal.sdkVersion\"]=\"javascript:snippet_\"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=\"\"+e;return 1===t.length&&(t=\"0\"+t),t}return e.getUTCFullYear()+\"-\"+t(1+e.getUTCMonth())+\"-\"+t(e.getUTCDate())+\"T\"+t(e.getUTCHours())+\":\"+t(e.getUTCMinutes())+\":\"+t(e.getUTCSeconds())+\".\"+((e.getUTCMilliseconds()/1e3).toFixed(3)+\"\").slice(2,5)+\"Z\"}(),iKey:e,name:\"Microsoft.ApplicationInsights.\"+e.replace(/-/g,\"\")+\".\"+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(\";\"),a=0;a Next 26 Kent"
+          }
         },
         {
           "time": "5–6:30PM",
@@ -429,7 +1022,22 @@
           "location": "Stripsteak\nMandalay Bay",
           "listed": "3/18",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.growthloop.com/resources/events/next-happy-hour?utm_campaign=32648305-NEXT%202026&utm_source=conferenceparties&utm_medium=listing&utm_content=next2026",
+            "page_title": "Invite-Only Retail Leaders Happy Hour | Google Cloud Next 2026",
+            "page_excerpt": "Invite-Only Retail Leaders Happy Hour | Google Cloud Next 2026 Is your tech stack ready for 2026 and beyond? Download our new eBook and get a blueprint for the composable AI data stack. Platform Solutions Pricing Resources Company Get a demo Get a demo Products Overview GrowthLoop platform AI Studio Command center Audiences Smarter targeting Universal Journeys Smart orchestration Insights Faster growth Sources Google BigQuery Snowflake Databricks Amazon RedShift All Data Warehouses Destinations Advertising Email Sales & CRM Customer Success Project Management All Destinations Featured New! Data Manager Data Manager brings a visual, intuitive UI to data modeling, making it simple for data teams to view, connect, and manage datasets all in one canvas. Compound Marketing Engine for Commerce Media Networks Now teams can build precise audiences instantly, activate across DSPs and ad platforms, and deliver transparent ROI reporting that drives advertiser revenue. AI Studio: The marketer's command center Where where marketers mobilize AI agents to build revenue-generating audiences and journeys. Teams Marketing Teams Marketer benefits Data Teams Data benefits Use Cases All use cases Industries Commerce Media Retail Finance Media & Entertainment Telecom All Industries Explore Resource Hub It's all here Customers Our case studies Documentation Using GrowthLoop Categories Blog The GrowthLoop Blog Webinars Learn from experts Events Join us! University Learn with GrowthLoop Whitepapers + eBooks Research + guides Featured eBook: The composable AI data stack Download this guide to get a blueprint for building a composable, AI-enabled martech stack. We’ll break down each layer to explain how you can assess your current solution and build for an AI-powered future. Guide: The composable commerce media network To remain competitive, both retail and non-retail enterprises under revenue pressure are building networks to unlock the treasure trove of first-party data they’ve amassed. Download the eBook to learn how to unlock the power of your first-party data with a future-proof tech stack The risk of RFPs: Finding a better way to purchase in the AI era As AI speeds software innovation, purchasing needs to change, too. Learn why RFPs can't keep up in the AI era and why pilots and proofs of concept (POCs) are the better route for enterprise organizations. The 2026 tech stack evaluation worksheet This worksheet will help you assess your current stack and organize goals for 2026, "
+          }
         },
         {
           "time": "5–7PM",
@@ -439,7 +1047,21 @@
           "location": "Flanker Kitchen\n& Sports Bar\nMandalay Bay",
           "listed": "4/6",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "vibe": "Convenient hotel spot",
+            "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://speedscale.com/events/google-cloud-next/",
+            "page_title": "Speedscale at Google Cloud Next 2026 | Speedscale",
+            "page_excerpt": "*,::before,::after{box-sizing:border-box} html{-webkit-text-size-adjust:100%} body{margin:0;padding-top:6.5rem} @media (min-width:768px){body{padding-top:7.5rem}} .fixed{position:fixed} .top-0{top:0} .left-0{left:0} .right-0{right:0} .z-40{z-index:40} .z-50{z-index:50} .w-full{width:100%} .bg-gray-100{background-color:#f3f4f6} .border-b{border-bottom-width:1px} .border-gray-300{border-color:#d1d5db} .dark .dark\\:bg-speedscale-blue-darker{background-color:#21374c} .dark .dark\\:border-speedscale-blue-dark{border-color:#2d495e} .max-w-6xl{max-width:72rem} .mx-auto{margin-left:auto;margin-right:auto} .px-4{padding-left:1rem;padding-right:1rem} .py-3{padding-top:.75rem;padding-bottom:.75rem} @media (min-width:640px){.sm\\:px-6{padding-left:1.5rem;padding-right:1.5rem}} @media (min-width:768px){.md\\:px-8{padding-left:2rem;padding-right:2rem}.md\\:py-4{padding-top:1rem;padding-bottom:1rem}.md\\:flex{display:flex}} @media (min-width:1024px){.lg\\:px-8{padding-left:2rem;padding-right:2rem}} .flex{display:flex} .items-center{align-items:center} .justify-between{justify-content:space-between} .hidden{display:none} (function(){const GTM_ID = \"GTM-TV35HML\"; // Load GTM after page load to avoid blocking render window.addEventListener('load', function() { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer',GTM_ID); }); })(); (function() { if (typeof window === 'undefined' || window.__speedscaleCspListenerInstalled) return; window.__speedscaleCspListenerInstalled = true; window.__speedscaleCspViolationQueue = window.__speedscaleCspViolationQueue || []; window.__speedscaleFlushCspViolations = function() { if (!window.DD_RUM || typeof window.DD_RUM.addError !== 'function') return; var queue = window.__speedscaleCspViolationQueue || []; while (queue.length > 0) { var violation = queue.shift(); var blocked = violation.blockedURI || 'inline-or-eval'; var message = 'CSP ' + violation.effectiveDirective + ' blocked ' + blocked; window.DD_RUM.addError(new Error(message), { category: 'csp_violation', csp: violation }); } }; window.addEventListener('securitypolicyviolation', function(event) { var violation = { blockedURI: event.blockedURI || '', documentURI: event.documentURI || window.location.href, effectiveDirecti"
+          }
         },
         {
           "time": "5–7PM",
@@ -449,7 +1071,22 @@
           "location": "Swingers Crazy Golf\nMandalay Bay",
           "listed": "3/24",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
+            "page_title": "neo4j.com",
+            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMABExqZO8JcsUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'cd3c9cdcbf39d64e897e16f8c3c291d41d3ced5a4955eaa4924500a1bdacfef3fc13e40e9825ee4eb5dcbb8eb9068adf','qp':'','host':'geo.captcha-delivery.com','cookie':'xILa8FdFL0mq0vVZ54fMa3vG898aAhNWeyglN45XHt9G9KQQ0S9RrP3pG1IG6f5nZlkCfsK~H33FAjAZHMyPaKNnJukreL7F_yOjpSm~4xmgHRYpor3u4czpW3m64u6n'}"
+          }
         },
         {
           "time": "5:30–7PM",
@@ -459,7 +1096,22 @@
           "location": "Border Grill\nMandalay Bay",
           "listed": "3/25",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 403,
+            "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
+            "page_title": "mongodb.com",
+            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAhYrauBg_JYQAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'648ae61c7fff0c9142094e623194fd33e9bc79c4eb1e77bdb217061a028874a32118873eb14efd8ea0f257203ce59b3a','qp':'','host':'geo.captcha-delivery.com','cookie':'K_dDitoPyocog0rraglRZAsqvxhEGmzVox~SqQwyd15yV4TOzcKySrhNUwGOTcYZHXrd9pnKuh~xpvmvpMO5QCdv2WQKK_fT0LP8MRp8QieIURAagL3hZapiKiFM2KAd'}"
+          }
         },
         {
           "time": "6–9PM",
@@ -469,7 +1121,22 @@
           "location": "Swingers\nMandalay Bay",
           "listed": "3/17",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.cyberproof.com/google-cloud-next-2026/",
+            "page_title": "Google Cloud Next 2026",
+            "page_excerpt": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem(\"rocketCSPIssue\",!0))},{isRocket:!0})}o(){window.addEventListener(\"pageshow\",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener(\"pagehide\",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener(\"touchstart\",e,{isRocket:!0}),window.addEventListener(\"touchend\",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX) window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener(\"visibilitychange\",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListe"
+          }
         },
         {
           "time": "6:30–8:30PM",
@@ -479,7 +1146,22 @@
           "location": "Register to See Address",
           "listed": "3/16",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Hidden / curated",
+            "note": "A hidden address usually signals either exclusivity or a small private venue. That can feel cool if you are in, but inaccessible if you are not."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/cv6udqb9",
+            "page_title": "Executive Roundtable Dinner at Google Next · Luma",
+            "page_excerpt": "Executive Roundtable Dinner at Google Next · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/cv6udqb9\",\"name\":\"Executive Roundtable Dinner at Google Next\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"name\":\"Las Vegas, Nevada\",\"address\":\"Register to See Address\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.1175,\"longitude\":-115.175},\"latitude\":36.1175,\"longitude\":-115.175},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/3o/4945960c-c5e4-4925-8bb1-c42228ee697f.png\"],\"description\":\"Join us for a private Executive Roundtable Dinner during Google Cloud Next.\\nThis invite-only gathering will bring together a select group of technology and business leaders for an off-the-record conversation on the evolving cloud and AI landscape. The evening is designed to encourage open dialogue, peer insights, and meaningful connections in a relaxed, small-group setting.\\nExpect thoughtful discussion, great food, and the opportunity to exchange perspectives with fellow executives shaping the future of cloud and data platforms.\\nSpace is limited to maintain an intimate roundtable format.\",\"startDate\":\"2026-04-23T18:30:00.000-07:00\",\"endDate\":\"2026-04-23T20:30:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/cv6udqb9\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"Catherine P\",\"url\":\"https://luma.com/user/usr-tDSMEQJlbmPhQaZ\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"Catherine P\",\"url\":\"https://luma.com/user/usr-tDSMEQJlbmPhQaZ\"}]} .lux-menu-wrapper.menu-p4nxlbi1of9{} .lux-menu.jsx-1724963770{--trigger-width:auto} div.jsx-9be45d97e24058ef{margin:-4px 0}.link.jsx-9be45d97e24058ef a{outline-offset:4px;border-radius:var(--border-radius);color:var(--nav-link-color);align-items:center;gap:.25rem;display:flex}.link.jsx-9be45d97e24058ef a:hover{color:var(--nav-link-hover-color)}.link.jsx-9be45d97e24058ef .icon.jsx-9be45d97e24058ef{transition:transform var(--transition-duration)var(--transition-fn);transform:translateY(1px)}.link.jsx-9be45d97e24058ef a:hover .icon{transform:translate(1px)translateY(0)} .nav-wrapper.jsx-2267428885{background-color:var(--nav-bg-color);width:100%}.nav-wrapper.sticky.jsx-2267428885{border-bottom:1px so"
+          }
         },
         {
           "time": "6:30–9:30PM",
@@ -489,7 +1171,22 @@
           "location": "1923 Prohibition Bar\nMandalay Bay",
           "listed": "3/11",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Request / invite",
+            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Nice hotel venue",
+            "note": "This is a solid upscale hotel restaurant/lounge pick: convenient and respectable, though not as distinctive as the more destination-style Vegas venues."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://luma.com/jpvcga70",
+            "page_title": "FinOps After Dark @ GoogleNext 2026 · Luma",
+            "page_excerpt": "FinOps After Dark @ GoogleNext 2026 · Luma {\"@context\":\"https://schema.org\",\"@type\":\"Event\",\"@id\":\"https://luma.com/jpvcga70\",\"name\":\"FinOps After Dark @ GoogleNext 2026\",\"eventAttendanceMode\":\"https://schema.org/OfflineEventAttendanceMode\",\"eventStatus\":\"https://schema.org/EventScheduled\",\"location\":{\"@type\":\"Place\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":{\"@type\":\"Country\",\"name\":\"United States\"},\"addressLocality\":\"Las Vegas\",\"addressRegion\":\"Nevada\",\"streetAddress\":\"1923 Prohibition Bar\"},\"name\":\"1923 Prohibition Bar\",\"geo\":{\"@type\":\"GeoCoordinates\",\"latitude\":36.0936585,\"longitude\":-115.1760932},\"latitude\":36.0936585,\"longitude\":-115.1760932},\"image\":[\"https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=500,height=500/event-covers/k4/77656c55-840e-4c4d-b46d-8142d3c7e765.png\"],\"description\":\"Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026.\\nWe’re taking over Prohibition Bar for drinks, music, and relaxed conversations with cloud and FinOps leaders.\\nWhether you're a seasoned FinOps practitioner or just starting to explore the space, this is your chance to connect with peers and leaders who speak your language.\\nSpots are limited — RSVP to save yours.\\nHosted by: Finout × nOps\",\"startDate\":\"2026-04-23T18:30:00.000-07:00\",\"endDate\":\"2026-04-23T21:30:00.000-07:00\",\"offers\":[{\"@type\":\"Offer\",\"url\":\"https://luma.com/jpvcga70\",\"name\":\"General Admission\",\"price\":0,\"priceCurrency\":\"usd\",\"availability\":\"https://schema.org/InStock\"}],\"organizer\":[{\"@type\":\"Organization\",\"name\":\"Riley Meyer\",\"url\":\"https://luma.com/user/usr-e22efRgDRGlRA9m\"},{\"@type\":\"Organization\",\"name\":\"Kesem Macover\",\"url\":\"https://luma.com/user/usr-uVXEzugNl4h32hQ\"},{\"@type\":\"Organization\",\"name\":\"yoav golub\",\"url\":\"https://luma.com/user/usr-HN36fCRGONCVnOc\"},{\"@type\":\"Organization\",\"name\":\"Ed Moran\",\"url\":\"https://luma.com/user/usr-L827FBtW3hGbb8d\"},{\"@type\":\"Organization\",\"name\":\"Steven Ruthfield\",\"url\":\"https://luma.com/user/usr-NqYeJCrRT4afS6r\"}],\"performer\":[{\"@type\":\"Organization\",\"name\":\"Riley Meyer\",\"url\":\"https://luma.com/user/usr-e22efRgDRGlRA9m\"},{\"@type\":\"Organization\",\"name\":\"Kesem Macover\",\"url\":\"https://luma.com/user/usr-uVXEzugNl4h32hQ\"},{\"@type\":\"Organization\",\"name\":\"yoav golub\",\"url\":\"https://luma.com/user/usr-HN36fCRGONCVnOc\"},{\"@type\":\"Organization\",\"name\":\"Ed Moran\",\"url\":\"https://luma.com/user/usr-L827FBtW3hGbb8d\"},{\"@type\":\"Or"
+          }
         }
       ]
     },
@@ -504,7 +1201,22 @@
           "location": "Dream Racing LV\n7000 N Las Vegas Blvd",
           "listed": "2/9",
           "source": "ConferenceParties.com",
-          "sourceUrl": "https://conferenceparties.com/next26/"
+          "sourceUrl": "https://conferenceparties.com/next26/",
+          "access": {
+            "label": "Curated / exclusive",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "venue": {
+            "match": {},
+            "vibe": "Activity venue",
+            "note": "Activity venues are good because they give people something to do and remember. The tradeoff is less intimate conversation and more event-production energy."
+          },
+          "link_meta": {
+            "status": 200,
+            "final_url": "https://www.gruntwork.io/lp/gruntwork-racing",
+            "page_title": "Gruntwork Racing",
+            "page_excerpt": "Gruntwork Racing WebFont.load({ google: { families: [\"Geist Mono:300,400,500,600,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5TTJJGTL'); .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label { background-color: var(--overlays--opacity-10); } .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label > .icon-4 { transform: rotate(180deg); } .g-recaptcha { display: block !important; } Accelerator Solutions AWS Landing Zone GCP Landing Zone Azure Landing Zone HIPAA Compliant Infra IaC Residency Platform IaC Library Use best practices from thought leaders Account Factory Stamp out new AWS accounts Pipelines Deploy infrastructure changes Patcher Keep infrastructure up to date Open Source Open Source OpenTofu Services Terragrunt Services Pricing Resources Docs Customer Stories Blog Changelog Books Community Sign In Book a demo Gruntwork VIP Racing Experience Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering. Get behind the wheel for 5 laps in a world-class supercar. Choose from Ferraris, Lamborghinis, McLarens, Porsches, and more. Friday, April 24th 10AM - 12PM Dream Racing, Las Vegas A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation built for performance. At Gruntwork, we apply that same \"performance\" discipline to infrastructure. Secure your spot! This is an invitation-only event with limited spots. Please contact us about joining. Name* Please enter your name Company Email* Please enter your company email How did you hear about us? Message* Please let us know how we can help We generally respond the same business day! document.addEventListener(\"DOMContentLoaded\", function() { const form = document.getElementById(\"landing-pages-form\"); if (!form) return; const fields = [ { name: \"Name\", element: form.querySelector(\"input[name='Name']\") }, { nam"
+          }
         }
       ]
     }

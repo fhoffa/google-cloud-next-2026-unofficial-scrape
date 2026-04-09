@@ -210,7 +210,11 @@ In short: the library pages already carry enough metadata to support change dete
 npm run update:parties
 ```
 
-This fetches the current `https://conferenceparties.com/next26/` page, parses the published party table, and writes `media/conference-parties-next26.json` for the static `parties.html` page.
+This fetches the current `https://conferenceparties.com/next26/` page, parses the published party table, follows the RSVP links, and writes `media/conference-parties-next26.json` for the static `parties.html` page.
+
+The generated page includes heuristic annotations for:
+- likely RSVP openness vs invite-only / curated-ness
+- quick venue-vibe notes explaining why the location feels cool, convenient, or less special
 
 The repo page intentionally gives explicit source credit and links back to ConferenceParties.com rather than pretending the listings originated here.
 
