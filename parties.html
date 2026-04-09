@@ -91,20 +91,25 @@
       color: var(--gray-800);
     }
     .filters {
-      display: flex;
+      display: grid;
       gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
       margin-bottom: 14px;
+    }
+    .filter-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .filter-pill {
       border: 1.5px solid var(--gray-200);
       background: white;
       color: var(--gray-800);
       border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.83rem;
+      padding: 6px 10px;
+      font-size: 0.8rem;
       cursor: pointer;
+      line-height: 1.1;
     }
     .filter-pill:hover {
       border-color: var(--blue);
@@ -119,16 +124,16 @@
       border: none;
       background: none;
       color: var(--blue);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       cursor: pointer;
-      padding: 6px 4px;
+      padding: 4px 2px;
     }
     .clear-btn:hover { text-decoration: underline; }
     .active-filters {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .active-filter {
       display: inline-flex;
@@ -165,7 +170,7 @@
     }
     .event {
       display: grid;
-      grid-template-columns: 115px 160px 1fr 180px 110px;
+      grid-template-columns: 135px 150px 1fr 190px 82px;
       gap: 14px;
       padding: 14px 18px;
       border-top: 1px solid var(--gray-200);
@@ -319,6 +324,13 @@
       };
     }
 
+    function shortDayLabel(label = '') {
+      const match = String(label).match(/^(\w+)\s+-\s+(\w+)\s+(\d{1,2}),\s+(\d{4})$/);
+      if (!match) return label;
+      const [, weekday, month, day] = match;
+      return `${weekday.slice(0,3)} ${month.slice(0,3)} ${day}`;
+    }
+
     function toggleFilter(key, value) {
       filterState[key] = filterState[key] === value ? '' : value;
       render(window.__partyData);
@@ -347,8 +359,8 @@
       ];
 
       filtersEl.innerHTML = defs.map(([key, label, values]) => `
-        <div>
-          <div class="label" style="margin-bottom:6px">${esc(label)}</div>
+        <div class="filter-group">
+          <div class="label" style="margin-bottom:0;min-width:88px">${esc(label)}</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
             ${values.map((value) => `<button class="filter-pill ${filterState[key] === value ? 'active' : ''}" type="button" data-filter-key="${esc(key)}" data-filter-value="${esc(value)}">${esc(value)}</button>`).join('')}
           </div>
@@ -410,7 +422,7 @@
           <div class="events">
             ${(day.events || []).map((event) => `
               <article class="event">
-                <div><div class="label">When</div><div class="value">${esc(day.label)}\n${esc(event.time)}</div></div>
+                <div><div class="label">When</div><div class="value">${esc(shortDayLabel(day.label))} · ${esc(event.time)}</div></div>
                 <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
                 <div>
                   <div class="label">Event</div>
