@@ -614,6 +614,49 @@ test('copy favorites link button is present', async () => {
   assert.equal(env.document.getElementById('copy-favorites-link').id, 'copy-favorites-link');
 });
 
+test('explorer renders related sessions when a precomputed artifact is provided', async () => {
+  const env = createEnvironment();
+  const source = {
+    sessions: [
+      { id: '1', title: 'Build agents with Gemini', description: 'Agent workflows', url: 'https://example.com/session/1/build-agents', topics: ['Agents'], speakers: [] },
+      { id: '2', title: 'Scale RAG on Vertex AI', description: 'RAG pipelines', url: 'https://example.com/session/2/scale-rag', topics: ['Vertex AI'], speakers: [] },
+      { id: '3', title: 'Kubernetes ops', description: 'Infra talk', url: 'https://example.com/session/3/k8s-ops', topics: ['Kubernetes'], speakers: [] },
+    ],
+  };
+  const related = {
+    sessions: {
+      '1': {
+        sessionId: '1',
+        related: [
+          { sessionId: '2', title: 'Scale RAG on Vertex AI', url: 'https://example.com/session/2/scale-rag', score: 0.91 },
+        ],
+      },
+    },
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source, { records: [] }, related),
+    location: env.location,
+    history: env.history,
+    relatedSessionsUrl: 'related-sessions.json',
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Related sessions/);
+  assert.match(appHtml, /class="related-session-link"/);
+  assert.match(appHtml, /data-related-session-id="2"/);
+  assert.match(appHtml, /Scale RAG on Vertex AI/);
+});
+
+test('next2025 explorer bootstraps the shared UI with the related-sessions artifact', () => {
+  const next2025Html = fs.readFileSync(new URL('../next2025/index.html', import.meta.url), 'utf8');
+  assert.match(next2025Html, /Google Cloud Next 2025 — Session Search/);
+  assert.match(next2025Html, /relatedSessionsUrl: '\.\/related-sessions-2025-embeddings\.json'/);
+  assert.match(next2025Html, /sessions_25_classified_embeddings\.json/);
+});
 
 test('index.html exposes a visible version marker', () => {
   assert.match(html, /Version:\s*(?:[0-9a-f]{7,}|\d{4}-\d{2}-\d{2} \d{2}:\d{2} UTC)/i);

@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-04-08T20:49:29.970Z",
+    "generatedAt": "2026-04-09T07:01:11.748Z",
     "dataScrapedAt": "2026-04-08T20:11:50.480Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
-    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260404.png",
+    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260408.png",
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
@@ -45,24 +45,17 @@
   "fullness": {
     "stats": [],
     "observations": [
-      "<a href=\"./index.html?availability=full\"><strong>136 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">916 still have seats</a>.",
-      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 33 of 37 (89%) are already full."
+      "<a href=\"./index.html?availability=full\"><strong>139 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">913 still have seats</a>.",
+      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 34 of 37 (92%) are already full."
     ],
     "rankings": {
       "fullByCategory": [
         {
           "name": "Workshops",
-          "count": 33,
+          "count": 34,
           "totalKnown": 37,
-          "share": "89%",
-          "shareValue": 89.1891891891892
-        },
-        {
-          "name": "Lounge Sessions",
-          "count": 15,
-          "totalKnown": 21,
-          "share": "71%",
-          "shareValue": 71.42857142857143
+          "share": "92%",
+          "shareValue": 91.8918918918919
         },
         {
           "name": "Discussion Groups",
@@ -72,25 +65,32 @@
           "shareValue": 65.1685393258427
         },
         {
+          "name": "Lounge Sessions",
+          "count": 13,
+          "totalKnown": 21,
+          "share": "62%",
+          "shareValue": 61.904761904761905
+        },
+        {
           "name": "Solution Talks",
-          "count": 25,
+          "count": 27,
           "totalKnown": 50,
-          "share": "50%",
-          "shareValue": 50
+          "share": "54%",
+          "shareValue": 54
         },
         {
           "name": "Partner Summit Breakouts",
-          "count": 4,
+          "count": 5,
           "totalKnown": 12,
-          "share": "33%",
-          "shareValue": 33.33333333333333
+          "share": "42%",
+          "shareValue": 41.66666666666667
         },
         {
-          "name": "Breakouts",
+          "name": "Spotlights",
           "count": 1,
-          "totalKnown": 436,
-          "share": "0%",
-          "shareValue": 0.22935779816513763
+          "totalKnown": 24,
+          "share": "4%",
+          "shareValue": 4.166666666666666
         }
       ]
     }
