@@ -158,6 +158,16 @@
       line-height: 1.45;
       color: var(--gray-800);
     }
+    .summary-note {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--gray-800);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
     footer {
       max-width: 1100px;
       margin: 0 auto 32px;
@@ -231,6 +241,14 @@
       return `<div class="stat"><strong>${esc(value)}</strong> ${esc(label)}</div>`;
     }
 
+    function splitLocation(location = '') {
+      const parts = String(location).split('\n').map((s) => s.trim()).filter(Boolean);
+      return {
+        place: parts[0] || 'Location unclear',
+        area: parts.slice(1).join(', '),
+      };
+    }
+
     fetch('./media/conference-parties-next26.json')
       .then((r) => {
         if (!r.ok) throw new Error(`Failed to load party data: ${r.status}`);
@@ -259,11 +277,12 @@
             <div class="events">
               ${(day.events || []).map((event) => `
                 <article class="event">
-                  <div><div class="label">Time</div><div class="value">${esc(event.time)}</div></div>
+                  <div><div class="label">When</div><div class="value">${esc(day.label)}\n${esc(event.time)}</div></div>
                   <div><div class="label">Sponsor</div><div class="value">${esc(event.sponsor)}</div></div>
                   <div>
                     <div class="label">Event</div>
                     <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
+                    <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
                     <div style="margin-top:10px">
                       <span class="badge ${badgeClass(event.access?.label)}">${esc(event.access?.label || 'Unclear')}</span>
                       <div class="meta-note">${esc(event.access?.rationale || '')}</div>
