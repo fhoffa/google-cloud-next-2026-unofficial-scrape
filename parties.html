@@ -201,7 +201,7 @@
       <strong>Source credit:</strong> these party listings are indexed from
       <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">ConferenceParties.com’s Google Cloud Next 26 page</a>.
       This page is just a cleaner browseable copy with update metadata. RSVP details may change; check the source/original event page before relying on any listing.
-      The RSVP access, likely audience, and venue-vibe notes are heuristic annotations from the linked landing pages and venue names, not official organizer labels.
+      The RSVP access, likely audience, food/drink expectations, and venue-vibe notes are heuristic annotations from the linked landing pages and venue names, not official organizer labels.
     </div>
 
     <div class="stats" id="stats"></div>
@@ -270,6 +270,10 @@
                     <div style="margin-top:10px">
                       <span class="badge">${esc(event.audience?.label || 'Audience unclear')}</span>
                       <div class="meta-note">${esc(event.audience?.rationale || '')}</div>
+                    </div>
+                    <div style="margin-top:10px">
+                      <span class="badge">${esc(event.food?.label || 'Food unclear')}</span>
+                      <div class="meta-note">${esc(event.food?.note || '')}</div>
                     </div>
                   </div>
                   <div>

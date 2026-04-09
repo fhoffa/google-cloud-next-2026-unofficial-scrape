@@ -178,6 +178,80 @@ function classifyAudience(event, fetched = {}) {
   };
 }
 
+function describeFood(location = '') {
+  const raw = compact(location);
+  const lower = raw.toLowerCase();
+
+  const entries = [
+    {
+      match: /kumi/,
+      label: 'Japanese / sushi likely',
+      note: 'Kumi strongly suggests sushi, Japanese small plates, and cocktail-reception food rather than a full plated dinner.'
+    },
+    {
+      match: /bourbon steak|stripsteak|tender steakhouse/,
+      label: 'Steakhouse dinner',
+      note: 'This is likely the heaviest food option on the list: actual steakhouse dinner energy, not just passed appetizers.'
+    },
+    {
+      match: /border grill/,
+      label: 'Mexican / shared plates likely',
+      note: 'Border Grill usually implies tacos, shared plates, and a more casual-food vibe than a formal dinner.'
+    },
+    {
+      match: /libertine social/,
+      label: 'Gastropub / cocktail bites likely',
+      note: 'Expect upscale bar food, cocktails, and passed bites more than a formal seated meal.'
+    },
+    {
+      match: /house of blues/,
+      label: 'Southern / bar food likely',
+      note: 'House of Blues usually means drinks plus comfort-food / bar-food territory, not fine dining.'
+    },
+    {
+      match: /hakkasan|marquee nightclub|chandelier bar|clique|hazel lounge|skyfall lounge/,
+      label: 'Drinks-first, food unclear',
+      note: 'This reads more like cocktails and nightlife than a reliable dinner plan. Eat beforehand unless the invite explicitly promises food.'
+    },
+    {
+      match: /swingers|topgolf|play playground|f1 arcade|f1 grand prix plaza|tailgate beach club/,
+      label: 'Snacks / party food likely',
+      note: 'Activity venues usually mean drinks plus snackable event food, not a memorable meal.'
+    },
+    {
+      match: /eiffel tower restaurant|cascata golf club/,
+      label: 'Fancy dinner likely',
+      note: 'This sounds like a real sit-down dinner or at least a more serious food program than a typical happy hour.'
+    },
+    {
+      match: /1923 prohibition bar/,
+      label: 'Cocktails first, light bites maybe',
+      note: 'Speakeasy-style venues usually lead with drinks and atmosphere; food is often secondary unless the invite says dinner.'
+    },
+    {
+      match: /register to see address|register to unlock location/,
+      label: 'Food unknown until approved',
+      note: 'Private-address events are opaque by design, so you should not assume a meal standard from the listing alone.'
+    },
+  ];
+
+  for (const entry of entries) {
+    if (entry.match.test(lower)) return entry;
+  }
+
+  if (/mandalay bay|luxor|cosmopolitan|mgm grand|paris hotel|caesars palace/.test(lower)) {
+    return {
+      label: 'Hotel reception food maybe',
+      note: 'Hotel-adjacent events often have decent catering, but the food quality depends heavily on whether this is a real dinner, happy hour, or just drinks.'
+    };
+  }
+
+  return {
+    label: 'Food unclear',
+    note: 'The venue name alone is not enough to confidently predict the food situation.'
+  };
+}
+
 function describeVenue(location = '') {
   const raw = compact(location);
   const lower = raw.toLowerCase();
@@ -300,11 +374,13 @@ async function enrichEvent(event) {
   const fetched = await fetchLandingMeta(event.url);
   const access = classifyAccess(event, fetched);
   const audience = classifyAudience(event, fetched);
+  const food = describeFood(event.location);
   const venue = describeVenue(event.location);
   return {
     ...event,
     access,
     audience,
+    food,
     venue,
     link_meta: fetched,
   };
