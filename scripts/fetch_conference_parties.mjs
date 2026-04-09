@@ -445,6 +445,83 @@ function describeFood(event, fetched = {}) {
   };
 }
 
+const EVENT_OVERRIDES = {
+  "House of Kube": {
+    invite_excerpt: 'Curated crowd from the Google Cloud and Kubernetes ecosystem, next-level bites, craft cocktails and zero-proof drinks, plus house and techno energy in a stylish Vegas setting.',
+    summary: 'Curated Google Cloud and Kubernetes crowd with stronger scene energy than a generic sponsor happy hour. The pitch is clearly about good bites, craft cocktails, zero-proof options, and a stylish late-night Vegas vibe.',
+    access: { openness: 'Request invite', exclusivity: 'Medium-high', rationale: 'Curated crowd and invite flow, but still broad enough for the cloud-native ecosystem.' },
+    audience: { label: 'Broad technical / cloud practitioners', rationale: 'Explicitly aimed at the Google Cloud and Kubernetes ecosystem.' },
+    food: { label: 'Food and drinks clearly provided', note: 'The page explicitly promises good bites, craft cocktails, and zero-proof drinks.' },
+  },
+  "Cloud Community Celebration!": {
+    summary: 'Broad technical/cloud mixer for SREs, platform engineers, Google Cloud experts, and FinOps practitioners before the conference rush. It reads more welcoming and practitioner-oriented than the sponsor list alone would suggest.',
+    audience: { label: 'Broad technical / cloud practitioners', rationale: 'The invite explicitly calls out SREs, platform engineers, cloud experts, and FinOps practitioners.' },
+  },
+  "Press Start Before Google Next Kicks Off.": {
+    summary: 'Broad, drop-in builder day for early arrivals before Next fully starts. The page clearly offers coffee, snacks, lunch, certification/giveaways, hands-on demos, and a closing happy hour.',
+  },
+  "NEXT '26 Welcome Party": {
+    summary: 'Straightforward conference kick-off mixer at Kumi for broad cloud networking. Reads like an easy first-night welcome party rather than a tightly screened VIP event.',
+  },
+  "Coffee & Context: AI Strategy Summit": {
+    summary: 'Smaller morning strategy meetup that sounds more conversation-oriented than party-like. The positioning feels executive/strategy leaning, but still in a manageable breakfast-hour format.',
+    audience: { label: 'Executives / curated buyers', rationale: 'The “AI Strategy Summit” framing sounds more leadership/strategy-oriented than broad developer social.' },
+  },
+  "Women in Tech Meetup: Sushi & Scarves": {
+    summary: 'Affinity-group meetup with a lighter, community-first feel rather than pure sponsor schmoozing. The pitch is clearly social and welcoming, with sushi as part of the draw.',
+  },
+  "Sushi Social: Networking Reception": {
+    summary: 'Broad networking reception with stronger-than-average food expectations thanks to the sushi framing and Kumi venue. Reads like an ecosystem mixer more than a highly curated room.',
+  },
+  "Fore-ward Drive: DoiT & AMD in Full Swing": {
+    summary: 'Playful activity-led mixer built around Swingers golf rather than formal networking. Feels broad and social, with cloud/partner-ecosystem energy more than a narrow executive dinner.',
+    audience: { label: 'Broad technical / cloud practitioners', rationale: 'Reads as a broad cloud/partner networking event rather than a niche FinOps-only room.' },
+  },
+  "Sip. Search. Repeat.": {
+    summary: 'Compact drinks-led reception with Elastic and Google Cloud at Hazel Lounge. The title and venue suggest cocktails and conversation more than a big spectacle event.',
+  },
+  "The Oasis by GitHub": {
+    summary: 'GitHub’s beach-club reception sounds like a broad developer/cloud social rather than a narrow VIP room. Tailgate Beach Club makes it feel more playful and approachable than the usual hotel-lounge format.',
+    audience: { label: 'Broad technical / cloud practitioners', rationale: 'GitHub plus the reception framing points to a broad developer/cloud crowd.' },
+  },
+  "Exclusive VIP Party": {
+    summary: 'This is the obvious status play: explicit VIP framing plus Marquee nightclub spectacle. More about buzz and high-energy social flex than careful small-group networking.',
+    access: { openness: 'Curated guest list', exclusivity: 'High', rationale: 'Explicit VIP framing points to a screened guest list.' },
+    audience: { label: 'Executives / curated buyers', rationale: 'VIP framing usually means buyer/partner/executive targeting more than open practitioner traffic.' },
+  },
+  "Security Pros Reception": {
+    summary: 'Late-night security-focused reception for security practitioners, leaders, and vendors at Swingers. The tone is social and drinks-led, but the attendee target is clearly the security crowd.',
+  },
+  "InnovatHERs Breakfast": {
+    summary: 'Smaller breakfast gathering with an affinity-group/community angle and a more curated feel thanks to the private-suite setup. More intentional and conversational than a broad open mixer.',
+  },
+  "Executive Reception Happy Hour": {
+    summary: 'Buyer/executive-leaning happy hour that still uses a playful Swingers venue instead of a stiff boardroom setting. Reads more curated than open, but more social than formal dinner.',
+    audience: { label: 'Executives / curated buyers', rationale: 'The page frames this as an executive reception first.' },
+  },
+  "MongoDB Happy Hour": {
+    summary: 'Broad technical ecosystem happy hour anchored by MongoDB, Confluent, and LangChain. Border Grill gives it better food odds than a generic hotel bar, but it still reads as a drinks-first mixer.',
+  },
+  "Where Innovation Meets the Blues": {
+    summary: 'Harness is using House of Blues for a scaled social night with more personality than a standard hotel reception. The venue matters here: this reads like a lively branded evening, not a tiny curated dinner.',
+    audience: { label: 'Broad technical / cloud practitioners', rationale: 'Reads as a broad cloud/software crowd, not a FinOps-specific event.' },
+  },
+};
+
+function applyOverride(event, derived) {
+  const override = EVENT_OVERRIDES[event.title?.split('\n')[0]];
+  if (!override) return derived;
+  return {
+    ...derived,
+    invite_excerpt: override.invite_excerpt ?? derived.invite_excerpt,
+    summary: override.summary ?? derived.summary,
+    access: override.access ?? derived.access,
+    audience: override.audience ?? derived.audience,
+    food: override.food ?? derived.food,
+    venue: override.venue ?? derived.venue,
+  };
+}
+
 function describeVenue(location = '') {
   const raw = compact(location);
   const lower = raw.toLowerCase();
@@ -529,7 +606,7 @@ async function enrichEvent(event) {
   const food = describeFood(event, { ...fetched, invite_excerpt, summary });
   const venue = describeVenue(event.location);
 
-  return {
+  return applyOverride(event, {
     ...event,
     summary,
     invite_excerpt,
@@ -545,7 +622,7 @@ async function enrichEvent(event) {
       top_blocks: fetched.blocks.map(({ text, score }) => ({ text: text.slice(0, 320), score })),
       fetch_error: fetched.fetch_error,
     },
-  };
+  });
 }
 
 function parseConferenceParties(html) {
