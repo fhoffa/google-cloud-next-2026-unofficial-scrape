@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T04:41:01.328Z",
+  "fetched_at": "2026-04-09T05:00:31.272Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -21,9 +21,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Open RSVP",
+            "exclusivity": "Low",
+            "rationale": "Very inclusive language: feels easy to drop into rather than screened."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -31,8 +31,8 @@
           },
           "food": {
             "match": {},
-            "label": "Food unknown until approved",
-            "note": "Private-address events are opaque, so don’t assume a meal standard from the listing alone."
+            "label": "Food and drinks clearly provided",
+            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
           },
           "venue": {
             "match": {},
@@ -43,7 +43,7 @@
             "status": 200,
             "final_url": "https://go2.striim.com/2026-pre-day-at-google-next",
             "page_title": "Striim RSVP - Pre Day at Google NEXT",
-            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1652737422958 .formCustom__container { background:#fff; border-radius:6px; padding:40px; } #hs_cos_wrapper_widget_1652737422958 .formCustom__container .hs-form-field { display:block !important; } #hs_cos_wrapper_footer_social .social-"
+            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT --> --> Press start before Google Next kicks off. Day Zero: Data Origins Tuesday, April 21st | 10:00am - 6:00pm | Las Vegas Coffee • Lunch on us • Get Striim certified • Giveaways • Happy hour Before the main quest begins, drop into Day Zero: Data Origins —start with coffee, have lunch on us, and dive into a low-pressure, builder-focused space with real conversations and real-time solutions. Free Play Mode | Drop in anytime Unlock achievements by getting Striim certified, grab a limited-edition t-shirt, and speed-run building AI pipelines in minutes—no heavy lift required. 10:00 AM – 12:00 PM | Spawn Point: Coffee + Arrival Ease in with coffee, snacks, and a comfortable place to land while you wait for hotel check-in or connect with early arrivals. 12:00 PM – 2:00 PM | Power-Up Lunch: Live Build Session Fuel up while diving into hands-on demos—build a real-time pipeline, validate data in-flight, and see how AI-ready data comes together in minutes. 2"
           }
         },
         {
@@ -113,7 +113,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/next26welcomeparty",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAHcgWA1gSVB4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'65ccfb4bcc7179975a322d13a5207cd6e877aa893af5f419967d26d1be2525e7925a0b90bee142c51d4c71a853325d8a','qp':'','host':'geo.captcha-delivery.com','cookie':'9Pdl~SXo3Bh7HSP3hGGbLGy1fdyNDBn2~jEmaSy6H3kb2qKgZvwUqYoFIAhh~LQmLZr2XxhI2mciRSMt_C6rUQ5VmA8kvU8B_mEUPkjEtnUpp9wMoVm8y3OJAxNLD5xm'}"
+            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -166,8 +166,8 @@
             "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
           },
           "audience": {
-            "label": "General conference crowd",
-            "rationale": "Looks like a general conference-side networking event."
+            "label": "Technical builders",
+            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
           },
           "food": {
             "match": {},
@@ -183,7 +183,7 @@
             "status": 200,
             "final_url": "https://www.harness.io/events/where-innovation-meets-the-blues",
             "page_title": "Where Innovation Meets the Blues",
-            "page_excerpt": "Where Innovation Meets the Blues !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.removeItem('intellimize_opt_out_117384792'); } if (localStorage.getItem('intellimize_data_tracking_type') !== 'optOut') { localStorage.setItem('intellimize_data_tracking_type', 'optOut'); } (function(e){var s={r:[]};e.wf={r:s.r,ready:t=>{s.r.push(t)}}})(window) (function(e,t,p){var n=document.documentElement,s={p:[],r:[]},u={p:s.p,r:s.r,push:function(e){s.p.push(e)},ready:function(e){s.r.push(e)}};e.intellimize=u,n.className+=\" \"+p,setTimeout(function(){n.className=n.className.replace(RegExp(\" ?\"+p),\"\")},t)})(window, "
+            "page_excerpt": "Where Innovation Meets the Blues Product AI Across the SDLC AI for DevOps & Automation Accelerate innovation velocity with a modern DevOps toolchain. Continuous Delivery & GitOps new Continuous Integration new Internal Developer Portal new Infrastructure as Code Management new Database DevOps new Artifact Registry new AI for Testing & Resilience Build and deploy reliable applications that scale with confidence. Feature Management & Experimentation new Resilience Testing new AI Test Automation new AI SRE new AI for Security & Compliance Governance and security at every stage of the SDLC - from design to runtime. Application Security Testing Web Application & API Protection AI Security AI for Cost & Optimization Optimize cloud spend, resource utilization, and developer productivity. Cloud Cost Management Software Engineering Insights Customers Open Source Pricing Learn Developer Documentation API Reference Docs Developer Hub Commitment to Open Source Engineering Blog Community Training C"
           }
         },
         {
@@ -234,8 +234,8 @@
             "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
           },
           "audience": {
-            "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "label": "General conference crowd",
+            "rationale": "Looks like a general conference-side networking event."
           },
           "food": {
             "label": "Food unclear",
@@ -249,7 +249,7 @@
             "status": 200,
             "final_url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party",
             "page_title": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint",
-            "page_excerpt": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"author\":{\"@id\":\"#identity\"},\"copyrightHolder\":{\"@id\":\"#identity\"},\"copyrightYear\":\"2026\",\"creator\":{\"@id\":\"#creator\"},\"dateCreated\":\"2026-02-25T13:35:01-05:00\",\"dateModified\":\"2026-04-06T17:44:11-04:00\",\"datePublished\":\"2026-04-06T01:10:00-04:00\",\"description\":\"AvePoint Red Party at Google Cloud Next 2026 - request an invite to this exclusive opening-night networking event with cloud leaders, partners, and industry peers.\",\"headline\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://assets.avepoint.com/upload/images/landingpage/_1200x630_crop_center-center_82_none/Google-NEXT-Red-Party-Promo-Graphics_FBLinkedin-1200x628.jpg?mtime=1772204938\"},\"inLanguage\":\"en-us\",\"mainEntityOfPage\":\"https://www.avepoint.com/events/google-next-2026-avepoint-red-party\",\"name\":\"#AvePointRED Party @ Google Cloud Next 2026\",\"publisher\":{\"@id\":\"#creator\"},\"url\":"
+            "page_excerpt": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint United States - English *]:align-middle flex flex-row sm:space-x-1\" href=/contact> Contact us *]:align-middle flex flex-row sm:space-x-1\" href=/products/support> Support *]:align-middle flex flex-row sm:space-x-1\" href=https://account.avepoint.com/ target=_blank> Login *]:align-middle bg-primary shadow-y-sm hover:bg-primary-hover active:bg-primary-btn-active text-white group/btn w-full sm:w-fit px-4 py-[5px] text-sm rounded-md border\" href=/get-expert-advice href=/get-expert-advice target=_blank> Get Expert Advice *]:align-middle back hidden cursor-pointer\"> Back li]:border-b lg:[&>li]:border-b-0\"> Solutions Back Need Foundational AI Readiness Agentic AI Governance Cloud ROI & Optimization Security Posture Management Ransomware Protection & Disaster Recovery Regulatory Compliance & Information Lifecycle Cloud Transformation & Modernization Multi-Tenant Management at Scale Operational Governance Industry Government Financial Service"
           }
         },
         {
@@ -311,8 +311,8 @@
           },
           "food": {
             "match": {},
-            "label": "Japanese / sushi likely",
-            "note": "Japanese food is plausible, but still not a guaranteed full meal; many events there stay reception-style."
+            "label": "Food and drinks clearly provided",
+            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
           },
           "venue": {
             "match": {},
@@ -323,7 +323,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/coffeeandcontext",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAdlD9s5QFY1QAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'9ca8da83945866873b8d2c3ace55faad14e1ca1fcd4455ae570893366da996b6331717fa0f49fe5dcba43f65627ae969','qp':'','host':'geo.captcha-delivery.com','cookie':'wwIyaFQ2w7Gqu8651d0b191ZVUNbaP1rE1ebjGOJOMe0L9jcav9RQ43OA68HyPNwKazO1fuoqOuRo2R2G9OIajtCwpoxaTPkP4PeYy9Pz9zFRrVqUoSCdm8mZxiF_d66'}"
+            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -358,7 +358,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushiandscarves-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAzc5uMOUutrEAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'e5fd16071de5162d96dafc16e16d0d8f86a24c4a9422d8e2ce5fdecdd78db6d037d3349e632c57b67c03ff39f91e3e23','qp':'','host':'geo.captcha-delivery.com','cookie':'x9fNJ~3THL7gXgrayGBa4liEmjB0eZnZQJU9Eq61zuY3kz90151g5DS~WguiO6KbJqWb1CpThk~yj2SaNAWGpv0X1Xd_W6vRkoRGwvg1AlmUz~N8ktZxEe3dzsP4t35U'}"
+            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -498,7 +498,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushisocial-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAYRSxz9GVAh0Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a08ae8be86d19efd326a60a26e9822a866a2749df1ab3af277e260a642a991dcf45d6ea51a7c3f5621531d629abc0bf8','qp':'','host':'geo.captcha-delivery.com','cookie':'9Bu4x9E8akx7RAItwn8BuFPBIVMohDJaKLQkhANV2HkA5WFcE9tVZF10msHIeytqEEMWdA4q2HDzc69neygYJkYhVq5yOX~82LDkzUwBHJekvIEcdjCaeghcX30dyT29'}"
+            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -551,8 +551,8 @@
             "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
           },
           "audience": {
-            "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
           },
           "food": {
             "match": {},
@@ -567,7 +567,7 @@
             "status": 200,
             "final_url": "https://zionclouds.com/google-next-2026",
             "page_title": "google next 2026 - Zionclouds",
-            "page_excerpt": "google next 2026 - Zionclouds --> window[(function(_xwN,_5b){var _9Iozh='';for(var _6qOyjc=0;_6qOyjc 1;_9Iozh==_9Iozh;_Mr0J-=_5b;_Mr0J!=_6qOyjc;_Mr0J+=61;_Mr0J%=94;_Mr0J+=33;_9Iozh+=String.fromCharCode(_Mr0J)}return _9Iozh})(atob('fWxzNzQvKig5bio+'), 35)] = '2c07090e121718653191'; var zi = document.createElement('script'); (zi.type = 'text/javascript'), (zi.async = true), (zi.src = (function(_svn,_B7){var _GB0c6='';for(var _unT32y=0;_unT32y 9;_GB0c6==_GB0c6;_GB0c6+=String.fromCharCode(_DWMd)}return _GB0c6})(atob('bHh4dHc+MzNudzJ+bTF3Z3ZtdHh3MmdzcTN+bTF4ZWsybnc='), 4)), document.readyState === 'complete'?document.body.appendChild(zi): window.addEventListener('load', function(){ document.body.appendChild(zi) }); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore("
+            "page_excerpt": "google next 2026 - Zionclouds --> --> google next 2026 - Zionclouds Capabilities Artificial Intelligence Customer Experience Digital Services Low Code Development Operations & Maintenance Technology Consulting WorkForce Solutions Managed Services Approaches Agile Methodology Security First Responsible AI DevSecOps Engagement360 Products ComplianceAi RedactAi InsightsAi SummaryAi XtractifAi Accelerators CloudScale Smart Data Crew Case Management Talent As a Service Document AI Knowledge AI Partners & Alliances Google Cloud Partner Microsoft Solutions Partner AWS Partner Google Next 2026 Clients Government Illinois TOPS Category Four: Architects and Platform IPHEC South Dakota Florida New Mexico Missouri CalPERS California Texas DBITS About Diversity & Inclusion Supplier Diversity Careers Privacy Policy Terms & Conditions Contact Us Blogs News Events Webinar Case Studies Whitepapers CURRENT OPENINGS Capabilities Artificial Intelligence Customer Experience Digital Services Low Code Develo"
           }
         },
         {
@@ -589,8 +589,9 @@
             "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
           },
           "food": {
-            "label": "Food unclear",
-            "note": "Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one."
+            "match": {},
+            "label": "Drinks-first, food secondary",
+            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -600,7 +601,7 @@
             "status": 200,
             "final_url": "https://go2.striim.com/next-ai-after-hours",
             "page_title": "AI After Hours at Google Next",
-            "page_excerpt": "AI After Hours at Google Next hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex"
+            "page_excerpt": "AI After Hours at Google Next --> Feeling Lucky? Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI. Because the best conversations don’t end when the sessions do—they happen after hours. Save your spot today! RSVP Striim Cloud Striim Platform Connectors Pricing Industries Compare AI & ML Streaming Integration Microsoft Azure AWS Google Cloud BigQuery Databricks Microsoft Fabric Snowflake Blog Ebooks & Papers Videos On-demand Webinars Academy Support & Services Customers Partners Community Events Podcast Contact Company Newsroom Careers Cloud Security Ethics Hotline CSR Policy Copyright ©2012-2026 Striim | Legal | Privacy Policy | Sitemap We're Hiring"
           }
         },
         {
@@ -635,7 +636,7 @@
             "status": 200,
             "final_url": "https://events.doit.com/event/ForewardDriveDoiTAMD/summary",
             "page_title": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing",
-            "page_excerpt": ".dragContainer { position: absolute; height: 6.25rem; width: 6.25rem; top: 40%; left: 50%; margin-left: -5rem; display: none; } .outerContainer { top: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto; width: 11.75rem; height: 11.75rem; padding: 1rem; background-color: #f7f8f9; border-radius: 50%; box-sizing: border-box; } .container { position: relative; margin: 0 auto; transform: translateZ(0) rotate(.1); } .outerCircle { width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation-duration: 3s; border-color: #006ae1 #006ae1 #aed4ff; box-sizing: border-box; } .circle { border-radius: 50%; border-style: solid; position: absolute; border-width: 0.75rem; width: 8.75rem; height: 8.75rem; top: 50%; left: 60%; animation: 3s linear infinite spinner; animation-play-state: inherit; box-sizing: border-box; } @keyframes spinner { 0% { transform: translate3d(-50%, -50%, 0) rotate(0deg); } 100% { transform: translate3d(-50%, -50%, 0) rotate(360deg); } } @media on"
+            "page_excerpt": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing"
           }
         },
         {
@@ -705,7 +706,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA-Rr0Pkq0hScAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'6d30d47535c7e3bcddd90679a732a54e3284de18f23a4347a2078c18346438435cd0c87d6c8f86c64387ecdf0d873dbc','qp':'','host':'geo.captcha-delivery.com','cookie':'cEvFD3TNqQhDA~MAwae5gH7IJxjMPs4VoUsgpT8ZWIpTrhtw~nTQpjH~d9MdVB2JvUOlIXrhf~8DszjIuCWmCOHgSiiKc09U4VLxt2PoaLufE58SntcTYhKJbVcFA5_O'}"
+            "page_excerpt": "elastic.co Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -740,7 +741,7 @@
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary",
             "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"859ce875-f414-4501-9ee7-f99deb2aaa58\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"859ce875-f414-4501-9ee7-f99deb2aaa58\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\"
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data"
           }
         },
         {
@@ -833,8 +834,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Lunch likely",
+            "note": "Explicit lunch signal, which matters more than the venue name."
           },
           "venue": {
             "match": {},
@@ -845,7 +846,7 @@
             "status": 200,
             "final_url": "https://www.eon.io/event/eon-party-google-cloud-next",
             "page_title": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon",
-            "page_excerpt": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Event\", \"name\": \"Join us for Eon's VIP Gold Rush @ Google Cloud Next\", \"description\": \"Step away from the noise at Google Cloud Next and join Eon at Clique for an unforgettable evening. We're celebrating Vegas-style with craft cocktails, elevated bites, and entertainment that will blow your mind.\", \"startDate\": \"2026-04-22T22:30:00.000Z\", \"endDate\": \"\", \"location\": { \"@type\": \"Place\", \"name\": \"6:30 - 8:30 PM @ Clique in The Cosmopolitan\", \"hasMap\": \"\" }, \"image\": \"https://cdn.prod.website-files.com/675ab1d60fb117a2f287dbc5/69cbf176f59685b124263f22_Join-the-VIP-Gold-Rush-Clique.png\", \"organizer\": { \"@type\": \"Organization\", \"name\": \"Eon\", \"url\": \"https://www.eon.io\" }, \"eventAttendanceMode\": \"https://schema"
+            "page_excerpt": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon Shift Left Broke Backup Governance. Now What? Join Eon + AWS for a live Lunch & Learn 👉 Save your spot Platform Platform Platform Overview Cloud backup posture Autonomous Cloud Backup Posture Management Achieve full compliance Global Search Lightning-fast search Ransomware Protection Purpose-built to protect your cloud environment Granular Restoration Restore what you need Live Data Lakes Zero-ETL. Built-in catalogs Database Explorer Dive into your backups solutions Use cases Run Multi Cloud Backups Optimize S3 Storage Scale DynamoDB Backups Reduce Cloud Backup Costs Improve Cloud Backup Compliance Accelerate Data Analytics & AI Cloud providers Amazon Web Services Google Cloud Microsoft Azure INTEGRATIONS Integrations Hub Resources Resources Resources The latest on Eon Events See Eon out in the wild Trust Center Security & compliance details Pricing Company Our Story Partner Program Newsroom Careers GET A DEMO GET A DEMO ← Retu"
           }
         },
         {
@@ -880,7 +881,7 @@
             "status": 200,
             "final_url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
             "page_title": "AI and Aperitifs by MathCo",
-            "page_excerpt": "AI and Aperitifs by MathCo a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__container { margin-top:30px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list { gap:100px; } #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item, #hs_cos_wrapper_widget_1746538372240 .hs-image__grid__list__item__image"
+            "page_excerpt": "AI and Aperitifs by MathCo Express Interest AI and Aperitifs by MathCo 100+ Trained Snowflake professionals 10+ Largescale Snowflake programs executed 5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more 10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance 100+ Trained Snowflake professionals 10+ Largescale Snowflake programs executed 10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance 5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more Resource Center Developing a GenAI-Powered Disambiguation Orchestrator for Pharma Representatives Read more Enhancing Referral Alerts: Streamlining Operations and Improving HCP Targeting Read more GenAI-Powered Drug Trial Data Extraction Framework Read more Patient Risk Scoring Read more RepGPT: Transforming Pharmaceutical Engagements with Intelligent Multi-Agent Frameworks Read more Improving Pa"
           }
         },
         {
@@ -1054,7 +1055,7 @@
             "status": 403,
             "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
             "page_title": "publicissapient.com",
-            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMALcIQ8088Zh8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'ef7a36d0f5a35d46becac6753789cd2a4730085571fc896b56d7903fdef4cbbc4df9485cbc743e6d6c58392c71e4b31d','qp':'','host':'geo.captcha-delivery.com','cookie':'~BjZQoqg5iiJohAwooau8q9zKP6I5E9h_tbrj_7bTezZhStiZxMiMgaPq10eLuRfth2xAVIMkQJ6Vu0LdW_eqd83WFlh2fzgmGpEE5BC1xKsPOjI~tOzc0YM1dECapr5'}"
+            "page_excerpt": "publicissapient.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -1124,7 +1125,7 @@
             "status": 200,
             "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
             "page_title": "Security Professionals Reception at Next'26",
-            "page_excerpt": ""
+            "page_excerpt": "Security Professionals Reception at Next'26"
           }
         },
         {
@@ -1137,13 +1138,13 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "VIP / executive / private-address signals a screened guest list."
           },
           "audience": {
-            "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "label": "Executives / curated buyers",
+            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
           },
           "food": {
             "match": {},
@@ -1158,7 +1159,7 @@
             "status": 200,
             "final_url": "https://learn.insight.com/google-cloud-next-2026-after-party",
             "page_title": "After party",
-            "page_excerpt": "After party hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #hs_cos_wrapper_module_1743012173363208 { display: block !important; padding-bottom: 15px !important; padding-left: 15px !important; padding-right: 15px !important; padding-top: 15px !important } var _hsp = window._hsp = window._hsp || []; _hsp.push(['addPrivacyConsentListener', fu"
+            "page_excerpt": "After party You’re Invited Insight's Next '26 late-night bash Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech. Expect a high-octane evening of gourmet bites, handcrafted cocktails, and the week's best networking. Space is limited. Register today to secure your spot. When: Wednesday, April 22, 2026 9 p.m. – midnight This is an invitation-only event. Confirmed guests will receive a calendar invitation and ticket. Register Now © 2026 SADA Systems, Inc. All Rights Reserved | Privacy Policy | Terms of Use | Manage Cookies"
           }
         },
         {
@@ -1233,7 +1234,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAkIcdDoSM0sUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'ff27086c9362e7fc7750bc405b5df0e29365789c13abc42c72d924cc348c7911982094cd402d9498119f3b49cc39706a','qp':'','host':'geo.captcha-delivery.com','cookie':'eUKR2bFHzyq1IaegOeb9kot8FxA6EsUHgGqjnPjOgPM2nbxto2Uc7dY1hzXXdv1mlImPR_xKSz59Npjt1ufNC5wifvgbxgJQXfi2GFDe2GmagJebOhAmsnfvsvk~bQev'}"
+            "page_excerpt": "elastic.co Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -1302,7 +1303,7 @@
             "status": 200,
             "final_url": "https://go2.striim.com/next-ai-roundtable",
             "page_title": "Google Next AI Roundtable",
-            "page_excerpt": "Google Next AI Roundtable hsjQuery = window['jQuery']; a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px} #module_175209110547510 { padding: 40px; background-color: rgba(255, 255, 255, calc(100/100)); border-radius: 10px; } @media (max-width: 992px) { #module_175209110547510 { padding: 20px; } } #module_175209110547510 input[type=\"submit\"] { width: 100%; display: flex; al"
+            "page_excerpt": "Google Next AI Roundtable --> Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! AI cannot exist in silos. Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners. This exclusive live Lunch & Learn brings together leaders from Google, Striim, Dagster and more to explore how each layer of the AI world—data movement, compute, models and applications—shapes the others. Attendees will learn: • How the AI “stack” is evolving into a connected ecosystem spanning data, infrastructure and intelligence • Where interoperability challenges emerge between data pipelines, models and applications • How organizations are balancing openness, trust and control as AI becomes operational • What the next generation of adaptive, collaborative AI systems could look like Space is limited – RSVP today! RSVP Striim Cloud Striim Platf"
           }
         },
         {
@@ -1407,7 +1408,7 @@
             "status": 200,
             "final_url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
             "page_title": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision",
-            "page_excerpt": "(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-N5T23D5'); window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-187842707-2'); Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = sc"
+            "page_excerpt": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision Next 26 Kentucky Derby Pre-Party April 23, 2026 - Las Vegas, NV Add to Calendar Attend this event Thank you Thank you for your Registration View All Events First Name Last Name Business Email Job Title Company is Required Company is Required. Phone By clicking the “Register\" button, you are agreeing to the Privacy Policy and Terms of Use Something went wrong. Please try again after sometime Register Agenda April 23, 2026 April 23, 2026 April 23, 2026 Download Agenda All times Pacific Time 5:00 PM - 6:30 PM NEXT '26 Kentucky Derby Pre-Party Join Google Cloud and our elite Security Tech ISVs for an exclusive Kentucky Derby Pre-Party. After a long day, unwind with live race action, festive hats, and classic mint juleps. Experience the thrill of betting alongside your preferred partner in an evening of high-stakes fun and premier networking. &times; You've participated in the Raffle &times; Ooppss... something "
           }
         },
         {
@@ -1430,8 +1431,8 @@
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
           },
           "venue": {
             "match": {},
@@ -1511,7 +1512,7 @@
             "status": 403,
             "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
             "page_title": "neo4j.com",
-            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAplggsX55SbMAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'2221c4fa87c2171e1ec34d13627f915e8c350c9151702033e183690e0c70e233c83c65375cf88b469812e0507c31254f','qp':'','host':'geo.captcha-delivery.com','cookie':'vny55V1WIIZfxPDOYDvVCf02mB9Hfq6~aG6nkU0S5YJ7TSv6XvRc2DWLBM1NPPZMBzeWlXAZ49TPwlbVphgmNsIlwFCdaT3fEjaKxNkCCZfC700Q9r1pgLrAxAQDsO~P'}"
+            "page_excerpt": "neo4j.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -1546,7 +1547,7 @@
             "status": 403,
             "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
             "page_title": "mongodb.com",
-            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAeWvQpAzlKBkAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'cc506cc72aeca031927b56e45844da6aed16e5ce99865c58fcf8e0835747df32b284861f7e5e84eb634344bdc099ac60','qp':'','host':'geo.captcha-delivery.com','cookie':'KkyuNMY9cW~NOp_XtlFrJtyclgmdpKduWPRxdO4MCPT~nm5fGsEoPrB1BLaGbMNv1xafExa1iK3wLL~eTNrATA_kfMIx8YVCU3mAaWUd8czX40m18TP4ASlgq26H_tAr'}"
+            "page_excerpt": "mongodb.com Please enable JS and disable any ad blocker"
           }
         },
         {
@@ -1690,7 +1691,7 @@
             "status": 200,
             "final_url": "https://www.gruntwork.io/lp/gruntwork-racing",
             "page_title": "Gruntwork Racing",
-            "page_excerpt": "Gruntwork Racing WebFont.load({ google: { families: [\"Geist Mono:300,400,500,600,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5TTJJGTL'); .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label { background-color: var(--overlays--opacity-10); } .dropdown-tog.w-dropdown-toggle.w--open > .dropdown-label > .icon-4 { transform: rotate(180deg); } .g-recaptcha { display: block !important; } Accelerator Solutions AWS Landing Zone GCP Landing Zone Azure Landing Zone HIPAA Compliant Infra IaC Re"
+            "page_excerpt": "Gruntwork Racing Accelerator Solutions AWS Landing Zone GCP Landing Zone Azure Landing Zone HIPAA Compliant Infra IaC Residency Platform IaC Library Use best practices from thought leaders Account Factory Stamp out new AWS accounts Pipelines Deploy infrastructure changes Patcher Keep infrastructure up to date Open Source Open Source OpenTofu Services Terragrunt Services Pricing Resources Docs Customer Stories Blog Changelog Books Community Sign In Book a demo Gruntwork VIP Racing Experience Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering. Get behind the wheel for 5 laps in a world-class supercar. Choose from Ferraris, Lamborghinis, McLarens, Porsches, and more. Friday, April 24th 10AM - 12PM Dream Racing, Las Vegas A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation buil"
           }
         }
       ]
