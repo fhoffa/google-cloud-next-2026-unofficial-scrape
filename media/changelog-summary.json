@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-08T20:49:28.296Z",
+    "generatedAt": "2026-04-09T07:01:09.746Z",
     "latest": "sessions/latest.json",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
@@ -9,13 +9,13 @@
     "mergeNearbyHours": 2,
     "latestLivePair": {
       "current": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-08T20-11-50Z.json",
+        "file": "/root/.openclaw/workspace/google-cloud-next-2026-unofficial-scrape/sessions/snapshots/2026-04-08T20-11-50Z.json",
         "fileName": "2026-04-08T20-11-50Z.json",
         "scrapedAt": "2026-04-08T20:11:50.480Z",
         "count": 1052
       },
       "previous": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-07T21-31-30Z.json",
+        "file": "/root/.openclaw/workspace/google-cloud-next-2026-unofficial-scrape/sessions/snapshots/2026-04-07T21-31-30Z.json",
         "fileName": "2026-04-07T21-31-30Z.json",
         "scrapedAt": "2026-04-07T21:31:30.098Z",
         "count": 1057

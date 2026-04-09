@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Cloud Next 2025 — Session Search</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:title" content="Google Cloud Next 2025 — Session Search">
+  <meta property="og:description" content="Unofficial Google Cloud Next 2025 session explorer with search, favorites, filters, and shareable links.">
+  <meta property="og:image" content="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/reddit-preview.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Cloud Next 2025 — Session Search">
+  <meta name="twitter:description" content="Unofficial Google Cloud Next 2025 session explorer with search, favorites, filters, and shareable links.">
+  <meta name="twitter:image" content="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/reddit-preview.jpg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #1a73e8;
+      --blue-dark: #1557b0;
+      --blue-light: #e8f0fe;
+      --green: #34a853;
+      --yellow: #fbbc04;
+      --red: #ea4335;
+      --gray-100: #f8f9fa;
+      --gray-200: #e8eaed;
+      --gray-400: #9aa0a6;
+      --gray-600: #5f6368;
+      --gray-800: #3c4043;
+      --gray-900: #202124;
+    }
+
+    body {
+      font-family: 'Google Sans', 'Segoe UI', Roboto, Arial, sans-serif;
+      background: var(--gray-100);
+      color: var(--gray-900);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--blue);
+      color: white;
+      padding: 24px 20px 28px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .header-links {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      opacity: 0.95;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .header-links a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .rainbow-bar {
+      height: 4px;
+      background: linear-gradient(to right, var(--blue) 0%, var(--red) 25%, var(--yellow) 50%, var(--green) 75%, var(--blue) 100%);
+    }
+
+    .controls {
+      max-width: 1100px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      position: relative;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      pointer-events: none;
+    }
+
+    .input-clear-btn {
+      position:absolute;
+      right:10px;
+      top:50%;
+      transform:translateY(-50%);
+      border:none;
+      background:none;
+      color:var(--gray-400);
+      cursor:pointer;
+      font-size:1rem;
+      line-height:1;
+      padding:4px;
+      border-radius:999px;
+      display:none;
+    }
+
+    .input-clear-btn.visible {
+      display:block;
+    }
+
+    .input-clear-btn:hover {
+      color:var(--blue);
+      background:var(--blue-light);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px 10px 40px;
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      font-size: 0.95rem;
+      background: white;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input[type="text"]:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,115,232,0.15);
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .filter-row label {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      white-space: nowrap;
+    }
+
+    select {
+      padding: 8px 32px 8px 12px;
+      border: 1px solid var(--gray-200);
+      border-radius: 24px;
+      font-size: 0.88rem;
+      background: white;
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239aa0a6' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      transition: border-color 0.15s;
+    }
+
+    select:focus { border-color: var(--blue); }
+
+    .day-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1.5px solid var(--gray-200);
+      background: white;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      color: var(--gray-800);
+    }
+
+    .pill:hover { border-color: var(--blue); color: var(--blue); }
+    .pill.active { background: var(--blue); border-color: var(--blue); color: white; }
+
+    
+    .time-range-filter {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      background:white;
+      border:1px solid var(--gray-200);
+      border-radius:18px;
+      padding:8px 12px;
+    }
+
+    .dual-range {
+      position:relative;
+      width:160px;
+      height:20px;
+    }
+
+    .dual-range-track {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      left:8px;
+      right:8px;
+      height:4px;
+      background:var(--gray-200);
+      border-radius:2px;
+      pointer-events:none;
+    }
+
+    .dual-range-fill {
+      position:absolute;
+      height:100%;
+      background:var(--blue);
+      border-radius:2px;
+      left:0%;
+      width:100%;
+    }
+
+    .dual-range input[type="range"] {
+      position:absolute;
+      width:100%;
+      top:50%;
+      transform:translateY(-50%);
+      margin:0;
+      padding:0;
+      height:100%;
+      background:transparent;
+      -webkit-appearance:none;
+      appearance:none;
+      pointer-events:none;
+    }
+
+    .dual-range input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance:none;
+      appearance:none;
+      pointer-events:all;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--blue);
+      cursor:pointer;
+      border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.25);
+    }
+
+    .dual-range input[type="range"]::-moz-range-thumb {
+      pointer-events:all;
+      width:16px;
+      height:16px;
+      border-radius:50%;
+      background:var(--blue);
+      cursor:pointer;
+      border:2px solid white;
+      box-shadow:0 1px 3px rgba(0,0,0,0.25);
+      box-sizing:border-box;
+    }
+
+    .dual-range input[type="range"]::-webkit-slider-runnable-track {
+      background:transparent;
+      height:4px;
+    }
+
+    .dual-range input[type="range"]::-moz-range-track {
+      background:transparent;
+      height:4px;
+    }
+
+    #active-filters {
+      max-width:1100px;
+      margin:12px auto 0;
+      padding:0 16px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .filter-pill {
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      background:var(--blue-light);
+      color:var(--blue-dark);
+      border:none;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:.8rem;
+      cursor:pointer;
+    }
+
+    .tabs {
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      max-width:1100px;
+      margin:16px auto 0;
+      padding:0 16px;
+    }
+
+    .tab-btn {
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--gray-200);
+      background:white;
+      cursor:pointer;
+      font-size:.9rem;
+      color:var(--gray-800);
+    }
+
+    .tab-btn.active {
+      background:var(--blue);
+      color:white;
+      border-color:var(--blue);
+    }
+
+    .word-cloud {
+      max-width:1100px;
+      margin:16px auto 40px;
+      padding:0 16px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+    }
+
+    .word-chip {
+      background:white;
+      border:1px solid var(--gray-200);
+      border-radius:999px;
+      padding:10px 14px;
+      color:var(--gray-800);
+      display:inline-flex;
+      gap:6px;
+      align-items:baseline;
+    }
+
+    .word-size-1 { font-size:.9rem; }
+    .word-size-2 { font-size:1rem; }
+    .word-size-3 { font-size:1.15rem; }
+    .word-size-4 { font-size:1.3rem; }
+    .word-size-5 { font-size:1.5rem; }
+
+    .word-link {
+      cursor:pointer;
+    }
+
+    .stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+    }
+
+    .result-count {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+    }
+
+    .clear-btn {
+      font-size: 0.82rem;
+      color: var(--blue);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .clear-btn:hover { background: var(--blue-light); }
+
+    .grid {
+      max-width: 1100px;
+      margin: 16px auto 40px;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--gray-200);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transform: translateY(-1px);
+    }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      line-height: 1.35;
+    }
+
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card-title a:hover { color: var(--blue); }
+
+    .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    .card-meta .dot::before { content: '·'; margin: 0 2px; }
+
+    .status-badge {
+      display:inline-block;
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:0.72rem;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+
+    .status-badge.full {
+      background:#fce8e6;
+      color:#a50e0e;
+    }
+
+    .meta-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .seat-fill {
+      display: grid;
+      gap: 5px;
+      margin-top: 2px;
+    }
+
+    .seat-fill-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+      font-size: 0.76rem;
+      color: var(--gray-600);
+    }
+
+    .seat-fill-label {
+      font-weight: 600;
+      color: var(--gray-700);
+    }
+
+    .seat-fill-value {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .seat-fill-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: var(--gray-200);
+      overflow: hidden;
+    }
+
+    .seat-fill-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #7baaf7 0%, #1a73e8 100%);
+    }
+
+    .seat-fill-bar-fill.overbooked {
+      background: linear-gradient(90deg, #f29900 0%, #d93025 100%);
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-desc.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+
+    .see-more-btn {
+      border: none;
+      background: none;
+      color: var(--blue);
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.8rem;
+      text-align: left;
+    }
+
+    .card-speakers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .speaker-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--gray-100);
+      border-radius: 20px;
+      padding: 3px 10px 3px 4px;
+      font-size: 0.78rem;
+      color: var(--gray-800);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.1s;
+    }
+
+    .speaker-chip:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); }
+
+    .speaker-link, .company-link {
+      border: none;
+      background: none;
+      color: inherit;
+      font: inherit;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .speaker-link:hover, .company-link:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .speaker-link, .company-link {
+      border: none;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .company-link {
+      opacity: .72;
+      font-size: .72rem;
+      margin-left: 4px;
+    }
+
+    .speaker-avatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .topic-tag {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      color: var(--blue-dark);
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    .topic-tag:hover { background: #c5d8fc; }
+
+    .reserve-seat-note {
+      font-size: 0.72rem;
+      color: #7a5c00;
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 6px;
+      padding: 5px 9px;
+      margin-top: 6px;
+    }
+
+    .reserve-seat-note a { color: #7a5c00; }
+
+    .related-sessions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 4px;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .related-toggle-btn {
+      align-self: flex-start;
+      border: 1px solid #c6dafc;
+      background: #f8fbff;
+      color: var(--blue-dark);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .related-toggle-btn:hover {
+      background: #eef4ff;
+    }
+
+    .related-sessions-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--gray-600);
+      text-transform: uppercase;
+    }
+
+    .related-sessions-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .related-session-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      color: var(--blue-dark);
+      background: var(--blue-light);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .related-session-link:hover {
+      background: #d2e3fc;
+    }
+
+    .favorite-btn {
+      border: none;
+      background: transparent;
+      color: var(--yellow);
+      font-size: 1.15rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 2px 4px;
+      flex-shrink: 0;
+    }
+
+    .no-results {
+      max-width: 1100px;
+      margin: 60px auto;
+      text-align: center;
+      color: var(--gray-400);
+      padding: 0 16px;
+    }
+
+    .no-results svg { display: block; margin: 0 auto 16px; }
+
+    .loading {
+      max-width: 1100px;
+      margin: 80px auto;
+      text-align: center;
+      color: var(--gray-400);
+    }
+
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--gray-200);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 12px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    footer a { color: var(--blue); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Google Cloud Next 2025 — Session Search</h1>
+  <p>Las Vegas · April 21–24, 2026 &nbsp;·&nbsp; <span id="header-count">…</span> sessions</p>
+  <div class="header-links">
+    <span>Made by <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a></span>
+    <span>·</span>
+    <span>Unofficial scrape from <a href="https://www.googlecloudevents.com/next-vegas/" target="_blank" rel="noopener">googlecloudevents.com</a></span>
+    <span>·</span>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a>
+    <span>·</span>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape/blob/main/PRIOR-ART.md" target="_blank" rel="noopener">Prior art</a>
+    <span>·</span>
+    <a href="./insights.html">Insights</a>
+    <span>·</span>
+    <a href="./changelog.html">Changelog</a>
+  </div>
+</header>
+<div class="rainbow-bar"></div>
+
+<div class="controls">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" id="q" placeholder="Search sessions…" autocomplete="off" spellcheck="false"><button class="input-clear-btn" id="q-clear" type="button" aria-label="Clear session search">×</button>
+    </div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+      </svg>
+      <input type="text" id="speaker" placeholder="Search by speaker…" autocomplete="off" spellcheck="false"><button class="input-clear-btn" id="speaker-clear" type="button" aria-label="Clear speaker search">×</button>
+    </div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      <input type="text" id="exclude" placeholder="Exclude keywords… (e.g. AI)" autocomplete="off" spellcheck="false"><button class="input-clear-btn" id="exclude-clear" type="button" aria-label="Clear exclude filter">×</button>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <label>Day:</label>
+    <div class="day-pills">
+      <button class="pill active" data-day="">All days</button>
+      <button class="pill" data-day="Tuesday, April 21, 2026">Tue Apr 21</button>
+      <button class="pill" data-day="Wednesday, April 9, 2025">Wed Apr 22</button>
+      <button class="pill" data-day="Thursday, April 10, 2025">Thu Apr 23</button>
+      <button class="pill" data-day="Friday, April 11, 2025">Fri Apr 24</button>
+    </div>
+
+    <select id="topic-filter">
+      <option value="">All topics</option>
+    </select>
+
+    <select id="sort-filter">
+      <option value="time">Sort: Date & time</option>
+      <option value="title">Sort: Title A-Z</option>
+    </select>
+
+    <select id="availability-filter">
+      <option value="">Availability: All</option>
+      <option value="full">Full</option>
+      <option value="not-full">Not full</option>
+    </select>
+
+    <div class="time-range-filter">
+      <label for="time-range-start">Time range</label>
+      <div class="dual-range">
+        <div class="dual-range-track"><div class="dual-range-fill" id="time-range-fill"></div></div>
+        <input type="range" id="time-range-start" min="0" max="95" step="1" value="0">
+        <input type="range" id="time-range-end" min="0" max="95" step="1" value="95">
+      </div>
+      <span id="time-range-label">All times</span>
+    </div>
+
+    <label style="display:inline-flex;align-items:center;gap:6px;"><input type="checkbox" id="favorites-only"> Favorites only</label>
+    <button class="clear-btn" id="copy-favorites-link" type="button">Copy link to my favorites</button>
+  </div>
+</div>
+
+<div id="active-filters"></div>
+
+<div id="app-tabs"></div>
+
+<div class="stats-row">
+  <span class="result-count" id="result-count"></span>
+  <button class="clear-btn" id="clear-btn">Clear filters</button>
+</div>
+
+<div id="app">
+  <div class="loading"><div class="spinner"></div>Loading sessions…</div>
+</div>
+<div style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: 2026-03-27 19:07 UTC</div>
+
+<script type="module">
+  import { initSessionSearch } from './website/session-search.mjs';
+
+  initSessionSearch({ dataUrl: './sessions_25_classified_embeddings.json', availabilityUrl: './session-availability-2025.json', relatedSessionsUrl: './related-sessions-2025-embeddings.json' });
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "180c426920c04604b145ff6190dc82d6"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
