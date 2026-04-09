@@ -271,10 +271,10 @@
     <p>
       Source credit: these party listings are indexed from
       <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">ConferenceParties.com’s Google Cloud Next 26 page</a>.
-      This page is just a cleaner browseable copy with update metadata. RSVP details may change; check the source/original event page before relying on any listing.
+      This page is a cleaner browseable copy with refresh metadata and short page-grounded summaries. RSVP details may change; check the original event page before relying on any listing.
     </p>
     <p>
-      The RSVP access, likely audience, food/drink expectations, and venue-vibe notes are heuristic annotations from the linked landing pages and event wording, with venue used only as fallback context. In particular, a steakhouse or nice restaurant does not automatically mean a full dinner — many conference parties are still drinks-and-standing-food unless the invite explicitly says breakfast, lunch, dinner, sushi, cocktails, etc.
+      The summary and “invite says” excerpt come from lightweight extraction of each linked landing page. The structured tags (open invite, audience, food/drink expectations, venue vibe) are still heuristic annotations layered on top of that source text, with venue used only as fallback context.
     </p>
     <p>
       Built from a refreshable JSON snapshot in this repo. If the source page changes format, the importer may need a small parser update.
@@ -417,6 +417,8 @@
                 <div>
                   <div class="label">Event</div>
                   <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
+                  ${event.summary ? `<div style="margin-top:10px"><div class="label">Quick read</div><div class="meta-note">${esc(event.summary)}</div></div>` : ''}
+                  ${event.invite_excerpt && event.invite_excerpt !== event.summary ? `<div style="margin-top:10px"><div class="label">Invite says</div><div class="meta-note">${esc(event.invite_excerpt)}</div></div>` : ''}
                   <div style="margin-top:10px">
                     <div class="label">Open invite</div>
                     ${clickableBadge('openness', event.access?.openness || 'Unclear', badgeClass(event.access?.openness || ''))}

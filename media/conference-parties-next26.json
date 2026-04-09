@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T05:00:31.272Z",
+  "fetched_at": "2026-04-09T06:13:34.954Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -20,30 +20,33 @@
           "listed": "4/8",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Broad, drop-in builder day for early arrivals before Next fully starts. The page clearly offers coffee, snacks, lunch, certification/giveaways, hands-on demos, and a closing happy hour.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Open RSVP",
             "exclusivity": "Low",
-            "rationale": "Very inclusive language: feels easy to drop into rather than screened."
+            "rationale": "The page reads like normal registration, not approval-only screening."
           },
           "audience": {
-            "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "label": "General conference crowd",
+            "rationale": "Looks like a general conference-side networking event."
           },
           "food": {
             "match": {},
             "label": "Food and drinks clearly provided",
-            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://go2.striim.com/2026-pre-day-at-google-next",
             "page_title": "Striim RSVP - Pre Day at Google NEXT",
-            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT --> --> Press start before Google Next kicks off. Day Zero: Data Origins Tuesday, April 21st | 10:00am - 6:00pm | Las Vegas Coffee • Lunch on us • Get Striim certified • Giveaways • Happy hour Before the main quest begins, drop into Day Zero: Data Origins —start with coffee, have lunch on us, and dive into a low-pressure, builder-focused space with real conversations and real-time solutions. Free Play Mode | Drop in anytime Unlock achievements by getting Striim certified, grab a limited-edition t-shirt, and speed-run building AI pipelines in minutes—no heavy lift required. 10:00 AM – 12:00 PM | Spawn Point: Coffee + Arrival Ease in with coffee, snacks, and a comfortable place to land while you wait for hotel check-in or connect with early arrivals. 12:00 PM – 2:00 PM | Power-Up Lunch: Live Build Session Fuel up while diving into hands-on demos—build a real-time pipeline, validate data in-flight, and see how AI-ready data comes together in minutes. 2"
+            "page_excerpt": "Striim RSVP - Pre Day at Google NEXT --> --> Press start before Google Next kicks off. Day Zero: Data Origins Tuesday, April 21st | 10:00am - 6:00pm | Las Vegas Coffee • Lunch on us • Get Striim certified • Giveaways • Happy hour Before the main quest begins, drop into Day Zero: Data Origins —start with coffee, have lunch on us, and dive into a low-pressure, builder-focused space with real conversations and real-time solutions. Free Play Mode | Drop in anytime Unlock achievements by getting Striim certified, grab a limited-edition t-shirt, and speed-run building AI pipelines in minutes—no heavy lift required. 10:00 AM – 12:00 PM | Spawn Point: Coffee + Arrival Ease in with coffee, snacks, and a comfortable place to land while you wait for hotel check-in or connect with early arrivals. 12:00 PM – 2:00 PM | Power-Up Lunch: Live Build Session Fuel up while diving into hands-on demos—build a real-time pipeline, validate data in-flight, and see how AI-ready data comes together in minutes. 2:00 PM – 4:00 PM | Sandbox Mode: Explore + Experiment Bring a real use case or just tinker—test pipelines, troubleshoot data quality, and explore zero-downtime migration patterns with experts. 4:00 PM – 6:00 PM | Social Mode Unlocked: Happy Hour Wrap the day with drinks, music, and easy networking—continue conversations or start new ones in a relaxed setting. RSVP Schedule 10:00 AM – 5:00 PM: Free Play Mode. Drop in whenever • Spawn Point Coffee, snacks, and a place to land if you just got in / can’t check into your hotel yet • Open World Networking No forced intros — just real conversations with engineers, architects, and data folks • Side Quests (aka short hackathons) Bring a real problem—or just explore real-time pipelines, data validation (“is this even right?”), zero-downtime migratio",
+            "top_blocks": []
           }
         },
         {
@@ -55,30 +58,50 @@
           "listed": "3/27",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders,…",
+          "invite_excerpt": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders,…",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/bs579fyh",
             "page_title": "🍻 AI + Saas Startups Happy Hour @ Google Next Cloud · Luma",
-            "page_excerpt": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders,…"
+            "page_excerpt": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders, C-suite leaders, and venture capital partners exchanging real stories, practical insights, and future-facing ideas. ​ ​We'll dive into how today's fastest-growing startups are: ​ ​🤖 Leveraging AI-driven strategies and tools to move faster, smarter, and leaner ​ ​📈 Building GTM playbooks that actually scale ​ ​💰 Raising capital in a shifting venture market ​ ​🚀 Growing from a handful of engineers to 100+ strong teams ​ ​🏆 Breaking through $1M ARR milestones ​ ​Expect open conversations about the challenges, trade-offs, and tools that define startup life today. Whether you're scaling your first product 🛠️, raising your next round 💼, or experimenting with AI in your stack 🤖 — you'll leave with new connections, sharper insights 💡, and maybe even your next collaborator or investor. ​ ​Early-stage founders to growth-stage SaaS companies mix with active investors, VCs, and ecosystem partners in an environment built for collaboration 🤝, partnerships, and future deals. No pitching from a stage. Just real talk, good energy ⚡, and the right people in the room Welcome! To join the event, please register below AI + Saas Startups Happy Hour @ Google Next Cloud Please register to see the exact location of this event",
+            "top_blocks": [
+              {
+                "text": "Come join us for a relaxed but high-energy networking event during Google Next Cloud. This isn't a panel session — it's a room full of ambitious founders, C-suite leaders, and venture capital partners exchanging real stories, practical insights, and future-facing ideas. ​ ​We'll dive into how today's fastest-growing st",
+                "score": 1115
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              },
+              {
+                "text": "AI + Saas Startups Happy Hour @ Google Next Cloud",
+                "score": 184
+              },
+              {
+                "text": "Please register to see the exact location of this event",
+                "score": 145
+              }
+            ]
           }
         },
         {
@@ -90,30 +113,33 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Straightforward conference kick-off mixer at Kumi for broad cloud networking. Reads like an easy first-night welcome party rather than a tightly screened VIP event.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
-            "label": "Japanese / sushi likely",
-            "note": "Japanese food is plausible, but still not a guaranteed full meal; many events there stay reception-style."
+            "label": "Sushi / Japanese food likely",
+            "note": "Sushi or Japanese food is explicitly part of the pitch."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.glean.com/next26welcomeparty",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "glean.com",
+            "top_blocks": []
           }
         },
         {
@@ -125,30 +151,58 @@
           "listed": "3/11",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join Promevo, gPanel, CloudM, and JumpCloud for a happy hour at Google Cloud Next 2026 on April 21. Reserve your spot now for networking and refreshments.",
+          "invite_excerpt": "Join Promevo, gPanel, CloudM, and JumpCloud for a happy hour at Google Cloud Next 2026 on April 21. Reserve your spot now for networking and refreshments.",
           "access": {
-            "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "openness": "Full / closed",
+            "exclusivity": "N/A",
+            "rationale": "Looks full or no longer taking registrations."
           },
           "audience": {
             "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://promevo.com/google-next-2026-happy-hour",
             "page_title": "Google Next 2026 Happy Hour with Promevo, gPanel, CloudM & JumpCloud",
-            "page_excerpt": "Join Promevo, gPanel, CloudM, and JumpCloud for a happy hour at Google Cloud Next 2026 on April 21. Reserve your spot now for networking and refreshments."
+            "page_excerpt": "NOTICE: This event is currently at capacity and a waitlist is in place. Priority access will still be given to partners and clients, however. P romevo, gPanel, CloudM, and JumpCloud are thrilled to invite 2026 Google Cloud Next attendees to an exclusive happy hour event on Tuesday, April 21, 2026 from 6:30 to 8:30pm PDT. Join us at Libertine Social in the Mandalay Bay Convention Center to enjoy complimentary refreshments and network with other Google users and enthusiasts. Don't miss out on this fantastic chance to enhance your Google Cloud Next experience with the Promevo, gPanel, CloudM, and JumpCloud teams! If you plan on bringing colleagues with you, send them this form so they can RSVP. The Details When: Tuesday, April 21, 2026 from 6:30-9:30pm PDT Where: Libertine Social 3950 S Las Vegas Blvd, Las Vegas, NV 89119 Custom and secure business email + eDiscovery, retention, S/MIME encryption 250 participant video meetings + recordings, attendance tracking noise cancellation, in-domain live streaming As much storage as you need Advanced security and management and compliance controls, including Vault, DLP, data regions, and enterprise endpoint management Enhanced Support (paid upgrade to Premium Support Business Starter, Business Standard, and Business Plus plans can be purchased for a maximum of 300 users. There is no minimum or maximum user limit for Enterprise plans RSVP for Our Happy Hour at Google Next 2026 Custom and secure business email + eDiscovery, retention 250 participant video meetings + recordings, attendance tracking 5 TB cloud storage per user Enhanced security and management controls, including Vault and advanced endpoint management Standard Support (paid upgrade to Enhance Support Custom and secure business email 100 participant video meetings 30 GB cloud storage per user Security and management controls Standard Support",
+            "top_blocks": [
+              {
+                "text": "NOTICE: This event is currently at capacity and a waitlist is in place. Priority access will still be given to partners and clients, however. P romevo, gPanel, CloudM, and JumpCloud are thrilled to invite 2026 Google Cloud Next attendees to an exclusive happy hour event on Tuesday, April 21, 2026 from 6:30 to 8:30pm PD",
+                "score": 1295
+              },
+              {
+                "text": "Custom and secure business email + eDiscovery, retention, S/MIME encryption 250 participant video meetings + recordings, attendance tracking noise cancellation, in-domain live streaming As much storage as you need Advanced security and management and compliance controls, including Vault, DLP, data regions, and enterpri",
+                "score": 232
+              },
+              {
+                "text": "Business Starter, Business Standard, and Business Plus plans can be purchased for a maximum of 300 users. There is no minimum or maximum user limit for Enterprise plans",
+                "score": 198
+              },
+              {
+                "text": "RSVP for Our Happy Hour at Google Next 2026",
+                "score": 178
+              },
+              {
+                "text": "Custom and secure business email + eDiscovery, retention 250 participant video meetings + recordings, attendance tracking 5 TB cloud storage per user Enhanced security and management controls, including Vault and advanced endpoint management Standard Support (paid upgrade to Enhance Support",
+                "score": 176
+              },
+              {
+                "text": "Custom and secure business email 100 participant video meetings 30 GB cloud storage per user Security and management controls Standard Support",
+                "score": 107
+              }
+            ]
           }
         },
         {
@@ -160,30 +214,46 @@
           "listed": "3/12",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Harness is using House of Blues for a scaled social night with more personality than a standard hotel reception. The venue matters here: this reads like a lively branded evening, not a tiny curated dinner.",
+          "invite_excerpt": "Previous Next FinOps Excellence Summit {unscripted} 2025 FinOps in Focus | Harness Flagship - The Feature Management & Experimentation Summit | Harness Chaos Carnival by Harness 2025 The State of Software Delivery 2025 Developer Experience Summit DevOps Modernization Summit Revolutionizing Software Testing with AI Introducing the Latest IDP Update: More Cont",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "Reads as a broad cloud/software crowd, not a FinOps-specific event."
           },
           "food": {
             "match": {},
-            "label": "Bar food / comfort food maybe",
-            "note": "More bar-food territory than fine dining, but still probably reception-style."
+            "label": "Dinner likely",
+            "note": "The event explicitly says dinner, so meal odds are much better than average."
           },
           "venue": {
             "match": {},
             "vibe": "Lively and scalable",
-            "note": "Recognizable live-music venue with enough personality to feel like an actual night out, not just conference overflow."
+            "note": "Recognizable live-music venue with actual night-out energy."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.harness.io/events/where-innovation-meets-the-blues",
             "page_title": "Where Innovation Meets the Blues",
-            "page_excerpt": "Where Innovation Meets the Blues Product AI Across the SDLC AI for DevOps & Automation Accelerate innovation velocity with a modern DevOps toolchain. Continuous Delivery & GitOps new Continuous Integration new Internal Developer Portal new Infrastructure as Code Management new Database DevOps new Artifact Registry new AI for Testing & Resilience Build and deploy reliable applications that scale with confidence. Feature Management & Experimentation new Resilience Testing new AI Test Automation new AI SRE new AI for Security & Compliance Governance and security at every stage of the SDLC - from design to runtime. Application Security Testing Web Application & API Protection AI Security AI for Cost & Optimization Optimize cloud spend, resource utilization, and developer productivity. Cloud Cost Management Software Engineering Insights Customers Open Source Pricing Learn Developer Documentation API Reference Docs Developer Hub Commitment to Open Source Engineering Blog Community Training C"
+            "page_excerpt": "Previous Next FinOps Excellence Summit {unscripted} 2025 FinOps in Focus | Harness Flagship - The Feature Management & Experimentation Summit | Harness Chaos Carnival by Harness 2025 The State of Software Delivery 2025 Developer Experience Summit DevOps Modernization Summit Revolutionizing Software Testing with AI Introducing the Latest IDP Update: More Control, Automation, Intuitive Harness Hosts Le Colonial Dining Experience with AWS Northern Virginia Security Survivors DevOps \"Greatest Hits\" Summit Join Traceable by Harness at Black Hat USA 2025 DevSecOps Summit 2025: Securing Applications From Within After Hours with Harness at AWS re:Invent! Field Nation x Harness - Onsite DevDay Workshop Harness Holiday Cheers: Celebrating Our Partners Allianz Tech Event Raffle After Hours with Harness at AWS re:Invent (FinOps Foundation) Christmas Lunch with Harness Women in Tech Event with Harness Securing the Future: AppSec in the AI Era Roundtable in Toronto Chaos Carnival by Harness 2026 re:Invent re:Cap w/ Harness Raffle Suite Life with Harness & AWS: San Jose Sharks vs. Buffalo Sabres Craft Cocktails & Software Delivery Tech Innovators Suhoor DevOps at the Speed of AI {unscripted} 2026 by Harness | AI Software Delivery Harness + AWS Executive Hockey Night: Tampa Bay Lightning vs. Columbus Blue Jackets Capgemini Cloud AI Xchange Raffle Suite Life with Harness: Dallas Stars vs. Minnesota Wild Suite Life: Colorado Avalanche vs. Calgary Flames Code to Courtside: LA Clippers vs. OKC Thunder Suite Life: Detroit Red Wings vs. Philadelphia Flyers Harness at Google Cloud Next 26 Where Innovation Meets the Blues Code, Cloud & Conversations: Executive Luncheon Harness SheTO Boston Raffle DevOps at the Speed of AI: An Xtreme Racing Event Pipelines and Platinum Hits: An evening with Bruno Mars AHEAD Meet & Mingle @ Google Cloud Next DevSecOps in Financial Services: A Private Dining Experience DevOps in the Fast Lane: Montreal Grand Prix Experience Securing the SDLC in the Age of AI - Private Dinner Harness Raffle: Yeti Hopper Flip 12 Raise the Roof: Harness After-Party at AWS London Unlocking DevEx in the Age of AI Releasing at AI Speed With Pipelines And Feature Flag - Chicago Releasing at AI Speed With Pipelines And Feature Flag - Bay Area Safely Accelerate Releases With Pipelines and Feature Flags Overcome the Argo Ceiling with Harness Join Harness for an unforgettable evening of cocktails, small bites, and some soulful jazz! The Apollo Trio will be making a special app",
+            "top_blocks": [
+              {
+                "text": "Previous Next FinOps Excellence Summit {unscripted} 2025 FinOps in Focus | Harness Flagship - The Feature Management & Experimentation Summit | Harness Chaos Carnival by Harness 2025 The State of Software Delivery 2025 Developer Experience Summit DevOps Modernization Summit Revolutionizing Software Testing with AI Intr",
+                "score": 1880
+              },
+              {
+                "text": "Join Harness for an unforgettable evening of cocktails, small bites, and some soulful jazz! The Apollo Trio will be making a special appearance . The Apollo Trio has been featured across global festivals, gaining a well-deserved renown for their hepped-up, good-timin' interpretation of classic and modern favorites",
+                "score": 465
+              },
+              {
+                "text": "Where Innovation Meets the Blues | Harness Event",
+                "score": 93
+              }
+            ]
           }
         },
         {
@@ -195,28 +265,36 @@
           "listed": "3/5",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Broad technical/cloud mixer for SREs, platform engineers, Google Cloud experts, and FinOps practitioners before the conference rush. It reads more welcoming and practitioner-oriented than the sponsor list alone would suggest.",
+          "invite_excerpt": "Join ProsperOps, Dash0, Flexera and Masthead on April 21st for the Cloud Community Celebration at Google Cloud Next 2026!",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Community / affinity group",
-            "rationale": "Reads as community / affinity-group oriented."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "The invite explicitly calls out SREs, platform engineers, cloud experts, and FinOps practitioners."
           },
           "food": {
             "label": "Food unclear",
-            "note": "Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one."
+            "note": "The page does not make the food situation clear enough to rely on."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.prosperops.com/event/google-cloud-next-cloud-community-celebration/",
             "page_title": "Google Cloud Next 2026: Cloud Community Celebration! - ProsperOps",
-            "page_excerpt": "Join ProsperOps, Dash0, Flexera and Masthead on April 21st for the Cloud Community Celebration at Google Cloud Next 2026!"
+            "page_excerpt": "Submit the form to request your free cloud savings analysis",
+            "top_blocks": [
+              {
+                "text": "Submit the form to request your free cloud savings analysis",
+                "score": 104
+              }
+            ]
           }
         },
         {
@@ -228,10 +306,12 @@
           "listed": "3/3",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Platform Back For Organizations The ONLY Data Protection platform that unifies Security, Governance, and Resilience. Records & Information Lifecycle Management Data discovery, tagging, retention, disposal, archiving.",
+          "invite_excerpt": "align-middle bg-primary shadow-y-sm hover:bg-primary-hover active:bg-primary-btn-active text-white group/btn w-full sm:w-fit px-4 py-[5px] text-sm rounded-md border\" href=/get-expert-advice href=/get-expert-advice target=_blank> Get Expert Advice",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "General conference crowd",
@@ -239,17 +319,27 @@
           },
           "food": {
             "label": "Food unclear",
-            "note": "Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one."
+            "note": "The page does not make the food situation clear enough to rely on."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.avepoint.com/events/google-next-2026-avepoint-red-party",
             "page_title": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint",
-            "page_excerpt": "#AvePointRED Party @ Google Cloud Next 2026 | AvePoint United States - English *]:align-middle flex flex-row sm:space-x-1\" href=/contact> Contact us *]:align-middle flex flex-row sm:space-x-1\" href=/products/support> Support *]:align-middle flex flex-row sm:space-x-1\" href=https://account.avepoint.com/ target=_blank> Login *]:align-middle bg-primary shadow-y-sm hover:bg-primary-hover active:bg-primary-btn-active text-white group/btn w-full sm:w-fit px-4 py-[5px] text-sm rounded-md border\" href=/get-expert-advice href=/get-expert-advice target=_blank> Get Expert Advice *]:align-middle back hidden cursor-pointer\"> Back li]:border-b lg:[&>li]:border-b-0\"> Solutions Back Need Foundational AI Readiness Agentic AI Governance Cloud ROI & Optimization Security Posture Management Ransomware Protection & Disaster Recovery Regulatory Compliance & Information Lifecycle Cloud Transformation & Modernization Multi-Tenant Management at Scale Operational Governance Industry Government Financial Service"
+            "page_excerpt": "align-middle bg-primary shadow-y-sm hover:bg-primary-hover active:bg-primary-btn-active text-white group/btn w-full sm:w-fit px-4 py-[5px] text-sm rounded-md border\" href=/get-expert-advice href=/get-expert-advice target=_blank> Get Expert Advice align-middle flex flex-row sm:space-x-1\" href=/contact> Contact us *]:align-middle flex flex-row sm:space-x-1\" href=/products/support> Support *]:align-middle flex flex-row sm:space-x-1\" href=https://account.avepoint.com/ target=_blank> Login",
+            "top_blocks": [
+              {
+                "text": "align-middle bg-primary shadow-y-sm hover:bg-primary-hover active:bg-primary-btn-active text-white group/btn w-full sm:w-fit px-4 py-[5px] text-sm rounded-md border\" href=/get-expert-advice href=/get-expert-advice target=_blank> Get Expert Advice",
+                "score": 336
+              },
+              {
+                "text": "align-middle flex flex-row sm:space-x-1\" href=/contact> Contact us *]:align-middle flex flex-row sm:space-x-1\" href=/products/support> Support *]:align-middle flex flex-row sm:space-x-1\" href=https://account.avepoint.com/ target=_blank> Login",
+                "score": 242
+              }
+            ]
           }
         },
         {
@@ -261,29 +351,41 @@
           "listed": "2/20",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Curated Google Cloud and Kubernetes crowd with stronger scene energy than a generic sponsor happy hour. The pitch is clearly about good bites, craft cocktails, zero-proof options, and a stylish late-night Vegas vibe.",
+          "invite_excerpt": "Curated crowd from the Google Cloud and Kubernetes ecosystem, next-level bites, craft cocktails and zero-proof drinks, plus house and techno energy in a stylish Vegas setting.",
           "access": {
             "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "exclusivity": "Medium-high",
+            "rationale": "Curated crowd and invite flow, but still broad enough for the cloud-native ecosystem."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "Explicitly aimed at the Google Cloud and Kubernetes ecosystem."
           },
           "food": {
-            "label": "Food unclear",
-            "note": "Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises good bites, craft cocktails, and zero-proof drinks."
           },
           "venue": {
             "match": {},
             "vibe": "Off-strip scene",
-            "note": "Off-strip warehouse/event-space vibe: cooler and more intentional than another casino bar, but less convenient."
+            "note": "Off-strip warehouse/event-space vibe: cooler and more intentional than another casino bar."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/pnj3xb0w",
             "page_title": "House of Kube @ Google Cloud Next · Luma",
-            "page_excerpt": "The desert just got a little more cloud native. ☁️🌵 Welcome to House of Kube Las Vegas @ Google Cloud Next edition. When the conference lights go down, we…"
+            "page_excerpt": "The desert just got a little more cloud native. ☁️🌵 ​ Welcome to House of Kube Las Vegas @ Google Cloud Next edition. ​ When the conference lights go down, we turn the volume up. ​ This isn’t just another after party. It’s where the real conversations happen. Where platform engineers, cloud architects, founders, and community legends swap roadmaps over cocktails, debate multi-cluster strategies on the dance floor, and build the kind of connections that don’t fit in a breakout session. ​ You bring the curiosity, we’ll handle the vibe. ​ ✨ Curated crowd from the Google Cloud & Kubernetes ecosystem 🌮 Next-level bites (yes, the good stuff) 🍸 Craft cocktails + zero-proof magic 🎧 House & techno beats that keep the energy scaling all night 🌆 A Vegas setting worthy of your best conference fit ​ No badge scanning. No sales pitches. Just real people, real conversations, and a night that’ll outshine the Strip. Check out highlights from House of Kube Amsterdam Welcome! To join the event, please register below",
+            "top_blocks": [
+              {
+                "text": "The desert just got a little more cloud native. ☁️🌵 ​ Welcome to House of Kube Las Vegas @ Google Cloud Next edition. ​ When the conference lights go down, we turn the volume up. ​ This isn’t just another after party. It’s where the real conversations happen. Where platform engineers, cloud architects, founders, and c",
+                "score": 1250
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              }
+            ]
           }
         }
       ]
@@ -300,30 +402,33 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Smaller morning strategy meetup that sounds more conversation-oriented than party-like. The positioning feels executive/strategy leaning, but still in a manageable breakfast-hour format.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "General conference crowd",
-            "rationale": "Looks like a general conference-side networking event."
+            "label": "Executives / curated buyers",
+            "rationale": "The “AI Strategy Summit” framing sounds more leadership/strategy-oriented than broad developer social."
           },
           "food": {
             "match": {},
             "label": "Food and drinks clearly provided",
-            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.glean.com/coffeeandcontext",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "glean.com",
+            "top_blocks": []
           }
         },
         {
@@ -335,30 +440,33 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Affinity-group meetup with a lighter, community-first feel rather than pure sponsor schmoozing. The pitch is clearly social and welcoming, with sushi as part of the draw.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Community / affinity group",
-            "rationale": "Reads as community / affinity-group oriented."
+            "rationale": "Reads as a community or affinity-group meetup more than a generic mixer."
           },
           "food": {
             "match": {},
             "label": "Sushi / Japanese food likely",
-            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
+            "note": "Sushi or Japanese food is explicitly part of the pitch."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.glean.com/sushiandscarves-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "glean.com",
+            "top_blocks": []
           }
         },
         {
@@ -370,30 +478,38 @@
           "listed": "3/5",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Google Cloud Next 2026 April 22-24 | Las Vegas Register for the networking reception Google Cloud Premier Partner Back Close Thoughtworks is a proud sponsor of Google Cloud Next. Find us at Booth #5504 and the Public Sector Hub.",
+          "invite_excerpt": "Thoughtworks is a proud sponsor of Google Cloud Next 2026. Join us at Booth #5504.",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "General conference crowd",
-            "rationale": "Looks like a general conference-side networking event."
+            "label": "Executives / curated buyers",
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
-            "label": "Cocktails first, light bites maybe",
-            "note": "Drinks and atmosphere first; food is secondary unless the invite says dinner."
+            "label": "Drinks-first, food secondary",
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.thoughtworks.com/en-us/about-us/partnerships/cloud/google-cloud/next",
             "page_title": "Google Cloud Next | Thoughtworks United States",
-            "page_excerpt": "Thoughtworks is a proud sponsor of Google Cloud Next 2026. Join us at Booth #5504."
+            "page_excerpt": "Google Cloud Next 2026 April 22-24 | Las Vegas Register for the networking reception Google Cloud Premier Partner Back Close Thoughtworks is a proud sponsor of Google Cloud Next. Find us at Booth #5504 and the Public Sector Hub. At Google Cloud Next 2026, Thoughtworks is focused on one thing: making AI work in the real world. As organizations move to an AI-first cloud, success depends less on models and infrastructure and more on the foundations that let intelligence scale securely and deliver value day to day. That’s what we mean by AI that works. Join us April 22–24 in Las Vegas to see how we help teams rebuild core systems, rewire them for intelligent agents and reimagine how software is built and evolved. You’ll also get a look at AI/works™ , our new agentic development platform and how it keeps enterprise systems current as needs regulations and models change. Visit us at Booth #5504 (Main Expo) and the Public Sector Hub to explore the three pathways to AI readiness: rebuild the core, rewire for agents and reimagine value. AI that works for a seamless government experience Government agencies face rising expectations with limited room for error. Legacy systems and fragmented operations make it harder to deliver the simple, transparent services people rely on. Stop choosing between legacy stability and AI innovation. At Google Cloud Next 2026, Thoughtworks is showcasing how to build a Seamless Government Experience — a composable enterprise where services and data are assembled, not siloed. Powered by Google Cloud and accelerated by our AI/works™ platform , we help you decommission bloated systems and reallocate your budget toward frictionless citizen services. Visit us at the Public Sector Hub to",
+            "top_blocks": [
+              {
+                "text": "Google Cloud Next 2026 April 22-24 | Las Vegas Register for the networking reception Google Cloud Premier Partner Back Close Thoughtworks is a proud sponsor of Google Cloud Next. Find us at Booth #5504 and the Public Sector Hub. At Google Cloud Next 2026, Thoughtworks is focused on one thing: making AI work in the real",
+                "score": 1445
+              }
+            ]
           }
         },
         {
@@ -405,30 +521,46 @@
           "listed": "3/25",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join Valtech and Optimizely for an exclusive sunset dinner at Cascata Golf Club during Google Cloud Next 2026. An exclusive sunset dinner at Cascata Step away from the noise of Google Cloud Next into something exceptional.",
+          "invite_excerpt": "Join Valtech and Optimizely for an exclusive sunset dinner at Cascata Golf Club during Google Cloud Next 2026.",
           "access": {
-            "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
             "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "note": "The event explicitly says dinner, so meal odds are much better than average."
           },
           "venue": {
             "match": {},
             "vibe": "Fancy off-site dinner",
-            "note": "Feels more special than another casino restaurant: polished, off-site, and executive-dinner friendly, but less spontaneous."
+            "note": "Polished off-site setting that feels more intentional than another casino venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.valtech.com/events/sunset-dinner-cascata-google-next/",
             "page_title": "Exclusive sunset dinner at Cascata | Valtech",
-            "page_excerpt": "Join Valtech and Optimizely for an exclusive sunset dinner at Cascata Golf Club during Google Cloud Next 2026."
+            "page_excerpt": "An exclusive sunset dinner at Cascata Step away from the noise of Google Cloud Next into something exceptional. During the energy and intensity of Google Cloud Next, we invite you to pause and elevate your experience. Join Valtech and Optimizely for an unforgettable private evening at Cascata Golf Club, one of the most breathtaking venues in Las Vegas. Nestled against dramatic red rock canyons and overlooking sweeping desert landscapes, Cascata offers a setting that feels worlds away from the Strip &mdash; especially at sunset. This exclusive gathering brings together a curated group of industry leaders for an evening of perspective, conversation and refined hospitality. Your experience includes: Private car transfers from Mandalay Bay to Cascata Sunset cocktails overlooking the canyon Optional private golf lessons with access to Cascata&rsquo;s state-of-the-art facilities (feel free to bring a change of clothes and shoes) An elegant private dinner as the desert sky transforms at golden hour Return transfers to your hotel on the Strip As the sun sets over the mountains and the city lights begin to glow in the distance, dinner will unfold in an atmosphere designed for meaningful dialogue and genuine connection. This is not a typical conference event. It&rsquo;s a rare opportunity to experience Las Vegas differently &mdash; privately, intentionally and in exceptional company. April 22 05:30 PM - 06:00 PM Departure from Mandalay Bay in private cars 06:00 PM - 07:00 PM Cocktail and private golf lessons(optional) 07:00 PM - 08:00 PM Dinner 08:00 PM - 08:30 PM Departures from Cascata to your hotel on the strip in private cars Attendance is limited to a select group of guests. If you would like to join this exclusive sunset experience, request your seat below and our team will follow up with confirmation details. Request a Seat Meet our experts Robbie Clews Global Lead, Google Cloud Alliance Gabriel Laliberte Executive Vice-President, Strategy Mark Ardito Chief Technology Officer, Americas Leader in delivering data-driven solutions and operationalising AI at scale Ellie Morrison Head of Enterprise Transformation Expert in technology consulting and client success John Cunningham Global Chief Technology Officer Specialist in AI transformation and scalable enterprise solutions Talk to John Megan Carrigan SVP Strategy & Innovation Meet us at Google Cloud Next We would love to meet you at Google Cloud Next '26. Pass by out booth 6001 for a chat or book a meeting here:",
+            "top_blocks": [
+              {
+                "text": "An exclusive sunset dinner at Cascata Step away from the noise of Google Cloud Next into something exceptional. During the energy and intensity of Google Cloud Next, we invite you to pause and elevate your experience. Join Valtech and Optimizely for an unforgettable private evening at Cascata Golf Club, one of the most",
+                "score": 2005
+              },
+              {
+                "text": "Request a seat at the exclusive sunset dinner at Cascata As food will be served, we will ask about dietary restrictions so we can accommodate your needs wherever possible",
+                "score": 260
+              },
+              {
+                "text": "In 5 seconds you will be redirected to valtech.com automatically enter valtech.com",
+                "score": 142
+              }
+            ]
           }
         },
         {
@@ -440,30 +572,38 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us for an evening at the Grand Prix Plaza for head-to-head F1 racing simulators, go-karting on the F1 Las Vegas Circuit, and drinks in the Turn 1 Lounge. Let’s talk fast, accurate AI at Google Cloud Next",
+          "invite_excerpt": "Join us for an evening at the Grand Prix Plaza for head-to-head F1 racing simulators, go-karting on the F1 Las Vegas Circuit, and drinks in the Turn 1 Lounge.",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://redis.io/events/double-stack-at-google-cloud-next/",
             "page_title": "Double Stack: Redis' welcome party at Google Cloud Next",
-            "page_excerpt": "Join us for an evening at the Grand Prix Plaza for head-to-head F1 racing simulators, go-karting on the F1 Las Vegas Circuit, and drinks in the Turn 1 Lounge."
+            "page_excerpt": "Let’s talk fast, accurate AI at Google Cloud Next",
+            "top_blocks": [
+              {
+                "text": "Let’s talk fast, accurate AI at Google Cloud Next",
+                "score": 94
+              }
+            ]
           }
         },
         {
@@ -475,30 +615,33 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Broad networking reception with stronger-than-average food expectations thanks to the sushi framing and Kumi venue. Reads like an ecosystem mixer more than a highly curated room.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
             "label": "Sushi / Japanese food likely",
-            "note": "The invite itself mentions sushi, which is stronger evidence than the venue alone."
+            "note": "Sushi or Japanese food is explicitly part of the pitch."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.glean.com/sushisocial-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "glean.com",
+            "top_blocks": []
           }
         },
         {
@@ -510,30 +653,46 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Eventbrite - LUCID SOFTWARE presents DevOps & Drinks at Play Playground - Wednesday, April 22, 2026 at Play Playground, Las Vegas, NV. Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next.",
+          "invite_excerpt": "Eventbrite - LUCID SOFTWARE presents DevOps & Drinks at Play Playground - Wednesday, April 22, 2026 at Play Playground, Las Vegas, NV. Find event and ticket information.",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.eventbrite.com/e/devops-drinks-at-play-playground-tickets-1980551257125",
             "page_title": "DevOps & Drinks at Play Playground Tickets, Wednesday, Apr 22 from 6 pm to 8 pm | Eventbrite",
-            "page_excerpt": "Eventbrite - LUCID SOFTWARE presents DevOps & Drinks at Play Playground - Wednesday, April 22, 2026 at Play Playground, Las Vegas, NV. Find event and ticket information."
+            "page_excerpt": "Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next. Cast AI, Runpod, Coder, Cribl and Lucid Software are excited to host you for a happy hour during Google Cloud Next! Join us on Wednesday, April 22 from 6:00–8:00pm at Play Playground inside the Luxor for an evening of drinks, bites, and gameplay with peers across cloud, DevOps, and data teams. RSVP to reserve your spot. Capacity is limited and entry is first come, first served. Entry only for 21+ years of age Cast AI, Runpod, Coder, Cribl and Lucid Software are excited to host you for a happy hour during Google Cloud Next! Join us on Wednesday, April 22 from 6:00–8:00pm at Play Playground inside the Luxor for an evening of drinks, bites, and gameplay with peers across cloud, DevOps, and data teams. RSVP to reserve your spot. Capacity is limited and entry is first come, first served. Entry only for 21+ years of age Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next",
+            "top_blocks": [
+              {
+                "text": "Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next. Cast AI, Runpod, Coder, Cribl and Lucid Software are excited to host you for a happy hour during Google Cloud Next! Join us on Wednesday, April 22 from 6:00–8:00pm at Play Playground inside the Luxor",
+                "score": 1160
+              },
+              {
+                "text": "Cast AI, Runpod, Coder, Cribl and Lucid Software are excited to host you for a happy hour during Google Cloud Next! Join us on Wednesday, April 22 from 6:00–8:00pm at Play Playground inside the Luxor for an evening of drinks, bites, and gameplay with peers across cloud, DevOps, and data teams. RSVP to reserve your spot",
+                "score": 862
+              },
+              {
+                "text": "Join us for DevOps & Drinks at Play Playground—tasty drinks, great food, and games with the people building what’s next",
+                "score": 299
+              }
+            ]
           }
         },
         {
@@ -545,29 +704,37 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Happy Hour Join Us in Las Vegas An evening with teams building and scaling AI systems. Location Rí Rá Irish Pub 3930 Las Vegas Blvd South Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Join Our Happy Hour A visual break built for connection.",
+          "invite_excerpt": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experiences across industries. Book a Meeting Join",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Security leaders / practitioners",
-            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
+            "label": "Broad networking crowd",
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "vibe": "Unknown vibe",
-            "note": "Not in the current venue-note map yet; check the original listing for the exact draw."
+            "note": "Not enough location signal for a better venue note yet."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://zionclouds.com/google-next-2026",
             "page_title": "google next 2026 - Zionclouds",
-            "page_excerpt": "google next 2026 - Zionclouds --> --> google next 2026 - Zionclouds Capabilities Artificial Intelligence Customer Experience Digital Services Low Code Development Operations & Maintenance Technology Consulting WorkForce Solutions Managed Services Approaches Agile Methodology Security First Responsible AI DevSecOps Engagement360 Products ComplianceAi RedactAi InsightsAi SummaryAi XtractifAi Accelerators CloudScale Smart Data Crew Case Management Talent As a Service Document AI Knowledge AI Partners & Alliances Google Cloud Partner Microsoft Solutions Partner AWS Partner Google Next 2026 Clients Government Illinois TOPS Category Four: Architects and Platform IPHEC South Dakota Florida New Mexico Missouri CalPERS California Texas DBITS About Diversity & Inclusion Supplier Diversity Careers Privacy Policy Terms & Conditions Contact Us Blogs News Events Webinar Case Studies Whitepapers CURRENT OPENINGS Capabilities Artificial Intelligence Customer Experience Digital Services Low Code Develo"
+            "page_excerpt": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experiences across industries. Book a Meeting Join Our Happy Hour Enterprise AI Multi-Agent Systems Workflow Automation Google Cloud Architecture Data & Systems Alignment Continuous Optimization Enterprise AI Multi-Agent Systems Workflow Automation Google Cloud Architecture Data & Systems Alignment Continuous Optimization ZCS Advantage We’re enabling enterprises and agencies to move beyond experimentation into AI-driven operations. At Next, we’ll be focusing on: AI systems orchestrating complex workflows From decision support to operational execution, AI can help coordinate multi-step enterprise processes. Collaborative systems for enterprise decisioning Specialized AI components can work across tasks, systems, and teams to support faster and smarter outcomes. Automation across internal and customer-facing processes Streamline operations across service delivery, support, workflows, and digital experiences. Scalable architectures built on Google Cloud Build on secure, resilient, and production-ready cloud foundations designed for enterprise growth. AI Readiness Framework The Structured AI Readiness Path A structured approach to moving from experimentation to production. 01 Step 1 Discovery Assess business goals, operational bottlenecks, and the highest-value AI opportunities. 02 Step 2 Use Case Mapping Prioritize use cases by impact, feasibility, workflow complexity, and stakeholder readiness. 03 Step 3 Data & System Alignment Align source systems, data flows, governance, and integrations required for execution. 04 Step 4 Solution Design Define orchestration patterns, controls, escalation rules, and user interaction models. 05 Step 5 Deployment Launch into production with the right cloud architecture, monitoring, and operational safeguards. 06 Step 6 Continuous Optimization Improve model quality, workflow performance, governance, and ROI over time. Happy Hour Join Us in Las Vegas An evening with teams building and scaling AI systems. Location Rí Rá Irish Pub 3930 Las Vegas Blvd South Las Vegas, NV 89119 Date 22nd April 2026 Time 6:00 PM to 8:00 PM Join Our Happy Hour A visual break built for connection. Step out of the sessions and into a more relaxed c",
+            "top_blocks": [
+              {
+                "text": "AGENTS Google Cloud Next 2026 Enterprise AI for Enterprise Workflows At Google Cloud Next 2026, we’re showcasing how AI is transforming enterprise operations from decision-making to execution. The event serves as a platform for sharing product innovation, architectural best practices, and real-world customer experience",
+                "score": 2435
+              }
+            ]
           }
         },
         {
@@ -579,29 +746,37 @@
           "listed": "3/4",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI.",
+          "invite_excerpt": "Feeling Lucky? Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI. Because the best conversations don’t end when the sessions do—",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://go2.striim.com/next-ai-after-hours",
             "page_title": "AI After Hours at Google Next",
-            "page_excerpt": "AI After Hours at Google Next --> Feeling Lucky? Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI. Because the best conversations don’t end when the sessions do—they happen after hours. Save your spot today! RSVP Striim Cloud Striim Platform Connectors Pricing Industries Compare AI & ML Streaming Integration Microsoft Azure AWS Google Cloud BigQuery Databricks Microsoft Fabric Snowflake Blog Ebooks & Papers Videos On-demand Webinars Academy Support & Services Customers Partners Community Events Podcast Contact Company Newsroom Careers Cloud Security Ethics Hotline CSR Policy Copyright ©2012-2026 Striim | Legal | Privacy Policy | Sitemap We're Hiring"
+            "page_excerpt": "Feeling Lucky? Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI. Because the best conversations don’t end when the sessions do—they happen after hours. Save your spot today! RSVP",
+            "top_blocks": [
+              {
+                "text": "Feeling Lucky? Keep the energy going after Day 1 of Google Next and join Striim, YugabyteDB and Dagster for an exclusive AI After Party at Rí Rá Irish Pub. Unwind with great music, delicious food and an open bar as you connect with fellow innovators, builders and leaders shaping the future of AI. Because the best conve",
+                "score": 876
+              }
+            ]
           }
         },
         {
@@ -613,30 +788,33 @@
           "listed": "4/6",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Playful activity-led mixer built around Swingers golf rather than formal networking. Feels broad and social, with cloud/partner-ecosystem energy more than a narrow executive dinner.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "FinOps / cloud economics",
-            "rationale": "Centered on cloud spend, optimization, or financial operations."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "Reads as a broad cloud/partner networking event rather than a niche FinOps-only room."
           },
           "food": {
             "match": {},
             "label": "Snacks / party food likely",
-            "note": "Usually drinks plus snackable event food, not a memorable meal."
+            "note": "Usually drinks plus snackable event food, not a meal worth planning around."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://events.doit.com/event/ForewardDriveDoiTAMD/summary",
             "page_title": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing",
-            "page_excerpt": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing"
+            "page_excerpt": "Summary - Fore-ward Drive: DoiT & AMD in Full Swing",
+            "top_blocks": []
           }
         },
         {
@@ -648,30 +826,46 @@
           "listed": "4/5",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Cybersecurity Leader Networking Dinner (invite-only) This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting.… Cybersecurity Leader Networking Dinner (invite-only) ​ ​​This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting.",
+          "invite_excerpt": "Cybersecurity Leader Networking Dinner (invite-only) This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting.…",
           "access": {
             "openness": "Curated guest list",
             "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
           },
           "audience": {
             "label": "Security leaders / practitioners",
-            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
+            "rationale": "Security-heavy hosts and wording point to security teams, leaders, or buyers."
           },
           "food": {
             "match": {},
             "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "note": "The event explicitly says dinner, so meal odds are much better than average."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/d45s399w",
             "page_title": "Cybersecurity Leader Networking Dinner · Luma",
-            "page_excerpt": "Cybersecurity Leader Networking Dinner (invite-only) This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting.…"
+            "page_excerpt": "Cybersecurity Leader Networking Dinner (invite-only) ​ ​​This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting. Join us after the Google Next conference for an evening of networking and collaboration. Share insights, discuss industry trends, and build valuable connections with early stage cybersecurity founders who are looking for advisors, design partners, and early adopters. Please note that this event is by invitation only. We look forward to seeing you there! ​ ​ Security Wisdom Meets AI Enabled Innovation ​ ​​At CISO Ventures , we are on a mission to help early stage cybersecurity founders accelerate their entreprenurship journeys. We are building an inclusive community targeting increased collaboration between early stage security innovation stakeholders that includes design partners, early adopters and advisors ​ ​Space is limited—send a request for an invite to [email protected Please register to see the exact location of this event Cybersecurity Leader Networking Dinner",
+            "top_blocks": [
+              {
+                "text": "Cybersecurity Leader Networking Dinner (invite-only) ​ ​​This exclusive event is your opportunity to connect with **cybersecurity leaders** in an intimate setting. Join us after the Google Next conference for an evening of networking and collaboration. Share insights, discuss industry trends, and build valuable connect",
+                "score": 1265
+              },
+              {
+                "text": "Please register to see the exact location of this event",
+                "score": 145
+              },
+              {
+                "text": "Cybersecurity Leader Networking Dinner",
+                "score": 128
+              }
+            ]
           }
         },
         {
@@ -683,10 +877,12 @@
           "listed": "3/31",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Compact drinks-led reception with Elastic and Google Cloud at Hazel Lounge. The title and venue suggest cocktails and conversation more than a big spectacle event.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "General conference crowd",
@@ -695,18 +891,19 @@
           "food": {
             "match": {},
             "label": "Drinks-first, food unclear",
-            "note": "More nightlife than dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "note": "These skew nightlife-first, so food is secondary unless the page explicitly promises it."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co Please enable JS and disable any ad blocker"
+            "page_excerpt": "elastic.co",
+            "top_blocks": []
           }
         },
         {
@@ -718,30 +915,33 @@
           "listed": "4/2",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+          "invite_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Fancy destination dinner",
-            "note": "Wins on novelty and skyline views. More special than a random hotel bar, but also more curated and dinner-ish."
+            "note": "Novelty/views make it feel more special than a generic hotel bar."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary",
             "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data"
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
+            "top_blocks": []
           }
         },
         {
@@ -753,30 +953,50 @@
           "listed": "3/16",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. Join a small group of cloud founders for an evening of great food and…",
+          "invite_excerpt": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. Join a small group of cloud founders for an evening of great food and…",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
-            "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/ym6t0ccu",
             "page_title": "Founder Networking Dinner at Google Next · Luma",
-            "page_excerpt": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. Join a small group of cloud founders for an evening of great food and…"
+            "page_excerpt": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. ​ Join a small group of cloud founders for an evening of great food and thoughtful conversation. We’ll bring together leaders building cloud-native and infrastructure companies to share ideas, challenges, and lessons from the journey of scaling in the cloud. ​ Limited seats to keep it intimate Welcome! To join the event, please register below Founder Networking Dinner at Google Next Please register to see the exact location of this event",
+            "top_blocks": [
+              {
+                "text": "A curated Founder Dinner during Google Cloud Next for builders in the cloud ecosystem. ​ Join a small group of cloud founders for an evening of great food and thoughtful conversation. We’ll bring together leaders building cloud-native and infrastructure companies to share ideas, challenges, and lessons from the journey",
+                "score": 966
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              },
+              {
+                "text": "Founder Networking Dinner at Google Next",
+                "score": 175
+              },
+              {
+                "text": "Please register to see the exact location of this event",
+                "score": 145
+              }
+            ]
           }
         },
         {
@@ -788,30 +1008,42 @@
           "listed": "3/12",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas To join the event, please register below",
+          "invite_excerpt": "Commit × WIV × Google Cloud invite you to an exclusive F1 Evening Step into one of the most talked-about experiences on the Strip, F1 Arcade Las Vegas, just 10…",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
             "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "note": "The event explicitly says dinner, so meal odds are much better than average."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/q9vzbqi1",
             "page_title": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas · Luma",
-            "page_excerpt": "Commit × WIV × Google Cloud invite you to an exclusive F1 Evening Step into one of the most talked-about experiences on the Strip, F1 Arcade Las Vegas, just 10…"
+            "page_excerpt": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas Welcome! To join the event, please register below",
+            "top_blocks": [
+              {
+                "text": "Commit × WIV × Google Cloud Executive F1 Experience Reception @Next | April 22, 6:30 PM | F1 Arcade Caesars, Vegas",
+                "score": 234
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              }
+            ]
           }
         },
         {
@@ -823,14 +1055,16 @@
           "listed": "3/4",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Return to events Past Event Past Event Join us for Eon's VIP Gold Rush @ Google Cloud Next Where Operation Goldmine agents and hand-crafted cocktails collide. Apr 22 Apr 22, 2026 – , | 6:30 - 8:30 PM @ Clique in The Cosmopolitan",
+          "invite_excerpt": "Return to events Past Event Past Event Join us for Eon's VIP Gold Rush @ Google Cloud Next Where Operation Goldmine agents and hand-crafted cocktails collide. Apr 22 Apr 22, 2026 – , | 6:30 - 8:30 PM @ Clique in The Cosmopolitan",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "label": "Broad networking crowd",
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
@@ -840,13 +1074,23 @@
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.eon.io/event/eon-party-google-cloud-next",
             "page_title": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon",
-            "page_excerpt": "Join us for Eon's VIP Gold Rush @ Google Cloud Next | Eon Shift Left Broke Backup Governance. Now What? Join Eon + AWS for a live Lunch & Learn 👉 Save your spot Platform Platform Platform Overview Cloud backup posture Autonomous Cloud Backup Posture Management Achieve full compliance Global Search Lightning-fast search Ransomware Protection Purpose-built to protect your cloud environment Granular Restoration Restore what you need Live Data Lakes Zero-ETL. Built-in catalogs Database Explorer Dive into your backups solutions Use cases Run Multi Cloud Backups Optimize S3 Storage Scale DynamoDB Backups Reduce Cloud Backup Costs Improve Cloud Backup Compliance Accelerate Data Analytics & AI Cloud providers Amazon Web Services Google Cloud Microsoft Azure INTEGRATIONS Integrations Hub Resources Resources Resources The latest on Eon Events See Eon out in the wild Trust Center Security & compliance details Pricing Company Our Story Partner Program Newsroom Careers GET A DEMO GET A DEMO ← Retu"
+            "page_excerpt": "Return to events Past Event Past Event Join us for Eon's VIP Gold Rush @ Google Cloud Next Where Operation Goldmine agents and hand-crafted cocktails collide. Apr 22 Apr 22, 2026 – , | 6:30 - 8:30 PM @ Clique in The Cosmopolitan Shift Left Broke Backup Governance. Now What? Join Eon + AWS for a live Lunch & Learn",
+            "top_blocks": [
+              {
+                "text": "Return to events Past Event Past Event Join us for Eon's VIP Gold Rush @ Google Cloud Next Where Operation Goldmine agents and hand-crafted cocktails collide. Apr 22 Apr 22, 2026 – , | 6:30 - 8:30 PM @ Clique in The Cosmopolitan",
+                "score": 543
+              },
+              {
+                "text": "Shift Left Broke Backup Governance. Now What? Join Eon + AWS for a live Lunch & Learn",
+                "score": 235
+              }
+            ]
           }
         },
         {
@@ -858,10 +1102,12 @@
           "listed": "3/31",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance",
+          "invite_excerpt": "10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "General conference crowd",
@@ -870,18 +1116,28 @@
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://experience.mathco.com/events/mathco-ai-and-aperitifs-at-google-cloud-next-2026",
             "page_title": "AI and Aperitifs by MathCo",
-            "page_excerpt": "AI and Aperitifs by MathCo Express Interest AI and Aperitifs by MathCo 100+ Trained Snowflake professionals 10+ Largescale Snowflake programs executed 5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more 10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance 100+ Trained Snowflake professionals 10+ Largescale Snowflake programs executed 10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance 5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more Resource Center Developing a GenAI-Powered Disambiguation Orchestrator for Pharma Representatives Read more Enhancing Referral Alerts: Streamlining Operations and Improving HCP Targeting Read more GenAI-Powered Drug Trial Data Extraction Framework Read more Patient Risk Scoring Read more RepGPT: Transforming Pharmaceutical Engagements with Intelligent Multi-Agent Frameworks Read more Improving Pa"
+            "page_excerpt": "10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance 5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more",
+            "top_blocks": [
+              {
+                "text": "10+ Proprietary accelerators spanning data ingestion to data activation, monitoring & governance",
+                "score": 96
+              },
+              {
+                "text": "5+ Industries served, spanning Retail, CPG, Manufacturing, Pharma, Technology, and more",
+                "score": 87
+              }
+            ]
           }
         },
         {
@@ -893,29 +1149,37 @@
           "listed": "3/19",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Beyond the Google Next expo floor, join Canonical’s leadership and a curated group of industry peers for an evening of high-level networking and strategic discussion. As enterprises accelerate their AI journeys on Google Cloud, the “missing puzzle piece” is often the underlying security and compliance of the open-source stack.",
+          "invite_excerpt": "Beyond the Google Next expo floor, join Canonical’s leadership and a curated group of industry peers for an evening of high-level networking and strategic discussion. As enterprises accelerate their AI journeys on Google Cloud, the “missing puzzle piece” is often the underlying security and compliance of the open-source stack. When: Wednesday, April 22, 2026",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
             "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "note": "The event explicitly says dinner, so meal odds are much better than average."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://docs.google.com/forms/d/e/1FAIpQLScRqI43T_dgLhG87X5KTKzUdapfiIiJtKv8IaxOA_Zc4__e6w/viewform",
             "page_title": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments",
-            "page_excerpt": "Beyond the Google Next expo floor, join Canonical’s leadership and a curated group of industry peers for an evening of high-level networking and strategic discussion. As enterprises accelerate their AI journeys on Google Cloud, the “missing puzzle piece” is often the underlying security and compliance of the open-source stack. When: Wednesday, April 22, 2026 Time: 6:30 PM – 9:30 PM Where: Tender Steakhouse & Lounge - The Luxor, Las Vegas Request an invitation to the Executive Dinner **Please Note:** This is an invite-only event with strictly limited capacity. All registrations will be manually reviewed by the Canonical team. You will receive a formal confirmation and calendar invite once your attendance is approved."
+            "page_excerpt": "This form was created inside of Canonical. Does this form look suspicious? Report",
+            "top_blocks": [
+              {
+                "text": "This form was created inside of Canonical. Does this form look suspicious? Report",
+                "score": 141
+              }
+            ]
           }
         },
         {
@@ -927,30 +1191,33 @@
           "listed": "3/20",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "GitHub’s beach-club reception sounds like a broad developer/cloud social rather than a narrow VIP room. Tailgate Beach Club makes it feel more playful and approachable than the usual hotel-lounge format.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "GitHub plus the reception framing points to a broad developer/cloud crowd."
           },
           "food": {
             "match": {},
             "label": "Snacks / party food likely",
-            "note": "Usually drinks plus snackable event food, not a memorable meal."
+            "note": "Usually drinks plus snackable event food, not a meal worth planning around."
           },
           "venue": {
             "match": {},
             "vibe": "Playful outdoor-ish",
-            "note": "More playful and casual than a boardroom dinner, which makes it feel friendlier than the usual executive reception formula."
+            "note": "Casual, playful energy instead of boardroom-dinner formality."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://github.registration.goldcast.io/events/7e9424cd-3b44-4d43-8c54-a72f4e6cb923",
             "page_title": "403 Forbidden",
-            "page_excerpt": "403 Forbidden 403 Forbidden"
+            "page_excerpt": "403 Forbidden 403 Forbidden",
+            "top_blocks": []
           }
         },
         {
@@ -962,30 +1229,66 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Enjoy live entertainment, great food, and networking at Mandalay Bay in Las Vegas. Speaking Sessions Cloud Talks Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees.",
+          "invite_excerpt": "Wrap up day one of Google Cloud Next 2026 with Onix at Bollywood Nights Live. Enjoy live entertainment, great food, and networking at Mandalay Bay in Las Vegas.",
           "access": {
-            "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
           },
           "audience": {
             "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Outdoor concert-adjacent",
-            "note": "Gets some of the House of Blues energy without feeling like another windowless hotel room. Better atmosphere than a generic reception."
+            "note": "Better atmosphere than a generic ballroom or hotel lounge."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.onixnet.com/google-next-26-after-party/",
             "page_title": "Bollywood Nights Live - Onix’s Google Cloud Next After Party",
-            "page_excerpt": "Wrap up day one of Google Cloud Next 2026 with Onix at Bollywood Nights Live. Enjoy live entertainment, great food, and networking at Mandalay Bay in Las Vegas."
+            "page_excerpt": "Speaking Sessions Cloud Talks Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees. Please bring your conference badge for entry. Coming Soon Breakouts Session Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees. Please bring your conference badge for entry. Coming Soon Snow-Melt: Why Choose Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees. Please bring your conference badge for entry. Coming Soon What you can expect Join Onix for our Bollywood Nights LIVE Google Cloud Next after party at the House of Blues Courtyard to wrap up the first day of the conference. You’ll enjoy a live Bollywood concert with acclaimed singers and musicians from Bollywood, as well as food, refreshments, and conversation with Onix, our customers, and partners! About the live show Experience the musical extravaganza at the Onix after party, featuring the best of Bollywood music with top musicians traveling from India. Award-winning music producer, Ajay Singha, acclaimed for his unique style, has composed several viral hit songs which have been streamed over 100 million times. He is a music director for mainstream movies and has produced two very successful series “ Bollywood Unwind” and “Jam Room”, featuring top artists like Shilpa Rao, Jonita Gandhi, and Ash King. In this show, he will perform his popular and captivating music live. Joining him on stage are playback singer Arnab Chakraborty (winner of K for Kishore, Playback singer in Movies); India’s “Trumpet King”, Kishore Sodha (original RD Burman trumpet player) who has played in iconic songs from movies like “Shalimar”, “Shaan”, “Sanam Teri Kasam”; “Hum Kissi Se Kum Nahin”, one of India’s leading keyboard players; Bhavesh Shah, Tabla maestro; Amit Choubey (disciple of Ustad Zakir Hussain); guitarist Richard Mithra, who has played lead guitars for films like “DDLJ”, “Kuch Kuch Hota Hai”, “Fanna”, “Hum Tum”, “Dabang”, “Yes Boss”, etc; and ace drummer, Tushar Gosavi. The show will also feature a surprise celebrity guest artist. It will be a night of memorable songs, popular dance hits, and a special fusion jam session What you can expect Join Onix for our Bollywood Nights after party to wrap up the first day of Google Cloud Next 2026! Enjoy live Bollywood entertainment on stage, as well as food, refreshments and engaging conversations with Team Onix, our customers and",
+            "top_blocks": [
+              {
+                "text": "Speaking Sessions Cloud Talks Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees. Please bring your conference badge for entry. Coming Soon Breakouts Session Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2025 attendees. ",
+                "score": 1250
+              },
+              {
+                "text": "What you can expect Join Onix for our Bollywood Nights LIVE Google Cloud Next after party at the House of Blues Courtyard to wrap up the first day of the conference. You’ll enjoy a live Bollywood concert with acclaimed singers and musicians from Bollywood, as well as food, refreshments, and conversation with Onix, our ",
+                "score": 1145
+              },
+              {
+                "text": "What you can expect Join Onix for our Bollywood Nights after party to wrap up the first day of Google Cloud Next 2026! Enjoy live Bollywood entertainment on stage, as well as food, refreshments and engaging conversations with Team Onix, our customers and partners. House of Blues Courtyard, Mandalay Bay, Las Vegas Wedne",
+                "score": 686
+              },
+              {
+                "text": "House of Blues Courtyard, Mandalay Bay, Las Vegas Wednesday, April 22, 2026 7:30-10:30pm PST Bollywood Nights After Party Note: This afterparty is an invite-only event exclusively for registered Google Cloud Next 2026 attendees. Please bring your conference badge for entry",
+                "score": 573
+              },
+              {
+                "text": "Google Cloud Next After Party April 22, 7:30-10:30 pm House of Blues Courtyard, Mandalay Bay Featuring Ajay Singha live with Arnab Chakraborty, trumpet legend, Kishore Sodha, and celebrated Bollywood musicians",
+                "score": 359
+              },
+              {
+                "text": "Onix’s Google Cloud Next After Party",
+                "score": 126
+              },
+              {
+                "text": "April 22, 7:30-10:30 pm House of Blues Courtyard, Mandalay Bay",
+                "score": 122
+              },
+              {
+                "text": "Let's talk Find out more about how Onix can help your business. Contact us",
+                "score": 104
+              }
+            ]
           }
         },
         {
@@ -997,6 +1300,8 @@
           "listed": "3/22",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "",
+          "invite_excerpt": "",
           "access": {
             "openness": "Full / closed",
             "exclusivity": "N/A",
@@ -1009,18 +1314,19 @@
           "food": {
             "match": {},
             "label": "Snacks / party food likely",
-            "note": "Usually drinks plus snackable event food, not a memorable meal."
+            "note": "Usually drinks plus snackable event food, not a meal worth planning around."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": null,
             "final_url": "",
             "page_title": "",
-            "page_excerpt": ""
+            "page_excerpt": "",
+            "top_blocks": []
           }
         },
         {
@@ -1032,30 +1338,33 @@
           "listed": "3/6",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "This is the obvious status play: explicit VIP framing plus Marquee nightclub spectacle. More about buzz and high-energy social flex than careful small-group networking.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Curated guest list",
             "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "rationale": "Explicit VIP framing points to a screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "VIP framing usually means buyer/partner/executive targeting more than open practitioner traffic."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food unclear",
-            "note": "More nightlife than dinner plan. Eat beforehand unless the invite explicitly promises food."
+            "note": "These skew nightlife-first, so food is secondary unless the page explicitly promises it."
           },
           "venue": {
             "match": {},
             "vibe": "Big Vegas flex",
-            "note": "Obvious status venue with wow factor, but not a low-key networking spot."
+            "note": "Flashy, loud, high-spectacle Vegas venue; great for buzz, worse for easy conversation."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
             "page_title": "publicissapient.com",
-            "page_excerpt": "publicissapient.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "publicissapient.com",
+            "top_blocks": []
           }
         },
         {
@@ -1067,30 +1376,33 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join Zencore, Domo, ProsperOps, and Foresite for an exclusive evening of networking, conversation, and refreshments at The Cosmopolitan See what it means → Our Exclusive Party!",
+          "invite_excerpt": "Join Zencore, Domo, ProsperOps, and Foresite for an exclusive evening of networking, conversation, and refreshments at The Cosmopolitan",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "FinOps / cloud economics",
-            "rationale": "Centered on cloud spend, optimization, or financial operations."
+            "rationale": "The event language is centered on cloud cost, savings, or FinOps people."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Stylish Vegas",
-            "note": "Visually memorable and very Vegas-chic: good for “cool photo” energy even if it is not very private."
+            "note": "Memorable Vegas-chic backdrop, more stylish than private."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://zencore.dev/google-cloud-next-hh",
             "page_title": "Google Cloud Next '26 Happy Hour",
-            "page_excerpt": "Join Zencore, Domo, ProsperOps, and Foresite for an exclusive evening of networking, conversation, and refreshments at The Cosmopolitan"
+            "page_excerpt": "Google Cloud Next '26 Happy Hour Skip to content Solutions Implementation Services ZenBuild: Expert Implementation Cloud Migration Data Cloud ZenAI: Agentic Enterprise & AI Gemini Enterprise Cloud Native Infrastructure Cloud Cost Optimization Security Application Development Operations Support ZenRun: Streamlined Operations Consultative Support Dedicated Support Flex Engineering Managed Services Zencore Solutions → All Solutions → Solution Briefs FEATURED SOLUTION SPOTLIGHT Agentic Enterpirse & AI Agentic Enterprise and Artificial Intelligence with ZenAI → Customers Trusted By Homburger Refik Anadol Studios mmob Headgum SoundCloud Professional European Football Club Crisp Bitcoin Suisse Invoca Gridmatic Qumu Online Membership Platform Gatsby Pypestream Sauce Labs Customer Spotlights → All Customers FEATURED CUSTOMER SPOTLIGHT AI-Powered Legal Content Automation Read about Homburger → Who We Are Collaborative Culture About Us Leadership Awards & Recognition Global Reach Community Impact The Zen Life Careers Open Positions JOIN OUR GLOBAL TEAM Team Spirit at Google Cloud Next Work With Us → Partners Google Cloud Partner Since Day One → Zencore & Google Cloud PARTNERSHIP SPOTLIGHT Complete Solutions for Google Cloud Zencore Wins 3x Partner of the Year → Explore Our Partner Network → All Partners Insights Engineering Blog → Read the Zencore Engineering Blog FEATURED BLOG A Faster Way to Select the Best Cloud Regions for Your Workloads Read on Medium → Editorial → Read Our Announcements FEATURED ANNOUNCEMENT Zencore Wins 3x Google Cloud Partner of the Year Read the Announcement → Contact us Contact us 🏆 Zencore Named 3x 2025 Google Cloud Partner of the Year. See what it means → Our Exclusive Party! Hosted by Zencore & friends: Domo + ProsperOps + Foresite When: April 22nd,",
+            "top_blocks": []
           }
         },
         {
@@ -1102,30 +1414,33 @@
           "listed": "4/1",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Late-night security-focused reception for security practitioners, leaders, and vendors at Swingers. The tone is social and drinks-led, but the attendee target is clearly the security crowd.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Security leaders / practitioners",
-            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
+            "rationale": "Security-heavy hosts and wording point to security teams, leaders, or buyers."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
             "page_title": "Security Professionals Reception at Next'26",
-            "page_excerpt": "Security Professionals Reception at Next'26"
+            "page_excerpt": "Security Professionals Reception at Next'26",
+            "top_blocks": []
           }
         },
         {
@@ -1137,29 +1452,37 @@
           "listed": "3/30",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech.",
+          "invite_excerpt": "Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech. Expect a high-octane evening of gourmet bites, handcrafted cock",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://learn.insight.com/google-cloud-next-2026-after-party",
             "page_title": "After party",
-            "page_excerpt": "After party You’re Invited Insight's Next '26 late-night bash Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech. Expect a high-octane evening of gourmet bites, handcrafted cocktails, and the week's best networking. Space is limited. Register today to secure your spot. When: Wednesday, April 22, 2026 9 p.m. – midnight This is an invitation-only event. Confirmed guests will receive a calendar invitation and ticket. Register Now © 2026 SADA Systems, Inc. All Rights Reserved | Privacy Policy | Terms of Use | Manage Cookies"
+            "page_excerpt": "Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech. Expect a high-octane evening of gourmet bites, handcrafted cocktails, and the week's best networking. Space is limited. Register today to secure your spot. When: Wednesday, April 22, 2026 9 p.m. – midnight This is an invitation-only event. Confirmed guests will receive a calendar invitation and ticket",
+            "top_blocks": [
+              {
+                "text": "Join us for an exclusive Google Cloud Next ‘26 after-party Join Insight at The Cove for the most anticipated after-party of Google Next ‘26. Cap off an exhilarating day by unwinding with Insight and Google Cloud executives, cloud experts, and the industry trailblazers shaping the future of tech. Expect a high-octane ev",
+                "score": 1310
+              }
+            ]
           }
         },
         {
@@ -1171,30 +1494,38 @@
           "listed": "2/16",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us in Vegas during Google Cloud Next for House Party with The Chainsmokers 2026. Step away from the tech talk, grab a drink, and get ready for a night of music, energy, and unforgettable vibes.",
+          "invite_excerpt": "Ready to trade dashboards for dance floors? Join us in Vegas during Google Cloud Next for House Party with The Chainsmokers 2026. Step away from the tech talk, grab a drink, and get ready for a night of music, energy, and unforgettable vibes.",
           "access": {
-            "openness": "Unclear",
-            "exclusivity": "Unclear",
-            "rationale": "Not enough signal to classify confidently."
+            "openness": "Open RSVP",
+            "exclusivity": "Low",
+            "rationale": "Looks like a standard public registration flow."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Big Vegas flex",
-            "note": "Classic mega-club flex: flashy, loud, expensive-looking, and very Vegas. Great for spectacle, bad for easy conversation."
+            "note": "Flashy, loud, high-spectacle Vegas venue; great for buzz, worse for easy conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://clickhouse.com/houseparty/google-next",
             "page_title": "House Party with The Chainsmokers — Google Cloud Next 2026",
-            "page_excerpt": "Ready to trade dashboards for dance floors? Join us in Vegas during Google Cloud Next for House Party with The Chainsmokers 2026. Step away from the tech talk, grab a drink, and get ready for a night of music, energy, and unforgettable vibes."
+            "page_excerpt": "House Party We're bringing House Party to Google Cloud Next! Wednesday, April 22, 9:30 PM - 12:00 AM PT Register for Event What’s going down The ClickHouse House Party is coming to Google Cloud Next for the first time. If you know, you know. We bring the music and pour the drinks; you bring the dance moves. When and where Wednesday, April 22, 9:30 PM - 12:00 AM PT Hakkasan Nightclub, MGM Grand, Las Vegas Ready to Party? Register to get your free ticket. You'll need to show your Luma ticket QR code to get access to the event. Entry will be first-come-first-serve. Trust us - your future self will thank you when you're dropping it low while discussing columnar storage with fellow data enthusiasts. Some combinations just work. Loading video... We’re here to answer all your questions. 01 What if I don’t know ClickHouse? No worries at all! We'd still love to have you join the party. Since you're curious, ClickHouse is an open-source analytics database that’s super fast — like, \"query billions of rows in milliseconds\" fast. It is the real-time data warehouse for analytics. If you want to",
+            "top_blocks": [
+              {
+                "text": "House Party We're bringing House Party to Google Cloud Next! Wednesday, April 22, 9:30 PM - 12:00 AM PT Register for Event What’s going down The ClickHouse House Party is coming to Google Cloud Next for the first time. If you know, you know. We bring the music and pour the drinks; you bring the dance moves. When and wh",
+                "score": 1805
+              }
+            ]
           }
         }
       ]
@@ -1211,14 +1542,16 @@
           "listed": "4/7",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Smaller breakfast gathering with an affinity-group/community angle and a more curated feel thanks to the private-suite setup. More intentional and conversational than a broad open mixer.",
+          "invite_excerpt": "",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Community / affinity group",
-            "rationale": "Reads as community / affinity-group oriented."
+            "rationale": "Reads as a community or affinity-group meetup more than a generic mixer."
           },
           "food": {
             "match": {},
@@ -1228,13 +1561,14 @@
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co Please enable JS and disable any ad blocker"
+            "page_excerpt": "elastic.co",
+            "top_blocks": []
           }
         },
         {
@@ -1246,14 +1580,16 @@
           "listed": "4/6",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and…",
+          "invite_excerpt": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and…",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "General conference crowd",
-            "rationale": "Looks like a general conference-side networking event."
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud cost, savings, or FinOps people."
           },
           "food": {
             "match": {},
@@ -1262,13 +1598,27 @@
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/i03kjswj",
             "page_title": "CTO Lunch Google Next - Sponsored by Archera · Luma",
-            "page_excerpt": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and…"
+            "page_excerpt": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and CUD commitments empower thousands of organizations to purchase cloud with unprecedented flexibility Welcome! To join the event, please register below CTO Lunch Google Next - Sponsored by Archera",
+            "top_blocks": [
+              {
+                "text": "Good food and good company, that's the whole story of CTO Lunches. This event is sponsored by Archera - Archera's short-term, insured savings plans, RIs, and CUD commitments empower thousands of organizations to purchase cloud with unprecedented flexibility",
+                "score": 422
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              },
+              {
+                "text": "CTO Lunch Google Next - Sponsored by Archera",
+                "score": 134
+              }
+            ]
           }
         },
         {
@@ -1280,14 +1630,16 @@
           "listed": "3/4",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners.",
+          "invite_excerpt": "Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! AI cannot exist in silos. Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners. This exclusive live Lunch & Learn brings toge",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
@@ -1297,13 +1649,19 @@
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://go2.striim.com/next-ai-roundtable",
             "page_title": "Google Next AI Roundtable",
-            "page_excerpt": "Google Next AI Roundtable --> Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! AI cannot exist in silos. Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners. This exclusive live Lunch & Learn brings together leaders from Google, Striim, Dagster and more to explore how each layer of the AI world—data movement, compute, models and applications—shapes the others. Attendees will learn: • How the AI “stack” is evolving into a connected ecosystem spanning data, infrastructure and intelligence • Where interoperability challenges emerge between data pipelines, models and applications • How organizations are balancing openness, trust and control as AI becomes operational • What the next generation of adaptive, collaborative AI systems could look like Space is limited – RSVP today! RSVP Striim Cloud Striim Platf"
+            "page_excerpt": "Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! AI cannot exist in silos. Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners. This exclusive live Lunch & Learn brings together leaders from Google, Striim, Dagster and more to explore how each layer of the AI world—data movement, compute, models and applications—shapes the others. Attendees will learn: • How the AI “stack” is evolving into a connected ecosystem spanning data, infrastructure and intelligence • Where interoperability challenges emerge between data pipelines, models and applications • How organizations are balancing openness, trust and control as AI becomes operational • What the next generation of adaptive, collaborative AI systems could look like Space is limited – RSVP today! RSVP",
+            "top_blocks": [
+              {
+                "text": "Pull up a seat and join our cloud experts for an AI Roundtable with Striim, Dagster and Google! AI cannot exist in silos. Truly successful and scalable AI initiatives depend on how models, data and infrastructure interact beyond the walls of one company to build an emerging ecosystem of technologies and partners. This ",
+                "score": 950
+              }
+            ]
           }
         },
         {
@@ -1315,30 +1673,46 @@
           "listed": "4/1",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Una experiencia para cerrar la semana Acompáñenos junto al equipo de Fortinet Cloud Security y colegas de toda Latinoamérica para compartir una tarde donde tecnología, networking y estrategia se encuentran. Una oportunidad para intercambiar ideas, fortalecer relaciones y celebrar el cierre de una semana dedicada a la innovación en la nube.",
+          "invite_excerpt": "Una experiencia para cerrar la semana Acompáñenos junto al equipo de Fortinet Cloud Security y colegas de toda Latinoamérica para compartir una tarde donde tecnología, networking y estrategia se encuentran. Una oportunidad para intercambiar ideas, fortalecer relaciones y celebrar el cierre de una semana dedicada a la innovación en la nube. Y como en toda car",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Security leaders / practitioners",
-            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
+            "rationale": "Security-heavy hosts and wording point to security teams, leaders, or buyers."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://fortinet.mktmo.com/googlecloud_next2026_closingreception/index.php",
             "page_title": "Google Cloud Next 2026 Closing Reception – Fortinet",
-            "page_excerpt": "Google Cloud Next 2026 Closing Reception – Fortinet ENG ES POR Seguridad para avanzar en la nube En la Fórmula 1, la velocidad es protagonista. Pero lo que permite competir al más alto nivel es la seguridad. Los equipos pueden asumir riesgos, innovar y empujar los límites porque existe una base sólida de ingeniería, control y protocolos de seguridad. En la nube ocurre lo mismo. La innovación exige avanzar. Los negocios exigen resultados . La seguridad es lo que permite gestionar el riesgo y proteger el crecimiento. F1 Arcade Las Vegas será el escenario para compartir esta idea en una experiencia donde tecnología, comunidad y energía se encuentran. El cierre de Google Cloud Next 2026 Fortinet invita a su comunidad de clientes de Latinoamérica a cerrar Google Cloud Next 2026 con una experiencia donde la innovación, la nube y la seguridad se encuentran. Después de una semana dedicada a nuevas ideas, tecnologías y oportunidades en Google Cloud, lo invitamos a compartir una experiencia dife"
+            "page_excerpt": "Una experiencia para cerrar la semana Acompáñenos junto al equipo de Fortinet Cloud Security y colegas de toda Latinoamérica para compartir una tarde donde tecnología, networking y estrategia se encuentran. Una oportunidad para intercambiar ideas, fortalecer relaciones y celebrar el cierre de una semana dedicada a la innovación en la nube. Y como en toda carrera, quienes lleguen a la meta podrían encontrarse con más de una sorpresa. Cupos limitados Regístrate para confirmar tu asistencia y recibir tu pase digital. En Las Vegas se celebran las apuestas. En la nube, el éxito depende de cómo se gestionan los riesgos y se protege el negocio. Evento exclusivo para Latinoamérica. Organizado por Fortinet. Sponsor El cierre de Google Cloud Next 2026 Fortinet invita a su comunidad de clientes de Latinoamérica a cerrar Google Cloud Next 2026 con una experiencia donde la innovación, la nube y la seguridad se encuentran. Después de una semana dedicada a nuevas ideas, tecnologías y oportunidades en Google Cloud, lo invitamos a compartir una experiencia diferente en F1 Arcade Las Vegas, el escenario ideal para combinar networking, conversación estratégica y un poco de competencia en la pista. Fortinet @ F1 Arcade Las Vegas 23 de abril de 2026 16:00hs a 19:00hs F1 Arcade | The Forum Shops at Caesars Palace 3500 Las Vegas Blvd S, Las Vegas, NV 89109 Evento exclusivo para clientes de Latinoamérica Seguridad para avanzar en la nube En la Fórmula 1, la velocidad es protagonista. Pero lo que permite competir al más alto nivel es la seguridad. Los equipos pueden asumir riesgos, innovar y empujar los límites porque existe una base sólida de ingeniería, control y protocolos de seguridad. En la nube ocurre lo mismo. La innovación exige avanzar. Los negocios exigen resultados . La seguridad es lo que permite gestionar el riesgo y proteger el crecimiento. F1 Arcade Las Vegas será el escenario para compartir esta idea en una experiencia donde tecnología, comunidad y energía se encuentran",
+            "top_blocks": [
+              {
+                "text": "Una experiencia para cerrar la semana Acompáñenos junto al equipo de Fortinet Cloud Security y colegas de toda Latinoamérica para compartir una tarde donde tecnología, networking y estrategia se encuentran. Una oportunidad para intercambiar ideas, fortalecer relaciones y celebrar el cierre de una semana dedicada a la i",
+                "score": 830
+              },
+              {
+                "text": "El cierre de Google Cloud Next 2026 Fortinet invita a su comunidad de clientes de Latinoamérica a cerrar Google Cloud Next 2026 con una experiencia donde la innovación, la nube y la seguridad se encuentran. Después de una semana dedicada a nuevas ideas, tecnologías y oportunidades en Google Cloud, lo invitamos a compar",
+                "score": 800
+              },
+              {
+                "text": "Seguridad para avanzar en la nube En la Fórmula 1, la velocidad es protagonista. Pero lo que permite competir al más alto nivel es la seguridad. Los equipos pueden asumir riesgos, innovar y empujar los límites porque existe una base sólida de ingeniería, control y protocolos de seguridad. En la nube ocurre lo mismo. La",
+                "score": 710
+              }
+            ]
           }
         },
         {
@@ -1350,30 +1724,74 @@
           "listed": "3/25",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Google Cloud Next '26: Special Reception at the Skyfall Lounge, W Las Vegas That's why we're hosting a special reception exclusively for leaders like you.",
+          "invite_excerpt": "today April 23, 2026 4:30 PM-6:30 PM PDT location_on Skyfall Lounge 3940 Mandalay Bay Rd Delano Las Vegas, NV 89119 Next 2026 is all about innovation and growth, but it's also about connecting with the people who are driving change. That's why we're hosting a special reception exclusively for leaders like you. At SMB City, you will get to: Connect over Cockt",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "label": "Executives / curated buyers",
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
-            "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Great views",
-            "note": "Mostly about the views. Better backdrop than a generic bar, and more memorable for a happy hour."
+            "note": "Mostly about the views; more memorable than a generic bar."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
             "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
-            "page_excerpt": "Google Cloud Next '26: Special Reception at the Skyfall Lounge, W Las Vegas"
+            "page_excerpt": "Register today April 23, 2026 4:30 PM-6:30 PM PDT location_on Skyfall Lounge 3940 Mandalay Bay Rd Delano Las Vegas, NV 89119 Next 2026 is all about innovation and growth, but it's also about connecting with the people who are driving change. That's why we're hosting a special reception exclusively for leaders like you. At SMB City, you will get to: Connect over Cocktails: Kick back and connect with fellow execs and IT professionals in your industry. Swap Stories: Network with Google Cloud executives and customer engineers helping SMBs navigate similar challenges everyday. Unwind: Enjoy free drinks and appetizers before the Next Night concert begins! This is your chance to forge valuable connections, gain fresh perspectives, and unwind after a busy day at Next 2026. Space is limited, so register today to secure your spot Sign me up to receive news, product updates, event information, and special offers about Google Cloud from Google. Google Cloud will share your personal-related information, including your name, email address, phone number, title and other information, with its affiliates, Google LLC and Google Asia Pacific Pte. Ltd. Please see this link on the Personal Information Protection Commission’s (“PPC”) website for information on the personal data protection regulations in California, USA, where Google LLC is located, and this link on PPC’s website regarding U.S. federal law. Please see this link for information on Singapore, where Google Asia Pacific Pte. Ltd. is located Afghanistan Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua & Barbuda Argentina Armenia Aruba Ascension Island Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bosnia & Herzegovina Botswana Bouvet Island Brazil British Indian Ocean Territory British Virgin Islands Brunei Bulgaria Burkina Faso Burundi Cambodia Cameroon Canada Cape Verde Cayman Islands Central African Republic Chad Chile China Christmas Island Cocos (Keeling) Islands Colombia Comoros Congo - Brazzaville Congo - Kinshasa Cook Islands Costa Rica Croatia Curaçao Cyprus Czechia Côte d’Ivoire Denmark Djibouti Dominica Dominican Republic Ecuador Egypt El Salvador Equatorial Guinea Eritrea Estonia Eswatini Ethiopia Falkland Islands (Islas Malvinas) Faroe Islands Fiji Finland France French Guiana French Polynesia French Southern Territories Gabon Gambia Georgia Germany Ghana Gibraltar Greece Greenland Grenada Guadeloupe Guam Guate",
+            "top_blocks": [
+              {
+                "text": "Register today April 23, 2026 4:30 PM-6:30 PM PDT location_on Skyfall Lounge 3940 Mandalay Bay Rd Delano Las Vegas, NV 89119 Next 2026 is all about innovation and growth, but it's also about connecting with the people who are driving change. That's why we're hosting a special reception exclusively for leaders like you.",
+                "score": 1265
+              },
+              {
+                "text": "Sign me up to receive news, product updates, event information, and special offers about Google Cloud from Google. Google Cloud will share your personal-related information, including your name, email address, phone number, title and other information, with its affiliates, Google LLC and Google Asia Pacific Pte. Ltd. P",
+                "score": 875
+              },
+              {
+                "text": "Afghanistan Albania Algeria American Samoa Andorra Angola Anguilla Antarctica Antigua & Barbuda Argentina Armenia Aruba Ascension Island Australia Austria Azerbaijan Bahamas Bahrain Bangladesh Barbados Belarus Belgium Belize Benin Bermuda Bhutan Bolivia Bosnia & Herzegovina Botswana Bouvet Island Brazil British Indian ",
+                "score": 830
+              },
+              {
+                "text": "Speakers Executive Hosts Sharon Prosser Vice President, SMB Sales and Scaled Acquisition, Google Cloud Sarah Lustenberger Director, Customer Engineering, SMB, Google Cloud Taru Dahiya Managing Director, JAPAC SMB & Scaled Services, Google Cloud Andre Alves Sales Director, LATAM SMB & Scaled Services, Google Cloud PJ Dw",
+                "score": 725
+              },
+              {
+                "text": "Collected Items: (for contact to our sales specialist, gated content or event registration) name, job title, company email, business mobile phone, company information, country; (for newsletter subscription) name, job title, company email, country Purpose of collection and use: handling inquiry and conducting marketing ",
+                "score": 695
+              },
+              {
+                "text": "Advertising & Marketing Agriculture AI - Generative Automotive Consumer Packaged Goods Education Electrical & Electronics Energy & Utilities Financial Services Food, Beverage & Restaurants Gaming Government Healthcare & Life Sciences Logistics Manufacturing Manufacturing & Industrial Media & Entertainment Non-Profit Ot",
+                "score": 545
+              },
+              {
+                "text": "Alabama Alaska American Samoa Arizona Arkansas Armed Forces America Armed Forces Europe Armed Forces Pacific California Colorado Connecticut Delaware District of Columbia Florida Georgia Guam Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi Missour",
+                "score": 500
+              },
+              {
+                "text": "Are you a government official? (Government officials include any government employee; candidate for public office; and employee of government-owned or government-controlled companies, public international organizations, and political parties. This will include administrators and teachers at public universities and publ",
+                "score": 450
+              },
+              {
+                "text": "Join us for a networking event where you will get to connect with Google Cloud executives and other SMBs",
+                "score": 284
+              },
+              {
+                "text": "Sign me up to receive news, product updates, event information, and special offers about Google Cloud from Google",
+                "score": 203
+              }
+            ]
           }
         },
         {
@@ -1385,30 +1803,33 @@
           "listed": "4/1",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision Next 26 Kentucky Derby Pre-Party April 23, 2026 - Las Vegas, NV Add to Calendar Attend this event Thank you Thank you for your Registration View All Events First Name Last Name Business Email Job Title Company is Required Company is Required. Phone By clicking the “Register\" butt",
+          "invite_excerpt": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision Next 26 Kentucky Derby Pre-Party April 23, 2026 - Las Vegas, NV Add to Calendar Attend this event Thank you Thank you for your Registration View All Events First Name Last Name Business Email Job Title Company is Required Company is Required. Phone By clicking the “Register\" butt",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Security leaders / practitioners",
-            "rationale": "Security-heavy hosts and language point to security buyers, leaders, or operators."
+            "rationale": "Security-heavy hosts and wording point to security teams, leaders, or buyers."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.cvisionintl.com/events/cocktail-reception/2026-apr-23-google-next-cocktail-reception-vegas/register",
             "page_title": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision",
-            "page_excerpt": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision Next 26 Kentucky Derby Pre-Party April 23, 2026 - Las Vegas, NV Add to Calendar Attend this event Thank you Thank you for your Registration View All Events First Name Last Name Business Email Job Title Company is Required Company is Required. Phone By clicking the “Register\" button, you are agreeing to the Privacy Policy and Terms of Use Something went wrong. Please try again after sometime Register Agenda April 23, 2026 April 23, 2026 April 23, 2026 Download Agenda All times Pacific Time 5:00 PM - 6:30 PM NEXT '26 Kentucky Derby Pre-Party Join Google Cloud and our elite Security Tech ISVs for an exclusive Kentucky Derby Pre-Party. After a long day, unwind with live race action, festive hats, and classic mint juleps. Experience the thrill of betting alongside your preferred partner in an evening of high-stakes fun and premier networking. &times; You've participated in the Raffle &times; Ooppss... something "
+            "page_excerpt": "Cocktail Reception 2026 Apr 23 Google Next Cocktail Reception Vegas :: C-Vision Next 26 Kentucky Derby Pre-Party April 23, 2026 - Las Vegas, NV Add to Calendar Attend this event Thank you Thank you for your Registration View All Events First Name Last Name Business Email Job Title Company is Required Company is Required. Phone By clicking the “Register\" button, you are agreeing to the",
+            "top_blocks": []
           }
         },
         {
@@ -1420,30 +1841,42 @@
           "listed": "3/18",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "An invite-only happy hour for senior retail marketing and data leaders at Google Cloud Next. Join GrowthLoop and Tredence for peer networking, premium drinks, and compelling conversation at StripSteak, Mandalay Bay.",
+          "invite_excerpt": "An invite-only happy hour for senior retail marketing and data leaders at Google Cloud Next. Join GrowthLoop and Tredence for peer networking, premium drinks, and compelling conversation at StripSteak, Mandalay Bay.",
           "access": {
-            "openness": "Request invite",
-            "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
-            "label": "Food and drinks clearly provided",
-            "note": "The invite explicitly promises coffee, snacks, lunch, drinks, or happy hour through the event."
+            "label": "Drinks-first, food secondary",
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.growthloop.com/resources/events/next-happy-hour",
             "page_title": "Invite-Only Retail Leaders Happy Hour | Google Cloud Next 2026",
-            "page_excerpt": "An invite-only happy hour for senior retail marketing and data leaders at Google Cloud Next. Join GrowthLoop and Tredence for peer networking, premium drinks, and compelling conversation at StripSteak, Mandalay Bay."
+            "page_excerpt": "Resource Hub Events Retail Leaders Happy Hour at NEXT 2026 Retail Leaders Happy Hour at NEXT 2026 An Invite-Only Evening for Retail Technology Leaders at Google Cloud Next GrowthLoop + Tredence Retail Leaders Happy Hour Thursday, April 23 | 5:00 - 6:30 PM at StripSteak, Mandalay Bay (Conveniently located on your walk from the convention center to the casino — just before the concert) Where Retail Technology Leaders Connect, Off the Show Floor Join GrowthLoop and Tredence for a private, closed-door happy hour designed exclusively for senior marketing and data leaders at leading retailers . Step away from the noise of the conference and into an elevated setting for candid conversation, peer networking, and exceptional hospitality. This is an exclusive gathering to ensure meaningful discussions and high-quality connections. Why Attend Peer Networking Connect with fellow retail technology, data, and digital leaders facing similar challenges across personalization, activation, and scale. High-End Hospitality Enjoy premium cocktails, top-shelf spirits, and elevated bites from StripSteak, one of Mandalay Bay’s most acclaimed dining experiences. Private & Invite-Only This is a closed-door event with limited capacity, designed to foster open, executive-level conversations. Event Details Who: Senior AI, data, digital, and marketing leaders at major retailers Hosted by: GrowthLoop & Tredence When: Thursday, April 23 | 5:00–6:30 PM Where: StripSteak at Mandalay Bay Atmosphere: Upscale, relaxed, and intentionally intimate Request an Invitation Attendance is limited and confirmed by invitation only. If you’re attending Google Cloud Next and would like to join an evening of exceptional conversation, connections, and hospitality, request your invitation using the form. We look forward to welcoming you Is your tech stack ready for 2026 and beyond? Download our new eBook and get a blueprint for the composable AI data stack",
+            "top_blocks": [
+              {
+                "text": "Resource Hub Events Retail Leaders Happy Hour at NEXT 2026 Retail Leaders Happy Hour at NEXT 2026 An Invite-Only Evening for Retail Technology Leaders at Google Cloud Next GrowthLoop + Tredence Retail Leaders Happy Hour Thursday, April 23 | 5:00 - 6:30 PM at StripSteak, Mandalay Bay (Conveniently located on your walk f",
+                "score": 2045
+              },
+              {
+                "text": "Is your tech stack ready for 2026 and beyond? Download our new eBook and get a blueprint for the composable AI data stack",
+                "score": 151
+              }
+            ]
           }
         },
         {
@@ -1455,29 +1888,41 @@
           "listed": "4/6",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Meet the Speedscale team at Google Cloud Next 2026 in Las Vegas, April 22-24. Schedule a face-to-face conversation about testing and validating applications on Google Cloud.",
+          "invite_excerpt": "Meet the Speedscale team at Google Cloud Next 2026 in Las Vegas, April 22-24. Schedule a face-to-face conversation about testing and validating applications on Google Cloud.",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "Broad networking crowd",
-            "rationale": "Feels like broad networking rather than a narrow niche crowd."
+            "rationale": "This sounds like a general networking mixer rather than a tightly defined niche audience."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
-            "note": "Convenient and easy to attend, but usually less distinctive than an off-property destination venue."
+            "note": "Easy to attend, but usually less distinctive than an off-property destination."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://speedscale.com/events/google-cloud-next/",
             "page_title": "Speedscale at Google Cloud Next 2026 | Speedscale",
-            "page_excerpt": "Meet the Speedscale team at Google Cloud Next 2026 in Las Vegas, April 22-24. Schedule a face-to-face conversation about testing and validating applications on Google Cloud."
+            "page_excerpt": "All Events Google Cloud Next 2026 The Speedscale team will be at Google Cloud Next in Las Vegas, April 22-24. We'd love to connect face-to-face and talk about testing and validating your Google Cloud applications. Join our Happy Hour Schedule a meeting Las Vegas, NV • April 22-24 Let's talk about testing on Google Cloud Google Cloud Next brings together cloud engineers, platform teams, and technology leaders from across the ecosystem. We'll be attending the conference and are happy to meet face-to-face to discuss how Speedscale helps teams test and validate applications running on GKE, Cloud Run, and other Google Cloud services. Reach out ahead of time so we can find a good time to connect during the event. Traffic replay for Google Cloud workloads See how Speedscale captures production traffic from GKE, Cloud Run, and other Google Cloud services, then replays it to validate changes before deployment. Service virtualization without full environments Learn how teams mock complex Google Cloud dependencies to run faster, more reliable integration tests without spinning up costly staging environments. eBPF-powered observability and testing Explore how Speedscale's eBPF collector captures encrypted traffic with zero code changes — no sidecars, no certificate management, no production overhead. You're invited Happy Hour with Speedscale Join us for drinks and conversation on Thursday, April 23 from 5:00 – 7:00 PM at Flanker Kitchen + Sports Bar , right near the convention center. It's a great way to unwind after a full day of sessions and chat with the Speedscale team in a relaxed setting. Space is limited. Fill out the form below to reserve your spot. New: Debug encrypted microservice traffic with Speedscale's eBPF collector Read the announcement",
+            "top_blocks": [
+              {
+                "text": "All Events Google Cloud Next 2026 The Speedscale team will be at Google Cloud Next in Las Vegas, April 22-24. We'd love to connect face-to-face and talk about testing and validating your Google Cloud applications. Join our Happy Hour Schedule a meeting Las Vegas, NV • April 22-24 Let's talk about testing on Google Clou",
+                "score": 1790
+              },
+              {
+                "text": "New: Debug encrypted microservice traffic with Speedscale's eBPF collector Read the announcement",
+                "score": 126
+              }
+            ]
           }
         },
         {
@@ -1489,30 +1934,33 @@
           "listed": "3/24",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Buyer/executive-leaning happy hour that still uses a playful Swingers venue instead of a stiff boardroom setting. Reads more curated than open, but more social than formal dinner.",
+          "invite_excerpt": "",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Executives / curated buyers",
+            "rationale": "The page frames this as an executive reception first."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
             "page_title": "neo4j.com",
-            "page_excerpt": "neo4j.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "neo4j.com",
+            "top_blocks": []
           }
         },
         {
@@ -1524,30 +1972,33 @@
           "listed": "3/25",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Broad technical ecosystem happy hour anchored by MongoDB, Confluent, and LangChain. Border Grill gives it better food odds than a generic hotel bar, but it still reads as a drinks-first mixer.",
+          "invite_excerpt": "",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Technical builders",
-            "rationale": "Feels aimed at developers, platform engineers, or other hands-on technical attendees."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
             "match": {},
             "label": "Drinks-first, food secondary",
-            "note": "Sounds drinks-led, so expect light bites or passed food more than a dependable meal."
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 403,
             "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
             "page_title": "mongodb.com",
-            "page_excerpt": "mongodb.com Please enable JS and disable any ad blocker"
+            "page_excerpt": "mongodb.com",
+            "top_blocks": []
           }
         },
         {
@@ -1559,30 +2010,50 @@
           "listed": "3/17",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us at Google Cloud Next 2026 April 22–24, 2026 Mandalay Bay Convention Center, Las Vegas RSVP for Swingers Meet our cybersecurity experts.",
+          "invite_excerpt": "Join us at Swingers! We’d love to see you there! ​ Join us for a lively and unforgettable evening at Swingers – Mandalay Bay as we bring together great people, good vibes, and a little friendly competition. ​ 📅 Thursday, April 23, 2026 ​ 🕕 6:00–9:00 PM ​ Expect a relaxed, playful atmosphere featuring: ​ Delicious food and drinks ​ A round of golf on a uniq",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "General conference crowd",
-            "rationale": "Looks like a general conference-side networking event."
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-heavy hosts and wording point to security teams, leaders, or buyers."
           },
           "food": {
             "match": {},
-            "label": "Snacks / party food likely",
-            "note": "Usually drinks plus snackable event food, not a memorable meal."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.cyberproof.com/google-cloud-next-2026/",
             "page_title": "Google Cloud Next 2026",
-            "page_excerpt": "Join us at Google Cloud Next 2026"
+            "page_excerpt": "Join us at Swingers! We’d love to see you there! ​ Join us for a lively and unforgettable evening at Swingers – Mandalay Bay as we bring together great people, good vibes, and a little friendly competition. ​ 📅 Thursday, April 23, 2026 ​ 🕕 6:00–9:00 PM ​ Expect a relaxed, playful atmosphere featuring: ​ Delicious food and drinks ​ A round of golf on a uniquely fun course ​ Carnival‑style arcade games ​ It’s the perfect chance to unwind, connect, and enjoy a one‑of‑a‑kind experience. ​ We hope you’ll join us! Check out the venue Join us at Google Cloud Next 2026 April 22–24, 2026 Mandalay Bay Convention Center, Las Vegas RSVP for Swingers Meet our cybersecurity experts. Book a meeting Meet our team for a demo or a discussion on how we can help transform your security team into a modern SOC",
+            "top_blocks": [
+              {
+                "text": "Join us at Swingers! We’d love to see you there! ​ Join us for a lively and unforgettable evening at Swingers – Mandalay Bay as we bring together great people, good vibes, and a little friendly competition. ​ 📅 Thursday, April 23, 2026 ​ 🕕 6:00–9:00 PM ​ Expect a relaxed, playful atmosphere featuring: ​ Delicious foo",
+                "score": 965
+              },
+              {
+                "text": "Join us at Google Cloud Next 2026 April 22–24, 2026 Mandalay Bay Convention Center, Las Vegas",
+                "score": 183
+              },
+              {
+                "text": "RSVP for Swingers Meet our cybersecurity experts. Book a meeting",
+                "score": 139
+              },
+              {
+                "text": "Meet our team for a demo or a discussion on how we can help transform your security team into a modern SOC",
+                "score": 106
+              }
+            ]
           }
         },
         {
@@ -1594,30 +2065,50 @@
           "listed": "3/16",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. This invite-only gathering will bring together a select group of technology and…",
+          "invite_excerpt": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. This invite-only gathering will bring together a select group of technology and…",
           "access": {
             "openness": "Curated guest list",
             "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "rationale": "The page explicitly says approval, invite-only, or a small curated guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "rationale": "The wording skews toward executives, founders, or a smaller buyer-style audience."
           },
           "food": {
             "match": {},
-            "label": "Dinner likely",
-            "note": "The invite explicitly says dinner, so odds of a real meal are much better than usual."
+            "label": "Food and drinks clearly provided",
+            "note": "The page explicitly promises food, drinks, or both."
           },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
-            "note": "Hidden address usually means exclusivity or a small private venue: cool if you are in, inaccessible if you are not."
+            "note": "Hidden address usually means either exclusivity or a small private venue."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/cv6udqb9",
             "page_title": "Executive Roundtable Dinner at Google Next · Luma",
-            "page_excerpt": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. This invite-only gathering will bring together a select group of technology and…"
+            "page_excerpt": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. ​ This invite-only gathering will bring together a select group of technology and business leaders for an off-the-record conversation on the evolving cloud and AI landscape. The evening is designed to encourage open dialogue, peer insights, and meaningful connections in a relaxed, small-group setting. ​ Expect thoughtful discussion, great food, and the opportunity to exchange perspectives with fellow executives shaping the future of cloud and data platforms. ​ Space is limited to maintain an intimate roundtable format Welcome! To join the event, please register below Please register to see the exact location of this event Executive Roundtable Dinner at Google Next",
+            "top_blocks": [
+              {
+                "text": "Join us for a private Executive Roundtable Dinner during Google Cloud Next. ​ This invite-only gathering will bring together a select group of technology and business leaders for an off-the-record conversation on the evolving cloud and AI landscape. The evening is designed to encourage open dialogue, peer insights, and",
+                "score": 980
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              },
+              {
+                "text": "Please register to see the exact location of this event",
+                "score": 145
+              },
+              {
+                "text": "Executive Roundtable Dinner at Google Next",
+                "score": 132
+              }
+            ]
           }
         },
         {
@@ -1629,30 +2120,42 @@
           "listed": "3/11",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026. We’re taking over Prohibition Bar for…",
+          "invite_excerpt": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026. We’re taking over Prohibition Bar for…",
           "access": {
             "openness": "Request invite",
             "exclusivity": "Medium",
-            "rationale": "Invite-style flow: not fully open, but not ultra-exclusive either."
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
             "label": "FinOps / cloud economics",
-            "rationale": "Centered on cloud spend, optimization, or financial operations."
+            "rationale": "The event language is centered on cloud cost, savings, or FinOps people."
           },
           "food": {
             "match": {},
-            "label": "Cocktails first, light bites maybe",
-            "note": "Drinks and atmosphere first; food is secondary unless the invite says dinner."
+            "label": "Drinks-first, food secondary",
+            "note": "Reads like a drinks-led reception; food is probably lighter than a real meal."
           },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
-            "note": "Solid upscale hotel restaurant/lounge pick: convenient and respectable, though not especially distinctive."
+            "note": "Solid upscale hotel restaurant/lounge pick: easy and respectable, not wildly distinctive."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://luma.com/jpvcga70",
             "page_title": "FinOps After Dark @ GoogleNext 2026 · Luma",
-            "page_excerpt": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026. We’re taking over Prohibition Bar for…"
+            "page_excerpt": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026 . ​ We’re taking over Prohibition Bar for drinks, music, and relaxed conversations with cloud and FinOps leaders. ​ Whether you're a seasoned FinOps practitioner or just starting to explore the space, this is your chance to connect with peers and leaders who speak your language. ​ Spots are limited — RSVP to save yours. ​ Hosted by: Finout × nOps Welcome! To join the event, please register below",
+            "top_blocks": [
+              {
+                "text": "Join Finout and nOps for FinOps After Dark — an evening with the FinOps community after a full day at Google Next 2026 . ​ We’re taking over Prohibition Bar for drinks, music, and relaxed conversations with cloud and FinOps leaders. ​ Whether you're a seasoned FinOps practitioner or just starting to explore the space, ",
+                "score": 977
+              },
+              {
+                "text": "Welcome! To join the event, please register below",
+                "score": 214
+              }
+            ]
           }
         }
       ]
@@ -1669,29 +2172,54 @@
           "listed": "2/9",
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
+          "summary": "Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering",
+          "invite_excerpt": "A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation built for performance. At Gruntwork, we apply that same \"performance\" discipline to infrastructure",
           "access": {
-            "openness": "Curated guest list",
-            "exclusivity": "High",
-            "rationale": "VIP / executive / private-address signals a screened guest list."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "There is an invite/request flow rather than instant registration."
           },
           "audience": {
-            "label": "Executives / curated buyers",
-            "rationale": "Skews executive / buyer / curated-business rather than broad drop-in traffic."
+            "label": "Broad technical / cloud practitioners",
+            "rationale": "This reads like a technical cloud crowd rather than a pure exec or sales room."
           },
           "food": {
-            "label": "Food unclear",
-            "note": "Best-effort guess from invite wording plus venue context; if the invite does not promise a meal, don’t assume one."
+            "match": {},
+            "label": "Snacks / party food likely",
+            "note": "Usually drinks plus snackable event food, not a meal worth planning around."
           },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
-            "note": "Good for memorable activity energy; worse for intimate conversation."
+            "note": "Memorable activity energy, but not ideal for quiet conversation."
           },
           "link_meta": {
             "status": 200,
             "final_url": "https://www.gruntwork.io/lp/gruntwork-racing",
             "page_title": "Gruntwork Racing",
-            "page_excerpt": "Gruntwork Racing Accelerator Solutions AWS Landing Zone GCP Landing Zone Azure Landing Zone HIPAA Compliant Infra IaC Residency Platform IaC Library Use best practices from thought leaders Account Factory Stamp out new AWS accounts Pipelines Deploy infrastructure changes Patcher Keep infrastructure up to date Open Source Open Source OpenTofu Services Terragrunt Services Pricing Resources Docs Customer Stories Blog Changelog Books Community Sign In Book a demo Gruntwork VIP Racing Experience Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering. Get behind the wheel for 5 laps in a world-class supercar. Choose from Ferraris, Lamborghinis, McLarens, Porsches, and more. Friday, April 24th 10AM - 12PM Dream Racing, Las Vegas A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation buil"
+            "page_excerpt": "A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation built for performance. At Gruntwork, we apply that same \"performance\" discipline to infrastructure Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering Get behind the wheel for 5 laps in a world-class supercar. Choose from Ferraris, Lamborghinis, McLarens, Porsches, and more. Friday, April 24th 10AM - 12PM Dream Racing, Las Vegas This is an invitation-only event with limited spots. Please contact us about joining Oops! Something went wrong while submitting the form",
+            "top_blocks": [
+              {
+                "text": "A performance supercar and enterprise cloud infrastructure share the same DNA: expert engineering, relentless testing, and a foundation built for performance. At Gruntwork, we apply that same \"performance\" discipline to infrastructure",
+                "score": 339
+              },
+              {
+                "text": "Join Gruntwork CEO & former semi-pro driver Zach Goldberg for a morning of high-speed driving. Get behind the wheel of a supercar and experience the limits of performance engineering",
+                "score": 257
+              },
+              {
+                "text": "Get behind the wheel for 5 laps in a world-class supercar. Choose from Ferraris, Lamborghinis, McLarens, Porsches, and more. Friday, April 24th 10AM - 12PM Dream Racing, Las Vegas",
+                "score": 239
+              },
+              {
+                "text": "This is an invitation-only event with limited spots. Please contact us about joining",
+                "score": 159
+              },
+              {
+                "text": "Oops! Something went wrong while submitting the form",
+                "score": 82
+              }
+            ]
           }
         }
       ]
