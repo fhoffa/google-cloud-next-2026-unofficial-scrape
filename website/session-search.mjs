@@ -4,6 +4,7 @@ import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
+const CHANGELOG_SUMMARY_URL = 'media/changelog-summary.json';
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
@@ -223,13 +224,19 @@ export function filterSessions(sessions, filters) {
   });
 }
 
-export function sortSessions(sessions, sort) {
+export function sortSessions(sessions, sort, { newSessionIds = new Set(), prioritizeNew = false } = {}) {
   const items = [...sessions];
   if (sort === 'title') {
     items.sort((a, b) => a.title.localeCompare(b.title));
     return items;
   }
   items.sort((a, b) => {
+    if (prioritizeNew) {
+      const leftNew = newSessionIds.has(sessionKey(a));
+      const rightNew = newSessionIds.has(sessionKey(b));
+      if (leftNew && !rightNew) return -1;
+      if (!leftNew && rightNew) return 1;
+    }
     const left = a.start_at || a.date_text || '';
     const right = b.start_at || b.date_text || '';
     const leftMissing = left === '';
@@ -239,6 +246,34 @@ export function sortSessions(sessions, sort) {
     return left.localeCompare(right);
   });
   return items;
+}
+
+function latestNewSessionIds(changelogSummary) {
+  const ids = new Set();
+  const latestUpdate = changelogSummary?.updates?.[0];
+  for (const item of latestUpdate?.added || []) {
+    const id = sessionKey({ id: item?.id || '', url: item?.url || '' });
+    if (id) ids.add(id);
+  }
+  return ids;
+}
+
+function shouldPrioritizeNew(filters, timeBounds) {
+  return !filters.q
+    && !filters.exclude
+    && !filters.speaker
+    && !filters.topic
+    && !filters.day
+    && !filters.company
+    && !filters.ai_focus
+    && !filters.theme
+    && !filters.audience
+    && !filters.availability
+    && !filters.sessionids
+    && filters.view === DEFAULT_VIEW
+    && filters.sort === DEFAULT_SORT
+    && !filters.start_after
+    && !filters.start_before;
 }
 
 function escHtml(value) {
@@ -336,7 +371,7 @@ function renderSeatFill(session) {
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
 }
 
-function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set()) {
+function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), newSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
@@ -352,7 +387,8 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
     const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
-    const statusBadge = availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : '';
+    const isNew = newSessionIds.has(sessionId);
+    const statusBadge = `${isNew ? '<span class="status-badge new">*new</span>' : ''}${availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : ''}`;
     return `<div class="card" id="session-${escHtml(sessionId)}" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
@@ -421,7 +457,7 @@ function populateTopicFilter(topicSelect, sessions) {
   topicSelect.appendChild(optgroup);
 }
 
-export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', relatedSessionsUrl = '', storage = globalThis.localStorage } = {}) {
+export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', relatedSessionsUrl = '', changelogSummaryUrl = CHANGELOG_SUMMARY_URL, storage = globalThis.localStorage } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
@@ -474,6 +510,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let selectedSessionIds = new Set(state.view === 'favorites' ? [] : incomingSessionIds);
   let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
   let relatedLookup = {};
+  let newSessionIds = new Set();
 
   function currentFilters() {
     return {
@@ -520,13 +557,14 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   function render() {
     const filters = currentFilters();
-    const filtered = sortSessions(filterSessions(sessions, filters), filters.sort);
+    const prioritizeNew = shouldPrioritizeNew(filters, timeBounds);
+    const filtered = sortSessions(filterSessions(sessions, filters), filters.sort, { newSessionIds, prioritizeNew });
     syncInputClearButtons();
     if (activeFilters) activeFilters.innerHTML = renderFilterPills(filters);
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds, newSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
@@ -678,19 +716,22 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   try {
-    const [response, availabilityResponse, relatedSessionsResponse] = await Promise.all([
+    const [response, availabilityResponse, relatedSessionsResponse, changelogSummaryResponse] = await Promise.all([
       fetchImpl(dataUrl),
       availabilityUrl ? fetchImpl(availabilityUrl).catch(() => null) : Promise.resolve(null),
       relatedSessionsUrl ? fetchImpl(relatedSessionsUrl).catch(() => null) : Promise.resolve(null),
+      changelogSummaryUrl ? fetchImpl(changelogSummaryUrl).catch(() => null) : Promise.resolve(null),
     ]);
     const data = await response.json();
     const availabilityData = availabilityResponse ? await availabilityResponse.json().catch(() => null) : null;
     const relatedSessionsData = relatedSessionsResponse ? await relatedSessionsResponse.json().catch(() => null) : null;
+    const changelogSummaryData = changelogSummaryResponse ? await changelogSummaryResponse.json().catch(() => null) : null;
     const baseSessions = data.sessions || [];
     sessions = Array.isArray(availabilityData?.records)
       ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
       : baseSessions;
     relatedLookup = relatedSessionsData?.sessions || {};
+    newSessionIds = latestNewSessionIds(changelogSummaryData);
     timeBounds = deriveTimeBounds(sessions);
     if (timeRangeStart) {
       timeRangeStart.min = String(timeBounds.min);
