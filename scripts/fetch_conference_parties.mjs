@@ -129,6 +129,55 @@ function classifyAccess(event, fetched = {}) {
   };
 }
 
+function classifyAudience(event, fetched = {}) {
+  const raw = [event.title, event.sponsor, event.location, fetched.page_title, fetched.page_excerpt]
+    .filter(Boolean)
+    .join(' \n ')
+    .toLowerCase();
+
+  const rules = [
+    {
+      match: /\bciso\b|security pros|security leader|cybersecurity leader|secops|threat intel|wiz|crowdstrike|fortinet|sentinelone|netskope|zscaler|menlo security|xm cyber|infoblox/,
+      label: 'Security leaders / practitioners',
+      rationale: 'Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd.',
+    },
+    {
+      match: /women in tech|innovathers|veterans|career transition|community celebration|meetup/,
+      label: 'Community / affinity group',
+      rationale: 'The event framing looks community-oriented rather than purely executive or sales-led.',
+    },
+    {
+      match: /developer|devops|kube|platform engineering|mcp|github|baseten|chronosphere|dagster|langchain|mongodb|confluent|redis|clickhouse|neo4j|yugabyte/,
+      label: 'Technical builders',
+      rationale: 'The wording and hosts point toward developers, platform engineers, or hands-on technical attendees.',
+    },
+    {
+      match: /finops|finout|nops|prosperops|cloud cost|doit/,
+      label: 'FinOps / cloud economics',
+      rationale: 'The event language is centered on cloud spend, optimization, or financial operations.',
+    },
+    {
+      match: /founder|saas startup|startup|venture|executive|vip|leader|leaders|roundtable|dinner|private|exclusive/,
+      label: 'Executives / curated buyers',
+      rationale: 'The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd.',
+    },
+    {
+      match: /happy hour|house party|after party|welcome party|reception|drinks|social|sushi social/,
+      label: 'Broad networking crowd',
+      rationale: 'This reads like a general networking/social event rather than a tightly filtered niche audience.',
+    },
+  ];
+
+  for (const rule of rules) {
+    if (rule.match.test(raw)) return { label: rule.label, rationale: rule.rationale };
+  }
+
+  return {
+    label: 'General conference crowd',
+    rationale: 'Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event.',
+  };
+}
+
 function describeVenue(location = '') {
   const raw = compact(location);
   const lower = raw.toLowerCase();
@@ -250,10 +299,12 @@ async function fetchLandingMeta(url) {
 async function enrichEvent(event) {
   const fetched = await fetchLandingMeta(event.url);
   const access = classifyAccess(event, fetched);
+  const audience = classifyAudience(event, fetched);
   const venue = describeVenue(event.location);
   return {
     ...event,
     access,
+    audience,
     venue,
     link_meta: fetched,
   };

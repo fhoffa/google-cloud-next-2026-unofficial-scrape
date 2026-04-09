@@ -191,12 +191,6 @@
     <h1>Google Cloud Next 2026 — Conference Parties</h1>
     <div class="subhead">Unofficial side-events index with explicit source credit</div>
     <div class="header-links">
-      <a href="./">Session explorer</a>
-      <span>·</span>
-      <a href="./insights.html">Insights</a>
-      <span>·</span>
-      <a href="./changelog.html">Changelog</a>
-      <span>·</span>
       <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">Original source: ConferenceParties.com ↗</a>
     </div>
   </header>
@@ -207,7 +201,7 @@
       <strong>Source credit:</strong> these party listings are indexed from
       <a href="https://conferenceparties.com/next26/" target="_blank" rel="noopener">ConferenceParties.com’s Google Cloud Next 26 page</a>.
       This page is just a cleaner browseable copy with update metadata. RSVP details may change; check the source/original event page before relying on any listing.
-      The new RSVP access + venue-vibe notes are heuristic annotations from the linked landing pages and venue names, not official organizer labels.
+      The RSVP access, likely audience, and venue-vibe notes are heuristic annotations from the linked landing pages and venue names, not official organizer labels.
     </div>
 
     <div class="stats" id="stats"></div>
@@ -272,6 +266,10 @@
                     <div style="margin-top:10px">
                       <span class="badge ${badgeClass(event.access?.label)}">${esc(event.access?.label || 'Unclear')}</span>
                       <div class="meta-note">${esc(event.access?.rationale || '')}</div>
+                    </div>
+                    <div style="margin-top:10px">
+                      <span class="badge">${esc(event.audience?.label || 'Audience unclear')}</span>
+                      <div class="meta-note">${esc(event.audience?.rationale || '')}</div>
                     </div>
                   </div>
                   <div>

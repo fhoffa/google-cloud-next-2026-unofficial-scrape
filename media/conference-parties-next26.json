@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T03:04:23.237Z",
+  "fetched_at": "2026-04-09T03:09:34.548Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -23,6 +23,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "venue": {
             "match": {},
@@ -49,6 +53,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
@@ -74,6 +82,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -83,7 +95,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/next26welcomeparty",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAK4ozf8zcxw4Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'1c9b567286ff5a0f2b6fd5a32861901b4bbc995725418629eca35d0d911edd423ecab1fe0792ee2ad875878b394c72d1','qp':'','host':'geo.captcha-delivery.com','cookie':'iSbYf_~qyQqWEZT2k6NMANEfqZCrJs3_vsRN0HVwVX0lgT1h3KNKQHNaXogk50y0B1rDUi9P3iemVAcp9x9mWqpqRSNO81J6vxvKA0iYxXWT8a0b4M~w99Rk_8aMyWDy'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA23JoiE58VtsAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'b88352d0d8826f9d6d6dd56f951aab5abfd8eb8a79585256fce89135a21186aea74e12d1ed4157559e165917c693ad22','qp':'','host':'geo.captcha-delivery.com','cookie':'G~Um~GFoD~krbhYyAU7yl8hEHZ8QJT9v~treenlBI5LFXIkAMBI352744fMXeImPo65LnFoHOdVoPVV7tnz6RwwLe8cIl7tM6rF5rFVOCI19dg13xqF3OsncHDDj5vPi'}"
           }
         },
         {
@@ -98,6 +110,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "venue": {
             "match": {},
@@ -124,6 +140,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
           "venue": {
             "match": {},
             "vibe": "Lively and scalable",
@@ -149,6 +169,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
           "venue": {
             "vibe": "Convenient hotel spot",
             "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
@@ -173,6 +197,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "vibe": "Convenient hotel spot",
             "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
@@ -196,6 +224,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -227,6 +259,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -236,7 +272,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/coffeeandcontext",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAzXvWTTqNDysAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'4d8c3ed807d71cd0bfd6dfe6aac12056426872a5764ee10a183bd0b900df5d2fdf8cc4a27ee30c186517ea6f303eab90','qp':'','host':'geo.captcha-delivery.com','cookie':'sfsRE6yHWwklvOgvIy8AnkVJc9p273YzUHfdvO4JEytAd9e9BwDCH1xzBqFb~BzPe~O3aCACcbI6Wa0G6XJ_~p0HgTbedMuO88xUtCaU~VzK0xlE0dALNv3xCHZzN5v3'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAk1Tc90j2tXgAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'4164a1def5f5114c684c726ca32d0c6282848f2e92de34cddc4f57dfaaadad2b35a8fd1ed20c747230b814c31690c245','qp':'','host':'geo.captcha-delivery.com','cookie':'QLN64bSh5zjJC4IlLfzU8x5Y26DKhl_nmx4613dD6ebnwoCOrucUwCMNR6O7Bbg2pRnfUIX_esNTFDJfbHr71CS2ho~obMyomrGPZ8dTj9hzZNnGU6JoXsVSdOPHdTWP'}"
           }
         },
         {
@@ -252,6 +288,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -261,7 +301,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushiandscarves-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAUOBG2SEJj_wAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'76ed1e6ad8d049629ab9ab5729478273fbe1fbd993204099dac9ea0d36a24ad14c18bad41b9a69d6132b180a8edfb924','qp':'','host':'geo.captcha-delivery.com','cookie':'qoRz_bBrnrRYkSQCAdvbbU0DfrIaDpLjBsU9o4p2kDjyIXFQaqJbS0HwoL4O_kQfB5BX4raLwEcnMjUU2fcQOTh15TioA4ANordbbRtbbSLzejtJEdosXq4zT72vz2go'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAAcVICbXaJ6EAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'733798976f5fdb243c1043ad5973acd84ef6abd3d3654e16dd8325616b864e809484bf18c30265cabcba4f0bee40eb75','qp':'','host':'geo.captcha-delivery.com','cookie':'5IATkUgRT0spwLgDhiCQHE2oEPonovPCKNehfIpxGlqF~w2TpgBzpHFPr~FhNsaljEPqfjaK4DM9f2D3K6kqX6oILFvHY2~aQ8iJ1gC1ENacTAfV3Siw2HCP1MzkmPoY'}"
           }
         },
         {
@@ -276,6 +316,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
           },
           "venue": {
             "match": {},
@@ -302,6 +346,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Fancy off-site dinner",
@@ -326,6 +374,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -352,6 +404,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -361,7 +417,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushisocial-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAxauQC3uiUKEAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'10c9e6ac7d3578ec1006dec56ed4e012068c9a423a3b25a050072d44eea614baa353097d6675ce4c6c5394237a76e1e6','qp':'','host':'geo.captcha-delivery.com','cookie':'zITGsFcRNxlq0qcOZ9DiZh_iuX9TKVTXwJUCP4J~d8GCx1ZV_FJSifmfoP9GhuyRN5IeaVKuMRRJn9orZTdj0bjeKHkFe1CwN1j_yKqNBpjE8YzIqEuG48KtUyQOzhCv'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA7EGtwN_uCu8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'3cf1e485cddee32fcee454cc02be9710f979838226e308a762e0a03d74844477af7f78415d04212b435da165ad8fb8ce','qp':'','host':'geo.captcha-delivery.com','cookie':'i8lTqUzEf867nk09VJjgH_N5xujYbhdc_0qWgb_tPshVUVvFuNylO6dyLUg~bu5xyTO_QQx2cCmvnZdJasN9tNe95Z_~iKaCT4C1af_F77dpUKgF89CsxwjGQUiHOsL1'}"
           }
         },
         {
@@ -376,6 +432,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -402,6 +462,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
           "venue": {
             "vibe": "Unknown vibe",
             "note": "Venue is not in the current note map yet; check the original listing for the exact draw."
@@ -426,6 +490,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
           "venue": {
             "vibe": "Convenient hotel spot",
             "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
@@ -449,6 +517,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
           },
           "venue": {
             "match": {},
@@ -475,6 +547,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
@@ -500,6 +576,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -509,7 +589,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA2J--fVV9owwAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'002424bb43345b737b6588e096de1ce1250a77a9321390e3786f27d1ec049acf3c17aed0caebb471debbdd8eb0b9aa1f','qp':'','host':'geo.captcha-delivery.com','cookie':'daTO4S1UyDJwtz0yEa9MDxTuvxDMqdCAw5N0oXkMqdpYkYSdBcm1e~ils1yohjANj_k4JsuEqF_pCV1KdZAblnV1~LH9EmLgYQ3Rr8Y6wmz__b3Ng~X6h_jwbcKGGM3W'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAOioVe80zL6IAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'cc03cdc5b45ab128745961db88a8e865ffc4c2f364efd0c6d45f8a2f613b561d6af78ff4b0aefbc3dc53717547d6b2eb','qp':'','host':'geo.captcha-delivery.com','cookie':'jLRXDOWsrOxOXDdQsvra72ELfFhzrIgvvaJeJvYKISquygIINuLeeMLvub~g7UsX1eJgqgcxQp_tv~BL9IUHjnSQsB9sOdGCe~kNv7AWtQII_ug7IZKdxpGXuMcpd6sb'}"
           }
         },
         {
@@ -525,6 +605,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
           "venue": {
             "match": {},
             "vibe": "Fancy destination dinner",
@@ -534,7 +618,7 @@
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary?RefId=mktg-a-CPS",
             "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"9e43ae93-fc9b-45a8-9ec0-5e8497f365e4\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"9e43ae93-fc9b-45a8-9ec0-5e8497f365e4\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"3ec8668d-138a-4a39-bf1e-4a3d49341f50\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"3ec8668d-138a-4a39-bf1e-4a3d49341f50\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
           }
         },
         {
@@ -549,6 +633,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
           },
           "venue": {
             "match": {},
@@ -575,6 +663,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
@@ -599,6 +691,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
           },
           "venue": {
             "match": {},
@@ -625,6 +721,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -650,6 +750,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
           "venue": {
             "vibe": "Convenient hotel spot",
             "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
@@ -673,6 +777,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -699,6 +807,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
           "venue": {
             "match": {},
             "vibe": "Outdoor concert-adjacent",
@@ -723,6 +835,10 @@
           "access": {
             "label": "Closed / full",
             "rationale": "The listing or landing page suggests the event is already full or no longer openly taking registrations."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
           },
           "venue": {
             "match": {},
@@ -749,6 +865,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Big Vegas flex",
@@ -758,7 +878,7 @@
             "status": 403,
             "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
             "page_title": "publicissapient.com",
-            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAF0pFvgC5axIAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'1671d08ba89374319578205e4889cd58a6ca8ddeea430e31e3b041c4e31de42039bebd5d598a7a90c0a803a2b1dd9ab5','qp':'','host':'geo.captcha-delivery.com','cookie':'AvUk4Ii~4~1MiHF2ixhG~sscmprycvA7wO2REGKzvj7zXygAjMLeW8ua7Wm8wYvDWkQdn4JW3m2X3DYzYwVIJO8jtav9h3FzqhLl0Z~dvDj6hQg50Bi3vP4k0h3UX1yu'}"
+            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAvwyE9FaiBs8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'741f3d69b2db036ea928d1d1478cb643246dd9e5a07d557edfec58986b3d907f90bcc456bcc73bda35d11e97cf57b970','qp':'','host':'geo.captcha-delivery.com','cookie':'AJvoBBh4nyAqtkGbZ0Zx9CXAXlFNWZj75ZA7Hv3tY5tnyq2t7E0dQUaqDCAx5D7ZNRY8yEsGFt5BdlafKl3YVkOryOrW3kX1JHRpawTmyIhmG0j2rDxfggIfnUxThkXm'}"
           }
         },
         {
@@ -773,6 +893,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
           },
           "venue": {
             "match": {},
@@ -799,6 +923,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
@@ -808,7 +936,7 @@
             "status": 200,
             "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
             "page_title": "Security Professionals Reception at Next'26",
-            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"858529310101742558\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\",\""
+            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"4178982314955094077\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\","
           }
         },
         {
@@ -823,6 +951,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -847,6 +979,10 @@
           "access": {
             "label": "Open registration",
             "rationale": "The RSVP flow looks like a normal public registration page rather than a screened guest-list flow."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -878,6 +1014,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Community / affinity group",
+            "rationale": "The event framing looks community-oriented rather than purely executive or sales-led."
+          },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
@@ -887,7 +1027,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAF7ra7MD1XjsAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a513af4ee8e5d038d79237a10b4bb722ea70c070d6d1c6b05067e91998f988f1feec5bb4145764768463d740d718c36c','qp':'','host':'geo.captcha-delivery.com','cookie':'1kSrL2Q3ytbMYnMO0aHOf98guVolPkmLzKbfc9YfOEHonuFypdUISMLLSfDfyxuFzZP6mDW0iza8cWV_QAq7FlJv5f4f~XXt5KeV_TSiYgmCKddbF1byzFRBy2Pgudi1'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMApjJf82sCjegAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a03c00b3e282a7e17bf7fb10e4ecf176423b95a9ab2a563134b453418e5d92220151cd2c513147077b75871b2c947d40','qp':'','host':'geo.captcha-delivery.com','cookie':'E_sAfLmTRDgtIpT~MyU0D~60nlwyutQzPkGU4Xhu2q8FaKfO1gxwyjr6Fm4SWN1ppdC9APSzZAVcKDlJvn5EXvUac0kHGA03uIRylmx_yNy8f4kojh~QmGjEGGchvkt2'}"
           }
         },
         {
@@ -902,6 +1042,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
           },
           "venue": {
             "vibe": "Convenient hotel spot",
@@ -926,6 +1070,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
           },
           "venue": {
             "match": {},
@@ -952,6 +1100,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
@@ -977,6 +1129,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Great views",
@@ -986,7 +1142,7 @@
             "status": 200,
             "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
             "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
-            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"6308362067492245723\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagra"
+            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"8512804388905481362\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagra"
           }
         },
         {
@@ -1001,6 +1157,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Security leaders / practitioners",
+            "rationale": "Security-specific language and hosts suggest this is aimed at security buyers, leaders, or operators rather than a general conference crowd."
           },
           "venue": {
             "match": {},
@@ -1027,6 +1187,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -1052,6 +1216,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Broad networking crowd",
+            "rationale": "This reads like a general networking/social event rather than a tightly filtered niche audience."
+          },
           "venue": {
             "vibe": "Convenient hotel spot",
             "note": "Being inside or right next to a conference hotel is convenient and easy to attend, but usually less distinctive than an off-property destination venue."
@@ -1076,6 +1244,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
           "venue": {
             "match": {},
             "vibe": "Activity venue",
@@ -1085,7 +1257,7 @@
             "status": 403,
             "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
             "page_title": "neo4j.com",
-            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMABExqZO8JcsUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'cd3c9cdcbf39d64e897e16f8c3c291d41d3ced5a4955eaa4924500a1bdacfef3fc13e40e9825ee4eb5dcbb8eb9068adf','qp':'','host':'geo.captcha-delivery.com','cookie':'xILa8FdFL0mq0vVZ54fMa3vG898aAhNWeyglN45XHt9G9KQQ0S9RrP3pG1IG6f5nZlkCfsK~H33FAjAZHMyPaKNnJukreL7F_yOjpSm~4xmgHRYpor3u4czpW3m64u6n'}"
+            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAugzJ_7ajiW0Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'2a26651fa70c72e9ae5de08c26b18bc33bba13ad53bc7109bf0f1fc4690871447836e3248198ed72edc8fc4402e61fc7','qp':'','host':'geo.captcha-delivery.com','cookie':'RakS9eqHamcdWSiecJdpaCVbTBk24037KtKsKZ2LkqKC89qWMKjZVtEgzYlEpXuDccaKTA5t0aCYsvT5syvyaYLfbn5AnDW54WyJOV6q4xTcoQcGokhnYCvM7RAVVs_T'}"
           }
         },
         {
@@ -1101,6 +1273,10 @@
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
           },
+          "audience": {
+            "label": "Technical builders",
+            "rationale": "The wording and hosts point toward developers, platform engineers, or hands-on technical attendees."
+          },
           "venue": {
             "match": {},
             "vibe": "Nice hotel venue",
@@ -1110,7 +1286,7 @@
             "status": 403,
             "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
             "page_title": "mongodb.com",
-            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAhYrauBg_JYQAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'648ae61c7fff0c9142094e623194fd33e9bc79c4eb1e77bdb217061a028874a32118873eb14efd8ea0f257203ce59b3a','qp':'','host':'geo.captcha-delivery.com','cookie':'K_dDitoPyocog0rraglRZAsqvxhEGmzVox~SqQwyd15yV4TOzcKySrhNUwGOTcYZHXrd9pnKuh~xpvmvpMO5QCdv2WQKK_fT0LP8MRp8QieIURAagL3hZapiKiFM2KAd'}"
+            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAJHtSzLPm3KcAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'8c4109999ca1e4fea19fa7a7017bd19d9d1bfe56a51046baa644cb9ecb5955b197c43f67fa649fb88cd0708d1fb10472','qp':'','host':'geo.captcha-delivery.com','cookie':'PYZTbBU6_D7ubzuNVAi0wb0udluQ2BRvdbldFhO_YFvO8HVQUg0IEL2DlNQfFOppfz96iixyK_dTsNEmobVKgMx_SEyzuudMY4s1fkbSEAKw9Xl88HcRVWYlJQNqJqzZ'}"
           }
         },
         {
@@ -1125,6 +1301,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "General conference crowd",
+            "rationale": "Nothing strongly signals a narrower audience, so this looks like a general conference-side networking event."
           },
           "venue": {
             "match": {},
@@ -1151,6 +1331,10 @@
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
           },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
+          },
           "venue": {
             "match": {},
             "vibe": "Hidden / curated",
@@ -1175,6 +1359,10 @@
           "access": {
             "label": "Request / invite",
             "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+          },
+          "audience": {
+            "label": "FinOps / cloud economics",
+            "rationale": "The event language is centered on cloud spend, optimization, or financial operations."
           },
           "venue": {
             "match": {},
@@ -1205,6 +1393,10 @@
           "access": {
             "label": "Curated / exclusive",
             "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+          },
+          "audience": {
+            "label": "Executives / curated buyers",
+            "rationale": "The wording suggests an executive-leaning or curated-business audience more than a broad drop-in crowd."
           },
           "venue": {
             "match": {},
