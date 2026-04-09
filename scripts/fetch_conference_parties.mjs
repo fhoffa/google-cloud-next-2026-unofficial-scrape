@@ -57,74 +57,55 @@ function classifyAccess(event, fetched = {}) {
 
   if (/at capacity|sold out|waitlist only|fully booked|no longer accepting/i.test(raw)) {
     return {
-      label: 'Closed / full',
+      openness: 'Full / closed',
+      exclusivity: 'N/A',
       rationale: 'The listing or landing page suggests the event is already full or no longer openly taking registrations.',
     };
   }
 
-  const exclusiveSignals = [
-    /\bvip\b/,
-    /executive/,
-    /founder/,
-    /ciso/,
-    /leaders? /,
-    /roundtable/,
-    /dinner/,
-    /request an invite/,
-    /request invite/,
-    /register to see address/,
-    /register to unlock location/,
-    /approval/,
-    /apply to join/,
-  ];
-
-  const inviteSignals = [
-    /request an invite/,
-    /request invite/,
-    /invite only/,
-    /apply/,
-    /approval/,
-    /register to see address/,
-    /register to unlock location/,
-    /private address/,
-  ];
-
-  const openSignals = [
-    /eventbrite/,
-    /ticket/,
-    /register now/,
-    /save your spot/,
-    /join us/,
-    /register here/,
-    /luma\.com/,
-  ];
-
-  if (exclusiveSignals.some((re) => re.test(raw))) {
-    const isSuperExclusive = /\bvip\b|executive|founder|ciso|roundtable|register to see address|register to unlock location/.test(raw);
+  if (/\bvip\b|executive|founder|ciso|roundtable|register to see address|register to unlock location|private address/.test(raw)) {
     return {
-      label: isSuperExclusive ? 'Curated / exclusive' : 'Request / invite',
-      rationale: isSuperExclusive
-        ? 'Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP.'
-        : 'The page uses invite-style language, so this looks more curated than fully open registration.',
+      openness: 'Curated guest list',
+      exclusivity: 'High',
+      rationale: 'Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list.',
     };
   }
 
-  if (openSignals.some((re) => re.test(raw))) {
+  if (/request an invite|request invite|invite only|apply|approval/.test(raw)) {
     return {
-      label: 'Open registration',
-      rationale: 'The RSVP flow looks like a normal public registration page rather than a screened guest-list flow.',
+      openness: 'Request invite',
+      exclusivity: 'Medium',
+      rationale: 'The page uses invite-style language, so this is not fully open even if many people may still get approved.',
+    };
+  }
+
+  if (/eventbrite|ticket|register now|save your spot|register here/.test(raw)) {
+    return {
+      openness: 'Open RSVP',
+      exclusivity: 'Low',
+      rationale: 'The RSVP flow looks closer to normal public registration than a screened guest-list flow.',
+    };
+  }
+
+  if (/luma\.com/.test(raw)) {
+    return {
+      openness: 'Likely open RSVP',
+      exclusivity: 'Low-medium',
+      rationale: 'Luma links are often fairly open, though approval can still happen case by case.',
     };
   }
 
   if (fetched.status === 403) {
     return {
-      label: 'Probably curated',
+      openness: 'Probably curated',
+      exclusivity: 'Medium-high',
       rationale: 'The landing page is behind some gating/anti-bot layer, which often correlates with a more controlled RSVP flow, but this is not definitive.',
     };
   }
 
   return {
-    label: 'Unclear',
+    openness: 'Unclear',
+    exclusivity: 'Unclear',
     rationale: 'Not enough signal from the listing and landing page to confidently classify the RSVP flow.',
   };
 }

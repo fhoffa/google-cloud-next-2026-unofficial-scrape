@@ -4,7 +4,7 @@
     "url": "https://conferenceparties.com/next26/",
     "credit": "Party listings indexed from ConferenceParties.com"
   },
-  "fetched_at": "2026-04-09T03:14:18.979Z",
+  "fetched_at": "2026-04-09T03:34:40.534Z",
   "total_days": 4,
   "total_events": 48,
   "days": [
@@ -21,8 +21,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -55,8 +56,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -89,8 +91,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -110,7 +113,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/next26welcomeparty",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAPKK-fNQmZRUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'f654910f120457a57f41c3520dcb5969ffaec6f18cbd7e425a85f278b83a5d4f84aa32290b815fcd1b9bbabffa45e33e','qp':'','host':'geo.captcha-delivery.com','cookie':'imoza5oPWE7tapobeFL11rV5MWn2IoWPDYjP6NFuuPbsBweLOhQUdOe_m4FJuMZNy4TyqZAkMxV8uwCP~FedI_HI6mGQ_zLRZIsAVwGtPhVfBFduYTz6LFHahcbYoEZi'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAEIyFaw1l2hkAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'bbb7ce36cc3be22b6378aa2d72104eb0a8f927480228f6120e53ecff726ef56e0f3444d10ad0b016a00674c4eb6dc2e6','qp':'','host':'geo.captcha-delivery.com','cookie':'pksZY3XJoOvhzfBA6o2ADUYPFQPBm0Ms_pj28wnl5Kbi3DCgHb1_hfS6POlr7c3Y4hYg5dC5S23i60tMCAe~hL6GkTq6ntDp1qScBa1~xuniiYOurYEGxAAKNOEB8rT8'}"
           }
         },
         {
@@ -123,8 +126,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -157,8 +161,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -191,8 +196,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Community / affinity group",
@@ -223,8 +229,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -255,8 +262,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Technical builders",
@@ -294,8 +302,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -315,7 +324,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/coffeeandcontext",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAdv-DG3_Y7fkAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'e04c8ec1e5e1b846a3cdcb9d7730798109c47a13154a70c4e52d66b7759616db6dfc8fb9c848b55ecae3597a06030cec','qp':'','host':'geo.captcha-delivery.com','cookie':'tc9~w_zbW0srmB_kzLfUkgR_KipPoHsz_CYTdsy5pUeDowAnQIjXdh4R2hZaEFe9NjKNavTXPSmwKmb64hejjwJP2rRxz_cl~Y_dvZ_qCFkP_q9kh~YnNKT_I72PUdFM'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAELvx5NYD-TIAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'6bbb522264e97d77979ffc7a76e3cfc09ab8508bcc9154ce4658db6fef58ddf807cd265631cddf994bcd8871628e29f8','qp':'','host':'geo.captcha-delivery.com','cookie':'zlBT2q8U77jrAvybSD5titYe7tpktkNB~nmu5GSMGMgoVoeVvYtulxkdKHSTHYMnDS9J0SkuM0ABo9f~zZbYlVsu4JdGVWKViEsFIzMq5SCsyDfX7ZejBYG9iZvAM1Qr'}"
           }
         },
         {
@@ -328,8 +337,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Community / affinity group",
@@ -349,7 +359,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushiandscarves-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA6zZlepKV6yYAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'afe7091c87535ca80735c59f554cd44706e195776fb3f5df909c23aaf6aa63438450e7d996345849a95890d2ba889cd5','qp':'','host':'geo.captcha-delivery.com','cookie':'8Il~ypIYvO0LUdKt85RoOMWorFltcxmKl0EVmz3AWXfr0WFpWx~Lv5ZmP9yTsmLrxG4A0Ri_IIHGcQnwvqQuSgN2SSMNvuYBzL1MWZG3APOTdTJQ8_0D36dxgn1hz5yy'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAq8sjaPCy_08Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'d1e61b49fc19137201102832c278810f63a7dce13a8e62c9bbd45f9134c05c98b476e39653a5ec24e795d421029ffd88','qp':'','host':'geo.captcha-delivery.com','cookie':'IlFOqfOm0IIVngQVjBoEcN3OREofcer62FlD0AoWgP_vbhTJsvFfRksbmtxo4plvszBqE32TdIYUVvrRej1QovNMSYeWqwX4msdAVBbi6Y6Z3elC0oNssct6suz2aX3o'}"
           }
         },
         {
@@ -362,8 +372,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -396,8 +407,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -430,8 +442,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -464,8 +477,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -485,7 +499,7 @@
             "status": 403,
             "final_url": "https://events.glean.com/sushisocial-next26",
             "page_title": "glean.com",
-            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAMiHGjcP2lBUAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'eb4d45c074293f4f31ad30c93156d9cbe352fb78840b91bb3eaa9a145a50da8b044ebc2cec067c79f2a266c408ab8e89','qp':'','host':'geo.captcha-delivery.com','cookie':'yLwytsO_tZFCmAg1kTvHDaVslwawxS3okj4iBR5Sf8UFSp9RWHC7fM9G4JLG44Xni6~pfEfJDVZjIluDW4Eoc0IXmTQJOimcVh11DcfRiB66sgG5qP12XbUUtXHbD9CZ'}"
+            "page_excerpt": "glean.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAkpCOrYar1noAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'2485a829cad6d0f3d384183200ea8ce4fd82b54e1c66025f7e4e61769455acb6d8d56560a4467042ecc4d694e92dfb3f','qp':'','host':'geo.captcha-delivery.com','cookie':'p2Ic9W1hlnzpWznsVFfJIYe4LXg3z86ZCJE_PBDeiehljiy~7tQcpdwH7nv_82BRqehCV4opCQpg4Ul6vpi0SbcKhVdyV5QinFOd9vg8AWw1XXeuBIUyI5LuICbpQR4t'}"
           }
         },
         {
@@ -498,8 +512,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -532,8 +547,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -565,8 +581,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -597,8 +614,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -631,8 +649,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -665,8 +684,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -686,7 +706,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/sipsearchrepeatwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAVdextOgMVN0Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'c24d7971d2d32e892ca9a7b78a1d6ebd277d19eddcdd5cc9088e6b41874206e14626808f80c57e25ac365f0ca42da2f5','qp':'','host':'geo.captcha-delivery.com','cookie':'gCYzrtAs_5p~Z5_v4eNTay4ujhU5Zejis2S~_VlLoN_lB4IjgI0XuGhDcnbR8NlLu3lgZSZ8yyl1gr5yQApcYdDfzTGKUPccivol7IydHdBZHujTkus4SFtqPTOvdYDB'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA1qJbBfgW4uoAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'2d92f945692544ec695e248dcddf80dcb3a0683cb4ea691fdfd2a47cefd17fb32420435e807a1286831d9243a8a9cd45','qp':'','host':'geo.captcha-delivery.com','cookie':'CepnTO8460KEXZOtlf7dvq5hP6fqhUafG_BxZDH6OvKV_DdeLzoihfuiBtheDnBf8xiY4tgCFdqncnGhjR~3Te5kvro4pv1GlttyrW3Z~73eFUuVesK~51G14r6PW6GT'}"
           }
         },
         {
@@ -699,8 +719,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -720,7 +741,7 @@
             "status": 200,
             "final_url": "https://events.cdmmedia.com/event/dcb62e53-223a-4f6f-a718-b3150983b244/summary?RefId=mktg-a-CPS",
             "page_title": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data",
-            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"e59cc39b-f52c-40c5-9741-ba70f083bc30\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"e59cc39b-f52c-40c5-9741-ba70f083bc30\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
+            "page_excerpt": "Happy Hour Program - ZoomInfo Happy Hour | Bringing AI Agents to Life with Trusted GTM Data (self.__next_s=self.__next_s||[]).push([0,{\"nonce\":\"1d6376ec-48a3-4452-a66c-bbee0dba6286\",\"children\":\"\\n window.CVENT = {\\n ...(window.CVENT || {}),\\n version: \\\"3.16.109\\\"\\n };\\n const originalFetch = window.fetch;\\n window.fetch = async function (...args) {\\n const response = await originalFetch.apply(this, args);\\n const version = response.headers.get('x-cvent-version');\\n if (version) {\\n sessionStorage.setItem('x-cvent-version', version);\\n }\\n return response;\\n };\\n \",\"id\":\"1d6376ec-48a3-4452-a66c-bbee0dba6286\"}]) (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null]) self.__next_f.push([1,\"1:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/08a70c30eb09948b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n2:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/3df5bbb868614b6f.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n3:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/964a34a7590492dc.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n4:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/fd642178e7084f00.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n5:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/035647613dd1dfc2.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n6:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8feb120888ad510b.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n7:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/a004f89ed1694771.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n8:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/727973242bb33abd.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\n9:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/903c32c08fe05d69.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\na:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/8b7fded2dfa253e7.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nb:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static/css/441706f066145b25.css\\\",\\\"style\\\",{\\\"crossOrigin\\\":\\\"\\\"}]\\nc:HL[\\\"https://www.cvent-assets.com/@cvent/event-guestside-app/assets/3.16.109/_next/static"
           }
         },
         {
@@ -733,8 +754,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -767,8 +789,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -801,8 +824,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -835,8 +859,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -869,8 +894,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -889,7 +915,7 @@
             "status": 200,
             "final_url": "https://docs.google.com/forms/d/e/1FAIpQLScRqI43T_dgLhG87X5KTKzUdapfiIiJtKv8IaxOA_Zc4__e6w/viewform?usp=send_form",
             "page_title": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments",
-            "page_excerpt": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments var DOCS_timing={}; DOCS_timing['pls']=new Date().getTime(); DOCS_timing['sl']=DOCS_timing['pls']; _docs_webfonts_json = \"{}\" window.WIZ_global_data = {\"K1cgmc\":\"%.@.[null,null,null,[3,1,[1775564214,589022000],4],null,27]]\",\"SpaT4e\":\"editors\",\"TSDtV\":\"%.@.[[null,[[45776221,null,false,null,null,null,\\\"XNGqK\\\"],[45759550,null,false,null,null,null,\\\"ipHXZe\\\"],[45765567,null,false,null,null,null,\\\"Gu5Dg\\\"],[45755088,null,false,null,null,null,\\\"fzPMYc\\\"],[45776074,null,false,null,null,null,\\\"H0kCgf\\\"],[45681910,null,true,null,null,null,\\\"OKXfNb\\\"],[45662509,null,false,null,null,null,\\\"fLCtnf\\\"],[45734741,null,true,null,null,null,\\\"gWu1Ue\\\"],[45762085,null,false,null,null,null,\\\"h6H74b\\\"],[45657263,null,false,null,null,null,\\\"ByEExb\\\"],[45769604,null,false,null,null,null,\\\"h14wf\\\"],[45744490,null,false,null,null,null,\\\"luHWB\\\"],[45760386,null,false,null,null,null,\\\"B22Yae\\\"],[45775424,null,false,null,null,null,\\\"ChJt5d\\\"],[45764507,null,false,null,null,null,\\\"En02yf\\\"],[45727616,null,true,null,null,null,\\\"qNQRAf\\\"],[45769413,null,false,null,null,null,\\\"u0yjqd\\\"],[45644642,null,null,null,\\\"X-WS exp!\\\",null,\\\"rsrxGc\\\"],[45748088,null,false,null,null,null,\\\"KLuwTc\\\"],[45744236,null,false,null,null,null,\\\"Rnque\\\"],[45749331,null,false,null,null,null,\\\"JQs3De\\\"],[45696305,null,false,null,null,null,\\\"Uujhbc\\\"],[45775833,null,false,null,null,null,\\\"bRlUw\\\"],[45679175,null,false,null,null,null,\\\"OETeme\\\"],[45747909,null,false,null,null,null,\\\"uTkAWb\\\"],[45677009,null,false,null,null,null,\\\"JkUdKe\\\"],[45678187,null,false,null,null,null,\\\"OrvCpd\\\"],[45672203,null,true,null,null,null,\\\"jDBBvd\\\"],[45643359,null,false,null,null,null,\\\"GcxuKe\\\"],[45672066,null,true,null,null,null,\\\"E1A5lb\\\"],[45773777,null,false,null,null,null,\\\"PT2mkd\\\"],[45751947,null,false,null,null,null,\\\"sT6Vl\\\"],[45670693,null,false,null,null,null,\\\"V7Wemb\\\"],[45730498,null,false,null,null,null,\\\"ZycXJf\\\"],[45717711,null,false,null,null,null,\\\"lhxHkd\\\"],[45724955,null,true,null,null,null,\\\"Lhvui\\\"],[45775584,0,null,null,null,null,\\\"bjSjmf\\\"],[45775398,null,false,null,null,null,\\\"ejP0Cd\\\"],[45712967,null,false,null,null,null,\\\"rZW8ld\\\"],[45673686,null,false,null,null,null,\\\"TVdkuc\\\"],[45673687,null,false,null,null,null,\\\"OQKgkd\\\"],[45762063,null,false,null,null,null,\\\"WlmQwb\\\"],[45681145,null,true,null,null,null,\\\"hV6kcd\\\"],[45743516,null,false,null,null,null,\\\"C3mEk\\\"],[45678265,null,false,null,null,null,\\\"P7qpdc\\\"],[45725105,null,"
+            "page_excerpt": "Canonical & Google Cloud VIP Dinner: Building Trusted Cloud Environments var DOCS_timing={}; DOCS_timing['pls']=new Date().getTime(); DOCS_timing['sl']=DOCS_timing['pls']; _docs_webfonts_json = \"{}\" window.WIZ_global_data = {\"K1cgmc\":\"%.@.[null,null,null,[3,1,[1775564486,287846000],4],null,27]]\",\"SpaT4e\":\"editors\",\"TSDtV\":\"%.@.[[null,[[45776221,null,false,null,null,null,\\\"XNGqK\\\"],[45759550,null,false,null,null,null,\\\"ipHXZe\\\"],[45765567,null,false,null,null,null,\\\"Gu5Dg\\\"],[45755088,null,false,null,null,null,\\\"fzPMYc\\\"],[45776074,null,false,null,null,null,\\\"H0kCgf\\\"],[45681910,null,true,null,null,null,\\\"OKXfNb\\\"],[45662509,null,false,null,null,null,\\\"fLCtnf\\\"],[45734741,null,true,null,null,null,\\\"gWu1Ue\\\"],[45762085,null,false,null,null,null,\\\"h6H74b\\\"],[45657263,null,false,null,null,null,\\\"ByEExb\\\"],[45769604,null,false,null,null,null,\\\"h14wf\\\"],[45744490,null,false,null,null,null,\\\"luHWB\\\"],[45760386,null,false,null,null,null,\\\"B22Yae\\\"],[45775424,null,false,null,null,null,\\\"ChJt5d\\\"],[45764507,null,false,null,null,null,\\\"En02yf\\\"],[45727616,null,true,null,null,null,\\\"qNQRAf\\\"],[45769413,null,false,null,null,null,\\\"u0yjqd\\\"],[45644642,null,null,null,\\\"X-WS exp!\\\",null,\\\"rsrxGc\\\"],[45748088,null,false,null,null,null,\\\"KLuwTc\\\"],[45744236,null,false,null,null,null,\\\"Rnque\\\"],[45749331,null,false,null,null,null,\\\"JQs3De\\\"],[45696305,null,false,null,null,null,\\\"Uujhbc\\\"],[45775833,null,false,null,null,null,\\\"bRlUw\\\"],[45679175,null,false,null,null,null,\\\"OETeme\\\"],[45747909,null,false,null,null,null,\\\"uTkAWb\\\"],[45677009,null,false,null,null,null,\\\"JkUdKe\\\"],[45678187,null,false,null,null,null,\\\"OrvCpd\\\"],[45672203,null,true,null,null,null,\\\"jDBBvd\\\"],[45643359,null,false,null,null,null,\\\"GcxuKe\\\"],[45672066,null,true,null,null,null,\\\"E1A5lb\\\"],[45773777,null,false,null,null,null,\\\"PT2mkd\\\"],[45751947,null,false,null,null,null,\\\"sT6Vl\\\"],[45670693,null,false,null,null,null,\\\"V7Wemb\\\"],[45730498,null,false,null,null,null,\\\"ZycXJf\\\"],[45717711,null,false,null,null,null,\\\"lhxHkd\\\"],[45724955,null,true,null,null,null,\\\"Lhvui\\\"],[45775584,0,null,null,null,null,\\\"bjSjmf\\\"],[45775398,null,false,null,null,null,\\\"ejP0Cd\\\"],[45712967,null,false,null,null,null,\\\"rZW8ld\\\"],[45673686,null,false,null,null,null,\\\"TVdkuc\\\"],[45673687,null,false,null,null,null,\\\"OQKgkd\\\"],[45762063,null,false,null,null,null,\\\"WlmQwb\\\"],[45681145,null,true,null,null,null,\\\"hV6kcd\\\"],[45743516,null,false,null,null,null,\\\"C3mEk\\\"],[45678265,null,false,null,null,null,\\\"P7qpdc\\\"],[45725105,null,"
           }
         },
         {
@@ -902,8 +928,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -936,8 +963,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -970,7 +998,8 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Closed / full",
+            "openness": "Full / closed",
+            "exclusivity": "N/A",
             "rationale": "The listing or landing page suggests the event is already full or no longer openly taking registrations."
           },
           "audience": {
@@ -1004,8 +1033,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1025,7 +1055,7 @@
             "status": 403,
             "final_url": "https://events.publicissapient.com/googlenext2026-vip-party",
             "page_title": "publicissapient.com",
-            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAPFBoD5ELFl8Aj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'b4ad9776bf9ff42cf067142976aedc3d3c14e6269f5647d094464bdecec02f132d180d402ad986e0163a771b7a1c2e81','qp':'','host':'geo.captcha-delivery.com','cookie':'a4DE15f7ZirLL2kfNSVSbniFoel62CpHaCLc0ygV6gxtzk14gko0LHYWZld1KnES8gouG_hEB5mrFU93B4KVEG6GmQtEncogTjUX_auTmJQ9NKzJu1IHT443EHizA~Ve'}"
+            "page_excerpt": "publicissapient.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMA4eE33HPO97kAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'a534091fdbd46577e45eb596515a61e1da4adce6b050c4f95169853d9b10cc954d780ceb3f2a377e200d365279d40800','qp':'','host':'geo.captcha-delivery.com','cookie':'2fG~D3ghMyqH4ynnjpcqBWwFN0w4iNV_EVpEWluChesoAJwTLaZLgNDkF~EIYploVxaHsJPVkJryd3x5QhJlcLZlPwPEh_ydHQJogrfZi6x94wNeftCjJ~OYFy7huKpL'}"
           }
         },
         {
@@ -1038,8 +1068,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -1072,8 +1103,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1093,7 +1125,7 @@
             "status": 200,
             "final_url": "https://rsvp.withgoogle.com/events/next26-swingers",
             "page_title": "Security Professionals Reception at Next'26",
-            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"-1846188749357809657\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\""
+            "page_excerpt": "window['ppConfig'] = {productName: 'Rsvpguest', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/accounts/*\"],\"Eeprqf\":\"AIzaSyBnyfz78CetDrQydDv1oDAoJGcx5wmQZrE\",\"FdrFJe\":\"-614379764456793301\",\"HiPsbb\":1,\"Im6cmf\":\"/_/Rsvpguest\",\"LSYLLe\":\"/punctual/prod/rsvp-server\",\"LoQv7e\":false,\"MT7f9b\":[],\"MUE6Ne\":\"rsvpguest-uiserver\",\"QrtxK\":\"\",\"S06Grb\":\"\",\"S6lZl\":0,\"TSDtV\":\"%.@.[[null,[[45759778,null,null,null,null,null,\\\"muoamd\\\",[\\\"[[\\\\\\\"e1112348c05e45d4b4887e9ea5c7ce95\\\\\\\",\\\\\\\"0f861a9af74a4d3d9fb16ab30d50187d\\\\\\\",\\\\\\\"025d962e5da24a56a6ebacc161fc6c4f\\\\\\\",\\\\\\\"fa5799e7e90e4ff1a3bd9474583b6d09\\\\\\\",\\\\\\\"0cd9b91c69644a6aa34e4825512b7b44\\\\\\\",\\\\\\\"f41df5c5adc9406b9536a88f76000f28\\\\\\\",\\\\\\\"94f99e986ed147ac9351fde72835c1f4\\\\\\\",\\\\\\\"bc4a64768a1a48a59e4d0cefaa1c55d2\\\\\\\",\\\\\\\"6ffb3b34cd154fc2880880f216623fa6\\\\\\\",\\\\\\\"40d3b376db4b4b9c95ba753205e53495\\\\\\\",\\\\\\\"7a7919a4a94b412395eebaddd8c82fa9\\\\\\\",\\\\\\\"fa5c1d3fd42e4a92928fb898f0005593\\\\\\\",\\\\\\\"1741f1c13e2e46a7936ffed10fcafee4\\\\\\\",\\\\\\\"18db5a4399c04825ae8ea96824ae18f4\\\\\\\",\\\\\\\"ec46352457ac4194bd3aee99361c14cc\\\\\\\",\\\\\\\"0b7977992c1a4b6eb7437bf5573ba140\\\\\\\",\\\\\\\"1067948a8ebd4cf8af587b0bac334b23\\\\\\\",\\\\\\\"445f5c22146f401fbb6d1361211af111\\\\\\\",\\\\\\\"d61fd2bbb50740c6a045ff073467d83f\\\\\\\",\\\\\\\"2b0c1eaafd8046089128cc697f889e62\\\\\\\",\\\\\\\"4e5d5aca8e1e4a768fb9462148f0f151\\\\\\\",\\\\\\\"a56b042b4ac043199edb07efbbb39c85\\\\\\\"]]\\\"]],[45755184,null,null,null,null,null,\\\"LG5aC\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"00778216a94241829063f3c9560d31c4\\\\\\\"]]\\\"]],[45760641,null,null,null,null,null,\\\"qRDXKc\\\",[\\\"[[\\\\\\\"2116c5290e694492b86e4a16d1014107\\\\\\\",\\\\\\\"b1e60d313e4345f7b2dbdd5b23cd77d3\\\\\\\",\\\\\\\"3d52fe6af95c46c6b9c3fd96f38ea4bc\\\\\\\",\\\\\\\"events/2116c5290e694492b86e4a16d1014107/siteVersions/73268e0534cc49058e9ccbb0e1211b7a\\\\\\\",\\\\\\\"events/b1e60d313e4345f7b2dbdd5b23cd77d3/siteVersions/6664f0407104482f9343dabf6bb49230\\\\\\\",\\\\\\\"events/3d52fe6af95c46c6b9c3fd96f38ea4bc/siteVersions/2a897daba69d4f399be6c8d3eaebbd38\\\\\\\",\\\\\\\"events/00778216a94241829063f3c9560d31c4/siteVersions/1b5924dc763a4c5d8a95e213aebc60e2\\\\\\\"]]\\\"]]],\\\"CAMSBx0C8eCyNRY\\\\u003d\\\"]]]\",\"UUFaWc\":\"%.@.null,1000,2]\",\"Vvafkd\":false,\"b5W2zf\":\"default_Rsvpguest\",\"cfb2h\":\"boq_rsvpguest-uiserver_20260406.05_p0\","
           }
         },
         {
@@ -1106,8 +1138,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -1139,8 +1172,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Open registration",
-            "rationale": "The RSVP flow looks like a normal public registration page rather than a screened guest-list flow."
+            "openness": "Open RSVP",
+            "exclusivity": "Low",
+            "rationale": "The RSVP flow looks closer to normal public registration than a screened guest-list flow."
           },
           "audience": {
             "label": "Technical builders",
@@ -1178,8 +1212,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Community / affinity group",
@@ -1199,7 +1234,7 @@
             "status": 403,
             "final_url": "https://events.elastic.co/innovathersbreakfastwithelastic",
             "page_title": "elastic.co",
-            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAxALxG5-EvqEAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'7590c8908ea9fa901d42836f9d204869103ef10de5daae7915e9c2d0349f1b75ca56cc3f35019df79547798bf15057da','qp':'','host':'geo.captcha-delivery.com','cookie':'zBFlnbY~aPZNQgcX8m0Trb4xqi_XJmrEeMFlOuaxAY7r7HyxQJbV9tr1PWFIrwjV__XWXhxI3Sndr9afVL_4RELnI1rBhgNEI9cmUzBltTxgn_ItyFGYT_mYndcI0IYW'}"
+            "page_excerpt": "elastic.co #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAUecyuBpdVBAAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'96901d91e107a932e36d4023f8ef7a107a6f6686e037f223172761cf6f663064a481ce175e89e3a7de21409dbba888c9','qp':'','host':'geo.captcha-delivery.com','cookie':'Nn0diIsl4inBSopX8G3_9q2FRDvAn7Zhj5WlEiRIc1GWHNTTtngtZ6eetL0kGE1VDqIlzTVXmjyXHCKvjr0_e__~Y7KyvxZwynMI5QthkNd_SNn8i8Er2RRtXUGviMQy'}"
           }
         },
         {
@@ -1212,8 +1247,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -1245,8 +1281,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Technical builders",
@@ -1279,8 +1316,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1313,8 +1351,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1334,7 +1373,7 @@
             "status": 200,
             "final_url": "https://cloud.google.com/events/happy-hour-at-skyfall-lounge",
             "page_title": "Special Reception at the skyfall Lounge, W Las Vegas | Google Cloud",
-            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"4923151544634758056\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagra"
+            "page_excerpt": "window['ppConfig'] = {productName: 'GoogleCloudUxWebAppCgcUi', deleteIsEnforced: true , sealIsEnforced: true , heartbeatRate: 0.5 , periodicReportingRateMillis: 60000.0 , disableAllReporting: false };(function(){'use strict';function k(a){var b=0;return function(){return b window.WIZ_global_data = {\"AfY8Hf\":false,\"Bwo7Jf\":\"%.@.\\\"US\\\",4]\",\"CGQM5\":\"%.@.[[1]]]\",\"DpimGf\":false,\"EP1ykd\":[\"/_/*\",\"/_/BeyondCorpDeniedUi\",\"/_/BeyondCorpDeniedUi/*\",\"/__/csv/pct\",\"/__/json/customers\",\"/__/json/searchskus\",\"/__/pingz\",\"/__/te\",\"/accounts/*\",\"/ai/gen-app-builder\",\"/ai/gen-app-builder/*\",\"/application/web3\",\"/application/web3/*\",\"/beyondcorp-enterprise/accessdenied\",\"/beyondcorp-enterprise/accessdenied/*\",\"/blog\",\"/blog/*\",\"/blog/transform\",\"/blog/transform/*\",\"/bricks/redirector/*\",\"/cgc/sitemap/:pageTemplateType\",\"/cgc/sitemapindex.xml\",\"/dlp/sandbox/image\",\"/dlp/sandbox/text\",\"/identity/signup/premium\",\"/identity/signup/premium/\",\"/identity/signup/premium/*\",\"/partners/incentivepayments\",\"/redirector\",\"/signup/gcpidentity\",\"/signup/gcpidentity/\",\"/signup/gcpidentity/*\",\"/signup/identity\",\"/signup/identity/\",\"/signup/identity/*\",\"/sitemapentries/:site\",\"/sitemapindex.xml\",\"/transform\",\"/transform/*\"],\"FdrFJe\":\"-4910267824733071645\",\"HiPsbb\":1,\"Im6cmf\":\"/_/GoogleCloudUxWebAppCgcUi\",\"ImPnXd\":\"%.@.[[1,\\\"cgc-bricks\\\",\\\"https://cloud.google.com\\\",\\\"https://cgc-ui-preview.corp.google.com/bricks_preview\\\",\\\"tenants/cloud\\\",[132454,null,null,1682545,[\\\"marketing-studio-cloud-regional-pmms@google.com\\\"]],null,true,[null,null,null,null,null,null,null,null,[\\\"https://cloud.google.com/blog\\\",[[\\\"de\\\",\\\"https://germany.googleblog.com/\\\"],[\\\"fr\\\",\\\"https://cloud.google.com/blog/fr?hl\\\\u003dfr\\\"],[\\\"ja\\\",\\\"https://cloud.google.com/blog/ja?hl\\\\u003dja\\\"],[\\\"ko\\\",\\\"https://cloud.google.com/blog/ko?hl\\\\u003dko\\\"]]],[\\\"https://www.facebook.com/googlecloud\\\",[[\\\"ja\\\",\\\"https://www.facebook.com/GoogleCloudJapan\\\"],[\\\"ko\\\",\\\"https://www.facebook.com/GoogleCloudKR\\\"],[\\\"zh-TW\\\",\\\"https://www.facebook.com/GoogleCloudTW\\\"]]],[\\\"https://github.com/GoogleCloudPlatform\\\"],[\\\"https://www.x.com/googlecloud\\\",[[\\\"de\\\",\\\"https://www.x.com/GoogleCloud_DE\\\"],[\\\"es\\\",\\\"https://www.x.com/GoogleCloud_ES\\\"],[\\\"fr\\\",\\\"https://www.x.com/GoogleCloud_FR\\\"],[\\\"id\\\",\\\"https://www.x.com/GoogleCloud_ID\\\"],[\\\"it\\\",\\\"https://www.x.com/GoogleCloud_IT\\\"],[\\\"ja\\\",\\\"https://www.x.com/googlecloud_jp\\\"],[\\\"ko\\\",\\\"https://www.x.com/GoogleCloud_KR\\\"],[\\\"pt-BR\\\",\\\"https://www.x.com/GoogleCloud_PL\\\"]]],[\\\"https://www.instagr"
           }
         },
         {
@@ -1347,8 +1386,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Security leaders / practitioners",
@@ -1381,8 +1421,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1415,8 +1456,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Broad networking crowd",
@@ -1448,8 +1490,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Technical builders",
@@ -1469,7 +1512,7 @@
             "status": 403,
             "final_url": "https://events.neo4j.com/neo4jexecutivereceptiongcn/conference-parties",
             "page_title": "neo4j.com",
-            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAf6RVqdYho0QAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'c0e41f15565cb2e7a2e3c16360207a38df1354c99d2f19a5644dc1a318a44d871abbd3c10b9798b389a1807a75cd2b5e','qp':'','host':'geo.captcha-delivery.com','cookie':'s4P3EZouk_WqghXmZ3_LtPctO2zoNjB_4qS5SxRYhcATsSakD4GKXvUiJJ4Pt_MVcQ7R2esqine3VzmlwSU6mGIO7OKpP7Twne8RwONc2GUeXxGkf200JniH0nj1AbK~'}"
+            "page_excerpt": "neo4j.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMARvKxF0wAj9YAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'4e2e794a25b4dcbba4f4247eae0c9f0deb899a11b7438e008d173734780c0254ca129845747fd656049c517471d0ff7c','qp':'','host':'geo.captcha-delivery.com','cookie':'Nqoxg1Fyyt2a~0lOeNuc2Wtsv1C1M_tWLuYnwaj42Z3gxXZBgvLJEbYzs7E64grqF9lBbrVBUXoeg1V75ma2xBR3DG28MVMIopIj96bS3FywlHwY~Wn3anMdO3SfX_YO'}"
           }
         },
         {
@@ -1482,8 +1525,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "Technical builders",
@@ -1503,7 +1547,7 @@
             "status": 403,
             "final_url": "https://events.mongodb.com/googlecloudnext2026happyhour",
             "page_title": "mongodb.com",
-            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAyYl4ImHcXTAAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'9eb85b4a2f32ec912a571faf5d5bb906c81d3bc0444a38bfb1ba5f6d24cd0a36e0e9dec24a3c3ee72c8f1bf5bdd5e3be','qp':'','host':'geo.captcha-delivery.com','cookie':'yUfvD0sTxKtRU3Qf~cSngc~bXstnH~1l3w9pfqVfIhVmRxUMvNnv5AX5EdHpmAGwOqrJ4WvFZiVdln94K2kSB4m2RjUhNxfJKjdMv3sfecf9Hyp6OVWw4mp94KXvmBBb'}"
+            "page_excerpt": "mongodb.com #cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}} Please enable JS and disable any ad blocker var dd={'rt':'i','cid':'AHrlqAAAAAMAJsWUR6FcpnMAj27q4w==','hsh':'3BA67E83B5E1C93C86A6F784C53F4C','b':1396754,'s':20143,'e':'2916e409925deb4acb8005fdbb34527190208a1567f87a11d662f71c7dae730b1d6dd883f382fc150ef75356db1f875b','qp':'','host':'geo.captcha-delivery.com','cookie':'wbBCMu4vIP20JkPoRqDK6tw1ZSOi91uEJ3kNE8FnfMIVEbcVZNiCo65sV7fqu~JVUlHEdeKlvnXAlT8feaETmGUE1Z8huiH1GCD1nBJ9sOuTk_TwDuhGAQ4GgO_LFHi0'}"
           }
         },
         {
@@ -1516,8 +1560,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "General conference crowd",
@@ -1550,8 +1595,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",
@@ -1584,8 +1630,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Request / invite",
-            "rationale": "The page uses invite-style language, so this looks more curated than fully open registration."
+            "openness": "Request invite",
+            "exclusivity": "Medium",
+            "rationale": "The page uses invite-style language, so this is not fully open even if many people may still get approved."
           },
           "audience": {
             "label": "FinOps / cloud economics",
@@ -1623,8 +1670,9 @@
           "source": "ConferenceParties.com",
           "sourceUrl": "https://conferenceparties.com/next26/",
           "access": {
-            "label": "Curated / exclusive",
-            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a curated guest list rather than a broad public RSVP."
+            "openness": "Curated guest list",
+            "exclusivity": "High",
+            "rationale": "Language like VIP, executive, founder, private-address, or roundtable suggests a deliberately screened guest list."
           },
           "audience": {
             "label": "Executives / curated buyers",

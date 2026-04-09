@@ -266,8 +266,8 @@
         const badgeClass = (label = '') => {
           const lower = label.toLowerCase();
           if (lower.includes('open')) return 'open';
-          if (lower.includes('exclusive') || lower.includes('curated')) return 'exclusive';
-          if (lower.includes('closed')) return 'closed';
+          if (lower.includes('high') || lower.includes('exclusive') || lower.includes('curated')) return 'exclusive';
+          if (lower.includes('closed') || lower.includes('full')) return 'closed';
           return 'invite';
         };
 
@@ -282,16 +282,23 @@
                   <div>
                     <div class="label">Event</div>
                     <div class="value">${event.url ? `<a href="${esc(event.url)}" target="_blank" rel="noopener">${esc(event.title)} ↗</a>` : esc(event.title)}</div>
-                    <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
+                    <div class="summary-note">At <strong>${esc(splitLocation(event.location).place)}</strong>${splitLocation(event.location).area ? ` (${esc(splitLocation(event.location).area)})` : ''}. Venue vibe: ${esc(event.venue?.vibe || 'Venue unclear')}. Known for: ${esc(event.venue?.note || 'venue context unclear')}</div>
                     <div style="margin-top:10px">
-                      <span class="badge ${badgeClass(event.access?.label)}">${esc(event.access?.label || 'Unclear')}</span>
+                      <div class="label">Open invite</div>
+                      <span class="badge ${badgeClass(event.access?.openness)}">${esc(event.access?.openness || 'Unclear')}</span>
                       <div class="meta-note">${esc(event.access?.rationale || '')}</div>
                     </div>
                     <div style="margin-top:10px">
+                      <div class="label">Exclusivity</div>
+                      <span class="badge ${badgeClass(event.access?.exclusivity)}">${esc(event.access?.exclusivity || 'Unclear')}</span>
+                    </div>
+                    <div style="margin-top:10px">
+                      <div class="label">Target audience</div>
                       <span class="badge">${esc(event.audience?.label || 'Audience unclear')}</span>
                       <div class="meta-note">${esc(event.audience?.rationale || '')}</div>
                     </div>
                     <div style="margin-top:10px">
+                      <div class="label">Food</div>
                       <span class="badge">${esc(event.food?.label || 'Food unclear')}</span>
                       <div class="meta-note">${esc(event.food?.note || '')}</div>
                     </div>
