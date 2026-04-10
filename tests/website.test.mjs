@@ -677,7 +677,8 @@ test('session explorer updates the version marker from the loaded dataset timest
     clearTimeoutImpl: () => {},
   });
 
-  assert.equal(env.document.getElementById('version-marker').textContent, 'Version: 2026-04-09 08:01 UTC');
+  const expectedVersion = `Version: ${dataset.scraped_at.slice(0, 16).replace('T', ' ')} UTC`;
+  assert.equal(env.document.getElementById('version-marker').textContent, expectedVersion);
 });
 
 
