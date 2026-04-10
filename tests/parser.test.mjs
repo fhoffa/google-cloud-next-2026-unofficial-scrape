@@ -22,9 +22,20 @@ const page2 = fs.readFileSync(path.join(root, 'session-library-page-2.html'), 'u
 const keynote = fs.readFileSync(path.join(root, 'session-3922022.html'), 'utf8');
 const geminiCli = fs.readFileSync(path.join(root, 'session-3911908.html'), 'utf8');
 
+function makeLibraryHtml(records) {
+  const payload = Object.fromEntries(records.map((record, index) => [
+    `session_${record.id || index + 1}`,
+    record,
+  ]));
+  return `<!doctype html><script>GoogleAgendaBuilder.show_sessions(${JSON.stringify(payload)});</script>`;
+}
+
 test('extracts embedded session ids from library pages', () => {
-  assert.equal(extractSessionIds(page1).length, 60);
-  assert.ok(extractSessionIds(page2).length >= 60);
+  const page1Ids = extractSessionIds(page1);
+  const page2Ids = extractSessionIds(page2);
+  assert.equal(page1Ids.length, 60);
+  assert.ok(page2Ids.length >= 60);
+  assert.ok(page2Ids.every((id) => /^\d+$/.test(id)));
 });
 
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
@@ -36,12 +47,34 @@ test('extracts session records with moreInfoUrl from paginated library pages', (
 
 
 
-test('extracts scheduled dates from library records and preserves blanks when present', () => {
+test('extracts scheduled dates from cached library records', () => {
   const records = extractSessionRecordsFromLibrary(page1);
   assert.ok(records.some((r) => r.date_text === 'Wednesday, April 22, 2026'));
   assert.ok(records.some((r) => r.date_text === 'Thursday, April 23, 2026'));
-  const blankDates = records.filter((r) => r.date_text === '');
-  assert.ok(blankDates.length >= 0);
+});
+
+
+test('extracts blank dates from synthetic unscheduled library records', () => {
+  const html = makeLibraryHtml([
+    {
+      id: '1',
+      name: 'Synthetic unscheduled session',
+      moreInfoUrl: 'https://example.com/session/1/synthetic-unscheduled-session',
+      date: '',
+      start_time: '',
+      end_time: '',
+      location_id: 'Sandbox',
+      custom_fields: {},
+      capacity: 25,
+      remaining_capacity: 10,
+      registrantCount: 15,
+    },
+  ]);
+  const [record] = extractSessionRecordsFromLibrary(html);
+  assert.ok(record);
+  assert.equal(record.date_text, '');
+  assert.equal(record.start_time_text, '');
+  assert.equal(record.end_time_text, '');
 });
 
 test('extracts full description from Gemini CLI session page', () => {
@@ -93,9 +126,19 @@ test('dedupes and partitions library records into date buckets', () => {
       topics: [],
       speakers: [],
     },
+    {
+      url: 'https://example.com/session/unscheduled',
+      title: 'Synthetic unscheduled fixture duplicate',
+      date_text: '',
+      start_time_text: '',
+      end_time_text: '',
+      room: '',
+      topics: [],
+      speakers: [],
+    },
   ];
   const deduped = dedupeSessionRecords(records);
-  assert.ok(deduped.length <= records.length);
+  assert.ok(deduped.length < records.length);
   const uniqueUrls = new Set(deduped.map((record) => record.url));
   assert.equal(uniqueUrls.size, deduped.length);
   const buckets = partitionSessionRecords(deduped);
