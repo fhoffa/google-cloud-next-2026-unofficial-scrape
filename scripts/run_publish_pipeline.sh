@@ -7,4 +7,4 @@ node scripts/generate_changelog.mjs
 node scripts/generate_insights.mjs
 "$PYTHON" scripts/make_sankey.py
 "$PYTHON" scripts/build_related_sessions_2026.py
-node --test tests/parser.test.mjs tests/refresh-process.test.mjs tests/website.test.mjs tests/company-identity.test.mjs
+npm run test:runbook
