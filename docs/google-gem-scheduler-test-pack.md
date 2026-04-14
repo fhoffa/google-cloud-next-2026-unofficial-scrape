@@ -71,6 +71,25 @@ What a strong answer should do:
 Sample output:
 - `tests/fixtures/gem-scheduler-full-fallback.output.txt`
 
+## Case 4: inspirational + career should pick Stephanie Wong without chat context
+
+Fixture:
+- `tests/fixtures/gem-scheduler-inspirational-career-stephanie.json`
+
+User request:
+
+```text
+I only want inspirational and career-oriented talks.
+```
+
+What a strong answer should do:
+- choose `3879152` as the primary pick for the slot
+- explain that it is broader, more energizing, and more memorable than dry executive alternatives
+- avoid defaulting to startup/ROI/business-language talks just because they contain executive keywords
+
+Sample output:
+- `tests/fixtures/gem-scheduler-inspirational-career-stephanie.output.txt`
+
 ## Gem prompt file
 
 Use this exact file for Gem setup:
@@ -101,3 +120,4 @@ The key things to evaluate are:
 - same-slot alternatives only
 - sensible persona matching
 - valid `sessionids` explorer link generation
+- correct prioritization of inspirational/career sessions without hidden chat context

@@ -58,6 +58,12 @@ if (fixtureName === 'gem-scheduler-full-fallback.json') {
   checks.push(check('mentions line up or cancellations guidance', /line up|cancellation/i.test(lower)));
 }
 
+if (fixtureName === 'gem-scheduler-inspirational-career-stephanie.json') {
+  checks.push(check('selects Stephanie Wong session as the primary pick', linkIds.includes('3879152') || sessionIdsMentioned.includes('3879152'), `mentions=${sessionIdsMentioned.join(',')} link=${linkIds.join(',')}`));
+  checks.push(check('explicitly frames the choice as inspirational or career-oriented', /inspirational|career-oriented|energizing|narrative energy|industry perspective/i.test(output)));
+  checks.push(check('deprioritizes dry executive alternatives', /deprioritized|corporate alternatives|executive-corporate/i.test(lower)));
+}
+
 const passed = checks.filter((item) => item.pass).length;
 const failed = checks.length - passed;
 const result = {

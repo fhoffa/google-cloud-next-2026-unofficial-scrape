@@ -29,3 +29,9 @@ test('evaluator passes the full-fallback sample output', () => {
   assert.equal(result.failed, 0);
   assert.equal(result.fixture, 'gem-scheduler-full-fallback.json');
 });
+
+test('evaluator passes the inspirational-career Stephanie sample output', () => {
+  const result = run('gem-scheduler-inspirational-career-stephanie.json', 'gem-scheduler-inspirational-career-stephanie.output.txt');
+  assert.equal(result.failed, 0);
+  assert.equal(result.fixture, 'gem-scheduler-inspirational-career-stephanie.json');
+});

@@ -1,0 +1,56 @@
+{
+  "sessions": [
+    {
+      "id": "3879152",
+      "title": "From algorithms to agents: How Gen Z, Gen Alpha, and AI are rewiring commerce",
+      "description": "The convergence of culture, technology, and generational power is reshaping commerce. As Gen Z programs the algorithmic economy and Gen Alpha becomes the first AI-native generation, PwC's Ali Furman and Google's Stephanie Wong explore structural shifts in discovery, demand, and agentic commerce.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3879152/from-algorithms-to-agents-how-gen-z-gen-alpha-and-ai-are-rewiring-commerce",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "room": "Lagoon B",
+      "topics": ["Applied AI"],
+      "session_category": "Breakouts",
+      "speakers": [
+        { "name": "Stephanie Wong", "company": "Google Cloud", "job_title": "Global Lead, Developer Programs" },
+        { "name": "Ali Furman", "company": "PwC", "job_title": "Consumer Markets Industry Leader" }
+      ],
+      "remaining_capacity": 119,
+      "llm": { "ai_focus": "AI", "theme": "Applied AI", "audience": "Developers" }
+    },
+    {
+      "id": "3912327",
+      "title": "Fireside chat: Rewrite the startup playbook for AI hypergrowth",
+      "description": "A fireside chat on AI hypergrowth and startup strategy.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3912327/fireside-chat-rewrite-the-startup-playbook-for-ai-hypergrowth",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "room": "Mandalay Ballroom J",
+      "topics": ["Executive", "Business"],
+      "session_category": "Breakouts",
+      "speakers": [
+        { "name": "Speaker A", "company": "ExampleCo", "job_title": "Founder" }
+      ],
+      "remaining_capacity": 414,
+      "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
+      "id": "3913114",
+      "title": "How healthcare leaders escaped pilot purgatory to deliver real-world impact",
+      "description": "A leadership-oriented session on moving AI from pilot to impact.",
+      "url": "https://www.googlecloudevents.com/next-vegas/session/3913114/how-healthcare-leaders-escaped-pilot-purgatory-to-deliver-real-world-impact",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "room": "Islander A",
+      "topics": ["Executive", "Business"],
+      "session_category": "Breakouts",
+      "speakers": [
+        { "name": "Speaker B", "company": "HealthCo", "job_title": "VP" }
+      ],
+      "remaining_capacity": 362,
+      "llm": { "ai_focus": "AI", "theme": "Applied AI", "audience": "Leaders" }
+    }
+  ]
+}

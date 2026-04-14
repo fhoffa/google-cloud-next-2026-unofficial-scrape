@@ -83,6 +83,12 @@ test('copy-paste gem prompt requires concierge-style concise opinionated guidanc
   assert.match(gemPrompt, /best fit|don't miss|backup option|worth lining up for/i);
 });
 
+test('copy-paste gem prompt steers inspirational and career requests away from dry executive defaults', () => {
+  assert.match(gemPrompt, /inspirational, energizing, visionary, broad-perspective, or career-oriented/i);
+  assert.match(gemPrompt, /do not default to dry executive or ROI talks/i);
+  assert.match(gemPrompt, /strong speakers, memorable customer stories, broader industry perspective/i);
+});
+
 test('copy-paste gem prompt requires an explorer link with sessionids URL parameter', () => {
   assert.match(gemPrompt, /sessionids/i);
   assert.match(gemPrompt, /https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/\?sessionids=ID1,ID2,ID3/i);

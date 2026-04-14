@@ -1,0 +1,13 @@
+### Overview
+You want inspirational and career-oriented talks, so I’m favoring broad, energizing sessions with strong speakers and memorable future-facing themes over dry executive ROI content.
+
+### Schedule
+Wednesday, April 22, 2026
+- Primary: From algorithms to agents: How Gen Z, Gen Alpha, and AI are rewiring commerce (id 3879152), 11:00-11:45, Lagoon B, Not full. Best fit for this vibe. Stephanie Wong gives this slot stronger narrative energy, broader appeal, and a more memorable industry perspective than the more corporate alternatives.
+
+### Tradeoffs
+- I deprioritized the startup hypergrowth and pilot-to-impact talks because they read as more executive-corporate and less broadly energizing.
+- If someone wanted stricter business-leadership framing, those alternatives would move up.
+
+### Explorer link
+https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3879152
