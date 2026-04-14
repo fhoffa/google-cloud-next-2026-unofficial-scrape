@@ -1,0 +1,49 @@
+{
+  "sessions": [
+    {
+      "id": "4001",
+      "title": "Advanced agent security workshop",
+      "description": "Deep technical workshop on securing agentic systems.",
+      "url": "https://example.com/session/4001",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T13:00:00",
+      "end_at": "2026-04-23T14:00:00",
+      "room": "T401",
+      "topics": ["Security", "Agents", "Advanced Technical", "Security Professionals"],
+      "session_category": "Workshops",
+      "speakers": [{ "name": "Morgan Diaz", "company": "Google Cloud" }],
+      "remaining_capacity": 0,
+      "llm": { "ai_focus": "AI", "theme": "Security", "audience": "Sec pros" }
+    },
+    {
+      "id": "4002",
+      "title": "Practical threat modeling for AI apps",
+      "description": "Security session covering threat models for LLM and agent systems.",
+      "url": "https://example.com/session/4002",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T13:00:00",
+      "end_at": "2026-04-23T14:00:00",
+      "room": "T402",
+      "topics": ["Security", "Applied AI", "Security Professionals"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Sam Patel", "company": "Wiz" }],
+      "remaining_capacity": 8,
+      "llm": { "ai_focus": "AI", "theme": "Security", "audience": "Sec pros" }
+    },
+    {
+      "id": "4003",
+      "title": "Cloud networking cost controls",
+      "description": "Infra session with weak relevance for security-focused AI attendees.",
+      "url": "https://example.com/session/4003",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T13:00:00",
+      "end_at": "2026-04-23T14:00:00",
+      "room": "T403",
+      "topics": ["Networking", "Infrastructure Architects & Admins"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Chris Ng", "company": "Contoso" }],
+      "remaining_capacity": 30,
+      "llm": { "ai_focus": "Not AI", "theme": "Infra", "audience": "Infra/Ops" }
+    }
+  ]
+}
