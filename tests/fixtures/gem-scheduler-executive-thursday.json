@@ -1,0 +1,64 @@
+{
+  "sessions": [
+    {
+      "id": "5001",
+      "title": "Executive guide to scaling AI in regulated industries",
+      "description": "Decision frameworks, ROI, and governance for senior leaders.",
+      "url": "https://example.com/session/5001",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T09:30:00",
+      "end_at": "2026-04-23T10:15:00",
+      "room": "E201",
+      "topics": ["Executive", "Business", "Security"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Dana Brooks", "company": "Google Cloud" }],
+      "remaining_capacity": 14,
+      "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
+      "id": "5002",
+      "title": "Hands-on Kubernetes debugging lab",
+      "description": "Terminal-heavy session for platform engineers.",
+      "url": "https://example.com/session/5002",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T09:30:00",
+      "end_at": "2026-04-23T10:15:00",
+      "room": "E202",
+      "topics": ["Kubernetes", "Advanced Technical", "Platform Engineers"],
+      "session_category": "Workshops",
+      "speakers": [{ "name": "Avery Cole", "company": "Google Cloud" }],
+      "remaining_capacity": 6,
+      "llm": { "ai_focus": "Not AI", "theme": "Infra", "audience": "Developers" }
+    },
+    {
+      "id": "5003",
+      "title": "CIO playbook for agent adoption",
+      "description": "Operating models, risk, and measurement for AI programs.",
+      "url": "https://example.com/session/5003",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T11:00:00",
+      "end_at": "2026-04-23T11:45:00",
+      "room": "E210",
+      "topics": ["Executive", "Agents", "Business"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Casey Morgan", "company": "McKinsey & Company" }],
+      "remaining_capacity": 10,
+      "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
+      "id": "5004",
+      "title": "Data engineering with Spark on GKE",
+      "description": "Deep technical patterns for data engineers.",
+      "url": "https://example.com/session/5004",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T11:00:00",
+      "end_at": "2026-04-23T11:45:00",
+      "room": "E211",
+      "topics": ["Data Engineers", "Kubernetes", "Advanced Technical"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Robin Mills", "company": "Datadog" }],
+      "remaining_capacity": 20,
+      "llm": { "ai_focus": "Not AI", "theme": "Data", "audience": "Data pros" }
+    }
+  ]
+}

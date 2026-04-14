@@ -14,7 +14,7 @@
     "analytics:top-fillers": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py top-fillers",
     "analytics:flappy": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py flappy",
     "test": "node --test tests/*.test.mjs",
-    "test:gem-scheduler": "node --test tests/gem-scheduler-prompt.test.mjs",
+    "test:gem-scheduler": "node --test tests/gem-scheduler-prompt.test.mjs tests/gem-scheduler-fixtures.test.mjs",
     "merge": "node merge_buckets.mjs"
   }
 }
