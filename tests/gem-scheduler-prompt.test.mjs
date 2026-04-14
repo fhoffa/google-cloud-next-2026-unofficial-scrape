@@ -77,6 +77,12 @@ test('copy-paste gem prompt requires complete timeslot coverage and same-slot fa
   assert.match(gemPrompt, /line up in case of cancellations/i);
 });
 
+test('copy-paste gem prompt requires concierge-style concise opinionated guidance', () => {
+  assert.match(gemPrompt, /strong concierge/i);
+  assert.match(gemPrompt, /concise, opinionated, and helpful/i);
+  assert.match(gemPrompt, /best fit|don't miss|backup option|worth lining up for/i);
+});
+
 test('copy-paste gem prompt requires an explorer link with sessionids URL parameter', () => {
   assert.match(gemPrompt, /sessionids/i);
   assert.match(gemPrompt, /https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/\?sessionids=ID1,ID2,ID3/i);
