@@ -3,7 +3,7 @@
 This pack is designed to test the gem prompt in isolation, without relying on other conversational context.
 
 Each case should be runnable with only:
-- the gem prompt in `docs/google-gem-scheduler-prompt.md`
+- the copy-paste gem prompt in `docs/google-gem-scheduler-gem-prompt.txt`
 - one JSON fixture file
 - one user request
 
@@ -69,6 +69,11 @@ What a strong answer should do:
 
 Sample output:
 - `tests/fixtures/gem-scheduler-full-fallback.output.txt`
+
+## Gem prompt file
+
+Use this exact file for Gem setup:
+- `docs/google-gem-scheduler-gem-prompt.txt`
 
 ## Evaluator usage
 

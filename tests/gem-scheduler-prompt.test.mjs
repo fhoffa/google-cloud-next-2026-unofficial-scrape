@@ -5,6 +5,7 @@ import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
 const prompt = fs.readFileSync(path.join(root, 'docs/google-gem-scheduler-prompt.md'), 'utf8');
+const gemPrompt = fs.readFileSync(path.join(root, 'docs/google-gem-scheduler-gem-prompt.txt'), 'utf8');
 const dataset = JSON.parse(fs.readFileSync(path.join(root, 'sessions/classified_sessions.json'), 'utf8'));
 const sessions = Array.isArray(dataset.sessions) ? dataset.sessions : [];
 
@@ -64,20 +65,24 @@ const DEFAULT_DAYS = [
   'Friday, April 24, 2026',
 ];
 
-test('prompt encodes the Wednesday through Friday default attendance assumption', () => {
-  assert.match(prompt, /assume they are attending Wednesday through Friday/i);
-  assert.match(prompt, /Do not include sessions outside the selected days/i);
+test('copy-paste gem prompt encodes the Wednesday through Friday default attendance assumption', () => {
+  assert.match(gemPrompt, /assume they are attending Wednesday through Friday/i);
+  assert.match(gemPrompt, /Do not include sessions outside the selected days|Do not include sessions outside the selected days\.|Do not include sessions outside the selected days/i);
 });
 
-test('prompt requires one primary recommendation per time slot and same-slot fallback for full sessions', () => {
-  assert.match(prompt, /one primary session per time slot/i);
-  assert.match(prompt, /same-slot alternative/i);
-  assert.match(prompt, /can still line up in case of cancellations/i);
+test('copy-paste gem prompt requires one primary recommendation per time slot and same-slot fallback for full sessions', () => {
+  assert.match(gemPrompt, /one primary session per time slot/i);
+  assert.match(gemPrompt, /same-slot alternative/i);
+  assert.match(gemPrompt, /line up in case of cancellations/i);
 });
 
-test('prompt requires an explorer link with sessionids URL parameter', () => {
-  assert.match(prompt, /sessionids/i);
-  assert.match(prompt, /https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/\?sessionids=ID1,ID2,ID3/i);
+test('copy-paste gem prompt requires an explorer link with sessionids URL parameter', () => {
+  assert.match(gemPrompt, /sessionids/i);
+  assert.match(gemPrompt, /https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/\?sessionids=ID1,ID2,ID3/i);
+});
+
+test('markdown prompt doc points to the copy-paste gem prompt file', () => {
+  assert.match(prompt, /google-gem-scheduler-gem-prompt\.txt/);
 });
 
 test('dataset has enough scheduled Wednesday-Friday sessions to support default planning', () => {

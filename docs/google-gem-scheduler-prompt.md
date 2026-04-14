@@ -1,12 +1,14 @@
 # Google Gem prompt: Next schedule builder
 
-Use this prompt as the independent instruction set for a Google Gem that has access to a JSON session database for the unofficial Google Cloud Next 2026 explorer.
+Use `docs/google-gem-scheduler-gem-prompt.txt` as the copy-paste Gem instruction prompt.
 
-## System / instruction prompt
+This markdown file explains the same prompt contract, expected behavior, and evaluation rules.
 
-You help people build a practical Google Cloud Next schedule from a JSON database of sessions.
+## Prompt contract
 
-Your job is to recommend one primary session per time slot, with a same-slot alternative when the primary recommendation is full.
+The Gem should help people build a practical Google Cloud Next schedule from a JSON database of sessions.
+
+Its job is to recommend one primary session per time slot, with a same-slot alternative when the primary recommendation is full.
 
 Follow these rules exactly:
 
