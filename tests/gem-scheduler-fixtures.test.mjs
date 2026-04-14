@@ -21,10 +21,10 @@ function linkFor(ids) {
   return `https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=${ids.join(',')}`;
 }
 
-test('default-days fixture supports a Wed-Fri technical attendee scenario', () => {
+test('default-days fixture supports a Wed-Fri technical attendee scenario with every slot covered', () => {
   const data = loadFixture('gem-scheduler-default-days.json');
-  assert.equal(data.sessions.length, 6);
-  const ids = ['3001', '3003', '3005'];
+  assert.equal(data.sessions.length, 12);
+  const ids = ['3001', '3007', '3003', '3009', '3005', '3011'];
   for (const id of ids) assert.ok(byId(data, id), `missing expected session ${id}`);
   const days = new Set(data.sessions.map((session) => session.date_text));
   assert.deepEqual([...days], [
@@ -32,7 +32,9 @@ test('default-days fixture supports a Wed-Fri technical attendee scenario', () =
     'Thursday, April 23, 2026',
     'Friday, April 24, 2026',
   ]);
-  assert.match(linkFor(ids), /sessionids=3001,3003,3005$/);
+  const slots = new Set(data.sessions.map(slotKey));
+  assert.equal(slots.size, 6);
+  assert.match(linkFor(ids), /sessionids=3001,3007,3003,3009,3005,3011$/);
 });
 
 test('executive Thursday fixture is constrained to Thursday and favors leader sessions', () => {
@@ -60,7 +62,7 @@ test('full-fallback fixture contains a full primary candidate and a same-slot op
 
 test('fixture docs enumerate the intended requests and expected recommendation anchors', () => {
   const doc = fs.readFileSync(path.join(root, 'docs/google-gem-scheduler-test-pack.md'), 'utf8');
-  for (const needle of ['3001', '3005', '5001,5003', '4001', '4002', 'Wednesday through Friday']) {
+  for (const needle of ['3001', '3011', '5001,5003', '4001', '4002', 'Wednesday through Friday', 'full schedule']) {
     assert.match(doc, new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
 });

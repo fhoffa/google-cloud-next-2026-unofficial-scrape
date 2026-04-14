@@ -20,9 +20,10 @@ I'm a data engineer. I care most about BigQuery, data pipelines, agents, and Gem
 
 What a strong answer should do:
 - assume Wednesday through Friday
-- pick session `3001` on Wednesday
-- pick either `3003` or `3004` on Thursday, but `3003` is the stronger match for AI/security/agents
-- pick session `3005` on Friday
+- build a full schedule across every available slot in the fixture, not just one session per day
+- pick `3001` and `3007` on Wednesday
+- pick `3003` and `3009` on Thursday
+- pick `3005` and `3011` on Friday
 - produce an explorer link with the chosen primary ids
 
 Sample output:
@@ -96,7 +97,7 @@ These are prompt-contract cases, not product UI tests.
 The key things to evaluate are:
 - grounding in provided JSON only
 - correct default-day behavior
-- one primary recommendation per slot
+- one primary recommendation per slot, covering every slot in the selected days
 - same-slot alternatives only
 - sensible persona matching
 - valid `sessionids` explorer link generation

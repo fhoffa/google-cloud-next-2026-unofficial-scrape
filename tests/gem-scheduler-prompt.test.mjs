@@ -70,8 +70,9 @@ test('copy-paste gem prompt encodes the Wednesday through Friday default attenda
   assert.match(gemPrompt, /Do not include sessions outside the selected days|Do not include sessions outside the selected days\.|Do not include sessions outside the selected days/i);
 });
 
-test('copy-paste gem prompt requires one primary recommendation per time slot and same-slot fallback for full sessions', () => {
-  assert.match(gemPrompt, /one primary session per time slot/i);
+test('copy-paste gem prompt requires complete timeslot coverage and same-slot fallback for full sessions', () => {
+  assert.match(gemPrompt, /exactly one primary session for every covered time slot/i);
+  assert.match(gemPrompt, /cover every time slot that has one or more sessions/i);
   assert.match(gemPrompt, /same-slot alternative/i);
   assert.match(gemPrompt, /line up in case of cancellations/i);
 });

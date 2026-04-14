@@ -31,6 +31,36 @@
       "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
     },
     {
+      "id": "3007",
+      "title": "Operational analytics for streaming pipelines",
+      "description": "Monitoring and debugging for real-time data systems.",
+      "url": "https://example.com/session/3007",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "room": "W310",
+      "topics": ["Data Analytics", "Observability", "Data Engineers"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Nina Shah", "company": "Google Cloud" }],
+      "remaining_capacity": 6,
+      "llm": { "ai_focus": "Not AI", "theme": "Data", "audience": "Data pros" }
+    },
+    {
+      "id": "3008",
+      "title": "AI portfolio planning for CFOs",
+      "description": "Finance-side planning for enterprise AI bets.",
+      "url": "https://example.com/session/3008",
+      "date_text": "Wednesday, April 22, 2026",
+      "start_at": "2026-04-22T11:00:00",
+      "end_at": "2026-04-22T11:45:00",
+      "room": "W311",
+      "topics": ["Executive", "Business"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Chris Bell", "company": "Fabrikam" }],
+      "remaining_capacity": 15,
+      "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
       "id": "3003",
       "title": "Secure platform guardrails for production agents",
       "description": "Security controls for agentic applications at scale.",
@@ -61,6 +91,36 @@
       "llm": { "ai_focus": "Not AI", "theme": "Data", "audience": "Data pros" }
     },
     {
+      "id": "3009",
+      "title": "Building reliable retrieval systems for enterprise agents",
+      "description": "Vector search, retrieval quality, and production patterns.",
+      "url": "https://example.com/session/3009",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T14:00:00",
+      "end_at": "2026-04-23T14:45:00",
+      "room": "T220",
+      "topics": ["Agents", "Data Analytics", "Developers"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Maya Torres", "company": "Google Cloud" }],
+      "remaining_capacity": 11,
+      "llm": { "ai_focus": "AI", "theme": "Applied AI", "audience": "Developers" }
+    },
+    {
+      "id": "3010",
+      "title": "Modern data governance for business leaders",
+      "description": "Governance themes for executive stakeholders.",
+      "url": "https://example.com/session/3010",
+      "date_text": "Thursday, April 23, 2026",
+      "start_at": "2026-04-23T14:00:00",
+      "end_at": "2026-04-23T14:45:00",
+      "room": "T221",
+      "topics": ["Business", "Data Analytics"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Leo Grant", "company": "Acme" }],
+      "remaining_capacity": 19,
+      "llm": { "ai_focus": "Not AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
       "id": "3005",
       "title": "Vertex AI agents in production: observability and evals",
       "description": "Operational playbook for production AI agents.",
@@ -88,6 +148,36 @@
       "session_category": "Breakouts",
       "speakers": [{ "name": "Jordan Lee", "company": "Fabrikam" }],
       "remaining_capacity": 4,
+      "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
+    },
+    {
+      "id": "3011",
+      "title": "Low-latency feature serving for ML applications",
+      "description": "Practical infra and data patterns for ML-backed products.",
+      "url": "https://example.com/session/3011",
+      "date_text": "Friday, April 24, 2026",
+      "start_at": "2026-04-24T16:00:00",
+      "end_at": "2026-04-24T16:45:00",
+      "room": "F120",
+      "topics": ["Applied AI", "Data Engineers", "Developers"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Sara Lin", "company": "Google Cloud" }],
+      "remaining_capacity": 10,
+      "llm": { "ai_focus": "AI", "theme": "Data", "audience": "Developers" }
+    },
+    {
+      "id": "3012",
+      "title": "Executive recap: AI transformation lessons",
+      "description": "Leadership summary session for business stakeholders.",
+      "url": "https://example.com/session/3012",
+      "date_text": "Friday, April 24, 2026",
+      "start_at": "2026-04-24T16:00:00",
+      "end_at": "2026-04-24T16:45:00",
+      "room": "F121",
+      "topics": ["Executive", "Business"],
+      "session_category": "Breakouts",
+      "speakers": [{ "name": "Owen Price", "company": "Contoso" }],
+      "remaining_capacity": 20,
       "llm": { "ai_focus": "AI", "theme": "Business", "audience": "Leaders" }
     }
   ]

@@ -1,18 +1,22 @@
 ### Overview
-Data engineer focused on BigQuery, pipelines, agents, and Gemini. Since you did not specify days, I assumed Wednesday through Friday.
+Data engineer focused on BigQuery, pipelines, agents, and Gemini. Since you did not specify days, I assumed Wednesday through Friday and built a full schedule across every available slot in the fixture.
 
 ### Schedule
 Wednesday, April 22, 2026
 - Primary: Build agentic data pipelines with BigQuery and Gemini (id 3001), 09:00-09:45, W301, Not full. Best fit for data pipelines, BigQuery-style analytics, and Gemini.
+- Primary: Operational analytics for streaming pipelines (id 3007), 11:00-11:45, W310, Not full. Strong fit for data engineering and analytics operations.
 
 Thursday, April 23, 2026
 - Primary: Secure platform guardrails for production agents (id 3003), 11:00-11:45, T210, Not full. Strong match for agent security and production concerns.
+- Primary: Building reliable retrieval systems for enterprise agents (id 3009), 14:00-14:45, T220, Not full. Strong fit for retrieval, enterprise agents, and applied AI systems.
 
 Friday, April 24, 2026
 - Primary: Vertex AI agents in production: observability and evals (id 3005), 14:00-14:45, F101, Not full. Best fit for production AI agent operations.
+- Primary: Low-latency feature serving for ML applications (id 3011), 16:00-16:45, F120, Not full. Strong fit for ML application infrastructure and data systems.
 
 ### Tradeoffs
 - I deprioritized the more executive-oriented sessions because you asked for a technical data-engineering schedule.
+- I covered every available slot in the selected Wednesday-Friday schedule instead of only highlighting one session per day.
 
 ### Explorer link
-https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3001,3003,3005
+https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3001,3007,3003,3009,3005,3011

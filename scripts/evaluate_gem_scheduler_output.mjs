@@ -24,16 +24,25 @@ function check(name, pass, detail = '') {
   return { name, pass: Boolean(pass), detail };
 }
 
+function slotKey(session) {
+  return `${session.date_text}__${String(session.start_at || '').slice(11, 16)}__${String(session.end_at || '').slice(11, 16)}`;
+}
+
+const distinctSlots = [...new Set((fixture.sessions || []).map(slotKey))].filter((value) => !value.includes('____'));
+const linkedSessions = linkIds.map((id) => fixture.sessions.find((session) => String(session.id) === id)).filter(Boolean);
+const linkedSlotKeys = [...new Set(linkedSessions.map(slotKey))];
+
 const checks = [];
 checks.push(check('mentions only known fixture session ids', sessionIdsMentioned.every((id) => fixture.sessions.some((session) => String(session.id) === id)), `mentioned ids=${sessionIdsMentioned.join(',') || 'none'}`));
 checks.push(check('includes explorer link', Boolean(explorerLinkMatch), explorerLinkMatch?.[0] || 'missing'));
 checks.push(check('uses fixture ids in explorer link', linkIds.every((id) => fixture.sessions.some((session) => String(session.id) === id)), `link ids=${linkIds.join(',') || 'none'}`));
+checks.push(check('explorer link covers every fixture time slot with one primary id', linkedSlotKeys.length === distinctSlots.length, `slots=${linkedSlotKeys.length}/${distinctSlots.length} link ids=${linkIds.join(',') || 'none'}`));
 
 if (fixtureName === 'gem-scheduler-default-days.json') {
   checks.push(check('defaults to Wednesday', /wednesday, april 22, 2026/i.test(output)));
   checks.push(check('defaults to Thursday', /thursday, april 23, 2026/i.test(output)));
   checks.push(check('defaults to Friday', /friday, april 24, 2026/i.test(output)));
-  checks.push(check('includes strong technical anchors', ['3001', '3003', '3005'].every((id) => sessionIdsMentioned.includes(id) || linkIds.includes(id)), `need 3001,3003,3005 got mentions=${sessionIdsMentioned.join(',')} link=${linkIds.join(',')}`));
+  checks.push(check('includes strong technical anchors across the schedule', ['3001', '3007', '3003', '3009', '3005', '3011'].every((id) => sessionIdsMentioned.includes(id) || linkIds.includes(id)), `need 3001,3007,3003,3009,3005,3011 got mentions=${sessionIdsMentioned.join(',')} link=${linkIds.join(',')}`));
 }
 
 if (fixtureName === 'gem-scheduler-executive-thursday.json') {
