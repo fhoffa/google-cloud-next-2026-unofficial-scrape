@@ -1,0 +1,14 @@
+### Overview
+Security engineer focused on AI and agent security.
+
+### Schedule
+Thursday, April 23, 2026
+- Primary: Advanced agent security workshop (id 4001), 13:00-14:00, T401, Full. This is the strongest fit for your goal.
+- Alternative: Practical threat modeling for AI apps (id 4002), 13:00-14:00, T402, Not full. Same-slot fallback with strong security relevance.
+
+### Tradeoffs
+- If 4001 is a high-priority session, you can still line up in case of cancellations.
+- I did not choose the networking cost-controls session because it is a weak fit for AI security.
+
+### Explorer link
+https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=4001

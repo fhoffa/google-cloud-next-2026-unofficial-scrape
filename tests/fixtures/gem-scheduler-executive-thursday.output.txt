@@ -1,0 +1,13 @@
+### Overview
+Executive attendee focused on AI strategy, adoption, and governance. You said Thursday only, so I built a Thursday-only schedule.
+
+### Schedule
+Thursday, April 23, 2026
+- Primary: Executive guide to scaling AI in regulated industries (id 5001), 09:30-10:15, E201, Not full. Strong fit for AI strategy, governance, and leader-level decision making.
+- Primary: CIO playbook for agent adoption (id 5003), 11:00-11:45, E210, Not full. Strong fit for operating models, adoption, and measurement.
+
+### Tradeoffs
+- I deprioritized the hands-on technical labs because they are weaker matches for an executive planning goal.
+
+### Explorer link
+https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=5001,5003

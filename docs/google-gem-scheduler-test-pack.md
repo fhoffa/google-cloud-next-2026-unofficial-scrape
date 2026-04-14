@@ -25,6 +25,9 @@ What a strong answer should do:
 - pick session `3005` on Friday
 - produce an explorer link with the chosen primary ids
 
+Sample output:
+- `tests/fixtures/gem-scheduler-default-days.output.txt`
+
 ## Case 2: Thursday-only executive attendee
 
 Fixture:
@@ -43,6 +46,9 @@ What a strong answer should do:
 - avoid preferring the technical labs over executive sessions
 - produce an explorer link with `5001,5003`
 
+Sample output:
+- `tests/fixtures/gem-scheduler-executive-thursday.output.txt`
+
 ## Case 3: full-session fallback behavior
 
 Fixture:
@@ -60,6 +66,23 @@ What a strong answer should do:
 - suggest `4002` as the same-slot alternative
 - mention that the attendee can still line up for `4001` in case of cancellations
 - avoid choosing `4003` unless the answer explains that it is a weak fallback
+
+Sample output:
+- `tests/fixtures/gem-scheduler-full-fallback.output.txt`
+
+## Evaluator usage
+
+You can score a gem answer against a fixture with:
+
+```bash
+npm run gem:eval -- tests/fixtures/gem-scheduler-default-days.json tests/fixtures/gem-scheduler-default-days.output.txt
+```
+
+Or run the full dedicated suite:
+
+```bash
+npm run test:gem-scheduler
+```
 
 ## Evaluation notes
 
