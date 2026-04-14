@@ -87,6 +87,7 @@ test('copy-paste gem prompt steers inspirational and career requests away from d
   assert.match(gemPrompt, /inspirational, energizing, visionary, broad-perspective, or career-oriented/i);
   assert.match(gemPrompt, /do not default to dry executive or ROI talks/i);
   assert.match(gemPrompt, /strong speakers, memorable customer stories, broader industry perspective/i);
+  assert.match(gemPrompt, /stronger speaker, stronger narrative pull, or broader human appeal/i);
 });
 
 test('copy-paste gem prompt requires an explorer link with sessionids URL parameter', () => {

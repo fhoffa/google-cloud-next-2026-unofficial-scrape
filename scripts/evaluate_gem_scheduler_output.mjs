@@ -28,15 +28,18 @@ function slotKey(session) {
   return `${session.date_text}__${String(session.start_at || '').slice(11, 16)}__${String(session.end_at || '').slice(11, 16)}`;
 }
 
-const distinctSlots = [...new Set((fixture.sessions || []).map(slotKey))].filter((value) => !value.includes('____'));
-const linkedSessions = linkIds.map((id) => fixture.sessions.find((session) => String(session.id) === id)).filter(Boolean);
+const sessions = Array.isArray(fixture.sessions) ? fixture.sessions : [];
+const distinctSlots = [...new Set(sessions.map(slotKey))].filter((value) => !value.includes('____'));
+const linkedSessions = linkIds.map((id) => sessions.find((session) => String(session.id) === id)).filter(Boolean);
 const linkedSlotKeys = [...new Set(linkedSessions.map(slotKey))];
 
 const checks = [];
-checks.push(check('mentions only known fixture session ids', sessionIdsMentioned.every((id) => fixture.sessions.some((session) => String(session.id) === id)), `mentioned ids=${sessionIdsMentioned.join(',') || 'none'}`));
+checks.push(check('mentions only known fixture session ids', sessionIdsMentioned.every((id) => sessions.some((session) => String(session.id) === id)), `mentioned ids=${sessionIdsMentioned.join(',') || 'none'}`));
 checks.push(check('includes explorer link', Boolean(explorerLinkMatch), explorerLinkMatch?.[0] || 'missing'));
-checks.push(check('uses fixture ids in explorer link', linkIds.every((id) => fixture.sessions.some((session) => String(session.id) === id)), `link ids=${linkIds.join(',') || 'none'}`));
-checks.push(check('explorer link covers every fixture time slot with one primary id', linkedSlotKeys.length === distinctSlots.length, `slots=${linkedSlotKeys.length}/${distinctSlots.length} link ids=${linkIds.join(',') || 'none'}`));
+checks.push(check('uses fixture ids in explorer link', linkIds.every((id) => sessions.some((session) => String(session.id) === id)), `link ids=${linkIds.join(',') || 'none'}`));
+if (!(fixtureName === 'classified_sessions.json' && /inspirational-career-full-day/i.test(path.basename(outputPath)))) {
+  checks.push(check('explorer link covers every fixture time slot with one primary id', linkedSlotKeys.length === distinctSlots.length, `slots=${linkedSlotKeys.length}/${distinctSlots.length} link ids=${linkIds.join(',') || 'none'}`));
+}
 
 if (fixtureName === 'gem-scheduler-default-days.json') {
   checks.push(check('defaults to Wednesday', /wednesday, april 22, 2026/i.test(output)));
@@ -62,6 +65,32 @@ if (fixtureName === 'gem-scheduler-inspirational-career-stephanie.json') {
   checks.push(check('selects Stephanie Wong session as the primary pick', linkIds.includes('3879152') || sessionIdsMentioned.includes('3879152'), `mentions=${sessionIdsMentioned.join(',')} link=${linkIds.join(',')}`));
   checks.push(check('explicitly frames the choice as inspirational or career-oriented', /inspirational|career-oriented|energizing|narrative energy|industry perspective/i.test(output)));
   checks.push(check('deprioritizes dry executive alternatives', /deprioritized|corporate alternatives|executive-corporate/i.test(lower)));
+}
+
+if (fixtureName === 'classified_sessions.json' && /inspirational-career-full-day/i.test(path.basename(outputPath))) {
+  const day = 'Wednesday, April 22, 2026';
+  const daySessions = sessions.filter((session) => session.date_text === day);
+  const slotCounts = new Map();
+  for (const session of daySessions) {
+    const key = slotKey(session);
+    if (key.includes('11:00__18:00')) continue;
+    slotCounts.set(key, (slotCounts.get(key) || 0) + 1);
+  }
+  const majorSlots = [...slotCounts.entries()]
+    .filter(([, count]) => count >= 10)
+    .sort((a, b) => a[0].localeCompare(b[0]));
+  const selectedMajorSlots = [];
+  let lastEnd = '';
+  for (const [key] of majorSlots) {
+    const [, start, end] = key.split('__');
+    if (lastEnd && start < lastEnd) continue;
+    selectedMajorSlots.push(key);
+    lastEnd = end;
+  }
+  const linkDaySessions = linkedSessions.filter((session) => session.date_text === day);
+  const linkDaySlots = [...new Set(linkDaySessions.map(slotKey))];
+  checks.push(check('includes Stephanie Wong session in the full-day Wednesday schedule', linkIds.includes('3879152') || sessionIdsMentioned.includes('3879152'), `mentions=${sessionIdsMentioned.join(',')} link=${linkIds.join(',')}`));
+  checks.push(check('covers all major Wednesday slots in the full-day plan', linkDaySlots.length === selectedMajorSlots.length, `major slots=${linkDaySlots.length}/${selectedMajorSlots.length}`));
 }
 
 const passed = checks.filter((item) => item.pass).length;

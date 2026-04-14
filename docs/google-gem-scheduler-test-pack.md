@@ -90,6 +90,25 @@ What a strong answer should do:
 Sample output:
 - `tests/fixtures/gem-scheduler-inspirational-career-stephanie.output.txt`
 
+## Case 5: whole dataset, full-day schedule should still include Stephanie Wong
+
+Fixture:
+- `sessions/classified_sessions.json`
+
+User request:
+
+```text
+I only want inspirational and career-oriented talks. Build my Wednesday schedule.
+```
+
+What a strong answer should do:
+- produce a full Wednesday plan across the main Wednesday slots, not a one-slot answer
+- include `3879152` within that full-day plan
+- keep Stephanie Wong selected even when competing against the entire real dataset for the day
+
+Sample output:
+- `tests/fixtures/gem-scheduler-inspirational-career-full-day.output.txt`
+
 ## Gem prompt file
 
 Use this exact file for Gem setup:

@@ -35,3 +35,13 @@ test('evaluator passes the inspirational-career Stephanie sample output', () => 
   assert.equal(result.failed, 0);
   assert.equal(result.fixture, 'gem-scheduler-inspirational-career-stephanie.json');
 });
+
+test('whole dataset full-day schedule keeps Stephanie Wong in the Wednesday inspirational career plan', () => {
+  const stdout = execFileSync('node', [script, path.join(root, 'sessions/classified_sessions.json'), path.join(fixturesDir, 'gem-scheduler-inspirational-career-full-day.output.txt')], { encoding: 'utf8' });
+  const result = JSON.parse(stdout);
+  assert.equal(result.failed, 0);
+  assert.equal(result.fixture, 'classified_sessions.json');
+  const checksByName = Object.fromEntries(result.checks.map((check) => [check.name, check]));
+  assert.equal(checksByName['includes Stephanie Wong session in the full-day Wednesday schedule']?.pass, true);
+  assert.equal(checksByName['covers all major Wednesday slots in the full-day plan']?.pass, true);
+});

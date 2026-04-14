@@ -1,0 +1,18 @@
+### Overview
+You want inspirational and career-oriented talks, so I’m building a full Wednesday schedule around memorable, energizing sessions with strong speakers and big-picture stories, not dry executive keyword matches.
+
+### Schedule
+Wednesday, April 22, 2026
+- Primary: From algorithms to agents: How Gen Z, Gen Alpha, and AI are rewiring commerce (id 3879152), 11:00-11:45, Lagoon B, Not full. Best opening pick for this vibe. Stephanie Wong gives this slot stronger narrative energy and broader appeal than the more corporate alternatives.
+- Primary: Avery Dennison scales AI for product development and research excellence (id 3993506), 12:15-13:00, Not full. Good momentum session, real-world story, and more energizing than a dry platform update.
+- Primary: The agentic ROI framework for lean teams (id 3912344), 13:30-14:15, Not full. Useful career framing without disappearing into implementation weeds.
+- Primary: From blank page to final product using Google Workspace with Gemini (id 3920166), 14:30-15:15, Not full. Broad, approachable, and likely to keep energy high.
+- Primary: Fireside chat: Agents and the post-app startup economy (id 3920157), 15:45-16:30, Not full. Strong future-facing slot with real conference energy.
+- Primary: AI-driven transformation boosts growth for Macy’s and Openreach (id 4070693), 17:00-17:45, Not full. Best closer, memorable and broadly relevant.
+
+### Tradeoffs
+- I deprioritized drier executive-corporate sessions even when they matched more business keywords.
+- Stephanie Wong stays in because this request is about inspiration and career energy, not just leader-language density.
+
+### Explorer link
+https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3879152,3993506,3912344,3920166,3920157,4070693
