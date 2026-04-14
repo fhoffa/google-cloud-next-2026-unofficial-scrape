@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-13T16:30:12.360Z",
+    "generatedAt": "2026-04-14T15:48:55.289Z",
     "latest": "sessions/latest.json",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
@@ -9,22 +9,728 @@
     "mergeNearbyHours": 2,
     "latestLivePair": {
       "current": {
+        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-14T15-48-32Z.json",
+        "fileName": "2026-04-14T15-48-32Z.json",
+        "scrapedAt": "2026-04-14T15:48:32.890Z",
+        "count": 1086
+      },
+      "previous": {
         "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-13T16-26-56Z.json",
         "fileName": "2026-04-13T16-26-56Z.json",
         "scrapedAt": "2026-04-13T16:26:56.679Z",
         "count": 1078
-      },
-      "previous": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-12T16-34-31Z.json",
-        "fileName": "2026-04-12T16-34-31Z.json",
-        "scrapedAt": "2026-04-12T16:34:31.748Z",
-        "count": 1086
       }
     },
     "refreshWarnings": []
   },
   "lede": "A changelog that collapses near-duplicate scrape bursts while preserving meaningful gaps between publishes: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.",
   "updates": [
+    {
+      "previous": {
+        "file": "2026-04-13T16-26-56Z.json",
+        "scrapedAt": "2026-04-13T16:26:56.679Z",
+        "count": 1078
+      },
+      "current": {
+        "file": "2026-04-14T15-48-32Z.json",
+        "scrapedAt": "2026-04-14T15:48:32.890Z",
+        "count": 1086
+      },
+      "summary": {
+        "currentAvailabilityKnown": 1086,
+        "currentFull": 161,
+        "currentLimited": 0,
+        "fullSharePhrase": "a small share",
+        "hasReopened": false,
+        "hasMaterialChanges": true,
+        "hasAdditions": false,
+        "hasRemovals": true,
+        "hasReplacements": true,
+        "hasFlappy": true,
+        "hasMoves": true,
+        "hasRenames": true,
+        "hasMetadataChanges": true
+      },
+      "moved": [
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "url": "index.html?sessionids=3912966",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Breakers A"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Lagoon F"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Architecting the transactional lakehouse",
+          "url": "index.html?sessionids=3912322",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:30 PM",
+            "end": "2:00 PM",
+            "room": "Reef A"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "1:30 PM",
+            "end": "2:00 PM",
+            "room": "Reef E"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Build AI architectures with custom models on Cloud Run",
+          "url": "index.html?sessionids=3911905",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "Mandalay Bay H"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "Mandalay Bay E"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
+          "url": "index.html?sessionids=3911904",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "8:30 AM",
+            "end": "9:15 AM",
+            "room": "Mandalay Bay D"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "8:30 AM",
+            "end": "9:15 AM",
+            "room": "Mandalay Bay E"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Delve into large-scale training with Vertex AI training clusters",
+          "url": "index.html?sessionids=3913077",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "South Seas H"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Oceanside B"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Enhancing telecommunications network fulfillment through multi-agentic systems",
+          "url": "index.html?sessionids=3908759",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "10:00 AM",
+            "end": "10:45 AM",
+            "room": "Solution Talks 1 - Palm E"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "12:30 PM",
+            "end": "1:15 PM",
+            "room": "Solution Talks 1 - Palm E"
+          },
+          "changedFields": [
+            "start_time_text",
+            "end_time_text"
+          ]
+        },
+        {
+          "title": "Implement Flutter GenUI with the experts",
+          "url": "index.html?sessionids=3912227",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:30 PM",
+            "room": "Reef A"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:30 PM",
+            "room": "Reef C"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Preventing fraud and abuse: Securing the new agent economy",
+          "url": "index.html?sessionids=3913051",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "South Seas F"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "Mandalay Bay I"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Scaling PyTorch from Cloud TPU to the Play Store",
+          "url": "index.html?sessionids=3912965",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:15 PM",
+            "end": "6:00 PM",
+            "room": "Lagoon B"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:15 PM",
+            "end": "6:00 PM",
+            "room": "Breakers A"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Scaling simulation and rendering: Real-world use cases",
+          "url": "index.html?sessionids=3912996",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "9:15 AM",
+            "end": "10:00 AM",
+            "room": "Mandalay Bay D"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "9:15 AM",
+            "end": "10:00 AM",
+            "room": "Mandalay Bay F"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Simplify your agentic security workflow development with MCP",
+          "url": "index.html?sessionids=3913104",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:15 PM",
+            "room": "Reef A"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:15 PM",
+            "room": "Reef E"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Supporting large scale AI workloads with MIG's (Turnup and IMEX Config)",
+          "url": "index.html?sessionids=3908827",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 1 - Palm E"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "2:00 PM",
+            "end": "2:45 PM",
+            "room": "Solution Talks 3 - Palm H"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "What's new with Gemini from Google DeepMind",
+          "url": "index.html?sessionids=3912993",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Oceanside C"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Oceanside B"
+          },
+          "changedFields": [
+            "room"
+          ]
+        }
+      ],
+      "renamed": [
+        {
+          "beforeTitle": "Engineering AI-native enterprise with TSaaS",
+          "afterTitle": "Engineering AI-native enterprise: Why Services-as-Software drives maturity!",
+          "url": "index.html?sessionids=3940416",
+          "changedFields": [
+            "title"
+          ]
+        },
+        {
+          "beforeTitle": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
+          "afterTitle": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "url": "index.html?sessionids=3908788",
+          "changedFields": [
+            "title"
+          ]
+        }
+      ],
+      "metadataChanges": [
+        {
+          "title": "Agentic playbook: Scale and govern AI agents with Gemini Enterprise",
+          "url": "index.html?sessionids=3913085",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "Learn from the experts: How to use Gemini in your applications",
+          "url": "index.html?sessionids=3913056",
+          "changedFields": [
+            "speakers"
+          ]
+        },
+        {
+          "title": "The Future of business applications, powered by agentic AI",
+          "url": "index.html?sessionids=3909243",
+          "changedFields": [
+            "speakers"
+          ]
+        }
+      ],
+      "replacements": [
+        {
+          "removedTitle": "Agentic construction, operations, and safety",
+          "removedUrl": "index.html?sessionids=3920509",
+          "addedTitle": "Branch of the future",
+          "addedUrl": "index.html?sessionids=3920445",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Chat with your data using Gemini",
+          "removedUrl": "index.html?sessionids=3920538",
+          "addedTitle": "Build conversational agents on PostgreSQL and MySQL",
+          "addedUrl": "index.html?sessionids=3920461",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Commercial underwriting made easy with Gemini",
+          "removedUrl": "index.html?sessionids=3920489",
+          "addedTitle": "Deliver new audience experiences with AI",
+          "addedUrl": "index.html?sessionids=3920439",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Gemini Enterprise: The agentic core for supply chain orchestration",
+          "removedUrl": "index.html?sessionids=3920524",
+          "addedTitle": "Drive clinical action with AI agents",
+          "addedUrl": "index.html?sessionids=3920548",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Ground agents with Google Maps Platform",
+          "removedUrl": "index.html?sessionids=3920421",
+          "addedTitle": "Adapt across devices with Flutter",
+          "addedUrl": "index.html?sessionids=3920387",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Supercharge data science with Gemini and BigQuery",
+          "removedUrl": "index.html?sessionids=3920512",
+          "addedTitle": "Zero-copy sharing with SAP, Salesforce, and ServiceNow",
+          "addedUrl": "index.html?sessionids=3920558",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Delegate tasks to subagents in Gemini CLI",
+          "removedUrl": "index.html?sessionids=3920491",
+          "addedTitle": "Beyond the basics in Gemini CLI",
+          "addedUrl": "index.html?sessionids=3920378",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Cloud TPUs and GPUs",
+          "removedUrl": "index.html?sessionids=3920442",
+          "addedTitle": "Migrate enterprise workloads to unlock AI outcomes",
+          "addedUrl": "index.html?sessionids=3920485",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topic"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Troubleshoot applications with Gemini",
+          "removedUrl": "index.html?sessionids=3920542",
+          "addedTitle": "Empower AI agents with Google MCP servers",
+          "addedUrl": "index.html?sessionids=3920543",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topic"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "3 quick wins across your small team with a unified AI workplace",
+          "removedUrl": "index.html?sessionids=3912241",
+          "addedTitle": "Build transactional lakehouses: Zero-ETL with AlloyDB, BigLake, and BigQuery",
+          "addedUrl": "index.html?sessionids=3912275",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Architect with Google Axion: A decision framework for Arm workloads",
+          "removedUrl": "index.html?sessionids=3913066",
+          "addedTitle": "The agentic era: Governing an invisible AI workforce",
+          "addedUrl": "index.html?sessionids=3902759",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Bridge language gaps with AI",
+          "removedUrl": "index.html?sessionids=3920550",
+          "addedTitle": "Gemini Enterprise for Customer Experience",
+          "addedUrl": "index.html?sessionids=3920382",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        }
+      ],
+      "added": [],
+      "removed": [
+        {
+          "title": "Journey to intelligent hospitality: From data foundation to AI transformation",
+          "url": "index.html?sessionids=3897120"
+        },
+        {
+          "title": "Maximize profitability with Gemini Enterprise & Workspace incentives",
+          "url": "index.html?sessionids=3909220"
+        }
+      ],
+      "flappyChanges": [
+        {
+          "title": "Agent security at scale: Protect against the OWASP Top 10 application risks",
+          "url": "index.html?sessionids=3913108",
+          "id": "3913108",
+          "transitions": 2
+        },
+        {
+          "title": "Cloud Composer: The agentic bedrock for enterprise data and MLOps",
+          "url": "index.html?sessionids=3912234",
+          "id": "3912234",
+          "transitions": 2
+        },
+        {
+          "title": "From blank page to final product using Google Workspace with Gemini",
+          "url": "index.html?sessionids=3920166",
+          "id": "3920166",
+          "transitions": 2
+        },
+        {
+          "title": "Make multi-agent marketing a single intelligent loop",
+          "url": "index.html?sessionids=3895148",
+          "id": "3895148",
+          "transitions": 2
+        },
+        {
+          "title": "Multimodal startups: Building AI that sees, speaks, and creates",
+          "url": "index.html?sessionids=3920163",
+          "id": "3920163",
+          "transitions": 2
+        },
+        {
+          "title": "Real-time multimodality: Building seamless experiences with the Gemini Live API",
+          "url": "index.html?sessionids=3913159",
+          "id": "3913159",
+          "transitions": 4
+        },
+        {
+          "title": "Safeguard AI logic with Firebase",
+          "url": "index.html?sessionids=3920463",
+          "id": "3920463",
+          "transitions": 5
+        },
+        {
+          "title": "Simplify your data life cycle with hybrid storage architecture in Bigtable",
+          "url": "index.html?sessionids=3912257",
+          "id": "3912257",
+          "transitions": 2
+        },
+        {
+          "title": "Stop reacting, start anticipating: Agentic defense for modern security teams",
+          "url": "index.html?sessionids=3912973",
+          "id": "3912973",
+          "transitions": 2
+        },
+        {
+          "title": "Supercharging unstructured data analytics with generative AI in BigQuery",
+          "url": "index.html?sessionids=3912297",
+          "id": "3912297",
+          "transitions": 2
+        }
+      ],
+      "nowFull": [
+        {
+          "title": "Building Trustable Modeling Agents Using a Neurosymbolic Approach",
+          "url": "index.html?sessionids=3908780"
+        },
+        {
+          "title": "Securing AI-Generated Code: What's Actually Working?",
+          "url": "index.html?sessionids=3913165"
+        },
+        {
+          "title": "Simplify your agentic security workflow development with MCP",
+          "url": "index.html?sessionids=3913104"
+        },
+        {
+          "title": "Supporting large scale AI workloads with MIG's (Turnup and IMEX Config)",
+          "url": "index.html?sessionids=3908827"
+        },
+        {
+          "title": "What's new in Firebase",
+          "url": "index.html?sessionids=3912216"
+        }
+      ],
+      "reopened": [],
+      "nowLimited": [],
+      "materialChanges": [
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912966"
+        },
+        {
+          "title": "Architecting the transactional lakehouse",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912322"
+        },
+        {
+          "title": "Build AI architectures with custom models on Cloud Run",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3911905"
+        },
+        {
+          "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3911904"
+        },
+        {
+          "title": "Delve into large-scale training with Vertex AI training clusters",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3913077"
+        },
+        {
+          "title": "Engineering AI-native enterprise: Why Services-as-Software drives maturity!",
+          "changedFields": [
+            "title"
+          ],
+          "url": "index.html?sessionids=3940416"
+        },
+        {
+          "title": "Enhancing telecommunications network fulfillment through multi-agentic systems",
+          "changedFields": [
+            "start_time_text",
+            "end_time_text"
+          ],
+          "url": "index.html?sessionids=3908759"
+        },
+        {
+          "title": "Implement Flutter GenUI with the experts",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912227"
+        },
+        {
+          "title": "Preventing fraud and abuse: Securing the new agent economy",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3913051"
+        },
+        {
+          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "changedFields": [
+            "title"
+          ],
+          "url": "index.html?sessionids=3908788"
+        },
+        {
+          "title": "Scaling PyTorch from Cloud TPU to the Play Store",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912965"
+        },
+        {
+          "title": "Scaling simulation and rendering: Real-world use cases",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912996"
+        }
+      ],
+      "minorChanges": [
+        {
+          "title": "Agentic playbook: Scale and govern AI agents with Gemini Enterprise",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "index.html?sessionids=3913085"
+        },
+        {
+          "title": "Learn from the experts: How to use Gemini in your applications",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "index.html?sessionids=3913056"
+        },
+        {
+          "title": "The Future of business applications, powered by agentic AI",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "index.html?sessionids=3909243"
+        },
+        {
+          "title": "Agent Identity for secure AI innovation",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3913027"
+        },
+        {
+          "title": "Learn from the experts: How to use Gemini in your applications",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3913056"
+        }
+      ]
+    },
     {
       "previous": {
         "file": "2026-04-12T16-34-31Z.json",
@@ -44,7 +750,7 @@
         "hasReopened": false,
         "hasMaterialChanges": true,
         "hasAdditions": false,
-        "hasRemovals": true,
+        "hasRemovals": false,
         "hasReplacements": true,
         "hasFlappy": true,
         "hasMoves": true,
@@ -652,34 +1358,25 @@
         }
       ],
       "added": [],
-      "removed": [
+      "removed": [],
+      "flappyChanges": [
         {
           "title": "Agent security at scale: Protect against the OWASP Top 10 application risks",
-          "url": "index.html?sessionids=3913108"
+          "url": "index.html?sessionids=3913108",
+          "id": "3913108",
+          "transitions": 2
         },
         {
           "title": "Cloud Composer: The agentic bedrock for enterprise data and MLOps",
-          "url": "index.html?sessionids=3912234"
+          "url": "index.html?sessionids=3912234",
+          "id": "3912234",
+          "transitions": 2
         },
-        {
-          "title": "Multimodal startups: Building AI that sees, speaks, and creates",
-          "url": "index.html?sessionids=3920163"
-        },
-        {
-          "title": "Securing the OT landscape: Real-world IT/OT use cases",
-          "url": "index.html?sessionids=3913133"
-        },
-        {
-          "title": "Simplify your data life cycle with hybrid storage architecture in Bigtable",
-          "url": "index.html?sessionids=3912257"
-        }
-      ],
-      "flappyChanges": [
         {
           "title": "Empower AI agents with Google MCP servers",
           "url": "index.html?sessionids=3920543",
           "id": "3920543",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Fast-track apps to the cloud",
@@ -691,7 +1388,25 @@
           "title": "Generative media for marketing & advertising",
           "url": "index.html?sessionids=3920418",
           "id": "3920418",
-          "transitions": 7
+          "transitions": 8
+        },
+        {
+          "title": "Multimodal startups: Building AI that sees, speaks, and creates",
+          "url": "index.html?sessionids=3920163",
+          "id": "3920163",
+          "transitions": 2
+        },
+        {
+          "title": "Securing the OT landscape: Real-world IT/OT use cases",
+          "url": "index.html?sessionids=3913133",
+          "id": "3913133",
+          "transitions": 2
+        },
+        {
+          "title": "Simplify your data life cycle with hybrid storage architecture in Bigtable",
+          "url": "index.html?sessionids=3912257",
+          "id": "3912257",
+          "transitions": 2
         }
       ],
       "nowFull": [
@@ -2079,7 +2794,7 @@
           "title": "The AI-ready enterprise: Securing access and data in an AI-first world",
           "url": "index.html?sessionids=3902758",
           "id": "3902758",
-          "transitions": 3
+          "transitions": 4
         },
         {
           "title": "What's next in AI infrastructure: Scaling for the agentic and physical AI era",
@@ -3211,7 +3926,7 @@
           "title": "Branch of the future",
           "url": "index.html?sessionids=3920445",
           "id": "3920445",
-          "transitions": 3
+          "transitions": 4
         },
         {
           "title": "Build a multicloud open data lakehouse",
@@ -3241,13 +3956,13 @@
           "title": "Chat with your data using Gemini",
           "url": "index.html?sessionids=3920538",
           "id": "3920538",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Cloud TPUs and GPUs",
           "url": "index.html?sessionids=3920442",
           "id": "3920442",
-          "transitions": 5
+          "transitions": 6
         }
       ],
       "nowFull": [
@@ -4222,7 +4937,7 @@
           "title": "Beyond the basics in Gemini CLI",
           "url": "index.html?sessionids=3920378",
           "id": "3920378",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Boost AI inference speed and efficiency",
@@ -4270,7 +4985,7 @@
           "title": "Keep data secure and sovereign",
           "url": "index.html?sessionids=3920519",
           "id": "3920519",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Learn on-the-go with AI",
@@ -4913,13 +5628,13 @@
           "title": "Gemini Motion Lab: Video-to-video generation",
           "url": "index.html?sessionids=3920423",
           "id": "3920423",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Generative media for marketing & advertising",
           "url": "index.html?sessionids=3920418",
           "id": "3920418",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Get real: Agents in the autonomous era [ASL]",
@@ -5472,7 +6187,7 @@
           "title": "Empower AI agents with Google MCP servers",
           "url": "index.html?sessionids=3920543",
           "id": "3920543",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Explore the Gemini CLI extensions ecosystem",
@@ -5496,7 +6211,7 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Mastering adaptive intelligence - the other AI",
@@ -5526,7 +6241,7 @@
           "title": "Understand your codebase instantly with Code Wiki",
           "url": "index.html?sessionids=3920428",
           "id": "3920428",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Zero to scale: Rapid development with Google Cloud & MCP Toolbox for database",
@@ -5907,7 +6622,7 @@
           "title": "Gemini Enterprise: The agentic core for supply chain orchestration",
           "url": "index.html?sessionids=3920524",
           "id": "3920524",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Get creative with Gen Media",
@@ -5925,7 +6640,7 @@
           "title": "Migrate enterprise workloads to unlock AI outcomes",
           "url": "index.html?sessionids=3920485",
           "id": "3920485",
-          "transitions": 4
+          "transitions": 5
         },
         {
           "title": "Next in Healthcare",
@@ -6275,7 +6990,7 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Tune, evaluate, and scale with Vertex AI",
@@ -6839,7 +7554,7 @@
           "title": "Chat with your data using Gemini",
           "url": "index.html?sessionids=3920538",
           "id": "3920538",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Explore the Gemini CLI extensions ecosystem",
@@ -6863,7 +7578,7 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Sentient Screen: Iterative video with Gemini & Veo",
@@ -6881,7 +7596,7 @@
           "title": "Zero-copy sharing with SAP, Salesforce, and ServiceNow",
           "url": "index.html?sessionids=3920558",
           "id": "3920558",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "ADK & A2A in Action",
@@ -8149,7 +8864,7 @@
           "title": "Empower AI agents with Google MCP servers",
           "url": "index.html?sessionids=3920543",
           "id": "3920543",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Google Cloud x FairPrice Group",
@@ -8167,7 +8882,7 @@
           "title": "Ground agents with Google Maps Platform",
           "url": "index.html?sessionids=3920421",
           "id": "3920421",
-          "transitions": 5
+          "transitions": 6
         }
       ],
       "nowFull": [
@@ -8976,7 +9691,7 @@
           "title": "Adapt across devices with Flutter",
           "url": "index.html?sessionids=3920387",
           "id": "3920387",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "ADK & A2A in Action",
@@ -8988,7 +9703,7 @@
           "title": "Beyond the basics in Gemini CLI",
           "url": "index.html?sessionids=3920378",
           "id": "3920378",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Build a cloud-native game with Antigravity",
@@ -9042,7 +9757,7 @@
           "title": "Gemini Enterprise: The agentic core for supply chain orchestration",
           "url": "index.html?sessionids=3920524",
           "id": "3920524",
-          "transitions": 6
+          "transitions": 7
         }
       ],
       "nowFull": [
@@ -9897,13 +10612,13 @@
           "title": "Empower AI agents with Google MCP servers",
           "url": "index.html?sessionids=3920543",
           "id": "3920543",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "How Google Cloud and Cyderes Deliver AI-Powered & Context-Driven Security Operations",
