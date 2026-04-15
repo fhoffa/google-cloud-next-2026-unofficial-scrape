@@ -100,7 +100,7 @@ function renderSnapshot() {
       .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
-        const title = `${session.t}${session.r ? ` · ${session.r}` : ''} · ${formatCount(session.reg)} reserved${pct == null ? '' : ` · ${pct.toFixed(0)}% full`}`;
+        const title = `${session.t} · ${formatCount(session.reg)} reserved${pct == null ? '' : ` · ${pct.toFixed(0)}% full`}`;
         return `<button class="sq ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
