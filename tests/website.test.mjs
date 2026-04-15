@@ -166,6 +166,7 @@ function createEnvironment(search = '') {
   document.register(new FakeElement({ id: 'time-range-fill' }));
   document.register(new FakeElement({ id: 'sort-filter', value: 'time' }));
   document.register(new FakeElement({ id: 'availability-filter', value: '' }));
+  document.register(new FakeElement({ id: 'sponsored-filter', value: '' }));
   document.register(new FakeElement({ id: 'start-after' }));
   document.register(new FakeElement({ id: 'start-before' }));
   document.register(new FakeElement({ id: 'result-count' }));
@@ -223,6 +224,7 @@ test('index.html includes the website shell and module bootstrap', () => {
   assert.match(html, /<input type="text" id="speaker"/);
   assert.match(html, /<select id="topic-filter">/);
   assert.match(html, /<select id="sort-filter">/);
+  assert.match(html, /<select id="sponsored-filter">/);
   assert.match(html, /import \{ initSessionSearch \} from '\.\/website\/session-search\.mjs';/);
 });
 
@@ -459,7 +461,7 @@ test('speaker query param filters results on load', async () => {
 
   const appHtml = env.document.getElementById('app').innerHTML;
   const expected = filterSessions(dataset.sessions, {
-    q: '', exclude: '', speaker: 'geotab', company: '', ai_focus: '', theme: '', audience: '', availability: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', view: 'sessions',
+    q: '', exclude: '', speaker: 'geotab', company: '', ai_focus: '', theme: '', audience: '', availability: '', sponsored: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', view: 'sessions',
   });
 
   assert.equal(env.document.getElementById('speaker').value, 'geotab');
@@ -1053,7 +1055,7 @@ test('company query param filters results and renders an active pill', async () 
 
   const appHtml = env.document.getElementById('app').innerHTML;
   const expected = filterSessions(dataset.sessions, {
-    q: '', exclude: '', speaker: '', company: 'geotab', ai_focus: '', theme: '', audience: '', availability: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', view: 'sessions',
+    q: '', exclude: '', speaker: '', company: 'geotab', ai_focus: '', theme: '', audience: '', availability: '', sponsored: '', topic: '', day: '', start_after: '', start_before: '', sessionids: '', view: 'sessions',
   });
   assert.equal(env.document.getElementById('result-count').textContent, `${expected.length.toLocaleString()} of ${dataset.sessions.length.toLocaleString()} sessions`);
   assert.ok(expected.length >= 1);
@@ -1099,19 +1101,20 @@ test('search query param renders a search pill', async () => {
 
 test('buildSearchFromFilters preserves company alongside other insights filters', async () => {
   const { buildSearchFromFilters } = await import('../website/session-search.mjs');
-  const search = buildSearchFromFilters({ q: '', exclude: '', speaker: '', topic: '', day: '', sort: 'time', start_after: '', start_before: '', company: 'Geotab', ai_focus: 'AI', theme: 'Security', audience: 'Sec pros', availability: 'full', view: 'sessions', sessionids: '' });
+  const search = buildSearchFromFilters({ q: '', exclude: '', speaker: '', topic: '', day: '', sort: 'time', start_after: '', start_before: '', company: 'Geotab', ai_focus: 'AI', theme: 'Security', audience: 'Sec pros', availability: 'full', sponsored: 'yes', view: 'sessions', sessionids: '' });
   assert.match(search, /company=Geotab/);
   assert.match(search, /ai_focus=AI/);
   assert.match(search, /theme=Security/);
   assert.match(search, /audience=Sec\+pros/);
   assert.match(search, /availability=full/);
+  assert.match(search, /sponsored=yes/);
 });
 
 test('availability query param filters full and not-full sessions', async () => {
   const { filterSessions, readFiltersFromSearch, buildSearchFromFilters } = await import('../website/session-search.mjs');
   const sample = [
-    { title: 'Full session', remaining_capacity: 0, topics: [], speakers: [] },
-    { title: 'Open session', remaining_capacity: 4, topics: [], speakers: [] },
+    { title: 'Full session', remaining_capacity: 0, topics: [], speakers: [], sponsored: true },
+    { title: 'Open session', remaining_capacity: 4, topics: [], speakers: [], sponsored: false },
   ];
   const fullFilters = readFiltersFromSearch('?availability=full');
   const notFullFilters = readFiltersFromSearch('?availability=not-full');
@@ -1119,6 +1122,20 @@ test('availability query param filters full and not-full sessions', async () => 
   assert.deepEqual(filterSessions(sample, notFullFilters).map((s) => s.title), ['Open session']);
   assert.equal(buildSearchFromFilters(fullFilters), '?availability=full');
   assert.equal(buildSearchFromFilters(notFullFilters), '?availability=not-full');
+});
+
+test('sponsored query param filters sponsored and non-sponsored sessions', async () => {
+  const { filterSessions, readFiltersFromSearch, buildSearchFromFilters } = await import('../website/session-search.mjs');
+  const sample = [
+    { title: 'Sponsored session', sponsored: true, topics: [], speakers: [] },
+    { title: 'Organic session', sponsored: false, topics: [], speakers: [] },
+  ];
+  const sponsoredFilters = readFiltersFromSearch('?sponsored=yes');
+  const unsponsoredFilters = readFiltersFromSearch('?sponsored=no');
+  assert.deepEqual(filterSessions(sample, sponsoredFilters).map((s) => s.title), ['Sponsored session']);
+  assert.deepEqual(filterSessions(sample, unsponsoredFilters).map((s) => s.title), ['Organic session']);
+  assert.equal(buildSearchFromFilters(sponsoredFilters), '?sponsored=yes');
+  assert.equal(buildSearchFromFilters(unsponsoredFilters), '?sponsored=no');
 });
 
 test('session explorer joins availability artifact before applying availability filters', async () => {
@@ -1151,6 +1168,31 @@ test('session explorer joins availability artifact before applying availability 
   assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Open session/);
   assert.doesNotMatch(env.document.getElementById('app').innerHTML, /Unknown session/);
   assert.match(env.document.getElementById('active-filters').innerHTML, /availability: full/);
+});
+
+test('session explorer renders sponsored badges and active sponsored pills', async () => {
+  const env = createEnvironment('?sponsored=yes');
+  const source = {
+    sessions: [
+      { title: 'Sponsored session', url: 'https://example.com/session/sponsored', topics: [], speakers: [], sponsored: true },
+      { title: 'Organic session', url: 'https://example.com/session/organic', topics: [], speakers: [], sponsored: false },
+    ],
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  assert.match(appHtml, /Sponsored session/);
+  assert.doesNotMatch(appHtml, /Organic session/);
+  assert.match(appHtml, /status-badge sponsored">Sponsored/);
+  assert.match(env.document.getElementById('active-filters').innerHTML, /sponsored: yes/);
 });
 
 test('session explorer renders a seat fill visualization when capacity and registrations are known', async () => {
