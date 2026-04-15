@@ -12,11 +12,13 @@ function parseArgs(argv) {
   const options = {
     snapshotsDir: 'sessions/snapshots',
     output: 'media/hourly-overview.json',
+    latestOutput: 'media/hourly-overview-latest.json',
   };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--snapshots-dir') options.snapshotsDir = argv[++i];
     else if (arg === '--output') options.output = argv[++i];
+    else if (arg === '--latest-output') options.latestOutput = argv[++i];
   }
   return options;
 }
@@ -173,7 +175,14 @@ function buildOverview(snapshots) {
 const options = parseArgs(process.argv.slice(2));
 const snapshots = loadSnapshots(options.snapshotsDir);
 const data = buildOverview(snapshots);
+const latestData = {
+  ...data,
+  snapshots: data.snapshots.length ? [data.snapshots[data.snapshots.length - 1]] : [],
+};
 const outputPath = path.resolve(options.output);
+const latestOutputPath = path.resolve(options.latestOutput);
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, `${JSON.stringify(data, null, 2)}\n`);
+fs.writeFileSync(latestOutputPath, `${JSON.stringify(latestData, null, 2)}\n`);
 console.log(`Wrote ${path.relative(process.cwd(), outputPath)} with ${data.snapshots.length} snapshots.`);
+console.log(`Wrote ${path.relative(process.cwd(), latestOutputPath)} with ${latestData.snapshots.length} snapshot.`);

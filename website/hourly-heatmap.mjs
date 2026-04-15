@@ -1,8 +1,9 @@
-const DATA_URL = './media/hourly-overview.json';
+const INITIAL_DATA_URL = './media/hourly-overview-latest.json';
+const FULL_DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0 };
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -103,6 +104,29 @@ function hasMeaningfulSnapshot(snapshot) {
   return visibleSessions.some((session) => (session?.reg ?? 0) > 1);
 }
 
+function applyDataset(data, { hasFullHistory = false, snapshotIndex = null } = {}) {
+  state.data = data;
+  state.hasFullHistory = hasFullHistory;
+  state.latestIndex = Math.max(0, state.data.snapshots.length - 1);
+  const meaningfulIndex = state.data.snapshots.findIndex(hasMeaningfulSnapshot);
+  state.startIndex = meaningfulIndex >= 0 ? meaningfulIndex : 0;
+  state.snapshotIndex = snapshotIndex == null ? state.latestIndex : Math.max(state.startIndex, Math.min(state.latestIndex, snapshotIndex));
+}
+
+async function ensureFullHistoryLoaded() {
+  if (state.hasFullHistory || state.loadingHistory) return;
+  state.loadingHistory = true;
+  els.playbackNote.textContent = 'Loading snapshot history…';
+  try {
+    const response = await fetch(FULL_DATA_URL);
+    const data = await response.json();
+    applyDataset(data, { hasFullHistory: true, snapshotIndex: data.snapshots.length - 1 });
+    renderSnapshot();
+  } finally {
+    state.loadingHistory = false;
+  }
+}
+
 function renderSnapshot() {
   const snapshot = state.data.snapshots[state.snapshotIndex];
   els.snapshotLabel.textContent = snapshot.label;
@@ -172,8 +196,9 @@ function renderSnapshot() {
   els.playbackNote.textContent = 'Press Play to watch the evolution from here';
 }
 
-function startAutoplay() {
+async function startAutoplay() {
   stopAutoplay();
+  await ensureFullHistoryLoaded();
   if (state.snapshotIndex >= state.latestIndex) {
     state.snapshotIndex = state.startIndex;
     renderSnapshot();
@@ -202,17 +227,14 @@ async function init() {
     snapshotLabel: byId('snapshot-label'),
     playbackNote: byId('playback-note'),
   });
-  const response = await fetch(DATA_URL);
-  state.data = await response.json();
-  state.latestIndex = Math.max(0, state.data.snapshots.length - 1);
-  const meaningfulIndex = state.data.snapshots.findIndex(hasMeaningfulSnapshot);
-  state.startIndex = meaningfulIndex >= 0 ? meaningfulIndex : 0;
-  state.snapshotIndex = state.latestIndex;
+  const response = await fetch(INITIAL_DATA_URL);
+  const data = await response.json();
+  applyDataset(data, { hasFullHistory: false });
   buildShell();
   renderSnapshot();
 
-  els.playBtn.addEventListener('click', () => {
-    if (state.timer) stopAutoplay(); else startAutoplay();
+  els.playBtn.addEventListener('click', async () => {
+    if (state.timer) stopAutoplay(); else await startAutoplay();
   });
   els.snapshotSlider.addEventListener('input', (event) => {
     state.snapshotIndex = Number(event.target.value);
