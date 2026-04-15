@@ -9,9 +9,13 @@ import { fileURLToPath } from 'node:url';
 import { filterSessions, initSessionSearch } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const hourlyHtml = fs.readFileSync(new URL('../hourly-heatmap.html', import.meta.url), 'utf8');
+const hourlyJs = fs.readFileSync(new URL('../website/hourly-heatmap.mjs', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
 const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
+const hourlyArtifact = JSON.parse(fs.readFileSync(new URL('../media/hourly-overview.json', import.meta.url), 'utf8'));
+const hourlyLatestArtifact = JSON.parse(fs.readFileSync(new URL('../media/hourly-overview-latest.json', import.meta.url), 'utf8'));
 const relatedSessionsArtifact = JSON.parse(fs.readFileSync(new URL('../media/related-sessions-2026-embeddings.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
@@ -226,6 +230,48 @@ test('index.html includes the website shell and module bootstrap', () => {
   assert.match(html, /<select id="sort-filter">/);
   assert.match(html, /<select id="sponsored-filter">/);
   assert.match(html, /import \{ initSessionSearch \} from '\.\/website\/session-search\.mjs';/);
+});
+
+test('hourly heatmap page exposes search and playback controls', () => {
+  assert.match(hourlyHtml, /<button id="play-btn"/);
+  assert.match(hourlyHtml, /<input id="search-input" type="text"/);
+  assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
+  assert.match(hourlyHtml, /Hourly seat map/);
+});
+
+test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
+  assert.match(hourlyJs, /const INITIAL_DATA_URL = '\.\/media\/hourly-overview-latest\.json';/);
+  assert.match(hourlyJs, /const FULL_DATA_URL = '\.\/media\/hourly-overview\.json';/);
+  assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
+  assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
+  assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
+});
+
+test('hourly artifacts split latest snapshot from full history', () => {
+  assert.ok(Array.isArray(hourlyArtifact.snapshots));
+  assert.ok(Array.isArray(hourlyLatestArtifact.snapshots));
+  assert.ok(hourlyArtifact.snapshots.length > 1);
+  assert.equal(hourlyLatestArtifact.snapshots.length, 1);
+  assert.equal(
+    hourlyLatestArtifact.snapshots[0]?.key,
+    hourlyArtifact.snapshots[hourlyArtifact.snapshots.length - 1]?.key,
+  );
+});
+
+test('hourly artifact carries sponsored metadata for sponsored sessions from latest dataset', () => {
+  const sponsoredSourceIds = new Set((dataset.sessions || []).filter((session) => session.sponsored).map((session) => String(session.id)));
+  const hourlySponsoredIds = new Set(
+    hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []).filter((session) => session.spon).map((session) => String(session.id)),
+  );
+  assert.ok(sponsoredSourceIds.has('3939814'));
+  assert.ok(hourlySponsoredIds.has('3939814'));
+});
+
+test('hourly artifact includes searchable text for titles, descriptions, speakers, companies, and sponsored keywords', () => {
+  const session = hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []).find((item) => String(item.id) === '3939814');
+  assert.equal(typeof session?.q, 'string');
+  assert.match(session.q, /why ai fails inside organizations/);
+  assert.match(session.q, /sponsored/);
 });
 
 test('insights page includes richer intelligence sections', () => {
