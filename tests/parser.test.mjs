@@ -6,6 +6,7 @@ import {
   buildIsoDateTime,
   computeDetailFingerprint,
   dedupeSessionRecords,
+  deriveSponsoredSessionFields,
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
@@ -236,9 +237,9 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
       room: 'Old room',
       remaining_capacity: 42,
       registrant_count: 100,
-      description: 'keep me',
+      description: 'keep me\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
       speakers: [{ name: 'Ada' }],
-      topics: ['ai'],
+      topics: ['ai', 'Partner Innovation'],
     },
     {
       id: '123',
@@ -256,7 +257,35 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
   assert.equal(merged.remaining_capacity, 5);
   assert.equal(merged.registrant_count, 111);
   assert.equal(merged.capacity, 60);
-  assert.equal(merged.description, 'keep me');
+  assert.equal(merged.description, 'keep me\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.');
   assert.deepEqual(merged.speakers, [{ name: 'Ada' }]);
-  assert.deepEqual(merged.topics, ['ai']);
+  assert.deepEqual(merged.topics, ['ai', 'Partner Innovation']);
+  assert.equal(merged.sponsored, true);
+  assert.equal(merged.sponsor_disclosure, true);
+});
+
+test('deriveSponsoredSessionFields flags sponsor disclosure and partner-innovation sessions', () => {
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
+      topics: [],
+    }),
+    { sponsored: true, sponsor_disclosure: true },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'Plain description without the disclosure.',
+      topics: ['Partner Innovation'],
+    }),
+    { sponsored: true, sponsor_disclosure: false },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'Plain description without the disclosure.',
+      topics: ['General'],
+    }),
+    { sponsored: false, sponsor_disclosure: false },
+  );
 });
