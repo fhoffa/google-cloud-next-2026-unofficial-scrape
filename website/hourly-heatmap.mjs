@@ -124,7 +124,7 @@ function renderSnapshot() {
       : sessions;
     const rowMaxReserved = Math.max(1, ...markers.map((session) => session.reg || 0));
     squares.innerHTML = markers
-      .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
+      .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
         const fill = markerFillPct(session, rowMaxReserved);
