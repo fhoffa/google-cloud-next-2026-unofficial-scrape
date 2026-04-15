@@ -80,7 +80,9 @@ function renderSnapshot() {
     const key = row.dataset.key;
     const hour = Number(key.split(':')[1]);
     const sessions = (grouped.get(key) || []).sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
-    const startingSessions = sessions.filter((session) => session.sh === hour);
+    const startingSessions = sessions
+      .filter((session) => session.sh === hour)
+      .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
     const squares = row.querySelector('.squares');
     if (sessions.length <= 1) {
       row.style.display = 'none';
