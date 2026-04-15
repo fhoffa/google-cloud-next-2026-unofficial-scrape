@@ -93,7 +93,7 @@ function renderSnapshot() {
     const topSession = startingSessions[0] || null;
     const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
     row.querySelector('.hour-seats').textContent = `${formatCount(totalReserved)} reserved`;
-    row.querySelector('.top-session').textContent = topSession ? topSession.t : 'No new starts this hour';
+    row.querySelector('.top-session').textContent = topSession ? `${formatCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
 
     const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
