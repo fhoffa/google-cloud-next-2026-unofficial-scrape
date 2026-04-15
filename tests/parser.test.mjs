@@ -262,15 +262,16 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
   assert.deepEqual(merged.topics, ['ai', 'Partner Innovation']);
   assert.equal(merged.sponsored, true);
   assert.equal(merged.sponsor_disclosure, true);
+  assert.equal(merged.partner_innovation, true);
 });
 
-test('deriveSponsoredSessionFields flags sponsor disclosure and partner-innovation sessions', () => {
+test('deriveSponsoredSessionFields flags sponsor disclosure and keeps partner-innovation separate', () => {
   assert.deepEqual(
     deriveSponsoredSessionFields({
       description: 'By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
       topics: [],
     }),
-    { sponsored: true, sponsor_disclosure: true },
+    { sponsored: true, sponsor_disclosure: true, partner_innovation: false },
   );
 
   assert.deepEqual(
@@ -278,7 +279,7 @@ test('deriveSponsoredSessionFields flags sponsor disclosure and partner-innovati
       description: 'Plain description without the disclosure.',
       topics: ['Partner Innovation'],
     }),
-    { sponsored: true, sponsor_disclosure: false },
+    { sponsored: false, sponsor_disclosure: false, partner_innovation: true },
   );
 
   assert.deepEqual(
@@ -286,6 +287,6 @@ test('deriveSponsoredSessionFields flags sponsor disclosure and partner-innovati
       description: 'Plain description without the disclosure.',
       topics: ['General'],
     }),
-    { sponsored: false, sponsor_disclosure: false },
+    { sponsored: false, sponsor_disclosure: false, partner_innovation: false },
   );
 });
