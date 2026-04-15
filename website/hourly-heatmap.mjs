@@ -118,18 +118,19 @@ function renderSnapshot() {
     row.querySelector('.top-session').textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
 
-    const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
-    squares.innerHTML = others
-      .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
+    const markers = topSession
+      ? [topSession, ...sessions.filter((session) => session.id !== topSession.id)]
+      : sessions;
+    squares.innerHTML = markers
       .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
         const fill = markerFillPct(session);
         const width = markerWidth(session);
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of biggest non-mega session`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of biggest non-mega session`}`;
-        return `<button class="sq ${fill == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of max visible demand`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of max visible demand`}`;
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
