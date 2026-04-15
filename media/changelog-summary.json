@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-04-14T15:48:55.289Z",
+    "generatedAt": "2026-04-15T18:40:54.610Z",
     "latest": "sessions/latest.json",
     "snapshotsDir": "sessions/snapshots",
     "template": "templates/changelog.template.html",
@@ -9,22 +9,613 @@
     "mergeNearbyHours": 2,
     "latestLivePair": {
       "current": {
+        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-15T18-40-20Z.json",
+        "fileName": "2026-04-15T18-40-20Z.json",
+        "scrapedAt": "2026-04-15T18:40:20.698Z",
+        "count": 1093
+      },
+      "previous": {
         "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-14T15-48-32Z.json",
         "fileName": "2026-04-14T15-48-32Z.json",
         "scrapedAt": "2026-04-14T15:48:32.890Z",
         "count": 1086
-      },
-      "previous": {
-        "file": "/root/.openclaw/workspace/google-next-refresh-2026/sessions/snapshots/2026-04-13T16-26-56Z.json",
-        "fileName": "2026-04-13T16-26-56Z.json",
-        "scrapedAt": "2026-04-13T16:26:56.679Z",
-        "count": 1078
       }
     },
     "refreshWarnings": []
   },
   "lede": "A changelog that collapses near-duplicate scrape bursts while preserving meaningful gaps between publishes: new sessions, removals, updated listings, and high-level availability movement like fully booked vs reopened.",
   "updates": [
+    {
+      "previous": {
+        "file": "2026-04-14T15-48-32Z.json",
+        "scrapedAt": "2026-04-14T15:48:32.890Z",
+        "count": 1086
+      },
+      "current": {
+        "file": "2026-04-15T18-40-20Z.json",
+        "scrapedAt": "2026-04-15T18:40:20.698Z",
+        "count": 1093
+      },
+      "summary": {
+        "currentAvailabilityKnown": 1093,
+        "currentFull": 162,
+        "currentLimited": 0,
+        "fullSharePhrase": "a small share",
+        "hasReopened": false,
+        "hasMaterialChanges": true,
+        "hasAdditions": true,
+        "hasRemovals": true,
+        "hasReplacements": true,
+        "hasFlappy": true,
+        "hasMoves": true,
+        "hasRenames": true,
+        "hasMetadataChanges": true
+      },
+      "moved": [
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "url": "index.html?sessionids=3912966",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Lagoon F"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "1:45 PM",
+            "end": "2:30 PM",
+            "room": "Breakers A"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Agent identity and certificate management",
+          "url": "index.html?sessionids=3913027",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "3:45 PM",
+            "end": "4:15 PM",
+            "room": "Reef E"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "3:45 PM",
+            "end": "4:15 PM",
+            "room": "Reef A"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Catching the vibe: Build next-gen AI platforms with Firestore",
+          "url": "index.html?sessionids=3912269",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "Breakers A"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "4:00 PM",
+            "end": "4:45 PM",
+            "room": "Surf C"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Cloud Run 101: How to get started",
+          "url": "index.html?sessionids=3912218",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:30 PM",
+            "room": "Reef A"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "5:00 PM",
+            "end": "5:30 PM",
+            "room": "Reef C"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Strategy lab: Aligning your CX goals with agentic capabilities",
+          "url": "index.html?sessionids=3983605",
+          "before": {
+            "date": "Friday, April 24, 2026",
+            "start": "12:30 PM",
+            "end": "1:00 PM",
+            "room": "Reef A"
+          },
+          "after": {
+            "date": "Friday, April 24, 2026",
+            "start": "12:30 PM",
+            "end": "1:00 PM",
+            "room": "Reef E"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "Unify full-stack observability with Firebase Crashlytics on Google Cloud",
+          "url": "index.html?sessionids=3913059",
+          "before": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Lagoon H"
+          },
+          "after": {
+            "date": "Thursday, April 23, 2026",
+            "start": "2:45 PM",
+            "end": "3:30 PM",
+            "room": "Lagoon F"
+          },
+          "changedFields": [
+            "room"
+          ]
+        },
+        {
+          "title": "What's new with Gemini from Google DeepMind",
+          "url": "index.html?sessionids=3912993",
+          "before": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Oceanside B"
+          },
+          "after": {
+            "date": "Wednesday, April 22, 2026",
+            "start": "11:00 AM",
+            "end": "11:45 AM",
+            "room": "Oceanside C"
+          },
+          "changedFields": [
+            "room"
+          ]
+        }
+      ],
+      "renamed": [
+        {
+          "beforeTitle": "Accelerate Robot Learning With NVIDIA Isaac Sim, Isaac Lab, and Newton",
+          "afterTitle": "Assembling Digital Twins for Physical AI: Accelerate Sim-to-Real using NVIDIA Isaac Sim with Cosmos on Google Cloud",
+          "url": "index.html?sessionids=4008108",
+          "changedFields": [
+            "title"
+          ]
+        },
+        {
+          "beforeTitle": "Agent Identity for secure AI innovation",
+          "afterTitle": "Agent identity and certificate management",
+          "url": "index.html?sessionids=3913027",
+          "changedFields": [
+            "title"
+          ]
+        },
+        {
+          "beforeTitle": "AI Agents across Clouds: Bridging Google Cloud AI and Third-Party Contact Centers for Healthcare Outreach",
+          "afterTitle": "AI Agents Across Clouds: Bridging Google Cloud AI and Third-Party Contact Centers for Healthcare Outreach",
+          "url": "index.html?sessionids=3908775",
+          "changedFields": [
+            "title"
+          ]
+        }
+      ],
+      "metadataChanges": [
+        {
+          "title": "AgentOps Cockpit: Architecting Agents at Scale with Governance-as-Code",
+          "url": "index.html?sessionids=3908791",
+          "changedFields": [
+            "speakers"
+          ]
+        }
+      ],
+      "replacements": [
+        {
+          "removedTitle": "Build conversational agents on PostgreSQL and MySQL",
+          "removedUrl": "index.html?sessionids=3920461",
+          "addedTitle": "Chat with your data using Gemini",
+          "addedUrl": "index.html?sessionids=3920538",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Connect ADK agents to any tool with MCP",
+          "removedUrl": "index.html?sessionids=3920384",
+          "addedTitle": "Build rich agent experiences with ADK + A2UI",
+          "addedUrl": "index.html?sessionids=3920503",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Create videos with AI",
+          "removedUrl": "index.html?sessionids=3920380",
+          "addedTitle": "Accelerate work with AI agents",
+          "addedUrl": "index.html?sessionids=3920372",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Customize Gemini CLI with extensions and MCP servers",
+          "removedUrl": "index.html?sessionids=3920474",
+          "addedTitle": "Delegate tasks to subagents in Gemini CLI",
+          "addedUrl": "index.html?sessionids=3920491",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Drive clinical action with AI agents",
+          "removedUrl": "index.html?sessionids=3920548",
+          "addedTitle": "Commercial underwriting made easy with Gemini",
+          "addedUrl": "index.html?sessionids=3920489",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Gemini driven manufacturing intelligence hub",
+          "removedUrl": "index.html?sessionids=3920398",
+          "addedTitle": "Empowering markets: real-time data & client intelligence",
+          "addedUrl": "index.html?sessionids=3920394",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "The Evolution Hub",
+          "removedUrl": "index.html?sessionids=3920471",
+          "addedTitle": "Ask an Expert",
+          "addedUrl": "index.html?sessionids=3920374",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Get creative with Gen Media",
+          "removedUrl": "index.html?sessionids=3920389",
+          "addedTitle": "Tune, evaluate, and scale with Vertex AI",
+          "addedUrl": "index.html?sessionids=3920540",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Automate incident response with generative AI",
+          "removedUrl": "index.html?sessionids=3920539",
+          "addedTitle": "Cloud TPUs and GPUs",
+          "addedUrl": "index.html?sessionids=3920442",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topic"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Secure AI agents with multicloud networks",
+          "removedUrl": "index.html?sessionids=3920388",
+          "addedTitle": "Optimize Google Kubernetes Engine to run AI agents",
+          "addedUrl": "index.html?sessionids=3920530",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "same room",
+            "shared topic"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "ADK & A2A in Action",
+          "removedUrl": "index.html?sessionids=3920404",
+          "addedTitle": "Deploy and scale agents on Agent Engine",
+          "addedUrl": "index.html?sessionids=3920504",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        },
+        {
+          "removedTitle": "Build custom SecOps agents",
+          "removedUrl": "index.html?sessionids=3920465",
+          "addedTitle": "Google Cloud x Team USA",
+          "addedUrl": "index.html?sessionids=3920462",
+          "reasons": [
+            "same day",
+            "same start time",
+            "same end time",
+            "shared topics"
+          ],
+          "sameSessionId": false
+        }
+      ],
+      "added": [
+        {
+          "title": "Adoption hurdles for AI at the workplace",
+          "url": "index.html?sessionids=4103072"
+        },
+        {
+          "title": "BigQuery and Looker Studio patterns",
+          "url": "index.html?sessionids=4101703"
+        },
+        {
+          "title": "Building conversational AI with databases",
+          "url": "index.html?sessionids=4102095"
+        },
+        {
+          "title": "Closing reception",
+          "url": "index.html?sessionids=4039881"
+        },
+        {
+          "title": "Data roles for the genAI era",
+          "url": "index.html?sessionids=4101978"
+        },
+        {
+          "title": "The agent quality flywheel: Using AI to build, evaluate, and improve agents",
+          "url": "index.html?sessionids=4102135"
+        }
+      ],
+      "removed": [
+        {
+          "title": "From AI Pioneer to Industry Leader: The AT&T agentic CX evolution",
+          "url": "index.html?sessionids=3950370"
+        },
+        {
+          "title": "Learn from the experts: How to use Gemini in your applications",
+          "url": "index.html?sessionids=3913056"
+        },
+        {
+          "title": "Securing Agentic AI at scale: What Google and Palo Alto Networks are building together",
+          "url": "index.html?sessionids=3902757"
+        }
+      ],
+      "flappyChanges": [
+        {
+          "title": "3 quick wins across your small team with a unified AI workplace",
+          "url": "index.html?sessionids=3912241",
+          "id": "3912241",
+          "transitions": 2
+        },
+        {
+          "title": "Fast-track apps to the cloud",
+          "url": "index.html?sessionids=3920490",
+          "id": "3920490",
+          "transitions": 4
+        },
+        {
+          "title": "Find and synthesize information",
+          "url": "index.html?sessionids=3920406",
+          "id": "3920406",
+          "transitions": 8
+        },
+        {
+          "title": "Journey to intelligent hospitality: From data foundation to AI transformation",
+          "url": "index.html?sessionids=3897120",
+          "id": "3897120",
+          "transitions": 2
+        },
+        {
+          "title": "Navigating the new frontier: AI-driven security strategies",
+          "url": "index.html?sessionids=3913011",
+          "id": "3913011",
+          "transitions": 4
+        },
+        {
+          "title": "The intelligence layer: Building AI-first customer experience",
+          "url": "index.html?sessionids=3879138",
+          "id": "3879138",
+          "transitions": 6
+        }
+      ],
+      "nowFull": [
+        {
+          "title": "Agent identity and certificate management",
+          "url": "index.html?sessionids=3913027"
+        },
+        {
+          "title": "AI Agents Across Clouds: Bridging Google Cloud AI and Third-Party Contact Centers for Healthcare Outreach",
+          "url": "index.html?sessionids=3908775"
+        },
+        {
+          "title": "Ask me anything: A conversation with the Cloud Run team",
+          "url": "index.html?sessionids=3912211"
+        },
+        {
+          "title": "From weeks to minutes: Build a secure dev sandbox on Google Cloud Platform withGemini Code Assist",
+          "url": "index.html?sessionids=3908800"
+        },
+        {
+          "title": "Simplify AI identity, governance and administration with agentic cross-cloud network",
+          "url": "index.html?sessionids=3913099"
+        }
+      ],
+      "reopened": [],
+      "nowLimited": [],
+      "materialChanges": [
+        {
+          "title": "Accelerate your most demanding AI workloads with Managed Lustre",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912966"
+        },
+        {
+          "title": "Agent identity and certificate management",
+          "changedFields": [
+            "title",
+            "room"
+          ],
+          "url": "index.html?sessionids=3913027"
+        },
+        {
+          "title": "AI Agents Across Clouds: Bridging Google Cloud AI and Third-Party Contact Centers for Healthcare Outreach",
+          "changedFields": [
+            "title"
+          ],
+          "url": "index.html?sessionids=3908775"
+        },
+        {
+          "title": "Assembling Digital Twins for Physical AI: Accelerate Sim-to-Real using NVIDIA Isaac Sim with Cosmos on Google Cloud",
+          "changedFields": [
+            "title"
+          ],
+          "url": "index.html?sessionids=4008108"
+        },
+        {
+          "title": "Catching the vibe: Build next-gen AI platforms with Firestore",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912269"
+        },
+        {
+          "title": "Cloud Run 101: How to get started",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912218"
+        },
+        {
+          "title": "Strategy lab: Aligning your CX goals with agentic capabilities",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3983605"
+        },
+        {
+          "title": "Unify full-stack observability with Firebase Crashlytics on Google Cloud",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3913059"
+        },
+        {
+          "title": "What's new with Gemini from Google DeepMind",
+          "changedFields": [
+            "room"
+          ],
+          "url": "index.html?sessionids=3912993"
+        }
+      ],
+      "minorChanges": [
+        {
+          "title": "AgentOps Cockpit: Architecting Agents at Scale with Governance-as-Code",
+          "changedFields": [
+            "speakers"
+          ],
+          "url": "index.html?sessionids=3908791"
+        },
+        {
+          "title": "Build resilient AI: Maximize TPU performance and scale with GKE workloads",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912931"
+        },
+        {
+          "title": "Empowering women tech-makers: Build a cloud-powered future",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912930"
+        },
+        {
+          "title": "Mission Talk: Genimi-Powered MeF: Accelerating State Tax Compliance",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=4037805"
+        },
+        {
+          "title": "SAP and BigQuery: Instant insights with zero-copy data access",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912253"
+        },
+        {
+          "title": "Scaling Claude: Inside Anthropic's TPU strategy and architecture",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3913022"
+        },
+        {
+          "title": "The industry advantage: turning vertical expertise into your competitive edge",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3908796"
+        },
+        {
+          "title": "What's new in network security",
+          "changedFields": [
+            "url"
+          ],
+          "url": "index.html?sessionids=3912970"
+        }
+      ]
+    },
     {
       "previous": {
         "file": "2026-04-13T16-26-56Z.json",
@@ -44,7 +635,7 @@
         "hasReopened": false,
         "hasMaterialChanges": true,
         "hasAdditions": false,
-        "hasRemovals": true,
+        "hasRemovals": false,
         "hasReplacements": true,
         "hasFlappy": true,
         "hasMoves": true,
@@ -510,16 +1101,7 @@
         }
       ],
       "added": [],
-      "removed": [
-        {
-          "title": "Journey to intelligent hospitality: From data foundation to AI transformation",
-          "url": "index.html?sessionids=3897120"
-        },
-        {
-          "title": "Maximize profitability with Gemini Enterprise & Workspace incentives",
-          "url": "index.html?sessionids=3909220"
-        }
-      ],
+      "removed": [],
       "flappyChanges": [
         {
           "title": "Agent security at scale: Protect against the OWASP Top 10 application risks",
@@ -579,6 +1161,18 @@
           "title": "Supercharging unstructured data analytics with generative AI in BigQuery",
           "url": "index.html?sessionids=3912297",
           "id": "3912297",
+          "transitions": 2
+        },
+        {
+          "title": "Journey to intelligent hospitality: From data foundation to AI transformation",
+          "url": "index.html?sessionids=3897120",
+          "id": "3897120",
+          "transitions": 2
+        },
+        {
+          "title": "Maximize profitability with Gemini Enterprise & Workspace incentives",
+          "url": "index.html?sessionids=3909220",
+          "id": "3909220",
           "transitions": 2
         }
       ],
@@ -1382,13 +1976,13 @@
           "title": "Fast-track apps to the cloud",
           "url": "index.html?sessionids=3920490",
           "id": "3920490",
-          "transitions": 3
+          "transitions": 4
         },
         {
           "title": "Generative media for marketing & advertising",
           "url": "index.html?sessionids=3920418",
           "id": "3920418",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Multimodal startups: Building AI that sees, speaks, and creates",
@@ -1573,7 +2167,7 @@
         "hasReopened": false,
         "hasMaterialChanges": true,
         "hasAdditions": false,
-        "hasRemovals": true,
+        "hasRemovals": false,
         "hasReplacements": true,
         "hasFlappy": true,
         "hasMoves": true,
@@ -2156,24 +2750,19 @@
         }
       ],
       "added": [],
-      "removed": [
-        {
-          "title": "Google MCP Services: Connect AI agents to cloud infrastructure in minutes",
-          "url": "index.html?sessionids=3912288"
-        }
-      ],
+      "removed": [],
       "flappyChanges": [
         {
           "title": "Fast-track apps to the cloud",
           "url": "index.html?sessionids=3920490",
           "id": "3920490",
-          "transitions": 3
+          "transitions": 4
         },
         {
           "title": "Google Cloud x FairPrice Group",
           "url": "index.html?sessionids=3920492",
           "id": "3920492",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Google Cloud x Mars",
@@ -2197,6 +2786,12 @@
           "title": "Get real: Agents in the autonomous era [DEVKEY-MOB]",
           "url": "index.html?sessionids=4044782",
           "id": "4044782",
+          "transitions": 2
+        },
+        {
+          "title": "Google MCP Services: Connect AI agents to cloud infrastructure in minutes",
+          "url": "index.html?sessionids=3912288",
+          "id": "3912288",
           "transitions": 2
         }
       ],
@@ -2764,7 +3359,7 @@
           "title": "Intelligent cloud management: Cross-domain insights from infrastructure to apps",
           "url": "index.html?sessionids=3930400",
           "id": "3930400",
-          "transitions": 2
+          "transitions": 3
         },
         {
           "title": "Secure AI-first work",
@@ -2782,7 +3377,7 @@
           "title": "Taming the black box: A whiteboard session on real-world optimization",
           "url": "index.html?sessionids=3908808",
           "id": "3908808",
-          "transitions": 3
+          "transitions": 4
         },
         {
           "title": "The Agent Factory: The fastest path to production-ready agents",
@@ -3883,10 +4478,6 @@
           "url": "index.html?sessionids=3991537"
         },
         {
-          "title": "Build rich agent experiences with ADK + A2UI",
-          "url": "index.html?sessionids=3920503"
-        },
-        {
           "title": "Deep dive into spec-driven development",
           "url": "index.html?sessionids=3912222"
         }
@@ -3896,7 +4487,7 @@
           "title": "ADK & A2A in Action",
           "url": "index.html?sessionids=3920404",
           "id": "3920404",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "AI at the edge",
@@ -3914,7 +4505,7 @@
           "title": "Automate incident response with generative AI",
           "url": "index.html?sessionids=3920539",
           "id": "3920539",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Avery Dennison scales AI for product development and research excellence",
@@ -3944,7 +4535,7 @@
           "title": "Build dynamic apps with Generative UI",
           "url": "index.html?sessionids=3920401",
           "id": "3920401",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Building secure agents: protecting access and data",
@@ -3956,13 +4547,13 @@
           "title": "Chat with your data using Gemini",
           "url": "index.html?sessionids=3920538",
           "id": "3920538",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Cloud TPUs and GPUs",
           "url": "index.html?sessionids=3920442",
           "id": "3920442",
-          "transitions": 6
+          "transitions": 7
         }
       ],
       "nowFull": [
@@ -4967,7 +5558,7 @@
           "title": "Find and synthesize information",
           "url": "index.html?sessionids=3920406",
           "id": "3920406",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "GenLatte",
@@ -4979,13 +5570,13 @@
           "title": "Get creative with Gen Media",
           "url": "index.html?sessionids=3920389",
           "id": "3920389",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Keep data secure and sovereign",
           "url": "index.html?sessionids=3920519",
           "id": "3920519",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Learn on-the-go with AI",
@@ -5604,7 +6195,7 @@
           "title": "ADK & A2A in Action",
           "url": "index.html?sessionids=3920404",
           "id": "3920404",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "AI Science Explorer",
@@ -5634,7 +6225,7 @@
           "title": "Generative media for marketing & advertising",
           "url": "index.html?sessionids=3920418",
           "id": "3920418",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Get real: Agents in the autonomous era [ASL]",
@@ -6181,7 +6772,7 @@
           "title": "Build dynamic apps with Generative UI",
           "url": "index.html?sessionids=3920401",
           "id": "3920401",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Empower AI agents with Google MCP servers",
@@ -6199,19 +6790,19 @@
           "title": "Find and synthesize information",
           "url": "index.html?sessionids=3920406",
           "id": "3920406",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Google Cloud x FairPrice Group",
           "url": "index.html?sessionids=3920492",
           "id": "3920492",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Mastering adaptive intelligence - the other AI",
@@ -6235,13 +6826,13 @@
           "title": "Secure AI agents with multicloud networks",
           "url": "index.html?sessionids=3920388",
           "id": "3920388",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Understand your codebase instantly with Code Wiki",
           "url": "index.html?sessionids=3920428",
           "id": "3920428",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Zero to scale: Rapid development with Google Cloud & MCP Toolbox for database",
@@ -6628,7 +7219,7 @@
           "title": "Get creative with Gen Media",
           "url": "index.html?sessionids=3920389",
           "id": "3920389",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Leveraging Gemini Enterprise for Customer Experience in retail",
@@ -6942,7 +7533,7 @@
           "title": "Automate incident response with generative AI",
           "url": "index.html?sessionids=3920539",
           "id": "3920539",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Gemini in regulated sectors: Accelerate human impact with secure AI",
@@ -6990,19 +7581,19 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Tune, evaluate, and scale with Vertex AI",
           "url": "index.html?sessionids=3920540",
           "id": "3920540",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
           "url": "index.html?sessionids=3911933",
           "id": "3911933",
-          "transitions": 3
+          "transitions": 4
         }
       ],
       "nowFull": [
@@ -7554,7 +8145,7 @@
           "title": "Chat with your data using Gemini",
           "url": "index.html?sessionids=3920538",
           "id": "3920538",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Explore the Gemini CLI extensions ecosystem",
@@ -7578,7 +8169,7 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "Sentient Screen: Iterative video with Gemini & Veo",
@@ -7590,7 +8181,7 @@
           "title": "Tune, evaluate, and scale with Vertex AI",
           "url": "index.html?sessionids=3920540",
           "id": "3920540",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Zero-copy sharing with SAP, Salesforce, and ServiceNow",
@@ -7602,7 +8193,7 @@
           "title": "ADK & A2A in Action",
           "url": "index.html?sessionids=3920404",
           "id": "3920404",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Analyze data and make an informed decision",
@@ -7614,7 +8205,7 @@
           "title": "Automate incident response with generative AI",
           "url": "index.html?sessionids=3920539",
           "id": "3920539",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Gemini Enterprise for Customer Experience in financial services",
@@ -8822,7 +9413,7 @@
           "title": "Align stakeholders on a path forward",
           "url": "index.html?sessionids=3920447",
           "id": "3920447",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Analyze data and make an informed decision",
@@ -8834,7 +9425,7 @@
           "title": "Automate incident response with generative AI",
           "url": "index.html?sessionids=3920539",
           "id": "3920539",
-          "transitions": 5
+          "transitions": 6
         },
         {
           "title": "Building AI agents at scale with CVS",
@@ -8870,7 +9461,7 @@
           "title": "Google Cloud x FairPrice Group",
           "url": "index.html?sessionids=3920492",
           "id": "3920492",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Google custom silicon",
@@ -9697,7 +10288,7 @@
           "title": "ADK & A2A in Action",
           "url": "index.html?sessionids=3920404",
           "id": "3920404",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "Beyond the basics in Gemini CLI",
@@ -9745,7 +10336,7 @@
           "title": "Find and synthesize information",
           "url": "index.html?sessionids=3920406",
           "id": "3920406",
-          "transitions": 7
+          "transitions": 8
         },
         {
           "title": "Gemini Enterprise for Customer Experience: Redefining CSP cost structures",
@@ -10570,7 +11161,7 @@
           "title": "Align stakeholders on a path forward",
           "url": "index.html?sessionids=3920447",
           "id": "3920447",
-          "transitions": 6
+          "transitions": 7
         },
         {
           "title": "An inside look at the evolution of agent development",
@@ -10618,7 +11209,7 @@
           "title": "Google Cloud x Team USA",
           "url": "index.html?sessionids=3920462",
           "id": "3920462",
-          "transitions": 8
+          "transitions": 9
         },
         {
           "title": "How Google Cloud and Cyderes Deliver AI-Powered & Context-Driven Security Operations",
