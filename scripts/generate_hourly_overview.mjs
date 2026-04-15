@@ -102,6 +102,12 @@ function buildOverview(snapshots) {
       const title = String(session?.title || '').trim();
       const url = String(session?.url || '').trim();
       const room = String(session?.room || '').trim();
+      const speakers = Array.isArray(session?.speakers)
+        ? session.speakers.map((speaker) => ({
+            n: String(speaker?.name || '').trim(),
+            c: String(speaker?.company || '').trim(),
+          })).filter((speaker) => speaker.n)
+        : [];
       const dayIndex = DAY_ORDER.indexOf(day);
       compactSessions.push({
         id,
@@ -116,6 +122,7 @@ function buildOverview(snapshots) {
         rem: remaining,
         cap: capacity,
         r: room,
+        sp: speakers,
       });
       if (!sessionIndex.has(id)) sessionIndex.set(id, { id, title, url });
       for (let hour = startHour; hour < endHour; hour += 1) {

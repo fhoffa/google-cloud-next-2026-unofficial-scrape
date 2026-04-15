@@ -37,6 +37,11 @@ function formatCompactCount(value) {
   if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '')}k`;
   return String(n);
 }
+function formatSpeakers(session) {
+  const speakers = Array.isArray(session?.sp) ? session.sp.filter((speaker) => speaker?.n) : [];
+  if (!speakers.length) return '';
+  return speakers.map((speaker) => speaker.c ? `${speaker.n} (${speaker.c})` : speaker.n).join(', ');
+}
 function isMegaSession(session) {
   return (session?.reg ?? 0) >= MEGA_SESSION_REGISTRANTS;
 }
@@ -147,9 +152,10 @@ function renderSnapshot() {
         const pct = fillPct(session);
         const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
+        const speakers = formatSpeakers(session);
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full`
-          : `${session.t} · ${formatCount(session.reg)} reserved`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}`
+          : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
