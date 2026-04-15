@@ -1,4 +1,5 @@
 const DATA_URL = './media/hourly-overview.json';
+const MEGA_SESSION_REGISTRANTS = 1000;
 const state = { data: null, snapshotIndex: 0, timer: null };
 const els = {};
 
@@ -28,6 +29,9 @@ function availabilityBand(session) {
 }
 function formatCount(value) {
   return value == null ? '—' : Number(value).toLocaleString();
+}
+function isMegaSession(session) {
+  return (session?.reg ?? 0) >= MEGA_SESSION_REGISTRANTS;
 }
 
 function buildShell() {
@@ -61,6 +65,7 @@ function renderSnapshot() {
 
   const grouped = new Map();
   for (const session of snapshot.sessions) {
+    if (isMegaSession(session)) continue;
     for (let hour = session.sh; hour < session.eh; hour += 1) {
       const key = `${session.d}:${hour}`;
       if (!grouped.has(key)) grouped.set(key, []);
@@ -72,15 +77,21 @@ function renderSnapshot() {
 
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
-    const hourInfo = snapshot.hours[key];
-    const sessions = grouped.get(key) || [];
+    const sessions = (grouped.get(key) || []).sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
     const squares = row.querySelector('.squares');
-    row.querySelector('.hour-seats').textContent = `${formatCount(hourInfo?.totalReserved)} reserved`;
-    const topSession = hourInfo?.topSession;
-    row.querySelector('.top-session').textContent = topSession ? topSession.title : 'No scheduled sessions';
+    if (sessions.length <= 1) {
+      row.style.display = 'none';
+      squares.innerHTML = '';
+      return;
+    }
+    row.style.display = 'grid';
+    const topSession = sessions[0] || null;
+    const totalReserved = sessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
+    row.querySelector('.hour-seats').textContent = `${formatCount(totalReserved)} reserved`;
+    row.querySelector('.top-session').textContent = topSession ? topSession.t : 'No scheduled sessions';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
 
-    const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
+    const others = topSession ? sessions.slice(1) : sessions;
     squares.innerHTML = others
       .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
@@ -96,7 +107,7 @@ function renderSnapshot() {
     });
 
     if (topSession && (topSession.reg ?? 0) >= 400) {
-      movementNotes.push(topSession.title);
+      movementNotes.push(topSession.t);
     }
   });
 
