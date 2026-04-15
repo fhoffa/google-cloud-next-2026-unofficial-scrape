@@ -12,6 +12,10 @@ const state = {
 
 const els = {};
 
+function speakerKey(speaker) {
+  return `${speaker?.n || ''}__${speaker?.c || ''}`;
+}
+
 function byId(id) {
   return document.getElementById(id);
 }
@@ -96,6 +100,26 @@ function diffSummary(prev, next) {
   return changes.length ? changes : ['No visible change from prior appearance'];
 }
 
+function compareSpeakers(prev = [], next = []) {
+  const prevMap = new Map(prev.map((speaker) => [speakerKey(speaker), speaker]));
+  const nextMap = new Map(next.map((speaker) => [speakerKey(speaker), speaker]));
+  const added = [];
+  const unchanged = [];
+  const removed = [];
+  for (const [key, speaker] of nextMap) {
+    if (prevMap.has(key)) unchanged.push(speaker);
+    else added.push(speaker);
+  }
+  for (const [key, speaker] of prevMap) {
+    if (!nextMap.has(key)) removed.push(speaker);
+  }
+  return { added, unchanged, removed };
+}
+
+function renderSpeakerChip(speaker, cls, tag) {
+  return `<span class="speaker-chip ${cls}"><strong>${esc(speaker.n || 'Unknown')}</strong>${speaker.c ? `<small>${esc(speaker.c)}</small>` : ''}${tag ? `<span class="delta-tag">${esc(tag)}</span>` : ''}</span>`;
+}
+
 function renderList() {
   const items = state.filtered.slice(0, 200);
   els.resultsCount.textContent = `${state.filtered.length.toLocaleString()} sessions`;
@@ -145,9 +169,18 @@ function renderViewer() {
   const prev = previousEntry(session);
   const changes = diffSummary(prev, entry);
   const pct = fillPct(entry);
+  const prevPct = fillPct(prev);
+  const titleChanged = Boolean(prev && entry && prev.t !== entry.t);
+  const fullnessChanged = Boolean(prev && entry && `${prev.reg}|${prev.rem}|${prev.cap}` !== `${entry.reg}|${entry.rem}|${entry.cap}`);
+  const scheduleChanged = Boolean(prev && entry && `${prev.d}|${prev.s}|${prev.e}|${prev.r}` !== `${entry.d}|${entry.s}|${entry.e}|${entry.r}`);
+  const speakerDelta = compareSpeakers(prev?.sp || [], entry?.sp || []);
   const titleMoments = session.uniqueTitles.map((item) => `<li><strong>${esc(state.data.snapshots[item.snapshotIndex]?.label || '')}</strong><span>${esc(item.title)}</span></li>`).join('');
   const speakers = entry?.sp?.length
-    ? entry.sp.map((speaker) => `<span class="speaker-chip"><strong>${esc(speaker.n || 'Unknown')}</strong>${speaker.c ? `<small>${esc(speaker.c)}</small>` : ''}</span>`).join('')
+    ? [
+      ...speakerDelta.added.map((speaker) => renderSpeakerChip(speaker, 'added', 'added')),
+      ...speakerDelta.unchanged.map((speaker) => renderSpeakerChip(speaker, 'unchanged', 'kept')),
+      ...speakerDelta.removed.map((speaker) => renderSpeakerChip(speaker, 'removed', 'removed')),
+    ].join('')
     : '<span class="muted">No speakers listed</span>';
   const stats = [
     ['Title changes', session.titleChangeCount],
@@ -167,17 +200,30 @@ function renderViewer() {
       <div class="snapshot-badge">${esc(snapshot.label)}</div>
     </div>
     <div class="stats-grid">${stats}</div>
+    <div class="delta-grid">
+      <section class="delta-col previous">
+        <div class="card-label">Previous visible snapshot</div>
+        <div class="delta-title">${esc(prev?.t || 'No previous tracked state')}</div>
+        <div class="delta-meta">${prev ? `${esc(prev.d || 'Date TBD')} · ${esc([prev.s, prev.e].filter(Boolean).join(' – ') || 'Time TBD')}${prev.r ? ` · ${esc(prev.r)}` : ''}` : 'This is the first appearance in tracked history.'}</div>
+      </section>
+      <div class="delta-arrow">→</div>
+      <section class="delta-col current ${changes[0] === 'No visible change from prior appearance' ? '' : 'changed flash-in'}">
+        <div class="card-label">Current snapshot</div>
+        <div class="delta-title">${esc(entry?.t || session.latestTitle)}</div>
+        <div class="delta-meta">${entry ? `${esc(entry.d || 'Date TBD')} · ${esc([entry.s, entry.e].filter(Boolean).join(' – ') || 'Time TBD')}${entry.r ? ` · ${esc(entry.r)}` : ''}` : 'Not listed in this snapshot.'}</div>
+      </section>
+    </div>
     <div class="viewer-grid">
       <section class="card primary-card ${entry ? '' : 'missing-card'}">
         <div class="card-label">Current snapshot state</div>
         ${entry ? `
-          <div class="meta-row">${esc(entry.d || 'Date TBD')} · ${esc([entry.s, entry.e].filter(Boolean).join(' – ') || 'Time TBD')}${entry.r ? ` · ${esc(entry.r)}` : ''}</div>
-          <div class="fill-wrap">
+          <div class="meta-row ${scheduleChanged ? 'flash-in' : ''}">${esc(entry.d || 'Date TBD')} · ${esc([entry.s, entry.e].filter(Boolean).join(' – ') || 'Time TBD')}${entry.r ? ` · ${esc(entry.r)}` : ''}</div>
+          <div class="fill-wrap ${fullnessChanged ? 'flash-in' : ''}">
             <div class="fill-header"><span>Seat fullness</span><strong>${pct == null ? 'Unknown' : `${pct.toFixed(1)}%`}</strong></div>
-            <div class="fill-track"><div class="fill-bar ${availabilityBand(entry)}" style="width:${pct == null ? 0 : pct}%"></div></div>
-            <div class="fill-meta">${formatCount(entry.reg)} registered · ${formatCount(entry.rem)} seats left · capacity ${formatCount(entry.cap)}</div>
+            <div class="fill-track"><div class="fill-bar-prev" style="width:${prevPct == null ? 0 : prevPct}%"></div><div class="fill-bar ${availabilityBand(entry)}" style="width:${pct == null ? 0 : pct}%"></div></div>
+            <div class="fill-meta">${formatCount(entry.reg)} registered · ${formatCount(entry.rem)} seats left · capacity ${formatCount(entry.cap)}${prev && fullnessChanged ? ` · was ${formatCount(prev.reg)} / ${formatCount(prev.cap)}` : ''}</div>
           </div>
-          <div class="speaker-list">${speakers}</div>
+          <div class="speaker-list ${speakerDelta.added.length || speakerDelta.removed.length ? 'flash-in' : ''}">${speakers}</div>
         ` : `
           <div class="missing-note">This session was not listed in this snapshot.</div>
         `}
@@ -193,6 +239,11 @@ function renderViewer() {
     </section>
   `;
   els.snapshotLabel.textContent = snapshot.label;
+  if (els.playbackHint) {
+    if (!prev) els.playbackHint.textContent = 'First tracked appearance';
+    else if (changes[0] === 'No visible change from prior appearance') els.playbackHint.textContent = 'This frame is steady';
+    else els.playbackHint.textContent = changes.join(' · ');
+  }
   els.snapshotSlider.max = String(state.data.snapshots.length - 1);
   els.snapshotSlider.value = String(state.snapshotIndex);
   renderFilmstrip(session);
@@ -219,9 +270,23 @@ function applyFilters() {
 function startAutoplay() {
   stopAutoplay();
   state.timer = window.setInterval(() => {
-    state.snapshotIndex = (state.snapshotIndex + 1) % state.data.snapshots.length;
+    const session = currentSession();
+    let nextIndex = (state.snapshotIndex + 1) % state.data.snapshots.length;
+    if (session) {
+      for (let hops = 0; hops < state.data.snapshots.length; hops += 1) {
+        const candidate = (state.snapshotIndex + 1 + hops) % state.data.snapshots.length;
+        const prev = session.timeline[Math.max(0, candidate - 1)] || previousEntry({ timeline: session.timeline.slice(0, candidate + 1) });
+        const next = session.timeline[candidate] || null;
+        const changed = diffSummary(prev, next)[0] !== 'No visible change from prior appearance';
+        if (changed || hops === state.data.snapshots.length - 1) {
+          nextIndex = candidate;
+          break;
+        }
+      }
+    }
+    state.snapshotIndex = nextIndex;
     renderViewer();
-  }, 1200);
+  }, 1500);
   els.playBtn.textContent = 'Pause';
 }
 
@@ -243,6 +308,7 @@ async function init() {
     snapshotLabel: byId('snapshot-label'),
     playBtn: byId('play-btn'),
     filmstrip: byId('filmstrip'),
+    playbackHint: byId('playback-hint'),
   });
 
   const response = await fetch(DATA_URL);

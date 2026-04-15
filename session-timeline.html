@@ -113,7 +113,7 @@
     .viewer-shell { padding: 16px; }
     .viewer-controls {
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: auto 1fr auto auto;
       gap: 12px;
       align-items: center;
       margin-bottom: 14px;
@@ -133,6 +133,11 @@
       color: var(--gray-700);
       min-width: 130px;
       text-align: right;
+    }
+    .playback-hint {
+      font-size: .82rem;
+      color: var(--gray-500);
+      white-space: nowrap;
     }
     #filmstrip {
       display: grid;
@@ -191,9 +196,14 @@
     }
     .session-title { margin: 4px 0 6px; font-size: clamp(1.3rem, 3vw, 2rem); line-height: 1.15; }
     .session-title.animate-in { animation: rise .22s ease; }
+    .flash-in { animation: flashIn .55s ease; }
     @keyframes rise {
       from { opacity: .2; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes flashIn {
+      0% { background: rgba(26,115,232,.16); transform: translateY(4px); }
+      100% { background: transparent; transform: translateY(0); }
     }
     .session-subtitle { color: var(--gray-500); font-size: .9rem; }
     .snapshot-badge {
@@ -223,16 +233,27 @@
     .fill-wrap { margin-top: 14px; }
     .fill-header { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 8px; font-weight: 600; }
     .fill-track {
+      position: relative;
       height: 16px;
       background: #edf1f4;
       border-radius: 999px;
       overflow: hidden;
     }
     .fill-bar {
+      position: relative;
+      z-index: 2;
       height: 100%;
       background: linear-gradient(90deg, #8ab4f8, var(--blue));
-      transition: width .45s ease;
+      transition: width .7s ease;
       border-radius: 999px;
+    }
+    .fill-bar-prev {
+      position: absolute;
+      inset: 0 auto 0 0;
+      z-index: 1;
+      background: rgba(95,99,104,.28);
+      border-radius: 999px;
+      transition: width .7s ease;
     }
     .fill-bar.full { background: linear-gradient(90deg, #f28b82, var(--red)); }
     .fill-bar.limited { background: linear-gradient(90deg, #fde293, var(--orange)); }
@@ -253,8 +274,65 @@
       background: var(--gray-050);
     }
     .speaker-chip small { color: var(--gray-500); }
+    .speaker-chip.added {
+      background: rgba(52,168,83,.10);
+      border-color: rgba(52,168,83,.28);
+      animation: rise .24s ease;
+    }
+    .speaker-chip.removed {
+      background: rgba(234,67,53,.08);
+      border-color: rgba(234,67,53,.18);
+      opacity: .78;
+    }
+    .speaker-chip.unchanged {
+      background: var(--gray-050);
+    }
+    .speaker-chip .delta-tag {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .speaker-chip.added .delta-tag { color: var(--green); }
+    .speaker-chip.removed .delta-tag { color: var(--red); }
     .change-list { margin: 10px 0 0 18px; padding: 0; }
     .change-list li { margin: 0 0 8px; }
+    .delta-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 40px minmax(0,1fr);
+      gap: 12px;
+      align-items: stretch;
+      margin-bottom: 14px;
+    }
+    .delta-col {
+      border: 1px solid var(--gray-200);
+      border-radius: 18px;
+      padding: 14px;
+      background: var(--gray-050);
+    }
+    .delta-col.current.changed {
+      border-color: rgba(26,115,232,.22);
+      box-shadow: 0 0 0 3px rgba(26,115,232,.08);
+    }
+    .delta-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-500);
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .delta-title {
+      margin-top: 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .delta-meta {
+      margin-top: 8px;
+      font-size: .88rem;
+      color: var(--gray-500);
+    }
     .title-history {
       list-style: none;
       margin: 12px 0 0;
@@ -285,12 +363,16 @@
       .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .toolbar { grid-template-columns: 1fr; }
       .snapshot-label { text-align: left; }
+      .viewer-controls { grid-template-columns: 1fr; }
+      .playback-hint { white-space: normal; }
     }
     @media (max-width: 640px) {
       main { padding: 12px; }
       .title-history li { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr; }
       .viewer-controls { grid-template-columns: 1fr; }
+      .delta-grid { grid-template-columns: 1fr; }
+      .delta-arrow { display: none; }
     }
   </style>
 </head>
@@ -329,6 +411,7 @@
           <button id="play-btn" type="button">Play</button>
           <input id="snapshot-slider" type="range" min="0" max="0" value="0">
           <div id="snapshot-label" class="snapshot-label">Loading…</div>
+        <div id="playback-hint" class="playback-hint">Play to animate changes</div>
         </div>
         <div id="filmstrip"></div>
         <div id="viewer" class="viewer empty"><div class="empty-state">Loading session history…</div></div>
