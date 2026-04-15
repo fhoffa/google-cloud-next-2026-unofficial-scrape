@@ -4,9 +4,11 @@ import { collectWordStatItems } from '../lib/word-stats.mjs';
 
 const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
+const CHANGELOG_SUMMARY_URL = 'media/changelog-summary.json';
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
+const MAX_NEW_PRIORITY = 9;
 function sessionKey(session) {
   const explicitId = String(session?.id || '').trim();
   const explicitMatch = explicitId.match(/\/session\/(\d+)(?:\/|$)/) || explicitId.match(/^(\d+)$/);
@@ -114,6 +116,7 @@ function renderFilterPills(filters) {
   if (filters.theme) pills.push({ key: 'theme', label: `theme: ${filters.theme}` });
   if (filters.audience) pills.push({ key: 'audience', label: `audience: ${filters.audience}` });
   if (filters.availability) pills.push({ key: 'availability', label: `availability: ${filters.availability}` });
+  if (filters.sponsored) pills.push({ key: 'sponsored', label: `sponsored: ${filters.sponsored}` });
   return pills.map((pill) => `<button class="filter-pill" type="button" data-clear-filter="${pill.key}">${escHtml(pill.label)} ×</button>`).join('');
 }
 
@@ -156,6 +159,7 @@ export function readFiltersFromSearch(search) {
     theme: params.get('theme') || '',
     audience: params.get('audience') || '',
     availability: params.get('availability') || '',
+    sponsored: params.get('sponsored') || '',
     view: VALID_VIEWS.has(params.get('view')) ? params.get('view') : (params.get('view') === 'favorites' ? 'favorites' : DEFAULT_VIEW),
   };
 }
@@ -175,6 +179,7 @@ export function buildSearchFromFilters(filters) {
   if (filters.theme) params.set('theme', filters.theme);
   if (filters.audience) params.set('audience', filters.audience);
   if (filters.availability) params.set('availability', filters.availability);
+  if (filters.sponsored) params.set('sponsored', filters.sponsored);
   if (filters.view && filters.view !== DEFAULT_VIEW) params.set('view', filters.view);
   if (filters.sessionids) params.set('sessionids', filters.sessionids);
   const query = params.toString();
@@ -191,6 +196,7 @@ export function filterSessions(sessions, filters) {
   const theme = String(filters.theme || '').trim();
   const audience = String(filters.audience || '').trim();
   const availability = String(filters.availability || '').trim();
+  const sponsored = String(filters.sponsored || '').trim();
   const topic = filters.topic;
   const day = filters.day;
   const startAfter = filters.start_after || '';
@@ -215,6 +221,8 @@ export function filterSessions(sessions, filters) {
     const band = availabilityBand(session);
     if (availability === 'full' && band !== 'full') return false;
     if (availability === 'not-full' && band !== 'not-full') return false;
+    if (sponsored === 'yes' && !session.sponsored) return false;
+    if (sponsored === 'no' && session.sponsored) return false;
     if (speaker) {
       const foundSpeaker = (session.speakers || []).some((item) => {
         const name = (item.name || '').toLowerCase();
@@ -234,13 +242,19 @@ export function filterSessions(sessions, filters) {
   });
 }
 
-export function sortSessions(sessions, sort) {
+export function sortSessions(sessions, sort, { prioritizedNewSessionIds = new Set(), prioritizeNew = false } = {}) {
   const items = [...sessions];
   if (sort === 'title') {
     items.sort((a, b) => a.title.localeCompare(b.title));
     return items;
   }
   items.sort((a, b) => {
+    if (prioritizeNew) {
+      const leftNew = prioritizedNewSessionIds.has(sessionKey(a));
+      const rightNew = prioritizedNewSessionIds.has(sessionKey(b));
+      if (leftNew && !rightNew) return -1;
+      if (!leftNew && rightNew) return 1;
+    }
     const left = a.start_at || a.date_text || '';
     const right = b.start_at || b.date_text || '';
     const leftMissing = left === '';
@@ -250,6 +264,73 @@ export function sortSessions(sessions, sort) {
     return left.localeCompare(right);
   });
   return items;
+}
+
+function addedItemIds(item) {
+  const ids = [];
+  const explicit = String(item?.id || '').trim();
+  if (explicit) return [explicit];
+  const url = String(item?.url || '').trim();
+  if (!url) return ids;
+  try {
+    const parsed = new URL(url, 'https://example.com');
+    const sessionIds = parsed.searchParams.get('sessionids');
+    if (sessionIds) {
+      for (const value of sessionIds.split(',')) {
+        const clean = String(value).trim();
+        if (clean) ids.push(clean);
+      }
+      return ids;
+    }
+  } catch {}
+  const fallback = sessionKey({ id: '', url });
+  if (fallback) ids.push(fallback);
+  return ids;
+}
+
+function latestNewSessionIds(changelogSummary) {
+  const ids = new Set();
+  for (const update of changelogSummary?.updates || []) {
+    for (const item of update?.added || []) {
+      for (const id of addedItemIds(item)) {
+        ids.add(id);
+        if (ids.size >= MAX_NEW_PRIORITY) return ids;
+      }
+    }
+  }
+  return ids;
+}
+
+function shouldPrioritizeNew(filters, timeBounds) {
+  return !filters.q
+    && !filters.exclude
+    && !filters.speaker
+    && !filters.topic
+    && !filters.day
+    && !filters.company
+    && !filters.ai_focus
+    && !filters.theme
+    && !filters.audience
+    && !filters.availability
+    && !filters.sponsored
+    && !filters.sessionids
+    && filters.view === DEFAULT_VIEW
+    && filters.sort === DEFAULT_SORT
+    && !filters.start_after
+    && !filters.start_before;
+}
+
+function prioritizedNewSessions(sessions, newSessionIds) {
+  const candidates = sessions
+    .filter((session) => newSessionIds.has(sessionKey(session)))
+    .sort((a, b) => {
+      const left = a.start_at || a.date_text || '';
+      const right = b.start_at || b.date_text || '';
+      return left.localeCompare(right);
+    });
+  const available = candidates.filter((session) => availabilityBand(session) === 'not-full');
+  const fallback = candidates.filter((session) => availabilityBand(session) !== 'not-full');
+  return [...available, ...fallback].slice(0, MAX_NEW_PRIORITY);
 }
 
 function escHtml(value) {
@@ -347,7 +428,7 @@ function renderSeatFill(session) {
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
 }
 
-function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set()) {
+function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), prioritizedNewSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
     const isFavorite = favoriteIds.has(sessionId);
@@ -363,7 +444,8 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
     const topics = (session.topics || []).slice(0, 5).map((topic) => `<button class="topic-tag topic-link" type="button" data-topic-name="${escHtml(topic)}">${escHtml(topic)}</button>`).join('');
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
-    const statusBadge = availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : '';
+    const isNew = prioritizedNewSessionIds.has(sessionId);
+    const statusBadge = `${isNew ? '<span class="status-badge new">*new</span>' : ''}${session.sponsored ? '<span class="status-badge sponsored">Sponsored</span>' : ''}${availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : ''}`;
     return `<div class="card" id="session-${escHtml(sessionId)}" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>
@@ -432,12 +514,13 @@ function populateTopicFilter(topicSelect, sessions) {
   topicSelect.appendChild(optgroup);
 }
 
-export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', relatedSessionsUrl = '', storage = globalThis.localStorage } = {}) {
+export async function initSessionSearch({ document = globalThis.document, fetchImpl = globalThis.fetch, location = globalThis.location, history = globalThis.history, setTimeoutImpl = globalThis.setTimeout, clearTimeoutImpl = globalThis.clearTimeout, dataUrl = 'sessions/latest.json', availabilityUrl = 'media/session-availability.json', relatedSessionsUrl = '', changelogSummaryUrl = CHANGELOG_SUMMARY_URL, storage = globalThis.localStorage } = {}) {
   const app = document.getElementById('app');
   const qInput = document.getElementById('q');
   const speakerInput = document.getElementById('speaker');
   const topicSelect = document.getElementById('topic-filter');
   const availabilitySelect = document.getElementById('availability-filter');
+  const sponsoredSelect = document.getElementById('sponsored-filter');
   const activeFilters = document.getElementById('active-filters');
   const timeRangeStart = document.getElementById('time-range-start');
   const timeRangeEnd = document.getElementById('time-range-end');
@@ -471,6 +554,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   speakerInput.value = state.speaker;
   sortSelect.value = state.sort;
   if (availabilitySelect) availabilitySelect.value = state.availability || '';
+  if (sponsoredSelect) sponsoredSelect.value = state.sponsored || '';
   if (startAfterInput) startAfterInput.value = state.start_after;
   if (startBeforeInput) startBeforeInput.value = state.start_before;
   if (timeRangeStart) timeRangeStart.value = String(timeTextToIndex(state.start_after, 0));
@@ -486,6 +570,8 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   let selectedSessionIds = new Set(state.view === 'favorites' ? [] : incomingSessionIds);
   let timeBounds = { min: MIN_TIME_INDEX, max: MAX_TIME_INDEX };
   let relatedLookup = {};
+  let newSessionIds = new Set();
+  let prioritizedNewSessionIds = new Set();
 
   function currentFilters() {
     return {
@@ -504,6 +590,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       theme: classificationFilters.theme,
       audience: classificationFilters.audience,
       availability: availabilitySelect?.value || '',
+      sponsored: sponsoredSelect?.value || '',
     };
   }
 
@@ -532,13 +619,16 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   function render() {
     const filters = currentFilters();
-    const filtered = sortSessions(filterSessions(sessions, filters), filters.sort);
+    const prioritizeNew = shouldPrioritizeNew(filters, timeBounds);
+    const filteredSource = filterSessions(sessions, filters);
+    prioritizedNewSessionIds = prioritizeNew ? new Set(prioritizedNewSessions(filteredSource, newSessionIds).map((session) => sessionKey(session))) : new Set();
+    const filtered = sortSessions(filteredSource, filters.sort, { prioritizedNewSessionIds, prioritizeNew });
     syncInputClearButtons();
     if (activeFilters) activeFilters.innerHTML = renderFilterPills(filters);
     syncUrl();
     if (activeView === 'sessions' || filters.view === 'favorites') {
       resultCount.textContent = `${filtered.length.toLocaleString()} of ${sessions.length.toLocaleString()} sessions`;
-      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
+      app.innerHTML = `${renderTabs(activeView)}${filtered.length ? `<div class="grid">${renderCards(filtered, filters.q.toLowerCase(), favoriteIds, expandedIds, relatedLookup, visibleRelatedIds, selectedSessionIds, prioritizedNewSessionIds)}</div>` : `<div class="no-results"><p>No sessions match your filters.</p></div>`}`;
     } else if (activeView === 'speakers') {
       const stats = speakerStats(filtered);
       resultCount.textContent = `${stats.length.toLocaleString()} speakers with multiple sessions`;
@@ -671,6 +761,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
         topicSelect.value = '';
         sortSelect.value = DEFAULT_SORT;
         if (availabilitySelect) availabilitySelect.value = '';
+        if (sponsoredSelect) sponsoredSelect.value = '';
         if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
         if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
         if (startAfterInput) startAfterInput.value = '';
@@ -690,14 +781,16 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
   }
 
   try {
-    const [response, availabilityResponse, relatedSessionsResponse] = await Promise.all([
+    const [response, availabilityResponse, relatedSessionsResponse, changelogSummaryResponse] = await Promise.all([
       fetchImpl(dataUrl),
       availabilityUrl ? fetchImpl(availabilityUrl).catch(() => null) : Promise.resolve(null),
       relatedSessionsUrl ? fetchImpl(relatedSessionsUrl).catch(() => null) : Promise.resolve(null),
+      changelogSummaryUrl ? fetchImpl(changelogSummaryUrl).catch(() => null) : Promise.resolve(null),
     ]);
     const data = await response.json();
     const availabilityData = availabilityResponse ? await availabilityResponse.json().catch(() => null) : null;
     const relatedSessionsData = relatedSessionsResponse ? await relatedSessionsResponse.json().catch(() => null) : null;
+    const changelogSummaryData = changelogSummaryResponse ? await changelogSummaryResponse.json().catch(() => null) : null;
     const baseSessions = data.sessions || [];
     const versionText = formatUtcVersion(data?.scraped_at || availabilityData?.generatedAt || '');
     if (versionMarker && versionText) versionMarker.textContent = `Version: ${versionText}`;
@@ -705,6 +798,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
       ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
       : baseSessions;
     relatedLookup = relatedSessionsData?.sessions || {};
+    newSessionIds = latestNewSessionIds(changelogSummaryData);
     timeBounds = deriveTimeBounds(sessions);
     if (timeRangeStart) {
       timeRangeStart.min = String(timeBounds.min);
@@ -734,7 +828,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
 
   dayPills.forEach((pill) => pill.addEventListener('click', () => { selectedSessionIds = new Set(); applyDaySelection(dayPills, pill.dataset.day || ''); render(); }));
   [qInput, speakerInput, excludeInput].filter(Boolean).forEach((input) => input.addEventListener('input', () => { selectedSessionIds = new Set(); clearTimeoutImpl(debounceId); debounceId = setTimeoutImpl(() => { render(); }, 120); }));
-  [topicSelect, sortSelect, startAfterInput, startBeforeInput, availabilitySelect, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input !== favoriteToggle) selectedSessionIds = new Set(); if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
+  [topicSelect, sortSelect, startAfterInput, startBeforeInput, availabilitySelect, sponsoredSelect, favoriteToggle].filter(Boolean).forEach((input) => input.addEventListener('change', () => { if (input !== favoriteToggle) selectedSessionIds = new Set(); if (input === favoriteToggle && favoriteToggle.checked) activeView = DEFAULT_VIEW; render(); }));
   [timeRangeStart, timeRangeEnd].filter(Boolean).forEach((input) => input.addEventListener('input', () => {
     selectedSessionIds = new Set();
     let start = Number(timeRangeStart.value);
@@ -766,6 +860,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     if (key === 'theme') classificationFilters.theme = '';
     if (key === 'audience') classificationFilters.audience = '';
     if (key === 'availability' && availabilitySelect) availabilitySelect.value = '';
+    if (key === 'sponsored' && sponsoredSelect) sponsoredSelect.value = '';
     render();
   });
 
@@ -793,6 +888,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     topicSelect.value = '';
     sortSelect.value = DEFAULT_SORT;
     if (availabilitySelect) availabilitySelect.value = '';
+    if (sponsoredSelect) sponsoredSelect.value = '';
     if (timeRangeStart) timeRangeStart.value = String(timeBounds.min);
     if (timeRangeEnd) timeRangeEnd.value = String(timeBounds.max);
     if (favoriteToggle) favoriteToggle.checked = false;

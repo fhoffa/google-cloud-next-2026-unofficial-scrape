@@ -167,7 +167,9 @@ test('generate_changelog demotes flappy sessions out of headline add/remove buck
   assert.equal(flappyUpdate.added.length, 0);
   assert.equal(flappyUpdate.removed.length, 0);
   assert.equal(flappyUpdate.flappyChanges.length, 1);
-  assert.match(fs.readFileSync(outputHtml, 'utf8'), /Flappy \/ unstable listings/);
+  const html = fs.readFileSync(outputHtml, 'utf8');
+  assert.match(html, /Flappy \/ unstable listings/);
+  assert.match(html, /1 flappy listing/);
 });
 
 test('generate_changelog fails when latest.json does not match a snapshot on disk', () => {

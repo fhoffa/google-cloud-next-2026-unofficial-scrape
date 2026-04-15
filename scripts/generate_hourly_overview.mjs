@@ -123,6 +123,7 @@ function buildOverview(snapshots) {
         cap: capacity,
         r: room,
         sp: speakers,
+        spon: Boolean(session?.sponsored),
       });
       if (!sessionIndex.has(id)) sessionIndex.set(id, { id, title, url });
       for (let hour = startHour; hour < endHour; hour += 1) {

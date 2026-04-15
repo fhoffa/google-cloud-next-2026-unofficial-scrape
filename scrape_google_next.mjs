@@ -288,8 +288,23 @@ function isReusableDetailEntry({
   return manifestEntry.fingerprint === computeDetailFingerprint(record);
 }
 
-function mergeFreshLibraryFields(previousEnriched = {}, seed = {}) {
+function hasSponsorDisclosure(text = '') {
+  return /By attending this session, your contact information may be shared with the sponsor/i.test(String(text || ''));
+}
+
+function deriveSponsoredSessionFields(session = {}) {
+  const description = session.description || '';
+  const topics = Array.isArray(session.topics) ? session.topics : [];
+  const sponsor_disclosure = hasSponsorDisclosure(description);
+  const sponsored = sponsor_disclosure || topics.includes('Partner Innovation');
   return {
+    sponsored,
+    sponsor_disclosure,
+  };
+}
+
+function mergeFreshLibraryFields(previousEnriched = {}, seed = {}) {
+  const merged = {
     ...previousEnriched,
     id: seed.id ?? previousEnriched.id ?? '',
     url: seed.url ?? previousEnriched.url ?? '',
@@ -307,6 +322,10 @@ function mergeFreshLibraryFields(previousEnriched = {}, seed = {}) {
     registrant_count: seed.registrant_count ?? previousEnriched.registrant_count ?? '',
     agenda_status: seed.agenda_status ?? previousEnriched.agenda_status ?? '',
     disabled_class: seed.disabled_class ?? previousEnriched.disabled_class ?? '',
+  };
+  return {
+    ...merged,
+    ...deriveSponsoredSessionFields(merged),
   };
 }
 
@@ -558,8 +577,9 @@ function toSessionRecord(url, html, seed = {}) {
   const date = sourceSession.date || seed.date_text || '';
   const start_time = sourceSession.start_time || seed.start_time_text || '';
   const end_time = sourceSession.end_time || seed.end_time_text || '';
+  const topics = normalizeTopics(sourceSession.custom_fields || {});
 
-  return {
+  const record = {
     id: seed.id || String(sourceSession.id || ''),
     title: sourceSession.name || seed.title || '',
     description: sourceDescription,
@@ -571,7 +591,7 @@ function toSessionRecord(url, html, seed = {}) {
     start_time_text: start_time,
     end_time_text: end_time,
     room,
-    topics: normalizeTopics(sourceSession.custom_fields || {}),
+    topics,
     speakers: sourceSpeakers,
     session_category: seed.session_category || sourceSession.custom_fields?.c_92132 || '',
     capacity: sourceSession.capacity ?? seed.capacity ?? '',
@@ -579,6 +599,10 @@ function toSessionRecord(url, html, seed = {}) {
     registrant_count: sourceSession.registrantCount ?? seed.registrant_count ?? '',
     agenda_status: sourceSession.addedInAgenda ?? seed.agenda_status ?? '',
     disabled_class: sourceSession.disabledClass ?? seed.disabled_class ?? '',
+  };
+  return {
+    ...record,
+    ...deriveSponsoredSessionFields(record),
   };
 }
 
@@ -594,6 +618,7 @@ export {
   extractSessionIds,
   extractSessionRecordsFromLibrary,
   isReusableDetailEntry,
+  deriveSponsoredSessionFields,
   mergeFreshLibraryFields,
   normalizeTopics,
   partitionSessionRecords,

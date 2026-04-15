@@ -504,6 +504,7 @@ function renderDiffHtml(diff) {
   const renamedSessions = diff.renamed.slice(0, 16);
   const metadataUpdates = diff.metadataChanges.slice(0, 16);
   const possibleReplacements = diff.replacements.filter((item) => !item.sameSessionId).slice(0, 12);
+  const flappyListings = (diff.flappyChanges || []).slice(0, 12);
 
   const availabilityChanges = [
     ...diff.nowFull.map((session) => ({ kind: 'now full', title: session.title, url: session.url || '' })),
@@ -526,6 +527,7 @@ function renderDiffHtml(diff) {
         <span class="badge added">New sessions</span>
         <span class="badge removed">Removed sessions</span>
         <span class="badge full">Availability changes</span>
+        ${flappyListings.length ? `<span class="badge flappy">${esc(`${flappyListings.length} flappy listing${flappyListings.length === 1 ? '' : 's'}`)}</span>` : ''}
       </div>
       <details>
         <summary>Show details</summary>
@@ -547,6 +549,10 @@ function renderDiffHtml(diff) {
             ${listItems(diff.removed, (session) => esc(session.title))}
           </section>
           <section class="mini-card">
+            <h3>Flappy / unstable listings</h3>
+            ${listItems(flappyListings, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(`${item.transitions} presence transitions across snapshots`)})</span>`, 'No known flappy listings in this update')}
+          </section>
+          <section class="mini-card">
             <h3>Metadata changes</h3>
             ${listItems(metadataUpdates, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No same-ID description or speaker changes in this update')}
           </section>
@@ -565,10 +571,6 @@ function renderDiffHtml(diff) {
             <section class="mini-card">
               <h3>Minor metadata churn</h3>
               ${listItems(diff.minorChanges, (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(item.changedFields.join(', '))})</span>`, 'No obvious low-value churn in this update')}
-            </section>
-            <section class="mini-card">
-              <h3>Flappy / unstable listings</h3>
-              ${listItems(diff.flappyChanges || [], (item) => `${item.url ? `<a href="${esc(item.url)}" target="_blank" rel="noopener">${esc(item.title)}</a>` : esc(item.title)} <span class="muted">(${esc(`${item.transitions} presence transitions across snapshots`)})</span>`, 'No known flappy listings in this update')}
             </section>
           </div>
         </details>

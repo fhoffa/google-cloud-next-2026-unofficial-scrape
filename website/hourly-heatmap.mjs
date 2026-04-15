@@ -153,9 +153,10 @@ function renderSnapshot() {
         const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
         const speakers = formatSpeakers(session);
+        const sponsored = session?.spon ? ' · Sponsored session' : '';
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}`
-          : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`
+          : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 

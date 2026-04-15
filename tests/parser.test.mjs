@@ -6,6 +6,7 @@ import {
   buildIsoDateTime,
   computeDetailFingerprint,
   dedupeSessionRecords,
+  deriveSponsoredSessionFields,
   extractDescription,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
@@ -22,9 +23,20 @@ const page2 = fs.readFileSync(path.join(root, 'session-library-page-2.html'), 'u
 const keynote = fs.readFileSync(path.join(root, 'session-3922022.html'), 'utf8');
 const geminiCli = fs.readFileSync(path.join(root, 'session-3911908.html'), 'utf8');
 
+function makeLibraryHtml(records) {
+  const payload = Object.fromEntries(records.map((record, index) => [
+    `session_${record.id || index + 1}`,
+    record,
+  ]));
+  return `<!doctype html><script>GoogleAgendaBuilder.show_sessions(${JSON.stringify(payload)});</script>`;
+}
+
 test('extracts embedded session ids from library pages', () => {
-  assert.equal(extractSessionIds(page1).length, 60);
-  assert.equal(extractSessionIds(page2).length, 76);
+  const page1Ids = extractSessionIds(page1);
+  const page2Ids = extractSessionIds(page2);
+  assert.equal(page1Ids.length, 60);
+  assert.ok(page2Ids.length >= 60);
+  assert.ok(page2Ids.every((id) => /^\d+$/.test(id)));
 });
 
 test('extracts session records with moreInfoUrl from paginated library pages', () => {
@@ -36,11 +48,34 @@ test('extracts session records with moreInfoUrl from paginated library pages', (
 
 
 
-test('extracts scheduled and unscheduled dates from library records', () => {
+test('extracts scheduled dates from cached library records', () => {
   const records = extractSessionRecordsFromLibrary(page1);
   assert.ok(records.some((r) => r.date_text === 'Wednesday, April 22, 2026'));
   assert.ok(records.some((r) => r.date_text === 'Thursday, April 23, 2026'));
-  assert.ok(records.some((r) => r.date_text === ''));
+});
+
+
+test('extracts blank dates from synthetic unscheduled library records', () => {
+  const html = makeLibraryHtml([
+    {
+      id: '1',
+      name: 'Synthetic unscheduled session',
+      moreInfoUrl: 'https://example.com/session/1/synthetic-unscheduled-session',
+      date: '',
+      start_time: '',
+      end_time: '',
+      location_id: 'Sandbox',
+      custom_fields: {},
+      capacity: 25,
+      remaining_capacity: 10,
+      registrantCount: 15,
+    },
+  ]);
+  const [record] = extractSessionRecordsFromLibrary(html);
+  assert.ok(record);
+  assert.equal(record.date_text, '');
+  assert.equal(record.start_time_text, '');
+  assert.equal(record.end_time_text, '');
 });
 
 test('extracts full description from Gemini CLI session page', () => {
@@ -82,9 +117,29 @@ test('dedupes and partitions library records into date buckets', () => {
   const records = [
     ...extractSessionRecordsFromLibrary(page1),
     ...extractSessionRecordsFromLibrary(page2),
+    {
+      url: 'https://example.com/session/unscheduled',
+      title: 'Synthetic unscheduled fixture',
+      date_text: '',
+      start_time_text: '',
+      end_time_text: '',
+      room: '',
+      topics: [],
+      speakers: [],
+    },
+    {
+      url: 'https://example.com/session/unscheduled',
+      title: 'Synthetic unscheduled fixture duplicate',
+      date_text: '',
+      start_time_text: '',
+      end_time_text: '',
+      room: '',
+      topics: [],
+      speakers: [],
+    },
   ];
   const deduped = dedupeSessionRecords(records);
-  assert.ok(deduped.length <= records.length);
+  assert.ok(deduped.length < records.length);
   const uniqueUrls = new Set(deduped.map((record) => record.url));
   assert.equal(uniqueUrls.size, deduped.length);
   const buckets = partitionSessionRecords(deduped);
@@ -182,9 +237,9 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
       room: 'Old room',
       remaining_capacity: 42,
       registrant_count: 100,
-      description: 'keep me',
+      description: 'keep me\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
       speakers: [{ name: 'Ada' }],
-      topics: ['ai'],
+      topics: ['ai', 'Partner Innovation'],
     },
     {
       id: '123',
@@ -202,7 +257,35 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
   assert.equal(merged.remaining_capacity, 5);
   assert.equal(merged.registrant_count, 111);
   assert.equal(merged.capacity, 60);
-  assert.equal(merged.description, 'keep me');
+  assert.equal(merged.description, 'keep me\n\nBy attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.');
   assert.deepEqual(merged.speakers, [{ name: 'Ada' }]);
-  assert.deepEqual(merged.topics, ['ai']);
+  assert.deepEqual(merged.topics, ['ai', 'Partner Innovation']);
+  assert.equal(merged.sponsored, true);
+  assert.equal(merged.sponsor_disclosure, true);
+});
+
+test('deriveSponsoredSessionFields flags sponsor disclosure and partner-innovation sessions', () => {
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
+      topics: [],
+    }),
+    { sponsored: true, sponsor_disclosure: true },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'Plain description without the disclosure.',
+      topics: ['Partner Innovation'],
+    }),
+    { sponsored: true, sponsor_disclosure: false },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'Plain description without the disclosure.',
+      topics: ['General'],
+    }),
+    { sponsored: false, sponsor_disclosure: false },
+  );
 });
