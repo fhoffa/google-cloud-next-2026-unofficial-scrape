@@ -314,6 +314,10 @@ async function init() {
   const response = await fetch(DATA_URL);
   state.data = await response.json();
   state.snapshotIndex = state.data.snapshots.length - 1;
+  const hashId = decodeURIComponent(window.location.hash.replace(/^#/, '') || '');
+  if (hashId && state.data.sessions.some((session) => session.id === hashId)) {
+    state.selectedId = hashId;
+  }
   applyFilters();
   render();
 

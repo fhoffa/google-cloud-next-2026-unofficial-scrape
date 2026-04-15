@@ -10,6 +10,7 @@
     "build:insights": "node scripts/generate_insights.mjs",
     "build:changelog": "node scripts/generate_changelog.mjs",
     "build:timeline": "node scripts/generate_session_history.mjs",
+    "build:hourly": "node scripts/generate_hourly_overview.mjs",
     "update:parties": "node scripts/fetch_conference_parties.mjs",
     "analytics:init": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py init",
     "analytics:top-fillers": "/root/.openclaw/workspace/.venv/bin/python scripts/snapshot_duckdb.py top-fillers",

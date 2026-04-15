@@ -5,6 +5,7 @@
 - **Session explorer:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/
 - **Insights page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/insights.html
 - **Session evolution player:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/session-timeline.html
+- **Hourly seat map:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/hourly-heatmap.html
 - **Conference parties page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/parties.html
 
 Unofficial scraper/exporter for the Google Cloud Next 2026 session library — plus a fast browseable website for actually exploring the sessions.
@@ -51,6 +52,7 @@ Current site features include:
 - separate **Insights** page (`/insights.html`) with Sankey segment links back to filtered session explorer views
   - published Sankey images use contextual dated filenames like `fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_YYYYMMDD.png`
 - separate **Session evolution player** (`/session-timeline.html`) with a scrubber / autoplay view for title changes, speaker changes, and seat-fullness movement across snapshots
+- separate **Hourly seat map** (`/hourly-heatmap.html`) showing Wednesday-Friday by hour, total reserved seats, the most popular session in each hour, and moving session tiles that shift when sessions are rescheduled
 - separate **Conference parties** page (`/parties.html`) that indexes the Google Cloud Next 2026 party list with explicit source credit back to `conferenceparties.com/next26/`
 - Top speakers view with:
   - speakers appearing in multiple sessions
@@ -305,6 +307,14 @@ npm run build:timeline
 ```
 
 This rebuilds `media/session-history.json`, the compact artifact behind `session-timeline.html`. The player lets you scrub or autoplay snapshot-by-snapshot changes for session titles, speakers, and seat fullness.
+
+### Regenerate hourly seat map data
+
+```bash
+npm run build:hourly
+```
+
+This rebuilds `media/hourly-overview.json`, the artifact behind `hourly-heatmap.html`. It focuses on Wednesday-Friday and shows per-hour total reserved seats, the most popular session in that hour, and moving session tiles that visibly jump when sessions are rescheduled.
 
 ### Preview the website locally
 
