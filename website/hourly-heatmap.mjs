@@ -146,7 +146,7 @@ function renderSnapshot() {
         const width = markerWidth(session);
         const title = hasRealCapacity(session)
           ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown`;
+          : `${session.t} · ${formatCount(session.reg)} reserved`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
