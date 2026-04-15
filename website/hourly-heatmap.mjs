@@ -24,6 +24,9 @@ function fillPct(session) {
   }
   return null;
 }
+function hasRealCapacity(session) {
+  return Boolean(session?.cap && session.cap > 0);
+}
 function formatCount(value) {
   return value == null ? '—' : Number(value).toLocaleString();
 }
@@ -113,7 +116,9 @@ function renderSnapshot() {
       .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
-        const title = `${session.t} · ${formatCount(session.reg)} reserved${pct == null ? '' : ` · ${pct.toFixed(0)}% full`}`;
+        const title = hasRealCapacity(session)
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown`;
         return `<button class="sq ${roomSizeClass(session)} ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
