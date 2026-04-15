@@ -54,7 +54,11 @@ function markerWidth(session) {
   const reg = session?.reg ?? null;
   if (reg == null || reg <= 0) return MIN_MARKER_WIDTH;
   const ratio = reg / state.maxVisibleReserved;
-  return Math.max(MIN_MARKER_WIDTH, Math.min(MAX_MARKER_WIDTH, Math.round(MIN_MARKER_WIDTH + ratio * (MAX_MARKER_WIDTH - MIN_MARKER_WIDTH))));
+  const baseWidth = Math.max(MIN_MARKER_WIDTH, Math.min(MAX_MARKER_WIDTH, Math.round(MIN_MARKER_WIDTH + ratio * (MAX_MARKER_WIDTH - MIN_MARKER_WIDTH))));
+  if ((session?.cap ?? 0) > 0 && session.cap < 100) {
+    return Math.max(2, Math.round(baseWidth * 0.5));
+  }
+  return baseWidth;
 }
 
 function buildShell() {
