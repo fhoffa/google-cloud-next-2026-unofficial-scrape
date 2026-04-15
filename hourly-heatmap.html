@@ -126,7 +126,7 @@
       overflow: visible;
       margin-right: 1px;
     }
-    .sq:hover { transform: scale(1.6); z-index: 5; }
+    .sq:hover { transform: scale(1.15); z-index: 5; }
     .sq-fill {
       position: absolute;
       left: 0;
@@ -155,12 +155,14 @@
       white-space: normal;
       pointer-events: none;
       opacity: 0;
+      visibility: hidden;
       transition: opacity .12s ease;
       box-shadow: 0 8px 22px rgba(32,33,36,.26);
     }
     .sq:hover .sq-tooltip,
     .sq:focus-visible .sq-tooltip {
       opacity: 1;
+      visibility: visible;
     }
     .legend {
       display: flex;
