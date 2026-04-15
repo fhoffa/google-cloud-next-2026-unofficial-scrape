@@ -123,14 +123,14 @@ function renderSnapshot() {
       .filter((session) => session.sh === hour)
       .sort(compareSessions);
     const squares = row.querySelector('.squares');
-    if (sessions.length <= 1) {
+    const topSession = startingSessions[0] || null;
+    const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
+    if (startingSessions.length === 0 || totalReserved <= 0) {
       row.style.display = 'none';
       squares.innerHTML = '';
       return;
     }
     row.style.display = 'grid';
-    const topSession = startingSessions[0] || null;
-    const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
     row.querySelector('.hour-seats').textContent = `${formatCompactCount(totalReserved)} res.`;
     row.querySelector('.top-session').textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
@@ -168,9 +168,16 @@ function renderSnapshot() {
 
 function startAutoplay() {
   stopAutoplay();
+  if (state.snapshotIndex >= state.data.snapshots.length - 1) {
+    state.snapshotIndex = 0;
+    renderSnapshot();
+  }
   state.timer = window.setInterval(() => {
-    if (state.snapshotIndex >= state.data.snapshots.length - 1) state.snapshotIndex = state.startIndex;
-    else state.snapshotIndex += 1;
+    if (state.snapshotIndex >= state.data.snapshots.length - 1) {
+      stopAutoplay();
+      return;
+    }
+    state.snapshotIndex += 1;
     renderSnapshot();
   }, 1500);
   els.playBtn.textContent = 'Pause';
