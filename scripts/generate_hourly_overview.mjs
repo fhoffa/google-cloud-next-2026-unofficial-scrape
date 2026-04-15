@@ -121,6 +121,13 @@ function buildOverview(snapshots, latestLookup) {
           })).filter((speaker) => speaker.n)
         : [];
       const sponsorName = speakers.map((speaker) => speaker.c).filter(Boolean)[0] || '';
+      const description = String(latestSession?.description || session?.description || '').trim();
+      const searchText = [
+        title,
+        description,
+        ...speakers.flatMap((speaker) => [speaker.n, speaker.c]),
+        Boolean(session?.sponsored ?? latestSession?.sponsored) ? 'sponsored sponsor sponsor_disclosure' : '',
+      ].filter(Boolean).join(' ').toLowerCase();
       const dayIndex = DAY_ORDER.indexOf(day);
       compactSessions.push({
         id,
@@ -138,6 +145,8 @@ function buildOverview(snapshots, latestLookup) {
         sp: speakers,
         spon: Boolean(session?.sponsored ?? latestSession?.sponsored),
         scon: sponsorName,
+        desc: description,
+        q: searchText,
       });
       if (!sessionIndex.has(id)) sessionIndex.set(id, { id, title, url });
       for (let hour = startHour; hour < endHour; hour += 1) {

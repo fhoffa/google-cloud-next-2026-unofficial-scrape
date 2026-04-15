@@ -3,7 +3,7 @@ const FULL_DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false };
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false, query: '' };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -60,6 +60,15 @@ function compareSessions(a, b) {
     || fillTieScore(b) - fillTieScore(a)
     || ((a.rem ?? Number.POSITIVE_INFINITY) - (b.rem ?? Number.POSITIVE_INFINITY))
     || String(a.t).localeCompare(String(b.t));
+}
+function splitTerms(text) {
+  return String(text || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+}
+function matchesQuery(session) {
+  const terms = splitTerms(state.query);
+  if (!terms.length) return false;
+  const haystack = String(session?.q || '').toLowerCase();
+  return terms.every((term) => haystack.includes(term));
 }
 function markerFillPct(session, bigMaxReserved, smallMaxReserved) {
   const reg = session?.reg ?? null;
@@ -164,8 +173,11 @@ function renderSnapshot() {
     }
     row.style.display = 'grid';
     row.querySelector('.hour-seats').textContent = `${formatCompactCount(totalReserved)} res.`;
-    row.querySelector('.top-session').textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
-    row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
+    const topSessionEl = row.querySelector('.top-session');
+    const topMatches = topSession ? matchesQuery(topSession) : false;
+    const hasQuery = splitTerms(state.query).length > 0;
+    topSessionEl.textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
+    topSessionEl.className = `top-session${topSession ? '' : ' muted'}${hasQuery ? (topMatches ? ' search-match' : ' search-dim') : ''}`;
 
     const markers = topSession
       ? [topSession, ...sessions.filter((session) => session.id !== topSession.id)]
@@ -181,7 +193,8 @@ function renderSnapshot() {
         const title = hasRealCapacity(session)
           ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`
           : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`;
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+        const searchClass = hasQuery ? (matchesQuery(session) ? 'search-match' : 'search-dim') : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
@@ -223,6 +236,7 @@ async function init() {
   Object.assign(els, {
     app: byId('app'),
     playBtn: byId('play-btn'),
+    searchInput: byId('search-input'),
     snapshotSlider: byId('snapshot-slider'),
     snapshotLabel: byId('snapshot-label'),
     playbackNote: byId('playback-note'),
@@ -235,6 +249,10 @@ async function init() {
 
   els.playBtn.addEventListener('click', async () => {
     if (state.timer) stopAutoplay(); else await startAutoplay();
+  });
+  els.searchInput.addEventListener('input', (event) => {
+    state.query = event.target.value || '';
+    renderSnapshot();
   });
   els.snapshotSlider.addEventListener('input', (event) => {
     state.snapshotIndex = Number(event.target.value);
