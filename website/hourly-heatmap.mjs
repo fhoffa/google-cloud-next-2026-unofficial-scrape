@@ -1,7 +1,9 @@
 const DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MEANINGFUL_START_KEY = '2026-04-02T05-58-38Z';
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0 };
+const MIN_MARKER_WIDTH = 3;
+const MAX_MARKER_WIDTH = 18;
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, maxVisibleReserved: 1 };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -42,10 +44,16 @@ function isMegaSession(session) {
 function isVisibleSession(session) {
   return (session?.reg ?? 0) > 0 && !isMegaSession(session);
 }
-function roomSizeClass(session) {
-  if (session?.cap && session.cap > 250) return 'large-room';
-  if (session?.cap && session.cap > 0) return 'small-room';
-  return 'unknown';
+function markerFillPct(session) {
+  const reg = session?.reg ?? null;
+  if (reg == null || reg <= 0) return null;
+  return Math.max(8, Math.min(100, (reg / state.maxVisibleReserved) * 100));
+}
+function markerWidth(session) {
+  const reg = session?.reg ?? null;
+  if (reg == null || reg <= 0) return MIN_MARKER_WIDTH;
+  const ratio = reg / state.maxVisibleReserved;
+  return Math.max(MIN_MARKER_WIDTH, Math.min(MAX_MARKER_WIDTH, Math.round(MIN_MARKER_WIDTH + ratio * (MAX_MARKER_WIDTH - MIN_MARKER_WIDTH))));
 }
 
 function buildShell() {
@@ -116,10 +124,12 @@ function renderSnapshot() {
       .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
+        const fill = markerFillPct(session);
+        const width = markerWidth(session);
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown`;
-        return `<button class="sq ${roomSizeClass(session)} ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of biggest non-mega session`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of biggest non-mega session`}`;
+        return `<button class="sq ${fill == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
@@ -163,6 +173,7 @@ async function init() {
   });
   const response = await fetch(DATA_URL);
   state.data = await response.json();
+  state.maxVisibleReserved = Math.max(1, ...state.data.snapshots.flatMap((snapshot) => snapshot.sessions.map((session) => session.reg || 0).filter((reg) => reg > 0 && reg < MEGA_SESSION_REGISTRANTS)));
   state.startIndex = Math.max(0, state.data.snapshots.findIndex((snapshot) => snapshot.key === MEANINGFUL_START_KEY));
   state.snapshotIndex = state.startIndex;
   buildShell();

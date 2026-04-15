@@ -114,14 +114,14 @@
     }
     .sq {
       position: relative;
-      width: 4px;
-      min-width: 4px;
+      width: 10px;
+      min-width: 3px;
       height: 12px;
       border-radius: 2px;
       border: 1px solid rgba(60,64,67,.10);
       background: #eef2f6;
       box-shadow: none;
-      transition: transform .18s ease, opacity .18s ease;
+      transition: transform .18s ease, opacity .18s ease, width .25s ease;
       cursor: pointer;
       overflow: visible;
       margin-right: 1px;
@@ -136,8 +136,6 @@
       transition: height .45s ease;
       border-radius: 0 0 2px 2px;
     }
-    .sq.small-room .sq-fill { background: linear-gradient(180deg, #6fd39b, var(--green)); }
-    .sq.large-room .sq-fill { background: linear-gradient(180deg, #8ab4f8, var(--blue)); }
     .sq.unknown .sq-fill { background: linear-gradient(180deg, #c5c9ce, #9aa0a6); }
     .sq-tooltip {
       position: absolute;
@@ -212,10 +210,9 @@
     </section>
     <div id="app"><div class="empty-state">Loading hourly overview…</div></div>
     <div class="legend">
-      <span><i class="swatch" style="background:linear-gradient(180deg,#6fd39b,#34a853)"></i> small room</span>
-      <span><i class="swatch" style="background:linear-gradient(180deg,#8ab4f8,#1a73e8)"></i> large room</span>
-      <span><i class="swatch" style="background:linear-gradient(180deg,#c5c9ce,#9aa0a6)"></i> unknown capacity</span>
-      <span>fill height = % full</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#8ab4f8,#1a73e8)"></i> fill height = reservations vs biggest non-mega session</span>
+      <span><i class="swatch" style="background:#eef2f6;border:1px solid rgba(60,64,67,.10)"></i> width = reserved seats (scaled)</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#c5c9ce,#9aa0a6)"></i> unknown reservations/capacity</span>
     </div>
   </main>
   <script type="module" src="./website/hourly-heatmap.mjs"></script>
