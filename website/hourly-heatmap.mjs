@@ -152,7 +152,8 @@ function renderSnapshot() {
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
       button.addEventListener('click', () => {
-        window.location.href = `./session-timeline.html#${encodeURIComponent(button.dataset.sessionId)}`;
+        const sessionId = encodeURIComponent(button.dataset.sessionId);
+        window.location.href = `./index.html?sessionids=${sessionId}#session-${sessionId}`;
       });
     });
 
