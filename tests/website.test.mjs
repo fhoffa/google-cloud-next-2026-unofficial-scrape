@@ -245,6 +245,8 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
   assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
   assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
+  assert.match(hourlyJs, /function stepAutoplay\(/);
+  assert.match(hourlyJs, /els\.playbackNote\.textContent = 'Playing hourly history…';/);
 });
 
 test('hourly artifacts split latest snapshot from full history', () => {

@@ -206,25 +206,39 @@ function renderSnapshot() {
 
   });
 
-  els.playbackNote.textContent = 'Press Play to watch the evolution from here';
+  if (!state.timer) {
+    els.playbackNote.textContent = 'Press Play to watch the evolution from here';
+  }
+}
+
+function stepAutoplay() {
+  if (state.snapshotIndex >= state.latestIndex) {
+    stopAutoplay();
+    return false;
+  }
+  state.snapshotIndex += 1;
+  renderSnapshot();
+  return true;
 }
 
 async function startAutoplay() {
   stopAutoplay();
   await ensureFullHistoryLoaded();
-  if (state.snapshotIndex >= state.latestIndex) {
+  if (state.latestIndex <= state.startIndex) {
+    renderSnapshot();
+    return;
+  }
+  state.snapshotIndex = Math.min(state.snapshotIndex, state.latestIndex);
+  if (state.snapshotIndex >= state.latestIndex || state.snapshotIndex < state.startIndex) {
     state.snapshotIndex = state.startIndex;
     renderSnapshot();
   }
-  state.timer = window.setInterval(() => {
-    if (state.snapshotIndex >= state.latestIndex) {
-      stopAutoplay();
-      return;
-    }
-    state.snapshotIndex += 1;
-    renderSnapshot();
-  }, 1500);
   els.playBtn.textContent = 'Pause';
+  els.playbackNote.textContent = 'Playing hourly history…';
+  if (!stepAutoplay()) return;
+  state.timer = window.setInterval(() => {
+    stepAutoplay();
+  }, 1500);
 }
 function stopAutoplay() {
   if (state.timer) window.clearInterval(state.timer);
