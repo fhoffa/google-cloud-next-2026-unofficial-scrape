@@ -177,7 +177,7 @@ function renderSnapshot() {
         const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
         const speakers = formatSpeakers(session);
-        const sponsored = session?.spon ? ' · Sponsored session' : '';
+        const sponsored = session?.spon ? ` · Sponsored${session?.scon ? ` by ${session.scon}` : ' session'}` : '';
         const title = hasRealCapacity(session)
           ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`
           : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`;

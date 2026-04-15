@@ -11,12 +11,14 @@ const DAY_ORDER = [
 function parseArgs(argv) {
   const options = {
     snapshotsDir: 'sessions/snapshots',
+    latestSessions: 'sessions/latest.json',
     output: 'media/hourly-overview.json',
     latestOutput: 'media/hourly-overview-latest.json',
   };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--snapshots-dir') options.snapshotsDir = argv[++i];
+    else if (arg === '--latest-sessions') options.latestSessions = argv[++i];
     else if (arg === '--output') options.output = argv[++i];
     else if (arg === '--latest-output') options.latestOutput = argv[++i];
   }
@@ -82,7 +84,13 @@ function loadSnapshots(snapshotsDir) {
     });
 }
 
-function buildOverview(snapshots) {
+function loadLatestSessionLookup(latestSessionsPath) {
+  const payload = JSON.parse(fs.readFileSync(latestSessionsPath, 'utf8'));
+  const sessions = Array.isArray(payload) ? payload : (payload.sessions || []);
+  return new Map(sessions.map((session) => [sessionKey(session), session]));
+}
+
+function buildOverview(snapshots, latestLookup) {
   const dayHourSet = new Set();
   const sessionIndex = new Map();
 
@@ -104,12 +112,15 @@ function buildOverview(snapshots) {
       const title = String(session?.title || '').trim();
       const url = String(session?.url || '').trim();
       const room = String(session?.room || '').trim();
-      const speakers = Array.isArray(session?.speakers)
-        ? session.speakers.map((speaker) => ({
+      const latestSession = latestLookup.get(id) || {};
+      const mergedSpeakers = Array.isArray(session?.speakers) && session.speakers.length ? session.speakers : (latestSession.speakers || []);
+      const speakers = Array.isArray(mergedSpeakers)
+        ? mergedSpeakers.map((speaker) => ({
             n: String(speaker?.name || '').trim(),
             c: String(speaker?.company || '').trim(),
           })).filter((speaker) => speaker.n)
         : [];
+      const sponsorName = speakers.map((speaker) => speaker.c).filter(Boolean)[0] || '';
       const dayIndex = DAY_ORDER.indexOf(day);
       compactSessions.push({
         id,
@@ -125,7 +136,8 @@ function buildOverview(snapshots) {
         cap: capacity,
         r: room,
         sp: speakers,
-        spon: Boolean(session?.sponsored),
+        spon: Boolean(session?.sponsored ?? latestSession?.sponsored),
+        scon: sponsorName,
       });
       if (!sessionIndex.has(id)) sessionIndex.set(id, { id, title, url });
       for (let hour = startHour; hour < endHour; hour += 1) {
@@ -174,7 +186,8 @@ function buildOverview(snapshots) {
 
 const options = parseArgs(process.argv.slice(2));
 const snapshots = loadSnapshots(options.snapshotsDir);
-const data = buildOverview(snapshots);
+const latestLookup = loadLatestSessionLookup(options.latestSessions);
+const data = buildOverview(snapshots, latestLookup);
 const latestData = {
   ...data,
   snapshots: data.snapshots.length ? [data.snapshots[data.snapshots.length - 1]] : [],
