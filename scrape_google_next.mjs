@@ -296,10 +296,12 @@ function deriveSponsoredSessionFields(session = {}) {
   const description = session.description || '';
   const topics = Array.isArray(session.topics) ? session.topics : [];
   const sponsor_disclosure = hasSponsorDisclosure(description);
-  const sponsored = sponsor_disclosure || topics.includes('Partner Innovation');
+  const partner_innovation = topics.includes('Partner Innovation');
+  const sponsored = sponsor_disclosure;
   return {
     sponsored,
     sponsor_disclosure,
+    partner_innovation,
   };
 }
 
