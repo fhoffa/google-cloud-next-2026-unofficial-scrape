@@ -33,6 +33,9 @@ function formatCount(value) {
 function isMegaSession(session) {
   return (session?.reg ?? 0) >= MEGA_SESSION_REGISTRANTS;
 }
+function isVisibleSession(session) {
+  return (session?.reg ?? 0) > 0 && !isMegaSession(session);
+}
 
 function buildShell() {
   els.app.innerHTML = '';
@@ -65,7 +68,7 @@ function renderSnapshot() {
 
   const grouped = new Map();
   for (const session of snapshot.sessions) {
-    if (isMegaSession(session)) continue;
+    if (!isVisibleSession(session)) continue;
     for (let hour = session.sh; hour < session.eh; hour += 1) {
       const key = `${session.d}:${hour}`;
       if (!grouped.has(key)) grouped.set(key, []);
