@@ -118,8 +118,6 @@ function renderSnapshot() {
     }
   }
 
-  const movementNotes = [];
-
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
     const hour = Number(key.split(':')[1]);
@@ -162,14 +160,9 @@ function renderSnapshot() {
       });
     });
 
-    if (topSession && (topSession.reg ?? 0) >= 400) {
-      movementNotes.push(topSession.t);
-    }
   });
 
-  els.playbackNote.textContent = movementNotes.length
-    ? `Biggest rooms right now: ${movementNotes.slice(0, 3).join(' · ')}`
-    : 'Press Play to watch the evolution from here';
+  els.playbackNote.textContent = 'Press Play to watch the evolution from here';
 }
 
 function startAutoplay() {
