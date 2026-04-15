@@ -44,10 +44,11 @@ function isMegaSession(session) {
 function isVisibleSession(session) {
   return (session?.reg ?? 0) > 0 && !isMegaSession(session);
 }
-function markerFillPct(session) {
+function markerFillPct(session, rowMaxReserved) {
   const reg = session?.reg ?? null;
   if (reg == null || reg <= 0) return null;
-  return Math.max(8, Math.min(100, (reg / state.maxVisibleReserved) * 100));
+  const maxReserved = Math.max(1, rowMaxReserved || 0);
+  return Math.max(8, Math.min(100, (reg / maxReserved) * 100));
 }
 function markerWidth(session) {
   const reg = session?.reg ?? null;
@@ -121,15 +122,16 @@ function renderSnapshot() {
     const markers = topSession
       ? [topSession, ...sessions.filter((session) => session.id !== topSession.id)]
       : sessions;
+    const rowMaxReserved = Math.max(1, ...markers.map((session) => session.reg || 0));
     squares.innerHTML = markers
       .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
         const pct = fillPct(session);
-        const fill = markerFillPct(session);
+        const fill = markerFillPct(session, rowMaxReserved);
         const width = markerWidth(session);
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of max visible demand`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of max visible demand`}`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of row max demand`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of row max demand`}`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
