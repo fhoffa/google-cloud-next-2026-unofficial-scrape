@@ -1,6 +1,5 @@
 const DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
-const MEANINGFUL_START_KEY = '2026-04-02T05-58-38Z';
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
 const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0 };
@@ -164,7 +163,7 @@ function renderSnapshot() {
 
   els.playbackNote.textContent = movementNotes.length
     ? `Biggest rooms right now: ${movementNotes.slice(0, 3).join(' · ')}`
-    : 'Playback starts on Apr 2, 5:58 AM';
+    : 'Press Play to watch the evolution from here';
 }
 
 function startAutoplay() {
@@ -192,7 +191,7 @@ async function init() {
   });
   const response = await fetch(DATA_URL);
   state.data = await response.json();
-  state.startIndex = Math.max(0, state.data.snapshots.findIndex((snapshot) => snapshot.key === MEANINGFUL_START_KEY));
+  state.startIndex = Math.max(0, state.data.snapshots.length - 1);
   state.snapshotIndex = state.startIndex;
   buildShell();
   renderSnapshot();
