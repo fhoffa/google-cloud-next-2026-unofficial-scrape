@@ -145,10 +145,9 @@ function renderSnapshot() {
         const pct = fillPct(session);
         const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
-        const groupLabel = isSmallRoom(session) ? 'snapshot small-room max' : 'snapshot big-room max';
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of ${groupLabel}`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of ${groupLabel}`}`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
