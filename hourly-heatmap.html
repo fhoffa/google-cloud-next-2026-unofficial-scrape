@@ -98,20 +98,27 @@
       min-height: 20px;
     }
     .sq {
+      position: relative;
       width: 14px;
       height: 14px;
       border-radius: 4px;
-      border: 1px solid rgba(255,255,255,.7);
-      box-shadow: 0 1px 3px rgba(32,33,36,.14);
-      transition: transform .25s ease, opacity .25s ease, background-color .25s ease;
+      border: 1px solid rgba(60,64,67,.18);
+      background: #eef2f6;
+      box-shadow: 0 1px 3px rgba(32,33,36,.10);
+      transition: transform .25s ease, opacity .25s ease;
       cursor: pointer;
+      overflow: hidden;
     }
     .sq:hover { transform: scale(1.35); }
-    .sq.full { background: var(--red); }
-    .sq.limited { background: var(--orange); }
-    .sq.filling { background: var(--blue); }
-    .sq.open { background: var(--green); }
-    .sq.unknown { background: #9aa0a6; }
+    .sq-fill {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, #8ab4f8, var(--blue));
+      transition: height .45s ease;
+    }
+    .sq.unknown .sq-fill { background: linear-gradient(180deg, #c5c9ce, #9aa0a6); }
     .legend {
       display: flex;
       gap: 12px;
@@ -160,11 +167,8 @@
     </section>
     <div id="app"><div class="empty-state">Loading hourly overview…</div></div>
     <div class="legend">
-      <span><i class="swatch" style="background:#34a853"></i> open</span>
-      <span><i class="swatch" style="background:#1a73e8"></i> filling</span>
-      <span><i class="swatch" style="background:#f29900"></i> limited</span>
-      <span><i class="swatch" style="background:#ea4335"></i> full</span>
-      <span><i class="swatch" style="background:#9aa0a6"></i> unknown</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#8ab4f8,#1a73e8)"></i> filled portion of the square = % full</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#c5c9ce,#9aa0a6)"></i> unknown capacity</span>
     </div>
   </main>
   <script type="module" src="./website/hourly-heatmap.mjs"></script>

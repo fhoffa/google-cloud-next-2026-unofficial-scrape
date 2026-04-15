@@ -1,6 +1,7 @@
 const DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
-const state = { data: null, snapshotIndex: 0, timer: null };
+const MEANINGFUL_START_KEY = '2026-04-02T05-58-38Z';
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0 };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -13,19 +14,15 @@ function hourLabel(hour) {
   const shown = h % 12 || 12;
   return `${shown}${meridiem}`;
 }
-function availabilityBand(session) {
-  if (session.rem != null) {
-    if (session.rem <= 0) return 'full';
-    if (session.rem <= 10) return 'limited';
+function fillPct(session) {
+  if (session?.cap && session?.reg != null && session.cap > 0) {
+    return Math.max(0, Math.min(100, (session.reg / session.cap) * 100));
   }
-  if (session.cap && session.reg != null) {
-    const ratio = session.reg / session.cap;
-    if (ratio >= 1) return 'full';
-    if (ratio >= 0.9) return 'limited';
-    if (ratio >= 0.6) return 'filling';
-    return 'open';
+  if (session?.rem != null) {
+    if (session.rem <= 0) return 100;
+    if (session.rem <= 10) return 92;
   }
-  return 'unknown';
+  return null;
 }
 function formatCount(value) {
   return value == null ? '—' : Number(value).toLocaleString();
@@ -63,6 +60,7 @@ function buildShell() {
 function renderSnapshot() {
   const snapshot = state.data.snapshots[state.snapshotIndex];
   els.snapshotLabel.textContent = snapshot.label;
+  els.snapshotSlider.min = String(state.startIndex);
   els.snapshotSlider.max = String(state.data.snapshots.length - 1);
   els.snapshotSlider.value = String(state.snapshotIndex);
 
@@ -99,10 +97,11 @@ function renderSnapshot() {
     const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
     squares.innerHTML = others
       .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
+      .sort((a, b) => (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
-        const band = availabilityBand(session);
-        const title = `${session.t}\n${session.r || 'Room TBD'}\n${formatCount(session.reg)} reserved`;
-        return `<button class="sq ${band}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"></button>`;
+        const pct = fillPct(session);
+        const title = `${session.t}\n${session.r || 'Room TBD'}\n${formatCount(session.reg)} reserved${pct == null ? '' : `\n${pct.toFixed(0)}% full`}`;
+        return `<button class="sq ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
@@ -118,13 +117,14 @@ function renderSnapshot() {
 
   els.playbackNote.textContent = movementNotes.length
     ? `Biggest rooms right now: ${movementNotes.slice(0, 3).join(' · ')}`
-    : 'Rows regroup as sessions move across hours';
+    : 'Playback starts on Apr 2, 5:58 AM';
 }
 
 function startAutoplay() {
   stopAutoplay();
   state.timer = window.setInterval(() => {
-    state.snapshotIndex = (state.snapshotIndex + 1) % state.data.snapshots.length;
+    if (state.snapshotIndex >= state.data.snapshots.length - 1) state.snapshotIndex = state.startIndex;
+    else state.snapshotIndex += 1;
     renderSnapshot();
   }, 1500);
   els.playBtn.textContent = 'Pause';
@@ -145,7 +145,8 @@ async function init() {
   });
   const response = await fetch(DATA_URL);
   state.data = await response.json();
-  state.snapshotIndex = state.data.snapshots.length - 1;
+  state.startIndex = Math.max(0, state.data.snapshots.findIndex((snapshot) => snapshot.key === MEANINGFUL_START_KEY));
+  state.snapshotIndex = state.startIndex;
   buildShell();
   renderSnapshot();
 
