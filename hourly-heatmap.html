@@ -48,10 +48,10 @@
     .toolbar {
       display: grid;
       grid-template-columns: auto 1fr auto auto;
-      gap: 12px;
-      padding: 16px;
+      gap: 10px;
+      padding: 12px;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     #play-btn {
       border: none;
@@ -65,24 +65,24 @@
     #snapshot-slider { width: 100%; }
     .snapshot-label, .playback-note { color: var(--gray-700); font-size: .92rem; }
     .playback-note { color: var(--gray-500); }
-    .day-shell { padding: 12px; margin-bottom: 12px; }
-    .day-title { margin: 0 0 8px; font-size: 1.05rem; }
-    .rows { display: grid; gap: 8px; }
+    .day-shell { padding: 10px; margin-bottom: 10px; }
+    .day-title { margin: 0 0 6px; font-size: .95rem; }
+    .rows { display: grid; gap: 4px; }
     .hour-row {
       display: grid;
-      grid-template-columns: 52px 86px minmax(180px, 320px) minmax(0, 1fr);
-      gap: 8px;
+      grid-template-columns: 40px 68px minmax(140px, 240px) minmax(0, 1fr);
+      gap: 6px;
       align-items: center;
-      min-height: 30px;
-      padding: 5px 8px;
+      min-height: 24px;
+      padding: 3px 6px;
       border: 1px solid var(--gray-200);
-      border-radius: 14px;
+      border-radius: 12px;
       background: var(--gray-050);
     }
-    .hour-label { font-weight: 700; color: var(--gray-700); font-size: .82rem; }
-    .hour-seats { font-size: .72rem; color: var(--gray-700); white-space: nowrap; }
+    .hour-label { font-weight: 700; color: var(--gray-700); font-size: .74rem; }
+    .hour-seats { font-size: .66rem; color: var(--gray-700); white-space: nowrap; }
     .top-session {
-      font-size: .72rem;
+      font-size: .66rem;
       font-weight: 600;
       color: var(--gray-900);
       white-space: nowrap;
@@ -96,16 +96,16 @@
       flex-wrap: nowrap;
       gap: 0;
       align-items: center;
-      min-height: 12px;
+      min-height: 10px;
       overflow: hidden;
       min-width: 0;
     }
     .sq {
       position: relative;
-      width: 4px;
-      min-width: 4px;
-      height: 11px;
-      border-radius: 2px;
+      width: 3px;
+      min-width: 3px;
+      height: 9px;
+      border-radius: 1px;
       border: 1px solid rgba(60,64,67,.12);
       background: #eef2f6;
       box-shadow: none;
@@ -168,7 +168,7 @@
     }
     @media (max-width: 1100px) {
       .toolbar { grid-template-columns: 1fr; }
-      .hour-row { grid-template-columns: 48px 78px minmax(120px, 220px) minmax(0, 1fr); }
+      .hour-row { grid-template-columns: 36px 58px minmax(100px, 180px) minmax(0, 1fr); }
     }
     @media (max-width: 760px) {
       .hour-row { grid-template-columns: 1fr; }

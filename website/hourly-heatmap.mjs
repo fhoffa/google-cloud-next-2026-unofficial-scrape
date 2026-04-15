@@ -27,6 +27,12 @@ function fillPct(session) {
 function formatCount(value) {
   return value == null ? '—' : Number(value).toLocaleString();
 }
+function formatCompactCount(value) {
+  if (value == null) return '—';
+  const n = Number(value);
+  if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, '')}k`;
+  return String(n);
+}
 function isMegaSession(session) {
   return (session?.reg ?? 0) >= MEGA_SESSION_REGISTRANTS;
 }
@@ -92,8 +98,8 @@ function renderSnapshot() {
     row.style.display = 'grid';
     const topSession = startingSessions[0] || null;
     const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
-    row.querySelector('.hour-seats').textContent = `${formatCount(totalReserved)} reserved`;
-    row.querySelector('.top-session').textContent = topSession ? `${formatCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
+    row.querySelector('.hour-seats').textContent = `${formatCompactCount(totalReserved)} res.`;
+    row.querySelector('.top-session').textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
 
     const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
