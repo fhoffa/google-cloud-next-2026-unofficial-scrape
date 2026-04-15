@@ -101,9 +101,12 @@ function renderSnapshot() {
   els.snapshotSlider.max = String(state.data.snapshots.length - 1);
   els.snapshotSlider.value = String(state.snapshotIndex);
 
+  const visibleSessions = snapshot.sessions.filter(isVisibleSession);
+  const snapshotBigMaxReserved = Math.max(1, ...visibleSessions.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
+  const snapshotSmallMaxReserved = Math.max(1, ...visibleSessions.filter(isSmallRoom).map((session) => session.reg || 0), 1);
+
   const grouped = new Map();
-  for (const session of snapshot.sessions) {
-    if (!isVisibleSession(session)) continue;
+  for (const session of visibleSessions) {
     for (let hour = session.sh; hour < session.eh; hour += 1) {
       const key = `${session.d}:${hour}`;
       if (!grouped.has(key)) grouped.set(key, []);
@@ -136,15 +139,13 @@ function renderSnapshot() {
     const markers = topSession
       ? [topSession, ...sessions.filter((session) => session.id !== topSession.id)]
       : sessions;
-    const bigMaxReserved = Math.max(1, ...markers.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
-    const smallMaxReserved = Math.max(1, ...markers.filter(isSmallRoom).map((session) => session.reg || 0), 1);
     squares.innerHTML = markers
       .sort(compareSessions)
       .map((session) => {
         const pct = fillPct(session);
-        const fill = markerFillPct(session, bigMaxReserved, smallMaxReserved);
+        const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
-        const groupLabel = isSmallRoom(session) ? 'small-room max' : 'big-room max';
+        const groupLabel = isSmallRoom(session) ? 'snapshot small-room max' : 'snapshot big-room max';
         const title = hasRealCapacity(session)
           ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of ${groupLabel}`
           : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of ${groupLabel}`}`;
