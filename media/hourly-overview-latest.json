@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T23:44:32.965Z",
+  "generatedAt": "2026-04-15T23:56:01.403Z",
   "days": [
     "Wednesday, April 22, 2026",
     "Thursday, April 23, 2026",
@@ -1118,10 +1118,10 @@
               "c": "NVIDIA"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "NVIDIA",
           "desc": "Join NVIDIA experts to explore how the NVIDIA NeMo framework and Nemotron models integrate with Google Cloud Vertex AI to deliver a frontier-scale  platform for building and deploying domain-specialized AI agents. We'll cover the technology stack, showing how NVIDIA’s models,  libraries, and Blackwell GPUs, combined with Vertex AI made for efficient training, fine-tuning, RL, and scalable inference\n\nThe session will feature a real-world case study from leading cybersecurity provider CrowdStrike, illustrating how they use this suite of solutions on Vertex with NVIDIA Blackwell GPUs to fine-tune LLMs for cybersecurity, accelerating threat detection and response.\n\nWe’ll close by offering learnings and best practices to customize Nemotron and other open models from the Vertex AI Model Garden.",
-          "q": "accelerate domain ai agents on google cloud vertex ai with nvidia nemo and nvidia nemotron join nvidia experts to explore how the nvidia nemo framework and nemotron models integrate with google cloud vertex ai to deliver a frontier-scale  platform for building and deploying domain-specialized ai agents. we'll cover the technology stack, showing how nvidia’s models,  libraries, and blackwell gpus, combined with vertex ai made for efficient training, fine-tuning, rl, and scalable inference\n\nthe session will feature a real-world case study from leading cybersecurity provider crowdstrike, illustrating how they use this suite of solutions on vertex with nvidia blackwell gpus to fine-tune llms for cybersecurity, accelerating threat detection and response.\n\nwe’ll close by offering learnings and best practices to customize nemotron and other open models from the vertex ai model garden. wenwen gao nvidia sponsored sponsor sponsor_disclosure"
+          "q": "accelerate domain ai agents on google cloud vertex ai with nvidia nemo and nvidia nemotron join nvidia experts to explore how the nvidia nemo framework and nemotron models integrate with google cloud vertex ai to deliver a frontier-scale  platform for building and deploying domain-specialized ai agents. we'll cover the technology stack, showing how nvidia’s models,  libraries, and blackwell gpus, combined with vertex ai made for efficient training, fine-tuning, rl, and scalable inference\n\nthe session will feature a real-world case study from leading cybersecurity provider crowdstrike, illustrating how they use this suite of solutions on vertex with nvidia blackwell gpus to fine-tune llms for cybersecurity, accelerating threat detection and response.\n\nwe’ll close by offering learnings and best practices to customize nemotron and other open models from the vertex ai model garden. wenwen gao nvidia"
         },
         {
           "id": "3912998",
@@ -1413,10 +1413,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "In the race for the agentic enterprise, speed is your competitive advantage. Explore how to drastically reduce time-to-market for high-quality AI agents, transforming complexity into repeatable processes. Learn to fast-track the lifecycle using the Agent Development Kit and Gemini Enterprise for efficient, governed deployment. Leave with a strategic roadmap for validating solutions on Google Cloud Marketplace and turning innovation into revenue.",
-          "q": "accelerating the agent lifecycle: from concept to commercialization in the race for the agentic enterprise, speed is your competitive advantage. explore how to drastically reduce time-to-market for high-quality ai agents, transforming complexity into repeatable processes. learn to fast-track the lifecycle using the agent development kit and gemini enterprise for efficient, governed deployment. leave with a strategic roadmap for validating solutions on google cloud marketplace and turning innovation into revenue. lars ahlfors google cloud noel kenehan google cloud sponsored sponsor sponsor_disclosure"
+          "q": "accelerating the agent lifecycle: from concept to commercialization in the race for the agentic enterprise, speed is your competitive advantage. explore how to drastically reduce time-to-market for high-quality ai agents, transforming complexity into repeatable processes. learn to fast-track the lifecycle using the agent development kit and gemini enterprise for efficient, governed deployment. leave with a strategic roadmap for validating solutions on google cloud marketplace and turning innovation into revenue. lars ahlfors google cloud noel kenehan google cloud"
         },
         {
           "id": "3964834",
@@ -1576,10 +1576,10 @@
           "cap": null,
           "r": "Agentic Mobile & Web",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Scale personalized, generative experiences across platforms. Check out how Very Good Ventures uses Flutter’s GenUI to deliver interfaces that adapt to the user, their needs, and their devices",
-          "q": "adapt across devices with flutter scale personalized, generative experiences across platforms. check out how very good ventures uses flutter’s genui to deliver interfaces that adapt to the user, their needs, and their devices sponsored sponsor sponsor_disclosure"
+          "q": "adapt across devices with flutter scale personalized, generative experiences across platforms. check out how very good ventures uses flutter’s genui to deliver interfaces that adapt to the user, their needs, and their devices"
         },
         {
           "id": "3932052",
@@ -3057,10 +3057,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Netenrich, Inc.",
           "desc": "As agentic attacks increase in frequency and complexity, organizations must transform their security strategies to stay ahead of evolving threats. Learn how an agentic security operations center (SOC) can enable faster threat detection and response, boost productivity, and harden defenses. Join security leaders from Foresite, Netenrich, and TENEX.AI as they share how AI agents will continue to transform security operations, and how AI agents in Google Security Operations are supercharging security teams.",
-          "q": "ai driven, human led: accelerate security outcomes with an agentic soc as agentic attacks increase in frequency and complexity, organizations must transform their security strategies to stay ahead of evolving threats. learn how an agentic security operations center (soc) can enable faster threat detection and response, boost productivity, and harden defenses. join security leaders from foresite, netenrich, and tenex.ai as they share how ai agents will continue to transform security operations, and how ai agents in google security operations are supercharging security teams. raju chekuri netenrich, inc. eric foster tenex.ai jeremy hehl foresite cybersecurity wunan li google cloud sponsored sponsor sponsor_disclosure"
+          "q": "ai driven, human led: accelerate security outcomes with an agentic soc as agentic attacks increase in frequency and complexity, organizations must transform their security strategies to stay ahead of evolving threats. learn how an agentic security operations center (soc) can enable faster threat detection and response, boost productivity, and harden defenses. join security leaders from foresite, netenrich, and tenex.ai as they share how ai agents will continue to transform security operations, and how ai agents in google security operations are supercharging security teams. raju chekuri netenrich, inc. eric foster tenex.ai jeremy hehl foresite cybersecurity wunan li google cloud"
         },
         {
           "id": "3913036",
@@ -4123,10 +4123,10 @@
               "c": "Kinaxis"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "MongoDB",
           "desc": "How do leading independent software vendors (ISVs) build platforms that are secure, scalable, and AI-ready? It starts with the right infrastructure foundation. Join technical leaders from our top ISV partners as they reveal the architectural decisions behind their technology. We’ll dive into how they use Compute Engine and Google Cloud Hyperdisk to eliminate storage bottlenecks and deliver extreme performance. Whether you’re building next-gen AI applications or protecting critical enterprise data, learn the design patterns that power the world’s most successful software.",
-          "q": "architecting high-performance saas: lessons from top isvs how do leading independent software vendors (isvs) build platforms that are secure, scalable, and ai-ready? it starts with the right infrastructure foundation. join technical leaders from our top isv partners as they reveal the architectural decisions behind their technology. we’ll dive into how they use compute engine and google cloud hyperdisk to eliminate storage bottlenecks and deliver extreme performance. whether you’re building next-gen ai applications or protecting critical enterprise data, learn the design patterns that power the world’s most successful software. benjamin flast mongodb leo leung google cloud rohit mendiratta palo alto networks murray stokely snowflake gelu ticala kinaxis sponsored sponsor sponsor_disclosure"
+          "q": "architecting high-performance saas: lessons from top isvs how do leading independent software vendors (isvs) build platforms that are secure, scalable, and ai-ready? it starts with the right infrastructure foundation. join technical leaders from our top isv partners as they reveal the architectural decisions behind their technology. we’ll dive into how they use compute engine and google cloud hyperdisk to eliminate storage bottlenecks and deliver extreme performance. whether you’re building next-gen ai applications or protecting critical enterprise data, learn the design patterns that power the world’s most successful software. benjamin flast mongodb leo leung google cloud rohit mendiratta palo alto networks murray stokely snowflake gelu ticala kinaxis"
         },
         {
           "id": "3920610",
@@ -4245,10 +4245,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Join engineering leaders from Google and Nvidia for a deep dive into building NVLink-connected, rack-scale systems. We’ll explore the system design and data center innovations required to enable A4X Max instances – powered by the Nvidia GB300 NVL72 – and consider the future A5X product line, powered by Nvidia’s Vera Rubin architectures. Beyond the hardware, you’ll learn how we solve the challenges of reliability, seamless maintenance, and advanced debugging at massive scale. Whether you are training frontier models or evolving your infrastructure, come gain the insights needed to architect for the next generation of AI.",
-          "q": "architecting rack-scale ai: inside nvidia blackwell on google cloud join engineering leaders from google and nvidia for a deep dive into building nvlink-connected, rack-scale systems. we’ll explore the system design and data center innovations required to enable a4x max instances – powered by the nvidia gb300 nvl72 – and consider the future a5x product line, powered by nvidia’s vera rubin architectures. beyond the hardware, you’ll learn how we solve the challenges of reliability, seamless maintenance, and advanced debugging at massive scale. whether you are training frontier models or evolving your infrastructure, come gain the insights needed to architect for the next generation of ai. manish gilani google cloud deepak narayanan nvidia pramod ramarao google cloud sponsored sponsor sponsor_disclosure"
+          "q": "architecting rack-scale ai: inside nvidia blackwell on google cloud join engineering leaders from google and nvidia for a deep dive into building nvlink-connected, rack-scale systems. we’ll explore the system design and data center innovations required to enable a4x max instances – powered by the nvidia gb300 nvl72 – and consider the future a5x product line, powered by nvidia’s vera rubin architectures. beyond the hardware, you’ll learn how we solve the challenges of reliability, seamless maintenance, and advanced debugging at massive scale. whether you are training frontier models or evolving your infrastructure, come gain the insights needed to architect for the next generation of ai. manish gilani google cloud deepak narayanan nvidia pramod ramarao google cloud"
         },
         {
           "id": "3913137",
@@ -4383,10 +4383,10 @@
           "cap": null,
           "r": "Google Cloud Consulting",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Direct access to Google Cloud Consulting’s top minds. Bring your complex technical blockers or strategic questions. We’ll help unblock your roadmap so you leave with more than just advice—you leave with a plan.",
-          "q": "ask an expert direct access to google cloud consulting’s top minds. bring your complex technical blockers or strategic questions. we’ll help unblock your roadmap so you leave with more than just advice—you leave with a plan. sponsored sponsor sponsor_disclosure"
+          "q": "ask an expert direct access to google cloud consulting’s top minds. bring your complex technical blockers or strategic questions. we’ll help unblock your roadmap so you leave with more than just advice—you leave with a plan."
         },
         {
           "id": "3912213",
@@ -5816,10 +5816,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Drive predictable, targeted growth with our 2026 Priority Plays. These comprehensive blueprints are designed to help you engage customers and advance deals with precision. Each play is built on validated market opportunities, supported by a full bill of materials, and mapped directly to the customer lifecycle. Learn how to unlock maximum impact and accelerate your next win.",
-          "q": "blueprint for success: scale your business with 2026 priority plays drive predictable, targeted growth with our 2026 priority plays. these comprehensive blueprints are designed to help you engage customers and advance deals with precision. each play is built on validated market opportunities, supported by a full bill of materials, and mapped directly to the customer lifecycle. learn how to unlock maximum impact and accelerate your next win. simao martins google cloud shanti thirumalai google cloud sponsored sponsor sponsor_disclosure"
+          "q": "blueprint for success: scale your business with 2026 priority plays drive predictable, targeted growth with our 2026 priority plays. these comprehensive blueprints are designed to help you engage customers and advance deals with precision. each play is built on validated market opportunities, supported by a full bill of materials, and mapped directly to the customer lifecycle. learn how to unlock maximum impact and accelerate your next win. simao martins google cloud shanti thirumalai google cloud"
         },
         {
           "id": "3897119",
@@ -6487,10 +6487,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Anthropic",
           "desc": "Shopify’s Sidekick is an AI commerce assistant that combines advanced reasoning with the intuition of “vibe entrepreneurship” to help merchants improve product listings, pull performance reports, and make data-driven decisions faster. Join this session to explore how Shopify uses Anthropic’s Claude on Vertex AI to power low-latency, reliable multistep workflows with model updates in under 24 hours. We’ll take you through the architecture and the key choices made on Google Cloud to ensure high reliability without sacrificing performance.",
-          "q": "build agents at scale: how shopify powers sidekick with claude on vertex ai shopify’s sidekick is an ai commerce assistant that combines advanced reasoning with the intuition of “vibe entrepreneurship” to help merchants improve product listings, pull performance reports, and make data-driven decisions faster. join this session to explore how shopify uses anthropic’s claude on vertex ai to power low-latency, reliable multistep workflows with model updates in under 24 hours. we’ll take you through the architecture and the key choices made on google cloud to ensure high reliability without sacrificing performance. drew hodun anthropic andrew mcnamara shopify rishabh ray chaudhury google cloud sponsored sponsor sponsor_disclosure"
+          "q": "build agents at scale: how shopify powers sidekick with claude on vertex ai shopify’s sidekick is an ai commerce assistant that combines advanced reasoning with the intuition of “vibe entrepreneurship” to help merchants improve product listings, pull performance reports, and make data-driven decisions faster. join this session to explore how shopify uses anthropic’s claude on vertex ai to power low-latency, reliable multistep workflows with model updates in under 24 hours. we’ll take you through the architecture and the key choices made on google cloud to ensure high reliability without sacrificing performance. drew hodun anthropic andrew mcnamara shopify rishabh ray chaudhury google cloud"
         },
         {
           "id": "3920385",
@@ -6906,10 +6906,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Atlassian",
           "desc": "The future of development lies in orchestrating a workforce of agents, rather than relying on a single one. Join us to witness the Gemini CLI evolve into the universal connector, dispatching tasks to any agent – from custom agents to Atlassian Rovo. We’ll unveil the “agents everywhere” architecture with a live demo of the Agent2Agent (A2A) protocol. Observe the Gemini CLI act as a secure control plane, seamlessly routing tasks to your agents and to Rovo for expert execution. Discover how to build a unified, scalable agent network that breaks down silos between your tools and teams.",
-          "q": "build and orchestrate enterprise agents with gemini and atlassian rovo the future of development lies in orchestrating a workforce of agents, rather than relying on a single one. join us to witness the gemini cli evolve into the universal connector, dispatching tasks to any agent – from custom agents to atlassian rovo. we’ll unveil the “agents everywhere” architecture with a live demo of the agent2agent (a2a) protocol. observe the gemini cli act as a secure control plane, seamlessly routing tasks to your agents and to rovo for expert execution. discover how to build a unified, scalable agent network that breaks down silos between your tools and teams. sid chaturvedi atlassian evan otero google cloud sponsored sponsor sponsor_disclosure"
+          "q": "build and orchestrate enterprise agents with gemini and atlassian rovo the future of development lies in orchestrating a workforce of agents, rather than relying on a single one. join us to witness the gemini cli evolve into the universal connector, dispatching tasks to any agent – from custom agents to atlassian rovo. we’ll unveil the “agents everywhere” architecture with a live demo of the agent2agent (a2a) protocol. observe the gemini cli act as a secure control plane, seamlessly routing tasks to your agents and to rovo for expert execution. discover how to build a unified, scalable agent network that breaks down silos between your tools and teams. sid chaturvedi atlassian evan otero google cloud"
         },
         {
           "id": "3913126",
@@ -7502,10 +7502,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "We are entering a $1T market opportunity for agentic AI services, but enterprise value is often blocked by a lack of access to real-time data. Join us to learn how to bridge this gap using BigQuery and Gemini. We will detail three revenue-generating plays: the \"Quick Win\" for immediate value, the \"Specialization Play\" for vertical agents, and the \"Transformation Play\" for full-scale redesigns. Discover how to monetize your IP on Google Cloud Marketplace and position your practice at the center of the revolution.",
-          "q": "building a high-margin data cloud practice in the agentic era we are entering a $1t market opportunity for agentic ai services, but enterprise value is often blocked by a lack of access to real-time data. join us to learn how to bridge this gap using bigquery and gemini. we will detail three revenue-generating plays: the \"quick win\" for immediate value, the \"specialization play\" for vertical agents, and the \"transformation play\" for full-scale redesigns. discover how to monetize your ip on google cloud marketplace and position your practice at the center of the revolution. jobin george google cloud harish surendranath google cloud sponsored sponsor sponsor_disclosure"
+          "q": "building a high-margin data cloud practice in the agentic era we are entering a $1t market opportunity for agentic ai services, but enterprise value is often blocked by a lack of access to real-time data. join us to learn how to bridge this gap using bigquery and gemini. we will detail three revenue-generating plays: the \"quick win\" for immediate value, the \"specialization play\" for vertical agents, and the \"transformation play\" for full-scale redesigns. discover how to monetize your ip on google cloud marketplace and position your practice at the center of the revolution. jobin george google cloud harish surendranath google cloud"
         },
         {
           "id": "3916372",
@@ -9102,10 +9102,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Turn your customer wins into your global signal of expertise. In the Google Cloud Partner Network, Competencies are the signal of deep sales and technical expertise. Join us to build your brand across industries, products, and solutions. We’ll share tips for achieving competency thresholds, unpack the metrics that matter, and show how automated tracking aligns you with program progression and Google Cloud Sales.",
-          "q": "competencies: turn customer wins into your greatest competitive advantage turn your customer wins into your global signal of expertise. in the google cloud partner network, competencies are the signal of deep sales and technical expertise. join us to build your brand across industries, products, and solutions. we’ll share tips for achieving competency thresholds, unpack the metrics that matter, and show how automated tracking aligns you with program progression and google cloud sales. mary bordin google cloud wicksell metellus google cloud sponsored sponsor sponsor_disclosure"
+          "q": "competencies: turn customer wins into your greatest competitive advantage turn your customer wins into your global signal of expertise. in the google cloud partner network, competencies are the signal of deep sales and technical expertise. join us to build your brand across industries, products, and solutions. we’ll share tips for achieving competency thresholds, unpack the metrics that matter, and show how automated tracking aligns you with program progression and google cloud sales. mary bordin google cloud wicksell metellus google cloud"
         },
         {
           "id": "3913068",
@@ -9701,10 +9701,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "A paradigm shift is underway: ISVs are no longer merely integrating with the Data Cloud —they're building sophisticated Data Agents directly on our platform. In this session, we explore how this emerging \"Ecosystem of Data Agents\" serves as a powerful catalyst for partner success. Learn firsthand how ISVs are leveraging Google’s unified stack to power agents that live within their own platforms but reason across the customer’s entire data estate. This evolution transforms the service model, shifting the focus from implementing static software to orchestrating high-value, autonomous data agents.",
-          "q": "data agents: a growth engine for google cloud partners a paradigm shift is underway: isvs are no longer merely integrating with the data cloud —they're building sophisticated data agents directly on our platform. in this session, we explore how this emerging \"ecosystem of data agents\" serves as a powerful catalyst for partner success. learn firsthand how isvs are leveraging google’s unified stack to power agents that live within their own platforms but reason across the customer’s entire data estate. this evolution transforms the service model, shifting the focus from implementing static software to orchestrating high-value, autonomous data agents. aman chhabra google cloud shikhar mathur google cloud sponsored sponsor sponsor_disclosure"
+          "q": "data agents: a growth engine for google cloud partners a paradigm shift is underway: isvs are no longer merely integrating with the data cloud —they're building sophisticated data agents directly on our platform. in this session, we explore how this emerging \"ecosystem of data agents\" serves as a powerful catalyst for partner success. learn firsthand how isvs are leveraging google’s unified stack to power agents that live within their own platforms but reason across the customer’s entire data estate. this evolution transforms the service model, shifting the focus from implementing static software to orchestrating high-value, autonomous data agents. aman chhabra google cloud shikhar mathur google cloud"
         },
         {
           "id": "3920494",
@@ -10396,10 +10396,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "As AI adoption grows, so do the threats. In this session, learn how ISV solutions built on Google Cloud are safeguarding the next generation of AI developments. We will also examine how AI-powered attacks are shifting the security paradigm and how Google is collaborating with partners to prepare for this new wave. Walk away with the insights needed to secure your customers' innovation.",
-          "q": "defending the frontier: protecting ai with google cloud as ai adoption grows, so do the threats. in this session, learn how isv solutions built on google cloud are safeguarding the next generation of ai developments. we will also examine how ai-powered attacks are shifting the security paradigm and how google is collaborating with partners to prepare for this new wave. walk away with the insights needed to secure your customers' innovation. brice daniels google cloud sponsored sponsor sponsor_disclosure"
+          "q": "defending the frontier: protecting ai with google cloud as ai adoption grows, so do the threats. in this session, learn how isv solutions built on google cloud are safeguarding the next generation of ai developments. we will also examine how ai-powered attacks are shifting the security paradigm and how google is collaborating with partners to prepare for this new wave. walk away with the insights needed to secure your customers' innovation. brice daniels google cloud"
         },
         {
           "id": "3913153",
@@ -10573,10 +10573,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "How do you guarantee project success? By showing up prepared. This session dives deep into the Team Readiness feature in Delivery Readiness Platform (DRP). Learn how to maximize the platform to assemble stronger teams, analyze readiness scores, and leverage the latest agentic capabilities. You will leave with targeted training recommendations to identify and close skill gaps in your organization.",
-          "q": "delivery readiness platform: driving excellence and building a winning team how do you guarantee project success? by showing up prepared. this session dives deep into the team readiness feature in delivery readiness platform (drp). learn how to maximize the platform to assemble stronger teams, analyze readiness scores, and leverage the latest agentic capabilities. you will leave with targeted training recommendations to identify and close skill gaps in your organization. lexine odish google cloud ivo wind google cloud sponsored sponsor sponsor_disclosure"
+          "q": "delivery readiness platform: driving excellence and building a winning team how do you guarantee project success? by showing up prepared. this session dives deep into the team readiness feature in delivery readiness platform (drp). learn how to maximize the platform to assemble stronger teams, analyze readiness scores, and leverage the latest agentic capabilities. you will leave with targeted training recommendations to identify and close skill gaps in your organization. lexine odish google cloud ivo wind google cloud"
         },
         {
           "id": "3913077",
@@ -10901,10 +10901,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Ready to capture the next wave of growth customers? The \"Agentic Era\" is your biggest opportunity to unlock untapped markets. Join us for a high-velocity talk breaking down the Agentic Workplace Transformation (AWT) narrative. We will show you exactly how to position Gemini Enterprise and Google Workspace to displace incumbents and land new business. Learn the high-impact sales plays that turn new logos into long-term customers by leading with agentic adoption.",
-          "q": "displace & win: the agentic workplace transformation playbook ready to capture the next wave of growth customers? the \"agentic era\" is your biggest opportunity to unlock untapped markets. join us for a high-velocity talk breaking down the agentic workplace transformation (awt) narrative. we will show you exactly how to position gemini enterprise and google workspace to displace incumbents and land new business. learn the high-impact sales plays that turn new logos into long-term customers by leading with agentic adoption. manav bhatia google cloud lauren joyce google cloud sponsored sponsor sponsor_disclosure"
+          "q": "displace & win: the agentic workplace transformation playbook ready to capture the next wave of growth customers? the \"agentic era\" is your biggest opportunity to unlock untapped markets. join us for a high-velocity talk breaking down the agentic workplace transformation (awt) narrative. we will show you exactly how to position gemini enterprise and google workspace to displace incumbents and land new business. learn the high-impact sales plays that turn new logos into long-term customers by leading with agentic adoption. manav bhatia google cloud lauren joyce google cloud"
         },
         {
           "id": "3909246",
@@ -11143,10 +11143,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Stop leaving deals on the table—it's time to up-level your Co-Sell strategy. Learn how to win over the Google Cloud field with precision-engineered vertical plans and compelling solution framing. We’ll share the best practices you need to boost engagement, accelerate deals, and deliver consistent wins with your co-sell motions.",
-          "q": "elevate your co-sell: mastering field engagements for measurable results stop leaving deals on the table—it's time to up-level your co-sell strategy. learn how to win over the google cloud field with precision-engineered vertical plans and compelling solution framing. we’ll share the best practices you need to boost engagement, accelerate deals, and deliver consistent wins with your co-sell motions. carter satterfield google cloud mike shea google cloud sponsored sponsor sponsor_disclosure"
+          "q": "elevate your co-sell: mastering field engagements for measurable results stop leaving deals on the table—it's time to up-level your co-sell strategy. learn how to win over the google cloud field with precision-engineered vertical plans and compelling solution framing. we’ll share the best practices you need to boost engagement, accelerate deals, and deliver consistent wins with your co-sell motions. carter satterfield google cloud mike shea google cloud"
         },
         {
           "id": "3920543",
@@ -11933,10 +11933,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Transitioning from Microsoft Office to Google Workspace doesn’t need to be daunting or costly. Join this session for a fresh look and learn how you can confidently move to Google Workspace and eliminate the reliance on Office licenses. Our new enterprise-grade cloud migration service, macros converter, and enhanced Office file interoperability will fundamentally shift the cost-benefit analysis, helping you free up weeks of effort and IT budget. You’ll see product demos and hear from customers on their best practices and migration journeys.",
-          "q": "fast-track to google workspace: smooth migration, adoption, and interoperability transitioning from microsoft office to google workspace doesn’t need to be daunting or costly. join this session for a fresh look and learn how you can confidently move to google workspace and eliminate the reliance on office licenses. our new enterprise-grade cloud migration service, macros converter, and enhanced office file interoperability will fundamentally shift the cost-benefit analysis, helping you free up weeks of effort and it budget. you’ll see product demos and hear from customers on their best practices and migration journeys. luke camery google cloud ashish gupta google cloud sponsored sponsor sponsor_disclosure"
+          "q": "fast-track to google workspace: smooth migration, adoption, and interoperability transitioning from microsoft office to google workspace doesn’t need to be daunting or costly. join this session for a fresh look and learn how you can confidently move to google workspace and eliminate the reliance on office licenses. our new enterprise-grade cloud migration service, macros converter, and enhanced office file interoperability will fundamentally shift the cost-benefit analysis, helping you free up weeks of effort and it budget. you’ll see product demos and hear from customers on their best practices and migration journeys. luke camery google cloud ashish gupta google cloud"
         },
         {
           "id": "3920406",
@@ -12262,10 +12262,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Co-sell and services registrations are the foundation of your partnership profitability. Learn to use these motions to capture your impact and unlock joint opportunities, driving your path to Select, Premier, and Diamond tiers in the new outcome-based Google Cloud Partner Network. We’ll also highlight new AI-driven automation that slashes administrative overhead and improves registration quality, streamlining your growth.",
-          "q": "foundation of success: mastering co-sell and services registrations co-sell and services registrations are the foundation of your partnership profitability. learn to use these motions to capture your impact and unlock joint opportunities, driving your path to select, premier, and diamond tiers in the new outcome-based google cloud partner network. we’ll also highlight new ai-driven automation that slashes administrative overhead and improves registration quality, streamlining your growth. devika bhagwat google cloud nick cervantes google cloud sponsored sponsor sponsor_disclosure"
+          "q": "foundation of success: mastering co-sell and services registrations co-sell and services registrations are the foundation of your partnership profitability. learn to use these motions to capture your impact and unlock joint opportunities, driving your path to select, premier, and diamond tiers in the new outcome-based google cloud partner network. we’ll also highlight new ai-driven automation that slashes administrative overhead and improves registration quality, streamlining your growth. devika bhagwat google cloud nick cervantes google cloud"
         },
         {
           "id": "3920419",
@@ -12718,10 +12718,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Televisa Univision",
           "desc": "Learn a better way to provision cloud resources for containerized apps. This session shows how to use modern languages to configure Cloud Run directly from your IDE. Discover how customers like TelevisaUnivision manage hundreds of services at scale using Pulumi, enabling them to achieve greater deployment velocity without infrastructure friction.",
-          "q": "from code to production: the path of least resistance learn a better way to provision cloud resources for containerized apps. this session shows how to use modern languages to configure cloud run directly from your ide. discover how customers like televisaunivision manage hundreds of services at scale using pulumi, enabling them to achieve greater deployment velocity without infrastructure friction. guzmán brasó televisa univision james connell pulumi jay smith google cloud sponsored sponsor sponsor_disclosure"
+          "q": "from code to production: the path of least resistance learn a better way to provision cloud resources for containerized apps. this session shows how to use modern languages to configure cloud run directly from your ide. discover how customers like televisaunivision manage hundreds of services at scale using pulumi, enabling them to achieve greater deployment velocity without infrastructure friction. guzmán brasó televisa univision james connell pulumi jay smith google cloud"
         },
         {
           "id": "3888642",
@@ -13142,10 +13142,10 @@
               "c": "Banco BV"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "McGill and Partners",
           "desc": "How do you move from AI pilots to scalable business impact? Hear from leading organizations that have successfully navigated this shift with Gemini Enterprise. We’ll explore the specific catalysts behind their decisions, and how partner collaboration accelerated their journeys. Learn how they moved past standard deployment to build sophisticated AI agents, automating complex workflows and unlocking new efficiencies across business areas, from finance and operations to sales and marketing.",
-          "q": "from pilot to profit: build an ai-powered organization with gemini how do you move from ai pilots to scalable business impact? hear from leading organizations that have successfully navigated this shift with gemini enterprise. we’ll explore the specific catalysts behind their decisions, and how partner collaboration accelerated their journeys. learn how they moved past standard deployment to build sophisticated ai agents, automating complex workflows and unlocking new efficiencies across business areas, from finance and operations to sales and marketing. simon bradbury mcgill and partners martin geisler bosch pat mccarthy google cloud gabriel fernando gabriel.reis@bv.com.br banco bv sponsored sponsor sponsor_disclosure"
+          "q": "from pilot to profit: build an ai-powered organization with gemini how do you move from ai pilots to scalable business impact? hear from leading organizations that have successfully navigated this shift with gemini enterprise. we’ll explore the specific catalysts behind their decisions, and how partner collaboration accelerated their journeys. learn how they moved past standard deployment to build sophisticated ai agents, automating complex workflows and unlocking new efficiencies across business areas, from finance and operations to sales and marketing. simon bradbury mcgill and partners martin geisler bosch pat mccarthy google cloud gabriel fernando gabriel.reis@bv.com.br banco bv"
         },
         {
           "id": "3912975",
@@ -13581,10 +13581,10 @@
               "c": "Pendo"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Agentic AI is reshaping the future of work and transforming how knowledge workers interact with SaaS. In this session, discover how to build powerful agentic capabilities directly into your offerings. We will cover the specific architectural shifts required and share best practices to get you started. Learn how to evolve your product strategy to meet the demands of the agentic era.",
-          "q": "future-proof saas: transforming apps with agentic ai agentic ai is reshaping the future of work and transforming how knowledge workers interact with saas. in this session, discover how to build powerful agentic capabilities directly into your offerings. we will cover the specific architectural shifts required and share best practices to get you started. learn how to evolve your product strategy to meet the demands of the agentic era. juan bustos google cloud brian walsh pendo sponsored sponsor sponsor_disclosure"
+          "q": "future-proof saas: transforming apps with agentic ai agentic ai is reshaping the future of work and transforming how knowledge workers interact with saas. in this session, discover how to build powerful agentic capabilities directly into your offerings. we will cover the specific architectural shifts required and share best practices to get you started. learn how to evolve your product strategy to meet the demands of the agentic era. juan bustos google cloud brian walsh pendo"
         },
         {
           "id": "3909234",
@@ -13605,10 +13605,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "The AI Era is the Learning Era, and your career demands a bold commitment to evolution. For our partners, keeping skills current is the single most critical factor for both individual growth and sustained organizational success. In this high-energy talk, you will discover the comprehensive learning roadmap Google Cloud has built for you. Learn why excelling in core technologies like Data, Infrastructure, and Security is non-negotiable for success in the AI age.",
-          "q": "future-proof your partnership: why the \"ai era\" demands the \"learning era\" the ai era is the learning era, and your career demands a bold commitment to evolution. for our partners, keeping skills current is the single most critical factor for both individual growth and sustained organizational success. in this high-energy talk, you will discover the comprehensive learning roadmap google cloud has built for you. learn why excelling in core technologies like data, infrastructure, and security is non-negotiable for success in the ai age. linda moss google cloud sponsored sponsor sponsor_disclosure"
+          "q": "future-proof your partnership: why the \"ai era\" demands the \"learning era\" the ai era is the learning era, and your career demands a bold commitment to evolution. for our partners, keeping skills current is the single most critical factor for both individual growth and sustained organizational success. in this high-energy talk, you will discover the comprehensive learning roadmap google cloud has built for you. learn why excelling in core technologies like data, infrastructure, and security is non-negotiable for success in the ai age. linda moss google cloud"
         },
         {
           "id": "3920376",
@@ -13915,10 +13915,10 @@
           "cap": null,
           "r": "Gemini Robotics",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Experience how the latest Gemini Robotics models imbue robots with the contextual understanding, linguistic and spatial intelligence needed to perceive the messy reality of the world. The models enable each unique robot to reason through challenges and act with true adaptability. See different applications with Boston Dynamics, Enchanted Tools, and Franka Robotics.\nThis demo is available all 3 days of the event in Google Cloud Showcase\n\nThis demo is available all 3 days of the event in Google Cloud Showcase.",
-          "q": "gemini robotics experience how the latest gemini robotics models imbue robots with the contextual understanding, linguistic and spatial intelligence needed to perceive the messy reality of the world. the models enable each unique robot to reason through challenges and act with true adaptability. see different applications with boston dynamics, enchanted tools, and franka robotics.\nthis demo is available all 3 days of the event in google cloud showcase\n\nthis demo is available all 3 days of the event in google cloud showcase. sponsored sponsor sponsor_disclosure"
+          "q": "gemini robotics experience how the latest gemini robotics models imbue robots with the contextual understanding, linguistic and spatial intelligence needed to perceive the messy reality of the world. the models enable each unique robot to reason through challenges and act with true adaptability. see different applications with boston dynamics, enchanted tools, and franka robotics.\nthis demo is available all 3 days of the event in google cloud showcase\n\nthis demo is available all 3 days of the event in google cloud showcase."
         },
         {
           "id": "3947564",
@@ -14605,10 +14605,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "New to selling on Google Cloud Marketplace? This lightning talk empowers you to unlock our partnership's full potential. Learn the value of our co-sell programs and discover best practices for working effectively with Partner Advisors. We will provide a clear overview of the journey—from onboarding and consumption tracking, to our \"10-step guide\" for co-sell readiness. Get actionable insights to accelerate your growth from zero to revenue.",
-          "q": "go from zero to revenue on google cloud marketplace new to selling on google cloud marketplace? this lightning talk empowers you to unlock our partnership's full potential. learn the value of our co-sell programs and discover best practices for working effectively with partner advisors. we will provide a clear overview of the journey—from onboarding and consumption tracking, to our \"10-step guide\" for co-sell readiness. get actionable insights to accelerate your growth from zero to revenue. marc harpster google cloud divya venkatachari google cloud sponsored sponsor sponsor_disclosure"
+          "q": "go from zero to revenue on google cloud marketplace new to selling on google cloud marketplace? this lightning talk empowers you to unlock our partnership's full potential. learn the value of our co-sell programs and discover best practices for working effectively with partner advisors. we will provide a clear overview of the journey—from onboarding and consumption tracking, to our \"10-step guide\" for co-sell readiness. get actionable insights to accelerate your growth from zero to revenue. marc harpster google cloud divya venkatachari google cloud"
         },
         {
           "id": "3912335",
@@ -15969,10 +15969,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Uncover the migration approach that saves you money on power and cooling contracts. Unlike traditional migrations, the Google Cloud Platforms and Infrastructure team approaches Data Center Exit (DCx) through a physical-to-digital lens. By linking rack location to GCP adoption, you can systematically \"turn down\" your data center in real-time, ensuring that as your cloud capability ramps up, your real estate liability and infrastructure spend definitively go down.",
-          "q": "infra-first data center exit: cutting physical assets & spend uncover the migration approach that saves you money on power and cooling contracts. unlike traditional migrations, the google cloud platforms and infrastructure team approaches data center exit (dcx) through a physical-to-digital lens. by linking rack location to gcp adoption, you can systematically \"turn down\" your data center in real-time, ensuring that as your cloud capability ramps up, your real estate liability and infrastructure spend definitively go down. bobbie atristain google cloud jeff thompson google cloud sponsored sponsor sponsor_disclosure"
+          "q": "infra-first data center exit: cutting physical assets & spend uncover the migration approach that saves you money on power and cooling contracts. unlike traditional migrations, the google cloud platforms and infrastructure team approaches data center exit (dcx) through a physical-to-digital lens. by linking rack location to gcp adoption, you can systematically \"turn down\" your data center in real-time, ensuring that as your cloud capability ramps up, your real estate liability and infrastructure spend definitively go down. bobbie atristain google cloud jeff thompson google cloud"
         },
         {
           "id": "3911937",
@@ -16645,10 +16645,10 @@
               "c": "Cobry"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Is your business data-rich, but you’re always digging for insights and answers? In this session, get our guide for building an AI agent that is superpowered by your business data – without straining your resources. We’ll show you how a lean IT team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member.",
-          "q": "let your data talk with gemini enterprise: a low-code guide for lean teams is your business data-rich, but you’re always digging for insights and answers? in this session, get our guide for building an ai agent that is superpowered by your business data – without straining your resources. we’ll show you how a lean it team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member. fatimah areola google cloud patrick bobrukiewicz thrive restaurant group wiktor jurek cobry sponsored sponsor sponsor_disclosure"
+          "q": "let your data talk with gemini enterprise: a low-code guide for lean teams is your business data-rich, but you’re always digging for insights and answers? in this session, get our guide for building an ai agent that is superpowered by your business data – without straining your resources. we’ll show you how a lean it team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member. fatimah areola google cloud patrick bobrukiewicz thrive restaurant group wiktor jurek cobry"
         },
         {
           "id": "4024769",
@@ -16669,10 +16669,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Is your business data-rich, but you’re always digging for insights and answers? In this session, get our guide for building an AI agent that is superpowered by your business data – without straining your resources. We’ll show you how a lean IT team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member.",
-          "q": "let your data talk with gemini enterprise: a low-code guide for lean teams is your business data-rich, but you’re always digging for insights and answers? in this session, get our guide for building an ai agent that is superpowered by your business data – without straining your resources. we’ll show you how a lean it team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member. fatimah areola google cloud sponsored sponsor sponsor_disclosure"
+          "q": "let your data talk with gemini enterprise: a low-code guide for lean teams is your business data-rich, but you’re always digging for insights and answers? in this session, get our guide for building an ai agent that is superpowered by your business data – without straining your resources. we’ll show you how a lean it team can use low-code tools to leverage conversational agents that provide instant, self-serve answers for every team member. fatimah areola google cloud"
         },
         {
           "id": "3912228",
@@ -16721,10 +16721,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Take your marketing plan from good to great. Discover how to supercharge your campaigns by fully leveraging the benefits of Partner Marketing Studio. This session provides a tactical guide to using key tools to work smarter, not harder. You will walk away with a toolkit of practical tips designed to stretch your budget, scale your reach, and drive immediate results.",
-          "q": "level up: supercharge your partner marketing studio campaigns take your marketing plan from good to great. discover how to supercharge your campaigns by fully leveraging the benefits of partner marketing studio. this session provides a tactical guide to using key tools to work smarter, not harder. you will walk away with a toolkit of practical tips designed to stretch your budget, scale your reach, and drive immediate results. amy bray google cloud abella kahane google cloud sponsored sponsor sponsor_disclosure"
+          "q": "level up: supercharge your partner marketing studio campaigns take your marketing plan from good to great. discover how to supercharge your campaigns by fully leveraging the benefits of partner marketing studio. this session provides a tactical guide to using key tools to work smarter, not harder. you will walk away with a toolkit of practical tips designed to stretch your budget, scale your reach, and drive immediate results. amy bray google cloud abella kahane google cloud"
         },
         {
           "id": "3920499",
@@ -17199,10 +17199,10 @@
               "c": "Workday"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "To maximize agentic AI value, customers must overcome hurdles in security, integration, and trust. This session will offer a blueprint for building the trusted agentic enterprise. Learn how leaders like Palo Alto Networks and ServiceNow have packaged and deployed agents via Google Cloud Marketplace that integrate into existing workflows. Builders will also discover how to monetize and deploy governed solutions through Gemini Enterprise. And finally, we’ll examine real-world examples of organizations that are realizing ROI from implementing trusted solutions.",
-          "q": "marketplace: enabling the era of the agentic enterprise to maximize agentic ai value, customers must overcome hurdles in security, integration, and trust. this session will offer a blueprint for building the trusted agentic enterprise. learn how leaders like palo alto networks and servicenow have packaged and deployed agents via google cloud marketplace that integrate into existing workflows. builders will also discover how to monetize and deploy governed solutions through gemini enterprise. and finally, we’ll examine real-world examples of organizations that are realizing roi from implementing trusted solutions. pritish sinha google cloud satish thomas google cloud jerry ting workday sponsored sponsor sponsor_disclosure"
+          "q": "marketplace: enabling the era of the agentic enterprise to maximize agentic ai value, customers must overcome hurdles in security, integration, and trust. this session will offer a blueprint for building the trusted agentic enterprise. learn how leaders like palo alto networks and servicenow have packaged and deployed agents via google cloud marketplace that integrate into existing workflows. builders will also discover how to monetize and deploy governed solutions through gemini enterprise. and finally, we’ll examine real-world examples of organizations that are realizing roi from implementing trusted solutions. pritish sinha google cloud satish thomas google cloud jerry ting workday"
         },
         {
           "id": "3912904",
@@ -17359,10 +17359,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Sales through cloud marketplaces are skyrocketing, with estimates reaching $163B by 2030. Are you ready to capture your share? 59% of these sales will flow through the channel. Don’t miss this essential briefing where we unpack the critical platform updates and new initiatives for 2026. We will show you how to unlock channel revenue growth and position your business at the forefront of the Marketplace revolution.",
-          "q": "maximize channel revenue growth with google cloud marketplace sales through cloud marketplaces are skyrocketing, with estimates reaching $163b by 2030. are you ready to capture your share? 59% of these sales will flow through the channel. don’t miss this essential briefing where we unpack the critical platform updates and new initiatives for 2026. we will show you how to unlock channel revenue growth and position your business at the forefront of the marketplace revolution. rachel bradshaw google cloud afshin shams google cloud sponsored sponsor sponsor_disclosure"
+          "q": "maximize channel revenue growth with google cloud marketplace sales through cloud marketplaces are skyrocketing, with estimates reaching $163b by 2030. are you ready to capture your share? 59% of these sales will flow through the channel. don’t miss this essential briefing where we unpack the critical platform updates and new initiatives for 2026. we will show you how to unlock channel revenue growth and position your business at the forefront of the marketplace revolution. rachel bradshaw google cloud afshin shams google cloud"
         },
         {
           "id": "3909220",
@@ -17387,10 +17387,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "The AI revolution is here, and in 2026, your profitability is tied to transformation, not just transactions. Discover how to increase your earnings using the new Gemini Enterprise Growth Engine and maximize returns through adoption-focused Workspace incentives. We will show you how to lead the charge, turning deep customer adoption into your greatest revenue driver. Don't just sell—drive active usage and maximize your rewards.",
-          "q": "maximize profitability with gemini enterprise & workspace incentives the ai revolution is here, and in 2026, your profitability is tied to transformation, not just transactions. discover how to increase your earnings using the new gemini enterprise growth engine and maximize returns through adoption-focused workspace incentives. we will show you how to lead the charge, turning deep customer adoption into your greatest revenue driver. don't just sell—drive active usage and maximize your rewards. fearghal o'higgins google cloud wasim rasheed google cloud sponsored sponsor sponsor_disclosure"
+          "q": "maximize profitability with gemini enterprise & workspace incentives the ai revolution is here, and in 2026, your profitability is tied to transformation, not just transactions. discover how to increase your earnings using the new gemini enterprise growth engine and maximize returns through adoption-focused workspace incentives. we will show you how to lead the charge, turning deep customer adoption into your greatest revenue driver. don't just sell—drive active usage and maximize your rewards. fearghal o'higgins google cloud wasim rasheed google cloud"
         },
         {
           "id": "3913054",
@@ -17532,10 +17532,10 @@
               "c": "SEI"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "SADA",
           "desc": "Our partner ecosystem is key to unlocking the full potential of Google Cloud. In this session, you'll learn directly from our partners about proven strategies for transforming complex SAP landscapes, modernizing mission-critical Oracle databases, and seamlessly migrating VMware environments. SADA Systems will then be joined by their customer, SEI, to share their firsthand experience with a successful Oracle migration and the outstanding results they achieved by working together.",
-          "q": "migrating sap, oracle, and vmware: a partner and customer story our partner ecosystem is key to unlocking the full potential of google cloud. in this session, you'll learn directly from our partners about proven strategies for transforming complex sap landscapes, modernizing mission-critical oracle databases, and seamlessly migrating vmware environments. sada systems will then be joined by their customer, sei, to share their firsthand experience with a successful oracle migration and the outstanding results they achieved by working together. connor brassard sada josh saindon sei sponsored sponsor sponsor_disclosure"
+          "q": "migrating sap, oracle, and vmware: a partner and customer story our partner ecosystem is key to unlocking the full potential of google cloud. in this session, you'll learn directly from our partners about proven strategies for transforming complex sap landscapes, modernizing mission-critical oracle databases, and seamlessly migrating vmware environments. sada systems will then be joined by their customer, sei, to share their firsthand experience with a successful oracle migration and the outstanding results they achieved by working together. connor brassard sada josh saindon sei"
         },
         {
           "id": "3912999",
@@ -17572,10 +17572,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Intesa SanPaolo",
           "desc": "Wondering how to unlock the path to AI with a smooth cloud transformation? In this session, enterprise leaders from Ingram Micro, Intesa Sanpaolo, and InMobi will reveal migration-tested blueprints for executing complex migrations to Google Cloud. Discover how they navigated technical debt while minimizing risk. Plus, get an exclusive look at updates to our Rapid Migration and Modernization Program (RaMP), featuring exciting new incentives to help accelerate your migrations. Leave with the strategy and funding insights to accelerate your journey.",
-          "q": "migration accomplished: a customer panel on moving to an ai-ready cloud wondering how to unlock the path to ai with a smooth cloud transformation? in this session, enterprise leaders from ingram micro, intesa sanpaolo, and inmobi will reveal migration-tested blueprints for executing complex migrations to google cloud. discover how they navigated technical debt while minimizing risk. plus, get an exclusive look at updates to our rapid migration and modernization program (ramp), featuring exciting new incentives to help accelerate your migrations. leave with the strategy and funding insights to accelerate your journey. nicola carotti intesa sanpaolo anshul garg inmobi chiara giuliano google cloud mukund gopalan ingram micro hani shakeel google cloud sponsored sponsor sponsor_disclosure"
+          "q": "migration accomplished: a customer panel on moving to an ai-ready cloud wondering how to unlock the path to ai with a smooth cloud transformation? in this session, enterprise leaders from ingram micro, intesa sanpaolo, and inmobi will reveal migration-tested blueprints for executing complex migrations to google cloud. discover how they navigated technical debt while minimizing risk. plus, get an exclusive look at updates to our rapid migration and modernization program (ramp), featuring exciting new incentives to help accelerate your migrations. leave with the strategy and funding insights to accelerate your journey. nicola carotti intesa sanpaolo anshul garg inmobi chiara giuliano google cloud mukund gopalan ingram micro hani shakeel google cloud"
         },
         {
           "id": "3950283",
@@ -17638,10 +17638,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Our geospatial agentic AI platform, Infrastructure Insights Pro (IIP), streamlines and automates infrastructure planning by accounting for interdependencies across complex multi-dimensional data from transportation, land-use, demographics, and weather. IIP helps planners answer critical questions: “what is” (situational awareness), “what next” (predictions), and “what if” (simulations).\n\n\n\nSpeaker:\nEmma Pattiz, Manager, Deloitte",
-          "q": "mission talk: agentic ai for infrastructure planning: plans to progress our geospatial agentic ai platform, infrastructure insights pro (iip), streamlines and automates infrastructure planning by accounting for interdependencies across complex multi-dimensional data from transportation, land-use, demographics, and weather. iip helps planners answer critical questions: “what is” (situational awareness), “what next” (predictions), and “what if” (simulations).\n\n\n\nspeaker:\nemma pattiz, manager, deloitte sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: agentic ai for infrastructure planning: plans to progress our geospatial agentic ai platform, infrastructure insights pro (iip), streamlines and automates infrastructure planning by accounting for interdependencies across complex multi-dimensional data from transportation, land-use, demographics, and weather. iip helps planners answer critical questions: “what is” (situational awareness), “what next” (predictions), and “what if” (simulations).\n\n\n\nspeaker:\nemma pattiz, manager, deloitte"
         },
         {
           "id": "4037793",
@@ -17657,10 +17657,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Accelerate economic development with Deloitte's agentic AI for actionable reviews of complex permits with text, maps and drawings against regulation and requirements to proactively flag compliance and technical deficiencies and recommend precise actions. Cut reviews from months to hours!\n\n\n\nSpeaker:\nRafi Lav, Specialist Leader, Deloitte",
-          "q": "mission talk: agentic application for real world decision support (months to hours) accelerate economic development with deloitte's agentic ai for actionable reviews of complex permits with text, maps and drawings against regulation and requirements to proactively flag compliance and technical deficiencies and recommend precise actions. cut reviews from months to hours!\n\n\n\nspeaker:\nrafi lav, specialist leader, deloitte sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: agentic application for real world decision support (months to hours) accelerate economic development with deloitte's agentic ai for actionable reviews of complex permits with text, maps and drawings against regulation and requirements to proactively flag compliance and technical deficiencies and recommend precise actions. cut reviews from months to hours!\n\n\n\nspeaker:\nrafi lav, specialist leader, deloitte"
         },
         {
           "id": "4037804",
@@ -17676,10 +17676,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Digital Hangar's agentic AI, powered by Google Gemini 2.5 Flash and Google’s agent development kit, transforms federal law enforcement investigations. It autonomously extracts, correlates, and synthesizes insights from massive volumes of unstructured video and document evidence. The intelligent platform processes multi-modal evidence, generates structured, traceable reports, and surfaces critical connections across sources, moving investigators from evidence ingestion to actionable intelligence in days instead of weeks.\n\n\n\nSpeaker:\nDavid Lindabuam, Managing Director, Generative AI Center of Excellence Lead, AFS",
-          "q": "mission talk: ai evidence intelligence for federal investigations digital hangar's agentic ai, powered by google gemini 2.5 flash and google’s agent development kit, transforms federal law enforcement investigations. it autonomously extracts, correlates, and synthesizes insights from massive volumes of unstructured video and document evidence. the intelligent platform processes multi-modal evidence, generates structured, traceable reports, and surfaces critical connections across sources, moving investigators from evidence ingestion to actionable intelligence in days instead of weeks.\n\n\n\nspeaker:\ndavid lindabuam, managing director, generative ai center of excellence lead, afs sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: ai evidence intelligence for federal investigations digital hangar's agentic ai, powered by google gemini 2.5 flash and google’s agent development kit, transforms federal law enforcement investigations. it autonomously extracts, correlates, and synthesizes insights from massive volumes of unstructured video and document evidence. the intelligent platform processes multi-modal evidence, generates structured, traceable reports, and surfaces critical connections across sources, moving investigators from evidence ingestion to actionable intelligence in days instead of weeks.\n\n\n\nspeaker:\ndavid lindabuam, managing director, generative ai center of excellence lead, afs"
         },
         {
           "id": "4037809",
@@ -17695,10 +17695,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Old Dominion University, with Resultant and Google’s AI Career Pathways platform instantly generates personalized academic plans. It aligns student interests with workforce outcomes, transforming static info into dynamic, AI-guided journeys, demystifying higher education for all students.\n\n\n\nSpeakers:\nSindhu Adini, Vice President, Resultant\nChrysoula Malogianni, PH.D., Vice President for Digital Innovation & Chief Digital Experience Officer, ODU",
-          "q": "mission talk: ai for academic & career navigation: curiosity to clarity old dominion university, with resultant and google’s ai career pathways platform instantly generates personalized academic plans. it aligns student interests with workforce outcomes, transforming static info into dynamic, ai-guided journeys, demystifying higher education for all students.\n\n\n\nspeakers:\nsindhu adini, vice president, resultant\nchrysoula malogianni, ph.d., vice president for digital innovation & chief digital experience officer, odu sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: ai for academic & career navigation: curiosity to clarity old dominion university, with resultant and google’s ai career pathways platform instantly generates personalized academic plans. it aligns student interests with workforce outcomes, transforming static info into dynamic, ai-guided journeys, demystifying higher education for all students.\n\n\n\nspeakers:\nsindhu adini, vice president, resultant\nchrysoula malogianni, ph.d., vice president for digital innovation & chief digital experience officer, odu"
         },
         {
           "id": "4037796",
@@ -17714,10 +17714,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "For DoD HR and recruiting, this demo features a Google Vertex AI agent that autonomously parses dense military manuals to provide instant career guidance. Using Dialogflow CX and LLMs, it proactively extracts promotion requirements and syncs with backend data to automate personalized support.\n\n\n\nSpeakers:\nMark Eichten, Global AI Architect Lead, TTEC Digital\nSteve Parowski, VP - Public Sector, TTEC Digital",
-          "q": "mission talk: ai-driven personnel support for dod mission specialists for dod hr and recruiting, this demo features a google vertex ai agent that autonomously parses dense military manuals to provide instant career guidance. using dialogflow cx and llms, it proactively extracts promotion requirements and syncs with backend data to automate personalized support.\n\n\n\nspeakers:\nmark eichten, global ai architect lead, ttec digital\nsteve parowski, vp - public sector, ttec digital sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: ai-driven personnel support for dod mission specialists for dod hr and recruiting, this demo features a google vertex ai agent that autonomously parses dense military manuals to provide instant career guidance. using dialogflow cx and llms, it proactively extracts promotion requirements and syncs with backend data to automate personalized support.\n\n\n\nspeakers:\nmark eichten, global ai architect lead, ttec digital\nsteve parowski, vp - public sector, ttec digital"
         },
         {
           "id": "4092658",
@@ -17752,10 +17752,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Securely bridge Gemini AI to Microsoft GCC High with Noctua’s agentic workflow. For government Gemini users, the Secure Data Agent performs Intelligent Discovery to find SharePoint files and uses Human-in-the-Loop validation to ingest context without moving data.\n\n\n\nSpeaker:\nTony Carnevale, Chief Exective Officer, Noctua Technology",
-          "q": "mission talk: compliant intelligence: bringing google gemini to the gcc high tenant securely bridge gemini ai to microsoft gcc high with noctua’s agentic workflow. for government gemini users, the secure data agent performs intelligent discovery to find sharepoint files and uses human-in-the-loop validation to ingest context without moving data.\n\n\n\nspeaker:\ntony carnevale, chief exective officer, noctua technology sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: compliant intelligence: bringing google gemini to the gcc high tenant securely bridge gemini ai to microsoft gcc high with noctua’s agentic workflow. for government gemini users, the secure data agent performs intelligent discovery to find sharepoint files and uses human-in-the-loop validation to ingest context without moving data.\n\n\n\nspeaker:\ntony carnevale, chief exective officer, noctua technology"
         },
         {
           "id": "4037795",
@@ -17771,10 +17771,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Novatio merges Labor workflows with Generative AI. While adjudicators follow up on vague job separation information, backlogs grow. Replacing static questions with dynamic AI interviews captures details correctly the first time, generating AI comparisons and relevant law for faster decisions.\n\n\n\nSpeaker:\nJulie Primo, Public Sector Industry Lead, Novatio Solutions",
-          "q": "mission talk: deploying ai agents to resolve the fact-finding bottleneck novatio merges labor workflows with generative ai. while adjudicators follow up on vague job separation information, backlogs grow. replacing static questions with dynamic ai interviews captures details correctly the first time, generating ai comparisons and relevant law for faster decisions.\n\n\n\nspeaker:\njulie primo, public sector industry lead, novatio solutions sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: deploying ai agents to resolve the fact-finding bottleneck novatio merges labor workflows with generative ai. while adjudicators follow up on vague job separation information, backlogs grow. replacing static questions with dynamic ai interviews captures details correctly the first time, generating ai comparisons and relevant law for faster decisions.\n\n\n\nspeaker:\njulie primo, public sector industry lead, novatio solutions"
         },
         {
           "id": "4037798",
@@ -17790,10 +17790,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "With over 40,000 injuries and fatalities annually, work zones crews face immense daily risk. ClearObject’s Work Zone Vision AI solution has real-time safety alerts and functions as a powerful data collection tool with Agentic AI analysis to inform future policy and strategically allocate resources.\n\n\n\nSpeaker:\nDerek Bleyle, VP, Product & Operations, ClearObject",
-          "q": "mission talk: everyone goes home tonight - work zone safety with ai with over 40,000 injuries and fatalities annually, work zones crews face immense daily risk. clearobject’s work zone vision ai solution has real-time safety alerts and functions as a powerful data collection tool with agentic ai analysis to inform future policy and strategically allocate resources.\n\n\n\nspeaker:\nderek bleyle, vp, product & operations, clearobject sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: everyone goes home tonight - work zone safety with ai with over 40,000 injuries and fatalities annually, work zones crews face immense daily risk. clearobject’s work zone vision ai solution has real-time safety alerts and functions as a powerful data collection tool with agentic ai analysis to inform future policy and strategically allocate resources.\n\n\n\nspeaker:\nderek bleyle, vp, product & operations, clearobject"
         },
         {
           "id": "4037791",
@@ -17809,10 +17809,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "For state agency investigators and program integrity leaders, the Fraud Intelligence Accelerator automatically detects suspicious patterns, generates risk scores, prioritizes cases, and equips reviewers with a holistic investigation view — reducing fraud while accelerating legitimate payments.\n\n\n\nSpeaker:\nKartik Kumar, Principal Architect, Egen",
-          "q": "mission talk: fraud intelligence accelerator: automating fraud detection for state agency investigators and program integrity leaders, the fraud intelligence accelerator automatically detects suspicious patterns, generates risk scores, prioritizes cases, and equips reviewers with a holistic investigation view — reducing fraud while accelerating legitimate payments.\n\n\n\nspeaker:\nkartik kumar, principal architect, egen sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: fraud intelligence accelerator: automating fraud detection for state agency investigators and program integrity leaders, the fraud intelligence accelerator automatically detects suspicious patterns, generates risk scores, prioritizes cases, and equips reviewers with a holistic investigation view — reducing fraud while accelerating legitimate payments.\n\n\n\nspeaker:\nkartik kumar, principal architect, egen"
         },
         {
           "id": "4037799",
@@ -17828,10 +17828,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "For natural resource and regulatory agency directors: Watch Gemini-powered agents transform the permitting journey by automating the extraction and compliance validation of 70+ data fields. We demonstrate a shift from a 30-day manual review process to an instantaneous review in 30-seconds.",
-          "q": "mission talk: from 30 days to 30 seconds: scaling permit reviews with genai for natural resource and regulatory agency directors: watch gemini-powered agents transform the permitting journey by automating the extraction and compliance validation of 70+ data fields. we demonstrate a shift from a 30-day manual review process to an instantaneous review in 30-seconds. sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: from 30 days to 30 seconds: scaling permit reviews with genai for natural resource and regulatory agency directors: watch gemini-powered agents transform the permitting journey by automating the extraction and compliance validation of 70+ data fields. we demonstrate a shift from a 30-day manual review process to an instantaneous review in 30-seconds."
         },
         {
           "id": "4037808",
@@ -17847,10 +17847,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "For state and local government contact center leaders and caseworkers facing overwhelming inquiry volumes, this demo showcases how Gemini Enterprise for Customer Experience acts as an autonomous frontline agent capable of immediate, intuitive, and multilingual resolution.\n\n\n\nSpeaker:\nRoberto Coyotl, Principal Architect, Egen",
-          "q": "mission talk: gemini enterprise: automating public sector citizen experience for state and local government contact center leaders and caseworkers facing overwhelming inquiry volumes, this demo showcases how gemini enterprise for customer experience acts as an autonomous frontline agent capable of immediate, intuitive, and multilingual resolution.\n\n\n\nspeaker:\nroberto coyotl, principal architect, egen sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: gemini enterprise: automating public sector citizen experience for state and local government contact center leaders and caseworkers facing overwhelming inquiry volumes, this demo showcases how gemini enterprise for customer experience acts as an autonomous frontline agent capable of immediate, intuitive, and multilingual resolution.\n\n\n\nspeaker:\nroberto coyotl, principal architect, egen"
         },
         {
           "id": "4077597",
@@ -17904,10 +17904,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Our GenAI solution digitally transforms Modernized e-File (MeF) XML schema generation for State Departments of Revenue, enabling rapid, accurate tax compliance and optimizing vendor testing for tax administrators.\n\n\n\nSpeakers:\nKunal, Thakkar, Enterprise Partnership Sales Executive, Resultant\nHang Dao, Enterprise Partnership Sales Executive, Colorado Department of Revenue",
-          "q": "mission talk: genimi-powered mef: accelerating state tax compliance our genai solution digitally transforms modernized e-file (mef) xml schema generation for state departments of revenue, enabling rapid, accurate tax compliance and optimizing vendor testing for tax administrators.\n\n\n\nspeakers:\nkunal, thakkar, enterprise partnership sales executive, resultant\nhang dao, enterprise partnership sales executive, colorado department of revenue sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: genimi-powered mef: accelerating state tax compliance our genai solution digitally transforms modernized e-file (mef) xml schema generation for state departments of revenue, enabling rapid, accurate tax compliance and optimizing vendor testing for tax administrators.\n\n\n\nspeakers:\nkunal, thakkar, enterprise partnership sales executive, resultant\nhang dao, enterprise partnership sales executive, colorado department of revenue"
         },
         {
           "id": "4077599",
@@ -17942,10 +17942,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Our AI Agent autonomously parses unstructured email requests to identify, validate, and structure mission data for NESDIS operational teams. Using Gemini, it filters inboxes and extracts info for system execution, transforming manual triage into automated operational efficiency.\n\n\n\nSpeaker:\nNam Nguyen, Director of Engineering, SZNS Solutions",
-          "q": "mission talk: inbox to impact - modernize gov data extraction with agentic ai our ai agent autonomously parses unstructured email requests to identify, validate, and structure mission data for nesdis operational teams. using gemini, it filters inboxes and extracts info for system execution, transforming manual triage into automated operational efficiency.\n\n\n\nspeaker:\nnam nguyen, director of engineering, szns solutions sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: inbox to impact - modernize gov data extraction with agentic ai our ai agent autonomously parses unstructured email requests to identify, validate, and structure mission data for nesdis operational teams. using gemini, it filters inboxes and extracts info for system execution, transforming manual triage into automated operational efficiency.\n\n\n\nspeaker:\nnam nguyen, director of engineering, szns solutions"
         },
         {
           "id": "4037806",
@@ -17961,10 +17961,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Insight turns complex public safety policy (Texas DIR/CJIS) into a mission-ready execution engine with Google Cloud SecOps. We demonstrate AI-driven threat detection, automated response (SOAR) for quick containment, and instant, evidence-based compliance reporting for public safety agencies.\n\n\n\nSpeaker:\nSimon Margolis, Associate CTO & Distinguished Technologist",
-          "q": "mission talk: mission-first security - executing cjis policy at google speed insight turns complex public safety policy (texas dir/cjis) into a mission-ready execution engine with google cloud secops. we demonstrate ai-driven threat detection, automated response (soar) for quick containment, and instant, evidence-based compliance reporting for public safety agencies.\n\n\n\nspeaker:\nsimon margolis, associate cto & distinguished technologist sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: mission-first security - executing cjis policy at google speed insight turns complex public safety policy (texas dir/cjis) into a mission-ready execution engine with google cloud secops. we demonstrate ai-driven threat detection, automated response (soar) for quick containment, and instant, evidence-based compliance reporting for public safety agencies.\n\n\n\nspeaker:\nsimon margolis, associate cto & distinguished technologist"
         },
         {
           "id": "4037803",
@@ -17980,10 +17980,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "See AFS's MxDR in action: AI-powered threat detection, automated response, and compliance automation built for federal missions. FedRAMP authorized, supporting agencies from VA to Treasury. Learn how to accelerate security maturity, reduce technical debt, and protect critical operations 24x7.\n\n\n\nSpeaker:\nDan Matlick, Principal Director, Managed Security Services, AFS\nJames Kerr, Security Operations Center Lead, AFS",
-          "q": "mission talk: mission-speed cyber defense: mxdr's impact on fed ops see afs's mxdr in action: ai-powered threat detection, automated response, and compliance automation built for federal missions. fedramp authorized, supporting agencies from va to treasury. learn how to accelerate security maturity, reduce technical debt, and protect critical operations 24x7.\n\n\n\nspeaker:\ndan matlick, principal director, managed security services, afs\njames kerr, security operations center lead, afs sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: mission-speed cyber defense: mxdr's impact on fed ops see afs's mxdr in action: ai-powered threat detection, automated response, and compliance automation built for federal missions. fedramp authorized, supporting agencies from va to treasury. learn how to accelerate security maturity, reduce technical debt, and protect critical operations 24x7.\n\n\n\nspeaker:\ndan matlick, principal director, managed security services, afs\njames kerr, security operations center lead, afs"
         },
         {
           "id": "4077595",
@@ -18018,10 +18018,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Medical providers struggle because pharmacy medication stock isn't easily accessible, leading to time-consuming calls by nurses to find prescribed drugs for patients. World Wide Technology's \"Pharmacy Stock app\" solves this using agentic AI and telephony technology built on Google Cloud and Gemini Live API. The app automatically calls nearby pharmacies, inquires about medication supply, and records the results on a live dashboard. This frees up staff for other tasks, improves patient care by guiding them to in-stock medications, and saves valuable time for medical staff.\n\n\n\nSpeaker:\nGreg Heier, Technical Solutions Architect, World Wide Technology",
-          "q": "mission talk: querying pharmacy supplies with gemini live and agentic telephony medical providers struggle because pharmacy medication stock isn't easily accessible, leading to time-consuming calls by nurses to find prescribed drugs for patients. world wide technology's \"pharmacy stock app\" solves this using agentic ai and telephony technology built on google cloud and gemini live api. the app automatically calls nearby pharmacies, inquires about medication supply, and records the results on a live dashboard. this frees up staff for other tasks, improves patient care by guiding them to in-stock medications, and saves valuable time for medical staff.\n\n\n\nspeaker:\ngreg heier, technical solutions architect, world wide technology sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: querying pharmacy supplies with gemini live and agentic telephony medical providers struggle because pharmacy medication stock isn't easily accessible, leading to time-consuming calls by nurses to find prescribed drugs for patients. world wide technology's \"pharmacy stock app\" solves this using agentic ai and telephony technology built on google cloud and gemini live api. the app automatically calls nearby pharmacies, inquires about medication supply, and records the results on a live dashboard. this frees up staff for other tasks, improves patient care by guiding them to in-stock medications, and saves valuable time for medical staff.\n\n\n\nspeaker:\ngreg heier, technical solutions architect, world wide technology"
         },
         {
           "id": "4037792",
@@ -18037,10 +18037,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "For public sector procurement teams bogged down by manual processes and siloed systems, this demo showcases how the Orion Agentic AI platform automates the end-to-end sourcing workflow. It delivers faster, more accurate contract reviews, ensures near-100% compliance, and slashes cycle times, freeing your enterprise to focus on strategic priorities.\n\n\n\nSpeaker:\nKevin Youel Page, Special Executive, Deloitte",
-          "q": "mission talk: reimagining sourcing and procurement with agentic ai for public sector procurement teams bogged down by manual processes and siloed systems, this demo showcases how the orion agentic ai platform automates the end-to-end sourcing workflow. it delivers faster, more accurate contract reviews, ensures near-100% compliance, and slashes cycle times, freeing your enterprise to focus on strategic priorities.\n\n\n\nspeaker:\nkevin youel page, special executive, deloitte sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: reimagining sourcing and procurement with agentic ai for public sector procurement teams bogged down by manual processes and siloed systems, this demo showcases how the orion agentic ai platform automates the end-to-end sourcing workflow. it delivers faster, more accurate contract reviews, ensures near-100% compliance, and slashes cycle times, freeing your enterprise to focus on strategic priorities.\n\n\n\nspeaker:\nkevin youel page, special executive, deloitte"
         },
         {
           "id": "4037801",
@@ -18056,10 +18056,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "GAILFORCE gives the Department of War and other US Government mission specialists a decisive edge by using Gemini and Vertex AI to autonomously navigate internal and external data silos. It proactively identifies and summarizes critical events into interactive and relevant SITREPs, allowing agency personnel to interrogate complex datasets for faster, secure mission execution.\n\n\n\nSpeakers:\nAdam Lurie, Chief Executive Officer, Knexus Research\nMartina Johnson, Deputy Director, DLA Research and Development, DLA",
-          "q": "mission talk: scaling secure genai with gailforce: data silos to insights gailforce gives the department of war and other us government mission specialists a decisive edge by using gemini and vertex ai to autonomously navigate internal and external data silos. it proactively identifies and summarizes critical events into interactive and relevant sitreps, allowing agency personnel to interrogate complex datasets for faster, secure mission execution.\n\n\n\nspeakers:\nadam lurie, chief executive officer, knexus research\nmartina johnson, deputy director, dla research and development, dla sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: scaling secure genai with gailforce: data silos to insights gailforce gives the department of war and other us government mission specialists a decisive edge by using gemini and vertex ai to autonomously navigate internal and external data silos. it proactively identifies and summarizes critical events into interactive and relevant sitreps, allowing agency personnel to interrogate complex datasets for faster, secure mission execution.\n\n\n\nspeakers:\nadam lurie, chief executive officer, knexus research\nmartina johnson, deputy director, dla research and development, dla"
         },
         {
           "id": "4037802",
@@ -18075,10 +18075,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Government IT leaders are challenged by legacy systems and fragmented citizen services. This session presents Thoughtworks' Seamless Government Experience, powered by AI/works and Google Cloud, which reimagines government as a composable enterprise. AI/works continuously regenerates codebases, compressing multi-year modernization into months, securing systems, and delivering seamless citizen experiences by retiring technical debt. The future is connected service.\n\n\n\nSpeaker:\nJoe Murray, Global Head of CX & Product Innovation, Thoughtworks",
-          "q": "mission talk: seamless government experience: composable public sector on ai/works government it leaders are challenged by legacy systems and fragmented citizen services. this session presents thoughtworks' seamless government experience, powered by ai/works and google cloud, which reimagines government as a composable enterprise. ai/works continuously regenerates codebases, compressing multi-year modernization into months, securing systems, and delivering seamless citizen experiences by retiring technical debt. the future is connected service.\n\n\n\nspeaker:\njoe murray, global head of cx & product innovation, thoughtworks sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: seamless government experience: composable public sector on ai/works government it leaders are challenged by legacy systems and fragmented citizen services. this session presents thoughtworks' seamless government experience, powered by ai/works and google cloud, which reimagines government as a composable enterprise. ai/works continuously regenerates codebases, compressing multi-year modernization into months, securing systems, and delivering seamless citizen experiences by retiring technical debt. the future is connected service.\n\n\n\nspeaker:\njoe murray, global head of cx & product innovation, thoughtworks"
         },
         {
           "id": "4037797",
@@ -18094,10 +18094,10 @@
           "cap": null,
           "r": "Public Sector Hub",
           "sp": [],
-          "spon": true,
+          "spon": false,
           "scon": "",
           "desc": "Transform State and Local government with TTEC Digital’s AI agent. Powered by Google CES, this solution autonomously validates pothole reports, processes citizen-uploaded photos, and generates service requests in real-time to slash agent workload and accelerate infrastructure repairs.\n\n\n\nSpeakers:\nMark Eichten, Global AI Architect Lead, TTEC Digital\nKelly Jacob, VP - Public Sector Sales, TTEC Digital",
-          "q": "mission talk: seamless self-service with google ai transform state and local government with ttec digital’s ai agent. powered by google ces, this solution autonomously validates pothole reports, processes citizen-uploaded photos, and generates service requests in real-time to slash agent workload and accelerate infrastructure repairs.\n\n\n\nspeakers:\nmark eichten, global ai architect lead, ttec digital\nkelly jacob, vp - public sector sales, ttec digital sponsored sponsor sponsor_disclosure"
+          "q": "mission talk: seamless self-service with google ai transform state and local government with ttec digital’s ai agent. powered by google ces, this solution autonomously validates pothole reports, processes citizen-uploaded photos, and generates service requests in real-time to slash agent workload and accelerate infrastructure repairs.\n\n\n\nspeakers:\nmark eichten, global ai architect lead, ttec digital\nkelly jacob, vp - public sector sales, ttec digital"
         },
         {
           "id": "4077598",
@@ -18356,10 +18356,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Eliminate the overhead of proprietary compute clusters by modernizing your lakehouse to Google Cloud’s serverless infrastructure. In this session, we’ll detail the technical path for modernizing heavy Apache Spark jobs and open formats like Delta Lake and Apache Iceberg to Google Cloud. Discover the performance and AI innovation value this transition unlocks. Join us to learn how to maintain your architecture while gaining Google’s global scale, integrated security, and native AI access – all without the burden of manual infrastructure maintenance.",
-          "q": "modernizing your data foundation with an ai-ready data lakehouse eliminate the overhead of proprietary compute clusters by modernizing your lakehouse to google cloud’s serverless infrastructure. in this session, we’ll detail the technical path for modernizing heavy apache spark jobs and open formats like delta lake and apache iceberg to google cloud. discover the performance and ai innovation value this transition unlocks. join us to learn how to maintain your architecture while gaining google’s global scale, integrated security, and native ai access – all without the burden of manual infrastructure maintenance. santosh chandrachood google cloud ojas nivsarkar the gap, inc. mohit virendra google cloud sponsored sponsor sponsor_disclosure"
+          "q": "modernizing your data foundation with an ai-ready data lakehouse eliminate the overhead of proprietary compute clusters by modernizing your lakehouse to google cloud’s serverless infrastructure. in this session, we’ll detail the technical path for modernizing heavy apache spark jobs and open formats like delta lake and apache iceberg to google cloud. discover the performance and ai innovation value this transition unlocks. join us to learn how to maintain your architecture while gaining google’s global scale, integrated security, and native ai access – all without the burden of manual infrastructure maintenance. santosh chandrachood google cloud ojas nivsarkar the gap, inc. mohit virendra google cloud"
         },
         {
           "id": "3908595",
@@ -18408,10 +18408,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Ready to capture the full opportunity of the agentic era? This session moves beyond single agents to enabling entire workflows. Learn how Google Cloud Marketplace provides the building blocks you need—from commercializing datasets and models to professional services. We will share the playbook for scaling your agentic business and reveal the latest roadmap designed to accelerate your success and revenue.",
-          "q": "monetize & scale: your agentic strategy on google cloud marketplace ready to capture the full opportunity of the agentic era? this session moves beyond single agents to enabling entire workflows. learn how google cloud marketplace provides the building blocks you need—from commercializing datasets and models to professional services. we will share the playbook for scaling your agentic business and reveal the latest roadmap designed to accelerate your success and revenue. christian moreno google cloud oliver schulz google cloud sponsored sponsor sponsor_disclosure"
+          "q": "monetize & scale: your agentic strategy on google cloud marketplace ready to capture the full opportunity of the agentic era? this session moves beyond single agents to enabling entire workflows. learn how google cloud marketplace provides the building blocks you need—from commercializing datasets and models to professional services. we will share the playbook for scaling your agentic business and reveal the latest roadmap designed to accelerate your success and revenue. christian moreno google cloud oliver schulz google cloud"
         },
         {
           "id": "3912333",
@@ -18539,10 +18539,10 @@
               "c": "Tata Consultancy Services"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Tata Consultancy Services",
           "desc": "Enterprise AI is shifting from single models to multi-agent systems (MAS), but production is where ambition meets reality. At scale, agents can conflict, hallucinate, or fail silently. This talk shares lessons from deploying MAS in global enterprises, covering intelligent control planes, governance guardrails, real-world reliability, new decisioning systems and operating models. It explores practical patterns for observability, graceful degradation, and human in the loop escalation to accelerate business value without sacrificing trust.",
-          "q": "multi-agent systems: preventing chaos in enterprise production enterprise ai is shifting from single models to multi-agent systems (mas), but production is where ambition meets reality. at scale, agents can conflict, hallucinate, or fail silently. this talk shares lessons from deploying mas in global enterprises, covering intelligent control planes, governance guardrails, real-world reliability, new decisioning systems and operating models. it explores practical patterns for observability, graceful degradation, and human in the loop escalation to accelerate business value without sacrificing trust. spandan mahapatra tata consultancy services sponsored sponsor sponsor_disclosure"
+          "q": "multi-agent systems: preventing chaos in enterprise production enterprise ai is shifting from single models to multi-agent systems (mas), but production is where ambition meets reality. at scale, agents can conflict, hallucinate, or fail silently. this talk shares lessons from deploying mas in global enterprises, covering intelligent control planes, governance guardrails, real-world reliability, new decisioning systems and operating models. it explores practical patterns for observability, graceful degradation, and human in the loop escalation to accelerate business value without sacrificing trust. spandan mahapatra tata consultancy services"
         },
         {
           "id": "3920163",
@@ -18683,10 +18683,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Network operations still involve too much manual toil and time spent on reactive issues, which leads to burnout and slows innovation. Join this session to learn how our AI-powered technologies and new cross-cloud performance monitoring tools can improve network observability, automate manual tasks, ease troubleshooting, predict reliability issues, and optimize your cross-cloud network.",
-          "q": "network monitoring and automated network operations in cross-cloud networks network operations still involve too much manual toil and time spent on reactive issues, which leads to burnout and slows innovation. join this session to learn how our ai-powered technologies and new cross-cloud performance monitoring tools can improve network observability, automate manual tasks, ease troubleshooting, predict reliability issues, and optimize your cross-cloud network. prakash daga google cloud percy wadia google cloud sponsored sponsor sponsor_disclosure"
+          "q": "network monitoring and automated network operations in cross-cloud networks network operations still involve too much manual toil and time spent on reactive issues, which leads to burnout and slows innovation. join this session to learn how our ai-powered technologies and new cross-cloud performance monitoring tools can improve network observability, automate manual tasks, ease troubleshooting, predict reliability issues, and optimize your cross-cloud network. prakash daga google cloud percy wadia google cloud"
         },
         {
           "id": "3920410",
@@ -18918,10 +18918,10 @@
               "c": "NVIDIA"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "NVIDIA",
           "desc": "Digital twins and real-time simulation are reshaping industries in the era of physical AI. In this session, we’ll explore how digital twins are accelerating innovation across product design, manufacturing, robotics, autonomous vehicles, smart cities, and more. Attendees will learn how teams are deploying NVIDIA Omniverse and NVIDIA Isaac Sim on Google Cloud using Google G4 instances, powered by RTX Pro 6000 GPUs, to train AI models, test autonomous systems, and optimize operations before real-world deployment. Learn how developers and enterprises are running these simulation and digital twin workloads on Google Cloud today. Discover how OpenUSD-based workflows and GPU-accelerated computing are shortening development cycles, reducing costs, and de-risking deployment across physical AI applications.",
-          "q": "nvidia omniverse for physical ai: from simulation to reality digital twins and real-time simulation are reshaping industries in the era of physical ai. in this session, we’ll explore how digital twins are accelerating innovation across product design, manufacturing, robotics, autonomous vehicles, smart cities, and more. attendees will learn how teams are deploying nvidia omniverse and nvidia isaac sim on google cloud using google g4 instances, powered by rtx pro 6000 gpus, to train ai models, test autonomous systems, and optimize operations before real-world deployment. learn how developers and enterprises are running these simulation and digital twin workloads on google cloud today. discover how openusd-based workflows and gpu-accelerated computing are shortening development cycles, reducing costs, and de-risking deployment across physical ai applications. heiko wenczel nvidia sponsored sponsor sponsor_disclosure"
+          "q": "nvidia omniverse for physical ai: from simulation to reality digital twins and real-time simulation are reshaping industries in the era of physical ai. in this session, we’ll explore how digital twins are accelerating innovation across product design, manufacturing, robotics, autonomous vehicles, smart cities, and more. attendees will learn how teams are deploying nvidia omniverse and nvidia isaac sim on google cloud using google g4 instances, powered by rtx pro 6000 gpus, to train ai models, test autonomous systems, and optimize operations before real-world deployment. learn how developers and enterprises are running these simulation and digital twin workloads on google cloud today. discover how openusd-based workflows and gpu-accelerated computing are shortening development cycles, reducing costs, and de-risking deployment across physical ai applications. heiko wenczel nvidia"
         },
         {
           "id": "3911921",
@@ -19817,10 +19817,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Google Cloud is redefining incentives with a streamlined model designed for maximum predictability. Discover how to capture your total earning potential across discounts, rebates, and powerful Growth Accelerators. We will show you how to align with Data Cloud and AI priorities to maximize your profitability. Join us to learn how to navigate this simplified landscape and build a more profitable future — together.",
-          "q": "predictable profit: mastering the new google cloud incentive model google cloud is redefining incentives with a streamlined model designed for maximum predictability. discover how to capture your total earning potential across discounts, rebates, and powerful growth accelerators. we will show you how to align with data cloud and ai priorities to maximize your profitability. join us to learn how to navigate this simplified landscape and build a more profitable future — together. cameron brown google cloud sanjeev jain google cloud sponsored sponsor sponsor_disclosure"
+          "q": "predictable profit: mastering the new google cloud incentive model google cloud is redefining incentives with a streamlined model designed for maximum predictability. discover how to capture your total earning potential across discounts, rebates, and powerful growth accelerators. we will show you how to align with data cloud and ai priorities to maximize your profitability. join us to learn how to navigate this simplified landscape and build a more profitable future — together. cameron brown google cloud sanjeev jain google cloud"
         },
         {
           "id": "3913051",
@@ -20032,10 +20032,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "ServiceNow",
           "desc": "Stop talking about AI and start deploying it. Join Google Cloud, Workday, and ServiceNow to see how autonomous agents are transforming HR, finance, and IT. Leveraging Gemini Enterprise and BigQuery, this session will explore how to deploy agents and unify data via zero-copy integrations. Learn how to eliminate silos and drive exponential productivity by transforming your enterprise with AI that acts, not just assists. Come away with strategies to empower your workforce and operations at scale with Google’s data-first AI architecture.",
-          "q": "put actionable ai to work: activate enterprise data at scale stop talking about ai and start deploying it. join google cloud, workday, and servicenow to see how autonomous agents are transforming hr, finance, and it. leveraging gemini enterprise and bigquery, this session will explore how to deploy agents and unify data via zero-copy integrations. learn how to eliminate silos and drive exponential productivity by transforming your enterprise with ai that acts, not just assists. come away with strategies to empower your workforce and operations at scale with google’s data-first ai architecture. john aisien servicenow ali arsanjani google andy maxwell workday seth siciliano google cloud sponsored sponsor sponsor_disclosure"
+          "q": "put actionable ai to work: activate enterprise data at scale stop talking about ai and start deploying it. join google cloud, workday, and servicenow to see how autonomous agents are transforming hr, finance, and it. leveraging gemini enterprise and bigquery, this session will explore how to deploy agents and unify data via zero-copy integrations. learn how to eliminate silos and drive exponential productivity by transforming your enterprise with ai that acts, not just assists. come away with strategies to empower your workforce and operations at scale with google’s data-first ai architecture. john aisien servicenow ali arsanjani google andy maxwell workday seth siciliano google cloud"
         },
         {
           "id": "3920460",
@@ -20295,10 +20295,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Mechanical Orchard",
           "desc": "AI is transforming mainframe modernization, turning a competitive necessity into an era of redefined possibilities. Join this session to explore Google’s newest product breakthroughs and learn firsthand from SulAmérica about their journey using AI to transform the mainframe. Beyond core products, discover how our partner ecosystem is expanding what’s possible. From like-to-like to full reimagination, learn how leaders like Mechanical Orchard, Thoughtworks, and SoftLab are building Gemini-powered “modernization factories” to help enterprises modernize faster with less risk.",
-          "q": "real-world mainframe modernization redefined with gemini ai is transforming mainframe modernization, turning a competitive necessity into an era of redefined possibilities. join this session to explore google’s newest product breakthroughs and learn firsthand from sulamérica about their journey using ai to transform the mainframe. beyond core products, discover how our partner ecosystem is expanding what’s possible. from like-to-like to full reimagination, learn how leaders like mechanical orchard, thoughtworks, and softlab are building gemini-powered “modernization factories” to help enterprises modernize faster with less risk. edward hieatt mechanical orchard matteo longo softlab s.p.a rajesh ramachandran google cloud paulo rodrigues sulamérica david yahalom google cloud sponsored sponsor sponsor_disclosure"
+          "q": "real-world mainframe modernization redefined with gemini ai is transforming mainframe modernization, turning a competitive necessity into an era of redefined possibilities. join this session to explore google’s newest product breakthroughs and learn firsthand from sulamérica about their journey using ai to transform the mainframe. beyond core products, discover how our partner ecosystem is expanding what’s possible. from like-to-like to full reimagination, learn how leaders like mechanical orchard, thoughtworks, and softlab are building gemini-powered “modernization factories” to help enterprises modernize faster with less risk. edward hieatt mechanical orchard matteo longo softlab s.p.a rajesh ramachandran google cloud paulo rodrigues sulamérica david yahalom google cloud"
         },
         {
           "id": "3913093",
@@ -20979,10 +20979,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Unlock real-time insights from mission-critical SAP data without ETL. In this joint session, Google and SAP unveil our zero-copy data federation. Join us for a live demo of how to instantly access SAP Business Data Cloud operational data within BigQuery for advanced analytics, eliminating data latency and storage duplication.",
-          "q": "sap and bigquery: instant insights with zero-copy data access unlock real-time insights from mission-critical sap data without etl. in this joint session, google and sap unveil our zero-copy data federation. join us for a live demo of how to instantly access sap business data cloud operational data within bigquery for advanced analytics, eliminating data latency and storage duplication. aniket arora google cloud haridas nair sap will ochandarena google cloud sponsored sponsor sponsor_disclosure"
+          "q": "sap and bigquery: instant insights with zero-copy data access unlock real-time insights from mission-critical sap data without etl. in this joint session, google and sap unveil our zero-copy data federation. join us for a live demo of how to instantly access sap business data cloud operational data within bigquery for advanced analytics, eliminating data latency and storage duplication. aniket arora google cloud haridas nair sap will ochandarena google cloud"
         },
         {
           "id": "3932025",
@@ -21058,10 +21058,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Comcast",
           "desc": "Take agents from prototype to scaled production with Google’s modular, generally available agent platform services. Join this session to learn how to scale agents using our newly revamped runtime, which now offers fast cold starts and provisioning, personalization with memory bank and sessions services, and secure sandboxes to safely execute complex tasks like code execution and computer use. We’ll cover best practices like production observability and how to choose the deployment option that best fits your needs. Learn from customers who have crossed the generative AI divide and are running agents in production.",
-          "q": "scale ai agents in production take agents from prototype to scaled production with google’s modular, generally available agent platform services. join this session to learn how to scale agents using our newly revamped runtime, which now offers fast cold starts and provisioning, personalization with memory bank and sessions services, and secure sandboxes to safely execute complex tasks like code execution and computer use. we’ll cover best practices like production observability and how to choose the deployment option that best fits your needs. learn from customers who have crossed the generative ai divide and are running agents in production. praveen dhas comcast ryan ismert google cloud bhanu nune cvs elia secchi google cloud sponsored sponsor sponsor_disclosure"
+          "q": "scale ai agents in production take agents from prototype to scaled production with google’s modular, generally available agent platform services. join this session to learn how to scale agents using our newly revamped runtime, which now offers fast cold starts and provisioning, personalization with memory bank and sessions services, and secure sandboxes to safely execute complex tasks like code execution and computer use. we’ll cover best practices like production observability and how to choose the deployment option that best fits your needs. learn from customers who have crossed the generative ai divide and are running agents in production. praveen dhas comcast ryan ismert google cloud bhanu nune cvs elia secchi google cloud"
         },
         {
           "id": "3967029",
@@ -21828,10 +21828,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Maximize your existing investments while accelerating your cloud journey. This session provides a comprehensive guide to migrating VMware workloads to Google Cloud. We will delve into the powerful capabilities of Google Cloud VMware Engine (GCVE), GCE, and GKE. Whether you are just starting or optimizing, leave with a clear understanding of how to leverage our unique cohort of partners to drive seamless migration and application modernization.",
-          "q": "seamlessly migrate & modernize: vmware workloads on google cloud maximize your existing investments while accelerating your cloud journey. this session provides a comprehensive guide to migrating vmware workloads to google cloud. we will delve into the powerful capabilities of google cloud vmware engine (gcve), gce, and gke. whether you are just starting or optimizing, leave with a clear understanding of how to leverage our unique cohort of partners to drive seamless migration and application modernization. john patel google cloud gus zimmermann google cloud sponsored sponsor sponsor_disclosure"
+          "q": "seamlessly migrate & modernize: vmware workloads on google cloud maximize your existing investments while accelerating your cloud journey. this session provides a comprehensive guide to migrating vmware workloads to google cloud. we will delve into the powerful capabilities of google cloud vmware engine (gcve), gce, and gke. whether you are just starting or optimizing, leave with a clear understanding of how to leverage our unique cohort of partners to drive seamless migration and application modernization. john patel google cloud gus zimmermann google cloud"
         },
         {
           "id": "4057398",
@@ -22365,10 +22365,10 @@
               "c": "Priceline"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Managing disparate wide area network (WAN) infrastructure across global sites is costly and complex, often resulting in poor performance, a high total cost of ownership, and gaps in security, not to mention it hampers business agility. Enterprises need a unified, high-speed, globally available WAN solution with integrated best-in-class security. Explore the latest innovations with Cloud WAN, part of Google Cloud’s Cross-Cloud Network. Cloud WAN is designed to simplify enterprise connectivity using Google’s global network. We’ll discuss new capabilities, ecosystem partnerships, and coverage expansions that allow you to leverage Google’s planet-scale network to connect your global enterprise with reduced latency, lower total cost of ownership, and higher security.",
-          "q": "securely connect your global enterprise with cloud wan managing disparate wide area network (wan) infrastructure across global sites is costly and complex, often resulting in poor performance, a high total cost of ownership, and gaps in security, not to mention it hampers business agility. enterprises need a unified, high-speed, globally available wan solution with integrated best-in-class security. explore the latest innovations with cloud wan, part of google cloud’s cross-cloud network. cloud wan is designed to simplify enterprise connectivity using google’s global network. we’ll discuss new capabilities, ecosystem partnerships, and coverage expansions that allow you to leverage google’s planet-scale network to connect your global enterprise with reduced latency, lower total cost of ownership, and higher security. rohit behl google cloud tom briggs priceline victor moreno google cloud karl prout priceline sponsored sponsor sponsor_disclosure"
+          "q": "securely connect your global enterprise with cloud wan managing disparate wide area network (wan) infrastructure across global sites is costly and complex, often resulting in poor performance, a high total cost of ownership, and gaps in security, not to mention it hampers business agility. enterprises need a unified, high-speed, globally available wan solution with integrated best-in-class security. explore the latest innovations with cloud wan, part of google cloud’s cross-cloud network. cloud wan is designed to simplify enterprise connectivity using google’s global network. we’ll discuss new capabilities, ecosystem partnerships, and coverage expansions that allow you to leverage google’s planet-scale network to connect your global enterprise with reduced latency, lower total cost of ownership, and higher security. rohit behl google cloud tom briggs priceline victor moreno google cloud karl prout priceline"
         },
         {
           "id": "3902760",
@@ -24067,10 +24067,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "McKinsey & Company",
           "desc": "Transformative AI adoption requires more than just technology; it demands a strategic approach to change management. This session equips you with a practical framework to lead your organization through the cultural and process shifts necessary to turn AI adoption into an AI advantage. You'll learn how to overcome resistance, foster a data-driven culture, and translate your AI investment into a modernized, AI-first workforce.",
-          "q": "super user surge: unleashing the agentic enterprise transformative ai adoption requires more than just technology; it demands a strategic approach to change management. this session equips you with a practical framework to lead your organization through the cultural and process shifts necessary to turn ai adoption into an ai advantage. you'll learn how to overcome resistance, foster a data-driven culture, and translate your ai investment into a modernized, ai-first workforce. aman dhingra mckinsey & company jay krishnan google cloud sponsored sponsor sponsor_disclosure"
+          "q": "super user surge: unleashing the agentic enterprise transformative ai adoption requires more than just technology; it demands a strategic approach to change management. this session equips you with a practical framework to lead your organization through the cultural and process shifts necessary to turn ai adoption into an ai advantage. you'll learn how to overcome resistance, foster a data-driven culture, and translate your ai investment into a modernized, ai-first workforce. aman dhingra mckinsey & company jay krishnan google cloud"
         },
         {
           "id": "3920512",
@@ -24757,10 +24757,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Yahoo",
           "desc": "Join this session to discover the future of data. Explore how Looker conversational business intelligence (BI) agents transform data into a trusted partner. We’ll showcase how our intelligent architecture uses the semantic model for auditable, accurate insights. And we’ll provide a live demo of multi-turn reasoning, agent sharing, and advanced analytics powered by a native Python interpreter. Learn how the API embeds these governed experiences directly into your applications.",
-          "q": "the agentic era of data: conversational bi agents in action join this session to discover the future of data. explore how looker conversational business intelligence (bi) agents transform data into a trusted partner. we’ll showcase how our intelligent architecture uses the semantic model for auditable, accurate insights. and we’ll provide a live demo of multi-turn reasoning, agent sharing, and advanced analytics powered by a native python interpreter. learn how the api embeds these governed experiences directly into your applications. alex haviland yahoo ani jain google cloud leigha reid google cloud sponsored sponsor sponsor_disclosure"
+          "q": "the agentic era of data: conversational bi agents in action join this session to discover the future of data. explore how looker conversational business intelligence (bi) agents transform data into a trusted partner. we’ll showcase how our intelligent architecture uses the semantic model for auditable, accurate insights. and we’ll provide a live demo of multi-turn reasoning, agent sharing, and advanced analytics powered by a native python interpreter. learn how the api embeds these governed experiences directly into your applications. alex haviland yahoo ani jain google cloud leigha reid google cloud"
         },
         {
           "id": "3902759",
@@ -24921,10 +24921,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Join Allegro, Central Europe's leading marketplace, to explore the frontier of agentic commerce and learn how to turn massive product catalogs into highly curated shopping experiences. Powered by Gemini Enterprise for Customer Experience, Allegro built an autonomous AI concierge that anticipates customer needs and eliminates the paradox of choice. You'll learn how to transform your digital storefront into a proactive, frictionless shopping companion that redefines convenience and builds profound brand loyalty.",
-          "q": "the agentic shopper: redefining convenience with ai at allegro join allegro, central europe's leading marketplace, to explore the frontier of agentic commerce and learn how to turn massive product catalogs into highly curated shopping experiences. powered by gemini enterprise for customer experience, allegro built an autonomous ai concierge that anticipates customer needs and eliminates the paradox of choice. you'll learn how to transform your digital storefront into a proactive, frictionless shopping companion that redefines convenience and builds profound brand loyalty. vinod kumar ramachandran google cloud sponsored sponsor sponsor_disclosure"
+          "q": "the agentic shopper: redefining convenience with ai at allegro join allegro, central europe's leading marketplace, to explore the frontier of agentic commerce and learn how to turn massive product catalogs into highly curated shopping experiences. powered by gemini enterprise for customer experience, allegro built an autonomous ai concierge that anticipates customer needs and eliminates the paradox of choice. you'll learn how to transform your digital storefront into a proactive, frictionless shopping companion that redefines convenience and builds profound brand loyalty. vinod kumar ramachandran google cloud"
         },
         {
           "id": "3952981",
@@ -25249,10 +25249,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Choreograph, a WPP company",
           "desc": "Migrating to the cloud is no longer just about reducing costs – it’s about unlocking business value with AI. This session provides a blueprint for moving your critical data workloads to BigQuery with unprecedented speed. Discover how to eliminate infrastructure management, lower your total cost of ownership (TCO), and prepare your data foundation for the next wave of AI capabilities. Join us to learn how AI-powered BigQuery Migration Services automates the migration journey, de-risking your migration and turning a multiyear roadmap into a fast track for innovation.",
-          "q": "the bigquery advantage: ai-powered migrations to an ai-ready data platform migrating to the cloud is no longer just about reducing costs – it’s about unlocking business value with ai. this session provides a blueprint for moving your critical data workloads to bigquery with unprecedented speed. discover how to eliminate infrastructure management, lower your total cost of ownership (tco), and prepare your data foundation for the next wave of ai capabilities. join us to learn how ai-powered bigquery migration services automates the migration journey, de-risking your migration and turning a multiyear roadmap into a fast track for innovation. rob marshall choreograph, a wpp company vinay pai virgin media 02 martin paynter google cloud mohit virendra google cloud sponsored sponsor sponsor_disclosure"
+          "q": "the bigquery advantage: ai-powered migrations to an ai-ready data platform migrating to the cloud is no longer just about reducing costs – it’s about unlocking business value with ai. this session provides a blueprint for moving your critical data workloads to bigquery with unprecedented speed. discover how to eliminate infrastructure management, lower your total cost of ownership (tco), and prepare your data foundation for the next wave of ai capabilities. join us to learn how ai-powered bigquery migration services automates the migration journey, de-risking your migration and turning a multiyear roadmap into a fast track for innovation. rob marshall choreograph, a wpp company vinay pai virgin media 02 martin paynter google cloud mohit virendra google cloud"
         },
         {
           "id": "3913065",
@@ -25397,10 +25397,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Head of Partner Security Sales, EMEA",
           "desc": "Legacy SIEM is out; AI-native defense is in. Discover how Next-Gen MSSPs are revolutionizing security using Google Cloud SecOps and Gemini. This session explores \"Agentic Defense\"—leveraging AI to automate detection, triage, and response at hyperscale. Learn to transform your SOC from reactive to proactive by integrating Mandiant threat intelligence. We’ll share strategies to reduce MTTR, bridge the talent gap, and scale your practice.",
-          "q": "the era of agentic defense: scaling next-gen mssp with google cloud legacy siem is out; ai-native defense is in. discover how next-gen mssps are revolutionizing security using google cloud secops and gemini. this session explores \"agentic defense\"—leveraging ai to automate detection, triage, and response at hyperscale. learn to transform your soc from reactive to proactive by integrating mandiant threat intelligence. we’ll share strategies to reduce mttr, bridge the talent gap, and scale your practice. igors garis koni head of partner security sales, emea jonas kelley google cloud sponsored sponsor sponsor_disclosure"
+          "q": "the era of agentic defense: scaling next-gen mssp with google cloud legacy siem is out; ai-native defense is in. discover how next-gen mssps are revolutionizing security using google cloud secops and gemini. this session explores \"agentic defense\"—leveraging ai to automate detection, triage, and response at hyperscale. learn to transform your soc from reactive to proactive by integrating mandiant threat intelligence. we’ll share strategies to reduce mttr, bridge the talent gap, and scale your practice. igors garis koni head of partner security sales, emea jonas kelley google cloud"
         },
         {
           "id": "3934082",
@@ -25425,10 +25425,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "CNA Insurance",
           "desc": "Global enterprises have made massive investments in generative AI, but many are hitting a wall with enterprise-wide rollout. The technology is ready, but legacy infrastructure, siloed data, and entrenched workflows create bottlenecks that stifle execution and trap ROI in the pilot phase.\n\nJoin financial services leaders for a candid discussion on closing the \"execution gap. This panel will explore the hard truths of scaling AI, focusing on how top organizations dismantle structural friction - from modernizing compliance to upskilling workforces - to ensure AI investments translate into measurable business velocity and autonomous action.",
-          "q": "the execution gap: clearing rollout bottlenecks to maximize ai investments global enterprises have made massive investments in generative ai, but many are hitting a wall with enterprise-wide rollout. the technology is ready, but legacy infrastructure, siloed data, and entrenched workflows create bottlenecks that stifle execution and trap roi in the pilot phase.\n\njoin financial services leaders for a candid discussion on closing the \"execution gap. this panel will explore the hard truths of scaling ai, focusing on how top organizations dismantle structural friction - from modernizing compliance to upskilling workforces - to ensure ai investments translate into measurable business velocity and autonomous action. pierre braganza cna insurance sid nadella google cloud sponsored sponsor sponsor_disclosure"
+          "q": "the execution gap: clearing rollout bottlenecks to maximize ai investments global enterprises have made massive investments in generative ai, but many are hitting a wall with enterprise-wide rollout. the technology is ready, but legacy infrastructure, siloed data, and entrenched workflows create bottlenecks that stifle execution and trap roi in the pilot phase.\n\njoin financial services leaders for a candid discussion on closing the \"execution gap. this panel will explore the hard truths of scaling ai, focusing on how top organizations dismantle structural friction - from modernizing compliance to upskilling workforces - to ensure ai investments translate into measurable business velocity and autonomous action. pierre braganza cna insurance sid nadella google cloud"
         },
         {
           "id": "3912341",
@@ -25521,10 +25521,10 @@
               "c": "LangChain"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Atlassian",
           "desc": "We’ve all felt the weight of fragmented ecosystems. It’s time to cut the cord. Featuring industry titans from Atlassian, Datadog, Harness, LangChain, and Google, this session will unveil the next frontier in developer productivity: AI agent interoperability and open standards. Discover how to create seamless, antigravity workflows that let your team move faster than ever.",
-          "q": "the future of developer experience is frictionless we’ve all felt the weight of fragmented ecosystems. it’s time to cut the cord. featuring industry titans from atlassian, datadog, harness, langchain, and google, this session will unveil the next frontier in developer productivity: ai agent interoperability and open standards. discover how to create seamless, antigravity workflows that let your team move faster than ever. don baron atlassian pulkit chandra datadog utkarsh guleri google cloud martin reynolds harness karan singh langchain sponsored sponsor sponsor_disclosure"
+          "q": "the future of developer experience is frictionless we’ve all felt the weight of fragmented ecosystems. it’s time to cut the cord. featuring industry titans from atlassian, datadog, harness, langchain, and google, this session will unveil the next frontier in developer productivity: ai agent interoperability and open standards. discover how to create seamless, antigravity workflows that let your team move faster than ever. don baron atlassian pulkit chandra datadog utkarsh guleri google cloud martin reynolds harness karan singh langchain"
         },
         {
           "id": "3912312",
@@ -25709,10 +25709,10 @@
               "c": "Viasat"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Eliminating the trade-off between open interoperability and manageability is critical for modern data platforms. Join us to learn how to leverage Lakehouse runtime catalog to unify metadata across engines in a serverless way, including BigQuery, Apache Spark, and Trino. We'll also cover unified governance for your lakehouse, enabling out-of-the-box global discoverability, context enrichment and governance, providing active semantic context to support advanced AI agentic workflows.",
-          "q": "the governed open lakehouse: achieve interoperability and unified context eliminating the trade-off between open interoperability and manageability is critical for modern data platforms. join us to learn how to leverage lakehouse runtime catalog to unify metadata across engines in a serverless way, including bigquery, apache spark, and trino. we'll also cover unified governance for your lakehouse, enabling out-of-the-box global discoverability, context enrichment and governance, providing active semantic context to support advanced ai agentic workflows. ahmet altay google cloud vinod ramachandran google cloud sumeet singh viasat sponsored sponsor sponsor_disclosure"
+          "q": "the governed open lakehouse: achieve interoperability and unified context eliminating the trade-off between open interoperability and manageability is critical for modern data platforms. join us to learn how to leverage lakehouse runtime catalog to unify metadata across engines in a serverless way, including bigquery, apache spark, and trino. we'll also cover unified governance for your lakehouse, enabling out-of-the-box global discoverability, context enrichment and governance, providing active semantic context to support advanced ai agentic workflows. ahmet altay google cloud vinod ramachandran google cloud sumeet singh viasat"
         },
         {
           "id": "3912992",
@@ -25741,10 +25741,10 @@
               "c": "BCG"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "BCG",
           "desc": "You’ve built the future, but is your organization living in it? Most digital transformations don’t fail because the technology is broken; they fail because human habits are hard to break. In this session, lead AI researcher Dr. Fei-Fei Li joins BCG and Google Cloud to reveal the hidden psychological friction that stalls even the most advanced cloud strategies. Discover the science of “making change stick” by aligning technical ambition with human instinct. Join us to move beyond the frustration of wasted investment and learn the practical art of hardwiring innovation into your company’s DNA.",
-          "q": "the human bottleneck: why great tech fails and how to drive value in ai you’ve built the future, but is your organization living in it? most digital transformations don’t fail because the technology is broken; they fail because human habits are hard to break. in this session, lead ai researcher dr. fei-fei li joins bcg and google cloud to reveal the hidden psychological friction that stalls even the most advanced cloud strategies. discover the science of “making change stick” by aligning technical ambition with human instinct. join us to move beyond the frustration of wasted investment and learn the practical art of hardwiring innovation into your company’s dna. julia dhar bcg anil jain google cloud djon kleine bcg sponsored sponsor sponsor_disclosure"
+          "q": "the human bottleneck: why great tech fails and how to drive value in ai you’ve built the future, but is your organization living in it? most digital transformations don’t fail because the technology is broken; they fail because human habits are hard to break. in this session, lead ai researcher dr. fei-fei li joins bcg and google cloud to reveal the hidden psychological friction that stalls even the most advanced cloud strategies. discover the science of “making change stick” by aligning technical ambition with human instinct. join us to move beyond the frustration of wasted investment and learn the practical art of hardwiring innovation into your company’s dna. julia dhar bcg anil jain google cloud djon kleine bcg"
         },
         {
           "id": "3908796",
@@ -25964,10 +25964,10 @@
               "c": "Devoteam"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Insight",
           "desc": "The emergence of AI agents represents a fundamental shift from reactive tools to autonomous execution. Join Google experts and industry leaders to learn how organizations are using AI agents in Gemini Enterprise to automate workflows and drive business outcomes. We’ll delve into high-impact use cases and break down the key ingredients for success: a unified agentic platform, deep ecosystem integration, and best practices to go from vision to ROI. You’ll come away with a proven recipe for the agentic era and exclusive insights from large-scale AI deployments.",
-          "q": "the new productivity frontier: how ai agents are fueling business growth the emergence of ai agents represents a fundamental shift from reactive tools to autonomous execution. join google experts and industry leaders to learn how organizations are using ai agents in gemini enterprise to automate workflows and drive business outcomes. we’ll delve into high-impact use cases and break down the key ingredients for success: a unified agentic platform, deep ecosystem integration, and best practices to go from vision to roi. you’ll come away with a proven recipe for the agentic era and exclusive insights from large-scale ai deployments. john campbell insight john macdonald google valon rexhepi devoteam sponsored sponsor sponsor_disclosure"
+          "q": "the new productivity frontier: how ai agents are fueling business growth the emergence of ai agents represents a fundamental shift from reactive tools to autonomous execution. join google experts and industry leaders to learn how organizations are using ai agents in gemini enterprise to automate workflows and drive business outcomes. we’ll delve into high-impact use cases and break down the key ingredients for success: a unified agentic platform, deep ecosystem integration, and best practices to go from vision to roi. you’ll come away with a proven recipe for the agentic era and exclusive insights from large-scale ai deployments. john campbell insight john macdonald google valon rexhepi devoteam"
         },
         {
           "id": "3912240",
@@ -26184,10 +26184,10 @@
               "c": "Box"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google",
           "desc": "Most enterprises aren't behind on AI. They're behind on their content. 90% of the knowledge sitting in your organization is locked in static files, invisible to the systems meant to act on it.\n\nThe companies pulling ahead aren't buying more tools. They're making Intelligent Content Management the foundation of their AI strategy. That means content systems that extract their own data, agents that execute multi-step workflows, and AI that routes decisions with enterprise-grade security and governance so nothing falls through the cracks.\n\nIn this session, we'll break down the three moves that define a truly AI-first enterprise and how Box AI, powered Gemini, is making it real for the companies already living on the other side of that transformation.",
-          "q": "the three moves that define an ai-first enterprise most enterprises aren't behind on ai. they're behind on their content. 90% of the knowledge sitting in your organization is locked in static files, invisible to the systems meant to act on it.\n\nthe companies pulling ahead aren't buying more tools. they're making intelligent content management the foundation of their ai strategy. that means content systems that extract their own data, agents that execute multi-step workflows, and ai that routes decisions with enterprise-grade security and governance so nothing falls through the cracks.\n\nin this session, we'll break down the three moves that define a truly ai-first enterprise and how box ai, powered gemini, is making it real for the companies already living on the other side of that transformation. ali arsanjani google yash bhavnani box sponsored sponsor sponsor_disclosure"
+          "q": "the three moves that define an ai-first enterprise most enterprises aren't behind on ai. they're behind on their content. 90% of the knowledge sitting in your organization is locked in static files, invisible to the systems meant to act on it.\n\nthe companies pulling ahead aren't buying more tools. they're making intelligent content management the foundation of their ai strategy. that means content systems that extract their own data, agents that execute multi-step workflows, and ai that routes decisions with enterprise-grade security and governance so nothing falls through the cracks.\n\nin this session, we'll break down the three moves that define a truly ai-first enterprise and how box ai, powered gemini, is making it real for the companies already living on the other side of that transformation. ali arsanjani google yash bhavnani box"
         },
         {
           "id": "3879153",
@@ -26523,10 +26523,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Demystifying TPU inference doesn't have to require writing custom compilers. Join this collaborative discussion to exchange strategies for deploying vLLM and other frameworks across Google Cloud hardware. We will dissect real-world implementations, debating the business tradeoffs between time-to-first-token latency and raw throughput, the reality of switching workloads between GPUs and TPUs, and overcoming the production friction of cold-starts and OOMs. Bring your deployment headaches and swap real-world battle stories with fellow ML engineers and platform architects.",
-          "q": "tpu inference: portability, cost, and scaling for state of the art demystifying tpu inference doesn't have to require writing custom compilers. join this collaborative discussion to exchange strategies for deploying vllm and other frameworks across google cloud hardware. we will dissect real-world implementations, debating the business tradeoffs between time-to-first-token latency and raw throughput, the reality of switching workloads between gpus and tpus, and overcoming the production friction of cold-starts and ooms. bring your deployment headaches and swap real-world battle stories with fellow ml engineers and platform architects. rob mulla google cloud sponsored sponsor sponsor_disclosure"
+          "q": "tpu inference: portability, cost, and scaling for state of the art demystifying tpu inference doesn't have to require writing custom compilers. join this collaborative discussion to exchange strategies for deploying vllm and other frameworks across google cloud hardware. we will dissect real-world implementations, debating the business tradeoffs between time-to-first-token latency and raw throughput, the reality of switching workloads between gpus and tpus, and overcoming the production friction of cold-starts and ooms. bring your deployment headaches and swap real-world battle stories with fellow ml engineers and platform architects. rob mulla google cloud"
         },
         {
           "id": "3913041",
@@ -26783,10 +26783,10 @@
               "c": "Intuit"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Asana",
           "desc": "Unlocking the full potential of AI requires empowering every employee and connecting intelligence to every corner of your business. Learn from leaders at Asana and Intuit who are helping democratize secure AI by integrating their solutions across Gemini and Google Workspace, enabling cross-platform AI in the core workflows we all depend on. Discover how our partner ecosystem is the key to realizing a greater impact from AI.",
-          "q": "transform workflows with gemini and the google partner ecosystem unlocking the full potential of ai requires empowering every employee and connecting intelligence to every corner of your business. learn from leaders at asana and intuit who are helping democratize secure ai by integrating their solutions across gemini and google workspace, enabling cross-platform ai in the core workflows we all depend on. discover how our partner ecosystem is the key to realizing a greater impact from ai. arnab bose asana ava malla google cloud joe preston intuit sponsored sponsor sponsor_disclosure"
+          "q": "transform workflows with gemini and the google partner ecosystem unlocking the full potential of ai requires empowering every employee and connecting intelligence to every corner of your business. learn from leaders at asana and intuit who are helping democratize secure ai by integrating their solutions across gemini and google workspace, enabling cross-platform ai in the core workflows we all depend on. discover how our partner ecosystem is the key to realizing a greater impact from ai. arnab bose asana ava malla google cloud joe preston intuit"
         },
         {
           "id": "3912301",
@@ -27037,10 +27037,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Managing Apache Iceberg manifests, optimizing file sizes, and handling compaction all drain engineering resources. We’re solving this friction with a whole new set of features in BigLake designed to help you keep the open source compatibility you need while offloading the hard work to Google’s infrastructure. Join this session for a deep dive into the new, unified BigLake tables that help you build and optimize an open, enterprise-ready lakehouse without compromises and provide a seamless read/write interoperability between BigQuery and OSS engines.",
-          "q": "unified iceberg: open standards, native performance managing apache iceberg manifests, optimizing file sizes, and handling compaction all drain engineering resources. we’re solving this friction with a whole new set of features in biglake designed to help you keep the open source compatibility you need while offloading the hard work to google’s infrastructure. join this session for a deep dive into the new, unified biglake tables that help you build and optimize an open, enterprise-ready lakehouse without compromises and provide a seamless read/write interoperability between bigquery and oss engines. parth desai google cloud yuriy zhovtobryukh google cloud sponsored sponsor sponsor_disclosure"
+          "q": "unified iceberg: open standards, native performance managing apache iceberg manifests, optimizing file sizes, and handling compaction all drain engineering resources. we’re solving this friction with a whole new set of features in biglake designed to help you keep the open source compatibility you need while offloading the hard work to google’s infrastructure. join this session for a deep dive into the new, unified biglake tables that help you build and optimize an open, enterprise-ready lakehouse without compromises and provide a seamless read/write interoperability between bigquery and oss engines. parth desai google cloud yuriy zhovtobryukh google cloud"
         },
         {
           "id": "3913094",
@@ -27301,10 +27301,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Dive deep into new agentic experiences that are transforming team collaboration in Google Chat. These include Gemini in Chat, journeys across Google Workspace powered by agents in Calendar, Tasks, and Drive, and third-party agents from ServiceNow, Comeen, and more.",
-          "q": "unlock agentic collaboration and productivity in google chat dive deep into new agentic experiences that are transforming team collaboration in google chat. these include gemini in chat, journeys across google workspace powered by agents in calendar, tasks, and drive, and third-party agents from servicenow, comeen, and more. vishnu nath google cloud jyoti ramnath google cloud angela ying google cloud sponsored sponsor sponsor_disclosure"
+          "q": "unlock agentic collaboration and productivity in google chat dive deep into new agentic experiences that are transforming team collaboration in google chat. these include gemini in chat, journeys across google workspace powered by agents in calendar, tasks, and drive, and third-party agents from servicenow, comeen, and more. vishnu nath google cloud jyoti ramnath google cloud angela ying google cloud"
         },
         {
           "id": "3952907",
@@ -27505,10 +27505,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Citadel Securities",
           "desc": "While Cloud Tensor Processing Units (TPUs) are renowned for training the world’s most advanced generative AI models, their architecture is engineered to accelerate a vast spectrum of complex workloads. Join us to discover the latest updates to the Cloud TPU experience – including flexible new access models, comprehensive observability, and enterprise-grade service level objectives (SLOs) – designed to empower developers and researchers and deliver predictable reliability. Real-world success takes center stage as Citadel Securities shares their journey using Cloud TPUs for high-performance financial modeling. Learn how they conquered massive infrastructure hurdles to achieve exceptional ROI and accelerated time to market.",
-          "q": "unlock high-performance ai with the new cloud tpu experience while cloud tensor processing units (tpus) are renowned for training the world’s most advanced generative ai models, their architecture is engineered to accelerate a vast spectrum of complex workloads. join us to discover the latest updates to the cloud tpu experience – including flexible new access models, comprehensive observability, and enterprise-grade service level objectives (slos) – designed to empower developers and researchers and deliver predictable reliability. real-world success takes center stage as citadel securities shares their journey using cloud tpus for high-performance financial modeling. learn how they conquered massive infrastructure hurdles to achieve exceptional roi and accelerated time to market. haris nair citadel securities mohan pichika google cloud alex spiridonov google cloud sponsored sponsor sponsor_disclosure"
+          "q": "unlock high-performance ai with the new cloud tpu experience while cloud tensor processing units (tpus) are renowned for training the world’s most advanced generative ai models, their architecture is engineered to accelerate a vast spectrum of complex workloads. join us to discover the latest updates to the cloud tpu experience – including flexible new access models, comprehensive observability, and enterprise-grade service level objectives (slos) – designed to empower developers and researchers and deliver predictable reliability. real-world success takes center stage as citadel securities shares their journey using cloud tpus for high-performance financial modeling. learn how they conquered massive infrastructure hurdles to achieve exceptional roi and accelerated time to market. haris nair citadel securities mohan pichika google cloud alex spiridonov google cloud"
         },
         {
           "id": "3909214",
@@ -27533,10 +27533,10 @@
               "c": "Palo Alto Networks"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Carahsoft",
           "desc": "Ready to accelerate your Public Sector business? Discover how to leverage Google Cloud Marketplace for rapid growth. We’ll guide you through how the ISV and channel partner ecosystem can immediately get started with Marketplace and the benefits of the two-tier Distributor Channel Private Offer (DCPO) model, simplifying financial and operational complexity. Hear real-world success stories and learn how to partner with Carahsoft’s team to unlock vast services. Join us to streamline your path to revenue and reduce complexity.",
-          "q": "unlock public sector growth with marketplace ready to accelerate your public sector business? discover how to leverage google cloud marketplace for rapid growth. we’ll guide you through how the isv and channel partner ecosystem can immediately get started with marketplace and the benefits of the two-tier distributor channel private offer (dcpo) model, simplifying financial and operational complexity. hear real-world success stories and learn how to partner with carahsoft’s team to unlock vast services. join us to streamline your path to revenue and reduce complexity. harjeet khalsa carahsoft al rysbekov palo alto networks sponsored sponsor sponsor_disclosure"
+          "q": "unlock public sector growth with marketplace ready to accelerate your public sector business? discover how to leverage google cloud marketplace for rapid growth. we’ll guide you through how the isv and channel partner ecosystem can immediately get started with marketplace and the benefits of the two-tier distributor channel private offer (dcpo) model, simplifying financial and operational complexity. hear real-world success stories and learn how to partner with carahsoft’s team to unlock vast services. join us to streamline your path to revenue and reduce complexity. harjeet khalsa carahsoft al rysbekov palo alto networks"
         },
         {
           "id": "3912256",
@@ -27657,10 +27657,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Maximize your reach and accelerate your growth with Google Cloud Partner Marketing Funds. This program can help you connect with new customers and expand your business. We’ll walk through eligibility, funding options, and the best practices that maximize your impact. Whether you're an experienced marketer or just getting started, you’ll gain actionable insights to immediately elevate your marketing strategy.",
-          "q": "unlocking google cloud marketing funds: overview and success tips maximize your reach and accelerate your growth with google cloud partner marketing funds. this program can help you connect with new customers and expand your business. we’ll walk through eligibility, funding options, and the best practices that maximize your impact. whether you're an experienced marketer or just getting started, you’ll gain actionable insights to immediately elevate your marketing strategy. brent gostkowski google cloud julien renucci google cloud sponsored sponsor sponsor_disclosure"
+          "q": "unlocking google cloud marketing funds: overview and success tips maximize your reach and accelerate your growth with google cloud partner marketing funds. this program can help you connect with new customers and expand your business. we’ll walk through eligibility, funding options, and the best practices that maximize your impact. whether you're an experienced marketer or just getting started, you’ll gain actionable insights to immediately elevate your marketing strategy. brent gostkowski google cloud julien renucci google cloud"
         },
         {
           "id": "3912922",
@@ -27843,10 +27843,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Unlocking Incentives: The New RaMP Model: Explore the major redesign of the Rapid Migration and Modernization Program (RaMP), built to accelerate the journey from legacy infrastructure to AI adoption. This session details the program’s streamlined commercial model, offering predictable incentives for both general and strategic workloads. Join us to discover how the evolved RaMP program aligns partner profitability with customer success—turning migration from a technical hurdle into a launchpad for AI transformation.",
-          "q": "velocity & transparency: the new ramp model for migration unlocking incentives: the new ramp model: explore the major redesign of the rapid migration and modernization program (ramp), built to accelerate the journey from legacy infrastructure to ai adoption. this session details the program’s streamlined commercial model, offering predictable incentives for both general and strategic workloads. join us to discover how the evolved ramp program aligns partner profitability with customer success—turning migration from a technical hurdle into a launchpad for ai transformation. chris arisian google cloud heather remek google cloud sponsored sponsor sponsor_disclosure"
+          "q": "velocity & transparency: the new ramp model for migration unlocking incentives: the new ramp model: explore the major redesign of the rapid migration and modernization program (ramp), built to accelerate the journey from legacy infrastructure to ai adoption. this session details the program’s streamlined commercial model, offering predictable incentives for both general and strategic workloads. join us to discover how the evolved ramp program aligns partner profitability with customer success—turning migration from a technical hurdle into a launchpad for ai transformation. chris arisian google cloud heather remek google cloud"
         },
         {
           "id": "3912271",
@@ -28242,10 +28242,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Discover how BigQuery is redefining the modern data and AI stack. Join this session to explore new capabilities for multimodal analytics and performance at scale. Learn how to accelerate AI innovation by bringing generative AI directly to your data for rapid model building and co-processing. Plus, get a preview of the new agentic experiences designed to simplify and automate workflows for every data professional.",
-          "q": "what's new in bigquery: the data platform for agentic ai discover how bigquery is redefining the modern data and ai stack. join this session to explore new capabilities for multimodal analytics and performance at scale. learn how to accelerate ai innovation by bringing generative ai directly to your data for rapid model building and co-processing. plus, get a preview of the new agentic experiences designed to simplify and automate workflows for every data professional. geeta banda google cloud fernando croceri mercado libre neeraja rentachintala google cloud tomas talius google cloud sponsored sponsor sponsor_disclosure"
+          "q": "what's new in bigquery: the data platform for agentic ai discover how bigquery is redefining the modern data and ai stack. join this session to explore new capabilities for multimodal analytics and performance at scale. learn how to accelerate ai innovation by bringing generative ai directly to your data for rapid model building and co-processing. plus, get a preview of the new agentic experiences designed to simplify and automate workflows for every data professional. geeta banda google cloud fernando croceri mercado libre neeraja rentachintala google cloud tomas talius google cloud"
         },
         {
           "id": "3911901",
@@ -28650,10 +28650,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "The network is the foundation of the AI era, but keeping pace with rapid innovation is a challenge. Falling behind limits your ability to adopt generative AI, agents, and modern apps. Join this session for a comprehensive roundup of all key releases across Cross-Cloud Network, Google Cloud’s global network solution. We’ll cover optimized infrastructure for AI agents, models, and tools; multicloud and enterprise global backbone connectivity; advanced AI-powered network security; and new innovations in self-driving networking operations. Get all the essential updates you need to architect your network for the future.",
-          "q": "what's new in the cross-cloud network the network is the foundation of the ai era, but keeping pace with rapid innovation is a challenge. falling behind limits your ability to adopt generative ai, agents, and modern apps. join this session for a comprehensive roundup of all key releases across cross-cloud network, google cloud’s global network solution. we’ll cover optimized infrastructure for ai agents, models, and tools; multicloud and enterprise global backbone connectivity; advanced ai-powered network security; and new innovations in self-driving networking operations. get all the essential updates you need to architect your network for the future. anna berenberg google cloud rob enns google cloud anoop vetteth google cloud sponsored sponsor sponsor_disclosure"
+          "q": "what's new in the cross-cloud network the network is the foundation of the ai era, but keeping pace with rapid innovation is a challenge. falling behind limits your ability to adopt generative ai, agents, and modern apps. join this session for a comprehensive roundup of all key releases across cross-cloud network, google cloud’s global network solution. we’ll cover optimized infrastructure for ai agents, models, and tools; multicloud and enterprise global backbone connectivity; advanced ai-powered network security; and new innovations in self-driving networking operations. get all the essential updates you need to architect your network for the future. anna berenberg google cloud rob enns google cloud anoop vetteth google cloud"
         },
         {
           "id": "3912974",
@@ -28958,10 +28958,10 @@
               "c": "Google Cloud"
             }
           ],
-          "spon": true,
+          "spon": false,
           "scon": "Google Cloud",
           "desc": "Do you have a solution for Google Cloud or Workspace? Your partner journey is evolving. The new GCPN Technology Path shifts our focus from simple \"build\" activities to rewarding tangible customer outcomes. This lightning talk showcases the simpler, automated path designed to measure your true impact and accelerate your growth. Join us to see exactly what is changing, how the new model works, and how you can leverage it to win.",
-          "q": "what's your next move? winning with the gcpn technology path do you have a solution for google cloud or workspace? your partner journey is evolving. the new gcpn technology path shifts our focus from simple \"build\" activities to rewarding tangible customer outcomes. this lightning talk showcases the simpler, automated path designed to measure your true impact and accelerate your growth. join us to see exactly what is changing, how the new model works, and how you can leverage it to win. leon grigsby google cloud denis morentsov google cloud sponsored sponsor sponsor_disclosure"
+          "q": "what's your next move? winning with the gcpn technology path do you have a solution for google cloud or workspace? your partner journey is evolving. the new gcpn technology path shifts our focus from simple \"build\" activities to rewarding tangible customer outcomes. this lightning talk showcases the simpler, automated path designed to measure your true impact and accelerate your growth. join us to see exactly what is changing, how the new model works, and how you can leverage it to win. leon grigsby google cloud denis morentsov google cloud"
         },
         {
           "id": "3939814",
