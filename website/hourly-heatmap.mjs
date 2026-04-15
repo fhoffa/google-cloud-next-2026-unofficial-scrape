@@ -80,7 +80,9 @@ function renderSnapshot() {
 
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
+    const hour = Number(key.split(':')[1]);
     const sessions = (grouped.get(key) || []).sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
+    const startingSessions = sessions.filter((session) => session.sh === hour);
     const squares = row.querySelector('.squares');
     if (sessions.length <= 1) {
       row.style.display = 'none';
@@ -88,13 +90,13 @@ function renderSnapshot() {
       return;
     }
     row.style.display = 'grid';
-    const topSession = sessions[0] || null;
-    const totalReserved = sessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
+    const topSession = startingSessions[0] || null;
+    const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
     row.querySelector('.hour-seats').textContent = `${formatCount(totalReserved)} reserved`;
-    row.querySelector('.top-session').textContent = topSession ? topSession.t : 'No scheduled sessions';
+    row.querySelector('.top-session').textContent = topSession ? topSession.t : 'No new starts this hour';
     row.querySelector('.top-session').className = `top-session${topSession ? '' : ' muted'}`;
 
-    const others = topSession ? sessions.slice(1) : sessions;
+    const others = topSession ? sessions.filter((session) => session.id !== topSession.id) : sessions;
     squares.innerHTML = others
       .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)))
       .map((session) => {
