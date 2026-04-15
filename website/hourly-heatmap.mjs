@@ -39,13 +39,18 @@ function isMegaSession(session) {
 function isVisibleSession(session) {
   return (session?.reg ?? 0) > 0 && !isMegaSession(session);
 }
+function roomSizeClass(session) {
+  if (session?.cap && session.cap > 250) return 'large-room';
+  if (session?.cap && session.cap > 0) return 'small-room';
+  return 'unknown';
+}
 
 function buildShell() {
   els.app.innerHTML = '';
   for (const [dayIndex, day] of state.data.days.entries()) {
     const shell = document.createElement('section');
     shell.className = 'day-shell';
-    shell.innerHTML = `<h2 class="day-title">${esc(day)}</h2><div class="rows" data-day-index="${dayIndex}"></div>`;
+    shell.innerHTML = `<h2 class="day-title">${esc(day)}</h2><div class="rows-header"><div>Hour</div><div>Seats</div><div>Top session</div><div>Sessions</div></div><div class="rows" data-day-index="${dayIndex}"></div>`;
     const rows = shell.querySelector('.rows');
     for (let hour = state.data.hourRange.min; hour < state.data.hourRange.max; hour += 1) {
       const row = document.createElement('div');
@@ -109,7 +114,7 @@ function renderSnapshot() {
       .map((session) => {
         const pct = fillPct(session);
         const title = `${session.t} · ${formatCount(session.reg)} reserved${pct == null ? '' : ` · ${pct.toFixed(0)}% full`}`;
-        return `<button class="sq ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+        return `<button class="sq ${roomSizeClass(session)} ${pct == null ? 'unknown' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}"><span class="sq-fill" style="height:${pct == null ? 35 : pct}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {

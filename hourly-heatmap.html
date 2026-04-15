@@ -65,24 +65,36 @@
     #snapshot-slider { width: 100%; }
     .snapshot-label, .playback-note { color: var(--gray-700); font-size: .92rem; }
     .playback-note { color: var(--gray-500); }
-    .day-shell { padding: 10px; margin-bottom: 10px; }
-    .day-title { margin: 0 0 6px; font-size: .95rem; }
-    .rows { display: grid; gap: 4px; }
+    .day-shell { padding: 8px 10px 10px; margin-bottom: 8px; }
+    .day-title { margin: 0 0 4px; font-size: .9rem; }
+    .rows-header {
+      display: grid;
+      grid-template-columns: 40px 68px minmax(140px, 240px) minmax(0, 1fr);
+      gap: 6px;
+      align-items: center;
+      padding: 0 6px 3px;
+      color: var(--gray-500);
+      font-size: .58rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .rows { display: grid; gap: 2px; }
     .hour-row {
       display: grid;
       grid-template-columns: 40px 68px minmax(140px, 240px) minmax(0, 1fr);
       gap: 6px;
       align-items: center;
-      min-height: 24px;
-      padding: 3px 6px;
+      min-height: 20px;
+      padding: 1px 6px;
       border: 1px solid var(--gray-200);
-      border-radius: 12px;
+      border-radius: 10px;
       background: var(--gray-050);
     }
-    .hour-label { font-weight: 700; color: var(--gray-700); font-size: .74rem; }
-    .hour-seats { font-size: .66rem; color: var(--gray-700); white-space: nowrap; }
+    .hour-label { font-weight: 700; color: var(--gray-700); font-size: .78rem; }
+    .hour-seats { font-size: .72rem; color: var(--gray-700); white-space: nowrap; }
     .top-session {
-      font-size: .66rem;
+      font-size: .72rem;
       font-weight: 600;
       color: var(--gray-900);
       white-space: nowrap;
@@ -96,7 +108,7 @@
       flex-wrap: nowrap;
       gap: 0;
       align-items: center;
-      min-height: 10px;
+      min-height: 9px;
       overflow: hidden;
       min-width: 0;
     }
@@ -104,9 +116,9 @@
       position: relative;
       width: 3px;
       min-width: 3px;
-      height: 9px;
+      height: 8px;
       border-radius: 1px;
-      border: 1px solid rgba(60,64,67,.12);
+      border: 1px solid rgba(60,64,67,.10);
       background: #eef2f6;
       box-shadow: none;
       transition: transform .18s ease, opacity .18s ease;
@@ -122,8 +134,10 @@
       bottom: 0;
       background: linear-gradient(180deg, #8ab4f8, var(--blue));
       transition: height .45s ease;
-      border-radius: 0 0 3px 3px;
+      border-radius: 0 0 2px 2px;
     }
+    .sq.small-room .sq-fill { background: linear-gradient(180deg, #6fd39b, var(--green)); }
+    .sq.large-room .sq-fill { background: linear-gradient(180deg, #8ab4f8, var(--blue)); }
     .sq.unknown .sq-fill { background: linear-gradient(180deg, #c5c9ce, #9aa0a6); }
     .sq-tooltip {
       position: absolute;
@@ -152,8 +166,8 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 12px;
-      font-size: .82rem;
+      margin-top: 10px;
+      font-size: .76rem;
       color: var(--gray-500);
     }
     .legend span { display: inline-flex; align-items: center; gap: 6px; }
@@ -168,6 +182,7 @@
     }
     @media (max-width: 1100px) {
       .toolbar { grid-template-columns: 1fr; }
+      .rows-header,
       .hour-row { grid-template-columns: 36px 58px minmax(100px, 180px) minmax(0, 1fr); }
     }
     @media (max-width: 760px) {
@@ -195,8 +210,10 @@
     </section>
     <div id="app"><div class="empty-state">Loading hourly overview…</div></div>
     <div class="legend">
-      <span><i class="swatch" style="background:linear-gradient(180deg,#8ab4f8,#1a73e8)"></i> filled portion of the square = % full</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#6fd39b,#34a853)"></i> small room</span>
+      <span><i class="swatch" style="background:linear-gradient(180deg,#8ab4f8,#1a73e8)"></i> large room</span>
       <span><i class="swatch" style="background:linear-gradient(180deg,#c5c9ce,#9aa0a6)"></i> unknown capacity</span>
+      <span>fill height = % full</span>
     </div>
   </main>
   <script type="module" src="./website/hourly-heatmap.mjs"></script>
