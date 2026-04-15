@@ -41,7 +41,7 @@ function isMegaSession(session) {
   return (session?.reg ?? 0) >= MEGA_SESSION_REGISTRANTS;
 }
 function isVisibleSession(session) {
-  return (session?.reg ?? 0) > 0 && !isMegaSession(session);
+  return (session?.reg ?? 0) > 1 && !isMegaSession(session);
 }
 function isSmallRoom(session) {
   return (session?.cap ?? 0) > 0 && session.cap < 100;
