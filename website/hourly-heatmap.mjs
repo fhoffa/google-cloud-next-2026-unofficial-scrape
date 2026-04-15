@@ -2,7 +2,7 @@ const DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0 };
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0 };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -93,11 +93,16 @@ function buildShell() {
   }
 }
 
+function hasMeaningfulSnapshot(snapshot) {
+  const visibleSessions = snapshot.sessions.filter(isVisibleSession);
+  return visibleSessions.some((session) => (session?.reg ?? 0) > 1);
+}
+
 function renderSnapshot() {
   const snapshot = state.data.snapshots[state.snapshotIndex];
   els.snapshotLabel.textContent = snapshot.label;
   els.snapshotSlider.min = String(state.startIndex);
-  els.snapshotSlider.max = String(state.data.snapshots.length - 1);
+  els.snapshotSlider.max = String(state.latestIndex);
   els.snapshotSlider.value = String(state.snapshotIndex);
 
   const visibleSessions = snapshot.sessions.filter(isVisibleSession);
@@ -169,12 +174,12 @@ function renderSnapshot() {
 
 function startAutoplay() {
   stopAutoplay();
-  if (state.snapshotIndex >= state.data.snapshots.length - 1) {
-    state.snapshotIndex = 0;
+  if (state.snapshotIndex >= state.latestIndex) {
+    state.snapshotIndex = state.startIndex;
     renderSnapshot();
   }
   state.timer = window.setInterval(() => {
-    if (state.snapshotIndex >= state.data.snapshots.length - 1) {
+    if (state.snapshotIndex >= state.latestIndex) {
       stopAutoplay();
       return;
     }
@@ -199,8 +204,10 @@ async function init() {
   });
   const response = await fetch(DATA_URL);
   state.data = await response.json();
-  state.startIndex = Math.max(0, state.data.snapshots.length - 1);
-  state.snapshotIndex = state.startIndex;
+  state.latestIndex = Math.max(0, state.data.snapshots.length - 1);
+  const meaningfulIndex = state.data.snapshots.findIndex(hasMeaningfulSnapshot);
+  state.startIndex = meaningfulIndex >= 0 ? meaningfulIndex : 0;
+  state.snapshotIndex = state.latestIndex;
   buildShell();
   renderSnapshot();
 
