@@ -3,7 +3,7 @@ const MEGA_SESSION_REGISTRANTS = 1000;
 const MEANINGFUL_START_KEY = '2026-04-02T05-58-38Z';
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, maxVisibleReserved: 1 };
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0 };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -44,14 +44,28 @@ function isMegaSession(session) {
 function isVisibleSession(session) {
   return (session?.reg ?? 0) > 0 && !isMegaSession(session);
 }
-function markerFillPct(session, rowMaxReserved) {
+function isSmallRoom(session) {
+  return (session?.cap ?? 0) > 0 && session.cap < 100;
+}
+function fillTieScore(session) {
+  return fillPct(session) ?? -1;
+}
+function compareSessions(a, b) {
+  return (b.reg ?? -1) - (a.reg ?? -1)
+    || fillTieScore(b) - fillTieScore(a)
+    || ((a.rem ?? Number.POSITIVE_INFINITY) - (b.rem ?? Number.POSITIVE_INFINITY))
+    || String(a.t).localeCompare(String(b.t));
+}
+function markerFillPct(session, bigMaxReserved, smallMaxReserved) {
   const reg = session?.reg ?? null;
   if (reg == null || reg <= 0) return null;
-  const maxReserved = Math.max(1, rowMaxReserved || 0);
+  const maxReserved = isSmallRoom(session)
+    ? Math.max(1, smallMaxReserved || 0)
+    : Math.max(1, bigMaxReserved || 0);
   return Math.max(8, Math.min(100, (reg / maxReserved) * 100));
 }
 function markerWidth(session) {
-  if ((session?.cap ?? 0) > 0 && session.cap < 100) {
+  if (isSmallRoom(session)) {
     return SMALL_ROOM_MARKER_WIDTH;
   }
   return MARKER_WIDTH;
@@ -102,10 +116,10 @@ function renderSnapshot() {
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
     const hour = Number(key.split(':')[1]);
-    const sessions = (grouped.get(key) || []).sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
+    const sessions = (grouped.get(key) || []).sort(compareSessions);
     const startingSessions = sessions
       .filter((session) => session.sh === hour)
-      .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || String(a.t).localeCompare(String(b.t)));
+      .sort(compareSessions);
     const squares = row.querySelector('.squares');
     if (sessions.length <= 1) {
       row.style.display = 'none';
@@ -122,16 +136,18 @@ function renderSnapshot() {
     const markers = topSession
       ? [topSession, ...sessions.filter((session) => session.id !== topSession.id)]
       : sessions;
-    const rowMaxReserved = Math.max(1, ...markers.map((session) => session.reg || 0));
+    const bigMaxReserved = Math.max(1, ...markers.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
+    const smallMaxReserved = Math.max(1, ...markers.filter(isSmallRoom).map((session) => session.reg || 0), 1);
     squares.innerHTML = markers
-      .sort((a, b) => (b.reg ?? -1) - (a.reg ?? -1) || (fillPct(b) ?? -1) - (fillPct(a) ?? -1) || String(a.t).localeCompare(String(b.t)))
+      .sort(compareSessions)
       .map((session) => {
         const pct = fillPct(session);
-        const fill = markerFillPct(session, rowMaxReserved);
+        const fill = markerFillPct(session, bigMaxReserved, smallMaxReserved);
         const width = markerWidth(session);
+        const groupLabel = isSmallRoom(session) ? 'small-room max' : 'big-room max';
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of row max demand`
-          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of row max demand`}`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full · ${fill.toFixed(0)}% of ${groupLabel}`
+          : `${session.t} · ${formatCount(session.reg)} reserved${session.rem == null ? '' : ` · ${formatCount(session.rem)} seat${session.rem === 1 ? '' : 's'} left`} · capacity unknown · ${fill == null ? 'size unknown' : `${fill.toFixed(0)}% of ${groupLabel}`}`;
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
@@ -176,7 +192,6 @@ async function init() {
   });
   const response = await fetch(DATA_URL);
   state.data = await response.json();
-  state.maxVisibleReserved = Math.max(1, ...state.data.snapshots.flatMap((snapshot) => snapshot.sessions.map((session) => session.reg || 0).filter((reg) => reg > 0 && reg < MEGA_SESSION_REGISTRANTS)));
   state.startIndex = Math.max(0, state.data.snapshots.findIndex((snapshot) => snapshot.key === MEANINGFUL_START_KEY));
   state.snapshotIndex = state.startIndex;
   buildShell();
