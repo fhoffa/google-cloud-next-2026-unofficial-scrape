@@ -1,8 +1,8 @@
 const DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MEANINGFUL_START_KEY = '2026-04-02T05-58-38Z';
-const MIN_MARKER_WIDTH = 3;
-const MAX_MARKER_WIDTH = 18;
+const MARKER_WIDTH = 10;
+const SMALL_ROOM_MARKER_WIDTH = 5;
 const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, maxVisibleReserved: 1 };
 const els = {};
 
@@ -51,14 +51,10 @@ function markerFillPct(session, rowMaxReserved) {
   return Math.max(8, Math.min(100, (reg / maxReserved) * 100));
 }
 function markerWidth(session) {
-  const reg = session?.reg ?? null;
-  if (reg == null || reg <= 0) return MIN_MARKER_WIDTH;
-  const ratio = reg / state.maxVisibleReserved;
-  const baseWidth = Math.max(MIN_MARKER_WIDTH, Math.min(MAX_MARKER_WIDTH, Math.round(MIN_MARKER_WIDTH + ratio * (MAX_MARKER_WIDTH - MIN_MARKER_WIDTH))));
   if ((session?.cap ?? 0) > 0 && session.cap < 100) {
-    return Math.max(2, Math.round(baseWidth * 0.5));
+    return SMALL_ROOM_MARKER_WIDTH;
   }
-  return baseWidth;
+  return MARKER_WIDTH;
 }
 
 function buildShell() {
