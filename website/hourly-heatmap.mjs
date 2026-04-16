@@ -84,6 +84,17 @@ function markerWidth(session) {
   }
   return MARKER_WIDTH;
 }
+function readInitialState() {
+  const params = new URLSearchParams(window.location.search);
+  state.query = params.get('q') || '';
+}
+function writeSearchToUrl() {
+  const url = new URL(window.location.href);
+  const query = String(state.query || '').trim();
+  if (query) url.searchParams.set('q', query);
+  else url.searchParams.delete('q');
+  window.history.replaceState(null, '', url);
+}
 
 function buildShell() {
   els.app.innerHTML = '';
@@ -263,6 +274,8 @@ async function init() {
     searchSummary: byId('search-summary'),
     playbackNote: byId('playback-note'),
   });
+  readInitialState();
+  els.searchInput.value = state.query;
   const response = await fetch(INITIAL_DATA_URL);
   const data = await response.json();
   applyDataset(data, { hasFullHistory: false });
@@ -274,6 +287,7 @@ async function init() {
   });
   els.searchInput.addEventListener('input', (event) => {
     state.query = event.target.value || '';
+    writeSearchToUrl();
     renderSnapshot();
   });
   els.snapshotSlider.addEventListener('input', (event) => {
