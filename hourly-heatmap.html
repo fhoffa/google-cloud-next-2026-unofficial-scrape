@@ -126,10 +126,13 @@
       flex-wrap: nowrap;
       gap: 0;
       align-items: center;
+      position: relative;
       min-height: 9px;
       overflow: visible;
       min-width: 0;
     }
+    .squares.has-callouts-above { padding-top: 78px; }
+    .squares.has-callouts-below { padding-bottom: 78px; }
     .sq {
       position: relative;
       flex: 0 0 auto;
@@ -192,12 +195,19 @@
       opacity: 1;
       visibility: visible;
     }
-    .sq-callout {
+    .sq-callout-layer,
+    .sq-callout-lines {
       position: absolute;
-      left: 50%;
-      bottom: calc(100% + 12px + (var(--lane, 0) * 54px));
-      transform: translateX(calc(-50% + var(--dx, 0px)));
-      z-index: calc(6 + var(--lane, 0));
+      inset: 0;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .sq-callout-lines {
+      width: 100%;
+      height: 100%;
+    }
+    .sq-callout-label {
+      position: absolute;
       min-width: 120px;
       max-width: 220px;
       padding: 5px 7px;
@@ -209,27 +219,6 @@
       white-space: normal;
       text-align: left;
       box-shadow: 0 8px 18px rgba(26,115,232,.22);
-      pointer-events: none;
-    }
-    .sq-callout::after {
-      content: '';
-      position: absolute;
-      left: calc(50% - var(--dx, 0px));
-      top: 100%;
-      transform: translateX(-50%);
-      border-width: 6px 5px 0 5px;
-      border-style: solid;
-      border-color: rgba(26,115,232,.96) transparent transparent transparent;
-    }
-    .hour-row.callouts-below .sq-callout {
-      bottom: auto;
-      top: calc(100% + 12px + (var(--lane, 0) * 54px));
-    }
-    .hour-row.callouts-below .sq-callout::after {
-      top: auto;
-      bottom: 100%;
-      border-width: 0 5px 6px 5px;
-      border-color: transparent transparent rgba(26,115,232,.96) transparent;
     }
     .legend {
       display: flex;

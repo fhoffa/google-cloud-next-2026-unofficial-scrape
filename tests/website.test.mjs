@@ -253,12 +253,13 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.doesNotMatch(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size\.toLocaleString\(\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
-  assert.match(hourlyJs, /function buildCalloutLaneMap\(/);
+  assert.match(hourlyJs, /function buildDistributedCallouts\(/);
   assert.match(hourlyJs, /estimateCalloutWidth\(/);
-  assert.match(hourlyJs, /const dx = lane % 2 === 0 \? -18 : 18/);
+  assert.match(hourlyJs, /sq-callout-layer/);
+  assert.match(hourlyJs, /sq-callout-lines/);
+  assert.match(hourlyJs, /data-callout-match=/);
   assert.match(hourlyJs, /callouts-below/);
-  assert.match(hourlyJs, /style="--lane:\$\{calloutMeta\.lane\};--dx:\$\{calloutMeta\.dx\}px"/);
-  assert.match(hourlyJs, /sq-callout/);
+  assert.match(hourlyJs, /marker-end', 'url\(#callout-arrow\)'/);
   assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
   assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);
   assert.match(hourlyJs, /window\.history\.replaceState\(null, '', url\)/);

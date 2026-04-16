@@ -100,30 +100,89 @@ function estimateCalloutWidth(title) {
   return Math.max(120, Math.min(220, 26 + String(title || '').length * 5.5));
 }
 
-function buildCalloutLaneMap(markers, calloutSessionIds) {
-  const laneEnds = [];
-  const laneMap = new Map();
-  let cursorX = 0;
-  for (const session of markers) {
-    const width = markerWidth(session);
-    const centerX = cursorX + (width / 2);
-    cursorX += width + 1;
-    const id = String(session.id);
-    if (!calloutSessionIds.has(id)) continue;
-    const calloutWidth = estimateCalloutWidth(session.t);
-    const left = centerX - (calloutWidth / 2);
-    const right = centerX + (calloutWidth / 2);
-    let lane = laneEnds.findIndex((laneRight) => left > laneRight + 8);
-    if (lane === -1) {
-      lane = laneEnds.length;
-      laneEnds.push(right);
-    } else {
-      laneEnds[lane] = right;
-    }
-    const dx = lane % 2 === 0 ? -18 : 18;
-    laneMap.set(id, { lane, dx });
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
+  if (!matchedButtons.length) return;
+  const containerWidth = Math.max(220, squares.clientWidth || 0);
+  const spacing = containerWidth / (matchedButtons.length + 1);
+  const labels = matchedButtons.map((button, index) => {
+    const width = estimateCalloutWidth(button.dataset.sessionTitle || '');
+    const anchorX = button.offsetLeft + (button.offsetWidth / 2);
+    const anchorY = button.offsetTop + (button.offsetHeight / 2);
+    return {
+      button,
+      title: button.dataset.sessionTitle || '',
+      width,
+      anchorX,
+      anchorY,
+      desiredX: (index + 1) * spacing,
+      lane: index % 2,
+    };
+  }).sort((a, b) => a.anchorX - b.anchorX);
+
+  let previousRight = -Infinity;
+  for (const label of labels) {
+    const minLeft = 0;
+    const maxLeft = Math.max(0, containerWidth - label.width);
+    let left = clamp(label.desiredX - (label.width / 2), minLeft, maxLeft);
+    if (left < previousRight + 10) left = Math.min(maxLeft, previousRight + 10);
+    label.left = left;
+    label.top = placeBelow ? 26 + (label.lane * 48) : 2 + (label.lane * 48);
+    previousRight = left + label.width;
   }
-  return laneMap;
+
+  const layer = document.createElement('div');
+  layer.className = 'sq-callout-layer';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('class', 'sq-callout-lines');
+  svg.setAttribute('viewBox', `0 0 ${containerWidth} ${Math.max(90, squares.clientHeight || 90)}`);
+  svg.setAttribute('preserveAspectRatio', 'none');
+
+  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+  const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+  marker.setAttribute('id', 'callout-arrow');
+  marker.setAttribute('viewBox', '0 0 10 10');
+  marker.setAttribute('refX', '8');
+  marker.setAttribute('refY', '5');
+  marker.setAttribute('markerWidth', '5');
+  marker.setAttribute('markerHeight', '5');
+  marker.setAttribute('orient', 'auto-start-reverse');
+  const markerPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  markerPath.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
+  markerPath.setAttribute('fill', 'rgba(26,115,232,.96)');
+  marker.appendChild(markerPath);
+  defs.appendChild(marker);
+  svg.appendChild(defs);
+
+  for (const label of labels) {
+    const el = document.createElement('div');
+    el.className = 'sq-callout-label';
+    el.textContent = label.title;
+    el.style.width = `${label.width}px`;
+    el.style.left = `${label.left}px`;
+    el.style.top = `${label.top}px`;
+    layer.appendChild(el);
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    const x1 = label.left + (label.width / 2);
+    const y1 = placeBelow ? label.top : label.top + 28;
+    const x2 = label.anchorX;
+    const y2 = label.anchorY;
+    line.setAttribute('x1', String(x1));
+    line.setAttribute('y1', String(y1));
+    line.setAttribute('x2', String(x2));
+    line.setAttribute('y2', String(y2));
+    line.setAttribute('stroke', 'rgba(26,115,232,.96)');
+    line.setAttribute('stroke-width', '2');
+    line.setAttribute('marker-end', 'url(#callout-arrow)');
+    svg.appendChild(line);
+  }
+
+  squares.appendChild(svg);
+  squares.appendChild(layer);
 }
 
 function buildShell() {
@@ -223,6 +282,7 @@ function renderSnapshot() {
       row.style.display = 'none';
       row.classList.remove('callouts-below');
       squares.innerHTML = '';
+      squares.classList.remove('has-callouts-above', 'has-callouts-below');
       return;
     }
     row.style.display = 'grid';
@@ -234,8 +294,11 @@ function renderSnapshot() {
     topSessionEl.className = `top-session${topSession ? '' : ' muted'}${hasQuery ? (topMatches ? ' search-match' : ' search-dim') : ''}`;
 
     const markers = startingSessions;
-    const calloutLaneMap = buildCalloutLaneMap(markers, calloutSessionIds);
-    row.classList.toggle('callouts-below', visibleRowIndex < 2 && calloutLaneMap.size > 0);
+    const showDistributedCallouts = calloutSessionIds.size > 0;
+    const placeBelow = visibleRowIndex < 2 && showDistributedCallouts;
+    row.classList.toggle('callouts-below', placeBelow);
+    squares.classList.toggle('has-callouts-above', showDistributedCallouts && !placeBelow);
+    squares.classList.toggle('has-callouts-below', showDistributedCallouts && placeBelow);
     visibleRowIndex += 1;
     squares.innerHTML = markers
       .sort(compareSessions)
@@ -252,12 +315,14 @@ function renderSnapshot() {
           ? (matchesQuery(session) ? 'search-match' : 'search-dim')
           : '';
         const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
-        const calloutMeta = calloutLaneMap.get(String(session.id));
-        const callout = calloutMeta != null
-          ? `<span class="sq-callout" style="--lane:${calloutMeta.lane};--dx:${calloutMeta.dx}px">${esc(session.t)}</span>`
-          : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${callout}<span class="sq-tooltip">${esc(title)}</span></button>`;
+        const matchedAttr = calloutSessionIds.has(String(session.id)) ? '1' : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-match="${matchedAttr}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
+
+    if (showDistributedCallouts) {
+      const matchedButtons = [...squares.querySelectorAll('[data-callout-match="1"]')];
+      buildDistributedCallouts(squares, matchedButtons, placeBelow);
+    }
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
       button.addEventListener('click', () => {
