@@ -312,7 +312,6 @@ function renderSnapshot() {
       row.style.display = 'none';
       row.classList.remove('callouts-below');
       squares.innerHTML = '';
-      squares.classList.remove('has-callouts-above', 'has-callouts-below');
       return;
     }
     row.style.display = 'grid';
@@ -323,8 +322,6 @@ function renderSnapshot() {
     const showDistributedCallouts = calloutSessionIds.size > 0;
     const placeBelow = visibleRowIndex < 2 && showDistributedCallouts;
     row.classList.toggle('callouts-below', placeBelow);
-    squares.classList.toggle('has-callouts-above', showDistributedCallouts && !placeBelow);
-    squares.classList.toggle('has-callouts-below', showDistributedCallouts && placeBelow);
     visibleRowIndex += 1;
     squares.innerHTML = markers
       .sort(compareSessions)
