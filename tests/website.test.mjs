@@ -238,9 +238,10 @@ test('hourly heatmap page exposes search and playback controls', () => {
   assert.match(hourlyHtml, /<div id="search-summary"/);
   assert.doesNotMatch(hourlyHtml, /search-match-list/);
   assert.doesNotMatch(hourlyHtml, /Top session/);
-  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416c/);
+  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416k/);
   assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
   assert.match(hourlyHtml, /Hourly seat map/);
+  assert.match(hourlyHtml, /Search labels can float above the chart without making the timeline taller\./);
 });
 
 test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
@@ -257,17 +258,17 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
   assert.match(hourlyJs, /function buildDistributedCallouts\(/);
   assert.match(hourlyJs, /estimateCalloutWidth\(/);
-  assert.match(hourlyJs, /candidatePositions = \[/);
-  assert.match(hourlyJs, /dx: 14, dy: -48/);
-  assert.match(hourlyJs, /dx: -14 - label\.width, dy: -48/);
-  assert.match(hourlyJs, /overlapPenalty \+= 100000/);
-  assert.match(hourlyJs, /label\.anchorX < label\.left/);
-  assert.match(hourlyJs, /label\.anchorX > \(label\.left \+ label\.width\)/);
-  assert.match(hourlyJs, /sq-callout-layer/);
-  assert.match(hourlyJs, /sq-callout-lines/);
-  assert.match(hourlyJs, /data-callout-match=/);
-  assert.match(hourlyJs, /callouts-below/);
-  assert.match(hourlyJs, /marker-end', 'url\(#callout-arrow\)'/);
+  assert.match(hourlyJs, /function getOrCreateOverlay\(/);
+  assert.match(hourlyJs, /overlay\.id = 'sq-global-overlay'/);
+  assert.match(hourlyJs, /svg\.id = 'sq-global-svg'/);
+  assert.match(hourlyJs, /function clearOverlay\(/);
+  assert.match(hourlyJs, /function labelEdgePoint\(/);
+  assert.match(hourlyJs, /const GAP = 6/);
+  assert.match(hourlyJs, /matchedButtons\.map\(\(button\) => \{/);
+  assert.match(hourlyJs, /line\.setAttribute\('marker-end', 'url\(#sq-arrow\)'\)/);
+  assert.match(hourlyJs, /el\.addEventListener\('mousedown', \(e\) => \{/);
+  assert.match(hourlyJs, /el\.style\.cursor = 'grabbing';/);
+  assert.match(hourlyJs, /document\.addEventListener\('mousemove', onMove\)/);
   assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
   assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);
   assert.match(hourlyJs, /window\.history\.replaceState\(null, '', url\)/);
