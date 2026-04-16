@@ -135,7 +135,6 @@
     .sq.full-session {
       background: linear-gradient(180deg, #d7dbe1 0%, #c8cdd5 100%);
     }
-    .squares { position: relative; }
     .sq:hover { transform: scale(1.15); z-index: 5; }
     .sq.search-dim { opacity: .18; }
     .sq.search-match {
@@ -233,7 +232,7 @@
 <body>
   <header>
     <h1>Hourly seat map</h1>
-    <p>Compressed view: one row per hour, total reserved seats, the top session title, and squares for every other session in that hour colored by fullness.</p>
+    <p>One row per hour, total reserved seats, and session markers colored by fullness. Search labels can float above the chart without making the timeline taller.</p>
     <div class="header-links">
       <a href="./hourly-heatmap.html">This page</a>
       <a href="./changelog.html">Changelog</a>

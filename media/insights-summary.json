@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generatedAt": "2026-04-16T20:42:04.018Z",
+    "generatedAt": "2026-04-16T22:13:06.983Z",
     "dataScrapedAt": "2026-04-16T20:41:37.984Z",
     "source": "sessions/classified_sessions.json",
     "availabilitySource": "sessions/cache",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
-    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260409.png",
+    "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260416.png",
     "generator": "scripts/generate_insights.mjs",
     "wordRules": "config/word-rules.json"
   },
@@ -45,31 +45,24 @@
   "fullness": {
     "stats": [],
     "observations": [
-      "<a href=\"./index.html?availability=full\"><strong>171 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">925 still have seats</a>.",
-      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 37 of 39 (95%) are already full."
+      "<a href=\"./index.html?availability=full\"><strong>140 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">956 still have seats</a>.",
+      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 35 of 39 (90%) are already full."
     ],
     "rankings": {
       "fullByCategory": [
         {
           "name": "Workshops",
-          "count": 37,
+          "count": 35,
           "totalKnown": 39,
-          "share": "95%",
-          "shareValue": 94.87179487179486
-        },
-        {
-          "name": "Solution Talks",
-          "count": 43,
-          "totalKnown": 51,
-          "share": "84%",
-          "shareValue": 84.31372549019608
+          "share": "90%",
+          "shareValue": 89.74358974358975
         },
         {
           "name": "Discussion Groups",
-          "count": 67,
+          "count": 57,
           "totalKnown": 89,
-          "share": "75%",
-          "shareValue": 75.28089887640449
+          "share": "64%",
+          "shareValue": 64.04494382022472
         },
         {
           "name": "Lounge Sessions",
@@ -77,6 +70,13 @@
           "totalKnown": 21,
           "share": "62%",
           "shareValue": 61.904761904761905
+        },
+        {
+          "name": "Solution Talks",
+          "count": 28,
+          "totalKnown": 51,
+          "share": "55%",
+          "shareValue": 54.90196078431373
         },
         {
           "name": "Partner Summit Breakouts",
@@ -301,21 +301,21 @@
     "all": [
       {
         "word": "ai",
-        "count": 1916,
-        "sessionCount": 795,
+        "count": 1914,
+        "sessionCount": 793,
         "label": "ai",
         "href": "./index.html?q=ai"
       },
       {
         "word": "data",
-        "count": 1353,
+        "count": 1354,
         "sessionCount": 434,
         "label": "data",
         "href": "./index.html?q=data"
       },
       {
         "word": "agent",
-        "count": 1237,
+        "count": 1235,
         "sessionCount": 486,
         "label": "agent/agents",
         "href": "./index.html?q=agent"
@@ -406,8 +406,8 @@
       },
       {
         "word": "agentic",
-        "count": 445,
-        "sessionCount": 281,
+        "count": 444,
+        "sessionCount": 280,
         "label": "agentic",
         "href": "./index.html?q=agentic"
       },
@@ -429,8 +429,8 @@
     "ai": [
       {
         "word": "ai",
-        "count": 1915,
-        "sessionCount": 794,
+        "count": 1913,
+        "sessionCount": 792,
         "label": "ai",
         "href": "./index.html?q=ai&ai_focus=AI"
       },
@@ -443,7 +443,7 @@
       },
       {
         "word": "agent",
-        "count": 1237,
+        "count": 1235,
         "sessionCount": 486,
         "label": "agent/agents",
         "href": "./index.html?q=agent&ai_focus=AI"
@@ -506,8 +506,8 @@
       },
       {
         "word": "agentic",
-        "count": 445,
-        "sessionCount": 281,
+        "count": 444,
+        "sessionCount": 280,
         "label": "agentic",
         "href": "./index.html?q=agentic&ai_focus=AI"
       },
@@ -564,7 +564,7 @@
       },
       {
         "word": "data",
-        "count": 92,
+        "count": 93,
         "sessionCount": 32,
         "label": "data",
         "href": "./index.html?q=data&ai_focus=Not+AI"
