@@ -255,6 +255,8 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
   assert.match(hourlyJs, /function buildDistributedCallouts\(/);
   assert.match(hourlyJs, /estimateCalloutWidth\(/);
+  assert.match(hourlyJs, /candidateOffsets = \[0, -56, 56, -112, 112/);
+  assert.match(hourlyJs, /overlapPenalty \+= 100000/);
   assert.match(hourlyJs, /sq-callout-layer/);
   assert.match(hourlyJs, /sq-callout-lines/);
   assert.match(hourlyJs, /data-callout-match=/);

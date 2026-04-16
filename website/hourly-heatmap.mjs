@@ -107,7 +107,6 @@ function clamp(value, min, max) {
 function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
   if (!matchedButtons.length) return;
   const containerWidth = Math.max(220, squares.clientWidth || 0);
-  const spacing = containerWidth / (matchedButtons.length + 1);
   const labels = matchedButtons.map((button, index) => {
     const width = estimateCalloutWidth(button.dataset.sessionTitle || '');
     const anchorX = button.offsetLeft + (button.offsetWidth / 2);
@@ -118,20 +117,38 @@ function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
       width,
       anchorX,
       anchorY,
-      desiredX: (index + 1) * spacing,
-      lane: index % 2,
+      lane: 0,
     };
   }).sort((a, b) => a.anchorX - b.anchorX);
 
-  let previousRight = -Infinity;
+  const placed = [];
+  const candidateOffsets = [0, -56, 56, -112, 112, -168, 168, -224, 224];
+  const laneCount = Math.min(4, Math.max(2, Math.ceil(labels.length / 3)));
   for (const label of labels) {
-    const minLeft = 0;
-    const maxLeft = Math.max(0, containerWidth - label.width);
-    let left = clamp(label.desiredX - (label.width / 2), minLeft, maxLeft);
-    if (left < previousRight + 10) left = Math.min(maxLeft, previousRight + 10);
-    label.left = left;
-    label.top = placeBelow ? 26 + (label.lane * 48) : 2 + (label.lane * 48);
-    previousRight = left + label.width;
+    let best = null;
+    for (let lane = 0; lane < laneCount; lane += 1) {
+      const top = placeBelow ? 26 + (lane * 46) : 2 + (lane * 46);
+      for (const dx of candidateOffsets) {
+        const unclampedLeft = label.anchorX + dx - (label.width / 2);
+        const left = clamp(unclampedLeft, 0, Math.max(0, containerWidth - label.width));
+        const rect = { left, right: left + label.width, top, bottom: top + 34 };
+        let overlapPenalty = 0;
+        for (const other of placed) {
+          const overlapsX = rect.left < other.right + 8 && rect.right > other.left - 8;
+          const overlapsY = rect.top < other.bottom + 6 && rect.bottom > other.top - 6;
+          if (overlapsX && overlapsY) overlapPenalty += 100000;
+        }
+        const clampPenalty = Math.abs(left - unclampedLeft) * 4;
+        const score = overlapPenalty + Math.abs(dx) + (lane * 38) + clampPenalty;
+        if (!best || score < best.score) {
+          best = { left, top, lane, score, right: rect.right, bottom: rect.bottom };
+        }
+      }
+    }
+    label.left = best.left;
+    label.top = best.top;
+    label.lane = best.lane;
+    placed.push({ left: best.left, right: best.right, top: best.top, bottom: best.bottom });
   }
 
   const layer = document.createElement('div');
