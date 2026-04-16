@@ -104,116 +104,197 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
+// Overlay is a single body-level element so bubbles render above all day-shells.
+function getOrCreateOverlay() {
+  let overlay = document.getElementById('sq-global-overlay');
+  if (!overlay) {
+    if (getComputedStyle(document.body).position === 'static') {
+      document.body.style.position = 'relative';
+    }
+    overlay = document.createElement('div');
+    overlay.id = 'sq-global-overlay';
+    overlay.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:0;overflow:visible;pointer-events:none;z-index:9999;';
+    // Single SVG for all connecting lines across all rows
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.id = 'sq-global-svg';
+    svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;overflow:visible;pointer-events:none;';
+    svg.innerHTML = '<defs><marker id="sq-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="rgba(26,115,232,.5)"/></marker></defs>';
+    overlay.appendChild(svg);
+    document.body.appendChild(overlay);
+  }
+  return overlay;
+}
+
+function clearOverlay() {
+  const overlay = document.getElementById('sq-global-overlay');
+  if (!overlay) return;
+  // Remove all label divs but keep the SVG skeleton (defs/marker)
+  [...overlay.children].forEach((child) => {
+    if (child.id !== 'sq-global-svg') child.remove();
+  });
+  const svg = document.getElementById('sq-global-svg');
+  if (svg) {
+    [...svg.children].forEach((child) => {
+      if (child.tagName !== 'defs') child.remove();
+    });
+  }
+}
+
+// ─── Callout overlay — design goals and constraints ──────────────────────────
+//
+// GOAL
+//   When a search query matches sessions, show floating label bubbles that
+//   identify each match by title and connect it to its square via a thin arrow.
+//
+// HARD CONSTRAINTS
+//   1. Zero vertical footprint — rows must not expand or shift.  Bubbles are
+//      pure overlays; the page's flex/grid layout is never affected.
+//   2. No bubble overlap — labels must never cover each other.
+//   3. Full viewport spread — bubbles may extend horizontally beyond the day
+//      card and into any white-space on the page, including outside the left or
+//      right edges of the `.squares` container.
+//   4. Z-order — bubbles must float above all day-shell stacking contexts.
+//
+// ARCHITECTURE
+//   A single `position:absolute` overlay div (`#sq-global-overlay`) is appended
+//   to `<body>` at z-index 9999.  Inside it lives one shared SVG
+//   (`#sq-global-svg`) for all connecting lines.  All coordinates are computed
+//   in document space (getBoundingClientRect + scrollX/Y).
+//   `clearOverlay()` is called at the top of every `renderSnapshot()` so stale
+//   labels are removed while the SVG `<defs>` marker is preserved.
+//
+// PLACEMENT ALGORITHM
+//   • Each label is initially centered on its anchor square's Y coordinate.
+//   • Labels are sorted by row (Y) then horizontal position so siblings in the
+//     same hour stay close together.
+//   • A greedy pass nudges each label left or right (up to 10 tries) until it
+//     no longer overlaps any already-placed label, using a GAP buffer.
+//   • Positions are clamped to the viewport width so no label scrolls off-screen.
+//
+// ARROWS
+//   Subtle by design — thin (1.5 px), semi-transparent (45 % opacity).
+//   The line starts from the nearest point on the label's border facing the
+//   anchor (computed by `labelEdgePoint`), not from the label centre.
+//   Arrowhead is a 4×4 marker pointing at the centre of the target square.
+//
+// DRAGGING
+//   Each bubble is draggable so users can reposition it for screenshots.
+//   The connecting line updates live via `updateLine()`.
+// ─────────────────────────────────────────────────────────────────────────────
+function buildDistributedCallouts(squares, matchedButtons) {
   if (!matchedButtons.length) return;
-  const containerWidth = Math.max(220, squares.clientWidth || 0);
-  const containerHeight = Math.max(120, squares.clientHeight || 120);
-  const labels = matchedButtons.map((button, index) => {
-    const width = estimateCalloutWidth(button.dataset.sessionTitle || '');
-    const anchorX = button.offsetLeft + (button.offsetWidth / 2);
-    const anchorY = button.offsetTop + (button.offsetHeight / 2);
-    return {
-      button,
-      title: button.dataset.sessionTitle || '',
-      width,
-      anchorX,
-      anchorY,
-      height: 34,
-    };
-  }).sort((a, b) => a.anchorX - b.anchorX);
+  const GAP = 6;
+  const scrollX = window.scrollX || 0;
+  const scrollY = window.scrollY || 0;
+  const totalWidth = window.innerWidth;
+
+  const overlay = getOrCreateOverlay();
+  const overlaySvg = document.getElementById('sq-global-svg');
+
+  const labels = matchedButtons.map((button) => {
+    const title = button.dataset.sessionTitle || '';
+    const width = estimateCalloutWidth(title);
+    const charsPerLine = Math.max(1, Math.floor((width - 14) / 5.5));
+    const lineCount = Math.ceil(Math.max(1, title.length / charsPerLine));
+    const height = 10 + lineCount * 14;
+    const btnRect = button.getBoundingClientRect();
+    const anchorDocX = btnRect.left + scrollX + btnRect.width / 2;
+    const anchorDocY = btnRect.top + scrollY + btnRect.height / 2;
+    const anchorViewX = btnRect.left + btnRect.width / 2;
+    return { title, width, height, anchorDocX, anchorDocY, anchorViewX };
+  });
+
+  // Place each label centered on its anchor row, spread horizontally to avoid overlap.
+  // Sort by row (Y) then by horizontal position so nearby sessions stay near each other.
+  labels.sort((a, b) => a.anchorDocY - b.anchorDocY || a.anchorViewX - b.anchorViewX);
 
   const placed = [];
   for (const label of labels) {
-    let best = null;
-    const candidatePositions = [
-      { dx: 14, dy: -48 },
-      { dx: -14 - label.width, dy: -48 },
-      { dx: 14, dy: 16 },
-      { dx: -14 - label.width, dy: 16 },
-      { dx: -label.width / 2, dy: -62 },
-      { dx: -label.width / 2, dy: 26 },
-      { dx: 40, dy: -72 },
-      { dx: -40 - label.width, dy: -72 },
-      { dx: 40, dy: 36 },
-      { dx: -40 - label.width, dy: 36 },
-    ];
-    for (const candidate of candidatePositions) {
-      const unclampedLeft = label.anchorX + candidate.dx;
-      const unclampedTop = label.anchorY + candidate.dy;
-      const left = clamp(unclampedLeft, 0, Math.max(0, containerWidth - label.width));
-      const top = clamp(unclampedTop, 0, Math.max(0, containerHeight - label.height));
-      const rect = { left, right: left + label.width, top, bottom: top + label.height };
-      let overlapPenalty = 0;
-      for (const other of placed) {
-        const overlapsX = rect.left < other.right + 8 && rect.right > other.left - 8;
-        const overlapsY = rect.top < other.bottom + 8 && rect.bottom > other.top - 8;
-        if (overlapsX && overlapsY) overlapPenalty += 100000;
-      }
-      const clampPenalty = (Math.abs(left - unclampedLeft) + Math.abs(top - unclampedTop)) * 4;
-      const distancePenalty = Math.abs(candidate.dx) + Math.abs(candidate.dy) * 0.7;
-      const score = overlapPenalty + clampPenalty + distancePenalty;
-      if (!best || score < best.score) {
-        best = { left, top, score, right: rect.right, bottom: rect.bottom };
-      }
+    let docLeft = clamp(label.anchorViewX - label.width / 2 + scrollX, scrollX, scrollX + totalWidth - label.width);
+    const docTop = label.anchorDocY - label.height / 2;
+
+    // Nudge horizontally up to 10 times to resolve overlaps
+    for (let attempt = 0; attempt < 10; attempt++) {
+      const r = { left: docLeft, right: docLeft + label.width, top: docTop, bottom: docTop + label.height };
+      const hit = placed.find((p) => p.left < r.right + GAP && p.right > r.left - GAP && p.top < r.bottom + GAP && p.bottom > r.top - GAP);
+      if (!hit) break;
+      const movingRight = (hit.left + hit.right) / 2 < docLeft + label.width / 2;
+      docLeft = movingRight ? hit.right + GAP : hit.left - label.width - GAP;
+      docLeft = clamp(docLeft, scrollX, scrollX + totalWidth - label.width);
     }
-    label.left = best.left;
-    label.top = best.top;
-    placed.push({ left: best.left, right: best.right, top: best.top, bottom: best.bottom });
+
+    label.docLeft = docLeft;
+    label.docTop = docTop;
+    placed.push({ left: docLeft, right: docLeft + label.width, top: docTop, bottom: docTop + label.height });
   }
 
-  const layer = document.createElement('div');
-  layer.className = 'sq-callout-layer';
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('class', 'sq-callout-lines');
-  svg.setAttribute('viewBox', `0 0 ${containerWidth} ${Math.max(90, squares.clientHeight || 90)}`);
-  svg.setAttribute('preserveAspectRatio', 'none');
-
-  const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-  const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-  marker.setAttribute('id', 'callout-arrow');
-  marker.setAttribute('viewBox', '0 0 10 10');
-  marker.setAttribute('refX', '8');
-  marker.setAttribute('refY', '5');
-  marker.setAttribute('markerWidth', '5');
-  marker.setAttribute('markerHeight', '5');
-  marker.setAttribute('orient', 'auto-start-reverse');
-  const markerPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-  markerPath.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
-  markerPath.setAttribute('fill', 'rgba(26,115,232,.96)');
-  marker.appendChild(markerPath);
-  defs.appendChild(marker);
-  svg.appendChild(defs);
+  // Nearest point on label border facing the anchor (clean arrow start)
+  function labelEdgePoint(docLeft, docTop, lWidth, lHeight, anchorDocX, anchorDocY) {
+    const cx = docLeft + lWidth / 2;
+    const cy = docTop + lHeight / 2;
+    const dx = anchorDocX - cx;
+    const dy = anchorDocY - cy;
+    if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return { x: cx, y: cy };
+    let t = Infinity;
+    if (dx > 0) t = Math.min(t, (docLeft + lWidth - cx) / dx);
+    if (dx < 0) t = Math.min(t, (docLeft - cx) / dx);
+    if (dy > 0) t = Math.min(t, (docTop + lHeight - cy) / dy);
+    if (dy < 0) t = Math.min(t, (docTop - cy) / dy);
+    return { x: cx + t * dx, y: cy + t * dy };
+  }
 
   for (const label of labels) {
     const el = document.createElement('div');
     el.className = 'sq-callout-label';
     el.textContent = label.title;
+    el.style.position = 'absolute';
     el.style.width = `${label.width}px`;
-    el.style.left = `${label.left}px`;
-    el.style.top = `${label.top}px`;
-    layer.appendChild(el);
+    el.style.left = `${label.docLeft}px`;
+    el.style.top = `${label.docTop}px`;
+    el.style.cursor = 'grab';
+    el.style.pointerEvents = 'auto';
+    el.style.userSelect = 'none';
+    overlay.appendChild(el);
 
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    const x1 = label.anchorX < label.left
-      ? label.left
-      : label.anchorX > (label.left + label.width)
-        ? (label.left + label.width)
-        : (label.left + (label.width / 2));
-    const y1 = label.top > label.anchorY ? label.top : (label.top + 28);
-    const x2 = label.anchorX;
-    const y2 = label.anchorY;
-    line.setAttribute('x1', String(x1));
-    line.setAttribute('y1', String(y1));
-    line.setAttribute('x2', String(x2));
-    line.setAttribute('y2', String(y2));
-    line.setAttribute('stroke', 'rgba(26,115,232,.96)');
-    line.setAttribute('stroke-width', '2');
-    line.setAttribute('marker-end', 'url(#callout-arrow)');
-    svg.appendChild(line);
-  }
+    line.setAttribute('stroke', 'rgba(26,115,232,.45)');
+    line.setAttribute('stroke-width', '1.5');
+    line.setAttribute('marker-end', 'url(#sq-arrow)');
+    line.setAttribute('x2', String(label.anchorDocX));
+    line.setAttribute('y2', String(label.anchorDocY));
+    overlaySvg.appendChild(line);
 
-  squares.appendChild(svg);
-  squares.appendChild(layer);
+    function updateLine(docLeft, docTop) {
+      const { x: x1, y: y1 } = labelEdgePoint(docLeft, docTop, label.width, label.height, label.anchorDocX, label.anchorDocY);
+      line.setAttribute('x1', String(x1));
+      line.setAttribute('y1', String(y1));
+    }
+    updateLine(label.docLeft, label.docTop);
+
+    el.addEventListener('mousedown', (e) => {
+      const startX = e.clientX;
+      const startY = e.clientY;
+      const origLeft = parseFloat(el.style.left);
+      const origTop = parseFloat(el.style.top);
+      el.style.cursor = 'grabbing';
+      el.style.zIndex = '10000';
+      const onMove = (e2) => {
+        const newLeft = origLeft + (e2.clientX - startX);
+        const newTop = origTop + (e2.clientY - startY);
+        el.style.left = `${newLeft}px`;
+        el.style.top = `${newTop}px`;
+        updateLine(newLeft, newTop);
+      };
+      const onUp = () => {
+        el.style.cursor = 'grab';
+        document.removeEventListener('mousemove', onMove);
+        document.removeEventListener('mouseup', onUp);
+      };
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onUp);
+      e.preventDefault();
+    });
+  }
 }
 
 function buildShell() {
@@ -267,6 +348,7 @@ async function ensureFullHistoryLoaded() {
 }
 
 function renderSnapshot() {
+  clearOverlay();
   const snapshot = state.data.snapshots[state.snapshotIndex];
   els.snapshotLabel.textContent = snapshot.label;
   els.snapshotSlider.min = String(state.startIndex);
@@ -320,8 +402,7 @@ function renderSnapshot() {
 
     const markers = startingSessions;
     const showDistributedCallouts = calloutSessionIds.size > 0;
-    const placeBelow = visibleRowIndex < 2 && showDistributedCallouts;
-    row.classList.toggle('callouts-below', placeBelow);
+    row.classList.remove('callouts-below');
     visibleRowIndex += 1;
     squares.innerHTML = markers
       .sort(compareSessions)
@@ -344,7 +425,7 @@ function renderSnapshot() {
 
     if (showDistributedCallouts) {
       const matchedButtons = [...squares.querySelectorAll('[data-callout-match="1"]')];
-      buildDistributedCallouts(squares, matchedButtons, placeBelow);
+      buildDistributedCallouts(squares, matchedButtons);
     }
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
