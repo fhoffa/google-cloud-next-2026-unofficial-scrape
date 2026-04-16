@@ -73,6 +73,35 @@
     #snapshot-slider { width: 100%; }
     .snapshot-label, .playback-note { color: var(--gray-700); font-size: .92rem; }
     .playback-note { color: var(--gray-500); }
+    .search-summary-wrap {
+      position: relative;
+      min-height: 1.2em;
+    }
+    .search-summary-wrap:hover .search-summary-tooltip,
+    .search-summary-wrap:focus-within .search-summary-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+    .search-summary-tooltip {
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      z-index: 20;
+      min-width: 260px;
+      max-width: 420px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(32,33,36,.96);
+      color: white;
+      font-size: .76rem;
+      line-height: 1.35;
+      box-shadow: 0 10px 24px rgba(32,33,36,.22);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .12s ease;
+      pointer-events: none;
+      white-space: normal;
+    }
     .day-shell { padding: 8px 10px 10px; margin-bottom: 8px; }
     .day-title { margin: 0 0 4px; font-size: 1rem; }
     .rows-header {
@@ -233,7 +262,10 @@
       <input id="search-input" type="text" placeholder="Highlight sessions, speakers, companies, sponsored…">
       <input id="snapshot-slider" type="range" min="0" max="0" value="0">
       <div id="snapshot-label" class="snapshot-label">Loading…</div>
-      <div id="search-summary" class="playback-note"></div>
+      <div class="search-summary-wrap">
+        <div id="search-summary" class="playback-note"></div>
+        <div id="search-summary-tooltip" class="search-summary-tooltip"></div>
+      </div>
       <div id="playback-note" class="playback-note">Rows regroup as sessions move across hours</div>
     </section>
     <div id="app"><div class="empty-state">Loading hourly overview…</div></div>

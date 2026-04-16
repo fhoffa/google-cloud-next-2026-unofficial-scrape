@@ -156,11 +156,18 @@ function renderSnapshot() {
 
   const visibleSessions = snapshot.sessions.filter(isVisibleSession);
   const queryTerms = splitTerms(state.query);
-  const matchedSessionIds = new Set(queryTerms.length
-    ? visibleSessions.filter(matchesQuery).map((session) => String(session.id))
-    : []);
+  const matchedSessions = queryTerms.length
+    ? visibleSessions.filter((session) => session.sh != null && matchesQuery(session))
+    : [];
+  const matchedSessionIds = new Set(matchedSessions.map((session) => String(session.id)));
   els.searchSummary.textContent = queryTerms.length
     ? `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched`
+    : '';
+  els.searchSummaryTooltip.textContent = matchedSessions.length > 0 && matchedSessionIds.size < 20
+    ? [...new Map(matchedSessions
+      .sort(compareSessions)
+      .map((session) => [String(session.id), `${session.t}${session.r ? ` · ${session.r}` : ''}`]))
+      .values()].join('\n')
     : '';
   const snapshotBigMaxReserved = Math.max(1, ...visibleSessions.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
   const snapshotSmallMaxReserved = Math.max(1, ...visibleSessions.filter(isSmallRoom).map((session) => session.reg || 0), 1);
@@ -273,6 +280,7 @@ async function init() {
     snapshotSlider: byId('snapshot-slider'),
     snapshotLabel: byId('snapshot-label'),
     searchSummary: byId('search-summary'),
+    searchSummaryTooltip: byId('search-summary-tooltip'),
     playbackNote: byId('playback-note'),
   });
   readInitialState();
