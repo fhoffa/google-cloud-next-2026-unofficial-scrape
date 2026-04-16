@@ -194,8 +194,12 @@ function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
     layer.appendChild(el);
 
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    const x1 = label.left + (label.width / 2);
-    const y1 = label.top + (label.top > label.anchorY ? 0 : 28);
+    const x1 = label.anchorX < label.left
+      ? label.left
+      : label.anchorX > (label.left + label.width)
+        ? (label.left + label.width)
+        : (label.left + (label.width / 2));
+    const y1 = label.top > label.anchorY ? label.top : (label.top + 28);
     const x2 = label.anchorX;
     const y2 = label.anchorY;
     line.setAttribute('x1', String(x1));
