@@ -77,8 +77,20 @@
       position: relative;
       min-height: 1.2em;
     }
+    .search-summary-trigger {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
     .search-summary-wrap:hover .search-summary-tooltip,
-    .search-summary-wrap:focus-within .search-summary-tooltip {
+    .search-summary-wrap:focus-within .search-summary-tooltip,
+    .search-summary-wrap.is-open .search-summary-tooltip {
       opacity: 1;
       visibility: visible;
     }
@@ -99,8 +111,7 @@
       opacity: 0;
       visibility: hidden;
       transition: opacity .12s ease;
-      pointer-events: none;
-      white-space: normal;
+      white-space: pre-line;
     }
     .day-shell { padding: 8px 10px 10px; margin-bottom: 8px; }
     .day-title { margin: 0 0 4px; font-size: 1rem; }
@@ -262,8 +273,8 @@
       <input id="search-input" type="text" placeholder="Highlight sessions, speakers, companies, sponsored…">
       <input id="snapshot-slider" type="range" min="0" max="0" value="0">
       <div id="snapshot-label" class="snapshot-label">Loading…</div>
-      <div class="search-summary-wrap">
-        <div id="search-summary" class="playback-note"></div>
+      <div id="search-summary-wrap" class="search-summary-wrap">
+        <button id="search-summary" class="playback-note search-summary-trigger" type="button"></button>
         <div id="search-summary-tooltip" class="search-summary-tooltip"></div>
       </div>
       <div id="playback-note" class="playback-note">Rows regroup as sessions move across hours</div>

@@ -235,7 +235,7 @@ test('index.html includes the website shell and module bootstrap', () => {
 test('hourly heatmap page exposes search and playback controls', () => {
   assert.match(hourlyHtml, /<button id="play-btn"/);
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
-  assert.match(hourlyHtml, /<div id="search-summary"/);
+  assert.match(hourlyHtml, /<button id="search-summary"/);
   assert.match(hourlyHtml, /<div id="search-summary-tooltip"/);
   assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
   assert.match(hourlyHtml, /Hourly seat map/);
@@ -247,10 +247,14 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
   assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
   assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
+  assert.match(hourlyJs, /searchSummaryWrap: byId\('search-summary-wrap'\)/);
   assert.match(hourlyJs, /searchSummary: byId\('search-summary'\)/);
   assert.match(hourlyJs, /searchSummaryTooltip: byId\('search-summary-tooltip'\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size\.toLocaleString\(\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
+  assert.match(hourlyJs, /tap to list/);
+  assert.match(hourlyJs, /toggleSearchTooltip\(\)/);
+  assert.match(hourlyJs, /document\.addEventListener\('click'/);
   assert.match(hourlyJs, /join\('\\n'\)/);
   assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
   assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);
