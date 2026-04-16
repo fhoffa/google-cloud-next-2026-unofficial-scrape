@@ -292,16 +292,98 @@ function hasSponsorDisclosure(text = '') {
   return /By attending this session, your contact information may be shared with the sponsor/i.test(String(text || ''));
 }
 
+function isGoogleOwnedCompany(company = '') {
+  return /\bGoogle\b|\bYouTube\b/i.test(String(company || ''));
+}
+
+function uniqueNonGoogleSpeakerCompanies(session = {}) {
+  const speakers = Array.isArray(session.speakers) ? session.speakers : [];
+  const companies = [];
+  for (const speaker of speakers) {
+    const company = String(speaker?.company || '').trim();
+    if (!company || isGoogleOwnedCompany(company) || companies.includes(company)) continue;
+    companies.push(company);
+  }
+  return companies;
+}
+
+function firstRegexMatch(text = '', patterns = []) {
+  const source = String(text || '').replace(/\s+/g, ' ').trim();
+  for (const pattern of patterns) {
+    const match = source.match(pattern);
+    if (match?.[1]) return match[1].trim();
+  }
+  return '';
+}
+
+function cleanSponsorName(value = '') {
+  return String(value || '')
+    .replace(/^[:\-–—\s]+/, '')
+    .replace(/[\s,;:.]+$/, '')
+    .replace(/^the\s+/i, '')
+    .trim();
+}
+
+function looksLikePersonName(value = '') {
+  const text = cleanSponsorName(value);
+  if (!text) return false;
+  if (/^(Dr|Mr|Ms|Mrs|Prof)\.?\s+/i.test(text)) return true;
+  return /^[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}$/.test(text);
+}
+
+function inferSponsorFromDescription(session = {}, candidateCompanies = []) {
+  const description = String(session.description || '').replace(/\s+/g, ' ').trim();
+  if (!description) return '';
+
+  const explicit = cleanSponsorName(firstRegexMatch(description, [
+    /Sponsored by\s+([^\.\n]+)/i,
+    /Join\s+([^,.\n]+?)\s+(?:to|for|as|on)\b/i,
+    /Join\s+([^,.\n]+?)\s+(?:CTO|CEO|CIO|COO|leaders?|experts?|team|engineers?)\b/i,
+    /In this session,\s+([^,.\n]+?)\s+and\s+Google Cloud\s+/i,
+    /In this session,\s+([^,.\n]+?)\s+will\s+/i,
+    /\bat\s+([^,.\n]+?),\s+(?:identifies|shares|explains|reveals|shows|outlines|discusses|presents|will)\b/i,
+    /This session will explore how\s+([^,.\n]+?)\s+(?:and|is|will|has)\b/i,
+    /^([^,.\n]+?)\s+and\s+Google Cloud\s+/i,
+  ]));
+  if (explicit && !looksLikePersonName(explicit) && !isGoogleOwnedCompany(explicit)) return explicit;
+
+  for (const company of candidateCompanies) {
+    const escaped = company.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const patterns = [
+      new RegExp(`Join\\s+${escaped}\\b`, 'i'),
+      new RegExp(`In this session,\\s+${escaped}\\b`, 'i'),
+      new RegExp(`^${escaped}\\b`, 'i'),
+      new RegExp(`\\b${escaped}['’]s\\b`, 'i'),
+    ];
+    if (patterns.some((pattern) => pattern.test(description))) return company;
+  }
+
+  return '';
+}
+
 function deriveSponsoredSessionFields(session = {}) {
   const description = session.description || '';
   const topics = Array.isArray(session.topics) ? session.topics : [];
   const sponsor_disclosure = hasSponsorDisclosure(description);
   const partner_innovation = topics.includes('Partner Innovation');
   const sponsored = sponsor_disclosure;
+  const speakerCompanies = uniqueNonGoogleSpeakerCompanies(session);
+  const sponsor_name = sponsored
+    ? cleanSponsorName(
+        speakerCompanies.length === 1
+          ? speakerCompanies[0]
+          : inferSponsorFromDescription(session, speakerCompanies),
+      )
+    : '';
+  const sponsor_name_source = sponsor_name
+    ? (speakerCompanies.length === 1 && sponsor_name === cleanSponsorName(speakerCompanies[0]) ? 'speakers' : 'description')
+    : '';
   return {
     sponsored,
     sponsor_disclosure,
     partner_innovation,
+    sponsor_name,
+    sponsor_name_source,
   };
 }
 

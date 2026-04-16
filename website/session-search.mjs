@@ -445,7 +445,8 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
     const timeStr = session.start_time_text && session.end_time_text ? `${session.start_time_text}-${session.end_time_text}` : (session.start_time_text || '');
     const dateShort = session.date_text ? session.date_text.replace(', 2026', '').replace('day,', '') : '';
     const isNew = prioritizedNewSessionIds.has(sessionId);
-    const statusBadge = `${isNew ? '<span class="status-badge new">*new</span>' : ''}${session.sponsored ? '<span class="status-badge sponsored">Sponsored</span>' : ''}${availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : ''}`;
+    const sponsoredLabel = session.sponsor_name ? `Sponsored by ${escHtml(session.sponsor_name)}` : 'Sponsored';
+    const statusBadge = `${isNew ? '<span class="status-badge new">*new</span>' : ''}${session.sponsored ? `<span class="status-badge sponsored">${sponsoredLabel}</span>` : ''}${availabilityBand(session) === 'full' ? '<span class="status-badge full">Full</span>' : ''}`;
     return `<div class="card" id="session-${escHtml(sessionId)}" data-session-id="${escHtml(sessionId)}">
       <div class="card-title" style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
         <span>${session.url ? `<a href="${escHtml(session.url)}" target="_blank" rel="noopener">${highlight(session.title, q)} <span aria-hidden="true" title="Opens in a new tab">↗</span></a>` : highlight(session.title, q)}</span><button class="favorite-btn" type="button" data-session-id="${escHtml(sessionId)}" aria-pressed="${isFavorite ? 'true' : 'false'}" title="${isFavorite ? 'Remove from favorites' : 'Add to favorites'}">${isFavorite ? '★' : '☆'}</button></div>

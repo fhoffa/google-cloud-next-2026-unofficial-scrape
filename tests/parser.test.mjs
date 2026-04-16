@@ -263,6 +263,8 @@ test('detail reuse keeps rich cached fields while refreshing live library fields
   assert.equal(merged.sponsored, true);
   assert.equal(merged.sponsor_disclosure, true);
   assert.equal(merged.partner_innovation, true);
+  assert.equal(merged.sponsor_name, '');
+  assert.equal(merged.sponsor_name_source, '');
 });
 
 test('deriveSponsoredSessionFields flags sponsor disclosure and keeps partner-innovation separate', () => {
@@ -271,7 +273,13 @@ test('deriveSponsoredSessionFields flags sponsor disclosure and keeps partner-in
       description: 'By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
       topics: [],
     }),
-    { sponsored: true, sponsor_disclosure: true, partner_innovation: false },
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: false,
+      sponsor_name: '',
+      sponsor_name_source: '',
+    },
   );
 
   assert.deepEqual(
@@ -279,7 +287,13 @@ test('deriveSponsoredSessionFields flags sponsor disclosure and keeps partner-in
       description: 'Plain description without the disclosure.',
       topics: ['Partner Innovation'],
     }),
-    { sponsored: false, sponsor_disclosure: false, partner_innovation: true },
+    {
+      sponsored: false,
+      sponsor_disclosure: false,
+      partner_innovation: true,
+      sponsor_name: '',
+      sponsor_name_source: '',
+    },
   );
 
   assert.deepEqual(
@@ -287,6 +301,79 @@ test('deriveSponsoredSessionFields flags sponsor disclosure and keeps partner-in
       description: 'Plain description without the disclosure.',
       topics: ['General'],
     }),
-    { sponsored: false, sponsor_disclosure: false, partner_innovation: false },
+    {
+      sponsored: false,
+      sponsor_disclosure: false,
+      partner_innovation: false,
+      sponsor_name: '',
+      sponsor_name_source: '',
+    },
+  );
+});
+
+test('deriveSponsoredSessionFields prefers a single non-Google speaker company as sponsor name', () => {
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'By attending this session, your contact information may be shared with the sponsor.',
+      speakers: [
+        { name: 'A', company: 'Google Cloud' },
+        { name: 'B', company: 'Glean' },
+      ],
+      topics: ['Partner Innovation'],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: true,
+      sponsor_name: 'Glean',
+      sponsor_name_source: 'speakers',
+    },
+  );
+});
+
+test('deriveSponsoredSessionFields falls back to description when speakers do not make sponsor clear', () => {
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'By attending this session, your contact information may be shared with the sponsor. Join 66degrees to explore our Agent Development Framework.',
+      speakers: [],
+      topics: ['Partner Innovation'],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: true,
+      sponsor_name: '66degrees',
+      sponsor_name_source: 'description',
+    },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'By attending this session, your contact information may be shared with the sponsor. In this session, Fortinet and Google Cloud will jointly present on how Fortinet integrates with Google Cloud.',
+      speakers: [],
+      topics: ['Partner Innovation'],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: true,
+      sponsor_name: 'Fortinet',
+      sponsor_name_source: 'description',
+    },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'In this session, Dr. Rebecca Hinds, Head of the Work AI Institute at Glean, identifies five critical ways organizations either set AI up to drive real results, or set it up to fail. By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
+      speakers: [],
+      topics: ['Partner Innovation'],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: true,
+      sponsor_name: 'Glean',
+      sponsor_name_source: 'description',
+    },
   );
 });
