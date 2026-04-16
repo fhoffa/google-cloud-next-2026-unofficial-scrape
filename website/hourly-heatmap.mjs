@@ -120,7 +120,8 @@ function buildCalloutLaneMap(markers, calloutSessionIds) {
     } else {
       laneEnds[lane] = right;
     }
-    laneMap.set(id, lane);
+    const dx = lane % 2 === 0 ? -18 : 18;
+    laneMap.set(id, { lane, dx });
   }
   return laneMap;
 }
@@ -207,6 +208,7 @@ function renderSnapshot() {
     }
   }
 
+  let visibleRowIndex = 0;
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
     const hour = Number(key.split(':')[1]);
@@ -219,6 +221,7 @@ function renderSnapshot() {
     const totalReserved = startingSessions.reduce((sum, session) => sum + (session.reg ?? 0), 0);
     if (startingSessions.length === 0 || totalReserved <= 0) {
       row.style.display = 'none';
+      row.classList.remove('callouts-below');
       squares.innerHTML = '';
       return;
     }
@@ -232,6 +235,8 @@ function renderSnapshot() {
 
     const markers = startingSessions;
     const calloutLaneMap = buildCalloutLaneMap(markers, calloutSessionIds);
+    row.classList.toggle('callouts-below', visibleRowIndex < 2 && calloutLaneMap.size > 0);
+    visibleRowIndex += 1;
     squares.innerHTML = markers
       .sort(compareSessions)
       .map((session) => {
@@ -247,9 +252,9 @@ function renderSnapshot() {
           ? (matchesQuery(session) ? 'search-match' : 'search-dim')
           : '';
         const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
-        const lane = calloutLaneMap.get(String(session.id));
-        const callout = lane != null
-          ? `<span class="sq-callout" style="--lane:${lane}">${esc(session.t)}</span>`
+        const calloutMeta = calloutLaneMap.get(String(session.id));
+        const callout = calloutMeta != null
+          ? `<span class="sq-callout" style="--lane:${calloutMeta.lane};--dx:${calloutMeta.dx}px">${esc(session.t)}</span>`
           : '';
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${callout}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
