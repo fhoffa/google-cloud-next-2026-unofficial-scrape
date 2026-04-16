@@ -316,6 +316,16 @@ function firstRegexMatch(text = '', patterns = []) {
   return '';
 }
 
+function allRegexMatches(text = '', patterns = []) {
+  const source = String(text || '').replace(/\s+/g, ' ').trim();
+  const matches = [];
+  for (const pattern of patterns) {
+    const match = source.match(pattern);
+    if (match?.[1]) matches.push(match[1].trim());
+  }
+  return matches;
+}
+
 function cleanSponsorName(value = '') {
   return String(value || '')
     .replace(/^[:\-–—\s]+/, '')
@@ -331,21 +341,28 @@ function looksLikePersonName(value = '') {
   return /^[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}$/.test(text);
 }
 
+function isGenericSponsorPlaceholder(value = '') {
+  const text = cleanSponsorName(value).toLowerCase();
+  return ['us', 'we', 'our team', 'the team', 'our experts', 'our leaders'].includes(text);
+}
+
 function inferSponsorFromDescription(session = {}, candidateCompanies = []) {
   const description = String(session.description || '').replace(/\s+/g, ' ').trim();
   if (!description) return '';
 
-  const explicit = cleanSponsorName(firstRegexMatch(description, [
+  const explicitCandidates = allRegexMatches(description, [
     /Sponsored by\s+([^\.\n]+)/i,
     /Join\s+([^,.\n]+?)\s+(?:to|for|as|on)\b/i,
     /Join\s+([^,.\n]+?)\s+(?:CTO|CEO|CIO|COO|leaders?|experts?|team|engineers?)\b/i,
     /In this session,\s+([^,.\n]+?)\s+and\s+Google Cloud\s+/i,
     /In this session,\s+([^,.\n]+?)\s+will\s+/i,
+    /\bwith\s+([^,.\n]+?)\s+as\s+a\s+strategic\s+partner\b/i,
     /\bat\s+([^,.\n]+?),\s+(?:identifies|shares|explains|reveals|shows|outlines|discusses|presents|will)\b/i,
     /This session will explore how\s+([^,.\n]+?)\s+(?:and|is|will|has)\b/i,
     /^([^,.\n]+?)\s+and\s+Google Cloud\s+/i,
-  ]));
-  if (explicit && !looksLikePersonName(explicit) && !isGoogleOwnedCompany(explicit)) return explicit;
+  ]).map(cleanSponsorName);
+  const explicit = explicitCandidates.find((candidate) => candidate && !looksLikePersonName(candidate) && !isGoogleOwnedCompany(candidate) && !isGenericSponsorPlaceholder(candidate));
+  if (explicit) return explicit;
 
   for (const company of candidateCompanies) {
     const escaped = company.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
