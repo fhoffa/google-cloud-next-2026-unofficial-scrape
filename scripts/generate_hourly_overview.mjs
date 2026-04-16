@@ -120,7 +120,7 @@ function buildOverview(snapshots, latestLookup) {
             c: String(speaker?.company || '').trim(),
           })).filter((speaker) => speaker.n)
         : [];
-      const sponsorName = speakers.map((speaker) => speaker.c).filter(Boolean)[0] || '';
+      const sponsorName = String(latestSession?.sponsor_name || session?.sponsor_name || '').trim();
       const description = String(latestSession?.description || session?.description || '').trim();
       const searchText = [
         title,

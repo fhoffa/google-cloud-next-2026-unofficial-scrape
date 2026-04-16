@@ -272,11 +272,12 @@ test('hourly artifacts split latest snapshot from full history', () => {
 
 test('hourly artifact carries sponsored metadata for sponsored sessions from latest dataset', () => {
   const sponsoredSourceIds = new Set((dataset.sessions || []).filter((session) => session.sponsored).map((session) => String(session.id)));
-  const hourlySponsoredIds = new Set(
-    hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []).filter((session) => session.spon).map((session) => String(session.id)),
-  );
+  const hourlySessions = hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []);
+  const hourlySponsoredIds = new Set(hourlySessions.filter((session) => session.spon).map((session) => String(session.id)));
   assert.ok(sponsoredSourceIds.has('3939814'));
   assert.ok(hourlySponsoredIds.has('3939814'));
+  const pwcSession = hourlySessions.find((session) => String(session.id) === '3879152');
+  assert.equal(pwcSession?.scon, 'PwC');
 });
 
 test('hourly artifact includes searchable text for titles, descriptions, speakers, companies, and sponsored keywords', () => {
