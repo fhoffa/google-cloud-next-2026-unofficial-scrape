@@ -253,7 +253,9 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.doesNotMatch(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size\.toLocaleString\(\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
-  assert.match(hourlyJs, /const callout = calloutSessionIds\.has\(String\(session\.id\)\)/);
+  assert.match(hourlyJs, /function buildCalloutLaneMap\(/);
+  assert.match(hourlyJs, /estimateCalloutWidth\(/);
+  assert.match(hourlyJs, /style="--lane:\$\{lane\}"/);
   assert.match(hourlyJs, /sq-callout/);
   assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
   assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);

@@ -96,6 +96,35 @@ function writeSearchToUrl() {
   window.history.replaceState(null, '', url);
 }
 
+function estimateCalloutWidth(title) {
+  return Math.max(120, Math.min(220, 26 + String(title || '').length * 5.5));
+}
+
+function buildCalloutLaneMap(markers, calloutSessionIds) {
+  const laneEnds = [];
+  const laneMap = new Map();
+  let cursorX = 0;
+  for (const session of markers) {
+    const width = markerWidth(session);
+    const centerX = cursorX + (width / 2);
+    cursorX += width + 1;
+    const id = String(session.id);
+    if (!calloutSessionIds.has(id)) continue;
+    const calloutWidth = estimateCalloutWidth(session.t);
+    const left = centerX - (calloutWidth / 2);
+    const right = centerX + (calloutWidth / 2);
+    let lane = laneEnds.findIndex((laneRight) => left > laneRight + 8);
+    if (lane === -1) {
+      lane = laneEnds.length;
+      laneEnds.push(right);
+    } else {
+      laneEnds[lane] = right;
+    }
+    laneMap.set(id, lane);
+  }
+  return laneMap;
+}
+
 function buildShell() {
   els.app.innerHTML = '';
   for (const [dayIndex, day] of state.data.days.entries()) {
@@ -202,6 +231,7 @@ function renderSnapshot() {
     topSessionEl.className = `top-session${topSession ? '' : ' muted'}${hasQuery ? (topMatches ? ' search-match' : ' search-dim') : ''}`;
 
     const markers = startingSessions;
+    const calloutLaneMap = buildCalloutLaneMap(markers, calloutSessionIds);
     squares.innerHTML = markers
       .sort(compareSessions)
       .map((session) => {
@@ -217,8 +247,9 @@ function renderSnapshot() {
           ? (matchesQuery(session) ? 'search-match' : 'search-dim')
           : '';
         const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
-        const callout = calloutSessionIds.has(String(session.id))
-          ? `<span class="sq-callout">${esc(session.t)}</span>`
+        const lane = calloutLaneMap.get(String(session.id));
+        const callout = lane != null
+          ? `<span class="sq-callout" style="--lane:${lane}">${esc(session.t)}</span>`
           : '';
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${callout}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');

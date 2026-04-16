@@ -195,11 +195,11 @@
     .sq-callout {
       position: absolute;
       left: 50%;
-      bottom: calc(100% + 12px);
+      bottom: calc(100% + 12px + (var(--lane, 0) * 54px));
       transform: translateX(-50%);
-      z-index: 6;
+      z-index: calc(6 + var(--lane, 0));
       min-width: 120px;
-      max-width: 240px;
+      max-width: 220px;
       padding: 5px 7px;
       border-radius: 8px;
       background: rgba(26,115,232,.96);
