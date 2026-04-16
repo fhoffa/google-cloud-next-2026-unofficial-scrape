@@ -107,6 +107,7 @@ function clamp(value, min, max) {
 function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
   if (!matchedButtons.length) return;
   const containerWidth = Math.max(220, squares.clientWidth || 0);
+  const containerHeight = Math.max(120, squares.clientHeight || 120);
   const labels = matchedButtons.map((button, index) => {
     const width = estimateCalloutWidth(button.dataset.sessionTitle || '');
     const anchorX = button.offsetLeft + (button.offsetWidth / 2);
@@ -117,37 +118,46 @@ function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
       width,
       anchorX,
       anchorY,
-      lane: 0,
+      height: 34,
     };
   }).sort((a, b) => a.anchorX - b.anchorX);
 
   const placed = [];
-  const candidateOffsets = [0, -56, 56, -112, 112, -168, 168, -224, 224];
-  const laneCount = Math.min(4, Math.max(2, Math.ceil(labels.length / 3)));
   for (const label of labels) {
     let best = null;
-    for (let lane = 0; lane < laneCount; lane += 1) {
-      const top = placeBelow ? 26 + (lane * 46) : 2 + (lane * 46);
-      for (const dx of candidateOffsets) {
-        const unclampedLeft = label.anchorX + dx - (label.width / 2);
-        const left = clamp(unclampedLeft, 0, Math.max(0, containerWidth - label.width));
-        const rect = { left, right: left + label.width, top, bottom: top + 34 };
-        let overlapPenalty = 0;
-        for (const other of placed) {
-          const overlapsX = rect.left < other.right + 8 && rect.right > other.left - 8;
-          const overlapsY = rect.top < other.bottom + 6 && rect.bottom > other.top - 6;
-          if (overlapsX && overlapsY) overlapPenalty += 100000;
-        }
-        const clampPenalty = Math.abs(left - unclampedLeft) * 4;
-        const score = overlapPenalty + Math.abs(dx) + (lane * 38) + clampPenalty;
-        if (!best || score < best.score) {
-          best = { left, top, lane, score, right: rect.right, bottom: rect.bottom };
-        }
+    const candidatePositions = [
+      { dx: 14, dy: -48 },
+      { dx: -14 - label.width, dy: -48 },
+      { dx: 14, dy: 16 },
+      { dx: -14 - label.width, dy: 16 },
+      { dx: -label.width / 2, dy: -62 },
+      { dx: -label.width / 2, dy: 26 },
+      { dx: 40, dy: -72 },
+      { dx: -40 - label.width, dy: -72 },
+      { dx: 40, dy: 36 },
+      { dx: -40 - label.width, dy: 36 },
+    ];
+    for (const candidate of candidatePositions) {
+      const unclampedLeft = label.anchorX + candidate.dx;
+      const unclampedTop = label.anchorY + candidate.dy;
+      const left = clamp(unclampedLeft, 0, Math.max(0, containerWidth - label.width));
+      const top = clamp(unclampedTop, 0, Math.max(0, containerHeight - label.height));
+      const rect = { left, right: left + label.width, top, bottom: top + label.height };
+      let overlapPenalty = 0;
+      for (const other of placed) {
+        const overlapsX = rect.left < other.right + 8 && rect.right > other.left - 8;
+        const overlapsY = rect.top < other.bottom + 8 && rect.bottom > other.top - 8;
+        if (overlapsX && overlapsY) overlapPenalty += 100000;
+      }
+      const clampPenalty = (Math.abs(left - unclampedLeft) + Math.abs(top - unclampedTop)) * 4;
+      const distancePenalty = Math.abs(candidate.dx) + Math.abs(candidate.dy) * 0.7;
+      const score = overlapPenalty + clampPenalty + distancePenalty;
+      if (!best || score < best.score) {
+        best = { left, top, score, right: rect.right, bottom: rect.bottom };
       }
     }
     label.left = best.left;
     label.top = best.top;
-    label.lane = best.lane;
     placed.push({ left: best.left, right: best.right, top: best.top, bottom: best.bottom });
   }
 
@@ -185,7 +195,7 @@ function buildDistributedCallouts(squares, matchedButtons, placeBelow = false) {
 
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
     const x1 = label.left + (label.width / 2);
-    const y1 = placeBelow ? label.top : label.top + 28;
+    const y1 = label.top + (label.top > label.anchorY ? 0 : 28);
     const x2 = label.anchorX;
     const y2 = label.anchorY;
     line.setAttribute('x1', String(x1));
@@ -207,7 +217,7 @@ function buildShell() {
   for (const [dayIndex, day] of state.data.days.entries()) {
     const shell = document.createElement('section');
     shell.className = 'day-shell';
-    shell.innerHTML = `<h2 class="day-title">${esc(day)}</h2><div class="rows-header"><div>Hour</div><div>Seats</div><div>Top session</div><div>Sessions</div></div><div class="rows" data-day-index="${dayIndex}"></div>`;
+    shell.innerHTML = `<h2 class="day-title">${esc(day)}</h2><div class="rows-header"><div>Hour</div><div>Seats</div><div>Sessions</div></div><div class="rows" data-day-index="${dayIndex}"></div>`;
     const rows = shell.querySelector('.rows');
     for (let hour = state.data.hourRange.min; hour < state.data.hourRange.max; hour += 1) {
       const row = document.createElement('div');
@@ -216,7 +226,6 @@ function buildShell() {
       row.innerHTML = `
         <div class="hour-label">${esc(hourLabel(hour))}</div>
         <div class="hour-seats">— reserved</div>
-        <div class="top-session muted">No scheduled sessions</div>
         <div class="squares"></div>
       `;
       rows.appendChild(row);
@@ -304,11 +313,7 @@ function renderSnapshot() {
     }
     row.style.display = 'grid';
     row.querySelector('.hour-seats').textContent = `${formatCompactCount(totalReserved)} res.`;
-    const topSessionEl = row.querySelector('.top-session');
-    const topMatches = topSession ? matchesQuery(topSession) : false;
     const hasQuery = queryTerms.length > 0;
-    topSessionEl.textContent = topSession ? `${formatCompactCount(topSession.reg)}: ${topSession.t}` : 'No new starts this hour';
-    topSessionEl.className = `top-session${topSession ? '' : ' muted'}${hasQuery ? (topMatches ? ' search-match' : ' search-dim') : ''}`;
 
     const markers = startingSessions;
     const showDistributedCallouts = calloutSessionIds.size > 0;

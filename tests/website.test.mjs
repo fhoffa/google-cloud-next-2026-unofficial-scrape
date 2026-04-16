@@ -237,6 +237,7 @@ test('hourly heatmap page exposes search and playback controls', () => {
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
   assert.match(hourlyHtml, /<div id="search-summary"/);
   assert.doesNotMatch(hourlyHtml, /search-match-list/);
+  assert.doesNotMatch(hourlyHtml, /Top session/);
   assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416c/);
   assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
   assert.match(hourlyHtml, /Hourly seat map/);
@@ -248,6 +249,7 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
   assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
   assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
+  assert.doesNotMatch(hourlyJs, /top-session/);
   assert.match(hourlyJs, /searchSummaryWrap: byId\('search-summary-wrap'\)/);
   assert.match(hourlyJs, /searchSummary: byId\('search-summary'\)/);
   assert.doesNotMatch(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
@@ -255,7 +257,9 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
   assert.match(hourlyJs, /function buildDistributedCallouts\(/);
   assert.match(hourlyJs, /estimateCalloutWidth\(/);
-  assert.match(hourlyJs, /candidateOffsets = \[0, -56, 56, -112, 112/);
+  assert.match(hourlyJs, /candidatePositions = \[/);
+  assert.match(hourlyJs, /dx: 14, dy: -48/);
+  assert.match(hourlyJs, /dx: -14 - label\.width, dy: -48/);
   assert.match(hourlyJs, /overlapPenalty \+= 100000/);
   assert.match(hourlyJs, /sq-callout-layer/);
   assert.match(hourlyJs, /sq-callout-lines/);
