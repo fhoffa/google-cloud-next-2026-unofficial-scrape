@@ -160,17 +160,12 @@ function renderSnapshot() {
     ? visibleSessions.filter((session) => session.sh != null && matchesQuery(session))
     : [];
   const matchedSessionIds = new Set(matchedSessions.map((session) => String(session.id)));
-  const matchListText = matchedSessions.length > 0 && matchedSessionIds.size < 20
-    ? [...new Map(matchedSessions
-      .sort(compareSessions)
-      .map((session) => [String(session.id), `• ${session.t}${session.r ? ` · ${session.r}` : ''}`]))
-      .values()].join('\n')
-    : '';
+  const calloutSessionIds = matchedSessionIds.size > 0 && matchedSessionIds.size < 20
+    ? matchedSessionIds
+    : new Set();
   els.searchSummary.textContent = queryTerms.length
     ? `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched`
     : '';
-  els.searchMatchList.textContent = matchListText;
-  els.searchMatchList.hidden = !matchListText;
   const snapshotBigMaxReserved = Math.max(1, ...visibleSessions.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
   const snapshotSmallMaxReserved = Math.max(1, ...visibleSessions.filter(isSmallRoom).map((session) => session.reg || 0), 1);
 
@@ -222,7 +217,10 @@ function renderSnapshot() {
           ? (matchesQuery(session) ? 'search-match' : 'search-dim')
           : '';
         const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+        const callout = calloutSessionIds.has(String(session.id))
+          ? `<span class="sq-callout">${esc(session.t)}</span>`
+          : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${callout}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
@@ -283,7 +281,6 @@ async function init() {
     snapshotLabel: byId('snapshot-label'),
     searchSummaryWrap: byId('search-summary-wrap'),
     searchSummary: byId('search-summary'),
-    searchMatchList: byId('search-match-list'),
     playbackNote: byId('playback-note'),
   });
   readInitialState();

@@ -236,7 +236,7 @@ test('hourly heatmap page exposes search and playback controls', () => {
   assert.match(hourlyHtml, /<button id="play-btn"/);
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
   assert.match(hourlyHtml, /<div id="search-summary"/);
-  assert.match(hourlyHtml, /<div id="search-match-list"/);
+  assert.doesNotMatch(hourlyHtml, /search-match-list/);
   assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416c/);
   assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
   assert.match(hourlyHtml, /Hourly seat map/);
@@ -250,12 +250,11 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
   assert.match(hourlyJs, /searchSummaryWrap: byId\('search-summary-wrap'\)/);
   assert.match(hourlyJs, /searchSummary: byId\('search-summary'\)/);
-  assert.match(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
+  assert.doesNotMatch(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size\.toLocaleString\(\)/);
   assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
-  assert.match(hourlyJs, /searchMatchList\.hidden = !matchListText/);
-  assert.match(hourlyJs, /`• \$\{session\.t\}/);
-  assert.match(hourlyJs, /join\('\\n'\)/);
+  assert.match(hourlyJs, /const callout = calloutSessionIds\.has\(String\(session\.id\)\)/);
+  assert.match(hourlyJs, /sq-callout/);
   assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
   assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);
   assert.match(hourlyJs, /window\.history\.replaceState\(null, '', url\)/);
