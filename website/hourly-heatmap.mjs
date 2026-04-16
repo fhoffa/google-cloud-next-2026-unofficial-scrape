@@ -196,12 +196,16 @@ function renderSnapshot() {
         const fill = markerFillPct(session, snapshotBigMaxReserved, snapshotSmallMaxReserved);
         const width = markerWidth(session);
         const speakers = formatSpeakers(session);
+        const startsThisHour = session.sh === hour;
         const sponsored = session?.spon ? ` · Sponsored${session?.scon ? ` by ${session.scon}` : ' session'}` : '';
+        const continuation = startsThisHour ? '' : ' · Continues from prior hour';
         const title = hasRealCapacity(session)
-          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`
-          : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`;
-        const searchClass = hasQuery ? (matchesQuery(session) ? 'search-match' : 'search-dim') : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+          ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}${continuation}`
+          : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}${continuation}`;
+        const searchClass = hasQuery
+          ? (startsThisHour && matchesQuery(session) ? 'search-match' : 'search-dim')
+          : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${startsThisHour ? '' : 'continuation'} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
