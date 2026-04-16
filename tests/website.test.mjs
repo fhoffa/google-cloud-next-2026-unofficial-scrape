@@ -1228,7 +1228,7 @@ test('session explorer renders sponsored badges and active sponsored pills', asy
   const env = createEnvironment('?sponsored=yes');
   const source = {
     sessions: [
-      { title: 'Sponsored session', url: 'https://example.com/session/sponsored', topics: [], speakers: [], sponsored: true },
+      { title: 'Sponsored session', url: 'https://example.com/session/sponsored', topics: [], speakers: [], sponsored: true, sponsor_name: 'Glean' },
       { title: 'Organic session', url: 'https://example.com/session/organic', topics: [], speakers: [], sponsored: false },
     ],
   };
@@ -1245,7 +1245,7 @@ test('session explorer renders sponsored badges and active sponsored pills', asy
   const appHtml = env.document.getElementById('app').innerHTML;
   assert.match(appHtml, /Sponsored session/);
   assert.doesNotMatch(appHtml, /Organic session/);
-  assert.match(appHtml, /status-badge sponsored">Sponsored/);
+  assert.match(appHtml, /status-badge sponsored">Sponsored by Glean/);
   assert.match(env.document.getElementById('active-filters').innerHTML, /sponsored: yes/);
 });
 
