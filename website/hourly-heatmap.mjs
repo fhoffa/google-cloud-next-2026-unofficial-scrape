@@ -212,7 +212,8 @@ function renderSnapshot() {
         const searchClass = hasQuery
           ? (matchesQuery(session) ? 'search-match' : 'search-dim')
           : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+        const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {

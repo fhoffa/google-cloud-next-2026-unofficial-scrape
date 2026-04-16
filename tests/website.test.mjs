@@ -254,6 +254,8 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /els\.searchInput\.value = state\.query;/);
   assert.match(hourlyJs, /const markers = startingSessions;/);
   assert.match(hourlyJs, /matchesQuery\(session\) \? 'search-match' : 'search-dim'/);
+  assert.match(hourlyJs, /const fullClass = pct != null && pct >= 100 \? 'full-session' : '';/);
+  assert.match(hourlyHtml, /\.sq\.full-session/);
   assert.doesNotMatch(hourlyJs, /Continues from prior hour/);
   assert.match(hourlyJs, /function stepAutoplay\(/);
   assert.match(hourlyJs, /els\.playbackNote\.textContent = 'Playing hourly history…';/);
