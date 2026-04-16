@@ -364,6 +364,24 @@ test('deriveSponsoredSessionFields falls back to description when speakers do no
 
   assert.deepEqual(
     deriveSponsoredSessionFields({
+      description: 'The convergence of culture, technology, and generational power is reshaping commerce. As Gen Z programs the algorithmic economy and Gen Alpha becomes the first AI-native generation, PwC’s Ali Furman and Google’s Stephanie Wong explore structural shifts in commerce. By attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.',
+      speakers: [
+        { name: 'Stephanie Wong', company: 'Google Cloud' },
+        { name: 'Ali Furman', company: 'PwC' },
+      ],
+      topics: [],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: false,
+      sponsor_name: 'PwC',
+      sponsor_name_source: 'speakers',
+    },
+  );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
       description: 'In this session, Dr. Rebecca Hinds, Head of the Work AI Institute at Glean, identifies five critical ways organizations either set AI up to drive real results, or set it up to fail. By attending this session, your contact information may be shared with the sponsor for relevant follow up for this event only.',
       speakers: [],
       topics: ['Partner Innovation'],
