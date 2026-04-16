@@ -9,9 +9,13 @@ import { fileURLToPath } from 'node:url';
 import { filterSessions, initSessionSearch } from '../website/session-search.mjs';
 
 const html = fs.readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const hourlyHtml = fs.readFileSync(new URL('../hourly-heatmap.html', import.meta.url), 'utf8');
+const hourlyJs = fs.readFileSync(new URL('../website/hourly-heatmap.mjs', import.meta.url), 'utf8');
 const insightsHtml = fs.readFileSync(new URL('../insights.html', import.meta.url), 'utf8');
 const insightsSummary = JSON.parse(fs.readFileSync(new URL('../media/insights-summary.json', import.meta.url), 'utf8'));
 const availabilityArtifact = JSON.parse(fs.readFileSync(new URL('../media/session-availability.json', import.meta.url), 'utf8'));
+const hourlyArtifact = JSON.parse(fs.readFileSync(new URL('../media/hourly-overview.json', import.meta.url), 'utf8'));
+const hourlyLatestArtifact = JSON.parse(fs.readFileSync(new URL('../media/hourly-overview-latest.json', import.meta.url), 'utf8'));
 const relatedSessionsArtifact = JSON.parse(fs.readFileSync(new URL('../media/related-sessions-2026-embeddings.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
@@ -226,6 +230,83 @@ test('index.html includes the website shell and module bootstrap', () => {
   assert.match(html, /<select id="sort-filter">/);
   assert.match(html, /<select id="sponsored-filter">/);
   assert.match(html, /import \{ initSessionSearch \} from '\.\/website\/session-search\.mjs';/);
+});
+
+test('hourly heatmap page exposes search and playback controls', () => {
+  assert.match(hourlyHtml, /<button id="play-btn"/);
+  assert.match(hourlyHtml, /<input id="search-input" type="text"/);
+  assert.match(hourlyHtml, /<div id="search-summary"/);
+  assert.doesNotMatch(hourlyHtml, /search-match-list/);
+  assert.doesNotMatch(hourlyHtml, /Top session/);
+  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416c/);
+  assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
+  assert.match(hourlyHtml, /Hourly seat map/);
+});
+
+test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
+  assert.match(hourlyJs, /const INITIAL_DATA_URL = '\.\/media\/hourly-overview-latest\.json';/);
+  assert.match(hourlyJs, /const FULL_DATA_URL = '\.\/media\/hourly-overview\.json';/);
+  assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
+  assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
+  assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
+  assert.doesNotMatch(hourlyJs, /top-session/);
+  assert.match(hourlyJs, /searchSummaryWrap: byId\('search-summary-wrap'\)/);
+  assert.match(hourlyJs, /searchSummary: byId\('search-summary'\)/);
+  assert.doesNotMatch(hourlyJs, /searchMatchList: byId\('search-match-list'\)/);
+  assert.match(hourlyJs, /matchedSessionIds\.size\.toLocaleString\(\)/);
+  assert.match(hourlyJs, /matchedSessionIds\.size < 20/);
+  assert.match(hourlyJs, /function buildDistributedCallouts\(/);
+  assert.match(hourlyJs, /estimateCalloutWidth\(/);
+  assert.match(hourlyJs, /candidatePositions = \[/);
+  assert.match(hourlyJs, /dx: 14, dy: -48/);
+  assert.match(hourlyJs, /dx: -14 - label\.width, dy: -48/);
+  assert.match(hourlyJs, /overlapPenalty \+= 100000/);
+  assert.match(hourlyJs, /label\.anchorX < label\.left/);
+  assert.match(hourlyJs, /label\.anchorX > \(label\.left \+ label\.width\)/);
+  assert.match(hourlyJs, /sq-callout-layer/);
+  assert.match(hourlyJs, /sq-callout-lines/);
+  assert.match(hourlyJs, /data-callout-match=/);
+  assert.match(hourlyJs, /callouts-below/);
+  assert.match(hourlyJs, /marker-end', 'url\(#callout-arrow\)'/);
+  assert.match(hourlyJs, /state\.query = params\.get\('q'\) \|\| '';/);
+  assert.match(hourlyJs, /url\.searchParams\.set\('q', query\)/);
+  assert.match(hourlyJs, /window\.history\.replaceState\(null, '', url\)/);
+  assert.match(hourlyJs, /els\.searchInput\.value = state\.query;/);
+  assert.match(hourlyJs, /const markers = startingSessions;/);
+  assert.match(hourlyJs, /matchesQuery\(session\) \? 'search-match' : 'search-dim'/);
+  assert.match(hourlyJs, /const fullClass = pct != null && pct >= 100 \? 'full-session' : '';/);
+  assert.match(hourlyHtml, /\.sq\.full-session/);
+  assert.doesNotMatch(hourlyJs, /Continues from prior hour/);
+  assert.match(hourlyJs, /function stepAutoplay\(/);
+  assert.match(hourlyJs, /els\.playbackNote\.textContent = 'Playing hourly history…';/);
+});
+
+test('hourly artifacts split latest snapshot from full history', () => {
+  assert.ok(Array.isArray(hourlyArtifact.snapshots));
+  assert.ok(Array.isArray(hourlyLatestArtifact.snapshots));
+  assert.ok(hourlyArtifact.snapshots.length > 1);
+  assert.equal(hourlyLatestArtifact.snapshots.length, 1);
+  assert.equal(
+    hourlyLatestArtifact.snapshots[0]?.key,
+    hourlyArtifact.snapshots[hourlyArtifact.snapshots.length - 1]?.key,
+  );
+});
+
+test('hourly artifact carries sponsored metadata for sponsored sessions from latest dataset', () => {
+  const sponsoredSourceIds = new Set((dataset.sessions || []).filter((session) => session.sponsored).map((session) => String(session.id)));
+  const hourlySessions = hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []);
+  const hourlySponsoredIds = new Set(hourlySessions.filter((session) => session.spon).map((session) => String(session.id)));
+  assert.ok(sponsoredSourceIds.has('3939814'));
+  assert.ok(hourlySponsoredIds.has('3939814'));
+  const pwcSession = hourlySessions.find((session) => String(session.id) === '3879152');
+  assert.equal(pwcSession?.scon, 'PwC');
+});
+
+test('hourly artifact includes searchable text for titles, descriptions, speakers, companies, and sponsored keywords', () => {
+  const session = hourlyLatestArtifact.snapshots.flatMap((snapshot) => snapshot.sessions || []).find((item) => String(item.id) === '3939814');
+  assert.equal(typeof session?.q, 'string');
+  assert.match(session.q, /why ai fails inside organizations/);
+  assert.match(session.q, /sponsored/);
 });
 
 test('insights page includes richer intelligence sections', () => {
