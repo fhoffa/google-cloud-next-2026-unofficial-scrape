@@ -232,21 +232,26 @@ test('index.html includes the website shell and module bootstrap', () => {
   assert.match(html, /import \{ initSessionSearch \} from '\.\/website\/session-search\.mjs';/);
 });
 
-test('hourly heatmap page exposes search and playback controls', () => {
-  assert.match(hourlyHtml, /<button id="play-btn"/);
+test('hourly heatmap page exposes search and snapshot controls with attribution', () => {
+  assert.doesNotMatch(hourlyHtml, /<button id="play-btn"/);
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
   assert.match(hourlyHtml, /<div id="search-summary"/);
   assert.doesNotMatch(hourlyHtml, /search-match-list/);
   assert.doesNotMatch(hourlyHtml, /Top session/);
-  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416k/);
-  assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
-  assert.match(hourlyHtml, /Hourly seat map/);
-  assert.match(hourlyHtml, /Search labels can float above the chart without making the timeline taller\./);
+  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=/);
+  assert.match(hourlyHtml, /<select id="snapshot-select"/);
+  assert.match(hourlyHtml, /Session reservations/);
+  assert.match(hourlyHtml, /Felipe Hoffa/);
+  assert.match(hourlyHtml, /googlecloudevents\.com/);
+  assert.match(hourlyHtml, /github\.com\/fhoffa/);
+  assert.match(hourlyHtml, /\.\/index\.html/);
+  assert.match(hourlyHtml, /\.\/insights\.html/);
+  assert.match(hourlyHtml, /class="snapshot-bar"/);
 });
 
-test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
-  assert.match(hourlyJs, /const INITIAL_DATA_URL = '\.\/media\/hourly-overview-latest\.json';/);
-  assert.match(hourlyJs, /const FULL_DATA_URL = '\.\/media\/hourly-overview\.json';/);
+test('hourly heatmap JS lazy-loads full history on slider interaction', () => {
+  assert.match(hourlyJs, /const INITIAL_DATA_URL = '\.\/media\/hourly-overview-latest\.json/);
+  assert.match(hourlyJs, /const FULL_DATA_URL = '\.\/media\/hourly-overview\.json/);
   assert.match(hourlyJs, /async function ensureFullHistoryLoaded\(/);
   assert.match(hourlyJs, /fetch\(FULL_DATA_URL\)/);
   assert.match(hourlyJs, /searchInput: byId\('search-input'\)/);
@@ -274,12 +279,21 @@ test('hourly heatmap JS lazy-loads full history after latest-only boot', () => {
   assert.match(hourlyJs, /window\.history\.replaceState\(null, '', url\)/);
   assert.match(hourlyJs, /els\.searchInput\.value = state\.query;/);
   assert.match(hourlyJs, /const markers = startingSessions;/);
-  assert.match(hourlyJs, /matchesQuery\(session\) \? 'search-match' : 'search-dim'/);
-  assert.match(hourlyJs, /const fullClass = pct != null && pct >= 100 \? 'full-session' : '';/);
+  assert.match(hourlyJs, /isMatch \? 'search-match' : 'search-dim'/);
+  assert.match(hourlyJs, /const isFull = pct != null && pct >= 100;/);
+  assert.match(hourlyJs, /sq-full-mark/);
   assert.match(hourlyHtml, /\.sq\.full-session/);
   assert.doesNotMatch(hourlyJs, /Continues from prior hour/);
-  assert.match(hourlyJs, /function stepAutoplay\(/);
-  assert.match(hourlyJs, /els\.playbackNote\.textContent = 'Playing hourly history…';/);
+  // Autoplay removed — slider lazy-loads history instead
+  assert.doesNotMatch(hourlyJs, /function stepAutoplay\(/);
+  assert.doesNotMatch(hourlyJs, /function startAutoplay\(/);
+  assert.doesNotMatch(hourlyJs, /function stopAutoplay\(/);
+  assert.doesNotMatch(hourlyJs, /playBtn/);
+  assert.match(hourlyJs, /snapshotSelect: byId\('snapshot-select'\)/, 'uses select dropdown for snapshots');
+  assert.match(hourlyJs, /await ensureFullHistoryLoaded\(\)/, 'select should lazy-load history');
+  assert.match(hourlyJs, /state\.searchDebounce/, 'search input should be debounced');
+  assert.match(hourlyJs, /setTimeout\(\(\) => renderSnapshot\(\), 150\)/, 'debounce delay should be 150ms');
+  assert.match(hourlyJs, /Failed to load snapshot history/, 'history fetch error should be logged');
 });
 
 test('hourly artifacts split latest snapshot from full history', () => {
