@@ -394,4 +394,22 @@ test('deriveSponsoredSessionFields falls back to description when speakers do no
       sponsor_name_source: 'description',
     },
   );
+
+  assert.deepEqual(
+    deriveSponsoredSessionFields({
+      description: 'Cox shifted from AI experimentation to enterprise-scale impact by focusing on a few high-value domains. Join us as Danielle Kimmel breaks down how targeted generative AI pilots evolved into a full contact center transformation with Google Cloud. Learn how Cox, with Capgemini as a strategic partner, aligned teams, scaled what worked, and turned AI innovation into measurable business outcomes. By attending this session, your contact information may be shared with the sponsor for relevant follow-up for this event only.',
+      speakers: [
+        { name: 'Danielle Kimmel', company: 'Cox Communications' },
+        { name: 'Jennifer Marchand', company: 'Capgemini' },
+      ],
+      topics: [],
+    }),
+    {
+      sponsored: true,
+      sponsor_disclosure: true,
+      partner_innovation: false,
+      sponsor_name: 'Capgemini',
+      sponsor_name_source: 'description',
+    },
+  );
 });
