@@ -237,6 +237,7 @@ test('hourly heatmap page exposes search and playback controls', () => {
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
   assert.match(hourlyHtml, /<button id="search-summary"/);
   assert.match(hourlyHtml, /<div id="search-summary-tooltip"/);
+  assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=20260416c/);
   assert.match(hourlyHtml, /<input id="snapshot-slider" type="range"/);
   assert.match(hourlyHtml, /Hourly seat map/);
 });
