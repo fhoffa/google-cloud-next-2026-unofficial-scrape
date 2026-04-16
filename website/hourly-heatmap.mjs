@@ -82,6 +82,10 @@ function termMatchesSession(term, session) {
   if (term.startsWith('title:')) {
     return wordMatch(String(session?.t || '').toLowerCase(), term.slice(6));
   }
+  if (term.startsWith('description:')) {
+    const haystack = (String(session?.t || '') + ' ' + String(session?.desc || '')).toLowerCase();
+    return wordMatch(haystack, term.slice(12));
+  }
   return wordMatch(String(session?.q || '').toLowerCase(), term);
 }
 function matchesQuery(session) {
