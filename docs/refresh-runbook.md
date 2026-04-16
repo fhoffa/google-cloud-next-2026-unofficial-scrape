@@ -133,6 +133,7 @@ Common failure modes to watch for:
 ```bash
 node scripts/generate_changelog.mjs
 node scripts/generate_insights.mjs
+node scripts/generate_hourly_overview.mjs
 /root/.openclaw/workspace/.venv/bin/python scripts/make_sankey.py --publish
 node --test tests/*.test.mjs
 ```
@@ -180,6 +181,7 @@ PR description should mention:
 - [ ] manually review/classify new sessions
 - [ ] rebuild changelog
 - [ ] rebuild insights
+- [ ] rebuild hourly overview
 - [ ] rebuild Sankey
 - [ ] run tests
 - [ ] verify live/classified counts match

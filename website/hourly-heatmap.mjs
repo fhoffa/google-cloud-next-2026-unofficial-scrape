@@ -1,9 +1,9 @@
-const INITIAL_DATA_URL = './media/hourly-overview-latest.json';
-const FULL_DATA_URL = './media/hourly-overview.json';
+const INITIAL_DATA_URL = './media/hourly-overview-latest.json?v=20260416m';
+const FULL_DATA_URL = './media/hourly-overview.json?v=20260416m';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false, query: '' };
+const state = { data: null, snapshotIndex: 0, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false, query: '', searchDebounce: null, showTop: false };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -18,7 +18,7 @@ function hourLabel(hour) {
 }
 function fillPct(session) {
   if (session?.cap && session?.reg != null && session.cap > 0) {
-    return Math.max(0, Math.min(100, (session.reg / session.cap) * 100));
+    return Math.max(0, Math.min(100, (session.reg / Math.max(1, session.cap)) * 100));
   }
   if (session?.rem != null) {
     if (session.rem <= 0) return 100;
@@ -64,11 +64,47 @@ function compareSessions(a, b) {
 function splitTerms(text) {
   return String(text || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
 }
+function splitOrGroups(query) {
+  return String(query || '').split(',').map((g) => g.trim()).filter(Boolean);
+}
+const GROUP_COLORS = [
+  'rgba(26,115,232,.96)',   // blue (default)
+  'rgba(234,67,53,.92)',    // red
+  'rgba(52,168,83,.92)',    // green
+  'rgba(251,188,4,.95)',    // yellow
+  'rgba(156,39,176,.92)',   // purple
+  'rgba(255,109,0,.92)',    // orange
+];
+function wordMatch(haystack, term) {
+  return new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(haystack);
+}
+function termMatchesSession(term, session) {
+  if (term.startsWith('title:')) {
+    return wordMatch(String(session?.t || '').toLowerCase(), term.slice(6));
+  }
+  if (term.startsWith('description:')) {
+    const haystack = (String(session?.t || '') + ' ' + String(session?.desc || '')).toLowerCase();
+    return wordMatch(haystack, term.slice(12));
+  }
+  return wordMatch(String(session?.q || '').toLowerCase(), term);
+}
 function matchesQuery(session) {
-  const terms = splitTerms(state.query);
-  if (!terms.length) return false;
-  const haystack = String(session?.q || '').toLowerCase();
-  return terms.every((term) => haystack.includes(term));
+  const groups = splitOrGroups(state.query);
+  if (!groups.length) return false;
+  return groups.some((group) => {
+    const terms = splitTerms(group);
+    return terms.length > 0 && terms.every((term) => termMatchesSession(term, session));
+  });
+}
+function matchedGroupInfo(session) {
+  const groups = splitOrGroups(state.query);
+  for (let i = 0; i < groups.length; i++) {
+    const terms = splitTerms(groups[i]);
+    if (terms.length > 0 && terms.every((term) => termMatchesSession(term, session))) {
+      return { name: groups[i], index: i };
+    }
+  }
+  return null;
 }
 function markerFillPct(session, bigMaxReserved, smallMaxReserved) {
   const reg = session?.reg ?? null;
@@ -97,7 +133,7 @@ function writeSearchToUrl() {
 }
 
 function estimateCalloutWidth(title) {
-  return Math.max(120, Math.min(220, 26 + String(title || '').length * 5.5));
+  return Math.max(160, Math.min(520, 14 + String(title || '').length * 5));
 }
 
 function clamp(value, min, max) {
@@ -191,40 +227,73 @@ function buildDistributedCallouts(squares, matchedButtons) {
   const overlay = getOrCreateOverlay();
   const overlaySvg = document.getElementById('sq-global-svg');
 
+  const multiGroup = splitOrGroups(state.query).length > 1;
   const labels = matchedButtons.map((button) => {
-    const title = button.dataset.sessionTitle || '';
+    const rawTitle = button.dataset.sessionTitle || '';
+    const group = button.dataset.matchedGroup || '';
+    const groupIndex = parseInt(button.dataset.groupIndex || '0', 10);
+    const title = (multiGroup && group) ? `${group}: ${rawTitle}` : rawTitle;
+    const color = multiGroup ? (GROUP_COLORS[groupIndex % GROUP_COLORS.length]) : GROUP_COLORS[0];
     const width = estimateCalloutWidth(title);
-    const charsPerLine = Math.max(1, Math.floor((width - 14) / 5.5));
-    const lineCount = Math.ceil(Math.max(1, title.length / charsPerLine));
-    const height = 10 + lineCount * 14;
+    const height = 24;
     const btnRect = button.getBoundingClientRect();
-    const anchorDocX = btnRect.left + scrollX + btnRect.width / 2;
+    const anchorLeftX = btnRect.left + scrollX;
+    const anchorRightX = btnRect.right + scrollX;
     const anchorDocY = btnRect.top + scrollY + btnRect.height / 2;
-    const anchorViewX = btnRect.left + btnRect.width / 2;
-    return { title, width, height, anchorDocX, anchorDocY, anchorViewX };
+    return { title, color, width, height, anchorLeftX, anchorRightX, anchorDocY };
   });
 
-  // Place each label centered on its anchor row, spread horizontally to avoid overlap.
-  // Sort by row (Y) then by horizontal position so nearby sessions stay near each other.
-  labels.sort((a, b) => a.anchorDocY - b.anchorDocY || a.anchorViewX - b.anchorViewX);
+  labels.sort((a, b) => a.anchorDocY - b.anchorDocY || a.anchorRightX - b.anchorRightX);
+
+  function overlaps(r, placed) {
+    return placed.find((p) => p.left < r.right + GAP && p.right > r.left - GAP && p.top < r.bottom + GAP && p.bottom > r.top - GAP);
+  }
+
+  function dist(docLeft, docTop, label) {
+    const dx = (docLeft + label.width / 2) - ((label.anchorLeftX + label.anchorRightX) / 2);
+    const dy = (docTop + label.height / 2) - label.anchorDocY;
+    return dx * dx + dy * dy;
+  }
 
   const placed = [];
-  for (const label of labels) {
-    let docLeft = clamp(label.anchorViewX - label.width / 2 + scrollX, scrollX, scrollX + totalWidth - label.width);
-    const docTop = label.anchorDocY - label.height / 2;
+  for (let li = 0; li < labels.length; li++) {
+    const label = labels[li];
+    const staggerX = (labels.length - 1 - li) * 60;
+    const staggerY = (li - (labels.length - 1) / 2) * 12;
+    let docLeft = clamp(label.anchorRightX + 20 + staggerX, scrollX, scrollX + totalWidth - label.width);
+    let docTop = label.anchorDocY - label.height / 2 + staggerY;
 
-    // Nudge horizontally up to 10 times to resolve overlaps
-    for (let attempt = 0; attempt < 10; attempt++) {
+    // Try up to 25 nudges, alternating horizontal and vertical, picking the
+    // candidate closest to the anchor each time.
+    for (let attempt = 0; attempt < 25; attempt++) {
       const r = { left: docLeft, right: docLeft + label.width, top: docTop, bottom: docTop + label.height };
-      const hit = placed.find((p) => p.left < r.right + GAP && p.right > r.left - GAP && p.top < r.bottom + GAP && p.bottom > r.top - GAP);
+      const hit = overlaps(r, placed);
       if (!hit) break;
-      const movingRight = (hit.left + hit.right) / 2 < docLeft + label.width / 2;
-      docLeft = movingRight ? hit.right + GAP : hit.left - label.width - GAP;
-      docLeft = clamp(docLeft, scrollX, scrollX + totalWidth - label.width);
+
+      const candidates = [
+        { x: hit.right + GAP, y: docTop },
+        { x: hit.left - label.width - GAP, y: docTop },
+        { x: docLeft, y: hit.bottom + GAP },
+        { x: docLeft, y: hit.top - label.height - GAP },
+      ];
+      // Clamp and pick the candidate closest to the anchor
+      let best = null;
+      let bestDist = Infinity;
+      for (const c of candidates) {
+        const cx = clamp(c.x, scrollX, scrollX + totalWidth - label.width);
+        const d = dist(cx, c.y, label);
+        if (d < bestDist) { bestDist = d; best = { x: cx, y: c.y }; }
+      }
+      docLeft = best.x;
+      docTop = best.y;
     }
 
     label.docLeft = docLeft;
     label.docTop = docTop;
+    // Pick arrow endpoint: right edge if bubble is to the right, left edge if to the left
+    const bubbleCenterX = docLeft + label.width / 2;
+    const squareCenterX = (label.anchorLeftX + label.anchorRightX) / 2;
+    label.anchorDocX = bubbleCenterX > squareCenterX ? label.anchorRightX : label.anchorLeftX;
     placed.push({ left: docLeft, right: docLeft + label.width, top: docTop, bottom: docTop + label.height });
   }
 
@@ -251,13 +320,15 @@ function buildDistributedCallouts(squares, matchedButtons) {
     el.style.width = `${label.width}px`;
     el.style.left = `${label.docLeft}px`;
     el.style.top = `${label.docTop}px`;
+    el.style.background = label.color;
     el.style.cursor = 'grab';
     el.style.pointerEvents = 'auto';
     el.style.userSelect = 'none';
     overlay.appendChild(el);
 
+    const arrowColor = label.color.replace(/[\d.]+\)$/, '0.45)');
     const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    line.setAttribute('stroke', 'rgba(26,115,232,.45)');
+    line.setAttribute('stroke', arrowColor);
     line.setAttribute('stroke-width', '1.5');
     line.setAttribute('marker-end', 'url(#sq-arrow)');
     line.setAttribute('x2', String(label.anchorDocX));
@@ -265,7 +336,11 @@ function buildDistributedCallouts(squares, matchedButtons) {
     overlaySvg.appendChild(line);
 
     function updateLine(docLeft, docTop) {
-      const { x: x1, y: y1 } = labelEdgePoint(docLeft, docTop, label.width, label.height, label.anchorDocX, label.anchorDocY);
+      const bubbleCenterX = docLeft + label.width / 2;
+      const squareCenterX = (label.anchorLeftX + label.anchorRightX) / 2;
+      const endX = bubbleCenterX > squareCenterX ? label.anchorRightX : label.anchorLeftX;
+      line.setAttribute('x2', String(endX));
+      const { x: x1, y: y1 } = labelEdgePoint(docLeft, docTop, label.width, label.height, endX, label.anchorDocY);
       line.setAttribute('x1', String(x1));
       line.setAttribute('y1', String(y1));
     }
@@ -336,12 +411,13 @@ function applyDataset(data, { hasFullHistory = false, snapshotIndex = null } = {
 async function ensureFullHistoryLoaded() {
   if (state.hasFullHistory || state.loadingHistory) return;
   state.loadingHistory = true;
-  els.playbackNote.textContent = 'Loading snapshot history…';
   try {
     const response = await fetch(FULL_DATA_URL);
     const data = await response.json();
     applyDataset(data, { hasFullHistory: true, snapshotIndex: data.snapshots.length - 1 });
     renderSnapshot();
+  } catch (error) {
+    console.error('Failed to load snapshot history:', error);
   } finally {
     state.loadingHistory = false;
   }
@@ -350,23 +426,38 @@ async function ensureFullHistoryLoaded() {
 function renderSnapshot() {
   clearOverlay();
   const snapshot = state.data.snapshots[state.snapshotIndex];
-  els.snapshotLabel.textContent = snapshot.label;
-  els.snapshotSlider.min = String(state.startIndex);
-  els.snapshotSlider.max = String(state.latestIndex);
-  els.snapshotSlider.value = String(state.snapshotIndex);
+  // Populate the select if the option count changed (initial load vs full history)
+  if (els.snapshotSelect.options.length !== state.data.snapshots.length) {
+    els.snapshotSelect.innerHTML = '';
+    for (let i = state.data.snapshots.length - 1; i >= state.startIndex; i--) {
+      const opt = document.createElement('option');
+      opt.value = String(i);
+      opt.textContent = state.data.snapshots[i].label;
+      els.snapshotSelect.appendChild(opt);
+    }
+  }
+  els.snapshotSelect.value = String(state.snapshotIndex);
 
   const visibleSessions = snapshot.sessions.filter(isVisibleSession);
-  const queryTerms = splitTerms(state.query);
-  const matchedSessions = queryTerms.length
+  const queryGroups = splitOrGroups(state.query);
+  const hasQuery = queryGroups.length > 0;
+  const matchedSessions = hasQuery
     ? visibleSessions.filter((session) => session.sh != null && matchesQuery(session))
     : [];
   const matchedSessionIds = new Set(matchedSessions.map((session) => String(session.id)));
   const calloutSessionIds = matchedSessionIds.size > 0 && matchedSessionIds.size < 20
     ? matchedSessionIds
     : new Set();
-  els.searchSummary.textContent = queryTerms.length
-    ? `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched`
-    : '';
+  if (!hasQuery) {
+    els.searchSummary.innerHTML = '';
+  } else if (queryGroups.length > 1) {
+    els.searchSummary.innerHTML = queryGroups.map((g, i) => {
+      const color = GROUP_COLORS[i % GROUP_COLORS.length];
+      return `<span style="display:inline-flex;align-items:center;gap:4px;margin-right:8px"><span style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${color};flex-shrink:0"></span>${esc(g)}</span>`;
+    }).join('');
+  } else {
+    els.searchSummary.textContent = `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched`;
+  }
   const snapshotBigMaxReserved = Math.max(1, ...visibleSessions.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
   const snapshotSmallMaxReserved = Math.max(1, ...visibleSessions.filter(isSmallRoom).map((session) => session.reg || 0), 1);
 
@@ -380,6 +471,8 @@ function renderSnapshot() {
   }
 
   let visibleRowIndex = 0;
+  let currentDayButtons = [];
+  let currentDayShell = null;
   els.app.querySelectorAll('.hour-row').forEach((row) => {
     const key = row.dataset.key;
     const hour = Number(key.split(':')[1]);
@@ -398,10 +491,8 @@ function renderSnapshot() {
     }
     row.style.display = 'grid';
     row.querySelector('.hour-seats').textContent = `${formatCompactCount(totalReserved)} res.`;
-    const hasQuery = queryTerms.length > 0;
-
     const markers = startingSessions;
-    const showDistributedCallouts = calloutSessionIds.size > 0;
+    const showDistributedCallouts = calloutSessionIds.size > 0 || (state.showTop && !hasQuery);
     row.classList.remove('callouts-below');
     visibleRowIndex += 1;
     squares.innerHTML = markers
@@ -415,18 +506,38 @@ function renderSnapshot() {
         const title = hasRealCapacity(session)
           ? `${session.t} · ${formatCount(session.reg)} reserved · ${pct.toFixed(0)}% full${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`
           : `${session.t} · ${formatCount(session.reg)} reserved${speakers ? ` · Speakers: ${speakers}` : ''}${sponsored}`;
-        const searchClass = hasQuery
-          ? (matchesQuery(session) ? 'search-match' : 'search-dim')
+        const isMatch = hasQuery && matchesQuery(session);
+        const searchClass = hasQuery ? (isMatch ? 'search-match' : 'search-dim') : '';
+        const gInfo = isMatch ? matchedGroupInfo(session) : null;
+        const multiGroup = queryGroups.length > 1;
+        const groupColor = (isMatch && multiGroup && gInfo)
+          ? GROUP_COLORS[gInfo.index % GROUP_COLORS.length]
+          : null;
+        const matchStyle = groupColor
+          ? `border-color:${groupColor};box-shadow:0 0 0 2px ${groupColor.replace(/[\d.]+\)$/, '0.25)')}`
           : '';
-        const fullClass = pct != null && pct >= 100 ? 'full-session' : '';
-        const matchedAttr = calloutSessionIds.has(String(session.id)) ? '1' : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-match="${matchedAttr}" title="${esc(title)}" style="width:${width}px;min-width:${width}px"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span><span class="sq-tooltip">${esc(title)}</span></button>`;
+        const isFull = pct != null && pct >= 100;
+        const fullClass = isFull ? 'full-session' : '';
+        const fullMark = isFull ? '<span class="sq-full-mark">!</span>' : '';
+        const isTopCallout = state.showTop && !hasQuery && topSession && session.id === topSession.id;
+        const matchedAttr = calloutSessionIds.has(String(session.id)) || isTopCallout ? '1' : '';
+        const group = gInfo ? gInfo.name : '';
+        const groupIdx = gInfo ? String(gInfo.index) : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-match="${matchedAttr}" data-matched-group="${esc(group)}" data-group-index="${groupIdx}" title="${esc(title)}" style="width:${width}px;min-width:${width}px;${matchStyle}"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${fullMark}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
-    if (showDistributedCallouts) {
-      const matchedButtons = [...squares.querySelectorAll('[data-callout-match="1"]')];
-      buildDistributedCallouts(squares, matchedButtons);
+    // Flush callouts when entering a new day section
+    const dayShell = row.closest('.day-shell');
+    if (dayShell !== currentDayShell) {
+      if (currentDayButtons.length > 0) {
+        buildDistributedCallouts(null, currentDayButtons);
+      }
+      currentDayButtons = [];
+      currentDayShell = dayShell;
     }
+
+    const matchedButtons = [...squares.querySelectorAll('[data-callout-match="1"]')];
+    currentDayButtons.push(...matchedButtons);
 
     squares.querySelectorAll('[data-session-id]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -437,56 +548,20 @@ function renderSnapshot() {
 
   });
 
-  if (!state.timer) {
-    els.playbackNote.textContent = 'Press Play to watch the evolution from here';
+  // Flush the last day's callouts
+  if (currentDayButtons.length > 0) {
+    buildDistributedCallouts(null, currentDayButtons);
   }
-}
-
-function stepAutoplay() {
-  if (state.snapshotIndex >= state.latestIndex) {
-    stopAutoplay();
-    return false;
-  }
-  state.snapshotIndex += 1;
-  renderSnapshot();
-  return true;
-}
-
-async function startAutoplay() {
-  stopAutoplay();
-  await ensureFullHistoryLoaded();
-  if (state.latestIndex <= state.startIndex) {
-    renderSnapshot();
-    return;
-  }
-  state.snapshotIndex = Math.min(state.snapshotIndex, state.latestIndex);
-  if (state.snapshotIndex >= state.latestIndex || state.snapshotIndex < state.startIndex) {
-    state.snapshotIndex = state.startIndex;
-    renderSnapshot();
-  }
-  els.playBtn.textContent = 'Pause';
-  els.playbackNote.textContent = 'Playing hourly history…';
-  if (!stepAutoplay()) return;
-  state.timer = window.setInterval(() => {
-    stepAutoplay();
-  }, 1500);
-}
-function stopAutoplay() {
-  if (state.timer) window.clearInterval(state.timer);
-  state.timer = null;
-  els.playBtn.textContent = 'Play';
 }
 
 async function init() {
   Object.assign(els, {
     app: byId('app'),
-    playBtn: byId('play-btn'),
     searchInput: byId('search-input'),
-    snapshotSlider: byId('snapshot-slider'),
-    snapshotLabel: byId('snapshot-label'),
+    snapshotSelect: byId('snapshot-select'),
     searchSummaryWrap: byId('search-summary-wrap'),
     searchSummary: byId('search-summary'),
-    playbackNote: byId('playback-note'),
+    showTopCheckbox: byId('show-top'),
   });
   readInitialState();
   els.searchInput.value = state.query;
@@ -496,15 +571,21 @@ async function init() {
   buildShell();
   renderSnapshot();
 
-  els.playBtn.addEventListener('click', async () => {
-    if (state.timer) stopAutoplay(); else await startAutoplay();
-  });
+  // Load full history in the background so the snapshot selector populates
+  ensureFullHistoryLoaded();
+
   els.searchInput.addEventListener('input', (event) => {
     state.query = event.target.value || '';
     writeSearchToUrl();
+    if (state.searchDebounce) clearTimeout(state.searchDebounce);
+    state.searchDebounce = setTimeout(() => renderSnapshot(), 150);
+  });
+  els.showTopCheckbox.addEventListener('change', () => {
+    state.showTop = els.showTopCheckbox.checked;
     renderSnapshot();
   });
-  els.snapshotSlider.addEventListener('input', (event) => {
+  els.snapshotSelect.addEventListener('change', async (event) => {
+    await ensureFullHistoryLoaded();
     state.snapshotIndex = Number(event.target.value);
     renderSnapshot();
   });
