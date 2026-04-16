@@ -3,7 +3,7 @@ const FULL_DATA_URL = './media/hourly-overview.json';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
-const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false, query: '', searchTooltipOpen: false };
+const state = { data: null, snapshotIndex: 0, timer: null, startIndex: 0, latestIndex: 0, hasFullHistory: false, loadingHistory: false, query: '' };
 const els = {};
 
 function byId(id) { return document.getElementById(id); }
@@ -147,17 +147,6 @@ async function ensureFullHistoryLoaded() {
   }
 }
 
-function closeSearchTooltip() {
-  state.searchTooltipOpen = false;
-  els.searchSummaryWrap.classList.remove('is-open');
-}
-
-function toggleSearchTooltip() {
-  if (!els.searchSummaryTooltip.textContent) return;
-  state.searchTooltipOpen = !state.searchTooltipOpen;
-  els.searchSummaryWrap.classList.toggle('is-open', state.searchTooltipOpen);
-}
-
 function renderSnapshot() {
   const snapshot = state.data.snapshots[state.snapshotIndex];
   els.snapshotLabel.textContent = snapshot.label;
@@ -171,18 +160,17 @@ function renderSnapshot() {
     ? visibleSessions.filter((session) => session.sh != null && matchesQuery(session))
     : [];
   const matchedSessionIds = new Set(matchedSessions.map((session) => String(session.id)));
-  const tooltipText = matchedSessions.length > 0 && matchedSessionIds.size < 20
+  const matchListText = matchedSessions.length > 0 && matchedSessionIds.size < 20
     ? [...new Map(matchedSessions
       .sort(compareSessions)
-      .map((session) => [String(session.id), `${session.t}${session.r ? ` · ${session.r}` : ''}`]))
+      .map((session) => [String(session.id), `• ${session.t}${session.r ? ` · ${session.r}` : ''}`]))
       .values()].join('\n')
     : '';
   els.searchSummary.textContent = queryTerms.length
-    ? `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched${tooltipText ? ' (tap to list)' : ''}`
+    ? `${matchedSessionIds.size.toLocaleString()} session${matchedSessionIds.size === 1 ? '' : 's'} matched`
     : '';
-  els.searchSummaryTooltip.textContent = tooltipText;
-  els.searchSummary.disabled = !tooltipText;
-  if (!tooltipText) closeSearchTooltip();
+  els.searchMatchList.textContent = matchListText;
+  els.searchMatchList.hidden = !matchListText;
   const snapshotBigMaxReserved = Math.max(1, ...visibleSessions.filter((session) => !isSmallRoom(session)).map((session) => session.reg || 0), 1);
   const snapshotSmallMaxReserved = Math.max(1, ...visibleSessions.filter(isSmallRoom).map((session) => session.reg || 0), 1);
 
@@ -295,7 +283,7 @@ async function init() {
     snapshotLabel: byId('snapshot-label'),
     searchSummaryWrap: byId('search-summary-wrap'),
     searchSummary: byId('search-summary'),
-    searchSummaryTooltip: byId('search-summary-tooltip'),
+    searchMatchList: byId('search-match-list'),
     playbackNote: byId('playback-note'),
   });
   readInitialState();
@@ -317,12 +305,6 @@ async function init() {
   els.snapshotSlider.addEventListener('input', (event) => {
     state.snapshotIndex = Number(event.target.value);
     renderSnapshot();
-  });
-  els.searchSummary.addEventListener('click', () => {
-    toggleSearchTooltip();
-  });
-  document.addEventListener('click', (event) => {
-    if (!els.searchSummaryWrap.contains(event.target)) closeSearchTooltip();
   });
 }
 

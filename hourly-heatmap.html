@@ -74,43 +74,17 @@
     .snapshot-label, .playback-note { color: var(--gray-700); font-size: .92rem; }
     .playback-note { color: var(--gray-500); }
     .search-summary-wrap {
-      position: relative;
       min-height: 1.2em;
     }
-    .search-summary-trigger {
-      appearance: none;
-      -webkit-appearance: none;
-      border: 0;
-      padding: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      text-align: left;
-      cursor: pointer;
-    }
-    .search-summary-wrap:hover .search-summary-tooltip,
-    .search-summary-wrap:focus-within .search-summary-tooltip,
-    .search-summary-wrap.is-open .search-summary-tooltip {
-      opacity: 1;
-      visibility: visible;
-    }
-    .search-summary-tooltip {
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
-      z-index: 20;
-      min-width: 260px;
-      max-width: 420px;
-      padding: 8px 10px;
-      border-radius: 10px;
-      background: rgba(32,33,36,.96);
-      color: white;
+    .search-match-list {
+      margin-top: 4px;
+      padding: 6px 8px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: var(--gray-050);
+      color: var(--gray-700);
       font-size: .76rem;
       line-height: 1.35;
-      box-shadow: 0 10px 24px rgba(32,33,36,.22);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .12s ease;
       white-space: pre-line;
     }
     .day-shell { padding: 8px 10px 10px; margin-bottom: 8px; }
@@ -274,8 +248,8 @@
       <input id="snapshot-slider" type="range" min="0" max="0" value="0">
       <div id="snapshot-label" class="snapshot-label">Loading…</div>
       <div id="search-summary-wrap" class="search-summary-wrap">
-        <button id="search-summary" class="playback-note search-summary-trigger" type="button"></button>
-        <div id="search-summary-tooltip" class="search-summary-tooltip"></div>
+        <div id="search-summary" class="playback-note"></div>
+        <div id="search-match-list" class="search-match-list" hidden></div>
       </div>
       <div id="playback-note" class="playback-note">Rows regroup as sessions move across hours</div>
     </section>
