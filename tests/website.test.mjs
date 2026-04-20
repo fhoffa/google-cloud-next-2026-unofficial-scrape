@@ -240,7 +240,7 @@ test('hourly heatmap page exposes search and snapshot controls with attribution'
   assert.doesNotMatch(hourlyHtml, /Top session/);
   assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=/);
   assert.match(hourlyHtml, /<select id="snapshot-select"/);
-  assert.match(hourlyHtml, /Session reservations/);
+  assert.match(hourlyHtml, /GCP Next'26 — Top Sessions by Reservations/);
   assert.match(hourlyHtml, /Felipe Hoffa/);
   assert.match(hourlyHtml, /googlecloudevents\.com/);
   assert.match(hourlyHtml, /github\.com\/fhoffa/);

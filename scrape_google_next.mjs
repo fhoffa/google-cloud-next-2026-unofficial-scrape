@@ -343,7 +343,7 @@ function looksLikePersonName(value = '') {
 
 function isGenericSponsorPlaceholder(value = '') {
   const text = cleanSponsorName(value).toLowerCase();
-  return ['us', 'we', 'our team', 'the team', 'our experts', 'our leaders'].includes(text);
+  return ['us', 'we', 'our team', 'the team', 'our experts', 'our leaders', 'industry experts', 'global leaders', 'leading experts', 'top experts'].includes(text);
 }
 
 function inferSponsorFromDescription(session = {}, candidateCompanies = []) {

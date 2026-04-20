@@ -62,7 +62,14 @@ function compareSessions(a, b) {
     || String(a.t).localeCompare(String(b.t));
 }
 function splitTerms(text) {
-  return String(text || '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const str = String(text || '').toLowerCase().trim();
+  const tokens = [];
+  const re = /"([^"]+)"|(\S+)/g;
+  let m;
+  while ((m = re.exec(str)) !== null) {
+    tokens.push(m[1] ?? m[2]); // m[1] = quoted phrase, m[2] = bare word
+  }
+  return tokens.filter(Boolean);
 }
 function splitOrGroups(query) {
   return String(query || '').split(',').map((g) => g.trim()).filter(Boolean);
@@ -76,7 +83,13 @@ const GROUP_COLORS = [
   'rgba(255,109,0,.92)',    // orange
 ];
 function wordMatch(haystack, term) {
-  return new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(haystack);
+  if (term.includes(' ')) {
+    // Quoted phrase — match as an exact sequence
+    return haystack.includes(term);
+  }
+  const clean = term.replace(/^\W+|\W+$/g, '');
+  if (!clean) return false;
+  return new RegExp(`\\b${clean.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(haystack);
 }
 function termMatchesSession(term, session) {
   if (term.startsWith('title:')) {
@@ -523,7 +536,7 @@ function renderSnapshot() {
         const matchedAttr = calloutSessionIds.has(String(session.id)) || isTopCallout ? '1' : '';
         const group = gInfo ? gInfo.name : '';
         const groupIdx = gInfo ? String(gInfo.index) : '';
-        const calloutLabel = isTopCallout && session.reg != null ? `${formatCompactCount(session.reg)}: ${session.t}` : '';
+        const calloutLabel = session.reg != null ? `${formatCompactCount(session.reg)}: ${session.t}` : '';
         return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-label="${esc(calloutLabel)}" data-callout-match="${matchedAttr}" data-matched-group="${esc(group)}" data-group-index="${groupIdx}" title="${esc(title)}" style="width:${width}px;min-width:${width}px;${matchStyle}"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${fullMark}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
