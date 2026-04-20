@@ -1,5 +1,5 @@
-const INITIAL_DATA_URL = './media/hourly-overview-latest.json?v=20260416m';
-const FULL_DATA_URL = './media/hourly-overview.json?v=20260416m';
+const INITIAL_DATA_URL = './media/hourly-overview-latest.json?v=20260420';
+const FULL_DATA_URL = './media/hourly-overview.json?v=20260420';
 const MEGA_SESSION_REGISTRANTS = 1000;
 const MARKER_WIDTH = 10;
 const SMALL_ROOM_MARKER_WIDTH = 5;
@@ -229,7 +229,7 @@ function buildDistributedCallouts(squares, matchedButtons) {
 
   const multiGroup = splitOrGroups(state.query).length > 1;
   const labels = matchedButtons.map((button) => {
-    const rawTitle = button.dataset.sessionTitle || '';
+    const rawTitle = button.dataset.calloutLabel || button.dataset.sessionTitle || '';
     const group = button.dataset.matchedGroup || '';
     const groupIndex = parseInt(button.dataset.groupIndex || '0', 10);
     const title = (multiGroup && group) ? `${group}: ${rawTitle}` : rawTitle;
@@ -523,7 +523,8 @@ function renderSnapshot() {
         const matchedAttr = calloutSessionIds.has(String(session.id)) || isTopCallout ? '1' : '';
         const group = gInfo ? gInfo.name : '';
         const groupIdx = gInfo ? String(gInfo.index) : '';
-        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-match="${matchedAttr}" data-matched-group="${esc(group)}" data-group-index="${groupIdx}" title="${esc(title)}" style="width:${width}px;min-width:${width}px;${matchStyle}"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${fullMark}<span class="sq-tooltip">${esc(title)}</span></button>`;
+        const calloutLabel = isTopCallout && session.reg != null ? `${formatCompactCount(session.reg)}: ${session.t}` : '';
+        return `<button class="sq ${fill == null ? 'unknown' : ''} ${fullClass} ${topSession && session.id === topSession.id ? 'top-marker' : ''} ${searchClass}" type="button" data-session-id="${esc(session.id)}" data-session-title="${esc(session.t)}" data-callout-label="${esc(calloutLabel)}" data-callout-match="${matchedAttr}" data-matched-group="${esc(group)}" data-group-index="${groupIdx}" title="${esc(title)}" style="width:${width}px;min-width:${width}px;${matchStyle}"><span class="sq-fill" style="height:${fill == null ? 35 : fill}%"></span>${fullMark}<span class="sq-tooltip">${esc(title)}</span></button>`;
       }).join('');
 
     // Flush callouts when entering a new day section
