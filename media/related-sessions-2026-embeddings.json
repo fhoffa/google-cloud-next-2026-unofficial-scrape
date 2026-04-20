@@ -7485,6 +7485,22 @@
       "sessionId": "3912300",
       "related": [
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.972,
+          "embeddingScore": 0.8129,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.4815,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913024",
           "title": "Operationalize AI: A blueprint for managing enterprise agents at scale",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913024/operationalize-ai-a-blueprint-for-managing-enterprise-agents-at-scale",
@@ -7544,22 +7560,6 @@
             "audience": true,
             "topicJaccard": 0.5333,
             "tokenOverlap": 0.3214,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912302",
-          "title": "Startup speed: Prototyping in Google AI Studio and scaling on Vertex AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912302/startup-speed-prototyping-in-google-ai-studio-and-scaling-on-vertex-ai",
-          "score": 0.9196,
-          "embeddingScore": 0.7672,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.3478,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -7634,17 +7634,17 @@
           }
         },
         {
-          "sessionId": "3908791",
-          "title": "AgentOps Cockpit: Architecting Agents at Scale with Governance-as-Code",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908791/agentops-cockpit-architecting-agents-at-scale-with-governance-as-code",
-          "score": 0.779,
-          "embeddingScore": 0.6959,
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.7792,
+          "embeddingScore": 0.7165,
           "signals": {
             "aiFocus": true,
             "theme": false,
-            "audience": true,
-            "topicJaccard": 0.4167,
-            "tokenOverlap": 0.1625,
+            "audience": false,
+            "topicJaccard": 0.4,
+            "tokenOverlap": 0.175,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -16272,6 +16272,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.8598,
+          "embeddingScore": 0.7905,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.4444,
+            "tokenOverlap": 0.2533,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913084",
           "title": "Build connected AI: Orchestrate tools and agents with registries and ADK",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913084/build-connected-ai-orchestrate-tools-and-agents-with-registries-and-adk",
@@ -16299,22 +16315,6 @@
             "audience": true,
             "topicJaccard": 0.1818,
             "tokenOverlap": 0.2099,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3911931",
-          "title": "Build and orchestrate enterprise agents with Gemini and Atlassian Rovo",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3911931/build-and-orchestrate-enterprise-agents-with-gemini-and-atlassian-rovo",
-          "score": 0.8396,
-          "embeddingScore": 0.784,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.2609,
-            "tokenOverlap": 0.2,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -19385,6 +19385,22 @@
       "sessionId": "3931994",
       "related": [
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.8104,
+          "embeddingScore": 0.719,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.0667,
+            "tokenOverlap": 0.1481,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909318",
           "title": "How we built an AI agent workforce to automate coding",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909318/how-we-built-an-ai-agent-workforce-to-automate-coding",
@@ -19444,22 +19460,6 @@
             "audience": true,
             "topicJaccard": 0.0667,
             "tokenOverlap": 0.0938,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3908805",
-          "title": "Architecting Enterprise GenAI: Building Production-Grade Agents on Vertex AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908805/architecting-enterprise-genai-building-production-grade-agents-on-vertex-ai",
-          "score": 0.7899,
-          "embeddingScore": 0.7047,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.0,
-            "tokenOverlap": 0.1042,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -22121,6 +22121,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.8717,
+          "embeddingScore": 0.724,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.253,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3890820",
           "title": "Demystifying evals at the frontier of agentic development",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3890820/demystifying-evals-at-the-frontier-of-agentic-development",
@@ -22164,22 +22180,6 @@
             "audience": false,
             "topicJaccard": 0.5,
             "tokenOverlap": 0.1928,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3920161",
-          "title": "Agent context engineering for production",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3920161/agent-context-engineering-for-production",
-          "score": 0.8253,
-          "embeddingScore": 0.7226,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.3125,
-            "tokenOverlap": 0.1807,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -22360,6 +22360,22 @@
       "sessionId": "3911904",
       "related": [
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.9681,
+          "embeddingScore": 0.7967,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.3273,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3911910",
           "title": "Build scalable AI-powered web apps with Angular",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3911910/build-scalable-ai-powered-web-apps-with-angular",
@@ -22419,22 +22435,6 @@
             "audience": true,
             "topicJaccard": 0.2,
             "tokenOverlap": 0.1429,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913068",
-          "title": "Complex workflows made easy with Gemini Enterprise agents",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913068/complex-workflows-made-easy-with-multi-agent-systems-on-gemini-enterprise",
-          "score": 0.8816,
-          "embeddingScore": 0.7835,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.4444,
-            "tokenOverlap": 0.1286,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -25335,22 +25335,6 @@
       "sessionId": "3912250",
       "related": [
         {
-          "sessionId": "3912249",
-          "title": "From silos to synergy: Architecting the AI-powered governments of tomorrow",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912249/from-silos-to-synergy-architecting-the-ai-powered-governments-of-tomorrow",
-          "score": 0.9217,
-          "embeddingScore": 0.7777,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.8,
-            "tokenOverlap": 0.4203,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912977",
           "title": "Gemini Enterprise: Building the connected enterprise",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912977/gemini-enterprise-building-the-connected-enterprise",
@@ -25410,6 +25394,22 @@
             "audience": false,
             "topicJaccard": 0.3529,
             "tokenOverlap": 0.2041,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913168",
+          "title": "Research to reality: Building the future with Gemini, Veo, and beyond",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913168/research-to-reality-building-the-future-with-gemini-veo-and-beyond",
+          "score": 0.7801,
+          "embeddingScore": 0.7083,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.2778,
+            "tokenOverlap": 0.2029,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -26063,6 +26063,22 @@
           }
         },
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.8534,
+          "embeddingScore": 0.7195,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.4545,
+            "tokenOverlap": 0.2321,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912252",
           "title": "AlloyDB AI in action: Powering next-gen search and intelligent agents",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912252/alloydb-ai-in-action-powering-next-gen-search-and-intelligent-agents",
@@ -26074,22 +26090,6 @@
             "audience": true,
             "topicJaccard": 0.8182,
             "tokenOverlap": 0.4464,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912295",
-          "title": "Build fast, run lean: Accelerate development with Gemini and Cloud Run",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912295/build-fast-run-lean-accelerate-development-with-gemini-and-cloud-run",
-          "score": 0.8451,
-          "embeddingScore": 0.7209,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.2941,
-            "tokenOverlap": 0.2321,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -28140,6 +28140,22 @@
       "sessionId": "3913025",
       "related": [
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.8542,
+          "embeddingScore": 0.6912,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.1607,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912987",
           "title": "Securing AI: Real-world lessons and a roadmap for proactive defense",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912987/securing-ai-real-world-lessons-and-a-roadmap-for-proactive-defense",
@@ -28200,22 +28216,6 @@
             "topicJaccard": 0.8333,
             "tokenOverlap": 0.1552,
             "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3920399",
-          "title": "Securing the AI Era",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3920399/securing-the-ai-era",
-          "score": 0.7895,
-          "embeddingScore": 0.6798,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.375,
-            "tokenOverlap": 0.1429,
-            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -29006,6 +29006,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9039,
+          "embeddingScore": 0.76,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.1786,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913150",
           "title": "Safeguard data in the AI era: The ultimate browser security strategy",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913150/safeguard-data-in-the-ai-era-the-ultimate-browser-security-strategy",
@@ -29049,22 +29065,6 @@
             "audience": true,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.15,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913163",
-          "title": "Beyond the buzz: How AI is actually transforming modern security",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913163/beyond-the-buzz-how-ai-is-actually-transforming-modern-security",
-          "score": 0.8287,
-          "embeddingScore": 0.6869,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6667,
-            "tokenOverlap": 0.1356,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -29856,6 +29856,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9424,
+          "embeddingScore": 0.7973,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.2027,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913042",
           "title": "Making Google Cloud private: A sovereign-by-design architecture",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913042/making-google-cloud-private-a-sovereign-by-design-architecture",
@@ -29899,22 +29915,6 @@
             "audience": true,
             "topicJaccard": 0.8333,
             "tokenOverlap": 0.2027,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913052",
-          "title": "Build secure-by-design applications for Google Cloud",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913052/build-secure-by-design-applications-for-google-cloud",
-          "score": 0.8732,
-          "embeddingScore": 0.7301,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6667,
-            "tokenOverlap": 0.1622,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -30552,6 +30552,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.8253,
+          "embeddingScore": 0.7101,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7143,
+            "tokenOverlap": 0.1455,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913031",
           "title": "Cryptographic proof: Ensuring confidentiality, sovereignty, and control",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913031/cryptographic-proof-ensuring-confidentiality-sovereignty-and-control",
@@ -30580,22 +30596,6 @@
             "topicJaccard": 0.7143,
             "tokenOverlap": 0.1613,
             "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913033",
-          "title": "Sovereign AI in action: Planning your Sovereign AI roadmap on Google Cloud",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913033/sovereign-ai-in-action-planning-your-sovereign-ai-roadmap-on-google-cloud",
-          "score": 0.7658,
-          "embeddingScore": 0.7447,
-          "signals": {
-            "aiFocus": false,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.2,
-            "tokenOverlap": 0.1818,
-            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -31859,18 +31859,18 @@
           }
         },
         {
-          "sessionId": "3912271",
-          "title": "Vibe coding 101: Navigating the developer experience",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912271/vibe-coding-101-navigating-the-developer-experience",
-          "score": 0.8183,
-          "embeddingScore": 0.6832,
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.8254,
+          "embeddingScore": 0.6944,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.5,
-            "tokenOverlap": 0.2034,
-            "sessionCategory": true,
+            "topicJaccard": 0.7143,
+            "tokenOverlap": 0.1636,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -31997,6 +31997,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.8964,
+          "embeddingScore": 0.7472,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.3438,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909237",
           "title": "Startup coding lab: Accelerate with Gemini AI & Code Assist",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909237/startup-coding-lab-accelerate-with-gemini-ai-code-assist",
@@ -32025,22 +32041,6 @@
             "topicJaccard": 1.0,
             "tokenOverlap": 0.3906,
             "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912302",
-          "title": "Startup speed: Prototyping in Google AI Studio and scaling on Vertex AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912302/startup-speed-prototyping-in-google-ai-studio-and-scaling-on-vertex-ai",
-          "score": 0.8683,
-          "embeddingScore": 0.7197,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.8667,
-            "tokenOverlap": 0.3333,
-            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -34579,17 +34579,17 @@
           }
         },
         {
-          "sessionId": "3912249",
-          "title": "From silos to synergy: Architecting the AI-powered governments of tomorrow",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912249/from-silos-to-synergy-architecting-the-ai-powered-governments-of-tomorrow",
-          "score": 0.8626,
-          "embeddingScore": 0.7594,
+          "sessionId": "3911939",
+          "title": "Scale impact: Deploy AI developer tools in your organization",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911939/scale-impact-deploy-ai-developer-tools-in-your-organization",
+          "score": 0.8612,
+          "embeddingScore": 0.75,
           "signals": {
             "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.6875,
-            "tokenOverlap": 0.3385,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.1304,
+            "tokenOverlap": 0.1692,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -35652,6 +35652,22 @@
           }
         },
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.6312,
+          "embeddingScore": 0.5505,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.375,
+            "tokenOverlap": 0.1636,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3911904",
           "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3911904/build-production-ready-and-hybrid-ai-apps-with-gemini-and-firebase",
@@ -35679,22 +35695,6 @@
             "audience": true,
             "topicJaccard": 0.0,
             "tokenOverlap": 0.0556,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3911925",
-          "title": "Vibe Coding with enterprised-approved App Backend using Firebase and Application Design Center",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3911925/vibe-coding-with-enterprised-approved-app-backend-using-firebase-and-application-design-center",
-          "score": 0.5801,
-          "embeddingScore": 0.5352,
-          "signals": {
-            "aiFocus": false,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.3,
-            "tokenOverlap": 0.1395,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -37676,6 +37676,22 @@
           }
         },
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.9011,
+          "embeddingScore": 0.7943,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5,
+            "tokenOverlap": 0.2364,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3911904",
           "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3911904/build-production-ready-and-hybrid-ai-apps-with-gemini-and-firebase",
@@ -37719,22 +37735,6 @@
             "audience": true,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.2222,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912237",
-          "title": "NoSQL for modern apps and AI: The future of Memorystore, Firestore, and Bigtable",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912237/nosql-for-modern-apps-and-ai-the-future-of-memorystore-firestore-and-bigtable",
-          "score": 0.8405,
-          "embeddingScore": 0.7341,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.45,
-            "tokenOverlap": 0.2879,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -40327,6 +40327,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.7943,
+          "embeddingScore": 0.7103,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.0625,
+            "tokenOverlap": 0.1053,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3890819",
           "title": "Long-running agents: Lessons from the enterprise frontier",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3890819/long-running-agents-lessons-from-the-enterprise-frontier",
@@ -40354,22 +40370,6 @@
             "audience": false,
             "topicJaccard": 0.1429,
             "tokenOverlap": 0.0921,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913084",
-          "title": "Build connected AI: Orchestrate tools and agents with registries and ADK",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913084/build-connected-ai-orchestrate-tools-and-agents-with-registries-and-adk",
-          "score": 0.7637,
-          "embeddingScore": 0.6515,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.2,
-            "tokenOverlap": 0.1053,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -41821,6 +41821,91 @@
         }
       ]
     },
+    "3920164": {
+      "sessionId": "3920164",
+      "related": [
+        {
+          "sessionId": "3909223",
+          "title": "Go agentic: Build & scale autonomous workflows for startups",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909223/go-agentic-build-scale-autonomous-workflows-for-startups",
+          "score": 0.9788,
+          "embeddingScore": 0.8418,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.5,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912300",
+          "title": "Agents in action: Startup breakthroughs across industries",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912300/agents-in-action-startup-breakthroughs-across-industries",
+          "score": 0.972,
+          "embeddingScore": 0.8129,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.4815,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912302",
+          "title": "Startup speed: Prototyping in Google AI Studio and scaling on Vertex AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912302/startup-speed-prototyping-in-google-ai-studio-and-scaling-on-vertex-ai",
+          "score": 0.9597,
+          "embeddingScore": 0.7837,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.4203,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909229",
+          "title": "Startup workshop: Test, validate & scale your AI agents",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909229/startup-workshop-test-validate-scale-your-ai-agents",
+          "score": 0.9052,
+          "embeddingScore": 0.7701,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.463,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909245",
+          "title": "DeepMind startup workshop: Building agents with Gemini",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909245/deepmind-startup-workshop-building-agents-with-gemini",
+          "score": 0.8964,
+          "embeddingScore": 0.7472,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.3438,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        }
+      ]
+    },
     "3913113": {
       "sessionId": "3913113",
       "related": [
@@ -42161,91 +42246,6 @@
         }
       ]
     },
-    "3912249": {
-      "sessionId": "3912249",
-      "related": [
-        {
-          "sessionId": "3912250",
-          "title": "Building the AI-ready and intelligent campus of tomorrow, today",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912250/building-the-ai-ready-and-intelligent-campus-of-tomorrow-today",
-          "score": 0.9217,
-          "embeddingScore": 0.7777,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.8,
-            "tokenOverlap": 0.4203,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913070",
-          "title": "Govern your agents: Architecting a secure agentic ecosystem with Vertex AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913070/govern-your-agents-architecting-a-secure-agentic-ecosystem-with-vertex-ai",
-          "score": 0.7939,
-          "embeddingScore": 0.7164,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.375,
-            "tokenOverlap": 0.2,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "4037801",
-          "title": "Mission Talk: Scaling Secure GenAI with GAILFORCE: Data Silos to Insights",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/4037801/mission-talk-scaling-secure-genai-with-gailforce-data-silos-to-insights",
-          "score": 0.7846,
-          "embeddingScore": 0.7208,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.1111,
-            "tokenOverlap": 0.1429,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3908671",
-          "title": "Architecting the future: Enterprise-scale agentic AI platforms for energy",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908671/architecting-the-future-enterprise-scale-agentic-ai-platforms-for-energy",
-          "score": 0.7755,
-          "embeddingScore": 0.6785,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.3448,
-            "tokenOverlap": 0.2258,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913169",
-          "title": "Sovereign-ready infrastructure: Architecting workloads for the public sector",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913169/sovereign-ready-infrastructure-architecting-workloads-for-the-public-sector",
-          "score": 0.7671,
-          "embeddingScore": 0.6801,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.125,
-            "tokenOverlap": 0.0896,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        }
-      ]
-    },
     "3913064": {
       "sessionId": "3913064",
       "related": [
@@ -42495,91 +42495,6 @@
             "audience": true,
             "topicJaccard": 0.0,
             "tokenOverlap": 0.1042,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        }
-      ]
-    },
-    "3908800": {
-      "sessionId": "3908800",
-      "related": [
-        {
-          "sessionId": "3909237",
-          "title": "Startup coding lab: Accelerate with Gemini AI & Code Assist",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909237/startup-coding-lab-accelerate-with-gemini-ai-code-assist",
-          "score": 0.8264,
-          "embeddingScore": 0.7529,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.0556,
-            "tokenOverlap": 0.2031,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912916",
-          "title": "Gemini in regulated sectors: Accelerate human impact with secure AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912916/gemini-in-regulated-sectors-accelerate-human-impact-with-secure-ai",
-          "score": 0.824,
-          "embeddingScore": 0.7779,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.0588,
-            "tokenOverlap": 0.25,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912286",
-          "title": "Red, green, refactor, secure: The new loop for AI-assisted development",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912286/red-green-refactor-secure-the-new-loop-for-ai-assisted-development",
-          "score": 0.7923,
-          "embeddingScore": 0.7102,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.1818,
-            "tokenOverlap": 0.2239,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3908798",
-          "title": "Architecting a multi-agentic platform for hundreds of thousands users",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908798/architecting-a-multi-agentic-platform-for-hundreds-of-thousands-users",
-          "score": 0.7727,
-          "embeddingScore": 0.6268,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2188,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913125",
-          "title": "Supercharge your SRE team with Gemini Cloud Assist",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913125/supercharge-your-sre-team-with-gemini-cloud-assist",
-          "score": 0.7659,
-          "embeddingScore": 0.7241,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.0667,
-            "tokenOverlap": 0.1562,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -45800,16 +45715,16 @@
         },
         {
           "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "title": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.8888,
+          "score": 0.888,
           "embeddingScore": 0.7524,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6,
-            "tokenOverlap": 0.4079,
+            "tokenOverlap": 0.3924,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -46075,6 +45990,22 @@
       "sessionId": "3909223",
       "related": [
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.9788,
+          "embeddingScore": 0.8418,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.5,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909229",
           "title": "Startup workshop: Test, validate & scale your AI agents",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909229/startup-workshop-test-validate-scale-your-ai-agents",
@@ -46134,22 +46065,6 @@
             "audience": true,
             "topicJaccard": 0.3158,
             "tokenOverlap": 0.2329,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913024",
-          "title": "Operationalize AI: A blueprint for managing enterprise agents at scale",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913024/operationalize-ai-a-blueprint-for-managing-enterprise-agents-at-scale",
-          "score": 0.8508,
-          "embeddingScore": 0.7437,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.5625,
-            "tokenOverlap": 0.2687,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -48047,16 +47962,16 @@
         },
         {
           "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "title": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.7873,
+          "score": 0.787,
           "embeddingScore": 0.727,
           "signals": {
             "aiFocus": true,
             "theme": false,
             "audience": false,
             "topicJaccard": 0.1333,
-            "tokenOverlap": 0.1447,
+            "tokenOverlap": 0.1392,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -49306,16 +49221,16 @@
       "related": [
         {
           "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "title": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.8259,
+          "score": 0.8253,
           "embeddingScore": 0.7045,
           "signals": {
             "aiFocus": true,
             "theme": false,
             "audience": false,
             "topicJaccard": 1.0,
-            "tokenOverlap": 0.3289,
+            "tokenOverlap": 0.3165,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -49439,16 +49354,16 @@
         },
         {
           "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "title": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.7021,
+          "score": 0.7018,
           "embeddingScore": 0.6361,
           "signals": {
             "aiFocus": false,
             "theme": true,
             "audience": false,
             "topicJaccard": 0.25,
-            "tokenOverlap": 0.1184,
+            "tokenOverlap": 0.1139,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -54252,16 +54167,16 @@
         },
         {
           "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
+          "title": "Optimize AI for less : How Moloco optimized TPU on GKE for maximum performance gain",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.8845,
+          "score": 0.8841,
           "embeddingScore": 0.7752,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.0625,
-            "tokenOverlap": 0.2105,
+            "tokenOverlap": 0.2025,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -54761,6 +54676,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9368,
+          "embeddingScore": 0.8153,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.3077,
+            "tokenOverlap": 0.1594,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913031",
           "title": "Cryptographic proof: Ensuring confidentiality, sovereignty, and control",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913031/cryptographic-proof-ensuring-confidentiality-sovereignty-and-control",
@@ -54804,22 +54735,6 @@
             "audience": false,
             "topicJaccard": 0.3077,
             "tokenOverlap": 0.1884,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912985",
-          "title": "Secure AI agents from development to runtime",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912985/secure-ai-agents-from-development-to-runtime",
-          "score": 0.899,
-          "embeddingScore": 0.779,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.3077,
-            "tokenOverlap": 0.1304,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -59505,6 +59420,22 @@
       "sessionId": "3913160",
       "related": [
         {
+          "sessionId": "3913163",
+          "title": "Beyond the buzz: How AI is actually transforming modern security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913163/beyond-the-buzz-how-ai-is-actually-transforming-modern-security",
+          "score": 0.9508,
+          "embeddingScore": 0.7874,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.1695,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913161",
           "title": "AI SOC vs. AI in your SOC: What is real today and what is coming",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913161/ai-soc-vs.-ai-in-your-soc-what-is-real-today-and-what-is-coming",
@@ -59516,6 +59447,38 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.1525,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912983",
+          "title": "Agentic defense: Security operations at machine speed",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912983/agentic-defense-security-operations-at-machine-speed",
+          "score": 0.8974,
+          "embeddingScore": 0.7431,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.8333,
+            "tokenOverlap": 0.1864,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913082",
+          "title": "The 2026 AI threat landscape",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913082/the-2026-ai-threat-landscape",
+          "score": 0.8728,
+          "embeddingScore": 0.7095,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.1667,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -59533,54 +59496,6 @@
             "topicJaccard": 0.5556,
             "tokenOverlap": 0.2542,
             "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3920395",
-          "title": "Agentic SOC Experience",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3920395/agentic-soc-experience",
-          "score": 0.7831,
-          "embeddingScore": 0.6686,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.4,
-            "tokenOverlap": 0.2097,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3920452",
-          "title": "Agentic SOC Experience",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3920452/agentic-soc-experience",
-          "score": 0.7831,
-          "embeddingScore": 0.6686,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.4,
-            "tokenOverlap": 0.2097,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3920552",
-          "title": "Agentic SOC Experience",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3920552/agentic-soc-experience",
-          "score": 0.7829,
-          "embeddingScore": 0.6684,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.4,
-            "tokenOverlap": 0.2097,
-            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -62136,6 +62051,91 @@
         }
       ]
     },
+    "3908788": {
+      "sessionId": "3908788",
+      "related": [
+        {
+          "sessionId": "3912925",
+          "title": "The GKE inference playbook: Optimize cost and performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912925/the-gke-inference-playbook-optimize-cost-and-performance",
+          "score": 0.8983,
+          "embeddingScore": 0.7612,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6875,
+            "tokenOverlap": 0.3165,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912951",
+          "title": "AI at Snap's scale: Building a global compute fabric with GKE custom compute classes",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912951/ai-at-snap's-scale-building-a-global-compute-fabric-with-gke-custom-compute-classes",
+          "score": 0.8902,
+          "embeddingScore": 0.7491,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7333,
+            "tokenOverlap": 0.3418,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912940",
+          "title": "GKE efficiency master class: Architecting for optimal price-performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
+          "score": 0.888,
+          "embeddingScore": 0.7524,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6,
+            "tokenOverlap": 0.3924,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912936",
+          "title": "Building an AI supercomputer: Scale Slurm workloads on GKE",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912936/building-an-ai-supercomputer-scale-slurm-workloads-on-gke",
+          "score": 0.8868,
+          "embeddingScore": 0.757,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5556,
+            "tokenOverlap": 0.3291,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909338",
+          "title": "LLM Inference on GKE for the rest of us",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909338/llm-inference-on-gke-for-the-rest-of-us",
+          "score": 0.8841,
+          "embeddingScore": 0.7752,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.0625,
+            "tokenOverlap": 0.2025,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        }
+      ]
+    },
     "3912337": {
       "sessionId": "3912337",
       "related": [
@@ -63734,17 +63734,17 @@
           }
         },
         {
-          "sessionId": "3912230",
-          "title": "Navigate the agentic shift in software development with Google",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912230/navigate-the-agentic-shift-in-software-development-with-google",
-          "score": 0.8222,
-          "embeddingScore": 0.6886,
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.8341,
+          "embeddingScore": 0.6773,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.5,
-            "tokenOverlap": 0.1719,
+            "topicJaccard": 0.8333,
+            "tokenOverlap": 0.2364,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -64823,6 +64823,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.8733,
+          "embeddingScore": 0.7721,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.2667,
+            "tokenOverlap": 0.2037,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912261",
           "title": "The Agent Factory: The fastest path to production-ready agents",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912261/the-agent-factory-the-fastest-path-to-production-ready-agents",
@@ -64834,22 +64850,6 @@
             "audience": false,
             "topicJaccard": 0.5,
             "tokenOverlap": 0.2424,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913028",
-          "title": "What's new in Google Cloud's agent platform",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913028/what's-new-in-google-cloud's-agent-platform",
-          "score": 0.8629,
-          "embeddingScore": 0.7275,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5556,
-            "tokenOverlap": 0.1413,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -67867,6 +67867,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.8779,
+          "embeddingScore": 0.7448,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5,
+            "tokenOverlap": 0.1618,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912971",
           "title": "Built-in defense: The next evolution of Security Command Center for AI-era",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912971/built-in-defense-the-next-evolution-of-security-command-center-for-ai-era",
@@ -67894,22 +67910,6 @@
             "audience": true,
             "topicJaccard": 0.25,
             "tokenOverlap": 0.1912,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3902758",
-          "title": "The AI-ready enterprise: Securing access and data in an AI-first world",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3902758/the-ai-ready-enterprise-securing-access-and-data-in-an-ai-first-world",
-          "score": 0.8491,
-          "embeddingScore": 0.7265,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.1531,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -68250,91 +68250,6 @@
             "audience": true,
             "topicJaccard": 0.5,
             "tokenOverlap": 0.1875,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        }
-      ]
-    },
-    "3908788": {
-      "sessionId": "3908788",
-      "related": [
-        {
-          "sessionId": "3912925",
-          "title": "The GKE inference playbook: Optimize cost and performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912925/the-gke-inference-playbook-optimize-cost-and-performance",
-          "score": 0.8989,
-          "embeddingScore": 0.7612,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6875,
-            "tokenOverlap": 0.3289,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912951",
-          "title": "AI at Snap's scale: Building a global compute fabric with GKE custom compute classes",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912951/ai-at-snap's-scale-building-a-global-compute-fabric-with-gke-custom-compute-classes",
-          "score": 0.8909,
-          "embeddingScore": 0.7491,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7333,
-            "tokenOverlap": 0.3553,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912940",
-          "title": "GKE efficiency master class: Architecting for optimal price-performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
-          "score": 0.8888,
-          "embeddingScore": 0.7524,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6,
-            "tokenOverlap": 0.4079,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912936",
-          "title": "Building an AI supercomputer: Scale Slurm workloads on GKE",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912936/building-an-ai-supercomputer-scale-slurm-workloads-on-gke",
-          "score": 0.8868,
-          "embeddingScore": 0.757,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5556,
-            "tokenOverlap": 0.3289,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909338",
-          "title": "LLM Inference on GKE for the rest of us",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909338/llm-inference-on-gke-for-the-rest-of-us",
-          "score": 0.8845,
-          "embeddingScore": 0.7752,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.0625,
-            "tokenOverlap": 0.2105,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -69041,22 +68956,6 @@
           }
         },
         {
-          "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.7683,
-          "embeddingScore": 0.6857,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.0,
-            "tokenOverlap": 0.0526,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912936",
           "title": "Building an AI supercomputer: Scale Slurm workloads on GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912936/building-an-ai-supercomputer-scale-slurm-workloads-on-gke",
@@ -69100,6 +68999,22 @@
             "audience": true,
             "topicJaccard": 0.0,
             "tokenOverlap": 0.1017,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913139",
+          "title": "Hyperdisk: Optimize block storage for AI and enterprise workloads",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913139/hyperdisk-optimize-block-storage-for-ai-and-enterprise-workloads",
+          "score": 0.7217,
+          "embeddingScore": 0.6378,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.0,
+            "tokenOverlap": 0.0769,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -69567,22 +69482,6 @@
           }
         },
         {
-          "sessionId": "3908800",
-          "title": "From weeks to minutes: Build a secure dev sandbox on Google Cloud Platform withGemini Code Assist",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908800/from-weeks-to-minutes-build-a-secure-dev-sandbox-on-google-cloud-platform-withgemini-code-assist",
-          "score": 0.7017,
-          "embeddingScore": 0.6366,
-          "signals": {
-            "aiFocus": false,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.6667,
-            "tokenOverlap": 0.2031,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3908777",
           "title": "Banking on intelligence: scaling the future of wealth with Citi and Google Cloud",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908777/banking-on-intelligence-scaling-the-future-of-wealth-with-citi-and-google-cloud",
@@ -69611,6 +69510,22 @@
             "topicJaccard": 0.1538,
             "tokenOverlap": 0.1389,
             "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3908804",
+          "title": "Beyond the prototype: Scaling production-grade agents with Gemini",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908804/beyond-the-prototype-scaling-production-grade-agents-with-gemini",
+          "score": 0.6924,
+          "embeddingScore": 0.6245,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.2586,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -71421,6 +71336,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9622,
+          "embeddingScore": 0.8459,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.4286,
+            "tokenOverlap": 0.2105,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913031",
           "title": "Cryptographic proof: Ensuring confidentiality, sovereignty, and control",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913031/cryptographic-proof-ensuring-confidentiality-sovereignty-and-control",
@@ -71464,22 +71395,6 @@
             "audience": true,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.1754,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913162",
-          "title": "AI on the frontlines: Experiences leveraging Gemini",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913162/ai-on-the-frontlines-experiences-leveraging-gemini",
-          "score": 0.8984,
-          "embeddingScore": 0.7355,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.1579,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -72457,22 +72372,6 @@
           }
         },
         {
-          "sessionId": "3902759",
-          "title": "The agentic era: Governing an invisible AI workforce",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3902759/the-agentic-era-governing-an-invisible-ai-workforce",
-          "score": 0.9104,
-          "embeddingScore": 0.7801,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5455,
-            "tokenOverlap": 0.3511,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3895091",
           "title": "Building enterprise-grade AI agents: How enterprises scale business with Agentic AI on Google Cloud",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3895091/building-enterprise-grade-ai-agents-how-enterprises-scale-business-with-agentic-ai-on-google-cloud",
@@ -72500,6 +72399,22 @@
             "audience": true,
             "topicJaccard": 0.2,
             "tokenOverlap": 0.2024,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913099",
+          "title": "Simplify AI identity, governance and administration with agentic cross-cloud network",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913099/simplify-ai-identity-governance-and-administration-with-agentic-cross-cloud-network",
+          "score": 0.8617,
+          "embeddingScore": 0.7954,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": true,
+            "topicJaccard": 0.1818,
+            "tokenOverlap": 0.1071,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -76590,6 +76505,22 @@
       "sessionId": "3912302",
       "related": [
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.9597,
+          "embeddingScore": 0.7837,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.4203,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909236",
           "title": "Startup AI MVP workshop: Building with Vertex AI & AI Studio",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909236/startup-ai-mvp-workshop-building-with-vertex-ai-ai-studio",
@@ -76646,22 +76577,6 @@
           "signals": {
             "aiFocus": true,
             "theme": true,
-            "audience": false,
-            "topicJaccard": 0.8667,
-            "tokenOverlap": 0.3478,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909237",
-          "title": "Startup coding lab: Accelerate with Gemini AI & Code Assist",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909237/startup-coding-lab-accelerate-with-gemini-ai-code-assist",
-          "score": 0.8958,
-          "embeddingScore": 0.7964,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
             "audience": false,
             "topicJaccard": 0.8667,
             "tokenOverlap": 0.3478,
@@ -76808,6 +76723,22 @@
           }
         },
         {
+          "sessionId": "3920164",
+          "title": "From prompts to production: Startup multi-agent workflows",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920164/from-prompts-to-production-startup-multi-agent-workflows",
+          "score": 0.9052,
+          "embeddingScore": 0.7701,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.8667,
+            "tokenOverlap": 0.463,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912302",
           "title": "Startup speed: Prototyping in Google AI Studio and scaling on Vertex AI",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912302/startup-speed-prototyping-in-google-ai-studio-and-scaling-on-vertex-ai",
@@ -76820,22 +76751,6 @@
             "topicJaccard": 0.8667,
             "tokenOverlap": 0.3478,
             "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909237",
-          "title": "Startup coding lab: Accelerate with Gemini AI & Code Assist",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909237/startup-coding-lab-accelerate-with-gemini-ai-code-assist",
-          "score": 0.9028,
-          "embeddingScore": 0.7533,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.4906,
-            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -77950,6 +77865,22 @@
       "sessionId": "3913100",
       "related": [
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 1.0277,
+          "embeddingScore": 0.8827,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.2,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913016",
           "title": "Secure AI innovation with next-gen confidentiality and privacy",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913016/secure-ai-innovation-with-next-gen-confidentiality-and-privacy",
@@ -78009,22 +77940,6 @@
             "audience": true,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.1333,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913155",
-          "title": "Unlock enterprise data and drive AI adoption with Sensitive Data Protection",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913155/unlock-enterprise-data-and-drive-ai-adoption-with-sensitive-data-protection",
-          "score": 0.9234,
-          "embeddingScore": 0.7779,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6667,
-            "tokenOverlap": 0.2097,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -80405,91 +80320,6 @@
             "audience": false,
             "topicJaccard": 0.4583,
             "tokenOverlap": 0.3699,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        }
-      ]
-    },
-    "3902759": {
-      "sessionId": "3902759",
-      "related": [
-        {
-          "sessionId": "3902757",
-          "title": "Securing Agentic AI at scale: What Google and Palo Alto Networks are building together",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3902757/securing-and-managing-agentic-ai-at-scale-what-google-and-palo-alto-networks-are-building-together",
-          "score": 0.9104,
-          "embeddingScore": 0.7801,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5455,
-            "tokenOverlap": 0.3511,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913029",
-          "title": "Marketplace: Enabling the era of the agentic enterprise",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913029/marketplace-enabling-the-era-of-the-agentic-enterprise",
-          "score": 0.8572,
-          "embeddingScore": 0.751,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.2234,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3908768",
-          "title": "The agent governance pattern: Architecting a secure enterprise AI workforce",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908768/the-agent-governance-pattern-architecting-a-secure-enterprise-ai-workforce",
-          "score": 0.8472,
-          "embeddingScore": 0.7803,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.1667,
-            "tokenOverlap": 0.1383,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913085",
-          "title": "Agentic playbook: Scale and govern AI agents with Gemini Enterprise",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913085/agentic-playbook-scale-and-govern-ai-agents-with-gemini-enterprise",
-          "score": 0.8386,
-          "embeddingScore": 0.7652,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.1176,
-            "tokenOverlap": 0.1277,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913070",
-          "title": "Govern your agents: Architecting a secure agentic ecosystem with Vertex AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913070/govern-your-agents-architecting-a-secure-agentic-ecosystem-with-vertex-ai",
-          "score": 0.8298,
-          "embeddingScore": 0.7575,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.2857,
-            "tokenOverlap": 0.2021,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -84968,6 +84798,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.7405,
+          "embeddingScore": 0.6613,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.25,
+            "tokenOverlap": 0.0847,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912921",
           "title": "Achieve sovereign control over your AI with Google Workspace",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912921/achieve-sovereign-control-over-your-ai-with-google-workspace",
@@ -84979,22 +84825,6 @@
             "audience": false,
             "topicJaccard": 0.1667,
             "tokenOverlap": 0.129,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3908828",
-          "title": "Architecting Gemini Enterprise for regulated industries",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908828/architecting-gemini-enterprise-for-regulated-industries",
-          "score": 0.6971,
-          "embeddingScore": 0.6132,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.2857,
-            "tokenOverlap": 0.1356,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -86535,22 +86365,6 @@
       "sessionId": "3912336",
       "related": [
         {
-          "sessionId": "3912249",
-          "title": "From silos to synergy: Architecting the AI-powered governments of tomorrow",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912249/from-silos-to-synergy-architecting-the-ai-powered-governments-of-tomorrow",
-          "score": 0.9384,
-          "embeddingScore": 0.7863,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.9286,
-            "tokenOverlap": 0.4267,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912250",
           "title": "Building the AI-ready and intelligent campus of tomorrow, today",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912250/building-the-ai-ready-and-intelligent-campus-of-tomorrow-today",
@@ -86611,6 +86425,22 @@
             "topicJaccard": 0.3684,
             "tokenOverlap": 0.32,
             "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913013",
+          "title": "Beyond the hype: How leading businesses win with Gemini Enterprise",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913013/beyond-the-hype-how-leading-businesses-win-with-gemini-enterprise",
+          "score": 0.8715,
+          "embeddingScore": 0.7267,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5882,
+            "tokenOverlap": 0.2895,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -86769,18 +86599,18 @@
           }
         },
         {
-          "sessionId": "3902759",
-          "title": "The agentic era: Governing an invisible AI workforce",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3902759/the-agentic-era-governing-an-invisible-ai-workforce",
-          "score": 0.1183,
+          "sessionId": "3920481",
+          "title": "The agentic era: how AI is reshaping medical imaging discovery at scale",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920481/the-agentic-era-how-ai-is-reshaping-medical-imaging-discovery-at-scale",
+          "score": 0.1164,
           "embeddingScore": 0.0,
           "signals": {
             "aiFocus": true,
             "theme": true,
-            "audience": false,
-            "topicJaccard": 0.4375,
-            "tokenOverlap": 0.3404,
-            "sessionCategory": true,
+            "audience": true,
+            "topicJaccard": 0.375,
+            "tokenOverlap": 0.2785,
+            "sessionCategory": false,
             "usedEmbedding": false
           }
         }
@@ -88012,6 +87842,22 @@
           }
         },
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.8363,
+          "embeddingScore": 0.6962,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5556,
+            "tokenOverlap": 0.2364,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912269",
           "title": "Catching the vibe: Build next-gen AI platforms with Firestore",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912269/catching-the-vibe-build-next-gen-ai-platforms-with-firestore",
@@ -88039,22 +87885,6 @@
             "audience": true,
             "topicJaccard": 0.5556,
             "tokenOverlap": 0.2407,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3911904",
-          "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3911904/build-production-ready-and-hybrid-ai-apps-with-gemini-and-firebase",
-          "score": 0.8252,
-          "embeddingScore": 0.683,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5556,
-            "tokenOverlap": 0.2778,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -89032,6 +88862,22 @@
           }
         },
         {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9458,
+          "embeddingScore": 0.7811,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.1935,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913092",
           "title": "Context matters: Sensitive Data Protection and data security",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913092/context-matters-sensitive-data-protection-and-data-security",
@@ -89059,22 +88905,6 @@
             "audience": false,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.2,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913020",
-          "title": "Your data, your rules: The verifiable and private future powered with TEEs",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913020/your-data-your-rules-the-verifiable-and-private-future-powered-with-tees",
-          "score": 0.9007,
-          "embeddingScore": 0.756,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6667,
-            "tokenOverlap": 0.1944,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -90700,6 +90530,22 @@
       "sessionId": "3911925",
       "related": [
         {
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.9064,
+          "embeddingScore": 0.7935,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": true,
+            "topicJaccard": 0.5556,
+            "tokenOverlap": 0.2909,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912271",
           "title": "Vibe coding 101: Navigating the developer experience",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912271/vibe-coding-101-navigating-the-developer-experience",
@@ -90759,22 +90605,6 @@
             "audience": true,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.1887,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3911936",
-          "title": "Empower your AI agents to automate deployments with Cloud Run",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3911936/empower-your-ai-agents-to-automate-deployments-with-cloud-run",
-          "score": 0.8069,
-          "embeddingScore": 0.6951,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.3846,
-            "tokenOverlap": 0.2742,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -90860,6 +90690,91 @@
             "audience": false,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.2436,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        }
+      ]
+    },
+    "3911933": {
+      "sessionId": "3911933",
+      "related": [
+        {
+          "sessionId": "3911904",
+          "title": "Build production-ready and hybrid AI apps with Gemini and Firebase",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911904/build-production-ready-and-hybrid-ai-apps-with-gemini-and-firebase",
+          "score": 0.9681,
+          "embeddingScore": 0.7967,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.3273,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912230",
+          "title": "Navigate the agentic shift in software development with Google",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912230/navigate-the-agentic-shift-in-software-development-with-google",
+          "score": 0.9092,
+          "embeddingScore": 0.7782,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.4444,
+            "tokenOverlap": 0.1875,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3911925",
+          "title": "Vibe Coding with enterprised-approved App Backend using Firebase and Application Design Center",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911925/vibe-coding-with-enterprised-approved-app-backend-using-firebase-and-application-design-center",
+          "score": 0.9064,
+          "embeddingScore": 0.7935,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": true,
+            "topicJaccard": 0.5556,
+            "tokenOverlap": 0.2909,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3911909",
+          "title": "Fast-track the future of apps with Firebase",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911909/fast-track-the-future-of-apps-with-firebase",
+          "score": 0.9011,
+          "embeddingScore": 0.7943,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5,
+            "tokenOverlap": 0.2364,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3911910",
+          "title": "Build scalable AI-powered web apps with Angular",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911910/build-scalable-ai-powered-web-apps-with-angular",
+          "score": 0.8744,
+          "embeddingScore": 0.7229,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7143,
+            "tokenOverlap": 0.2727,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -91752,50 +91667,50 @@
           }
         },
         {
-          "sessionId": "3912218",
-          "title": "Cloud Run 101: How to get started",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912218/cloud-run-101-how-to-get-started",
-          "score": 0.8316,
-          "embeddingScore": 0.6992,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.4286,
-            "tokenOverlap": 0.234,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912207",
-          "title": "Deep dive into the evolution of hybrid inference",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912207/deep-dive-into-the-evolution-of-hybrid-inference",
-          "score": 0.8301,
-          "embeddingScore": 0.7223,
+          "sessionId": "3911933",
+          "title": "Vibed into reality: Bring your ideas to life with Firebase and Google AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911933/vibed-into-reality-bring-your-ideas-to-life-with-firebase-and-google-ai",
+          "score": 0.8151,
+          "embeddingScore": 0.7329,
           "signals": {
             "aiFocus": false,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.5,
-            "tokenOverlap": 0.2553,
-            "sessionCategory": true,
+            "topicJaccard": 0.3846,
+            "tokenOverlap": 0.1818,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         },
         {
-          "sessionId": "3912271",
-          "title": "Vibe coding 101: Navigating the developer experience",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912271/vibe-coding-101-navigating-the-developer-experience",
-          "score": 0.8214,
-          "embeddingScore": 0.7189,
+          "sessionId": "3913059",
+          "title": "Unify full-stack observability with Firebase Crashlytics on Google Cloud",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913059/unify-full-stack-observability-with-firebase-crashlytics-on-google-cloud",
+          "score": 0.8038,
+          "embeddingScore": 0.7286,
           "signals": {
             "aiFocus": false,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.4,
-            "tokenOverlap": 0.2712,
-            "sessionCategory": true,
+            "topicJaccard": 0.25,
+            "tokenOverlap": 0.2037,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3911925",
+          "title": "Vibe Coding with enterprised-approved App Backend using Firebase and Application Design Center",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911925/vibe-coding-with-enterprised-approved-app-backend-using-firebase-and-application-design-center",
+          "score": 0.7822,
+          "embeddingScore": 0.7376,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": true,
+            "topicJaccard": 0.25,
+            "tokenOverlap": 0.1915,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -94266,9 +94181,110 @@
         }
       ]
     },
+    "3912986": {
+      "sessionId": "3912986",
+      "related": [
+        {
+          "sessionId": "3913100",
+          "title": "Strictly confidential: Supercharging AI without spilling secrets",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913100/strictly-confidential-supercharging-ai-without-spilling-secrets",
+          "score": 1.0277,
+          "embeddingScore": 0.8827,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.2,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913155",
+          "title": "Unlock enterprise data and drive AI adoption with Sensitive Data Protection",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913155/unlock-enterprise-data-and-drive-ai-adoption-with-sensitive-data-protection",
+          "score": 0.9458,
+          "embeddingScore": 0.7811,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.1935,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913020",
+          "title": "Your data, your rules: The verifiable and private future powered with TEEs",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913020/your-data-your-rules-the-verifiable-and-private-future-powered-with-tees",
+          "score": 0.9254,
+          "embeddingScore": 0.7807,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.1944,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913011",
+          "title": "Navigating the new frontier: AI-driven security strategies",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913011/navigating-the-new-frontier-ai-driven-security-strategies",
+          "score": 0.9157,
+          "embeddingScore": 0.7638,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.8333,
+            "tokenOverlap": 0.1379,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913092",
+          "title": "Context matters: Sensitive Data Protection and data security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913092/context-matters-sensitive-data-protection-and-data-security",
+          "score": 0.9039,
+          "embeddingScore": 0.76,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.1786,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        }
+      ]
+    },
     "3913020": {
       "sessionId": "3913020",
       "related": [
+        {
+          "sessionId": "3912986",
+          "title": "Your data, your models, your future: The new standard for Confidential AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912986/your-data-your-models-your-future-the-new-standard-for-confidential-ai",
+          "score": 0.9254,
+          "embeddingScore": 0.7807,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.1944,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
         {
           "sessionId": "3913155",
           "title": "Unlock enterprise data and drive AI adoption with Sensitive Data Protection",
@@ -94329,22 +94345,6 @@
             "audience": true,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.1667,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3899764",
-          "title": "Solve the sovereignty puzzle: Your cloud, your rules",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3899764/solve-the-sovereignty-puzzle-your-cloud-your-rules",
-          "score": 0.7729,
-          "embeddingScore": 0.6704,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.1494,
             "sessionCategory": true,
             "usedEmbedding": true
           }
