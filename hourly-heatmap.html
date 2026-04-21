@@ -84,6 +84,20 @@
       background: var(--gray-100);
       border: 1px solid var(--gray-200);
     }
+    .promo-note {
+      margin: 0 0 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(26,115,232,.14);
+      box-shadow: 0 10px 30px rgba(32,33,36,.06);
+      color: var(--gray-700);
+      line-height: 1.45;
+    }
+    .promo-note a {
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
     .snapshot-bar-label { color: var(--gray-500); font-size: .82rem; white-space: nowrap; }
     .snapshot-select {
       border: 1px solid var(--gray-200);
@@ -279,6 +293,7 @@
     </div>
   </header>
   <main>
+    <p class="promo-note">Want the deeper read on Anthropic, NVIDIA, Snowflake, and other standout patterns? Read the detailed LinkedIn post: <a href="https://www.linkedin.com/feed/update/urn:li:activity:7452417273232793602/">Top sessions by reservations at Google Cloud Next 2026 →</a></p>
     <section class="toolbar">
       <input id="search-input" type="text" placeholder='Search — commas for OR, "quoted phrase", title:ray, description:ray'>
       <div id="search-summary-wrap" class="search-summary-wrap">
