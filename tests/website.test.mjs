@@ -237,10 +237,10 @@ test('hourly heatmap page exposes search and snapshot controls with attribution'
   assert.match(hourlyHtml, /<input id="search-input" type="text"/);
   assert.match(hourlyHtml, /<div id="search-summary"/);
   assert.doesNotMatch(hourlyHtml, /search-match-list/);
-  assert.doesNotMatch(hourlyHtml, /Top session/);
   assert.match(hourlyHtml, /website\/hourly-heatmap\.mjs\?v=/);
   assert.match(hourlyHtml, /<select id="snapshot-select"/);
   assert.match(hourlyHtml, /GCP Next'26 — Top Sessions by Reservations/);
+  assert.match(hourlyHtml, /Top sessions by reservations at Google Cloud Next 2026/);
   assert.match(hourlyHtml, /Felipe Hoffa/);
   assert.match(hourlyHtml, /googlecloudevents\.com/);
   assert.match(hourlyHtml, /github\.com\/fhoffa/);
@@ -1291,7 +1291,7 @@ test('session explorer renders sponsored badges and active sponsored pills', asy
   assert.match(env.document.getElementById('active-filters').innerHTML, /sponsored: yes/);
 });
 
-test('session explorer renders a seat fill visualization when capacity and registrations are known', async () => {
+test('session explorer renders seat demand when registrations are known, even if capacity is missing', async () => {
   const env = createEnvironment();
   const source = {
     sessions: [
@@ -1321,5 +1321,6 @@ test('session explorer renders a seat fill visualization when capacity and regis
   assert.match(appHtml, /42 \/ 48 seats/);
   assert.match(appHtml, /88% full/);
   assert.match(appHtml, /seat-fill-bar-fill/);
-  assert.doesNotMatch(appHtml, /No capacity session[\s\S]*seat-fill/);
+  assert.match(appHtml, /No capacity session[\s\S]*90 reserved/);
+  assert.match(appHtml, /No capacity session[\s\S]*Capacity unknown/);
 });

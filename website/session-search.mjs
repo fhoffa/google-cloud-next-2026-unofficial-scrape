@@ -409,7 +409,15 @@ function renderRelatedSessions(sessionId, relatedItems, visible) {
 function seatFillData(session) {
   const capacity = normalizeNumber(session?.capacity);
   const registrants = normalizeNumber(session?.registrant_count);
-  if (capacity == null || registrants == null || capacity <= 0) return null;
+  if (registrants == null) return null;
+  if (capacity == null || capacity <= 0) {
+    return {
+      capacity: null,
+      registrants,
+      pct: null,
+      isOverbooked: false,
+    };
+  }
   const rawPct = (registrants / capacity) * 100;
   const pct = Math.max(0, Math.min(100, rawPct));
   return {
@@ -423,6 +431,11 @@ function seatFillData(session) {
 function renderSeatFill(session) {
   const fill = seatFillData(session);
   if (!fill) return '';
+  if (fill.capacity == null) {
+    const label = `${fill.registrants.toLocaleString()} reserved`;
+    const detail = 'Capacity unknown';
+    return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(detail)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(detail)}</span></div></div>`;
+  }
   const label = `${fill.registrants.toLocaleString()} / ${fill.capacity.toLocaleString()} seats`;
   const pctLabel = `${Math.round(fill.pct)}% full`;
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
