@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generatedAt": "2026-04-22T15:58:37.076Z",
+    "generatedAt": "2026-04-22T20:26:02.240Z",
     "dataScrapedAt": "2026-04-22T15:35:39.136Z",
     "source": "sessions/classified_sessions.json",
-    "availabilitySource": "sessions/cache",
+    "availabilitySource": "sessions/classified_sessions.json",
     "template": "templates/insights.template.html",
     "outputHtml": "insights.html",
     "sankeyLatest": "https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/media/fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_20260422.png",
@@ -45,38 +45,38 @@
   "fullness": {
     "stats": [],
     "observations": [
-      "<a href=\"./index.html?availability=full\"><strong>226 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">886 still have seats</a>.",
-      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 36 of 39 (92%) are already full."
+      "<a href=\"./index.html?availability=full\"><strong>203 sessions are already sold out</strong></a>. The other <a href=\"./index.html?availability=not-full\">909 still have seats</a>.",
+      "<a href=\"./index.html?availability=full&amp;topic=Workshops\"><strong>Workshops are the main sellout zone</strong></a>: 37 of 39 (95%) are already full."
     ],
     "rankings": {
       "fullByCategory": [
         {
           "name": "Workshops",
-          "count": 36,
+          "count": 37,
           "totalKnown": 39,
-          "share": "92%",
-          "shareValue": 92.3076923076923
+          "share": "95%",
+          "shareValue": 94.87179487179486
         },
         {
           "name": "Solution Talks",
-          "count": 46,
+          "count": 44,
           "totalKnown": 50,
-          "share": "92%",
-          "shareValue": 92
+          "share": "88%",
+          "shareValue": 88
         },
         {
           "name": "Discussion Groups",
-          "count": 82,
+          "count": 80,
           "totalKnown": 93,
-          "share": "88%",
-          "shareValue": 88.17204301075269
+          "share": "86%",
+          "shareValue": 86.02150537634408
         },
         {
           "name": "Lounge Sessions",
-          "count": 17,
+          "count": 16,
           "totalKnown": 21,
-          "share": "81%",
-          "shareValue": 80.95238095238095
+          "share": "76%",
+          "shareValue": 76.19047619047619
         },
         {
           "name": "Partner Summit Breakouts",
@@ -87,10 +87,10 @@
         },
         {
           "name": "Breakouts",
-          "count": 39,
+          "count": 21,
           "totalKnown": 445,
-          "share": "9%",
-          "shareValue": 8.764044943820224
+          "share": "5%",
+          "shareValue": 4.719101123595506
         }
       ]
     }
@@ -301,21 +301,21 @@
     "all": [
       {
         "word": "ai",
-        "count": 1931,
-        "sessionCount": 800,
+        "count": 1927,
+        "sessionCount": 799,
         "label": "ai",
         "href": "./index.html?q=ai"
       },
       {
         "word": "data",
-        "count": 1373,
+        "count": 1372,
         "sessionCount": 436,
         "label": "data",
         "href": "./index.html?q=data"
       },
       {
         "word": "agent",
-        "count": 1254,
+        "count": 1252,
         "sessionCount": 496,
         "label": "agent/agents",
         "href": "./index.html?q=agent"
@@ -357,8 +357,8 @@
       },
       {
         "word": "gemini",
-        "count": 669,
-        "sessionCount": 384,
+        "count": 670,
+        "sessionCount": 383,
         "label": "gemini",
         "href": "./index.html?q=gemini"
       },
@@ -391,6 +391,13 @@
         "href": "./index.html?q=infrastructure"
       },
       {
+        "word": "developer",
+        "count": 469,
+        "sessionCount": 384,
+        "label": "developer/developers",
+        "href": "./index.html?q=developer"
+      },
+      {
         "word": "engineers",
         "count": 469,
         "sessionCount": 371,
@@ -398,29 +405,22 @@
         "href": "./index.html?q=engineers"
       },
       {
-        "word": "developer",
-        "count": 468,
-        "sessionCount": 384,
-        "label": "developer/developers",
-        "href": "./index.html?q=developer"
-      },
-      {
         "word": "agentic",
-        "count": 450,
-        "sessionCount": 286,
+        "count": 449,
+        "sessionCount": 285,
         "label": "agentic",
         "href": "./index.html?q=agentic"
       },
       {
         "word": "platform",
-        "count": 430,
-        "sessionCount": 359,
+        "count": 429,
+        "sessionCount": 358,
         "label": "platform",
         "href": "./index.html?q=platform"
       },
       {
         "word": "customer",
-        "count": 418,
+        "count": 417,
         "sessionCount": 346,
         "label": "customer",
         "href": "./index.html?q=customer"
@@ -429,21 +429,21 @@
     "ai": [
       {
         "word": "ai",
-        "count": 1931,
-        "sessionCount": 800,
+        "count": 1927,
+        "sessionCount": 799,
         "label": "ai",
         "href": "./index.html?q=ai&ai_focus=AI"
       },
       {
         "word": "data",
-        "count": 1279,
+        "count": 1280,
         "sessionCount": 405,
         "label": "data",
         "href": "./index.html?q=data&ai_focus=AI"
       },
       {
         "word": "agent",
-        "count": 1254,
+        "count": 1252,
         "sessionCount": 496,
         "label": "agent/agents",
         "href": "./index.html?q=agent&ai_focus=AI"
@@ -464,8 +464,8 @@
       },
       {
         "word": "gemini",
-        "count": 669,
-        "sessionCount": 384,
+        "count": 670,
+        "sessionCount": 383,
         "label": "gemini",
         "href": "./index.html?q=gemini&ai_focus=AI"
       },
@@ -506,8 +506,8 @@
       },
       {
         "word": "agentic",
-        "count": 450,
-        "sessionCount": 286,
+        "count": 449,
+        "sessionCount": 285,
         "label": "agentic",
         "href": "./index.html?q=agentic&ai_focus=AI"
       },
@@ -534,21 +534,21 @@
       },
       {
         "word": "developer",
-        "count": 430,
+        "count": 431,
         "sessionCount": 359,
         "label": "developer/developers",
         "href": "./index.html?q=developer&ai_focus=AI"
       },
       {
         "word": "platform",
-        "count": 398,
-        "sessionCount": 334,
+        "count": 397,
+        "sessionCount": 333,
         "label": "platform",
         "href": "./index.html?q=platform&ai_focus=AI"
       },
       {
         "word": "customer",
-        "count": 391,
+        "count": 390,
         "sessionCount": 323,
         "label": "customer",
         "href": "./index.html?q=customer&ai_focus=AI"
@@ -564,7 +564,7 @@
       },
       {
         "word": "data",
-        "count": 94,
+        "count": 92,
         "sessionCount": 31,
         "label": "data",
         "href": "./index.html?q=data&ai_focus=Not+AI"

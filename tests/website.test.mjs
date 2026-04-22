@@ -366,13 +366,13 @@ test('insights page is generated from a template and summary artifact', () => {
   assert.match(insightsHtml, /data-summary-source="\.\/media\/insights-summary\.json"/);
   assert.equal(insightsSummary.meta.template, 'templates/insights.template.html');
   assert.equal(insightsSummary.meta.source, 'sessions/classified_sessions.json');
-  assert.equal(insightsSummary.meta.availabilitySource, 'sessions/cache');
+  assert.equal(insightsSummary.meta.availabilitySource, 'sessions/classified_sessions.json');
   assert.equal(insightsSummary.meta.outputHtml, 'insights.html');
   assert.equal(insightsSummary.meta.generator, 'scripts/generate_insights.mjs');
   assert.equal(insightsSummary.meta.wordRules, 'config/word-rules.json');
 });
 
-test('insights summary includes fullness metrics sourced from library availability', () => {
+test('insights summary includes fullness metrics sourced from the latest classified schedule data', () => {
   assert.equal(insightsSummary.fullness.stats.length, 0);
   assert.ok(insightsSummary.fullness.observations.length > 0);
   assert.ok(insightsSummary.fullness.observations.some((item) => /sold out|full-now list|still have seats/.test(item)));
@@ -387,6 +387,9 @@ test('insights build emits a separate session availability artifact', () => {
   assert.ok(Array.isArray(availabilityArtifact.records));
   assert.ok(availabilityArtifact.records.length > 0);
   assert.ok(availabilityArtifact.records.some((record) => Number(record.remaining_capacity) === 0));
+  const vibingRecord = availabilityArtifact.records.find((record) => String(record.url || '').includes('/3912264/'));
+  assert.equal(vibingRecord.room, 'Jasmine C');
+  assert.equal(String(vibingRecord.capacity), '253');
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {

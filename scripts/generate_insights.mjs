@@ -8,7 +8,6 @@ import {
   availabilityBand,
   availabilityCounts,
   createAvailabilityArtifact,
-  loadLibraryAvailabilityRecords,
   mergeAvailabilityIntoSessions,
 } from '../lib/session-availability.mjs';
 import { collectWordStatItems } from '../lib/word-stats.mjs';
@@ -399,8 +398,8 @@ function main() {
       } catch {}
     }
   }
-  const availabilityRecords = loadLibraryAvailabilityRecords(libraryCacheDir);
-  const sessions = mergeAvailabilityIntoSessions(baseSessions, availabilityRecords);
+  const availabilityArtifact = createAvailabilityArtifact(baseSessions, { generatedAt: args.generatedAt || new Date().toISOString() });
+  const sessions = mergeAvailabilityIntoSessions(baseSessions, availabilityArtifact.records);
   let sankeyLatest = '';
   if (fs.existsSync(sankeyIndexPath)) {
     sankeyLatest = JSON.parse(fs.readFileSync(sankeyIndexPath, 'utf8')).latest || '';
@@ -411,8 +410,8 @@ function main() {
 
   explorerHref = args.explorerHref;
 
-  const generatedAt = args.generatedAt || new Date().toISOString();
-  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.libraryCacheDir, dataScrapedAt, {
+  const generatedAt = availabilityArtifact.generatedAt;
+  const summary = buildSummary(sessions, sankeyLatest, generatedAt, args.input, dataScrapedAt, {
     conferenceLabel: args.conferenceLabel,
     sourceFile: args.input,
   });
@@ -420,7 +419,6 @@ function main() {
     conferenceLabel: args.conferenceLabel,
     ogDescription: args.ogDescription,
   });
-  const availabilityArtifact = createAvailabilityArtifact(availabilityRecords, { generatedAt });
 
   fs.mkdirSync(path.dirname(outputSummaryPath), { recursive: true });
   fs.mkdirSync(path.dirname(outputAvailabilityPath), { recursive: true });
