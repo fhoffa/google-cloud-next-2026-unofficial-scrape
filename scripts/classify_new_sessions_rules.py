@@ -26,8 +26,8 @@ AI_KW = [
     "tpu", "gpu", "generative", "sovereign ai", "hypercomputer",
     "neurocontext", "veo", "deepmind",
 ]
-AI_FOCUS_REGEX = re.compile(
-    r"\b(ai|gemini|agent|agents|agentic|llm|ml|machine learning|genai|generative|vertex|prompt|rag|inference|model|models|foundation|agentspace|notebooklm|deepmind|tensorflow|gemma|mcp)\b",
+AI_RECLASSIFY_EVIDENCE_REGEX = re.compile(
+    r"\b(ai|gemini|agent|agents|agentic|llm|ml|machine learning|genai|generative|vertex|prompt|rag|agentspace|notebooklm|deepmind|tensorflow|gemma|mcp)\b",
     re.IGNORECASE,
 )
 
@@ -52,7 +52,7 @@ def has_explicit_ai_evidence(session: dict) -> bool:
         session.get("description") or "",
         " ".join(session.get("topics") or []),
     ])
-    return bool(AI_FOCUS_REGEX.search(text))
+    return bool(AI_RECLASSIFY_EVIDENCE_REGEX.search(text))
 
 
 def theme(session: dict) -> str:

@@ -8108,22 +8108,6 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9421,
-          "embeddingScore": 0.7843,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7333,
-            "tokenOverlap": 0.3766,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912949",
           "title": "Engineering the future of Kubernetes for AI at scale",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912949/engineering-the-future-of-kubernetes-for-ai-at-scale",
@@ -8167,6 +8151,22 @@
             "audience": true,
             "topicJaccard": 0.7143,
             "tokenOverlap": 0.3158,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912939",
+          "title": "Beyond the sandbox: Redefine AI-native apps with GKE, Axion processors, and C4 instances",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912939/beyond-the-sandbox-redefine-ai-native-apps-with-gke-axion-processors-and-c4-instances",
+          "score": 0.9231,
+          "embeddingScore": 0.7696,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7333,
+            "tokenOverlap": 0.2895,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -8804,22 +8804,6 @@
           }
         },
         {
-          "sessionId": "3912946",
-          "title": "Build and optimize GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9059,
-          "embeddingScore": 0.7635,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5714,
-            "tokenOverlap": 0.2625,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912940",
           "title": "GKE efficiency master class: Architecting for optimal price-performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
@@ -8848,6 +8832,22 @@
             "topicJaccard": 0.6429,
             "tokenOverlap": 0.2907,
             "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912949",
+          "title": "Engineering the future of Kubernetes for AI at scale",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912949/engineering-the-future-of-kubernetes-for-ai-at-scale",
+          "score": 0.8867,
+          "embeddingScore": 0.7704,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.4375,
+            "tokenOverlap": 0.2,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -8990,22 +8990,6 @@
           }
         },
         {
-          "sessionId": "3912946",
-          "title": "Build and optimize GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.861,
-          "embeddingScore": 0.6977,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.8462,
-            "tokenOverlap": 0.35,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912944",
           "title": "From MVP to production: Shaping GKE's agentic experience",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912944/from-mvp-to-production-shaping-gke's-agentic-experience",
@@ -9018,6 +9002,22 @@
             "topicJaccard": 0.7143,
             "tokenOverlap": 0.3288,
             "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912947",
+          "title": "How GKE builds itself with AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912947/how-gke-builds-itself-with-ai",
+          "score": 0.8545,
+          "embeddingScore": 0.7202,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6429,
+            "tokenOverlap": 0.3151,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -14980,10 +14980,10 @@
           "sessionId": "3908728",
           "title": "Resilience everywhere across Google Cloud, On-Prem, and Edge",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908728/resilience-everywhere-across-google-cloud-on-prem-and-edge",
-          "score": 0.9069,
+          "score": 0.9369,
           "embeddingScore": 0.796,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5,
@@ -17251,17 +17251,17 @@
           }
         },
         {
-          "sessionId": "3913094",
-          "title": "Unified management plane for OTel: Server-side data control and processing",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913094/unified-management-plane-for-otel-server-side-data-control-and-processing",
-          "score": 0.1295,
+          "sessionId": "3912244",
+          "title": "Zero-friction data science: From raw data to inferencing in the fast lane",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912244/zero-friction-data-science-from-raw-data-to-inferencing-in-the-fast-lane",
+          "score": 0.1284,
           "embeddingScore": 0.0,
           "signals": {
             "aiFocus": true,
             "theme": true,
-            "audience": true,
-            "topicJaccard": 0.375,
-            "tokenOverlap": 0.2394,
+            "audience": false,
+            "topicJaccard": 0.6471,
+            "tokenOverlap": 0.2917,
             "sessionCategory": true,
             "usedEmbedding": false
           }
@@ -18122,22 +18122,6 @@
       "sessionId": "3975074",
       "related": [
         {
-          "sessionId": "3908728",
-          "title": "Resilience everywhere across Google Cloud, On-Prem, and Edge",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908728/resilience-everywhere-across-google-cloud-on-prem-and-edge",
-          "score": 0.8238,
-          "embeddingScore": 0.7337,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.1053,
-            "tokenOverlap": 0.0769,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912229",
           "title": "Secure by design: Cloud SQL brute-force protection and air-gapped recovery",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912229/secure-by-design-cloud-sql-brute-force-protection-and-air-gapped-recovery",
@@ -18182,6 +18166,22 @@
             "topicJaccard": 0.2381,
             "tokenOverlap": 0.197,
             "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3908728",
+          "title": "Resilience everywhere across Google Cloud, On-Prem, and Edge",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908728/resilience-everywhere-across-google-cloud-on-prem-and-edge",
+          "score": 0.7938,
+          "embeddingScore": 0.7337,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.1053,
+            "tokenOverlap": 0.0769,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         },
@@ -21031,10 +21031,10 @@
           "sessionId": "3912940",
           "title": "GKE efficiency master class: Architecting for optimal price-performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
-          "score": 1.0281,
+          "score": 0.9981,
           "embeddingScore": 0.8654,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.8462,
@@ -21047,10 +21047,10 @@
           "sessionId": "3913116",
           "title": "AI inference: Performance when you need it, economy when you don't",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913116/ai-inference-performance-when-you-need-it-economy-when-you-don't",
-          "score": 0.9059,
+          "score": 0.8759,
           "embeddingScore": 0.7635,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5714,
@@ -21063,10 +21063,10 @@
           "sessionId": "3912925",
           "title": "The GKE inference playbook: Optimize cost and performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912925/the-gke-inference-playbook-optimize-cost-and-performance",
-          "score": 0.9007,
+          "score": 0.8707,
           "embeddingScore": 0.7692,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5882,
@@ -21079,10 +21079,10 @@
           "sessionId": "3912936",
           "title": "Building an AI supercomputer: Scale Slurm workloads on GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912936/building-an-ai-supercomputer-scale-slurm-workloads-on-gke",
-          "score": 0.8982,
+          "score": 0.8682,
           "embeddingScore": 0.7481,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6471,
@@ -21286,10 +21286,10 @@
           "sessionId": "3912940",
           "title": "GKE efficiency master class: Architecting for optimal price-performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
-          "score": 0.9615,
+          "score": 0.9315,
           "embeddingScore": 0.8293,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6,
@@ -21302,10 +21302,10 @@
           "sessionId": "3912929",
           "title": "Build vertical AI: Architect domain-specific models at scale with GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912929/build-vertical-ai-architect-domain-specific-models-at-scale-with-gke",
-          "score": 0.961,
+          "score": 0.931,
           "embeddingScore": 0.7908,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.9167,
@@ -21318,10 +21318,10 @@
           "sessionId": "3912925",
           "title": "The GKE inference playbook: Optimize cost and performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912925/the-gke-inference-playbook-optimize-cost-and-performance",
-          "score": 0.9476,
+          "score": 0.9176,
           "embeddingScore": 0.7932,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6875,
@@ -21334,10 +21334,10 @@
           "sessionId": "3912931",
           "title": "Build resilient AI: Maximize TPU performance and scale with GKE workloads",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912931/how-anthropic-uses-gke-and-tpus-to-scale-resilient-ai",
-          "score": 0.9434,
+          "score": 0.9134,
           "embeddingScore": 0.7739,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.9167,
@@ -21485,22 +21485,6 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9323,
-          "embeddingScore": 0.7743,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.8333,
-            "tokenOverlap": 0.2597,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912917",
           "title": "What's new with GKE: A look toward the next decade",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912917/what's-new-with-gke-a-look-toward-the-next-decade",
@@ -21512,6 +21496,22 @@
             "audience": true,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.2703,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912951",
+          "title": "AI at Snap's scale: Building a global compute fabric with GKE custom compute classes",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912951/ai-at-snap's-scale-building-a-global-compute-fabric-with-gke-custom-compute-classes",
+          "score": 0.9296,
+          "embeddingScore": 0.7759,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7143,
+            "tokenOverlap": 0.3158,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -22776,17 +22776,17 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9434,
-          "embeddingScore": 0.7739,
+          "sessionId": "3912939",
+          "title": "Beyond the sandbox: Redefine AI-native apps with GKE, Axion processors, and C4 instances",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912939/beyond-the-sandbox-redefine-ai-native-apps-with-gke-axion-processors-and-c4-instances",
+          "score": 0.9403,
+          "embeddingScore": 0.7723,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.9167,
-            "tokenOverlap": 0.3896,
+            "tokenOverlap": 0.36,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -28678,6 +28678,22 @@
           }
         },
         {
+          "sessionId": "3909215",
+          "title": "What's your next move? Winning with the GCPN technology path",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909215/what's-your-next-move-winning-with-the-gcpn-technology-path",
+          "score": 0.8891,
+          "embeddingScore": 0.7224,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.234,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909203",
           "title": "Go from zero to revenue on Google Cloud Marketplace",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909203/go-from-zero-to-revenue-on-google-cloud-marketplace",
@@ -28721,22 +28737,6 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.2766,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909224",
-          "title": "Level Up: Supercharge your partner marketing studio campaigns",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909224/level-up-supercharge-your-partner-marketing-studio-campaigns",
-          "score": 0.8639,
-          "embeddingScore": 0.6991,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.1957,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -31956,17 +31956,17 @@
           }
         },
         {
-          "sessionId": "3912946",
-          "title": "Build and optimize GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.7504,
-          "embeddingScore": 0.6385,
+          "sessionId": "3912936",
+          "title": "Building an AI supercomputer: Scale Slurm workloads on GKE",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912936/building-an-ai-supercomputer-scale-slurm-workloads-on-gke",
+          "score": 0.7474,
+          "embeddingScore": 0.6391,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": false,
-            "topicJaccard": 0.4375,
-            "tokenOverlap": 0.2125,
+            "topicJaccard": 0.35,
+            "tokenOverlap": 0.2462,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -33271,10 +33271,10 @@
           "sessionId": "3909215",
           "title": "What's your next move? Winning with the GCPN technology path",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909215/what's-your-next-move-winning-with-the-gcpn-technology-path",
-          "score": 0.7957,
+          "score": 0.7657,
           "embeddingScore": 0.629,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
@@ -33826,17 +33826,17 @@
           }
         },
         {
-          "sessionId": "3912940",
-          "title": "GKE efficiency master class: Architecting for optimal price-performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
-          "score": 0.6884,
-          "embeddingScore": 0.6299,
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.701,
+          "embeddingScore": 0.6177,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.0769,
-            "tokenOverlap": 0.0789,
+            "topicJaccard": 0.0,
+            "tokenOverlap": 0.0649,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -33895,6 +33895,22 @@
           }
         },
         {
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.7526,
+          "embeddingScore": 0.6621,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.0769,
+            "tokenOverlap": 0.1169,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912937",
           "title": "Build beyond the CPU: Native AI and agentic autoscaling on GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912937/build-beyond-the-cpu-native-ai-and-agentic-autoscaling-on-gke",
@@ -33906,22 +33922,6 @@
             "audience": true,
             "topicJaccard": 0.0909,
             "tokenOverlap": 0.1216,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912947",
-          "title": "How GKE builds itself with AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912947/how-gke-builds-itself-with-ai",
-          "score": 0.7498,
-          "embeddingScore": 0.6898,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.0833,
-            "tokenOverlap": 0.1,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -34203,22 +34203,6 @@
           }
         },
         {
-          "sessionId": "3912946",
-          "title": "Build and optimize GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.8109,
-          "embeddingScore": 0.692,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.2,
-            "tokenOverlap": 0.2375,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3913137",
           "title": "Architecting reinforcement learning workflows for LLMs",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913137/architecting-reinforcement-learning-workflows-for-llms",
@@ -34263,6 +34247,22 @@
             "topicJaccard": 0.2,
             "tokenOverlap": 0.1935,
             "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913120",
+          "title": "The latest from Google's TPU roadmap: Architecting for frontier AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913120/the-latest-from-google's-tpu-roadmap-a-tpu-8t-and-tpu-8i-deepdive",
+          "score": 0.7911,
+          "embeddingScore": 0.6929,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.4444,
+            "tokenOverlap": 0.2295,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -36971,17 +36971,17 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.7416,
-          "embeddingScore": 0.6351,
+          "sessionId": "3913128",
+          "title": "Modernize enterprise file storage for the AI journey",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913128/modernize-enterprise-file-storage-for-the-ai-journey",
+          "score": 0.7406,
+          "embeddingScore": 0.6561,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.1299,
+            "topicJaccard": 0.0,
+            "tokenOverlap": 0.0909,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -42347,6 +42347,22 @@
       "sessionId": "3913064",
       "related": [
         {
+          "sessionId": "3913094",
+          "title": "Unified management plane for OTel: Server-side data control and processing",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913094/unified-management-plane-for-otel-server-side-data-control-and-processing",
+          "score": 0.8885,
+          "embeddingScore": 0.7337,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7778,
+            "tokenOverlap": 0.2623,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913149",
           "title": "Unify application observability with an application platform",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913149/unify-application-observability-with-an-application-platform",
@@ -42358,22 +42374,6 @@
             "audience": true,
             "topicJaccard": 0.7778,
             "tokenOverlap": 0.1897,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913094",
-          "title": "Unified management plane for OTel: Server-side data control and processing",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913094/unified-management-plane-for-otel-server-side-data-control-and-processing",
-          "score": 0.8285,
-          "embeddingScore": 0.7337,
-          "signals": {
-            "aiFocus": false,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 0.7778,
-            "tokenOverlap": 0.2623,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -45920,10 +45920,10 @@
           "sessionId": "3912946",
           "title": "Build and optimize GKE workloads: A master class in node-level performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 1.0281,
+          "score": 0.9981,
           "embeddingScore": 0.8654,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.8462,
@@ -45936,10 +45936,10 @@
           "sessionId": "3912942",
           "title": "Build and scale GKE workloads: A master class in node-level performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9615,
+          "score": 0.9315,
           "embeddingScore": 0.8293,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6,
@@ -46443,6 +46443,22 @@
           }
         },
         {
+          "sessionId": "3909214",
+          "title": "Unlock public sector growth with Marketplace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
+          "score": 0.9437,
+          "embeddingScore": 0.7727,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.3208,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909200",
           "title": "Elevate your co-sell: Mastering field engagements for measurable results",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909200/elevate-your-co-sell-mastering-field-engagements-for-measurable-results",
@@ -46486,22 +46502,6 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.3191,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909214",
-          "title": "Unlock public sector growth with Marketplace",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
-          "score": 0.9137,
-          "embeddingScore": 0.7727,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.3208,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -50183,6 +50183,22 @@
           }
         },
         {
+          "sessionId": "3881978",
+          "title": "Inside McDonald's edge\u2011powered restaurant model",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3881978/inside-mcdonald's-edge\u2011powered-restaurant-model",
+          "score": 0.6622,
+          "embeddingScore": 0.5891,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": false,
+            "topicJaccard": 0.0667,
+            "tokenOverlap": 0.1818,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3913047",
           "title": "Serving billions: How McDonald's and Walmart built the agentic enterprise",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913047/serving-billions-how-mcdonald's-and-walmart-built-the-agentic-enterprise",
@@ -50229,44 +50245,12 @@
             "sessionCategory": false,
             "usedEmbedding": true
           }
-        },
-        {
-          "sessionId": "3818850",
-          "title": "Beyond the hype: Orchestrating end-to-end developer workflows with agents",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3818850/beyond-the-hype-orchestrating-end-to-end-developer-workflows-with-agents",
-          "score": 0.6364,
-          "embeddingScore": 0.5555,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.2,
-            "tokenOverlap": 0.0779,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
         }
       ]
     },
     "3912912": {
       "sessionId": "3912912",
       "related": [
-        {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.909,
-          "embeddingScore": 0.7634,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5625,
-            "tokenOverlap": 0.3377,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
         {
           "sessionId": "3912951",
           "title": "AI at Snap's scale: Building a global compute fabric with GKE custom compute classes",
@@ -50295,6 +50279,22 @@
             "audience": true,
             "topicJaccard": 0.5294,
             "tokenOverlap": 0.2727,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.879,
+          "embeddingScore": 0.7634,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5625,
+            "tokenOverlap": 0.3377,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -51591,18 +51591,18 @@
           }
         },
         {
-          "sessionId": "3908788",
-          "title": "Scale AI for less: How Lightricks optimized GKE for peak performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908788/optimize-ai-for-less-how-moloco-optimized-tpu-on-gke-for-maximum-performance-gain",
-          "score": 0.6904,
-          "embeddingScore": 0.6872,
+          "sessionId": "3912946",
+          "title": "Build and optimize GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.7135,
+          "embeddingScore": 0.6531,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": false,
             "audience": false,
-            "topicJaccard": 0.0,
-            "tokenOverlap": 0.0658,
-            "sessionCategory": false,
+            "topicJaccard": 0.1429,
+            "tokenOverlap": 0.1375,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -51615,10 +51615,10 @@
           "sessionId": "3913047",
           "title": "Serving billions: How McDonald's and Walmart built the agentic enterprise",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913047/serving-billions-how-mcdonald's-and-walmart-built-the-agentic-enterprise",
-          "score": 0.8092,
+          "score": 0.7792,
           "embeddingScore": 0.7367,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
             "audience": false,
             "topicJaccard": 0.3333,
@@ -51631,11 +51631,11 @@
           "sessionId": "3920338",
           "title": "Fuel the future: How global leaders turn data into AI-powered growth",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3920338/fuel-the-future-how-global-leaders-turn-data-into-ai-powered-growth",
-          "score": 0.7904,
+          "score": 0.7304,
           "embeddingScore": 0.6619,
           "signals": {
-            "aiFocus": true,
-            "theme": true,
+            "aiFocus": false,
+            "theme": false,
             "audience": true,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.2683,
@@ -51644,29 +51644,13 @@
           }
         },
         {
-          "sessionId": "3948594",
-          "title": "Building a scalable agentic AI platform to reimagine enterprise operations",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3948594/building-a-scalable-agentic-ai-platform-to-reimagine-enterprise-operations",
-          "score": 0.7444,
-          "embeddingScore": 0.6265,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.1667,
-            "tokenOverlap": 0.2581,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3848872",
           "title": "Why is Edge computing becoming critical for business transformation?",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3848872/why-is-edge-computing-becoming-critical-for-business-transformation",
-          "score": 0.7427,
+          "score": 0.7127,
           "embeddingScore": 0.6597,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
             "audience": true,
             "topicJaccard": 0.2667,
@@ -51676,17 +51660,33 @@
           }
         },
         {
-          "sessionId": "3948595",
-          "title": "Rewired in action: Scaling transformation with AI",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3948595/rewired-in-action-scaling-transformation-with-ai",
-          "score": 0.7349,
-          "embeddingScore": 0.6178,
+          "sessionId": "3997598",
+          "title": "Blending AI into every caf\u00e9: How Tropical Smoothie is reinventing QSR operations",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3997598/blending-ai-into-every-caf\u00e9-how-tropical-smoothie-is-reinventing-qsr-operations",
+          "score": 0.6955,
+          "embeddingScore": 0.614,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.1667,
-            "tokenOverlap": 0.2419,
+            "topicJaccard": 0.2857,
+            "tokenOverlap": 0.2877,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3932926",
+          "title": "Redefine your cloud performance with Google, AMD, Shopify, and Snap",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3932926/redefine-your-cloud-performance-with-google-amd-shopify-and-snap",
+          "score": 0.6905,
+          "embeddingScore": 0.6395,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.3333,
+            "tokenOverlap": 0.3205,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -54736,17 +54736,17 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.8298,
-          "embeddingScore": 0.739,
+          "sessionId": "3912940",
+          "title": "GKE efficiency master class: Architecting for optimal price-performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
+          "score": 0.8285,
+          "embeddingScore": 0.7375,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.0625,
-            "tokenOverlap": 0.1429,
+            "tokenOverlap": 0.1447,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -55315,33 +55315,33 @@
           }
         },
         {
-          "sessionId": "3912904",
-          "title": "Master GKE \u201cDay 2\u201d operations: Pain-free upgrades at scale",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912904/master-gke-\u201cday-2\u201d-operations-pain-free-upgrades-at-scale",
-          "score": 0.6837,
-          "embeddingScore": 0.594,
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.6973,
+          "embeddingScore": 0.614,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.0714,
-            "tokenOverlap": 0.1081,
+            "topicJaccard": 0.0,
+            "tokenOverlap": 0.0649,
             "sessionCategory": false,
             "usedEmbedding": true
           }
         },
         {
-          "sessionId": "3912940",
-          "title": "GKE efficiency master class: Architecting for optimal price-performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912940/gke-efficiency-master-class-architecting-for-optimal-price-performance",
-          "score": 0.6802,
-          "embeddingScore": 0.6223,
+          "sessionId": "3912946",
+          "title": "Build and optimize GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.694,
+          "embeddingScore": 0.6056,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.0769,
-            "tokenOverlap": 0.0658,
+            "tokenOverlap": 0.075,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -55610,15 +55610,31 @@
           "sessionId": "3912942",
           "title": "Build and scale GKE workloads: A master class in node-level performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.866,
+          "score": 0.896,
           "embeddingScore": 0.7435,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.3506,
             "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912946",
+          "title": "Build and optimize GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.8548,
+          "embeddingScore": 0.7204,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6667,
+            "tokenOverlap": 0.2875,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         },
@@ -55666,22 +55682,6 @@
             "audience": true,
             "topicJaccard": 0.6471,
             "tokenOverlap": 0.3784,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912949",
-          "title": "Engineering the future of Kubernetes for AI at scale",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912949/engineering-the-future-of-kubernetes-for-ai-at-scale",
-          "score": 0.8366,
-          "embeddingScore": 0.7114,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7333,
-            "tokenOverlap": 0.3243,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -56149,6 +56149,22 @@
           }
         },
         {
+          "sessionId": "3909214",
+          "title": "Unlock public sector growth with Marketplace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
+          "score": 0.9615,
+          "embeddingScore": 0.7924,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.283,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909200",
           "title": "Elevate your co-sell: Mastering field engagements for measurable results",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909200/elevate-your-co-sell-mastering-field-engagements-for-measurable-results",
@@ -56160,22 +56176,6 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.1915,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909214",
-          "title": "Unlock public sector growth with Marketplace",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
-          "score": 0.9315,
-          "embeddingScore": 0.7924,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.283,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -56813,6 +56813,22 @@
           }
         },
         {
+          "sessionId": "3909215",
+          "title": "What's your next move? Winning with the GCPN technology path",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909215/what's-your-next-move-winning-with-the-gcpn-technology-path",
+          "score": 0.8735,
+          "embeddingScore": 0.7084,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2037,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909200",
           "title": "Elevate your co-sell: Mastering field engagements for measurable results",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909200/elevate-your-co-sell-mastering-field-engagements-for-measurable-results",
@@ -56856,22 +56872,6 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.1852,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909230",
-          "title": "Maximize channel revenue growth with Google Cloud Marketplace",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909230/maximize-channel-revenue-growth-with-google-cloud-marketplace",
-          "score": 0.8515,
-          "embeddingScore": 0.6863,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2037,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -60261,17 +60261,17 @@
           }
         },
         {
-          "sessionId": "3909214",
-          "title": "Unlock public sector growth with Marketplace",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
-          "score": 0.9113,
-          "embeddingScore": 0.7431,
+          "sessionId": "3909202",
+          "title": "Future-proof SaaS: Transforming apps with agentic AI",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909202/future-proof-saas-transforming-apps-with-agentic-ai",
+          "score": 0.9071,
+          "embeddingScore": 0.7372,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
-            "tokenOverlap": 0.2642,
+            "tokenOverlap": 0.2979,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -62864,6 +62864,22 @@
           }
         },
         {
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.7772,
+          "embeddingScore": 0.6548,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.5,
+            "tokenOverlap": 0.2468,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912974",
           "title": "What's new with Compute Engine workloads and AI-ready infrastructure",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912974/what's-new-with-compute-engine-workloads-and-ai-ready-infrastructure",
@@ -62891,22 +62907,6 @@
             "audience": false,
             "topicJaccard": 0.1176,
             "tokenOverlap": 0.3067,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3949733",
-          "title": "Supercharge your enterprise apps: High performance unified storage",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3949733/supercharge-your-enterprise-apps-high-performance-unified-storage",
-          "score": 0.7741,
-          "embeddingScore": 0.6498,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.2,
-            "tokenOverlap": 0.3467,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -65770,22 +65770,6 @@
           }
         },
         {
-          "sessionId": "3912946",
-          "title": "Build and optimize GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.8757,
-          "embeddingScore": 0.7184,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7857,
-            "tokenOverlap": 0.3023,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912902",
           "title": "Platform engineering for AI: Architect a unified stack on GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912902/platform-engineering-for-ai-architect-a-unified-stack-on-gke",
@@ -65798,6 +65782,22 @@
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.2907,
             "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3976464",
+          "title": "The priority paradox: Navigating multi-tenant AI on GKE",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3976464/the-priority-paradox-navigating-multi-tenant-ai-on-gke",
+          "score": 0.8674,
+          "embeddingScore": 0.7475,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.3077,
+            "tokenOverlap": 0.1279,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -67340,10 +67340,10 @@
           "sessionId": "3908727",
           "title": "Beyond backup: What cyber recovery actually requires today",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908727/beyond-backup-what-cyber-recovery-actually-requires-today",
-          "score": 0.9069,
+          "score": 0.9369,
           "embeddingScore": 0.796,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5,
@@ -67356,10 +67356,10 @@
           "sessionId": "3826388",
           "title": "Enable secure cloud + AI development",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3826388/enable-secure-cloud-+-ai-development",
-          "score": 0.8534,
+          "score": 0.8234,
           "embeddingScore": 0.7229,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.3571,
@@ -67369,13 +67369,29 @@
           }
         },
         {
+          "sessionId": "3913121",
+          "title": "Achieve multicloud security at scale with Google Unified Security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913121/achieve-multicloud-security-at-scale-with-google-unified-security",
+          "score": 0.8009,
+          "embeddingScore": 0.6993,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.2308,
+            "tokenOverlap": 0.1538,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3902359",
           "title": "Identity-first security for the productive, AI-powered workforce",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3902359/identity-first-security-for-the-productive-ai-powered-workforce",
-          "score": 0.8272,
+          "score": 0.7972,
           "embeddingScore": 0.6924,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.4167,
@@ -67385,33 +67401,17 @@
           }
         },
         {
-          "sessionId": "3975074",
-          "title": "Boost your resilience posture with native fault injection testing",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3975074/boost-your-resilience-posture-with-native-fault-injection-testing",
-          "score": 0.8238,
-          "embeddingScore": 0.7337,
+          "sessionId": "3913008",
+          "title": "Best practices for designing and deploying Cross-Cloud Network security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913008/best-practices-for-designing-and-deploying-cross-cloud-network-security",
+          "score": 0.7967,
+          "embeddingScore": 0.6923,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.1053,
-            "tokenOverlap": 0.0769,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912981",
-          "title": "Securing your Cloud data footprint with centralized backup",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912981/securing-your-cloud-data-footprint-with-centralized-backup",
-          "score": 0.8115,
-          "embeddingScore": 0.7329,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.1818,
-            "tokenOverlap": 0.1538,
+            "topicJaccard": 0.3,
+            "tokenOverlap": 0.1282,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -68713,22 +68713,6 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.8954,
-          "embeddingScore": 0.755,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7143,
-            "tokenOverlap": 0.3506,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912951",
           "title": "AI at Snap's scale: Building a global compute fabric with GKE custom compute classes",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912951/ai-at-snap's-scale-building-a-global-compute-fabric-with-gke-custom-compute-classes",
@@ -68773,6 +68757,22 @@
             "topicJaccard": 0.5556,
             "tokenOverlap": 0.3289,
             "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909338",
+          "title": "LLM Inference on GKE for the rest of us",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909338/llm-inference-on-gke-for-the-rest-of-us",
+          "score": 0.8845,
+          "embeddingScore": 0.7752,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.0625,
+            "tokenOverlap": 0.2105,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -69975,12 +69975,12 @@
           "sessionId": "3908809",
           "title": "Bridging worlds: Bringing Google Cloud Platform's power to open source data lakes",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908809/bridging-worlds-bringing-google-cloud-platform's-power-to-open-source-data-lakes",
-          "score": 0.7895,
+          "score": 0.7795,
           "embeddingScore": 0.6556,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
-            "audience": false,
+            "audience": true,
             "topicJaccard": 0.8,
             "tokenOverlap": 0.2182,
             "sessionCategory": true,
@@ -69991,12 +69991,12 @@
           "sessionId": "3908769",
           "title": "GenAI Triage Engine :Scaling Retail Operational Intelligence",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908769/genai-triage-engine-scaling-retail-operational-intelligence",
-          "score": 0.7682,
+          "score": 0.7182,
           "embeddingScore": 0.6623,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
-            "audience": true,
+            "audience": false,
             "topicJaccard": 0.5,
             "tokenOverlap": 0.2167,
             "sessionCategory": true,
@@ -70007,12 +70007,12 @@
           "sessionId": "3908800",
           "title": "From weeks to minutes: Build a secure dev sandbox on Google Cloud Platform withGemini Code Assist",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908800/from-weeks-to-minutes-build-a-secure-dev-sandbox-on-google-cloud-platform-withgemini-code-assist",
-          "score": 0.7517,
+          "score": 0.7017,
           "embeddingScore": 0.6366,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
-            "audience": true,
+            "audience": false,
             "topicJaccard": 0.6667,
             "tokenOverlap": 0.2031,
             "sessionCategory": true,
@@ -70023,10 +70023,10 @@
           "sessionId": "3908777",
           "title": "Banking on intelligence: scaling the future of wealth with Citi and Google Cloud",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908777/banking-on-intelligence-scaling-the-future-of-wealth-with-citi-and-google-cloud",
-          "score": 0.7307,
+          "score": 0.7007,
           "embeddingScore": 0.6604,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": false,
             "topicJaccard": 0.0588,
@@ -70039,10 +70039,10 @@
           "sessionId": "3912996",
           "title": "Scaling simulation and rendering: Real-world use cases",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912996/scaling-simulation-and-rendering-real-world-use-cases",
-          "score": 0.7266,
+          "score": 0.6966,
           "embeddingScore": 0.6804,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
             "audience": false,
             "topicJaccard": 0.1538,
@@ -70910,10 +70910,10 @@
           "sessionId": "3912949",
           "title": "Engineering the future of Kubernetes for AI at scale",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912949/engineering-the-future-of-kubernetes-for-ai-at-scale",
-          "score": 0.7918,
+          "score": 0.7618,
           "embeddingScore": 0.6634,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5625,
@@ -70926,10 +70926,10 @@
           "sessionId": "3908786",
           "title": "The journey to agentic applications at Spotify",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3908786/the-journey-to-agentic-applications-at-spotify",
-          "score": 0.789,
+          "score": 0.759,
           "embeddingScore": 0.7276,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": false,
             "audience": false,
             "topicJaccard": 0.3333,
@@ -70942,10 +70942,10 @@
           "sessionId": "3912910",
           "title": "Automating excellence: How Gemini and Config Connector help create 10x cloud teams",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912910/automating-excellence-how-gemini-and-config-connector-help-create-10x-cloud-teams",
-          "score": 0.7861,
+          "score": 0.7561,
           "embeddingScore": 0.6582,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5882,
@@ -70958,10 +70958,10 @@
           "sessionId": "3912920",
           "title": "Better together: Scaling AI with GKE and Cloud Run",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912920/better-together-scaling-ai-with-gke-and-cloud-run",
-          "score": 0.7539,
+          "score": 0.7239,
           "embeddingScore": 0.6224,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.625,
@@ -70974,10 +70974,10 @@
           "sessionId": "3912908",
           "title": "Reve AI platform playbook: Scaling multimodal foundation models with Ray on GKE",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912908/reve-ai-platform-playbook-scaling-multimodal-foundation-models-with-ray-on-gke",
-          "score": 0.7424,
+          "score": 0.7124,
           "embeddingScore": 0.615,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.5556,
@@ -71003,6 +71003,22 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.3148,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909215",
+          "title": "What's your next move? Winning with the GCPN technology path",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909215/what's-your-next-move-winning-with-the-gcpn-technology-path",
+          "score": 0.8654,
+          "embeddingScore": 0.6996,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2157,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -71051,22 +71067,6 @@
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.1569,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909215",
-          "title": "What's your next move? Winning with the GCPN technology path",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909215/what's-your-next-move-winning-with-the-gcpn-technology-path",
-          "score": 0.8354,
-          "embeddingScore": 0.6996,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2157,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -75019,22 +75019,6 @@
           }
         },
         {
-          "sessionId": "3881978",
-          "title": "Inside McDonald's edge\u2011powered restaurant model",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3881978/inside-mcdonald's-edge\u2011powered-restaurant-model",
-          "score": 0.8092,
-          "embeddingScore": 0.7367,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.1493,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3913076",
           "title": "Build agentic AI with Gemini and developer platforms on GDC",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3913076/build-agentic-ai-with-gemini-and-developer-platforms-on-gdc",
@@ -75061,6 +75045,22 @@
             "theme": false,
             "audience": false,
             "topicJaccard": 0.1429,
+            "tokenOverlap": 0.1343,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3911920",
+          "title": "Agentic workspace: Scale from Cloud Shell to Cloud Workstations",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3911920/agentic-workspace-scale-from-cloud-shell-to-cloud-workstations",
+          "score": 0.7842,
+          "embeddingScore": 0.7137,
+          "signals": {
+            "aiFocus": true,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.3125,
             "tokenOverlap": 0.1343,
             "sessionCategory": true,
             "usedEmbedding": true
@@ -76095,12 +76095,12 @@
           "sessionId": "3909197",
           "title": "Unifying your defense: Chrome Enterprise Premium & Google Unified Security",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909197/unifying-your-defense-chrome-enterprise-premium-google-unified-security",
-          "score": 0.7832,
+          "score": 0.8332,
           "embeddingScore": 0.7135,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
-            "audience": false,
+            "audience": true,
             "topicJaccard": 0.2857,
             "tokenOverlap": 0.1509,
             "sessionCategory": true,
@@ -76111,12 +76111,12 @@
           "sessionId": "3909204",
           "title": "Unifying your defense: Chrome Enterprise Premium & Google Unified Security",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909204/unifying-your-defense-chrome-enterprise-premium-google-unified-security",
-          "score": 0.7832,
+          "score": 0.8332,
           "embeddingScore": 0.7135,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
-            "audience": false,
+            "audience": true,
             "topicJaccard": 0.2857,
             "tokenOverlap": 0.1509,
             "sessionCategory": true,
@@ -76127,12 +76127,12 @@
           "sessionId": "3909216",
           "title": "Unifying your defense: Chrome Enterprise Premium & Google Unified Security",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909216/unifying-your-defense-chrome-enterprise-premium-google-unified-security",
-          "score": 0.7832,
+          "score": 0.8332,
           "embeddingScore": 0.7135,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
-            "audience": false,
+            "audience": true,
             "topicJaccard": 0.2857,
             "tokenOverlap": 0.1509,
             "sessionCategory": true,
@@ -76143,12 +76143,12 @@
           "sessionId": "3909248",
           "title": "Unifying your defense: Chrome Enterprise Premium & Google Unified Security",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909248/unifying-your-defense-chrome-enterprise-premium-google-unified-security",
-          "score": 0.7832,
+          "score": 0.8332,
           "embeddingScore": 0.7135,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
-            "audience": false,
+            "audience": true,
             "topicJaccard": 0.2857,
             "tokenOverlap": 0.1509,
             "sessionCategory": true,
@@ -76156,18 +76156,18 @@
           }
         },
         {
-          "sessionId": "3902359",
-          "title": "Identity-first security for the productive, AI-powered workforce",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3902359/identity-first-security-for-the-productive-ai-powered-workforce",
-          "score": 0.7782,
-          "embeddingScore": 0.6907,
+          "sessionId": "3920390",
+          "title": "Chrome Enterprise Premium Experience",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3920390/chrome-enterprise-premium-experience",
+          "score": 0.818,
+          "embeddingScore": 0.7149,
           "signals": {
             "aiFocus": true,
             "theme": true,
-            "audience": false,
-            "topicJaccard": 0.0833,
-            "tokenOverlap": 0.1507,
-            "sessionCategory": true,
+            "audience": true,
+            "topicJaccard": 0.1667,
+            "tokenOverlap": 0.2609,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -83434,22 +83434,6 @@
           }
         },
         {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.9476,
-          "embeddingScore": 0.7932,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.6875,
-            "tokenOverlap": 0.3636,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912917",
           "title": "What's new with GKE: A look toward the next decade",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912917/what's-new-with-gke-a-look-toward-the-next-decade",
@@ -83461,6 +83445,22 @@
             "audience": true,
             "topicJaccard": 0.875,
             "tokenOverlap": 0.3867,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.9176,
+          "embeddingScore": 0.7932,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.6875,
+            "tokenOverlap": 0.3636,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -84130,22 +84130,6 @@
           }
         },
         {
-          "sessionId": "3912950",
-          "title": "Scaling the fleet: Spotify's vision for the future of Config Connector",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912950/scaling-the-fleet-spotify's-vision-for-the-future-of-config-connector",
-          "score": 0.789,
-          "embeddingScore": 0.7276,
-          "signals": {
-            "aiFocus": true,
-            "theme": false,
-            "audience": false,
-            "topicJaccard": 0.3333,
-            "tokenOverlap": 0.2273,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912310",
           "title": "The developer's platform: Build the agentic AI future with Cloud SQL",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912310/the-developer's-platform-build-the-agentic-ai-future-with-cloud-sql",
@@ -84157,6 +84141,22 @@
             "audience": true,
             "topicJaccard": 0.5,
             "tokenOverlap": 0.2614,
+            "sessionCategory": false,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912950",
+          "title": "Scaling the fleet: Spotify's vision for the future of Config Connector",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912950/scaling-the-fleet-spotify's-vision-for-the-future-of-config-connector",
+          "score": 0.759,
+          "embeddingScore": 0.7276,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.3333,
+            "tokenOverlap": 0.2273,
             "sessionCategory": false,
             "usedEmbedding": true
           }
@@ -84489,10 +84489,10 @@
           "sessionId": "3912946",
           "title": "Build and optimize GKE workloads: A master class in node-level performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912946/build-and-optimize-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.6071,
+          "score": 0.6371,
           "embeddingScore": 0.5342,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 0.2353,
@@ -87737,46 +87737,14 @@
       "sessionId": "3913094",
       "related": [
         {
-          "sessionId": "3912309",
-          "title": "The governed open lakehouse: Achieve interoperability and unified context",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912309/the-governed-open-lakehouse-achieve-interoperability-and-unified-context",
-          "score": 0.758,
-          "embeddingScore": 0.6272,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.4118,
-            "tokenOverlap": 0.2206,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912231",
-          "title": "Optimize data cloud fleet management with AI observability agents",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912231/optimize-data-cloud-fleet-management-with-ai-observability-agents",
-          "score": 0.7335,
-          "embeddingScore": 0.6209,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": false,
-            "topicJaccard": 0.4444,
-            "tokenOverlap": 0.2192,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
           "sessionId": "3912254",
           "title": "Unified Iceberg: Open standards, native performance",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912254/unified-iceberg-open-standards-native-performance",
           "score": 0.7329,
           "embeddingScore": 0.6377,
           "signals": {
-            "aiFocus": false,
-            "theme": true,
+            "aiFocus": true,
+            "theme": false,
             "audience": true,
             "topicJaccard": 0.3333,
             "tokenOverlap": 0.2025,
@@ -87791,8 +87759,8 @@
           "score": 0.7163,
           "embeddingScore": 0.6041,
           "signals": {
-            "aiFocus": true,
-            "theme": false,
+            "aiFocus": false,
+            "theme": true,
             "audience": true,
             "topicJaccard": 0.6364,
             "tokenOverlap": 0.1803,
@@ -87801,18 +87769,50 @@
           }
         },
         {
-          "sessionId": "3912317",
-          "title": "Optimizing your database's health with unified fleet management",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912317/optimizing-your-database's-health-with-unified-fleet-management",
-          "score": 0.704,
-          "embeddingScore": 0.6091,
+          "sessionId": "3912309",
+          "title": "The governed open lakehouse: Achieve interoperability and unified context",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912309/the-governed-open-lakehouse-achieve-interoperability-and-unified-context",
+          "score": 0.698,
+          "embeddingScore": 0.6272,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": true,
+            "topicJaccard": 0.4118,
+            "tokenOverlap": 0.2206,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3912231",
+          "title": "Optimize data cloud fleet management with AI observability agents",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912231/optimize-data-cloud-fleet-management-with-ai-observability-agents",
+          "score": 0.6735,
+          "embeddingScore": 0.6209,
+          "signals": {
+            "aiFocus": false,
+            "theme": false,
+            "audience": false,
+            "topicJaccard": 0.4444,
+            "tokenOverlap": 0.2192,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3913121",
+          "title": "Achieve multicloud security at scale with Google Unified Security",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913121/achieve-multicloud-security-at-scale-with-google-unified-security",
+          "score": 0.6728,
+          "embeddingScore": 0.6117,
           "signals": {
             "aiFocus": true,
-            "theme": true,
+            "theme": false,
             "audience": false,
-            "topicJaccard": 0.4118,
-            "tokenOverlap": 0.2031,
-            "sessionCategory": false,
+            "topicJaccard": 0.1429,
+            "tokenOverlap": 0.1507,
+            "sessionCategory": true,
             "usedEmbedding": true
           }
         }
@@ -87821,6 +87821,22 @@
     "3913149": {
       "sessionId": "3913149",
       "related": [
+        {
+          "sessionId": "3913094",
+          "title": "Unified management plane for OTel: Server-side data control and processing",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3913094/unified-management-plane-for-otel-server-side-data-control-and-processing",
+          "score": 0.909,
+          "embeddingScore": 0.7409,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2623,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
         {
           "sessionId": "3913064",
           "title": "From toil to innovation: Achieving scalable, reliable observability",
@@ -87833,22 +87849,6 @@
             "audience": true,
             "topicJaccard": 0.7778,
             "tokenOverlap": 0.1897,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3913094",
-          "title": "Unified management plane for OTel: Server-side data control and processing",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3913094/unified-management-plane-for-otel-server-side-data-control-and-processing",
-          "score": 0.849,
-          "embeddingScore": 0.7409,
-          "signals": {
-            "aiFocus": false,
-            "theme": false,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2623,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -88226,17 +88226,17 @@
           }
         },
         {
-          "sessionId": "3952911",
-          "title": "Cloud Native SASE with Fortinet and Google Unified Security",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3952911/cloud-native-sase-with-fortinet-and-google-unified-security",
-          "score": 0.8323,
-          "embeddingScore": 0.7065,
+          "sessionId": "3908779",
+          "title": "Snowflake and Chrome Enterprise: Zero trust in the browser meets modern security demands",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908779/snowflake-and-chrome-enterprise-zero-trust-in-the-browser-meets-modern-security-demands",
+          "score": 0.8332,
+          "embeddingScore": 0.7135,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.4286,
-            "tokenOverlap": 0.1014,
+            "topicJaccard": 0.2857,
+            "tokenOverlap": 0.1509,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -88311,17 +88311,17 @@
           }
         },
         {
-          "sessionId": "3952911",
-          "title": "Cloud Native SASE with Fortinet and Google Unified Security",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3952911/cloud-native-sase-with-fortinet-and-google-unified-security",
-          "score": 0.8323,
-          "embeddingScore": 0.7065,
+          "sessionId": "3908779",
+          "title": "Snowflake and Chrome Enterprise: Zero trust in the browser meets modern security demands",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908779/snowflake-and-chrome-enterprise-zero-trust-in-the-browser-meets-modern-security-demands",
+          "score": 0.8332,
+          "embeddingScore": 0.7135,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.4286,
-            "tokenOverlap": 0.1014,
+            "topicJaccard": 0.2857,
+            "tokenOverlap": 0.1509,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -88396,17 +88396,17 @@
           }
         },
         {
-          "sessionId": "3952911",
-          "title": "Cloud Native SASE with Fortinet and Google Unified Security",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3952911/cloud-native-sase-with-fortinet-and-google-unified-security",
-          "score": 0.8323,
-          "embeddingScore": 0.7065,
+          "sessionId": "3908779",
+          "title": "Snowflake and Chrome Enterprise: Zero trust in the browser meets modern security demands",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908779/snowflake-and-chrome-enterprise-zero-trust-in-the-browser-meets-modern-security-demands",
+          "score": 0.8332,
+          "embeddingScore": 0.7135,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.4286,
-            "tokenOverlap": 0.1014,
+            "topicJaccard": 0.2857,
+            "tokenOverlap": 0.1509,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -88481,17 +88481,17 @@
           }
         },
         {
-          "sessionId": "3952911",
-          "title": "Cloud Native SASE with Fortinet and Google Unified Security",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3952911/cloud-native-sase-with-fortinet-and-google-unified-security",
-          "score": 0.8323,
-          "embeddingScore": 0.7065,
+          "sessionId": "3908779",
+          "title": "Snowflake and Chrome Enterprise: Zero trust in the browser meets modern security demands",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3908779/snowflake-and-chrome-enterprise-zero-trust-in-the-browser-meets-modern-security-demands",
+          "score": 0.8332,
+          "embeddingScore": 0.7135,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
-            "topicJaccard": 0.4286,
-            "tokenOverlap": 0.1014,
+            "topicJaccard": 0.2857,
+            "tokenOverlap": 0.1509,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -89270,10 +89270,10 @@
           "sessionId": "3909230",
           "title": "Maximize channel revenue growth with Google Cloud Marketplace",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909230/maximize-channel-revenue-growth-with-google-cloud-marketplace",
-          "score": 0.9315,
+          "score": 0.9615,
           "embeddingScore": 0.7924,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
@@ -89286,10 +89286,10 @@
           "sessionId": "3909203",
           "title": "Go from zero to revenue on Google Cloud Marketplace",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909203/go-from-zero-to-revenue-on-google-cloud-marketplace",
-          "score": 0.9137,
+          "score": 0.9437,
           "embeddingScore": 0.7727,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
@@ -89299,13 +89299,29 @@
           }
         },
         {
+          "sessionId": "3909226",
+          "title": "Unlocking Google Cloud marketing funds: Overview and success tips",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909226/unlocking-google-cloud-marketing-funds-overview-and-success-tips",
+          "score": 0.8845,
+          "embeddingScore": 0.7154,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.283,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3909247",
           "title": "Monetize & scale: Your agentic strategy on Google Cloud Marketplace",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3909247/monetize-scale-your-agentic-strategy-on-google-cloud-marketplace",
-          "score": 0.9113,
+          "score": 0.8813,
           "embeddingScore": 0.7431,
           "signals": {
-            "aiFocus": true,
+            "aiFocus": false,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
@@ -89315,34 +89331,18 @@
           }
         },
         {
-          "sessionId": "3909217",
-          "title": "Foundation of success: Mastering co-sell and services registrations",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909217/foundation-of-success-mastering-co-sell-and-services-registrations",
-          "score": 0.8551,
-          "embeddingScore": 0.6879,
+          "sessionId": "3909224",
+          "title": "Level Up: Supercharge your partner marketing studio campaigns",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909224/level-up-supercharge-your-partner-marketing-studio-campaigns",
+          "score": 0.8599,
+          "embeddingScore": 0.6945,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
-            "tokenOverlap": 0.2453,
+            "tokenOverlap": 0.2075,
             "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909225",
-          "title": "Google Cloud Marketplace: Accelerating the AI agent economy",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909225/google-cloud-marketplace-accelerating-the-ai-agent-economy",
-          "score": 0.8549,
-          "embeddingScore": 0.7338,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5,
-            "tokenOverlap": 0.2203,
-            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -89671,17 +89671,17 @@
           }
         },
         {
-          "sessionId": "3909238",
-          "title": "Predictable profit: Mastering the new Google Cloud incentive model",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909238/predictable-profit-mastering-the-new-google-cloud-incentive-model",
-          "score": 0.8774,
-          "embeddingScore": 0.7402,
+          "sessionId": "3909214",
+          "title": "Unlock public sector growth with Marketplace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909214/unlock-public-sector-growth-with-marketplace",
+          "score": 0.8845,
+          "embeddingScore": 0.7154,
           "signals": {
-            "aiFocus": false,
+            "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
-            "tokenOverlap": 0.2449,
+            "tokenOverlap": 0.283,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -93432,81 +93432,81 @@
       "sessionId": "3909215",
       "related": [
         {
-          "sessionId": "3909238",
-          "title": "Predictable profit: Mastering the new Google Cloud incentive model",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909238/predictable-profit-mastering-the-new-google-cloud-incentive-model",
-          "score": 0.9015,
-          "embeddingScore": 0.7329,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2708,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909249",
-          "title": "Displace & win: The agentic workplace transformation Playbook",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909249/displace-win-the-agentic-workplace-transformation-playbook",
-          "score": 0.882,
-          "embeddingScore": 0.7155,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2308,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909210",
-          "title": "Google Cloud Partner Network \u2014 From framework to growth",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909210/google-cloud-partner-network-\u2014-from-framework-to-growth",
-          "score": 0.8726,
-          "embeddingScore": 0.7566,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.5,
-            "tokenOverlap": 0.1194,
-            "sessionCategory": false,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909217",
-          "title": "Foundation of success: Mastering co-sell and services registrations",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909217/foundation-of-success-mastering-co-sell-and-services-registrations",
-          "score": 0.8718,
-          "embeddingScore": 0.704,
-          "signals": {
-            "aiFocus": true,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 1.0,
-            "tokenOverlap": 0.2553,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3909247",
-          "title": "Monetize & scale: Your agentic strategy on Google Cloud Marketplace",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3909247/monetize-scale-your-agentic-strategy-on-google-cloud-marketplace",
-          "score": 0.8699,
-          "embeddingScore": 0.7032,
+          "sessionId": "3909235",
+          "title": "Competencies: Turn customer wins into your greatest competitive advantage",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909235/competencies-turn-customer-wins-into-your-greatest-competitive-advantage",
+          "score": 0.8891,
+          "embeddingScore": 0.7224,
           "signals": {
             "aiFocus": true,
             "theme": true,
             "audience": true,
             "topicJaccard": 1.0,
             "tokenOverlap": 0.234,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909203",
+          "title": "Go from zero to revenue on Google Cloud Marketplace",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909203/go-from-zero-to-revenue-on-google-cloud-marketplace",
+          "score": 0.8779,
+          "embeddingScore": 0.7091,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2766,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909200",
+          "title": "Elevate your co-sell: Mastering field engagements for measurable results",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909200/elevate-your-co-sell-mastering-field-engagements-for-measurable-results",
+          "score": 0.8765,
+          "embeddingScore": 0.7109,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2128,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909233",
+          "title": "Migrating SAP, Oracle, and VMware: A Partner and Customer Story",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909233/migrating-sap-oracle-and-vmware-a-partner-and-customer-story",
+          "score": 0.8735,
+          "embeddingScore": 0.7084,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2037,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
+          "sessionId": "3909238",
+          "title": "Predictable profit: Mastering the new Google Cloud incentive model",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3909238/predictable-profit-mastering-the-new-google-cloud-incentive-model",
+          "score": 0.8715,
+          "embeddingScore": 0.7329,
+          "signals": {
+            "aiFocus": false,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 1.0,
+            "tokenOverlap": 0.2708,
             "sessionCategory": true,
             "usedEmbedding": true
           }
@@ -93751,18 +93751,18 @@
           }
         },
         {
-          "sessionId": "3908728",
-          "title": "Resilience everywhere across Google Cloud, On-Prem, and Edge",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3908728/resilience-everywhere-across-google-cloud-on-prem-and-edge",
-          "score": 0.7764,
-          "embeddingScore": 0.6917,
+          "sessionId": "3912972",
+          "title": "Intelligent compute infrastructure: Design for performance, reliability, and cost",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912972/intelligent-compute-infrastructure-design-for-performance-reliability-and-cost",
+          "score": 0.7713,
+          "embeddingScore": 0.6557,
           "signals": {
             "aiFocus": true,
-            "theme": false,
-            "audience": false,
+            "theme": true,
+            "audience": true,
             "topicJaccard": 0.4167,
-            "tokenOverlap": 0.2949,
-            "sessionCategory": true,
+            "tokenOverlap": 0.2121,
+            "sessionCategory": false,
             "usedEmbedding": true
           }
         }
@@ -94877,6 +94877,22 @@
       "sessionId": "3912948",
       "related": [
         {
+          "sessionId": "3912942",
+          "title": "Build and scale GKE workloads: A master class in node-level performance",
+          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
+          "score": 0.8603,
+          "embeddingScore": 0.705,
+          "signals": {
+            "aiFocus": true,
+            "theme": true,
+            "audience": true,
+            "topicJaccard": 0.7692,
+            "tokenOverlap": 0.2821,
+            "sessionCategory": true,
+            "usedEmbedding": true
+          }
+        },
+        {
           "sessionId": "3912947",
           "title": "How GKE builds itself with AI",
           "url": "https://www.googlecloudevents.com/next-vegas/session/3912947/how-gke-builds-itself-with-ai",
@@ -94936,22 +94952,6 @@
             "audience": true,
             "topicJaccard": 0.8333,
             "tokenOverlap": 0.2949,
-            "sessionCategory": true,
-            "usedEmbedding": true
-          }
-        },
-        {
-          "sessionId": "3912942",
-          "title": "Build and scale GKE workloads: A master class in node-level performance",
-          "url": "https://www.googlecloudevents.com/next-vegas/session/3912942/build-and-scale-gke-workloads-a-master-class-in-node-level-performance",
-          "score": 0.8303,
-          "embeddingScore": 0.705,
-          "signals": {
-            "aiFocus": false,
-            "theme": true,
-            "audience": true,
-            "topicJaccard": 0.7692,
-            "tokenOverlap": 0.2821,
             "sessionCategory": true,
             "usedEmbedding": true
           }

@@ -12814,10 +12814,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Infra theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -13010,10 +13010,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Infra theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -31446,10 +31446,10 @@
       "sponsor_name": "Capgemini",
       "sponsor_name_source": "speakers",
       "llm": {
-        "ai_focus": "AI",
-        "theme": "Business",
+        "ai_focus": "Not AI",
+        "theme": "App dev",
         "audience": "Leaders",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; App dev theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -40956,10 +40956,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Security",
         "audience": "Sec pros",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -42647,10 +42647,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Data",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Data pros",
+        "reasoning": "Non-AI; Data theme and Data pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -43267,10 +43267,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Infra theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -46336,10 +46336,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Security",
-        "audience": "General",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "audience": "Sec pros",
+        "reasoning": "Non-AI; Security theme and Sec pros audience based on title, description, and topic tags."
       }
     },
     {
@@ -53872,10 +53872,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
-        "theme": "Data",
+        "ai_focus": "Not AI",
+        "theme": "Infra",
         "audience": "Infra/Ops",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Infra theme and Infra/Ops audience based on title, description, and topic tags."
       }
     },
     {
@@ -54842,10 +54842,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {
@@ -57689,10 +57689,10 @@
       "sponsor_name": "",
       "sponsor_name_source": "",
       "llm": {
-        "ai_focus": "AI",
+        "ai_focus": "Not AI",
         "theme": "Business",
         "audience": "Leaders",
-        "reasoning": "Rule-based classification (no LLM); based on topic tags and title keywords."
+        "reasoning": "Non-AI; Business theme and Leaders audience based on title, description, and topic tags."
       }
     },
     {

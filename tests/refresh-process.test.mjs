@@ -71,6 +71,42 @@ test('classify_new_sessions_rules reclassifies reused Not AI sessions when expli
   assert.match(result.stdout, /Reclassified existing live sessions: 1/);
 });
 
+test('classify_new_sessions_rules does not reclassify reused Not AI sessions on generic model wording alone', () => {
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'classify-rules-model-'));
+  const latestPath = path.join(tmpDir, 'latest.json');
+  const classifiedPath = path.join(tmpDir, 'classified.json');
+  const session = makeSession(43, 'Inside a restaurant operating model', {
+    description: 'A resilient operating model for store systems at scale.',
+    topics: ['Customer Story', 'Executive'],
+  });
+
+  writeJson(latestPath, { scraped_at: '2026-04-22T00:00:00.000Z', count: 1, sessions: [session] });
+  writeJson(classifiedPath, {
+    scraped_at: '2026-04-21T00:00:00.000Z',
+    count: 1,
+    sessions: [{
+      ...session,
+      llm: {
+        ai_focus: 'Not AI',
+        theme: 'Business',
+        audience: 'Leaders',
+        reasoning: 'stale',
+      },
+    }],
+  });
+
+  const result = spawnSync('python3', [
+    'scripts/classify_new_sessions_rules.py',
+    '--input', latestPath,
+    '--classified', classifiedPath,
+  ], { cwd: path.resolve('.'), encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+
+  const output = JSON.parse(fs.readFileSync(classifiedPath, 'utf8'));
+  assert.equal(output.sessions[0].llm.ai_focus, 'Not AI');
+  assert.match(result.stdout, /Reclassified existing live sessions: 0/);
+});
+
 test('refresh sanity report resolves the current live pair and surfaces hidden availability drift', () => {
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'refresh-sanity-'));
   const snapshotsDir = path.join(tmpDir, 'snapshots');
