@@ -14,6 +14,7 @@ Usage:
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 REPO = Path(__file__).parent.parent
@@ -25,6 +26,10 @@ AI_KW = [
     "tpu", "gpu", "generative", "sovereign ai", "hypercomputer",
     "neurocontext", "veo", "deepmind",
 ]
+AI_FOCUS_REGEX = re.compile(
+    r"\b(ai|gemini|agent|agents|agentic|llm|ml|machine learning|genai|generative|vertex|prompt|rag|inference|model|models|foundation|agentspace|notebooklm|deepmind|tensorflow|gemma|mcp)\b",
+    re.IGNORECASE,
+)
 
 
 def has_agent_kw(title: str) -> bool:
@@ -39,6 +44,15 @@ def ai_focus(session: dict) -> str:
         " ".join(session.get("topics") or []),
     ]).lower()
     return "AI" if any(kw in text for kw in AI_KW) else "Not AI"
+
+
+def has_explicit_ai_evidence(session: dict) -> bool:
+    text = " ".join([
+        session.get("title") or "",
+        session.get("description") or "",
+        " ".join(session.get("topics") or []),
+    ])
+    return bool(AI_FOCUS_REGEX.search(text))
 
 
 def theme(session: dict) -> str:
@@ -297,12 +311,15 @@ def main() -> None:
     }
     classified_sessions = []
     reused = 0
+    reclassified = 0
     for session in live_sessions:
         llm = existing_llm_by_url.get(session.get("url"))
-        if llm:
+        if llm and not (llm.get("ai_focus") == "Not AI" and has_explicit_ai_evidence(session)):
             reused += 1
         else:
             llm = classify(session)
+            if session.get("url") in existing_llm_by_url:
+                reclassified += 1
         classified_sessions.append({**session, "llm": llm})
 
     output_data = dict(input_data) if isinstance(input_data, dict) else {"sessions": live_sessions}
@@ -311,6 +328,7 @@ def main() -> None:
     classified_path.write_text(json.dumps(output_data, indent=2), encoding="utf-8")
     print(f"\nUpdated classified_sessions.json: {len(classified_sessions)} sessions")
     print(f"Reused existing classifications: {reused}")
+    print(f"Reclassified existing live sessions: {reclassified}")
     print(f"Rule-classified current live sessions: {len(classified_sessions) - reused}")
 
 
