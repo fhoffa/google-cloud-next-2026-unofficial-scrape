@@ -432,7 +432,7 @@ function renderSeatFill(session) {
   const fill = seatFillData(session);
   if (!fill) return '';
   if (fill.capacity == null) {
-    const label = `${fill.registrants.toLocaleString()} reserved`;
+    const label = `${fill.registrants.toLocaleString()} registered`;
     const detail = 'Capacity unknown';
     return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(detail)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(detail)}</span></div></div>`;
   }

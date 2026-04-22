@@ -1321,6 +1321,6 @@ test('session explorer renders seat demand when registrations are known, even if
   assert.match(appHtml, /42 \/ 48 seats/);
   assert.match(appHtml, /88% full/);
   assert.match(appHtml, /seat-fill-bar-fill/);
-  assert.match(appHtml, /No capacity session[\s\S]*90 reserved/);
+  assert.match(appHtml, /No capacity session[\s\S]*90 registered/);
   assert.match(appHtml, /No capacity session[\s\S]*Capacity unknown/);
 });
