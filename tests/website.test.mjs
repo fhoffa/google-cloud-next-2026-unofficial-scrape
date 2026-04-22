@@ -1291,7 +1291,7 @@ test('session explorer renders sponsored badges and active sponsored pills', asy
   assert.match(env.document.getElementById('active-filters').innerHTML, /sponsored: yes/);
 });
 
-test('session explorer renders seat demand when registrations are known, even if capacity is missing', async () => {
+test('session explorer hides seat demand when capacity is missing', async () => {
   const env = createEnvironment();
   const source = {
     sessions: [
@@ -1321,6 +1321,5 @@ test('session explorer renders seat demand when registrations are known, even if
   assert.match(appHtml, /42 \/ 48 seats/);
   assert.match(appHtml, /88% full/);
   assert.match(appHtml, /seat-fill-bar-fill/);
-  assert.match(appHtml, /No capacity session[\s\S]*90 registered/);
-  assert.match(appHtml, /No capacity session[\s\S]*Capacity unknown/);
+  assert.doesNotMatch(appHtml, /No capacity session[\s\S]*seat-fill/);
 });
