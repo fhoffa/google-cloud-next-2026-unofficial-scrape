@@ -122,11 +122,12 @@ function buildOverview(snapshots, latestLookup) {
         : [];
       const sponsorName = String(latestSession?.sponsor_name || session?.sponsor_name || '').trim();
       const description = String(latestSession?.description || session?.description || '').trim();
+      const sponsored = Boolean(latestSession?.sponsored || session?.sponsored);
       const searchText = [
         title,
         description,
         ...speakers.flatMap((speaker) => [speaker.n, speaker.c]),
-        Boolean(session?.sponsored ?? latestSession?.sponsored) ? 'sponsored sponsor sponsor_disclosure' : '',
+        sponsored ? 'sponsored sponsor sponsor_disclosure' : '',
       ].filter(Boolean).join(' ').toLowerCase();
       const dayIndex = DAY_ORDER.indexOf(day);
       compactSessions.push({
@@ -143,7 +144,7 @@ function buildOverview(snapshots, latestLookup) {
         cap: capacity,
         r: room,
         sp: speakers,
-        spon: Boolean(session?.sponsored ?? latestSession?.sponsored),
+        spon: sponsored,
         scon: sponsorName,
         desc: description,
         q: searchText,
