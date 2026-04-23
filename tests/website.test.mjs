@@ -388,8 +388,8 @@ test('insights build emits a separate session availability artifact', () => {
   assert.ok(availabilityArtifact.records.length > 0);
   assert.ok(availabilityArtifact.records.some((record) => Number(record.remaining_capacity) === 0));
   const vibingRecord = availabilityArtifact.records.find((record) => String(record.url || '').includes('/3912264/'));
-  assert.equal(vibingRecord.room, 'Jasmine C');
-  assert.equal(String(vibingRecord.capacity), '253');
+  assert.equal(vibingRecord.room, 'Mandalay Bay A');
+  assert.equal(String(vibingRecord.capacity), '644');
 });
 
 test('insights page company section is a single longer non-Google list with write-up', () => {
