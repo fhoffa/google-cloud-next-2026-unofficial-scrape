@@ -43,7 +43,7 @@ test('extracts session records with moreInfoUrl from paginated library pages', (
   const records = extractSessionRecordsFromLibrary(page2);
   assert.ok(records.length > 0);
   assert.ok(records.every((r) => typeof r.url === 'string' && r.url.includes('/session/')));
-  assert.ok(records.some((r) => /gemini cli/i.test(r.title)));
+  assert.ok(records.some((r) => /google mcp services/i.test(r.title)));
 });
 
 
