@@ -45,11 +45,11 @@
       "registrant_count": "328",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Deepwatch, Inc",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "4045145",
@@ -573,11 +573,11 @@
       "registrant_count": "169",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "MongoDB",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3952914",
@@ -618,11 +618,11 @@
       "registrant_count": "433",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Insight",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913142",
@@ -950,11 +950,11 @@
       "registrant_count": "427",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Weights & Biases",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912911",
@@ -1868,11 +1868,11 @@
       "registrant_count": "639",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "NVIDIA",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908796",
@@ -1917,11 +1917,11 @@
       "registrant_count": "395",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Accenture",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913121",
@@ -2151,8 +2151,8 @@
       "registrant_count": "826",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -2449,11 +2449,11 @@
       "registrant_count": "704",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Anthropic",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920449",
@@ -2730,11 +2730,11 @@
       "registrant_count": "631",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "66degrees",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913027",
@@ -2947,11 +2947,11 @@
       "registrant_count": "645",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "KPMG LLP",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908820",
@@ -3082,11 +3082,11 @@
       "registrant_count": "661",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Dialpad",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3888644",
@@ -3131,11 +3131,11 @@
       "registrant_count": "241",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Dialpad",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920556",
@@ -3358,11 +3358,11 @@
       "registrant_count": "495",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "McKinsey & Company",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912969",
@@ -4316,11 +4316,11 @@
       "registrant_count": "634",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "GitHub",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3895089",
@@ -4366,11 +4366,11 @@
       "registrant_count": "716",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "HCLTech",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913055",
@@ -4998,11 +4998,11 @@
       "registrant_count": "284",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "PwC",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913036",
@@ -5455,11 +5455,11 @@
       "registrant_count": "134",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Thoughtworks",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920416",
@@ -5633,8 +5633,8 @@
       "registrant_count": "558",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -5770,11 +5770,11 @@
       "registrant_count": "220",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "senior",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3932029",
@@ -5888,11 +5888,11 @@
       "registrant_count": "257",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Fox Sports partnered with EPAM",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920493",
@@ -6891,11 +6891,11 @@
       "registrant_count": "623",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Insight and Mattel",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3908828",
@@ -7335,11 +7335,11 @@
       "registrant_count": "283",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "NRG",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3912322",
@@ -7433,8 +7433,8 @@
       "registrant_count": "513",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -7646,11 +7646,11 @@
       "registrant_count": "334",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Atlassian",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3917596",
@@ -7693,11 +7693,11 @@
       "registrant_count": "459",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Rabbit",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3924724",
@@ -8090,11 +8090,11 @@
       "registrant_count": "85",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "this session",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3908777",
@@ -8390,11 +8390,11 @@
       "registrant_count": "141",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "SAP",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912920",
@@ -8552,11 +8552,11 @@
       "registrant_count": "305",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Rubrik",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913141",
@@ -8894,11 +8894,11 @@
       "registrant_count": "423",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Onix",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3899999",
@@ -8933,11 +8933,11 @@
       "registrant_count": "196",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Searce Inc",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3950365",
@@ -9063,11 +9063,11 @@
       "registrant_count": "181",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Foresite Cybersecurity",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908781",
@@ -9196,8 +9196,8 @@
       "registrant_count": "239",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -9412,11 +9412,11 @@
       "registrant_count": "148",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Dialpad",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3930292",
@@ -10080,8 +10080,8 @@
       "registrant_count": "122",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -10174,11 +10174,11 @@
       "registrant_count": "199",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cognizant",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3913109",
@@ -10645,11 +10645,11 @@
       "registrant_count": "91",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Candescent",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3908829",
@@ -11684,11 +11684,11 @@
       "registrant_count": "365",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "66degrees",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3924733",
@@ -11940,11 +11940,11 @@
       "registrant_count": "271",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "ServiceNow",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912946",
@@ -12204,11 +12204,11 @@
       "registrant_count": "143",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Promevo",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912937",
@@ -12794,11 +12794,11 @@
       "registrant_count": "727",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Confluent",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920424",
@@ -13288,11 +13288,11 @@
       "registrant_count": "87",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Hyperscience",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3948594",
@@ -13332,8 +13332,8 @@
       "registrant_count": "310",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -13376,8 +13376,8 @@
       "registrant_count": "181",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -14033,8 +14033,8 @@
       "registrant_count": "424",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -14070,11 +14070,11 @@
       "registrant_count": "615",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "McKinsey & Company",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912235",
@@ -14629,11 +14629,11 @@
       "registrant_count": "603",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Hitachi",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920371",
@@ -15543,11 +15543,11 @@
       "registrant_count": "98",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Fortinet",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912218",
@@ -15842,11 +15842,11 @@
       "registrant_count": "164",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cognizant",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920489",
@@ -16141,11 +16141,11 @@
       "registrant_count": "250",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Salesforce",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3924726",
@@ -16255,11 +16255,11 @@
       "registrant_count": "853",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "MongoDB",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913092",
@@ -17191,11 +17191,11 @@
       "registrant_count": "247",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "a C-suite briefing with senior leaders from Accenture and industry pioneers",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3912247",
@@ -18768,11 +18768,11 @@
       "registrant_count": "1139",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Anthropic",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3932040",
@@ -19382,11 +19382,11 @@
       "registrant_count": "81",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Insight",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912326",
@@ -19546,11 +19546,11 @@
       "registrant_count": "482",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Chetna Sehgal and senior leaders",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3899488",
@@ -19603,8 +19603,8 @@
       "registrant_count": "362",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -19740,11 +19740,11 @@
       "registrant_count": "148",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Elastic",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3915271",
@@ -19798,11 +19798,11 @@
       "registrant_count": "67",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "a candid discussion",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3909200",
@@ -20139,11 +20139,11 @@
       "registrant_count": "282",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Wiz",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912324",
@@ -20295,11 +20295,11 @@
       "registrant_count": "245",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Quantiphi",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913500",
@@ -21174,11 +21174,11 @@
       "registrant_count": "683",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "DoiT",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3932017",
@@ -21774,11 +21774,11 @@
       "registrant_count": "339",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Morgan Stanley",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3952904",
@@ -21814,11 +21814,11 @@
       "registrant_count": "515",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "TENEX.ai",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3879152",
@@ -21861,11 +21861,11 @@
       "registrant_count": "371",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "PwC",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912938",
@@ -22041,8 +22041,8 @@
       "registrant_count": "54",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -22143,11 +22143,11 @@
       "registrant_count": "371",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Valtech",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3901379",
@@ -22187,8 +22187,8 @@
       "registrant_count": "241",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -22233,11 +22233,11 @@
       "registrant_count": "197",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Wiz",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3879151",
@@ -22284,8 +22284,8 @@
       "registrant_count": "577",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -22404,8 +22404,8 @@
       "registrant_count": "524",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -22441,11 +22441,11 @@
       "registrant_count": "286",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "GitHub",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3911913",
@@ -22546,8 +22546,8 @@
       "registrant_count": "313",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -22650,11 +22650,11 @@
       "registrant_count": "108",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "SAP",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912315",
@@ -22874,11 +22874,11 @@
       "registrant_count": "205",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Capgemini",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3964831",
@@ -22985,11 +22985,11 @@
       "registrant_count": "314",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Elastic",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912944",
@@ -23078,11 +23078,11 @@
       "registrant_count": "102",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "DNA",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3913148",
@@ -23180,11 +23180,11 @@
       "registrant_count": "147",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "TENEX.ai",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912906",
@@ -23346,11 +23346,11 @@
       "registrant_count": "165",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "ServiceNow",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920164",
@@ -23848,11 +23848,11 @@
       "registrant_count": "523",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "industry",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920469",
@@ -24386,11 +24386,11 @@
       "registrant_count": "361",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "CDW",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920524",
@@ -24502,11 +24502,11 @@
       "registrant_count": "209",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Tech Mahindra",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912916",
@@ -24622,11 +24622,11 @@
       "registrant_count": "84",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Equinix",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3947566",
@@ -25531,8 +25531,8 @@
       "registrant_count": "914",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -26748,11 +26748,11 @@
       "registrant_count": "626",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Accenture",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "4045146",
@@ -26984,8 +26984,8 @@
       "registrant_count": "488",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -27289,11 +27289,11 @@
       "registrant_count": "37",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cyderes",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "4060587",
@@ -27546,11 +27546,11 @@
       "registrant_count": "311",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Infosys Limited",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908771",
@@ -27705,11 +27705,11 @@
       "registrant_count": "78",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "NVIDIA",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3912935",
@@ -27870,11 +27870,11 @@
       "registrant_count": "436",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cardinal Health and Genpact",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3909318",
@@ -27954,11 +27954,11 @@
       "registrant_count": "217",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Wendy's",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3912912",
@@ -28199,11 +28199,11 @@
       "registrant_count": "142",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Okta",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920392",
@@ -28587,8 +28587,8 @@
       "registrant_count": "213",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -28734,11 +28734,11 @@
       "registrant_count": "291",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "McDonald",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3909327",
@@ -28817,11 +28817,11 @@
       "registrant_count": "127",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Intel",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913009",
@@ -29168,11 +29168,11 @@
       "registrant_count": "95",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Fortinet",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3909232",
@@ -29383,11 +29383,11 @@
       "registrant_count": "110",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cognizant",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3848871",
@@ -29432,11 +29432,11 @@
       "registrant_count": "164",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Domo, Inc",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913502",
@@ -29621,11 +29621,11 @@
       "registrant_count": "188",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "EssilorLuxottica",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3908782",
@@ -30563,8 +30563,8 @@
       "registrant_count": "329",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -30602,11 +30602,11 @@
       "registrant_count": "118",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Optiv",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913042",
@@ -31119,11 +31119,11 @@
       "registrant_count": "142",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "NVIDIA",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913112",
@@ -32705,11 +32705,11 @@
       "registrant_count": "380",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Datadog",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913102",
@@ -32862,11 +32862,11 @@
       "registrant_count": "108",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "DMRC",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913160",
@@ -33018,11 +33018,11 @@
       "registrant_count": "226",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Mondoo",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3909247",
@@ -33259,11 +33259,11 @@
       "registrant_count": "1713",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Tata Consultancy Services",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912255",
@@ -33659,8 +33659,8 @@
       "registrant_count": "232",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -34313,11 +34313,11 @@
       "registrant_count": "152",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Bindplane",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912304",
@@ -34464,11 +34464,11 @@
       "registrant_count": "351",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Wiz",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908788",
@@ -34725,11 +34725,11 @@
       "registrant_count": "125",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "AMD",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3944293",
@@ -35048,11 +35048,11 @@
       "registrant_count": "264",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Publicis Sapient",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "4008106",
@@ -35441,11 +35441,11 @@
       "registrant_count": "127",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Optimizely",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3911902",
@@ -35574,8 +35574,8 @@
       "registrant_count": "259",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -35621,11 +35621,11 @@
       "registrant_count": "192",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cargill",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912902",
@@ -35889,11 +35889,11 @@
       "registrant_count": "268",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Salesforce",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3909238",
@@ -36232,11 +36232,11 @@
       "registrant_count": "46",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Fortinet",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913151",
@@ -36397,11 +36397,11 @@
       "registrant_count": "53",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "this session",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920468",
@@ -36973,8 +36973,8 @@
       "registrant_count": "74",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -37314,11 +37314,11 @@
       "registrant_count": "306",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cotality",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908766",
@@ -37423,11 +37423,11 @@
       "registrant_count": "237",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "this session",
+      "sponsor_name_source": "description"
     },
     {
       "id": "4036717",
@@ -37461,11 +37461,11 @@
       "registrant_count": "231",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Databricks",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913168",
@@ -37543,8 +37543,8 @@
       "registrant_count": "144",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -37656,8 +37656,8 @@
       "registrant_count": "64",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -37749,11 +37749,11 @@
       "registrant_count": "146",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Learn how McKinsey",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3952468",
@@ -37896,11 +37896,11 @@
       "registrant_count": "285",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Alteryx",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912239",
@@ -38320,8 +38320,8 @@
       "registrant_count": "641",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -38424,11 +38424,11 @@
       "registrant_count": "151",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Salesforce",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908790",
@@ -38624,11 +38624,11 @@
       "registrant_count": "80",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Deepwatch, Inc",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912290",
@@ -38824,11 +38824,11 @@
       "registrant_count": "456",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Kong",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912217",
@@ -39218,11 +39218,11 @@
       "registrant_count": "154",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "NVIDIA",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912282",
@@ -40107,11 +40107,11 @@
       "registrant_count": "300",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "GitLab",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912229",
@@ -40207,11 +40207,11 @@
       "registrant_count": "101",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Menlo Security",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3818847",
@@ -40547,11 +40547,11 @@
       "registrant_count": "373",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Palo Alto Networks",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912995",
@@ -40730,8 +40730,8 @@
       "registrant_count": "384",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -42158,11 +42158,11 @@
       "registrant_count": "186",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Bindplane",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908779",
@@ -42263,11 +42263,11 @@
       "registrant_count": "103",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "this fireside chat with senior executives",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3920551",
@@ -43192,11 +43192,11 @@
       "registrant_count": "154",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "CrowdStrike",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912898",
@@ -43721,8 +43721,8 @@
       "registrant_count": "92",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -44051,11 +44051,11 @@
       "registrant_count": "205",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "DoiT",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3916663",
@@ -44094,11 +44094,11 @@
       "registrant_count": "101",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Chainguard",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3920343",
@@ -44138,11 +44138,11 @@
       "registrant_count": "820",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Oracle",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912994",
@@ -45058,11 +45058,11 @@
       "registrant_count": "84",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Optiv",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912967",
@@ -45289,11 +45289,11 @@
       "registrant_count": "321",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Palo Alto Networks",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3902758",
@@ -45338,11 +45338,11 @@
       "registrant_count": "205",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Palo Alto Networks",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3908803",
@@ -45747,11 +45747,11 @@
       "registrant_count": "90",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Foresite Cybersecurity",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3909205",
@@ -46634,11 +46634,11 @@
       "registrant_count": "177",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "HCA Healthcare and Insight",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3912992",
@@ -46738,11 +46738,11 @@
       "registrant_count": "259",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Equinix",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3913018",
@@ -47560,11 +47560,11 @@
       "registrant_count": "769",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Box",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3879153",
@@ -47612,11 +47612,11 @@
       "registrant_count": "257",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "PwC",
+      "sponsor_name_source": "description"
     },
     {
       "id": "3911923",
@@ -47704,11 +47704,11 @@
       "registrant_count": "170",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Menlo Security",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3932020",
@@ -48197,8 +48197,8 @@
       "registrant_count": "178",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -48611,11 +48611,11 @@
       "registrant_count": "47",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Eon",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912919",
@@ -49177,8 +49177,8 @@
       "registrant_count": "289",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
       "sponsor_name": "",
       "sponsor_name_source": ""
@@ -50884,11 +50884,11 @@
       "registrant_count": "96",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Datadog",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3912907",
@@ -52482,11 +52482,11 @@
       "registrant_count": "1123",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Glean",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3916661",
@@ -52527,11 +52527,11 @@
       "registrant_count": "488",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": true,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Cognition AI",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3848872",
@@ -52569,11 +52569,11 @@
       "registrant_count": "316",
       "agenda_status": "not-added-session",
       "disabled_class": "",
-      "sponsored": false,
-      "sponsor_disclosure": false,
+      "sponsored": true,
+      "sponsor_disclosure": true,
       "partner_innovation": false,
-      "sponsor_name": "",
-      "sponsor_name_source": ""
+      "sponsor_name": "Rakuten Cloud",
+      "sponsor_name_source": "speakers"
     },
     {
       "id": "3909222",
