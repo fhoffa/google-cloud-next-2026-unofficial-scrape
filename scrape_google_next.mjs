@@ -799,7 +799,7 @@ async function main() {
       continue;
     }
 
-    const html = await fetchText(url, { cacheKey });
+    const html = await fetchText(url, { cacheKey, preferCache: false });
     const record = toSessionRecord(url, html, seed);
     sessions.push(record);
     detailFetchCount += 1;
