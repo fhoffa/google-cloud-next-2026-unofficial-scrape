@@ -11,6 +11,8 @@ import {
   extractSessionIds,
   extractSessionRecordsFromLibrary,
   extractSessionSource,
+  extractSlidesUrl,
+  extractVideoUrl,
   isReusableDetailEntry,
   mergeFreshLibraryFields,
   partitionSessionRecords,
@@ -112,6 +114,29 @@ test('parses keynote session with URL, room, datetime, and speakers', () => {
   assert.match(rec.description, /The Next '26 Opening Keynote/i);
 });
 
+test('extracts slide and video links from session detail html', () => {
+  const html = `
+    <!-- Start Resources Download links -->
+    <a href="https://docs.google.com/presentation/d/demo-deck/edit?usp=sharing">Slides deck</a>
+    <!-- End Resources Download links -->
+    <script>
+      let video_id = "gY95kEL-JGI";
+      SessionDetailsPlayer.init(video_id, '3818845', 'Demo session', '4099378', 'Spotlights', 'https://youtu.be/gY95kEL-JGI');
+    </script>
+  `;
+  assert.equal(extractSlidesUrl(html), 'https://docs.google.com/presentation/d/demo-deck/edit?usp=sharing');
+  assert.equal(extractVideoUrl(html), 'https://youtu.be/gY95kEL-JGI');
+
+  const rec = toSessionRecord('https://example.com/session/3818845/demo', html, {
+    id: '3818845',
+    title: 'Demo session',
+    date_text: 'Wednesday, April 22, 2026',
+    start_time_text: '1:30 PM',
+    end_time_text: '2:15 PM',
+  });
+  assert.equal(rec.slides_url, 'https://docs.google.com/presentation/d/demo-deck/edit?usp=sharing');
+  assert.equal(rec.video_url, 'https://youtu.be/gY95kEL-JGI');
+});
 
 test('dedupes and partitions library records into date buckets', () => {
   const records = [

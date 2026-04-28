@@ -514,6 +514,41 @@
       background: linear-gradient(90deg, #f29900 0%, #d93025 100%);
     }
 
+    .card-media {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 2px;
+    }
+
+    .media-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #d2e3fc;
+      background: #f8fbff;
+      color: var(--blue-dark);
+    }
+
+    .media-link:hover {
+      background: #eef4ff;
+    }
+
+    .media-link-video {
+      border-color: #fbd3a4;
+      background: #fff7ed;
+      color: #a14200;
+    }
+
+    .media-link-video:hover {
+      background: #ffedd5;
+    }
+
     .card-desc {
       font-size: 0.82rem;
       color: var(--gray-600);
@@ -855,7 +890,7 @@
 <div id="app">
   <div class="loading"><div class="spinner"></div>Loading sessions…</div>
 </div>
-<div id="version-marker" style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: loading…</div>
+<div id="version-marker" style="max-width:1100px;margin:8px auto 24px;padding:0 16px;text-align:right;font-size:.75rem;color:var(--gray-400)">Version: template v0.2.0 · loading…</div>
 
 <script type="module">
   import { initSessionSearch } from './website/session-search.mjs';
