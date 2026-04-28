@@ -781,7 +781,7 @@ test('session explorer updates the version marker from the loaded dataset timest
     clearTimeoutImpl: () => {},
   });
 
-  const expectedVersion = `Version: ${dataset.scraped_at.slice(0, 16).replace('T', ' ')} UTC`;
+  const expectedVersion = `Version: template v0.2.0 · ${dataset.scraped_at.slice(0, 16).replace('T', ' ')} UTC`;
   assert.equal(env.document.getElementById('version-marker').textContent, expectedVersion);
 });
 
@@ -1294,11 +1294,18 @@ test('session explorer renders sponsored badges and active sponsored pills', asy
   assert.match(env.document.getElementById('active-filters').innerHTML, /sponsored: yes/);
 });
 
-test('session explorer hides seat demand when capacity is missing', async () => {
+test('session explorer keeps seat demand and adds slide/video links when available', async () => {
   const env = createEnvironment();
   const source = {
     sessions: [
-      { title: 'Seat viz session', url: 'https://example.com/session/seat-viz', topics: [], speakers: [] },
+      {
+        title: 'Seat viz session',
+        url: 'https://example.com/session/seat-viz',
+        topics: [],
+        speakers: [],
+        slides_url: 'https://docs.google.com/presentation/d/demo-deck/edit',
+        video_url: 'https://youtu.be/demo1234',
+      },
       { title: 'No capacity session', url: 'https://example.com/session/no-capacity', topics: [], speakers: [] },
     ],
   };
@@ -1323,6 +1330,8 @@ test('session explorer hides seat demand when capacity is missing', async () => 
   assert.match(appHtml, /Seat viz session/);
   assert.match(appHtml, /42 \/ 48 seats/);
   assert.match(appHtml, /88% full/);
+  assert.match(appHtml, /Slides ↗/);
+  assert.match(appHtml, /Video ↗/);
   assert.match(appHtml, /seat-fill-bar-fill/);
   assert.doesNotMatch(appHtml, /No capacity session[\s\S]*seat-fill/);
 });

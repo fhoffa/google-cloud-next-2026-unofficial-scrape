@@ -6,6 +6,7 @@ const DEFAULT_SORT = 'time';
 const VALID_SORTS = new Set([DEFAULT_SORT, 'title']);
 const CHANGELOG_SUMMARY_URL = 'media/changelog-summary.json';
 const FAVORITES_STORAGE_KEY = 'next2026:favorites';
+const SESSION_EXPLORER_TEMPLATE_VERSION = '0.2.0';
 const DEFAULT_VIEW = 'sessions';
 const VALID_VIEWS = new Set([DEFAULT_VIEW, 'speakers', 'companies', 'words']);
 const MAX_NEW_PRIORITY = 9;
@@ -32,6 +33,13 @@ function formatUtcVersion(value) {
   const hours = String(date.getUTCHours()).padStart(2, '0');
   const minutes = String(date.getUTCMinutes()).padStart(2, '0');
   return `${year}-${month}-${day} ${hours}:${minutes} UTC`;
+}
+
+function formatVersionLabel(value) {
+  const timestamp = formatUtcVersion(value);
+  return timestamp
+    ? `Version: template v${SESSION_EXPLORER_TEMPLATE_VERSION} · ${timestamp}`
+    : `Version: template v${SESSION_EXPLORER_TEMPLATE_VERSION}`;
 }
 
 function timeIndexToLabel(index) {
@@ -439,6 +447,15 @@ function renderSeatFill(session) {
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
 }
 
+function renderMediaLinks(session) {
+  const items = [
+    session?.slides_url ? { label: 'Slides', url: session.slides_url, kind: 'slides' } : null,
+    session?.video_url ? { label: 'Video', url: session.video_url, kind: 'video' } : null,
+  ].filter(Boolean);
+  if (!items.length) return '';
+  return `<div class="card-media">${items.map((item) => `<a class="media-link media-link-${escHtml(item.kind)}" href="${escHtml(item.url)}" target="_blank" rel="noopener">${escHtml(item.label)} ↗</a>`).join('')}</div>`;
+}
+
 function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), prioritizedNewSessionIds = new Set()) {
   return sessions.map((session) => {
     const sessionId = sessionKey(session);
@@ -468,6 +485,7 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
         ${session.room ? `<span class="dot meta-icon">${escHtml(session.room)}</span>` : ''}
       </div>
       ${renderSeatFill(session)}
+      ${renderMediaLinks(session)}
       ${session.description ? `<div class="card-desc${isExpanded ? ' expanded' : ''}">${highlight(session.description, q)}</div>${session.description.length > 220 ? ` <button class="see-more-btn" type="button" data-session-id="${escHtml(sessionId)}">${isExpanded ? 'See less' : 'See more'}</button>` : ''}` : ''}
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
@@ -804,8 +822,7 @@ export async function initSessionSearch({ document = globalThis.document, fetchI
     const relatedSessionsData = relatedSessionsResponse ? await relatedSessionsResponse.json().catch(() => null) : null;
     const changelogSummaryData = changelogSummaryResponse ? await changelogSummaryResponse.json().catch(() => null) : null;
     const baseSessions = data.sessions || [];
-    const versionText = formatUtcVersion(data?.scraped_at || availabilityData?.generatedAt || '');
-    if (versionMarker && versionText) versionMarker.textContent = `Version: ${versionText}`;
+    if (versionMarker) versionMarker.textContent = formatVersionLabel(data?.scraped_at || availabilityData?.generatedAt || '');
     sessions = Array.isArray(availabilityData?.records)
       ? mergeAvailabilityIntoSessions(baseSessions, availabilityData.records)
       : baseSessions;

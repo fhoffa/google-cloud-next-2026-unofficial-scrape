@@ -20,6 +20,7 @@ const CONFIG = {
   retries: Number(process.env.RETRIES || 4),
   timeoutMs: Number(process.env.TIMEOUT_MS || 30000),
   forceRefresh: process.env.FORCE_REFRESH === '1',
+  refreshCacheAfter: process.env.REFRESH_CACHE_AFTER || '',
   useLibraryCache: process.env.USE_LIBRARY_CACHE === '1',
   maxSessions: process.env.MAX_SESSIONS ? Number(process.env.MAX_SESSIONS) : null,
   bucket: process.env.BUCKET || '',
@@ -27,6 +28,10 @@ const CONFIG = {
     process.env.USER_AGENT ||
     'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 polite-research-scraper/0.1',
 };
+
+const REFRESH_CACHE_AFTER_MS = CONFIG.refreshCacheAfter
+  ? Date.parse(CONFIG.refreshCacheAfter)
+  : NaN;
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -618,6 +623,67 @@ function extractVisibleDateTime(html) {
   return extractTextByRegex(html, /<div class="session-start-end-time">([\s\S]*?)<\/div>/i);
 }
 
+function decodeHtmlEntities(text = '') {
+  return String(text || '')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .trim();
+}
+
+function extractAnchors(html = '') {
+  return [...String(html || '').matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((match) => ({
+      url: decodeHtmlEntities(match[1] || ''),
+      label: stripTags(match[2] || ''),
+    }))
+    .filter((item) => item.url);
+}
+
+function isLikelySlidesLink(url = '', label = '') {
+  const haystack = `${url} ${label}`.toLowerCase();
+  return [
+    'docs.google.com/presentation',
+    'drive.google.com',
+    'speakerdeck',
+    'slides',
+    'slide deck',
+    'deck',
+    'presentation',
+    '.pdf',
+    'content-cdn.sessionboard.com',
+  ].some((token) => haystack.includes(token));
+}
+
+function dedupeLinks(items = []) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const url = String(item?.url || '').trim();
+    if (!url || seen.has(url)) return false;
+    seen.add(url);
+    return true;
+  });
+}
+
+function extractSlidesUrl(html) {
+  const resourceSection = html.match(/<!-- Start Resources Download links -->([\s\S]*?)<!-- End Resources Download links -->/i)?.[1] || '';
+  const candidates = dedupeLinks([
+    ...extractAnchors(resourceSection),
+    ...extractAnchors(html).filter((item) => isLikelySlidesLink(item.url, item.label)),
+  ]);
+  return candidates.find((item) => isLikelySlidesLink(item.url, item.label))?.url || '';
+}
+
+function extractVideoUrl(html) {
+  const initBlock = html.match(/SessionDetailsPlayer\.init\(([\s\S]{0,800}?)\)/i)?.[1] || '';
+  const directUrl = initBlock.match(/https?:\/\/(?:www\.)?(?:youtu\.be|youtube\.com\/watch\?v=)[^'"\s,)]+/i)?.[0];
+  if (directUrl) return directUrl;
+  const videoId = html.match(/let\s+video_id\s*=\s*"([A-Za-z0-9_-]{6,})"/i)?.[1] || '';
+  return videoId ? `https://youtu.be/${videoId}` : '';
+}
+
 function parseDateText(dateText) {
   const value = (dateText || '').trim();
   if (!value) return null;
@@ -705,6 +771,8 @@ function toSessionRecord(url, html, seed = {}) {
     registrant_count: sourceSession.registrantCount ?? seed.registrant_count ?? '',
     agenda_status: sourceSession.addedInAgenda ?? seed.agenda_status ?? '',
     disabled_class: sourceSession.disabledClass ?? seed.disabled_class ?? '',
+    slides_url: extractSlidesUrl(html),
+    video_url: extractVideoUrl(html),
   };
   return {
     ...record,
@@ -723,6 +791,8 @@ export {
   dedupeSessionRecords,
   extractSessionIds,
   extractSessionRecordsFromLibrary,
+  extractSlidesUrl,
+  extractVideoUrl,
   isReusableDetailEntry,
   deriveSponsoredSessionFields,
   mergeFreshLibraryFields,
@@ -780,8 +850,30 @@ async function main() {
       .access(cachePath)
       .then(() => true)
       .catch(() => false);
+    const cacheStat = cacheExists ? await fs.stat(cachePath).catch(() => null) : null;
+    const freshForcedCacheAvailable =
+      CONFIG.forceRefresh &&
+      Number.isFinite(REFRESH_CACHE_AFTER_MS) &&
+      cacheStat?.mtimeMs >= REFRESH_CACHE_AFTER_MS;
 
     console.log(`[${i + 1}/${selectedUrls.length}] ${sessionId} ${url}`);
+
+    if (freshForcedCacheAvailable) {
+      const cachedHtml = await fs.readFile(cachePath, 'utf8');
+      const reusedRecord = toSessionRecord(url, cachedHtml, seed);
+      sessions.push(reusedRecord);
+      detailReuseCount += 1;
+      nextManifestEntries[url] = {
+        ...(manifestEntry || {}),
+        id: sessionId,
+        cache_path: path.relative(OUT_DIR, cachePath),
+        fingerprint,
+        last_detail_fetch_at: new Date(cacheStat.mtimeMs).toISOString(),
+        last_seen_at: new Date().toISOString(),
+      };
+      console.log('  reused freshly refreshed cache');
+      continue;
+    }
 
     if (
       isReusableDetailEntry({
@@ -792,7 +884,12 @@ async function main() {
         forceRefresh: CONFIG.forceRefresh,
       })
     ) {
-      sessions.push(mergeFreshLibraryFields(previousEnriched, seed));
+      let reusedRecord = mergeFreshLibraryFields(previousEnriched, seed);
+      try {
+        const cachedHtml = await fs.readFile(cachePath, 'utf8');
+        reusedRecord = toSessionRecord(url, cachedHtml, seed);
+      } catch {}
+      sessions.push(reusedRecord);
       detailReuseCount += 1;
       nextManifestEntries[url] = {
         ...manifestEntry,
