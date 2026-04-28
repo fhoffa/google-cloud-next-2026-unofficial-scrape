@@ -490,7 +490,6 @@ function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, 
       ${speakers ? `<div class="card-speakers">${speakers}</div>` : ''}
       ${topics ? `<div class="card-topics">${topics}</div>` : ''}
       ${renderRelatedSessions(sessionId, relatedItems, relatedVisible)}
-      ${session.url ? `<div class="reserve-seat-note">Note: the \u201cReserve a Seat\u201d button is broken on individual session pages. To reserve, search for this session by name in the <a href="https://www.googlecloudevents.com/next-vegas/session-library" target="_blank" rel="noopener">Session Library</a> instead.</div>` : ''}
     </div>`;
   }).join('');
 }
