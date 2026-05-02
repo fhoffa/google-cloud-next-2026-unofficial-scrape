@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Cloud Next 2026 — From Raw Data to Knowledge Graph</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: #f8f9fa;
+      color: #202124;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .eyebrow {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 12px;
+    }
+    header h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    section + section {
+      border-top: 1px solid #e8eaed;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1a73e8;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #202124;
+      margin: 24px 0 8px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 16px;
+      color: #3c4043;
+    }
+
+    /* ── Hero stat bar ── */
+    .stat-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      padding: 32px 24px;
+      background: white;
+      border-bottom: 1px solid #e8eaed;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 12px;
+      background: #f8f9fa;
+    }
+    .stat-card .number {
+      font-size: 38px;
+      font-weight: 800;
+      color: #1a73e8;
+      line-height: 1;
+    }
+    .stat-card .label {
+      font-size: 13px;
+      color: #5f6368;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+    .stat-card .sublabel {
+      font-size: 11px;
+      color: #9aa0a6;
+      margin-top: 2px;
+    }
+
+    /* ── Pipeline steps ── */
+    .pipeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pipeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      position: relative;
+    }
+    .pipeline-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 56px;
+      bottom: 0;
+      width: 2px;
+      background: #dadce0;
+    }
+    .step-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #1a73e8;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+    .step-icon.green { background: #34a853; }
+    .step-icon.orange { background: #fa7b17; }
+    .step-icon.purple { background: #a142f4; }
+    .step-icon.teal { background: #00897b; }
+    .step-body h3 { margin-top: 4px; }
+
+    /* ── Top nodes table ── */
+    .node-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin-top: 16px;
+    }
+    .node-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: #1a73e8;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .node-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8eaed;
+    }
+    .node-table tr:nth-child(even) td { background: #f8f9fa; }
+    .edge-bar {
+      display: inline-block;
+      height: 10px;
+      background: #1a73e8;
+      border-radius: 3px;
+      vertical-align: middle;
+      margin-right: 8px;
+      opacity: 0.8;
+    }
+    .edge-count {
+      font-weight: 700;
+      color: #1a73e8;
+    }
+
+    /* ── Communities grid ── */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .community-pill {
+      background: white;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+    .community-pill .c-name {
+      font-weight: 600;
+      color: #202124;
+    }
+    .community-pill .c-count {
+      color: #5f6368;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    /* ── Visualization frames ── */
+    .viz-frame-wrap {
+      width: 100%;
+      margin: 20px 0 12px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e8eaed;
+      background: #12132b;
+    }
+    .viz-frame-wrap.svg-wrap {
+      background: #CBD5E1;
+    }
+    .viz-frame {
+      width: 100%;
+      height: 500px;
+      border: none;
+      display: block;
+    }
+    .svg-frame {
+      height: 630px;
+    }
+    .viz-caption {
+      font-size: 13px;
+      color: #5f6368;
+      text-align: center;
+      margin-top: 0;
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    /* ── Quote / callout ── */
+    .callout {
+      background: #e8f0fe;
+      border-left: 4px solid #1a73e8;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: #174ea6;
+    }
+
+    /* ── Question cards ── */
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .question-card {
+      background: white;
+      border: 1px solid #e8eaed;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .question-card .q-theme {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #1a73e8;
+      margin-bottom: 14px;
+    }
+    .question-card details {
+      border-bottom: 1px solid #f1f3f4;
+    }
+    .question-card details:last-child {
+      border-bottom: none;
+    }
+    .question-card details summary {
+      font-size: 14px;
+      color: #202124;
+      padding: 9px 0;
+      line-height: 1.45;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .question-card details summary::-webkit-details-marker { display: none; }
+    .question-card details summary::before {
+      content: '›';
+      font-size: 16px;
+      font-weight: 700;
+      color: #dadce0;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+      margin-top: -1px;
+    }
+    .question-card details[open] summary::before {
+      transform: rotate(90deg);
+      color: #1a73e8;
+    }
+    .question-card details[open] summary {
+      color: #1a73e8;
+      font-weight: 600;
+    }
+    .q-answer {
+      font-size: 13px;
+      color: #3c4043;
+      line-height: 1.6;
+      padding: 8px 0 14px 22px;
+    }
+    .q-answer strong {
+      color: #202124;
+    }
+
+    /* ── Rainbow bar ── */
+    .rainbow-bar {
+      height: 4px;
+      background: linear-gradient(to right, #1a73e8 0%, #ea4335 25%, #fbbc04 50%, #34a853 75%, #1a73e8 100%);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #202124;
+      color: #9aa0a6;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+    footer a { color: #8ab4f8; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Google Cloud Next 2026 · Knowledge Graph Story</div>
+  <h1>From Conference Talks to a Map of the AI Ecosystem</h1>
+  <p>How 1,146 sessions, 444 slide decks, and 323 video transcripts became 8,285 nodes and 24,421 edges of structured knowledge.</p>
+  <div style="margin-top:16px; font-size:13px; opacity:0.9; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+    <span>By <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener" style="color:white;">Felipe Hoffa</a></span>
+    <span>·</span>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener" style="color:white;">Source on GitHub</a>
+    <span>·</span>
+    <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener" style="color:white;">Session Explorer</a>
+  </div>
+</header>
+<div class="rainbow-bar"></div>
+
+<!-- Hero stats -->
+<div class="stat-bar">
+  <div class="stat-card">
+    <div class="number">1,146</div>
+    <div class="label">Sessions Scraped</div>
+    <div class="sublabel">from the session explorer</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">444</div>
+    <div class="label">Slide Decks</div>
+    <div class="sublabel">PDFs analyzed</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">323</div>
+    <div class="label">YouTube Transcripts</div>
+    <div class="sublabel">full session recordings</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">~5M</div>
+    <div class="label">Words Processed</div>
+    <div class="sublabel">477 source files</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">8,285</div>
+    <div class="label">Graph Nodes</div>
+    <div class="sublabel">entities extracted</div>
+  </div>
+  <div class="stat-card">
+    <div class="number">24,421</div>
+    <div class="label">Graph Edges</div>
+    <div class="sublabel">relationships found</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Intro -->
+  <section>
+    <h2>The Data Collection Story</h2>
+    <p>Google Cloud Next 2026 was one of the largest cloud conferences of the year — over a thousand sessions spanning AI infrastructure, developer tools, enterprise platforms, security, and industry verticals. The challenge: how do you make sense of that much material at once?</p>
+    <p>The answer was to treat the entire conference as a corpus and build a knowledge graph from it. Here's how the data pipeline worked, layer by layer.</p>
+  </section>
+
+  <!-- Pipeline -->
+  <section>
+    <h2>The Pipeline: Layer by Layer</h2>
+    <div class="pipeline">
+
+      <div class="pipeline-step">
+        <div class="step-icon">1</div>
+        <div class="step-body">
+          <h3>Session Metadata — 1,146 sessions</h3>
+          <p>The first layer was the structured index from the Google Cloud Next 2026 session explorer. Each entry had a title, description, speaker names, company affiliations, topic tags, room, and timing. This became the skeleton: every session title and speaker was a candidate entity in the graph.</p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-icon green">2</div>
+        <div class="step-body">
+          <h3>Slide Decks — 444 PDFs, ~2,200 slides analyzed</h3>
+          <p>For 444 of the 1,146 sessions, the speaker uploaded a slide deck. Each PDF was downloaded, converted to images, and processed with vision analysis — extracting product names, architecture diagrams, metrics, and key claims from individual slides. This yielded <strong>2,205 slide-level analysis records</strong> and per-session brief summaries.</p>
+          <p>Slides are uniquely valuable: they contain the distilled, intentional message a speaker wants to convey. A bullet point on a slide is more signal than two minutes of verbal framing around it.</p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-icon orange">3</div>
+        <div class="step-body">
+          <h3>YouTube Transcripts — 323 full recordings</h3>
+          <p>For 323 sessions, a YouTube recording was available. Full audio transcripts were generated and stored — capturing the speaker's actual words, including Q&amp;A, live demos, and audience interactions that never appear in a slide deck.</p>
+          <p>The combination of slides + transcript for the same session was particularly powerful: slides provided structured claims while transcripts provided context, nuance, and the path that led to each conclusion.</p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-icon purple">4</div>
+        <div class="step-body">
+          <h3>Graphify — Entity &amp; Relationship Extraction</h3>
+          <p>All 477 source files (~5 million words) were fed through <strong>graphify</strong>, an AI-powered knowledge graph builder that reads raw text and extracts named entities, concepts, products, companies, and people — along with the semantic relationships between them.</p>
+          <p>The extraction was 100% sourced (no inferred connections), with 114 additional edges inferred by cross-document reasoning at a 0.85 confidence threshold.</p>
+        </div>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="step-icon teal">5</div>
+        <div class="step-body">
+          <h3>Graph Output — 8,285 nodes · 24,421 edges · 44 communities</h3>
+          <p>The resulting graph was then analyzed for community structure using modularity-based detection. 44 distinct communities emerged — each representing a cluster of entities that are more densely connected to each other than to the rest of the graph. Community names are derived from the most distinctive nodes in each cluster.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Raw graph -->
+  <section>
+    <h2>The Raw Graph — Beautiful, Barely Readable</h2>
+    <p>This is the full output: 8,285 entities and 24,421 relationships rendered as a force-directed graph. Each dot is a node, each line a relationship, each color a community. It's an honest picture of how much signal is in there — and how hard it is to absorb all at once.</p>
+    <div class="viz-frame-wrap">
+      <img src="graph_raw.png" style="width:100%; display:block;" alt="Full knowledge graph — 8,285 nodes, 24,421 edges" />
+    </div>
+    <p class="viz-caption">44 color-coded communities are visible as rough clusters, but the density of the core makes individual relationships impossible to read. This is the starting point for simplification.</p>
+  </section>
+
+  <!-- Conceptual map -->
+  <section>
+    <h2>Distilling the Ecosystem</h2>
+    <p>Rather than showing every node, the strategy graph surfaces the architecture underneath: six distinct zones that Google Cloud organized its Agentic AI story around at Next '26.</p>
+    <p>The simplification works by promoting only the highest-degree hub nodes within each detected community and collapsing everything else around them. Intra-layer connections become solid lines within each bubble; cross-layer connections become dashed lines between zones. The result is a map you can actually read — and reason about.</p>
+    <div class="viz-frame-wrap svg-wrap">
+      <img src="graph_v2_screenshot.png" style="width:100%; display:block;" alt="Conceptual strategy graph — six ecosystem zones" />
+    </div>
+    <p class="viz-caption">Six zones: Protocol/Tool Fabric (MCP, ADK, A2A Protocol) · Agent Control Plane (operational + security) · Governed Data Substrate (BigQuery et al.) · Agent Platform (Vertex AI, Gemini) · Runtime/Infra (GKE, Cloud Run) · Enterprise Surface (Google Workspace, NotebookLM)</p>
+  </section>
+
+  <!-- Questions -->
+  <section>
+    <h2>What Can You Ask This Graph?</h2>
+    <p>A knowledge graph built from 5 million words of conference material isn't just a visualization — it's a queryable model of an entire industry conversation. The kinds of questions it can help answer span from high-level strategy down to very specific session recommendations.</p>
+
+    <div class="question-grid">
+
+      <div class="question-card">
+        <div class="q-theme">Strategic orientation</div>
+        <details>
+          <summary>What technologies is Google betting on most heavily this year?</summary>
+          <div class="q-answer">By edge count: <strong>BigQuery (240)</strong>, <strong>Gemini (211)</strong>, <strong>Vertex AI (206)</strong>, <strong>GKE (131)</strong>. Together they form a clear stack — data → model → AI platform → runtime. Everything else in the conference attaches to one of these four.</div>
+        </details>
+        <details>
+          <summary>Which products are newly central vs. established for years?</summary>
+          <div class="q-answer"><strong>New but already high-degree:</strong> MCP (76 edges for a protocol announced this year), Model Armor (68), Gemini CLI (60), ADK. <strong>Long-established:</strong> BigQuery, GKE, Cloud Run — their high degree reflects years of ecosystem entrenchment, not just this conference.</div>
+        </details>
+        <details>
+          <summary>Where is Google trying to own the full stack vs. partnering?</summary>
+          <div class="q-answer">Google owns the AI layer tightly — Gemini, Vertex AI, GEAP, and ADK are all deeply integrated with each other and rarely reference external equivalents. Partnering happens at the edges: security (Palo Alto Networks, Mandiant, Wiz), enterprise apps (SAP, Salesforce), and hardware (NVIDIA).</div>
+        </details>
+      </div>
+
+      <div class="question-card">
+        <div class="q-theme">Ecosystem & partners</div>
+        <details>
+          <summary>Which companies appear most consistently alongside Google Cloud?</summary>
+          <div class="q-answer"><strong>Anthropic (46 edges)</strong> and <strong>Palo Alto Networks (45)</strong> lead all non-Google companies by a wide margin. Then Mandiant (32), Salesforce (27), NVIDIA (26). Anthropic's presence is notable — it's a competitor in AI models, yet appears heavily as a reference point throughout the conference.</div>
+        </details>
+        <details>
+          <summary>What independent software vendors cluster around GKE vs. Vertex AI?</summary>
+          <div class="q-answer">GKE clusters with infrastructure and DevOps vendors — Datadog, Harness, Chronosphere, and Wiz appear frequently in its community. Vertex AI clusters with AI platform vendors and model providers — Anthropic, Hugging Face, LangChain, and Replit appear in its orbit.</div>
+        </details>
+        <details>
+          <summary>Who are the surprising co-presenters across sessions?</summary>
+          <div class="q-answer"><strong>BNY + JP Morgan Chase + Bridgewater</strong> on a single AI strategy session — three competing financial firms sharing a stage. <strong>Atlassian + Datadog + Harness</strong> openly discussing the future of developer experience despite competing for the same budget. <strong>MongoDB + Palo Alto Networks + Snowflake</strong> co-presenting on SaaS architecture. <strong>U.S. DOT + City of LA + FDA</strong> — three government agencies at a cloud conference, together.</div>
+        </details>
+      </div>
+
+      <div class="question-card">
+        <div class="q-theme">Practitioner guidance</div>
+        <details>
+          <summary>If I'm building agentic systems, which sessions are most interconnected?</summary>
+          <div class="q-answer">By degree within the agentic cluster: <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912214" target="_blank" rel="noopener"><strong>BigQuery for agentic AI (58)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912305" target="_blank" rel="noopener"><strong>AgentOps with BigQuery + ADK + MCP (57)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912276" target="_blank" rel="noopener">Conversational Analytics agents + MCP (51)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3947563" target="_blank" rel="noopener">Elastic Agent Builder (48)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913028" target="_blank" rel="noopener">What's new in Google Cloud's agent platform (45)</a>. These sessions share the most concepts with the rest of the graph — start here for maximum coverage.</div>
+        </details>
+        <details>
+          <summary>What's the recommended learning path from data engineering to AI agents?</summary>
+          <div class="q-answer">The graph traces a clear path: <strong>BigQuery → Conversational Analytics → ADK → GEAP</strong>. Data engineering sessions connect to analytics agents, which connect to the ADK for building custom agents, which connect to GEAP for production deployment. Following the edge chain gives you a natural progression.</div>
+        </details>
+        <details>
+          <summary>Which talks reference the same architectural patterns?</summary>
+          <div class="q-answer">Sessions referencing <strong>MCP + ADK together</strong> form a tight cluster — they share architecture diagrams showing agents, tool servers, and orchestration layers. Sessions on <strong>GEAP evaluations</strong> cluster with sessions on <strong>agent observability and quality flywheels</strong>, reflecting a shared pattern around continuous agent improvement.</div>
+        </details>
+      </div>
+
+      <div class="question-card">
+        <div class="q-theme">Competitive intelligence</div>
+        <details>
+          <summary>How does Google frame its AI products relative to the broader market?</summary>
+          <div class="q-answer">Google consistently frames its stack as <strong>integrated</strong> vs. the market's fragmented point solutions. Vertex AI, Gemini, GEAP, and ADK are presented as a unified platform. Competitors like Anthropic are referenced as model providers that run <em>on</em> Google infrastructure — positioning Google as the platform, not just another model vendor.</div>
+        </details>
+        <details>
+          <summary>Which product categories are most contested across the conference?</summary>
+          <div class="q-answer"><strong>Agent security</strong> is the most contested zone — Palo Alto Networks, Wiz, Mandiant, and Google's own Model Armor and Cloud Armor all appear in overlapping sessions. <strong>Agent orchestration</strong> is second — ADK, Anthropic, LangChain, and Replit all compete for this layer. <strong>Data platforms</strong> see Snowflake, MongoDB, and BigQuery discussed in the same sessions.</div>
+        </details>
+        <details>
+          <summary>What security concerns show up most frequently, and in which zones?</summary>
+          <div class="q-answer"><strong>Prompt injection</strong> and <strong>OWASP Top 10 for agents</strong> are the most-cited emerging threats, concentrated in the Agent Control Plane zone. <strong>Zero Trust</strong> and <strong>Cloud IAM</strong> appear across the Security and Runtime zones. Traditional concerns like data exfiltration remain present in the Governed Data Substrate cluster.</div>
+        </details>
+      </div>
+
+      <div class="question-card">
+        <div class="q-theme">Pattern & trend detection</div>
+        <details>
+          <summary>What concepts consistently co-occur across unrelated sessions?</summary>
+          <div class="q-answer"><strong>Vertex AI</strong> bridges 26 different communities — more than any other node. <strong>Agentic AI</strong> as a concept spans 23 communities with only 93 edges, punching well above its weight. <strong>BigQuery</strong> bridges 20 communities despite being a data warehouse — it shows up in agent sessions, security analytics, and streaming pipelines far outside its original scope.</div>
+        </details>
+        <details>
+          <summary>Which topics bridge the most different communities in the graph?</summary>
+          <div class="q-answer">Vertex AI (26 communities), Agentic AI concept (23), Gemini Enterprise (21), BigQuery (20), GKE (16), MCP (16). The key insight: bridging score and degree don't rank identically. Agentic AI has 93 edges but 23 bridges; BigQuery has 240 edges but only 20 bridges. Structural position reveals things raw popularity misses.</div>
+        </details>
+        <details>
+          <summary>What was talked about far more than the official agenda suggested?</summary>
+          <div class="q-answer"><strong>MCP</strong> appears across every zone of the graph despite having no dedicated track in the official agenda. <strong>Supply Chain &amp; Logistics</strong> had only 5 official sessions but its concepts appear across retail, data, and agent sessions. <strong>Prompt injection and agent security</strong> surfaced across sessions nominally about entirely different topics.</div>
+        </details>
+      </div>
+
+      <div class="question-card">
+        <div class="q-theme">Gap analysis</div>
+        <details>
+          <summary>What topics are underrepresented relative to their market importance?</summary>
+          <div class="q-answer"><strong>Mobile and Web</strong> (6 sessions), <strong>Games</strong> (7), and <strong>Education</strong> (8) are strikingly thin for a conference this size. <strong>CI/CD</strong> appears in only 2 sessions — surprisingly low given how central developer workflow is to the cloud story. These gaps reflect deliberate editorial choices about what Google wanted to foreground in 2026.</div>
+        </details>
+        <details>
+          <summary>Which communities are isolated — barely connected to the rest of the graph?</summary>
+          <div class="q-answer">11 communities consist of a single node with zero external edges — completely disconnected from the rest of the graph. These are entities that appeared in only one session and weren't referenced anywhere else. Community 32 (3 nodes, 0 external edges) is the smallest fully isolated cluster.</div>
+        </details>
+        <details>
+          <summary>What did speakers avoid saying even when the topic was adjacent?</summary>
+          <div class="q-answer">The word <strong>"cost"</strong> appears rarely in agent sessions despite latency and cost being the central production challenges. <strong>OpenAI</strong> is nearly absent from the graph — referenced far less than Anthropic despite being the dominant market reference point. Sessions on enterprise AI almost universally avoided discussing failure rates or production incidents.</div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Geotab -->
+  <section>
+    <h2>Where Geotab Landed</h2>
+    <p>Three sessions at Google Cloud Next 2026 featured Geotab speakers — each joining a Google PM-led session as the customer voice. Junaid Gill (AVP, Geotab) co-presented on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913070" target="_blank" rel="noopener">governing a secure agentic ecosystem</a>; Francois-Xavier Jeannet (Team Lead, Data &amp; AI Governance) joined a session on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913108" target="_blank" rel="noopener">agent security at scale</a> alongside speakers from Google Cloud and Snap; and Daniel Lewis (Distinguished Data Scientist) co-presented on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913164" target="_blank" rel="noopener">the agent-quality flywheel</a>. See <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?speaker=geotab" target="_blank" rel="noopener">all sessions with Geotab speakers →</a> Plotted onto the conceptual map, where those sessions landed tells a clear story.</p>
+    <div class="viz-frame-wrap svg-wrap">
+      <img src="graph_v3_screenshot.png" style="width:100%; display:block;" alt="Geotab sessions mapped onto the conceptual graph" />
+    </div>
+    <p class="viz-caption">Orange dots mark each Geotab session. The legend bottom-left confirms: orange = Geotab session.</p>
+    <div class="callout">
+      Two sessions landed in the <strong>Agent Control Plane</strong> — one in Operational (governing agents and securing the agentic ecosystem with GEAP) and one in Security (agent security at scale, OWASP Top 10 for agents). A third landed in the <strong>Agent Platform</strong> zone (engineering the agent-quality flywheel using GEAP evaluations to optimize agents). That's a tight, coherent cluster: Geotab is sharing hard-won production lessons on how to build, govern, and continuously improve real-world agents.
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>By <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a> · Built with <strong>graphify</strong> · Data from <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener">unofficial Google Cloud Next 2026 scrape</a></p>
+  <p style="margin-top:8px;">8,285 nodes · 24,421 edges · 44 communities · 477 source files · ~5 million words · April 2026</p>
+  <p style="margin-top:8px;"><a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">Source on GitHub</a></p>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "180c426920c04604b145ff6190dc82d6"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
