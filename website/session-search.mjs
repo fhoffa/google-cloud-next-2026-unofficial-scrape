@@ -447,13 +447,18 @@ function renderSeatFill(session) {
   return `<div class="seat-fill" aria-label="${escHtml(label)}, ${escHtml(pctLabel)}"><div class="seat-fill-row"><span class="seat-fill-label">${escHtml(label)}</span><span class="seat-fill-value">${escHtml(pctLabel)}${fill.isOverbooked ? ' +' : ''}</span></div><div class="seat-fill-bar" aria-hidden="true"><div class="seat-fill-bar-fill${fill.isOverbooked ? ' overbooked' : ''}" style="width:${fill.pct.toFixed(1)}%"></div></div></div>`;
 }
 
+const MEDIA_ICONS = {
+  slides: 'website/assets/icons/pdf.svg',
+  video: 'website/assets/icons/youtube.svg',
+};
+
 function renderMediaLinks(session) {
   const items = [
-    session?.slides_url ? { label: 'Slides', url: session.slides_url, kind: 'slides' } : null,
-    session?.video_url ? { label: 'Video', url: session.video_url, kind: 'video' } : null,
+    session?.slides_url ? { label: 'Open PDF', url: session.slides_url, kind: 'slides' } : null,
+    session?.video_url ? { label: 'Open YouTube video', url: session.video_url, kind: 'video' } : null,
   ].filter(Boolean);
   if (!items.length) return '';
-  return `<div class="card-media">${items.map((item) => `<a class="media-link media-link-${escHtml(item.kind)}" href="${escHtml(item.url)}" target="_blank" rel="noopener">${escHtml(item.label)} ↗</a>`).join('')}</div>`;
+  return `<div class="card-media">${items.map((item) => `<a class="media-link media-link-${escHtml(item.kind)}" href="${escHtml(item.url)}" target="_blank" rel="noopener" aria-label="${escHtml(item.label)}" title="${escHtml(item.label)}"><img class="media-icon" src="${escHtml(MEDIA_ICONS[item.kind] || '')}" alt="" loading="lazy"></a>`).join('')}</div>`;
 }
 
 function renderCards(sessions, q, favoriteIds, expandedIds, relatedLookup = {}, visibleRelatedIds = new Set(), selectedSessionIds = new Set(), prioritizedNewSessionIds = new Set()) {

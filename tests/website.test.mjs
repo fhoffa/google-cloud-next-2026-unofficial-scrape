@@ -1330,8 +1330,12 @@ test('session explorer keeps seat demand and adds slide/video links when availab
   assert.match(appHtml, /Seat viz session/);
   assert.match(appHtml, /42 \/ 48 seats/);
   assert.match(appHtml, /88% full/);
-  assert.match(appHtml, /Slides ↗/);
-  assert.match(appHtml, /Video ↗/);
+  assert.match(appHtml, /aria-label="Open PDF"/);
+  assert.match(appHtml, /src="website\/assets\/icons\/pdf.svg"/);
+  assert.match(appHtml, /aria-label="Open YouTube video"/);
+  assert.match(appHtml, /src="website\/assets\/icons\/youtube.svg"/);
+  assert.doesNotMatch(appHtml, />Slides ↗</);
+  assert.doesNotMatch(appHtml, />Video ↗</);
   assert.match(appHtml, /seat-fill-bar-fill/);
   assert.doesNotMatch(appHtml, /No capacity session[\s\S]*seat-fill/);
 });
