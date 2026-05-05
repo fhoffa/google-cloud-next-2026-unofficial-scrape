@@ -654,7 +654,7 @@
         <div class="step-icon green">2</div>
         <div class="step-body">
           <h3>Slide Decks — 444 PDFs, ~2,200 slides analyzed</h3>
-          <p>For 444 of the 1,146 sessions, the speaker uploaded a slide deck. Each PDF was downloaded, converted to images, and processed with vision analysis — extracting product names, architecture diagrams, metrics, and key claims from individual slides. This yielded <strong>2,205 slide-level analysis records</strong> and per-session brief summaries.</p>
+          <p>For 444 of the 1,146 sessions, a slide deck was available on the Google site. Each PDF was downloaded, converted to images, and processed with vision analysis — extracting product names, architecture diagrams, metrics, and key claims from individual slides. This yielded <strong>2,205 slide-level analysis records</strong> and per-session brief summaries.</p>
           <p>Slides are uniquely valuable: they contain the distilled, intentional message a speaker wants to convey. A bullet point on a slide is more signal than two minutes of verbal framing around it.</p>
         </div>
       </div>
@@ -663,7 +663,7 @@
         <div class="step-icon orange">3</div>
         <div class="step-body">
           <h3>YouTube Transcripts — 323 full recordings</h3>
-          <p>For 323 sessions, a YouTube recording was available. Full audio transcripts were generated and stored — capturing the speaker's actual words, including Q&amp;A, live demos, and audience interactions that never appear in a slide deck.</p>
+          <p>For 323 sessions, a YouTube recording was available. Full audio transcripts were retrieved when available, or generated when needed, and stored — capturing the speaker's actual words, including Q&amp;A, live demos, and audience interactions that never appear in a slide deck.</p>
           <p>The combination of slides + transcript for the same session was particularly powerful: slides provided structured claims while transcripts provided context, nuance, and the path that led to each conclusion.</p>
         </div>
       </div>
@@ -673,7 +673,7 @@
         <div class="step-body">
           <h3>Graphify — Entity &amp; Relationship Extraction</h3>
           <p>All 477 source files (~5 million words) were fed through <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a>, an AI-powered knowledge graph builder that reads raw text and extracts named entities, concepts, products, companies, and people — along with the semantic relationships between them.</p>
-          <p>The extraction was 100% sourced (no inferred connections), with 114 additional edges inferred by cross-document reasoning at a 0.85 confidence threshold.</p>
+          <p>Most of the graph was built from directly sourced connections found in the conference material itself. Separately, 114 additional edges were added by cross-document reasoning, and only kept when they cleared a 0.85 confidence threshold.</p>
         </div>
       </div>
 
@@ -708,12 +708,16 @@
       <p class="lede">Rather than showing every node, the strategy graph surfaces the architecture underneath: six distinct zones that Google Cloud organized its Agentic AI story around at Next '26.</p>
     </div>
     <div class="body-copy">
-      <p>The simplification works by promoting only the highest-degree hub nodes within each detected community and collapsing everything else around them. Intra-layer connections become solid lines within each bubble; cross-layer connections become dashed lines between zones. The result is a map you can actually read — and reason about.</p>
+      <p>The simplification works by promoting only the highest-degree hub nodes within each detected community and collapsing everything else around them. Intra-layer connections become solid lines within each bubble; cross-layer connections become dashed lines between zones. The result is a map you can actually read and reason about.</p>
     </div>
     <div class="viz-frame-wrap svg-wrap">
       <img src="graph_v2_screenshot.png" style="width:100%; display:block;" alt="Conceptual strategy graph — six ecosystem zones" />
     </div>
     <p class="viz-caption">Six zones: Protocol/Tool Fabric (MCP, ADK, A2A Protocol) · Agent Control Plane (operational + security) · Governed Data Substrate (BigQuery et al.) · Agent Platform (Vertex AI, Gemini) · Runtime/Infra (GKE, Cloud Run) · Enterprise Surface (Google Workspace, NotebookLM)</p>
+    <div class="body-copy">
+      <p>The picture is pretty simple: Google appears to be assembling a full enterprise agent stack. At the bottom are the protocols and tools that let agents reach other systems. Then come the control layers that secure them, the data systems that ground them, the model and agent platform that powers them, the infrastructure that runs them, and the products where people actually use them.</p>
+      <p>The graph makes that structure visible. A long list of launches starts to read like one architecture for enterprise agents.</p>
+    </div>
   </section>
 
   <!-- Questions -->
@@ -833,8 +837,8 @@
       <p class="body-copy">The graph isn't just an outside analysis trick. Google repeatedly described agent-ready systems in graph-shaped terms: entities, relationships, connected context, and knowledge that agents can reason over.</p>
     </div>
     <div class="body-copy">
-      <p>In the <a href="https://youtu.be/11PBno-cJ1g" target="_blank" rel="noopener">opening keynote</a>, Google introduced Knowledge Catalog as a system that can read files, extract entities, map relationships, and learn business semantics. In <a href="https://youtu.be/cdmvSHJEh2E" target="_blank" rel="noopener">What's new with data and AI governance: Building the catalog for AI</a>, that idea became even clearer: the goal is a connected context layer that agents can reason over directly.</p>
-      <p>This wasn't just abstract metadata talk. The source material also includes concrete product pushes around graph-native data systems. <strong>Spanner Graph</strong> appears in the session <em>What's new in Spanner: enterprise-scale AI, search, graph, and analytics</em>, where Google describes multimodel support, SQL PGQ, integrated graph algorithms, graphs on views, and UI-based graph modeling. <strong>BigQuery Graph</strong> appears in multiple decks as native property-graph support for relationship analytics, visualization, and graph-grounded reasoning on enterprise data.</p>
+      <p>In the <a href="https://youtu.be/11PBno-cJ1g" target="_blank" rel="noopener">opening keynote</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=opening%20keynote" target="_blank" rel="noopener">session explorer</a>), Google introduced Knowledge Catalog as a system that can read files, extract entities, map relationships, and learn business semantics. In <a href="https://youtu.be/cdmvSHJEh2E" target="_blank" rel="noopener">What's new with data and AI governance: Building the catalog for AI</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=data%20and%20AI%20governance%20building%20the%20catalog%20for%20AI" target="_blank" rel="noopener">session explorer</a>), that idea became even clearer: the goal is a connected context layer that agents can reason over directly.</p>
+      <p>This wasn't just abstract metadata talk. The source material also includes concrete product pushes around graph-native data systems. <strong>Spanner Graph</strong> appears in <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=What%27s%20new%20in%20Spanner%3A%20enterprise-scale%20AI%2C%20search%2C%20graph%2C%20and%20analytics" target="_blank" rel="noopener"><em>What's new in Spanner: enterprise-scale AI, search, graph, and analytics</em></a>, where Google describes multimodel support, SQL PGQ, integrated graph algorithms, graphs on views, and UI-based graph modeling. <strong>BigQuery Graph</strong> appears in multiple decks as native property-graph support for relationship analytics, visualization, and graph-grounded reasoning on enterprise data.</p>
       <p>That's what makes this feel new. For years, products like BigQuery and Spanner were mainly framed as places to store, query, and scale data. At Next '26, Google was also positioning them as systems for modeling relationships directly — not just rows and columns, but connected structures that agents and analytical workflows can traverse. This is Google reframing databases for the agent era.</p>
       <p>And it goes beyond two product names. Other graph-shaped concepts also show up in the graph itself: <strong>BigQuery Property Graph</strong>, <strong>Property Graph</strong>, <strong>GQL / ISO GQL</strong>, <strong>Graph Analytics</strong>, <strong>Graph RAG</strong>, <strong>Knowledge Graph Grounding</strong>, <strong>Vertex AI Graph Neural Networks</strong>, and security-oriented nodes like <strong>Wiz Security Graph</strong> and <strong>SCC Security Graph</strong>.</p>
     </div>
@@ -885,16 +889,16 @@
 <section id="closing" style="padding: 0 24px 24px;">
   <div class="section-header">
     <h2>The Two Big Takes</h2>
-    <p class="body-copy">The graph is useful not because it makes the conference prettier, but because it makes the conference legible.</p>
+    <p class="body-copy">The graph makes the conference easier to read.</p>
   </div>
   <div class="body-copy">
     <p><strong>First:</strong> graphing the conference reveals structure you cannot reliably see by reading sessions one by one. Once 1,146 sessions, 444 slide decks, and 323 transcripts are turned into nodes and edges, repeated patterns become visible: which products sit at the center, which protocols connect otherwise separate systems, which themes cluster together, and which ideas show up across product, security, data, infrastructure, and partner talks.</p>
-    <p>That is where the strongest insights in this story come from. MCP stops looking like a niche protocol and starts looking like connective tissue. BigQuery stops looking like a warehouse pitch and starts looking like a governed substrate for AI systems. Cloud Run, GKE, security controls, evaluation loops, and enterprise data products stop reading like separate announcements and start reading like parts of one architecture.</p>
-    <p><strong>Second:</strong> the hard part was not "making a graph" in the abstract. That part took a couple of straightforward steps. The hard part was the conference itself: messy source material spread across decks, transcripts, session pages, repeated product names, overlapping abstractions, and different levels of specificity. <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a> made the workflow feel surprisingly direct: feed in the corpus, extract grounded entities and relationships, and then simplify the result into a strategy graph that a human can actually read.</p>
-    <p>The payoff is that the graph surfaces what Google appears to believe. Based on what became central, connected, and repeated, Google is not presenting AI as a standalone model story. It is presenting an operating model: agents connected through MCP and A2A, grounded in enterprise data, deployed on managed runtimes, evaluated continuously, and wrapped in governance, identity, and security controls. The graph's clearest suggestion is that Google's real thesis is not just smarter models — it is a manageable, interoperable, production-grade agent ecosystem.</p>
-    <p>If you want to test that thesis yourself, browse the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener">session explorer</a>, inspect the <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener">source data on GitHub</a>, or just follow the edges in this graph and see where they lead.</p>
-    <p>And that may be the most encouraging takeaway here: graphing a conference like this was not some giant research project. It took a couple of steps, and Graphify made the whole thing very straightforward.</p>
-    <p>More importantly, it does not have to stay a retrospective. A future attendee could use a graph like this during the next conference to decide which sessions to prioritize, spot the hubs everyone is converging around, and follow emerging ideas across tracks in real time. The same map that makes this conference legible after the fact could make the next one easier to navigate while it is happening.</p>
+    <p>That is where many of the strongest insights in this story come from. MCP starts to look like connective tissue. BigQuery starts to look like a governed substrate for AI systems. Cloud Run, GKE, security controls, evaluation loops, and enterprise data products start to read as parts of the same architecture.</p>
+    <p><strong>Second:</strong> building the graph was fairly straightforward. Cleaning up the conference corpus was the hard part. The source material was messy: decks, transcripts, session pages, repeated product names, overlapping abstractions, and different levels of specificity. <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a> made the workflow feel direct: feed in the corpus, extract grounded entities and relationships, and simplify the result into a strategy graph that a human can actually read.</p>
+    <p>The graph also shows what Google seems to believe will matter in production. The center of gravity is a working stack: agents connected through MCP and A2A, grounded in enterprise data, deployed on managed runtimes, evaluated continuously, and wrapped in governance, identity, and security controls.</p>
+    <p>If you want to test that thesis yourself, browse the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener">session explorer</a>, or open the <a href="graph.html" target="_blank" rel="noopener">full interactive map</a> and follow the edges yourself. The graph, the map, and the session index feel like the right publishable artifact here, without redistributing downloaded slides or transcripts.</p>
+    <p>One encouraging part of this project is how manageable it was. It took a few steps, and Graphify made the workflow pretty approachable.</p>
+    <p>A future attendee could use a graph like this during the next conference to decide which sessions to prioritize, spot the hubs everyone is converging around, and follow emerging ideas across tracks in real time. It works well as a retrospective, and it would be even more useful live.</p>
   </div>
 </section>
 
