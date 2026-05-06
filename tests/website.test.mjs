@@ -40,6 +40,13 @@ test('graph story exposes the Reddit thumbnail as social preview metadata', () =
   assert.ok(fs.existsSync(new URL(`../${thumbnailPath}`, import.meta.url)));
 });
 
+
+test('graph story embeds Daniel Lewis Geotab video', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  assert.match(graphStoryHtml, /<section id="geotab">[\s\S]*youtube\.com\/embed\/eLQAJqydXqY/);
+  assert.match(graphStoryHtml, /title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel"/);
+});
+
 class FakeClassList {
   constructor(initial = []) {
     this.values = new Set(initial);

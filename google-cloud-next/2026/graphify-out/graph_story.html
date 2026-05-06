@@ -319,6 +319,23 @@
       margin-bottom: 0;
       max-width: 68ch;
     }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(60, 64, 67, 0.15);
+      background: #000;
+      margin: 24px 0 8px;
+    }
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
     .viz-toolbar {
       display: flex;
@@ -868,6 +885,10 @@
       <p>Junaid Gill (Associate Vice President, Geotab) joined Greg Brosman (Senior Product Manager, Google Cloud) and John Murray (Group Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913070">governing a secure agentic ecosystem</a>.</p>
       <p>Francois-Xavier Jeannet (Team Lead, Data &amp; AI Governance, Geotab) joined Anit Patinker (Lead Product Manager, Google Cloud) and Shelley Hershkovitz (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913108">agent security at scale</a>.</p>
       <p>Daniel Lewis (Distinguished Data Scientist, Geotab) joined Dima Melnyk (Senior Product Manager, Google Cloud) and Alex Martin (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913164">the agent-quality flywheel</a>.</p>
+      <div class="video-embed" aria-label="Daniel Lewis Geotab video">
+        <iframe src="https://www.youtube.com/embed/eLQAJqydXqY" title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <p class="viz-caption">Daniel Lewis, Geotab, on the agent-quality flywheel.</p>
       <p><a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?speaker=geotab">All sessions with Geotab speakers →</a> On the conceptual map, those talks land in a tight zone around platform, governance, and evaluation. One Geotab example helps explain why: their internal hackathon generated 86 agent submissions, and 2 of those later made it into production.</p>
       <p>That gap helps explain why Geotab mattered on stage. In earlier years, Geotab often appeared as the customer saying, in effect, BigQuery works and here's how we use it. This time the posture felt different. AI is still early, Geotab has already been building internal agent systems, and Google is bringing them on stage not just as a reference customer but as a partner with production lessons that are helping shape the products now being pushed more broadly.</p>
     </div>
