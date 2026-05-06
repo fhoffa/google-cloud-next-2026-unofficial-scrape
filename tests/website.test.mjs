@@ -45,6 +45,7 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
   assert.match(graphStoryHtml, /<section id="geotab">[\s\S]*youtube\.com\/embed\/eLQAJqydXqY/);
   assert.match(graphStoryHtml, /title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel"/);
+  assert.match(graphStoryHtml, /<em>Engineer the agent-quality flywheel<\/em> — Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)\./);
 });
 
 class FakeClassList {
