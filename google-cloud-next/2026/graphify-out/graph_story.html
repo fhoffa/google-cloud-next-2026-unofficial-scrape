@@ -577,11 +577,11 @@
   <h1>From Conference Talks to a Map of the AI Ecosystem</h1>
   <p>How 1,146 sessions, 444 slide decks, and 323 video transcripts became 8,285 nodes and 24,421 edges of structured knowledge.</p>
   <div style="margin-top:16px; font-size:13px; opacity:0.9; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-    <span>By <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener" style="color:white;">Felipe Hoffa</a></span>
+    <span>By <a href="https://www.linkedin.com/in/hoffa/" style="color:white;">Felipe Hoffa</a></span>
     <span>·</span>
-    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" target="_blank" rel="noopener" style="color:white;">Source on GitHub</a>
+    <a href="https://github.com/fhoffa/google-cloud-next-2026-unofficial-scrape" style="color:white;">Source on GitHub</a>
     <span>·</span>
-    <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener" style="color:white;">Session Explorer</a>
+    <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" style="color:white;">Session Explorer</a>
   </div>
 </header>
 <div class="rainbow-bar"></div>
@@ -672,7 +672,7 @@
         <div class="step-icon purple">4</div>
         <div class="step-body">
           <h3>Graphify — Entity &amp; Relationship Extraction</h3>
-          <p>All 477 source files (~5 million words) were fed through <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a>, an AI-powered knowledge graph builder that reads raw text and extracts named entities, concepts, products, companies, and people — along with the semantic relationships between them.</p>
+          <p>All 477 source files (~5 million words) were fed through <a href="https://github.com/safishamsi/graphify"><strong>graphify</strong></a>, an AI-powered knowledge graph builder that reads raw text and extracts named entities, concepts, products, companies, and people — along with the semantic relationships between them.</p>
           <p>Most of the graph was built from directly sourced connections found in the conference material itself. Separately, 114 additional edges were added by cross-document reasoning, and only kept when they cleared a 0.85 confidence threshold.</p>
         </div>
       </div>
@@ -768,7 +768,7 @@
         <div class="q-theme">Practitioner guidance</div>
         <details>
           <summary>If I'm building agentic systems, which sessions are most interconnected?</summary>
-          <div class="q-answer">By degree within the agentic cluster: <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912214" target="_blank" rel="noopener"><strong>BigQuery for agentic AI (58)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912305" target="_blank" rel="noopener"><strong>AgentOps with BigQuery + ADK + MCP (57)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912276" target="_blank" rel="noopener">Conversational Analytics agents + MCP (51)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3947563" target="_blank" rel="noopener">Elastic Agent Builder (48)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913028" target="_blank" rel="noopener">What's new in Google Cloud's agent platform (45)</a>. These sessions share the most concepts with the rest of the graph — start here for maximum coverage.</div>
+          <div class="q-answer">By degree within the agentic cluster: <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912214"><strong>BigQuery for agentic AI (58)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912305"><strong>AgentOps with BigQuery + ADK + MCP (57)</strong></a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3912276">Conversational Analytics agents + MCP (51)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3947563">Elastic Agent Builder (48)</a>, <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913028">What's new in Google Cloud's agent platform (45)</a>. These sessions share the most concepts with the rest of the graph — start here for maximum coverage.</div>
         </details>
         <details>
           <summary>What's the recommended learning path from data engineering to AI agents?</summary>
@@ -837,8 +837,8 @@
       <p class="body-copy">The graph isn't just an outside analysis trick. Google repeatedly described agent-ready systems in graph-shaped terms: entities, relationships, connected context, and knowledge that agents can reason over.</p>
     </div>
     <div class="body-copy">
-      <p>In the <a href="https://youtu.be/11PBno-cJ1g" target="_blank" rel="noopener">opening keynote</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=opening%20keynote" target="_blank" rel="noopener">session explorer</a>), Google introduced Knowledge Catalog as a system that can read files, extract entities, map relationships, and learn business semantics. In <a href="https://youtu.be/cdmvSHJEh2E" target="_blank" rel="noopener">What's new with data and AI governance: Building the catalog for AI</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=data%20and%20AI%20governance%20building%20the%20catalog%20for%20AI" target="_blank" rel="noopener">session explorer</a>), that idea became even clearer: the goal is a connected context layer that agents can reason over directly.</p>
-      <p>This wasn't just abstract metadata talk. The source material also includes concrete product pushes around graph-native data systems. <strong>Spanner Graph</strong> appears in <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=What%27s%20new%20in%20Spanner%3A%20enterprise-scale%20AI%2C%20search%2C%20graph%2C%20and%20analytics" target="_blank" rel="noopener"><em>What's new in Spanner: enterprise-scale AI, search, graph, and analytics</em></a>, where Google describes multimodel support, SQL PGQ, integrated graph algorithms, graphs on views, and UI-based graph modeling. <strong>BigQuery Graph</strong> appears in multiple decks as native property-graph support for relationship analytics, visualization, and graph-grounded reasoning on enterprise data.</p>
+      <p>In the <a href="https://youtu.be/11PBno-cJ1g">opening keynote</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=opening%20keynote">session explorer</a>), Google introduced Knowledge Catalog as a system that can read files, extract entities, map relationships, and learn business semantics. In <a href="https://youtu.be/cdmvSHJEh2E">What's new with data and AI governance: Building the catalog for AI</a> (<a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=data%20and%20AI%20governance%20building%20the%20catalog%20for%20AI">session explorer</a>), that idea became even clearer: the goal is a connected context layer that agents can reason over directly.</p>
+      <p>This wasn't just abstract metadata talk. The source material also includes concrete product pushes around graph-native data systems. <strong>Spanner Graph</strong> appears in <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?search=What%27s%20new%20in%20Spanner%3A%20enterprise-scale%20AI%2C%20search%2C%20graph%2C%20and%20analytics"><em>What's new in Spanner: enterprise-scale AI, search, graph, and analytics</em></a>, where Google describes multimodel support, SQL PGQ, integrated graph algorithms, graphs on views, and UI-based graph modeling. <strong>BigQuery Graph</strong> appears in multiple decks as native property-graph support for relationship analytics, visualization, and graph-grounded reasoning on enterprise data.</p>
       <p>That's what makes this feel new. For years, products like BigQuery and Spanner were mainly framed as places to store, query, and scale data. At Next '26, Google was also positioning them as systems for modeling relationships directly — not just rows and columns, but connected structures that agents and analytical workflows can traverse. This is Google reframing databases for the agent era.</p>
       <p>And it goes beyond two product names. Other graph-shaped concepts also show up in the graph itself: <strong>BigQuery Property Graph</strong>, <strong>Property Graph</strong>, <strong>GQL / ISO GQL</strong>, <strong>Graph Analytics</strong>, <strong>Graph RAG</strong>, <strong>Knowledge Graph Grounding</strong>, <strong>Vertex AI Graph Neural Networks</strong>, and security-oriented nodes like <strong>Wiz Security Graph</strong> and <strong>SCC Security Graph</strong>.</p>
     </div>
@@ -854,10 +854,10 @@
       <p class="body-copy">Three sessions at Google Cloud Next 2026 featured Geotab speakers — not as generic customer references, but as working operators paired with Google product leads.</p>
     </div>
     <div class="body-copy">
-      <p>Junaid Gill (Associate Vice President, Geotab) joined Greg Brosman (Senior Product Manager, Google Cloud) and John Murray (Group Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913070" target="_blank" rel="noopener">governing a secure agentic ecosystem</a>.</p>
-      <p>Francois-Xavier Jeannet (Team Lead, Data &amp; AI Governance, Geotab) joined Anit Patinker (Lead Product Manager, Google Cloud) and Shelley Hershkovitz (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913108" target="_blank" rel="noopener">agent security at scale</a>.</p>
-      <p>Daniel Lewis (Distinguished Data Scientist, Geotab) joined Dima Melnyk (Senior Product Manager, Google Cloud) and Alex Martin (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913164" target="_blank" rel="noopener">the agent-quality flywheel</a>.</p>
-      <p><a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?speaker=geotab" target="_blank" rel="noopener">All sessions with Geotab speakers →</a> On the conceptual map, those talks land in a tight zone around platform, governance, and evaluation. One Geotab example makes the point clearly: an org-wide hackathon produced 86 agent submissions, but only 2 made it to production.</p>
+      <p>Junaid Gill (Associate Vice President, Geotab) joined Greg Brosman (Senior Product Manager, Google Cloud) and John Murray (Group Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913070">governing a secure agentic ecosystem</a>.</p>
+      <p>Francois-Xavier Jeannet (Team Lead, Data &amp; AI Governance, Geotab) joined Anit Patinker (Lead Product Manager, Google Cloud) and Shelley Hershkovitz (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913108">agent security at scale</a>.</p>
+      <p>Daniel Lewis (Distinguished Data Scientist, Geotab) joined Dima Melnyk (Senior Product Manager, Google Cloud) and Alex Martin (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913164">the agent-quality flywheel</a>.</p>
+      <p><a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?speaker=geotab">All sessions with Geotab speakers →</a> On the conceptual map, those talks land in a tight zone around platform, governance, and evaluation. One Geotab example helps explain why: their internal hackathon generated 86 agent submissions, and 2 of those later made it into production.</p>
       <p>That gap helps explain why Geotab mattered on stage. In earlier years, Geotab often appeared as the customer saying, in effect, BigQuery works and here's how we use it. This time the posture felt different. AI is still early, Geotab has already been building internal agent systems, and Google is bringing them on stage not just as a reference customer but as a partner with production lessons that are helping shape the products now being pushed more broadly.</p>
     </div>
     <div class="callout">
@@ -880,30 +880,29 @@
     </div>
     <p class="viz-caption">Orange dots mark each Geotab session. The legend bottom-left confirms: orange = Geotab session.</p>
     <div class="callout">
-      Two sessions landed in the <strong>Agent Control Plane</strong> — one in Operational (governing agents and securing the agentic ecosystem with GEAP) and one in Security (agent security at scale, OWASP Top 10 for agents). A third landed in the <strong>Agent Platform</strong> zone (engineering the agent-quality flywheel using GEAP evaluations to optimize agents). That's a tight, coherent cluster: Geotab is sharing hard-won production lessons on how to build, govern, and continuously improve real-world agents. And it also sharpens the map itself: Geotab's struggle to move only 2 of 86 agents into production is exactly why the <strong>Agent Control Plane</strong> matters so much. The demos are not the bottleneck. Governance, security, evaluation, and operational control are.
+      <p>Two of the three Geotab sessions landed inside the <strong>Agent Control Plane</strong>: one on governing agents and securing the agentic ecosystem with GEAP, and one on agent security at scale through the OWASP Top 10 for agents. The third landed in the <strong>Agent Platform</strong> zone, focused on the agent-quality flywheel and GEAP evaluations.</p>
+      <p style="margin-top:10px;">That cluster makes sense. Geotab was not up there to show a flashy demo. It was there to talk about the hard part: getting agents into production, keeping them secure, and building the evaluation loop that makes them reliable. That is also why the control-plane layer matters so much on this map. The hackathon result was not a failure case. It was an example of how an exploratory funnel narrows into a small number of production-worthy agents, and why governance, security, evaluation, and operational control matter so much once a team tries to ship them.</p>
     </div>
   </section>
 
+  <section id="closing">
+    <div class="section-header">
+      <h2>The Two Big Takes</h2>
+    </div>
+    <div class="body-copy">
+      <p><strong>First:</strong> graphing the conference reveals structure you cannot reliably see by reading sessions one by one. Once 1,146 sessions, 444 slide decks, and 323 transcripts are turned into nodes and edges, repeated patterns become visible: which products sit at the center, which protocols connect otherwise separate systems, which themes cluster together, and which ideas show up across product, security, data, infrastructure, and partner talks.</p>
+      <p>That is where many of the strongest insights in this story come from. MCP starts to look like connective tissue. BigQuery starts to look like a governed substrate for AI systems. Cloud Run, GKE, security controls, evaluation loops, and enterprise data products start to read as parts of the same architecture.</p>
+      <p><strong>Second:</strong> building the graph was fairly straightforward. Cleaning up the conference corpus was the hard part. The source material was messy: decks, transcripts, session pages, repeated product names, overlapping abstractions, and different levels of specificity. <a href="https://github.com/safishamsi/graphify"><strong>graphify</strong></a> made the workflow feel direct: feed in the corpus, extract grounded entities and relationships, and simplify the result into a graph that a human can actually read.</p>
+      <p>The graph also shows what Google seems to believe will matter in production. The center of gravity is a working stack: agents connected through MCP and A2A, grounded in enterprise data, deployed on managed runtimes, evaluated continuously, and wrapped in governance, identity, and security controls.</p>
+      <p>If you want to test that thesis yourself, browse the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/">session explorer</a>, or open the <a href="graph.html">full interactive map</a> and follow the edges yourself. The graph, the map, and the session index feel like the right publishable artifact here, without redistributing downloaded slides or transcripts.</p>
+      <p>One encouraging part of this project is how manageable it was. It took a few steps, and Graphify made the workflow pretty approachable.</p>
+      <p>A future attendee could use a graph like this during the next conference to decide which sessions to prioritize, spot the hubs everyone is converging around, and follow emerging ideas across tracks in real time. It works well as a retrospective, and it would be even more useful live.</p>
+    </div>
+  </section>
 </div>
 
-<section id="closing" style="padding: 0 24px 24px;">
-  <div class="section-header">
-    <h2>The Two Big Takes</h2>
-    <p class="body-copy">The graph makes the conference easier to read.</p>
-  </div>
-  <div class="body-copy">
-    <p><strong>First:</strong> graphing the conference reveals structure you cannot reliably see by reading sessions one by one. Once 1,146 sessions, 444 slide decks, and 323 transcripts are turned into nodes and edges, repeated patterns become visible: which products sit at the center, which protocols connect otherwise separate systems, which themes cluster together, and which ideas show up across product, security, data, infrastructure, and partner talks.</p>
-    <p>That is where many of the strongest insights in this story come from. MCP starts to look like connective tissue. BigQuery starts to look like a governed substrate for AI systems. Cloud Run, GKE, security controls, evaluation loops, and enterprise data products start to read as parts of the same architecture.</p>
-    <p><strong>Second:</strong> building the graph was fairly straightforward. Cleaning up the conference corpus was the hard part. The source material was messy: decks, transcripts, session pages, repeated product names, overlapping abstractions, and different levels of specificity. <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a> made the workflow feel direct: feed in the corpus, extract grounded entities and relationships, and simplify the result into a strategy graph that a human can actually read.</p>
-    <p>The graph also shows what Google seems to believe will matter in production. The center of gravity is a working stack: agents connected through MCP and A2A, grounded in enterprise data, deployed on managed runtimes, evaluated continuously, and wrapped in governance, identity, and security controls.</p>
-    <p>If you want to test that thesis yourself, browse the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener">session explorer</a>, or open the <a href="graph.html" target="_blank" rel="noopener">full interactive map</a> and follow the edges yourself. The graph, the map, and the session index feel like the right publishable artifact here, without redistributing downloaded slides or transcripts.</p>
-    <p>One encouraging part of this project is how manageable it was. It took a few steps, and Graphify made the workflow pretty approachable.</p>
-    <p>A future attendee could use a graph like this during the next conference to decide which sessions to prioritize, spot the hubs everyone is converging around, and follow emerging ideas across tracks in real time. It works well as a retrospective, and it would be even more useful live.</p>
-  </div>
-</section>
-
 <footer>
-  <p>Built by <a href="https://www.linkedin.com/in/hoffa/" target="_blank" rel="noopener">Felipe Hoffa</a> with <a href="https://github.com/safishamsi/graphify" target="_blank" rel="noopener"><strong>graphify</strong></a>, using data from the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/" target="_blank" rel="noopener">unofficial Google Cloud Next 2026 scrape</a>.</p>
+  <p>Built by <a href="https://www.linkedin.com/in/hoffa/">Felipe Hoffa</a> with <a href="https://github.com/safishamsi/graphify"><strong>graphify</strong></a>, using data from the <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/">unofficial Google Cloud Next 2026 scrape</a>.</p>
   <p style="margin-top:8px;">8,285 nodes · 24,421 edges · 44 communities · 477 source files · ~5 million words · April 2026</p>
 </footer>
 
