@@ -482,6 +482,38 @@ test('website loads the dataset and renders results', async () => {
   assert.match(env.document.getElementById('app').innerHTML, /Fireside chat with Thomas Kurian/);
 });
 
+
+test('default session explorer starts with popular sessions without new badges', async () => {
+  const env = createEnvironment();
+  const source = {
+    sessions: [
+      { title: 'Earlier regular session', url: 'https://example.com/session/1111111/regular', topics: [], speakers: [], start_at: '2026-04-22T08:00:00-07:00' },
+      { title: 'Spotify agentic applications', url: 'https://example.com/session/3908786/spotify-agentic-applications', topics: [], speakers: [], start_at: '2026-04-22T11:00:00-07:00' },
+      { title: 'Get real: Agents in the autonomous era', url: 'https://example.com/session/3920528/get-real-agents', topics: [], speakers: [], start_at: '2026-04-23T10:30:00-07:00' },
+      { title: 'Multi-Agent Systems: Preventing Chaos in Enterprise Production', url: 'https://example.com/session/4080699/multi-agent-systems', topics: [], speakers: [], start_at: '2026-04-22T11:00:00-07:00' },
+    ],
+  };
+
+  await initSessionSearch({
+    document: env.document,
+    fetchImpl: createFetch(source, { records: [] }, { sessions: {} }),
+    location: env.location,
+    history: env.history,
+    setTimeoutImpl: (fn) => { fn(); return 1; },
+    clearTimeoutImpl: () => {},
+  });
+
+  const appHtml = env.document.getElementById('app').innerHTML;
+  const titles = [...appHtml.matchAll(/<div class="card-title"[\s\S]*?<span>[\s\S]*?<a[^>]*>([^<]+)/g)].map((match) => match[1].trim());
+  assert.deepEqual(titles.slice(0, 3), [
+    'Get real: Agents in the autonomous era',
+    'Multi-Agent Systems: Preventing Chaos in Enterprise Production',
+    'Spotify agentic applications',
+  ]);
+  assert.doesNotMatch(appHtml, /status-badge new/);
+  assert.doesNotMatch(appHtml, /\*new/);
+});
+
 test('index wires the 2026 related-sessions artifact into the explorer', () => {
   assert.match(html, /relatedSessionsUrl: 'media\/related-sessions-2026-embeddings\.json'/);
 });
@@ -758,7 +790,7 @@ test('explorer renders related sessions when a precomputed artifact is provided'
 
 test('next2025 explorer bootstraps the shared UI with the related-sessions artifact', () => {
   const next2025Html = fs.readFileSync(new URL('../next2025/index.html', import.meta.url), 'utf8');
-  assert.match(next2025Html, /Google Cloud Next 2025 — Session Search/);
+  assert.match(next2025Html, /Google Cloud Next 2025 — Session Explorer/);
   assert.match(next2025Html, /relatedSessionsUrl: '\.\/related-sessions-2025-embeddings\.json'/);
   assert.match(next2025Html, /sessions_25_classified_embeddings\.json/);
 });
