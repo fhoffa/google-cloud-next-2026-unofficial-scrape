@@ -48,6 +48,12 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
   assert.match(graphStoryHtml, /<em>Engineer the agent-quality flywheel<\/em> — Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)\./);
 });
 
+test('graph story keeps the refined cost framing from conference backup', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  assert.match(graphStoryHtml, /<strong>Cost<\/strong> does show up in the corpus/);
+  assert.match(graphStoryHtml, /Daniel Lewis said their eval pipelines consume more tokens than their production traffic/);
+});
+
 class FakeClassList {
   constructor(initial = []) {
     this.values = new Set(initial);
