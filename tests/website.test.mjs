@@ -52,6 +52,15 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
   assert.match(graphStoryHtml, /<span class="video-speakers">Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)<\/span>/);
 });
 
+
+
+test('graph story and insights link to the LinkedIn discussion', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  const discussionUrl = 'https://www.linkedin.com/posts/hoffa_i-turned-400-slide-decks-300-youtube-transcripts-ugcPost-7457851475432611840-K8EP';
+  assert.match(graphStoryHtml, new RegExp(`href="${discussionUrl}"[^>]*>.*knowledge-graph story on LinkedIn`));
+  assert.match(insightsHtml, new RegExp(`href="${discussionUrl}"[^>]*>Read the LinkedIn discussion →</a>`));
+  assert.match(insightsHtml, /media\/graph-story-reddit-thumbnail\.jpg/);
+});
 test('graph story keeps the refined cost framing from conference backup', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
   assert.match(graphStoryHtml, /<strong>Cost<\/strong> does show up in the corpus/);
