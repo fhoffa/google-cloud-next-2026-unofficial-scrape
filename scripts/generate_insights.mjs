@@ -329,6 +329,7 @@ function renderHtml(summary, templateText, options = {}) {
     '__CONFERENCE_LABEL__': esc(conferenceLabel),
     '__OG_DESCRIPTION__': esc(ogDescription),
     '__EXPLORER_HREF__': esc(explorerHref || '#'),
+    '__GRAPH_STORY_HREF__': esc(options.graphStoryHref || './google-cloud-next/2026/graphify-out/graph_story.html'),
   };
 
   let html = templateText;
@@ -351,6 +352,7 @@ function parseArgs(argv) {
     conferenceLabel: 'Google Cloud Next 2026',
     ogDescription: 'AI vs Not AI, themes, audiences, top words, top companies, and conference insights.',
     explorerHref: './index.html',
+    graphStoryHref: './google-cloud-next/2026/graphify-out/graph_story.html',
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -366,6 +368,7 @@ function parseArgs(argv) {
     else if (arg === '--conference-label') options.conferenceLabel = argv[++index];
     else if (arg === '--og-description') options.ogDescription = argv[++index];
     else if (arg === '--explorer-href') options.explorerHref = argv[++index];
+    else if (arg === '--graph-story-href') options.graphStoryHref = argv[++index];
     else throw new Error(`Unknown argument: ${arg}`);
   }
 
@@ -418,6 +421,7 @@ function main() {
   const html = renderHtml(summary, fs.readFileSync(templatePath, 'utf8'), {
     conferenceLabel: args.conferenceLabel,
     ogDescription: args.ogDescription,
+    graphStoryHref: args.graphStoryHref,
   });
 
   fs.mkdirSync(path.dirname(outputSummaryPath), { recursive: true });

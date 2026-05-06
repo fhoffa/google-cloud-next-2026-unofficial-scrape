@@ -19,6 +19,27 @@ const hourlyLatestArtifact = JSON.parse(fs.readFileSync(new URL('../media/hourly
 const relatedSessionsArtifact = JSON.parse(fs.readFileSync(new URL('../media/related-sessions-2026-embeddings.json', import.meta.url), 'utf8'));
 const dataset = JSON.parse(fs.readFileSync(new URL('../sessions/latest.json', import.meta.url), 'utf8'));
 
+
+test('primary 2026 pages link to the knowledge graph story', () => {
+  const graphStoryHref = './google-cloud-next/2026/graphify-out/graph_story.html';
+  assert.match(html, new RegExp(`href="${graphStoryHref.replaceAll('/', '\\/')}"[^>]*>Knowledge Graph Story</a>`));
+  assert.match(insightsHtml, new RegExp(`href="${graphStoryHref.replaceAll('/', '\\/')}"[^>]*>Knowledge Graph Story</a>`));
+  assert.match(hourlyHtml, new RegExp(`href="${graphStoryHref.replaceAll('/', '\\/')}"[^>]*>Knowledge Graph Story</a>`));
+  const changelogHtml = fs.readFileSync(new URL('../changelog.html', import.meta.url), 'utf8');
+  assert.match(changelogHtml, new RegExp(`href="${graphStoryHref.replaceAll('/', '\\/')}"[^>]*>Knowledge Graph Story</a>`));
+  const partiesHtml = fs.readFileSync(new URL('../parties.html', import.meta.url), 'utf8');
+  assert.match(partiesHtml, new RegExp(`href="${graphStoryHref.replaceAll('/', '\\/')}"[^>]*>Knowledge Graph Story</a>`));
+  assert.doesNotMatch(partiesHtml, /<<<<<<<|=======|>>>>>>>/);
+});
+
+test('graph story exposes the Reddit thumbnail as social preview metadata', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  const thumbnailPath = 'media/graph-story-reddit-thumbnail.jpg';
+  assert.match(graphStoryHtml, /property="og:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
+  assert.match(graphStoryHtml, /name="twitter:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
+  assert.ok(fs.existsSync(new URL(`../${thumbnailPath}`, import.meta.url)));
+});
+
 class FakeClassList {
   constructor(initial = []) {
     this.values = new Set(initial);
