@@ -32,6 +32,14 @@ test('primary 2026 pages link to the knowledge graph story', () => {
   assert.doesNotMatch(partiesHtml, /<<<<<<<|=======|>>>>>>>/);
 });
 
+test('graph story exposes the Reddit thumbnail as social preview metadata', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  const thumbnailPath = 'media/graph-story-reddit-thumbnail.jpg';
+  assert.match(graphStoryHtml, /property="og:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
+  assert.match(graphStoryHtml, /name="twitter:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
+  assert.ok(fs.existsSync(new URL(`../${thumbnailPath}`, import.meta.url)));
+});
+
 class FakeClassList {
   constructor(initial = []) {
     this.values = new Set(initial);
