@@ -45,7 +45,10 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
   assert.match(graphStoryHtml, /<section id="geotab">[\s\S]*youtube\.com\/embed\/eLQAJqydXqY/);
   assert.match(graphStoryHtml, /title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel"/);
-  assert.match(graphStoryHtml, /<em>Engineer the agent-quality flywheel<\/em> — Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)\./);
+  assert.match(graphStoryHtml, /<figure class="video-card" aria-label="Daniel Lewis Geotab video">/);
+  assert.match(graphStoryHtml, /<span class="video-kicker">Featured session video<\/span>/);
+  assert.match(graphStoryHtml, /<span class="video-title">Engineer the agent-quality flywheel<\/span>/);
+  assert.match(graphStoryHtml, /<span class="video-speakers">Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)<\/span>/);
 });
 
 test('graph story keeps the refined cost framing from conference backup', () => {
