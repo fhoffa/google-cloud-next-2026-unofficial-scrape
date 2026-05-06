@@ -57,7 +57,8 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
 test('graph story and insights link to the LinkedIn discussion', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
   const discussionUrl = 'https://www.linkedin.com/posts/hoffa_i-turned-400-slide-decks-300-youtube-transcripts-ugcPost-7457851475432611840-K8EP';
-  assert.match(graphStoryHtml, new RegExp(`href="${discussionUrl}"[^>]*>.*knowledge-graph story on LinkedIn`));
+  assert.match(graphStoryHtml, new RegExp(`href="${discussionUrl}"><strong>Read and discuss this knowledge-graph story on LinkedIn →<\/strong><\/a>`));
+  assert.doesNotMatch(graphStoryHtml, new RegExp(`href="${discussionUrl}" target="_blank"`));
   assert.match(insightsHtml, new RegExp(`href="${discussionUrl}"[^>]*>Read the LinkedIn discussion →</a>`));
   assert.match(insightsHtml, /media\/graph-story-reddit-thumbnail\.jpg/);
 });
