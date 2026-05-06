@@ -34,6 +34,7 @@ test('primary 2026 pages link to the knowledge graph story', () => {
 
 test('graph story exposes the Reddit thumbnail as social preview metadata', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  assert.match(graphStoryHtml, /<link rel="icon" type="image\/svg\+xml" href="\.\.\/\.\.\/\.\.\/favicon\.svg" \/>/);
   const thumbnailPath = 'media/graph-story-reddit-thumbnail.jpg';
   assert.match(graphStoryHtml, /property="og:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
   assert.match(graphStoryHtml, /name="twitter:image" content="https:\/\/fhoffa\.github\.io\/google-cloud-next-2026-unofficial-scrape\/media\/graph-story-reddit-thumbnail\.jpg"/);
@@ -45,6 +46,16 @@ test('graph story embeds Daniel Lewis Geotab video', () => {
   const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
   assert.match(graphStoryHtml, /<section id="geotab">[\s\S]*youtube\.com\/embed\/eLQAJqydXqY/);
   assert.match(graphStoryHtml, /title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel"/);
+  assert.match(graphStoryHtml, /<figure class="video-card" aria-label="Daniel Lewis Geotab video">/);
+  assert.match(graphStoryHtml, /<span class="video-kicker">Featured session video<\/span>/);
+  assert.match(graphStoryHtml, /<span class="video-title">Engineer the agent-quality flywheel<\/span>/);
+  assert.match(graphStoryHtml, /<span class="video-speakers">Daniel Lewis \(Geotab\), Dima Melnyk \(Google Cloud\), and Alex Martin \(Google Cloud\)<\/span>/);
+});
+
+test('graph story keeps the refined cost framing from conference backup', () => {
+  const graphStoryHtml = fs.readFileSync(new URL('../google-cloud-next/2026/graphify-out/graph_story.html', import.meta.url), 'utf8');
+  assert.match(graphStoryHtml, /<strong>Cost<\/strong> does show up in the corpus/);
+  assert.match(graphStoryHtml, /Daniel Lewis said their eval pipelines consume more tokens than their production traffic/);
 });
 
 class FakeClassList {

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
   <title>Google Cloud Next 2026 — From Raw Data to Knowledge Graph</title>
   <meta name="description" content="How Google Cloud Next 2026 sessions, slide decks, and transcripts became a structured knowledge graph of the AI ecosystem." />
   <meta property="og:title" content="Google Cloud Next 2026 — Knowledge Graph Story" />
@@ -319,15 +320,28 @@
       margin-bottom: 0;
       max-width: 68ch;
     }
+    .video-card {
+      margin: 26px 0 18px;
+      border: 1px solid #dfe6f1;
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffffff 0%, #f5f8ff 100%);
+      box-shadow: 0 18px 45px rgba(26, 115, 232, 0.13), 0 4px 14px rgba(60, 64, 67, 0.10);
+    }
     .video-embed {
       position: relative;
       width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 18px rgba(60, 64, 67, 0.15);
-      background: #000;
-      margin: 24px 0 8px;
+      background: radial-gradient(circle at top left, #263f7f, #050816 62%);
+    }
+    .video-embed::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+      z-index: 1;
     }
     .video-embed iframe {
       position: absolute;
@@ -335,6 +349,29 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+    .video-meta {
+      display: grid;
+      gap: 6px;
+      padding: 16px 18px 18px;
+    }
+    .video-kicker {
+      color: #1a73e8;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .video-title {
+      color: #202124;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .video-speakers {
+      color: #5f6368;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .viz-toolbar {
@@ -852,7 +889,7 @@
         </details>
         <details>
           <summary>What did speakers avoid saying even when the topic was adjacent?</summary>
-          <div class="q-answer">The word <strong>"cost"</strong> appears rarely in agent sessions despite latency and cost being the central production challenges. <strong>OpenAI</strong> is nearly absent from the graph — referenced far less than Anthropic despite being the dominant market reference point. Sessions on enterprise AI almost universally avoided discussing failure rates or production incidents.</div>
+          <div class="q-answer"><strong>Cost</strong> does show up in the corpus, but it is less prominent than governance, security, architecture, and evaluation in the agent sessions. That contrast stood out while reviewing the transcripts and slide decks. The clearest cost signal came from Geotab: Daniel Lewis said their eval pipelines consume more tokens than their production traffic. <strong>OpenAI</strong> is nearly absent from the graph — referenced far less than Anthropic despite being the dominant market reference point. Sessions on enterprise AI almost universally avoided discussing failure rates or production incidents.</div>
         </details>
       </div>
 
@@ -885,12 +922,18 @@
       <p>Junaid Gill (Associate Vice President, Geotab) joined Greg Brosman (Senior Product Manager, Google Cloud) and John Murray (Group Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913070">governing a secure agentic ecosystem</a>.</p>
       <p>Francois-Xavier Jeannet (Team Lead, Data &amp; AI Governance, Geotab) joined Anit Patinker (Lead Product Manager, Google Cloud) and Shelley Hershkovitz (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913108">agent security at scale</a>.</p>
       <p>Daniel Lewis (Distinguished Data Scientist, Geotab) joined Dima Melnyk (Senior Product Manager, Google Cloud) and Alex Martin (Product Manager, Google Cloud) on <a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?sessionids=3913164">the agent-quality flywheel</a>.</p>
-      <div class="video-embed" aria-label="Daniel Lewis Geotab video">
-        <iframe src="https://www.youtube.com/embed/eLQAJqydXqY" title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p class="viz-caption">Daniel Lewis, Geotab, on the agent-quality flywheel.</p>
+      <figure class="video-card" aria-label="Daniel Lewis Geotab video">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/eLQAJqydXqY" title="Daniel Lewis, Geotab — Engineer the agent-quality flywheel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <figcaption class="video-meta">
+          <span class="video-kicker">Featured session video</span>
+          <span class="video-title">Engineer the agent-quality flywheel</span>
+          <span class="video-speakers">Daniel Lewis (Geotab), Dima Melnyk (Google Cloud), and Alex Martin (Google Cloud)</span>
+        </figcaption>
+      </figure>
       <p><a href="https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/?speaker=geotab">All sessions with Geotab speakers →</a> On the conceptual map, those talks land in a tight zone around platform, governance, and evaluation. One Geotab example helps explain why: their internal hackathon generated 86 agent submissions, and 2 of those later made it into production.</p>
-      <p>That gap helps explain why Geotab mattered on stage. In earlier years, Geotab often appeared as the customer saying, in effect, BigQuery works and here's how we use it. This time the posture felt different. AI is still early, Geotab has already been building internal agent systems, and Google is bringing them on stage not just as a reference customer but as a partner with production lessons that are helping shape the products now being pushed more broadly.</p>
+      <p>That gap helps explain why Geotab mattered on stage. In earlier years, Geotab often appeared as the customer saying, in effect, BigQuery works and here's how we use it. This time the posture felt different. AI is still early, but Geotab has already been building agentic systems, and Google is bringing them on stage not merely as a reference customer, but as a partner with production lessons that are helping shape the products now being pushed more broadly.</p>
     </div>
     <div class="callout">
       <p><em>"Anyone at Geotab should be able to build an agent."</em></p>
