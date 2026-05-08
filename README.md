@@ -4,6 +4,8 @@
 
 - **Session explorer:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/
 - **Insights page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/insights.html
+- **Knowledge graph write-up:** https://www.linkedin.com/posts/hoffa_i-turned-400-slide-decks-300-youtube-transcripts-ugcPost-7457851475432611840-K8EP
+- **Felipe's big data video archive:** https://www.youtube.com/playlist?list=PLG1fouPFF9lwF7l0tg81qUoJk4n3H5w5y
 - **Hourly seat map:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/hourly-heatmap.html
 - **Conference parties page:** https://fhoffa.github.io/google-cloud-next-2026-unofficial-scrape/parties.html
 
@@ -49,6 +51,7 @@ Current site features include:
   - **Top speakers**
   - **Top words**
 - separate **Insights** page (`/insights.html`) with Sankey segment links back to filtered session explorer views
+  - highlights the Google Cloud Next '26 knowledge graph write-up built from 400+ slide decks, 300+ transcripts, and 5M+ words
   - published Sankey images use contextual dated filenames like `fhoffa.github.io_google-cloud-next-2026-unofficial-scrape_sankey_YYYYMMDD.png`
 - separate **Hourly seat map** (`/hourly-heatmap.html`) showing Wednesday-Friday by hour, total reserved seats, the most popular session in each hour, and moving session tiles that shift when sessions are rescheduled
 - separate **Conference parties** page (`/parties.html`) that indexes the Google Cloud Next 2026 party list with explicit source credit back to `conferenceparties.com/next26/`
